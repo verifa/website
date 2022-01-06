@@ -1,0 +1,100 @@
+{
+    "alarfors": {
+        "active": true,
+        "name": "Andreas Lärfors",
+        "position": "Partner and Consultant",
+        "country": "Sweden",
+        "linkedin": "https://www.linkedin.com/in/andreas-l%C3%A4rfors-51253270/",
+        "bio": "Andreas has a Bachelor's degree in Computer Science from the University of Bath and specializes in static code analysis, test automation, release management and build optimization. He explores spirituality through yoga and meditation, but that doesn't stop him from chasing the adrenaline rush of driving fast cars and aggressive rollerblading."
+    },
+    "avijayan": {
+        "active": true,
+        "name": "Anoop Vijayan",
+        "position": "Consultant",
+        "country": "Finland",
+        "linkedin": "https://www.linkedin.com/in/anoopvijayan",
+        "bio": "Anoop is a DevOps expert with over 15 years experience in implementing CI/CD systems and test automation. He holds a Masters degree in Mobile Technology from the University of Jyväskylä. In his spare time Anoop enjoys writing technical blogs, playing ball games, and spending time with his family."
+    },
+    "bnystrom": {
+        "active": true,
+        "name": "Bosse Nyström",
+        "position": "Consultant",
+        "country": "Sweden",
+        "linkedin": "https://www.linkedin.com/in/bossenystrom/",
+        "bio": "Bosse holds not only a PhD in physics, but also has over twenty years' experience in embedded SW development. As well as a hugely impressive CV, Bosse's passions outside of the development world lie in food, beer and a strong love of all things Japanese.",
+        "image": "bnystrom.svg"
+    },
+    "ckurowski": {
+        "active": true,
+        "name": "Carole Kurowski",
+        "position": "Head of Growth",
+        "country": "Finland",
+        "linkedin": "https://www.linkedin.com/in/carolekurowski/",
+        "bio": "Carole is our Growth Lead and she joins us with 15 years of professional experience in marketing, events, project management, and entrepreneurship. A self-described 'tea nerd' Carole enjoys board games and yoga. Before arriving in Finland she spent 7 years living and working in Shanghai."
+    },
+    "hhirvonen": {
+        "active": true,
+        "name": "Hanna Hirvonen",
+        "position": "Consultant",
+        "country": "Finland",
+        "linkedin": "https://www.linkedin.com/in/hannahirvonen/",
+        "bio": "Hanna is a local to the Helsinki office with a Master's degree in Computer Science from the University of Helsinki. Her major interests lie in the area of Test Automation with a particular focus on Usability and User Experience. Hanna is also studying HR and developing Verifa's HR practices. She practices yoga and enjoys arts and crafts in her spare time."
+    },
+    "jlarfors": {
+        "active": true,
+        "name": "Jacob Lärfors",
+        "position": "Partner and Consultant",
+        "country": "Finland",
+        "linkedin": "https://www.linkedin.com/in/jlarfors/",
+        "bio": "Jacob is one of our co-founders and current CEO. He was born in Sweden, grew up in England, and achieved his Bachelor's degree in Computer Science at the University of Bath and a Master's in Computer Science at the University of Helsinki. When he's not working with technology he might be seen juggling, practising jazz piano, rollerblading, or solving complex Rubik's cubes."
+    },
+    "lsuomalainen": {
+        "active": true,
+        "name": "Lauri Suomalainen",
+        "position": "Consultant",
+        "country": "Finland",
+        "linkedin": "https://www.linkedin.com/in/lauri-suomalainen/",
+        "bio": "Lauri enjoys working with public clouds and automation. He has previously tinkered with OpenStack and AWS but is currently most excited about Google Cloud Platform and Kubernetes. Besides geeky stuff Lauri is an avid climber and plays guitar in a band."
+    },
+    "mvainio": {
+        "active": true,
+        "name": "Mike Vainio",
+        "position": "Consultant",
+        "country": "Finland",
+        "linkedin": "https://www.linkedin.com/in/mike-vainio-428628153/",
+        "bio": "Mike has a Bachelor's degree in Information & Communication with a major in Information Networks from Metropolia University, Helsinki. After several roles in IT, Mike's interest in DevOps was sparked during his time as a Cloud Engineer and he has not looked back since. When he manages to get some time away from his parenting responsibilities, Mike has a passion for building cars and still tries to get to the gym!",
+        "image": "mvainio.svg"
+    },
+    "slarfors": {
+        "active": true,
+        "name": "Susie Lärfors",
+        "position": "Finances",
+        "country": "Swede",
+        "linkedin": "https://www.linkedin.com/in/susie-l-964a5664/",
+        "bio": "Susie has a background in economics and accounting and is the custodian of Verifa's finances. She loves the great outdoors and can usually be found gardening, walking or playing golf. Susie also likes to travel to new places as often as she can."
+    },
+    "verifa": {
+        "active": false,
+        "name": "Verifa"
+    },
+    "jelderfield": {
+        "active": false,
+        "name": "James Elderfield"
+    },
+    "amackay": {
+        "active": false,
+        "name": "Adam Mackay"
+    },
+    "ksoranko": {
+        "active": false,
+        "name": "Kalle Soranko"
+    },
+    "slaitinen": {
+        "active": false,
+        "name": "Sakari Laitinen"
+    },
+    "mrosenlund": {
+        "active": false,
+        "name": "Mika Rosenlund"
+    }
+}

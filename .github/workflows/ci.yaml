@@ -1,0 +1,82 @@
+name: build-test
+
+on:
+  push:
+    branches:
+      - "**"
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: 16.x
+      - run: npm ci
+      - run: npm run build
+
+      - name: Write version file
+        run: |
+          # write version info to artifact
+          echo "Built from GitHub repo ${{ github.repository }} version ${GITHUB_SHA::7}" > ./build/version.txt
+
+      # add some tests here
+      - name: Create artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: website
+          path: ./build/
+          retention-days: 1
+
+  html-proofer:
+    needs: build
+    runs-on: ubuntu-latest
+    container:
+      image: docker://18fgsa/html-proofer:latest
+      options: -v /volume_mount:/volume_mount
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: website
+          path: /volume_mount/website
+
+      - name: Check HTML with HTMLProofer
+        run: |
+          htmlproofer /volume_mount/website --allow-hash-href  --enforce-https  --check-favicon --check-opengraph --report-missing-names --report-invalid-tags --disable_external --empty_alt_ignore
+
+  deploy:
+    needs: [build, html-proofer]
+    runs-on: ubuntu-latest
+    # only run on main branch
+
+    if: github.ref == 'refs/heads/main' || github.event_name == 'release'
+
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: website
+          path: ./website
+      - name: Write deploy variables
+        id: vars
+        run: |
+          # set the deploy_env
+          if [ "${{ github.event_name }}" == "release" ]
+          then
+              echo "::set-output name=deploy_env::prod"
+          else
+              echo "::set-output name=deploy_env::staging"
+          fi
+      - name: Dump deployment variables
+        run: echo "${{ steps.vars.outputs.deploy_env }}"
+      - name: Upload to google storage
+        uses: actions-hub/gcloud@master
+        env:
+          PROJECT_ID: verifa-website
+          APPLICATION_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+        with:
+          args: -m rsync -r -c -d ./website gs://website-bucket-${{ steps.vars.outputs.deploy_env }}
+          cli: gsutil

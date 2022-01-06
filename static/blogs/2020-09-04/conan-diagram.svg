@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EDF9FD;}
+	.st1{fill:#FFFFFF;stroke:#004A6E;stroke-width:5.6693;stroke-miterlimit:10;}
+	.st2{fill:#064A6E;}
+	.st3{font-family:'Montserrat-Bold';}
+	.st4{font-size:34.0157px;}
+	.st5{font-size:17.9943px;}
+	.st6{fill:#DEDC00;}
+	.st7{fill:#008D36;}
+	.st8{fill:#95C11F;}
+	.st9{fill:#B9EDFF;}
+	.st10{fill:#007EC3;}
+	.st11{fill:#23C6FD;}
+	.st12{fill:none;stroke:#004A6E;stroke-width:2.8346;stroke-linecap:round;stroke-miterlimit:10;}
+	.st13{fill:none;stroke:#5D8CA3;stroke-width:2.8346;stroke-linecap:round;stroke-miterlimit:10;}
+	.st14{fill:#5D8CA3;}
+	.st15{fill:#EDEDED;stroke:#5D8CA3;stroke-width:2.8346;stroke-linecap:round;stroke-miterlimit:10;}
+	.st16{font-family:'PTMono-Bold';}
+	.st17{font-size:19.8425px;}
+	.st18{fill:#6CC3F1;}
+	.st19{letter-spacing:27;}
+	.st20{fill:#FF6200;}
+	.st21{fill:#004A6E;}
+</style>
+<rect id="Rectangle_1180" class="st0" width="1920" height="1080"/>
+<path class="st1" d="M887.4,826.8H128.7c-6.6,0-12-5.4-12-12V121.6c0-6.6,5.4-12,12-12h758.8c6.6,0,12,5.4,12,12v693.2
+	C899.4,821.4,894,826.8,887.4,826.8z"/>
+<g id="Group_1407_2_" transform="translate(0 -4134)">
+	<text transform="matrix(1 0 0 1 158.1958 4303.4883)" class="st2 st3 st4">pkg/0.1@user/channel</text>
+</g>
+<g id="Group_1407_3_" transform="translate(0 -4134)">
+	<text transform="matrix(1 0 0 1 463.3772 4719.3848)" class="st2 st3 st5">Binary</text>
+</g>
+<g id="Group_1407_4_" transform="translate(0 -4134)">
+	<text transform="matrix(1 0 0 1 187.2312 4719.3848)" class="st2 st3 st5">Recipe</text>
+</g>
+<g>
+	<g>
+		<polygon class="st6" points="155.1,450.1 219.4,485.8 283.7,450.1 219.4,414.4 		"/>
+	</g>
+	<g>
+		<polygon class="st7" points="155.1,450.1 155.1,521.5 219.4,557.2 219.4,485.8 		"/>
+	</g>
+	<g>
+		<polygon class="st8" points="219.4,485.8 219.4,557.2 283.7,521.5 283.7,450.1 		"/>
+	</g>
+</g>
+<g>
+	<g>
+		<polygon class="st9" points="431.8,450.1 496,485.8 560.3,450.1 496,414.4 		"/>
+	</g>
+	<g>
+		<polygon class="st10" points="431.8,450.1 431.8,521.5 496,557.2 496,485.8 		"/>
+	</g>
+	<g>
+		<polygon class="st11" points="496,485.8 496,557.2 560.3,521.5 560.3,450.1 		"/>
+	</g>
+</g>
+<g id="Group_1407_5_" transform="translate(0 -4134)">
+	<text transform="matrix(1 0 0 1 627.7485 4920.9199)" class="st2 st3 st5">Binary</text>
+</g>
+<g>
+	<g>
+		<polygon class="st9" points="596.1,651.6 660.4,687.3 724.7,651.6 660.4,615.9 		"/>
+	</g>
+	<g>
+		<polygon class="st10" points="596.1,651.6 596.1,723.1 660.4,758.8 660.4,687.3 		"/>
+	</g>
+	<g>
+		<polygon class="st11" points="660.4,687.3 660.4,758.8 724.7,723.1 724.7,651.6 		"/>
+	</g>
+</g>
+<g id="Group_1407_6_" transform="translate(0 -4134)">
+	<text transform="matrix(1 0 0 1 315.2754 4522.6357)" class="st2 st3 st5">Binary</text>
+</g>
+<g>
+	<g>
+		<polygon class="st9" points="283.7,253.4 347.9,289.1 412.2,253.4 347.9,217.6 		"/>
+	</g>
+	<g>
+		<polygon class="st10" points="283.7,253.4 283.7,324.8 347.9,360.5 347.9,289.1 		"/>
+	</g>
+	<g>
+		<polygon class="st11" points="347.9,289.1 347.9,360.5 412.2,324.8 412.2,253.4 		"/>
+	</g>
+</g>
+<line class="st12" x1="251.5" y1="503.7" x2="463.9" y2="503.7"/>
+<line class="st12" x1="251.5" y1="503.7" x2="316.8" y2="306.9"/>
+<line class="st12" x1="251.5" y1="503.7" x2="629.2" y2="705.2"/>
+<g>
+	<line class="st13" x1="600.8" y1="503.7" x2="813.2" y2="503.7"/>
+	<path id="Polygon_1_2_" class="st14" d="M586,503.7l20.2-11.8v23.6L586,503.7z"/>
+	<path class="st15" d="M1148.6,551.3H825.2c-6.6,0-12-5.4-12-12V468c0-6.6,5.4-12,12-12h323.4c6.6,0,12,5.4,12,12v71.3
+		C1160.6,545.9,1155.2,551.3,1148.6,551.3z"/>
+</g>
+<g>
+	<line class="st13" x1="760.8" y1="705.2" x2="973.2" y2="705.2"/>
+	<path id="Polygon_1_4_" class="st14" d="M746,705.2l20.2-11.8V717L746,705.2z"/>
+	<path class="st15" d="M1308.6,752.9H985.2c-6.6,0-12-5.4-12-12v-71.3c0-6.6,5.4-12,12-12h323.4c6.6,0,12,5.4,12,12v71.3
+		C1320.6,747.5,1315.2,752.9,1308.6,752.9z"/>
+</g>
+<g>
+	<line class="st13" x1="446.6" y1="306.9" x2="659" y2="306.9"/>
+	<path id="Polygon_1_3_" class="st14" d="M431.8,306.9l20.2-11.8v23.6L431.8,306.9z"/>
+	<path class="st15" d="M994.4,354.6H671c-6.6,0-12-5.4-12-12v-71.3c0-6.6,5.4-12,12-12h323.4c6.6,0,12,5.4,12,12v71.3
+		C1006.4,349.2,1001,354.6,994.4,354.6z"/>
+</g>
+<g id="Group_1407_7_" transform="translate(0 -4134)">
+	<text transform="matrix(1 0 0 1 878.5398 4641.9932)" class="st2 st16 st5">1edd309d7294a74df2e50</text>
+</g>
+<text transform="matrix(1 0 0 1 707.0364 312.0759)" class="st2 st16 st17">09512ff863f37e98ed748e</text>
+<g>
+	<path class="st15" d="M1502,322.3h-323.4c-6.6,0-12-5.4-12-12V105.8c0-6.6,5.4-12,12-12H1502c6.6,0,12,5.4,12,12v204.5
+		C1514,316.9,1508.6,322.3,1502,322.3z"/>
+</g>
+<text transform="matrix(1 0 0 1 1206.5183 135.0933)" class="st10 st16 st5">[options]</text>
+<text transform="matrix(1 0 0 1 1303.7183 135.0933)" class="st18 st16 st5"> </text>
+<text transform="matrix(1 0 0 1 1206.5183 156.6933)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1247.0183 156.6933)" class="st2 st16 st5">shared: False</text>
+<text transform="matrix(1 0 0 1 1206.5183 178.2933)" class="st10 st16 st5">[settings]</text>
+<text transform="matrix(1 0 0 1 1206.5183 199.8933)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1247.0183 199.8933)" class="st2 st16 st5">arch: x86_64</text>
+<text transform="matrix(1 0 0 1 1206.5183 221.4933)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1247.0183 221.4933)" class="st2 st16 st5">build_type: Release</text>
+<text transform="matrix(1 0 0 1 1206.5183 243.0933)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1247.0183 243.0933)" class="st2 st16 st5">complier: apple-clang</text>
+<text transform="matrix(1 0 0 1 1206.5183 264.6933)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1247.0183 264.6933)" class="st2 st16 st5">compiler.version: 8.1</text>
+<text transform="matrix(1 0 0 1 1206.5183 286.2933)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1247.0183 286.2933)" class="st2 st16 st5">os: Macos</text>
+<g>
+	<path class="st15" d="M1656,613.8h-323.4c-6.6,0-12-5.4-12-12V397.3c0-6.6,5.4-12,12-12H1656c6.6,0,12,5.4,12,12v204.5
+		C1668,608.4,1662.6,613.8,1656,613.8z"/>
+</g>
+<text transform="matrix(1 0 0 1 1360.4653 426.6326)" class="st10 st16 st5">[options] </text>
+<text transform="matrix(1 0 0 1 1360.4653 448.2326)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1400.9653 448.2326)" class="st2 st16 st5">shared: </text>
+<text transform="matrix(1 0 0 1 1487.3654 448.2326)" class="st20 st16 st5">True</text>
+<text transform="matrix(1 0 0 1 1360.4653 469.8326)" class="st10 st16 st5">[settings]</text>
+<text transform="matrix(1 0 0 1 1360.4653 491.4326)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1400.9653 491.4326)" class="st2 st16 st5">arch: x86_64</text>
+<text transform="matrix(1 0 0 1 1360.4653 513.0326)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1400.9653 513.0326)" class="st2 st16 st5">build_type: Release</text>
+<text transform="matrix(1 0 0 1 1360.4653 534.6326)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1400.9653 534.6326)" class="st2 st16 st5">complier: apple-clang</text>
+<text transform="matrix(1 0 0 1 1360.4653 556.2326)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1400.9653 556.2326)" class="st2 st16 st5">compiler.version: 8.1</text>
+<text transform="matrix(1 0 0 1 1360.4653 577.8326)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1400.9653 577.8326)" class="st2 st16 st5">os: Macos</text>
+<text transform="matrix(1 0 0 1 1035.0071 709.8396)" class="st2 st16 st5">76feb0214efc373acb9ea</text>
+<g>
+	<line class="st13" x1="1016.9" y1="300.1" x2="1167" y2="149.9"/>
+	<path id="Polygon_1_5_" class="st14" d="M1006.4,310.6l6-22.7l16.7,16.7L1006.4,310.6z"/>
+</g>
+<line class="st13" x1="1175.5" y1="503.7" x2="1320.6" y2="503.7"/>
+<path id="Polygon_1_6_" class="st14" d="M1160.6,503.7l20.2-11.8v23.6L1160.6,503.7z"/>
+<g>
+	<path class="st15" d="M1816.6,990.5h-323.4c-6.6,0-12-5.4-12-12V774c0-6.6,5.4-12,12-12h323.4c6.6,0,12,5.4,12,12v204.5
+		C1828.6,985.1,1823.2,990.5,1816.6,990.5z"/>
+</g>
+<text transform="matrix(1 0 0 1 1521.0391 803.2932)" class="st10 st16 st5">[options]</text>
+<text transform="matrix(1 0 0 1 1618.239 803.2932)" class="st18 st16 st5"> </text>
+<text transform="matrix(1 0 0 1 1521.0391 824.8932)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1561.5391 824.8932)" class="st2 st16 st5">shared: </text>
+<text transform="matrix(1 0 0 1 1647.9391 824.8932)" class="st21 st16 st5">True</text>
+<text transform="matrix(1 0 0 1 1521.0391 846.4932)" class="st10 st16 st5">[settings]</text>
+<text transform="matrix(1 0 0 1 1521.0391 868.0932)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1561.5391 868.0932)" class="st2 st16 st5">arch: x86_64</text>
+<text transform="matrix(1 0 0 1 1521.0391 889.6932)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1561.5391 889.6932)" class="st2 st16 st5">build_type: </text>
+<text transform="matrix(1 0 0 1 1691.0391 889.6932)" class="st20 st16 st5">Debug</text>
+<text transform="matrix(1 0 0 1 1521.0391 911.2932)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1561.5391 911.2932)" class="st2 st16 st5">complier: apple-clang</text>
+<text transform="matrix(1 0 0 1 1521.0391 932.8932)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1561.5391 932.8932)" class="st2 st16 st5">compiler.version: 8.1</text>
+<text transform="matrix(1 0 0 1 1521.0391 954.4932)" class="st2 st16 st5 st19"> </text>
+<text transform="matrix(1 0 0 1 1561.5391 954.4932)" class="st2 st16 st5">os: Macos</text>
+<g>
+	<line class="st13" x1="1331.1" y1="713.7" x2="1481.3" y2="863.9"/>
+	<path id="Polygon_1_7_" class="st14" d="M1320.6,703.2l6,22.7l16.7-16.7L1320.6,703.2z"/>
+</g>
+<text transform="matrix(1 0 0 1 1980 1017)" class="st16" style="font-size:22.6772px;">Lorem ipsum</text>
+</svg>
