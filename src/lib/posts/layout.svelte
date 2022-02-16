@@ -53,7 +53,7 @@
 		<h2>Comments</h2>
 		<script
 			src="https://utteranc.es/client.js"
-			repo="verifa/website-v2"
+			repo="verifa/website"
 			issue-term="pathname"
 			label="blog"
 			theme="boxy-light"
