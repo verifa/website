@@ -1,7 +1,7 @@
 <script>
 	import { crewByID, crewNameById } from '$lib/crew/crew';
 
-	import { seo } from '$lib/seo/store';
+	import { defaultSEOMetadata, seo } from '$lib/seo/store';
 
 	import PostBadges from './postBadges.svelte';
 	import PostGrid from './postGrid.svelte';
@@ -17,7 +17,7 @@
 
 	$seo.title = title;
 	$seo.description = subheading;
-	$seo.image = image;
+	$seo.image.url = image;
 	$seo.article = {
 		authors: authors,
 		tags: tags,
