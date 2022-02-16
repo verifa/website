@@ -82,4 +82,7 @@
 	#blog-container :global(.blog-flex) {
 		@apply flex gap-x-4;
 	}
+	#blog-container :global(a) {
+		@apply underline;
+	}
 </style>

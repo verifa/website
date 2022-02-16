@@ -20,7 +20,7 @@ The upshot? A renewed focus on what matters to our customers and to our crew, a 
 
 ### A sleek new site
 
-We've simplified our website to make it easier for you to find the info you need. Whether you need a helping hand with your project, a hands-on blog post, or just curious about our crew, we hope our new look website delivers for you. Built in-house with [Svelte](https://svelte.dev/) and guided by the design maestro, [Emanuele Pizzolorusso](https://pizzolorusso.com/), it's super simple and quick to make changes on our end. This means we can be more agile in delivering great content to you.
+We've simplified our website to make it easier for you to find the info you need. Whether you need a helping hand with your project, a hands-on blog post, or just curious about our crew, we hope our new look website delivers for you. Built in-house with [Svelte](https://svelte.dev/) and guided by the design maestro, [Emanuele Pizzolorusso](https://pizzolorusso.com/about), it's super simple and quick to make changes on our end. This means we can be more agile in delivering great content to you.
 
 ### New logo
 
@@ -41,4 +41,4 @@ At the heart of our rebrand was a deep dive into what Verifa is today, and where
 Cheers,<br/>
 The Verifa crew
 
-Thanks to [Emanuele Pizzolorusso](https://pizzolorusso.com/) for the logo, branding and website design.
+Thanks to [Emanuele Pizzolorusso](https://pizzolorusso.com/about) for the logo, branding and website design.
