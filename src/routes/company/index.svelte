@@ -7,6 +7,7 @@
 	import { config, seo } from '$lib/seo/store';
 	import HeaderLine from '../_headerLine.svelte';
 
+	seo.reset();
 	$seo.title = 'About us: Consulting is our game';
 
 	const cloudLogos: { name: string; image: string }[] = [

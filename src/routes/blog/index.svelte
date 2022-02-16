@@ -28,6 +28,7 @@
 
 	export let data: Blogs;
 
+	seo.reset();
 	$seo.title = 'Verifa blog and news';
 	$seo.description =
 		'We write about all the great things happening in Cloud, DevOps, Continuous Delivery and our culture';

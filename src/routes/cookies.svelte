@@ -1,3 +1,10 @@
+<script lang="ts">
+	import { seo } from '$lib/seo/store';
+
+	seo.reset();
+	$seo.title = 'Cookie Policy';
+</script>
+
 <h2>Cookie Policy</h2>
 <p>
 	We use cookies to help improve your experience of our website at <a href="https://verifa.io"

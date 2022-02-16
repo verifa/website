@@ -30,6 +30,7 @@
 
 	export let data: Jobs;
 
+	seo.reset();
 	$seo.title = 'Join us: we care about our work and the impact we have';
 	$seo.image.url = '/round-table.svg';
 

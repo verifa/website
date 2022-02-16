@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { crewNameById } from '$lib/crew/crew';
 	import { seo, config } from './store';
 </script>
 
@@ -22,12 +23,16 @@
 	{/if}
 	{#if $seo.article}
 		{#each $seo.article.authors as author}
-			<meta property="article:author" content={author} />
+			<meta property="article:author" content={crewNameById(author)} />
 		{/each}
 		{#each $seo.article.tags as tag}
 			<meta property="article:tag" content={tag} />
 		{/each}
-		<meta property="article:published_time" content={$seo.article.published_time.toISOString()} />
-		<meta property="article:modified_time" content={$seo.article.modified_time.toISOString()} />
+		{#if $seo.article.published_time}
+			<meta property="article:published_time" content={$seo.article.published_time.toISOString()} />
+		{/if}
+		{#if $seo.article.modified_time}
+			<meta property="article:modified_time" content={$seo.article.modified_time.toISOString()} />
+		{/if}
 	{/if}
 </svelte:head>

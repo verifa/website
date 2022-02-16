@@ -1,3 +1,10 @@
+<script lang="ts">
+	import { seo } from '$lib/seo/store';
+
+	seo.reset();
+	$seo.title = 'Privacy Policy';
+</script>
+
 <h2>Privacy Policy</h2>
 <p>
 	Your privacy is important to us. It is Verifa's policy to respect your privacy and comply with any

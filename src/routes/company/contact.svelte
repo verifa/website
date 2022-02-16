@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { seo } from '$lib/seo/store';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
 		setTimeout(() => goto('/contact'), 1000 * 3);
 	});
+
+	seo.reset();
 </script>
 
 <section>

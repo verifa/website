@@ -1,9 +1,13 @@
-<script>
+<script lang="ts">
 	import Column from '$lib/column.svelte';
 	import Columns from '$lib/columns.svelte';
 	import CtaButton from '$lib/ctaButton.svelte';
 	import Grid from '$lib/grid.svelte';
+	import { seo } from '$lib/seo/store';
 	import HeaderLine from './_headerLine.svelte';
+
+	seo.reset();
+	$seo.title = 'What we do: Continuous Delivery and Cloud Architecture';
 </script>
 
 <section id="continuous-delivery">

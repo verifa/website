@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { seo } from '$lib/seo/store';
 
-	$seo.title = 'Contact us: Your trusted crew for all things Cloud and Continuous.';
+	seo.reset();
+	$seo.title = 'Contact us';
 </script>
 
 <section>

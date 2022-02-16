@@ -49,16 +49,38 @@ export const config = {
     ]
 };
 
-// Set some default values for the SEO
-export const seo = writable<SEOMetadata>({
-    title: "Verifa: Your trusted crew for all things Continuous and Cloud",
-    description: "We are an experienced crew of DevOps and Cloud professionals dedicated to helping our customers with Continuous practices and Cloud adoption.",
-    robots: {
-        noindex: false
-    },
+// Create a custom store which has a reset function
+function createSEOStore() {
+    // For some reason, we cannot put the default store value in a variable and
+    // reference it in the set method. So for now we just duplicate the default
+    // values
+    const store = writable<SEOMetadata>({
+        title: "Verifa: Your trusted crew for all things Continuous and Cloud",
+        description: "We are an experienced crew of DevOps and Cloud professionals dedicated to helping our customers with Continuous practices and Cloud adoption.",
+        robots: {
+            noindex: false
+        },
+        image: {
+            url: "/verifa-logo.svg",
+            alt: config.siteTitle,
+        }
+    });
 
-    image: {
-        url: "/verifa-logo.svg",
-        alt: config.siteTitle,
-    }
-})
+    return {
+        ...store,
+        reset: () => store.set({
+            title: "Verifa: Your trusted crew for all things Continuous and Cloud",
+            description: "We are an experienced crew of DevOps and Cloud professionals dedicated to helping our customers with Continuous practices and Cloud adoption.",
+            robots: {
+                noindex: false
+            },
+            image: {
+                url: "/verifa-logo.svg",
+                alt: config.siteTitle,
+            }
+        })
+    };
+}
+
+// Set some default values for the SEO
+export const seo = createSEOStore();

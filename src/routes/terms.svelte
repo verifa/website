@@ -1,3 +1,10 @@
+<script lang="ts">
+	import { seo } from '$lib/seo/store';
+
+	seo.reset();
+	$seo.title = 'Terms of Service';
+</script>
+
 <h2>Terms of Service</h2>
 <p>
 	These Terms of Service govern your use of the website located at <a href="https://verifa.io"

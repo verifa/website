@@ -1,5 +1,8 @@
 <script>
 	import ButtonLink from '$lib/buttonLink.svelte';
+	import { seo } from '$lib/seo/store';
+
+	seo.reset();
 </script>
 
 <section>

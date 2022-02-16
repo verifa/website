@@ -1,3 +1,10 @@
+<script lang="ts">
+	import { seo } from '$lib/seo/store';
+
+	seo.reset();
+	$seo.title = 'Acceptable Use Policy';
+</script>
+
 <h2>Acceptable Use Policy</h2>
 <p>
 	This acceptable use policy covers the products, services, and technologies (collectively referred

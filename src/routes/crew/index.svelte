@@ -1,8 +1,11 @@
 <script lang="ts">
 	import { allActiveCrewShuffle, Member } from '$lib/crew/crew';
+	import { seo } from '$lib/seo/store';
 	import MemberCard from './_memberCard.svelte';
 
 	const crew: Member[] = allActiveCrewShuffle();
+
+	seo.reset();
 </script>
 
 <section>

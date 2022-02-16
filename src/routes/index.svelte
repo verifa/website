@@ -26,10 +26,12 @@
 	import Column from '$lib/column.svelte';
 	import ClientLogos from '$lib/clients/clientLogos.svelte';
 	import Grid from '$lib/grid.svelte';
+	import { seo } from '$lib/seo/store';
 
 	export let data: Blogs;
-
 	const blogs: Post[] = data.blogs;
+
+	seo.reset();
 </script>
 
 <section>
