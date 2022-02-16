@@ -26,15 +26,15 @@
 		modified_time: new Date(date)
 	};
 
-	const similarBlogs = getSimilarBlogs(tags);
+	const similarBlogs = getSimilarBlogs(title, tags);
 </script>
 
 <svelte:head>
 	<link rel="stylesheet" href="/prism-ghcolors.css" />
 </svelte:head>
 
-<div id="blog-container" class="max-w-5xl mx-auto">
-	<article>
+<div class="max-w-5xl mx-auto">
+	<article id="blog-container">
 		<div class="mb-8">
 			<div class="mb-8">
 				<img src={image} alt={title} />

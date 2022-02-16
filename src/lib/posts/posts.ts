@@ -56,10 +56,14 @@ export const getPost = (slug: string): any => {
     return null
 }
 
-export const getSimilarBlogs = (keywords: string[]): Blogs => {
+export const getSimilarBlogs = (title: string, keywords: string[]): Blogs => {
     const blogs = getBlogs()
     return {
         blogs: blogs.blogs.filter((blog) => {
+            // Make sure we don't return the current blog post as a similar one
+            if (blog.title === title) {
+                return false
+            }
             for (let index = 0; index < keywords.length; index++) {
                 const keyword = keywords[index];
                 if (!blog.tags.includes(keyword)) {
