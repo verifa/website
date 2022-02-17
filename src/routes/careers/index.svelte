@@ -59,7 +59,7 @@
 
 <section>
 	<Columns>
-		<Column>
+		<Column class="self-start">
 			<h2>What we look for.</h2>
 			<p>
 				We look for people passionate about continuous practices, cloud architecture and all the
@@ -67,12 +67,12 @@
 				challenged and want to keep developing, then you should get in touch.
 			</p>
 		</Column>
-		<Column>
+		<Column class="self-start">
 			<h2>What we offer.</h2>
 			<p>
-				Our goal is to provide a great place to work and continue to learn whilst delivering value
-				to our customers. You'll get to work with cool tech and discuss with others who share a
-				passion to deliver.
+				Our goal is to provide a great place to work where you can continue to develop and learn.
+				You'll get to work with cool tech and discuss with others who share a passion to deliver. To
+				ensure fairness, we have an open salary policy.
 			</p>
 		</Column>
 	</Columns>
