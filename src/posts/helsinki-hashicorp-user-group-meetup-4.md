@@ -32,7 +32,7 @@ The next Helsinki HashiCorp User Group will be hosted by Supermetrics at their o
 
 18:00 Welcome words from Supermetrics
 
-18:15 **Jacob Lärfors, Verifa Bootstrapping production-ready Kubernetes clusters using Terraform and ArgoCD** [Jacob Lärfors](https://www.linkedin.com/in/jlarfors/) is CEO at Verifa and a HashiCorp afficiando, with years of experience with cloud technologies and continuous practices. 
+18:15 **Jacob Lärfors, Verifa: Bootstrapping production-ready Kubernetes clusters using Terraform and ArgoCD.** [Jacob Lärfors](https://www.linkedin.com/in/jlarfors/) is CEO at Verifa and a HashiCorp afficiando, with years of experience with cloud technologies and continuous practices. 
 
 19:00 **Supermetrics' speaker** - to be announced
 
