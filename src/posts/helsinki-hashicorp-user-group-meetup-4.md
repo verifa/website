@@ -30,11 +30,11 @@ The next Helsinki HashiCorp User Group will be hosted by Supermetrics at their o
 
 17:55 HUG introduction
 
-18:00 Welcome words from Supermetrics
+18:00 Welcome words from Supermetrics CEO, Mikael Thuneberg
 
 18:15 **Jacob Lärfors, Verifa: Bootstrapping production-ready Kubernetes clusters using Terraform and ArgoCD.** [Jacob Lärfors](https://www.linkedin.com/in/jlarfors/) is CEO at Verifa and a HashiCorp afficiando, with years of experience with cloud technologies and continuous practices. 
 
-19:00 **Supermetrics' speaker** - to be announced
+19:00 **Dawit Nida and Duy Nguyen, Supermetrics: Dare to manage multi- (provider, cloud, region, env) with Terraform?** [Dawit Nida](https://www.linkedin.com/in/dawitnida/) is a Senior DevOps Engineer and one of the first members of Supermetrics’ DevOps team. He’s responsible for managing and monitoring the entirety of Supermetrics’ infrastructure. [Duy Nguyen](https://www.linkedin.com/in/duy-nguyen-527ba756/) is an SRE Engineer at Supermetrics hailing originally from software development sphere and has taken part in a wide range of projects big and small on all levels of software development lifecycle.
 
 19:45 Closing words
 
