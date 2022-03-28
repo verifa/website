@@ -6,7 +6,6 @@
 	import SEO from '$lib/seo/seo.svelte';
 </script>
 
-<SEO />
 <div class="bg-gray-50 overflow-auto">
 	<Header />
 	<main>
@@ -17,3 +16,9 @@
 	</section>
 	<Footer />
 </div>
+
+<!-- 
+	This has to come last to make sure our seo store is updated correctly by
+	all the possible pages above
+ -->
+<SEO />
