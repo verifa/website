@@ -7,14 +7,14 @@ authors:
 tags:
 - HashiCorp
 date: 2022-03-25
-image: "/blogs/helsinki-hug-4/hug-blog-event-4.png"
+image: "/blogs/helsinki-hug-4/hug-blog-summary-4.png"
 featured: true
 jobActive: true
 
 ---
 **Helsinki HashiCorp User Group is a quarterly meetup full of interesting talks and insights about all things HashiCorp, plus a chance to connect with fellow professionals and hobbyists alike.**
 
-Our friends over at [Supermetrics](https://supermetrics.com/) very kindly hosted the fourth Helsinki HUG, held on 23rd March. We gathered at their downtown office to listen to talks from Verifa and Supermetrics, take our fill of snacks and drinks, socialise and sauna! The event was also live streamed for people joining online.
+Our friends over at [Supermetrics](https://supermetrics.com/) very kindly hosted the fourth Helsinki HUG, held on 22nd March. We gathered at their downtown office to listen to talks from Verifa and Supermetrics, take our fill of snacks and drinks, socialise and sauna! The event was also live streamed for people joining online.
 
 Here’s a brief summary of the talks along with links to the presentation decks, and the full meetup recording.
 
@@ -25,13 +25,13 @@ Here’s a brief summary of the talks along with links to the presentation decks
 
 After a welcome introduction from Supermetrics CEO, Mikael Thuneberg, we heard from Jacob Lärfors from Verifa. [Jacob](https://www.linkedin.com/in/jlarfors/) is CEO at Verifa and a HashiCorp afficiando, with years of experience with cloud technologies and continuous practices. His talk covered:
 
-- Why not just one big Kubernetes cluster?
-    - Separation
-    - Complexity
-- What is a “ready” K8s cluster?
-- Terraform overview
-- ArgoCD Applications
-- Demo
+* Why not just one big Kubernetes cluster?
+    * Separation
+    * Complexity
+* What is a “ready” K8s cluster?
+* Terraform overview
+* ArgoCD Applications
+* Demo
 
 Check out [Jacob’s presentation here](https://drive.google.com/file/d/1occxI7BYliW0t0GHA6tXrqdT0BOBG8W6/view?usp=sharing).
 
@@ -39,14 +39,14 @@ Check out [Jacob’s presentation here](https://drive.google.com/file/d/1occxI7B
 
 Next up was a talk from Dawit Nida and Duy Nguyen from Supermetrics. [Dawit](https://www.linkedin.com/in/dawitnida/) is a Senior DevOps Engineer and one of the first members of Supermetrics’ DevOps team. He’s responsible for managing and monitoring the entirety of Supermetrics’ infrastructure. [Duy](https://www.linkedin.com/in/duy-nguyen-527ba756/) is an SRE Engineer at Supermetrics hailing originally from software development sphere and has taken part in a wide range of projects big and small on all levels of software development lifecycle. Their talk covered:
 
-- Introduction to Terraform
-- Background and their current infrastructure
-- Problems they faced
-- Solution
-    - Structure, atomicy & reusability of modules
-    - Module design & hierarchy
-    - Continuous Integration (CI)
-- Live coding session
+* Introduction to Terraform
+* Background and their current infrastructure
+* Problems they faced
+* Solution
+    * Structure, atomicy & reusability of modules
+    * Module design & hierarchy
+    * Continuous Integration (CI)
+* Live coding session
 
 Check out [their presentation here](https://drive.google.com/file/d/11DXY69rO8oAg61u6qOs5eHWRL7CckPdO/view?usp=sharing).
 
