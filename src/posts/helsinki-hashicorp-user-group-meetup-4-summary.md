@@ -18,7 +18,7 @@ Our friends over at [Supermetrics](https://supermetrics.com/) very kindly hoste
 
 Here’s a brief summary of the talks along with links to the presentation decks, and the full meetup recording.
 
-<iframe width="100%" height="410" src="[https://www.youtube.com/embed/9X82WKkxF5U](https://www.youtube.com/embed/9X82WKkxF5U)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="410" src="https://www.youtube.com/embed/9X82WKkxF5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ### Managing Multi-Kubernetes Clusters with Terraform and ArgoCD
