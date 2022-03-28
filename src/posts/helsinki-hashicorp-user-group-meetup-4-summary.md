@@ -8,7 +8,7 @@ tags:
 - HashiCorp
 date: 2022-03-25
 image: "/blogs/helsinki-hug-4/hug-blog-summary-4.png"
-featured: false
+featured: true
 jobActive: true
 
 ---
