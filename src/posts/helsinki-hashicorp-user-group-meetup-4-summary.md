@@ -20,14 +20,13 @@ Here’s a brief summary of the talks along with links to the presentation decks
 
 <iframe width="100%" height="410" src="https://www.youtube.com/embed/9X82WKkxF5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
 ### Managing Multi-Kubernetes Clusters with Terraform and ArgoCD
 
 After a welcome introduction from Supermetrics CEO, Mikael Thuneberg, we heard from Jacob Lärfors from Verifa. [Jacob](https://www.linkedin.com/in/jlarfors/) is CEO at Verifa and a HashiCorp afficiando, with years of experience with cloud technologies and continuous practices. His talk covered:
 
 * Why not just one big Kubernetes cluster?
-    * Separation
-    * Complexity
+  * Separation
+  * Complexity
 * What is a “ready” K8s cluster?
 * Terraform overview
 * ArgoCD Applications
@@ -43,9 +42,9 @@ Next up was a talk from Dawit Nida and Duy Nguyen from Supermetrics. [Dawit](ht
 * Background and their current infrastructure
 * Problems they faced
 * Solution
-    * Structure, atomicy & reusability of modules
-    * Module design & hierarchy
-    * Continuous Integration (CI)
+  * Structure, atomicy & reusability of modules
+  * Module design & hierarchy
+  * Continuous Integration (CI)
 * Live coding session
 
 Check out [their presentation here](https://drive.google.com/file/d/11DXY69rO8oAg61u6qOs5eHWRL7CckPdO/view?usp=sharing).
