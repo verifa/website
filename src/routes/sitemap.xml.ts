@@ -1,10 +1,9 @@
 import { getBlogs } from "$lib/posts/posts";
 
-function sitemapDate(date: Date): string {
-    return date.toISOString().split('T')[0]
-}
-
-export async function get() {
+export async function get({ }) {
+    function sitemapDate(date: Date): string {
+        return date.toISOString().split('T')[0]
+    }
     interface Page {
         loc: string;
         priority: number;
