@@ -68,7 +68,7 @@
     li {
         @apply mb-4;
     }
-    li > ol, ul {
+    li > ol, li > ul {
         @apply my-3 ml-4;
     }
     hr {

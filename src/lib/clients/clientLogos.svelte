@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { ClientLogo, clientLogosWhite } from '$lib/clients/clients';
+	import { clientLogosWhite } from '$lib/clients/clients';
 	import { ScreenSize } from '$lib/screenSizes';
 
 	$: outerWidth = 0;
 
-	let logos: ClientLogo[] = clientLogosWhite();
+	let logos = clientLogosWhite();
 
 	// showIndex determines whether a logo should be shown based on its index
 	// and the width of the screen

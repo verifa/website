@@ -11,7 +11,7 @@ export interface Jobs {
 
 export interface Post {
     slug: string;
-    type: string;
+    type: PostType;
     title: string;
     subheading: string;
     authors: string[];
@@ -22,6 +22,15 @@ export interface Post {
 
     jobActive: boolean;
 }
+
+export enum PostType {
+    Blog = "Blog",
+    Event = "Event",
+    Job = "Job"
+}
+
+export const blogTypes = [PostType.Blog, PostType.Event]
+export const jobTypes = [PostType.Job]
 
 const getSlug = (key: string): string =>
     key.substring('../../posts/'.length, key.lastIndexOf('.'));
@@ -46,9 +55,22 @@ const ignoredKeywords: string[] = [
     "Data Science"
 ]
 
-export const getPost = (slug: string): any => {
+export const getBlogsBySlug = (slug: string): any => {
+    return getPostBySlug(slug, blogTypes)
+}
+
+export const getJobsBySlug = (slug: string): any => {
+    return getPostBySlug(slug, jobTypes)
+}
+
+const getPostBySlug = (slug: string, postTypes: string[]): any => {
     const rawPosts = import.meta.globEager("../../posts/*.md")
     for (const key in rawPosts) {
+        const rawPost = rawPosts[key]
+        // Filter types that don't match
+        if (!postTypes.includes(rawPost.metadata.type)) {
+            continue
+        }
         if (slug === getSlug(key)) {
             return rawPosts[key].default
         }
@@ -81,7 +103,6 @@ export const getBlogs = (limit: number = -1, featured: boolean = false): Blogs =
     let posts: Post[] = [];
     let keywords: string[] = [];
 
-    const postTypes: string[] = ["blog", "event"]
     const rawPosts = import.meta.globEager("../../posts/*.md")
     for (const key in rawPosts) {
         const rawPost = rawPosts[key]
@@ -90,7 +111,7 @@ export const getBlogs = (limit: number = -1, featured: boolean = false): Blogs =
             ...rawPost.metadata,
         }
         // Check filters
-        if (postTypes.length > 0 && !postTypes.includes(post.type.toLowerCase())) {
+        if (!blogTypes.includes(post.type)) {
             continue
         }
         posts.push(post)
@@ -122,7 +143,6 @@ export const getJobs = (limit: number = -1): Jobs => {
     let posts: Post[] = [];
     let keywords: string[] = []
 
-    const postTypes: string[] = ["job"]
     const rawPosts = import.meta.globEager("../../posts/*.md")
     for (const key in rawPosts) {
         const rawPost = rawPosts[key]
@@ -131,7 +151,7 @@ export const getJobs = (limit: number = -1): Jobs => {
             ...rawPost.metadata,
         }
         // Check filters
-        if (postTypes.length > 0 && !postTypes.includes(post.type.toLowerCase())) {
+        if (!jobTypes.includes(post.type)) {
             continue
         }
 

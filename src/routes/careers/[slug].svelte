@@ -1,10 +1,10 @@
 <script context="module" lang="ts">
-	import { getBlogsBySlug } from '$lib/posts/posts';
+	import { getJobsBySlug } from '$lib/posts/posts';
 
 	import NotFound from './notFound.svelte';
 
 	export function load({ params }) {
-		const post = getBlogsBySlug(params.slug);
+		const post = getJobsBySlug(params.slug);
 		if (post !== null) {
 			return {
 				props: {

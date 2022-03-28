@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Post } from './posts';
+	import { PostType, type Post } from './posts';
 	import PostBadges from './postBadges.svelte';
 
 	export let post: Post;
@@ -11,13 +11,15 @@
 		month: 'long',
 		day: 'numeric'
 	};
+
+	const urlPrefix = post.type === PostType.Job ? 'careers' : 'blog';
 </script>
 
 <div>
 	{#if showBadges}
 		<PostBadges type={post.type} tags={post.tags} />
 	{/if}
-	<a href="/blog/{post.slug}" class="block mt-4">
+	<a href="/{urlPrefix}/{post.slug}" class="block mt-4">
 		<p class="mb-0">{new Date(post.date).toLocaleDateString()}</p>
 		<h4>{post.title}</h4>
 		<p>{post.subheading}</p>
