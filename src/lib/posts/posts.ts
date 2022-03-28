@@ -77,7 +77,7 @@ export const getSimilarBlogs = (title: string, keywords: string[]): Blogs => {
     }
 }
 
-export const getBlogs = (limit: number = -1): Blogs => {
+export const getBlogs = (limit: number = -1, featured: boolean = false): Blogs => {
     let posts: Post[] = [];
     let keywords: string[] = [];
 
@@ -101,8 +101,13 @@ export const getBlogs = (limit: number = -1): Blogs => {
         })
     }
 
-    // Sort the posts by date and apply any limit on them
+    // Sort the posts by date
     posts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
+    // If searching for featured posts, first remove those that are not featured
+    if (featured) {
+        posts = posts.filter((post) => post.featured)
+    }
+    // Apply any limit on them
     if (limit > 0) {
         posts = posts.slice(0, limit)
     }

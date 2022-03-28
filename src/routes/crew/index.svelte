@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { allActiveCrewShuffle, Member } from '$lib/crew/crew';
+	import { allActiveCrewShuffle } from '$lib/crew/crew';
+	import type { Member } from '$lib/crew/crew';
 	import { seo } from '$lib/seo/store';
 	import MemberCard from './_memberCard.svelte';
 

@@ -9,7 +9,7 @@ tags:
 - HashiCorp
 date: 2021-12-18
 image: "/blogs/2021-12-20/hug-3-summary-blog.png"
-featured: true
+featured: false
 jobActive: true
 
 ---

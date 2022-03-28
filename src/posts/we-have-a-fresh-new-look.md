@@ -8,7 +8,7 @@ tags:
 - Verifa Culture
 date: 2022-02-16
 image: "/blogs/2022-02-16/main.png"
-featured: true
+featured: false
 jobActive: true
 ---
 
