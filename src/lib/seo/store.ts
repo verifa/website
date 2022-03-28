@@ -75,7 +75,7 @@ function createSEOStore() {
                 noindex: false
             },
             image: {
-                url: "/verifa-logo.svg",
+                url: "/continuous-delivery.svg",
                 alt: config.siteTitle,
             }
         })

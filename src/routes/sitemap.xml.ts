@@ -70,7 +70,6 @@ ${pages.map((page) =>
 </urlset>
     `
 
-    console.log(body)
     return {
         headers,
         body: body,
