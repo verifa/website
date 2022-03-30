@@ -1,45 +1,41 @@
 ---
 type: Job
-title: 'Cloud Architect'
-subheading: Seeking a cloud architect to help deliver expert services around all things
-  continuous, cloud and devops to our customers
+title: 'Cloud Architect (Azure specialist)'
+subheading: Seeking a cloud architect, specialised in Azure, to help deliver expert services around all things continuous, cloud and devops to our customers
 authors:
   - verifa
 tags:
 - Continuous Delivery
 - DevOps
 - Software Architecture
-date: 2022-03-18T21:00:00Z
-image: "/blogs/2020-09-14/main.svg"
+date: 2022-03-30T21:00:00Z
+image: "/blogs/jobs/job-cloud-architect-azure.png"
 jobActive: true
 
 ---
-**Possible Locations:**
+### A bit about us
 
-Helsinki, Finland | Göteborg, Sweden
+We’re an experienced crew of DevOps and Cloud professionals dedicated to helping our customers with Continuous practices and Cloud adoption. We're not your typical consultancy house! When it comes to our consulting, we always put the customer's interests first and use open source products as much as possible. We’re also a HashiCorp partner and regularly use their products to solve customer challenges. We're looking for the next person to join us, who shares our values of being open, honest and providing no bulls**t consulting to our customers! [Find out more about us here](https://verifa.io/company).
 
-**Salary and benefits**
+### What you’ll do
 
-* Salary €5,000-6,500 per month, depending on experience
-* VeriFriday - every Friday (or 20% of work time) dedicated to professional development
-* Country-specific benefits for lunch, culture, phone, etc.
-* Option plan and bonus plan
+The role of a Cloud Architect at Verifa is mainly a technical one, providing services and advice to our customers.
 
-<br/><br/>
+Most of our projects involve public cloud providers (GCP, AWS, Azure) and our role is often to help our customers introduce more modern approaches to maintaining infrastructure and deploying applications. The nature of this work varies from project to project. Sometimes our role is to migrate on-premise environments into more modern and cloud-native approaches in the cloud. In other projects we boost ongoing activities.
 
-Verifa is an independent and privately owned group with the single aim of providing expert knowledge and services to our valued customers. When it comes to our consulting, we always put the customer's interests first and use open source products as much as possible. We're looking for the next person to join us, who shares our values of being open, honest and providing no bulls**t consulting to our customers!
+You’re expected to have a strong foundation in Linux, VMs, Containers, Orchestrators and Networking. You should be familiar with DevOps-style practices (such as CI, Infrastructure as Code, Test Automation, Monitoring). We don’t expect you to know everything, because nobody does, but we expect you to be able to learn, develop yourself and deliver to the best of your ability.
 
-The role of a Cloud Architect at Verifa is mainly a technical one, providing services and advice to our customers. But there is also an opportunity to develop other skills, such as public writing or speaking, getting involved with pre-sales activities, or steering on-going marketing activities.
+We expect that you will work independently and interact directly with our customers, and be able to effectively present your work, and any research or planning that you have done.
 
 ### Must Haves
 
-* Solid experience with Linux
-* Solid experience with Networking
+* Solid understanding and experience of Linux fundamentals
+* Solid understanding and experience of Networking fundamentals
 * Ability to develop scripts and understand code with at least one major language (e.g. Python, Golang, C, Java, etc.)
+* Experienced with Azure
 
 ### Should Haves
 
-* Experience with at least one cloud provider
 * Experience with infrastructure or configuration automation through tools like Terraform and Ansible
 * Experience with VM and container technologies
 * Understand the need for orchestrators and have experience with at least one (e.g. Kubernetes, Nomad or Docker Swarm)
@@ -61,17 +57,39 @@ The list of technologies depends on the customer project. Hence, what we have tr
 * **CI/CD:** Jenkins, GitLab CI, FluxCD
 * **Cloud Providers:** AWS, Azure, GCP, VMWare
 
-### Description
 
-We're not your typical consultancy house! We provide our customers with niche services around all things continuous, cloud and DevOps. Our projects are aimed at providing not individual consultants but the combined knowledge of Verifa. Teamwork is a crucial part of our customer's success, where we share problems and ideas internally as much as possible. This also fosters a great opportunity to learn and discover technologies that you might not be directly working with. As such, we expect you to work well with our other consultants and be happy to help support colleagues on other projects with the expectation that someone will return the favour to you.
-In order to provide expert consultancy services, our consultants need to constantly develop themselves and learn new technologies. To support this, we aim to give our consultants 20% of their working time to learn new technologies, write blog posts, study and take certifications, and/or give talks at conferences.
+We aim to provide our customers not only with individual consultants but with the combined knowledge of Verifa. Teamwork is a crucial part of our customer's success, where we share problems and ideas internally as much as possible. This fosters a great opportunity to learn and discover technologies that you might not be directly working with. As such, we expect you to work well with our other consultants and be happy to help support colleagues on other projects with the expectation that someone will return the favour to you.
 
-Most of our projects involve public cloud providers (GCP, AWS, Azure) and our role is often to help our customers introduce more modern approaches to maintaining infrastructure and deploying applications. The nature of this work varies from project to project. Sometimes our role is to migrate on-premise environments into more modern and cloud-native approaches in the cloud. Other projects we just boost ongoing activities and try to bring the collective Verifa knowledge pool into that project.
+We’re a small company and as such, you’ll have the opportunity to influence how the company operates, choose the projects you work on, and the tech that you work with. As well as developing your technical chops, there’s also an opportunity to develop other skills, such as blog writing, public speaking, getting involved with pre-sales activities, or steering on-going marketing activities.
 
-You are expected to have a strong foundation in Linux, VMs, Containers, Orchestrators and Networking. You should be familiar with DevOps-style practices (such as CI, Infrastructure as Code, Test Automation, Monitoring). We do not expect you to know everything, because nobody does, but we expect you to be able to learn, develop yourself and deliver to the best of your ability.
+We want to work with the best people, no matter their background. So if you’re passionate about all things cloud and continuous, and want to learn new things, you’ll fit right in. 
 
-We don't expect you to give presentations on topics you do not feel comfortable with, and we do not expect you to perform sales work. We do expect you to work independently and interact directly with our customers, and be able to effectively present your work, and any research or planning that you have done.
+> *I feel like I’ve found my professional home in Verifa. A place where professionals are treated with respect and have a say in their own work and the company itself.*
+> 
 
-We believe in open source values and try to support the open source community through our work.
+*Lauri Suomalainen, Cloud Architect*
 
-If this kind of role sounds interesting to you, please provide us with your CV. If your profile and experience look suitable, we'll have a 15-30 minute discovery session. We use this time to give you more information about Verifa and ask questions, and for us to understand your goals to make sure there is a common interest.
+[Read more from Lauri here](https://verifa.io/blog/one-year-at-verifa-a-retrospective).
+
+### Work time and salary
+
+- Salary range is €5,000 - €6,500 per month
+- Full-time, 37.5 hours per week (flexible)
+- Our office is in Helsinki, sometimes we work there, sometimes elsewhere
+- English proficiency is required for this role, Finnish is not expected
+- We operate an open salary policy
+
+### Benefits
+
+- VeriFriday: 20% of working time dedicated to upskilling
+- [VeriConf](https://verifa.io/blog/vericonf-2021-re-connecting-learning-and-teamwork): our annual company get together
+- Join or establish your own side/hobby project
+- Regular knowledge sharing sessions and after work activities
+- Comprehensive occupational health care
+- Sports and Culture benefit
+- Lunch vouchers
+- Tools you need (laptop, phone, etc.)
+
+### What’s next
+
+Please send us your application and CV. If we think there’s a good potential match we’ll schedule a 15-30 minute discovery call to get to know each other a bit better.
