@@ -15,7 +15,27 @@ const config = {
 
 	remarkPlugins: [],
 	rehypePlugins: [
-		rehypeExternalLinks, rehypeSlug, rehypeAutolinkHeadings
+		rehypeExternalLinks, rehypeSlug,
+		[
+			rehypeAutolinkHeadings,
+			{
+				behavior: 'prepend',
+				// TODO: would be nice to get a proper icon ref
+				// content: {
+				// 	type: 'element',
+				// 	tagName: 'span',
+				// 	properties: {
+				// 		className: ['hidden']
+				// 	},
+				// 	children: [
+				// 		{
+				// 			type: 'text',
+				// 			value: '#'
+				// 		}
+				// 	]
+				// }
+			}
+		]
 	]
 };
 
