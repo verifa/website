@@ -6,7 +6,8 @@ const config = {
 	extensions: ['.svelte.md', '.md', '.svx'],
 
 	layout: {
-		_: "./src/lib/posts/layout.svelte"
+		_: "./src/lib/posts/layout.svelte",
+		job: "./src/lib/posts/layout-job.svelte"
 	},
 
 	smartypants: {

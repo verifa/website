@@ -1,11 +1,12 @@
 <script>
+	import CareersForm from '$lib/careers/careersForm.svelte';
+
 	import { crewNameById } from '$lib/crew/crew';
 
 	import { seo } from '$lib/seo/store';
 
 	import PostBadges from './postBadges.svelte';
 	import PostGrid from './postGrid.svelte';
-	import { getSimilarBlogs } from './posts';
 
 	export let type;
 	export let title;
@@ -25,8 +26,6 @@
 		published_time: new Date(date),
 		modified_time: new Date(date)
 	};
-
-	const similarBlogs = getSimilarBlogs(title, tags);
 </script>
 
 <svelte:head>
@@ -49,23 +48,8 @@
 		</div>
 		<slot />
 	</article>
-	<hr />
 	<section>
-		<h2>Comments</h2>
-		<script
-			src="https://utteranc.es/client.js"
-			repo="verifa/website"
-			issue-term="pathname"
-			label="blog"
-			theme="boxy-light"
-			crossorigin="anonymous"
-			async>
-		</script>
+		<h2>Apply now!</h2>
+		<CareersForm />
 	</section>
-	{#if type != 'Job'}
-		<section>
-			<h2>Read similar posts</h2>
-			<PostGrid posts={similarBlogs.blogs} showBadges={false} />
-		</section>
-	{/if}
 </div>

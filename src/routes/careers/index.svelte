@@ -25,8 +25,8 @@
 	import type { Jobs, Post } from '$lib/posts/posts';
 	import PostGrid from '$lib/posts/postGrid.svelte';
 	import HeaderLine from '../_headerLine.svelte';
-	import Form from './_form.svelte';
 	import { seo } from '$lib/seo/store';
+	import CareersForm from '$lib/careers/careersForm.svelte';
 
 	export let data: Jobs;
 
@@ -91,5 +91,5 @@
 	<h1>Join our crew.</h1>
 </section>
 <section>
-	<Form />
+	<CareersForm />
 </section>

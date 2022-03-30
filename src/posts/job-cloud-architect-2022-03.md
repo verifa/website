@@ -1,5 +1,6 @@
 ---
 type: Job
+layout: job
 title: 'Cloud Architect (Azure specialist)'
 subheading: Seeking a cloud architect, specialised in Azure, to help deliver expert services around all things continuous, cloud and devops to our customers
 authors:

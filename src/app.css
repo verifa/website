@@ -84,7 +84,7 @@
     main {
         @apply bg-v-white mx-auto max-w-7xl px-8 sm:px-16;
     }
-    section {
+    section, article {
         @apply mb-20 md:mb-24 lg:mb-32;
     }
 
@@ -100,6 +100,22 @@
     .v-link {
         @apply text-v-gray underline;
     }
+}
+
+/* 
+Blog styles
+*/
+#blog-container pre {
+    @apply mb-12;
+}
+/* 
+Podcast blog-flex class
+*/
+#blog-container .blog-flex {
+    @apply flex gap-x-4;
+}
+#blog-container a {
+    @apply underline;
 }
 
 /* 
