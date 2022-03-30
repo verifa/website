@@ -87,6 +87,13 @@
     section {
         @apply mb-20 md:mb-24 lg:mb-32;
     }
+
+    blockquote {
+        @apply text-2xl font-semibold leading-loose mb-12 pl-6 border-l-4 border-v-lilac;
+    }
+    cite {
+        @apply text-xl font-light;
+    }
 }
 
 @layer components {

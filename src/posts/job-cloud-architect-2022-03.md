@@ -62,30 +62,34 @@ We aim to provide our customers not only with individual consultants but with th
 
 We’re a small company and as such, you’ll have the opportunity to influence how the company operates, choose the projects you work on, and the tech that you work with. As well as developing your technical chops, there’s also an opportunity to develop other skills, such as blog writing, public speaking, getting involved with pre-sales activities, or steering on-going marketing activities.
 
-We want to work with the best people, no matter their background. So if you’re passionate about all things cloud and continuous, and want to learn new things, you’ll fit right in. 
+We want to work with the best people, no matter their background. So if you’re passionate about all things cloud and continuous, and want to learn new things, you’ll fit right in.
 
-> *"I feel like I’ve found my professional home in Verifa. A place where professionals are treated with respect and have a say in their own work and the company itself."*
-*- Lauri Suomalainen, Cloud Architect*
-[Read more from Lauri here](https://verifa.io/blog/one-year-at-verifa-a-retrospective).
+<blockquote>
+  ‘I feel like I’ve found my professional home in Verifa. A place where professionals are treated with respect and have a say in their own work and the company itself.’
+  <br/>
+  <cite>- Lauri Suomalainen, Cloud Architect. </cite>
+</blockquote>
+
+[Read more from Lauri here](https://verifa.io/blog/one-year-at-verifa-a-retrospective)
 
 ### Work time and salary
 
-- Salary range is €5,000 - €6,500 per month
-- Full-time, 37.5 hours per week (flexible)
-- Our office is in Helsinki, sometimes we work there, sometimes elsewhere
-- English proficiency is required for this role, Finnish is not expected
-- We operate an open salary policy
+* Salary range is €5,000 - €6,500 per month
+* Full-time, 37.5 hours per week (flexible)
+* Our office is in Helsinki, sometimes we work there, sometimes elsewhere
+* English proficiency is required for this role, Finnish is not expected
+* We operate an open salary policy
 
 ### Benefits
 
-- VeriFriday: 20% of working time dedicated to upskilling
-- [VeriConf](https://verifa.io/blog/vericonf-2021-re-connecting-learning-and-teamwork): our annual company get together
-- Join or establish your own side/hobby project
-- Regular knowledge sharing sessions and after work activities
-- Comprehensive occupational health care
-- Sports and Culture benefit
-- Lunch vouchers
-- Tools you need (laptop, phone, etc.)
+* VeriFriday: 20% of working time dedicated to upskilling
+* [VeriConf](https://verifa.io/blog/vericonf-2021-re-connecting-learning-and-teamwork): our annual company get together
+* Join or establish your own side/hobby project
+* Regular knowledge sharing sessions and after work activities
+* Comprehensive occupational health care
+* Sports and Culture benefit
+* Lunch vouchers
+* Tools you need (laptop, phone, etc.)
 
 ### What’s next
 
