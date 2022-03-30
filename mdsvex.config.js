@@ -2,6 +2,8 @@ import rehypeExternalLinks from "rehype-external-links";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
+import { h, s } from 'hastscript'
+
 const config = {
 	extensions: ['.svelte.md', '.md', '.svx'],
 
@@ -20,21 +22,38 @@ const config = {
 		[
 			rehypeAutolinkHeadings,
 			{
+				// Prepend link to header
 				behavior: 'prepend',
-				// TODO: would be nice to get a proper icon ref
-				// content: {
-				// 	type: 'element',
-				// 	tagName: 'span',
-				// 	properties: {
-				// 		className: ['hidden']
-				// 	},
-				// 	children: [
-				// 		{
-				// 			type: 'text',
-				// 			value: '#'
-				// 		}
-				// 	]
-				// }
+				properties: {
+					// Add class to <a> element
+					class: 'group header-anchor-link'
+				},
+				content(node) {
+					// Add class to each header
+					node.properties.class = 'group header-anchor'
+					return [
+						// Add link svg from heroicons
+						h(
+							'span',
+							s('svg', {
+								xmlns: 'http://www.w3.org/2000/svg',
+								// Add custom classes, including header-anchor-icon-hx depending on size of header
+								class: `header-anchor-icon header-anchor-icon-${node.tagName}`,
+								fill: "none",
+								viewBox: "0 0 24 24",
+								stroke: "currentColor",
+								'stroke-width': "2"
+							}, [
+								s('path', {
+									'stroke-linecap': "round",
+									'stroke-linejoin': "round",
+									d: "M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+								})
+							])
+						),
+					]
+
+				}
 			}
 		]
 	]

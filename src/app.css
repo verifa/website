@@ -96,12 +96,6 @@
     }
 }
 
-@layer components {
-    .v-link {
-        @apply text-v-gray underline;
-    }
-}
-
 /* 
 Blog styles
 */
@@ -117,6 +111,41 @@ Podcast blog-flex class
 #blog-container a {
     @apply underline;
 }
+
+/* 
+ * BEGIN blog header anchors
+ */
+.header-anchor {
+    @apply flex items-center;
+}
+
+.header-anchor-link {
+    @apply absolute;
+}
+
+.header-anchor-icon {
+    @apply transition-opacity duration-500 text-v-lilac opacity-0 group-hover:opacity-100;
+}
+
+/* Icon size and offset for different header sizes */
+.header-anchor-icon-h2 {
+    @apply h-7 w-7 -ml-8;
+}
+.header-anchor-icon-h3 {
+    @apply h-6 w-6 -ml-8;
+}
+.header-anchor-icon-h4 {
+    @apply h-5 w-5 -ml-8;
+}
+.header-anchor-icon-h5 {
+    @apply h-4 w-4 -ml-8;
+}
+.header-anchor-icon-h6 {
+    @apply h-3 w-3 -ml-8;
+}
+/* 
+ * END blog header anchors
+ */
 
 /* 
 text-xl	    font-size: 1.25rem;
