@@ -13,7 +13,6 @@ image: "/blogs/jobs/job-cloud-architect-azure.png"
 jobActive: true
 
 ---
-### A bit about us
 
 We’re an experienced crew of DevOps and Cloud professionals dedicated to helping our customers with Continuous practices and Cloud adoption. We're not your typical consultancy house! When it comes to our consulting, we always put the customer's interests first and use open source products as much as possible. We’re also a HashiCorp partner and regularly use their products to solve customer challenges. We're looking for the next person to join us, who shares our values of being open, honest and providing no bulls**t consulting to our customers! [Find out more about us here](https://verifa.io/company).
 
@@ -32,7 +31,7 @@ We expect that you will work independently and interact directly with our custom
 * Solid understanding and experience of Linux fundamentals
 * Solid understanding and experience of Networking fundamentals
 * Ability to develop scripts and understand code with at least one major language (e.g. Python, Golang, C, Java, etc.)
-* Experienced with Azure
+* Experience with Azure
 
 ### Should Haves
 
@@ -57,6 +56,7 @@ The list of technologies depends on the customer project. Hence, what we have tr
 * **CI/CD:** Jenkins, GitLab CI, FluxCD
 * **Cloud Providers:** AWS, Azure, GCP, VMWare
 
+### A bit about us
 
 We aim to provide our customers not only with individual consultants but with the combined knowledge of Verifa. Teamwork is a crucial part of our customer's success, where we share problems and ideas internally as much as possible. This fosters a great opportunity to learn and discover technologies that you might not be directly working with. As such, we expect you to work well with our other consultants and be happy to help support colleagues on other projects with the expectation that someone will return the favour to you.
 
@@ -64,11 +64,8 @@ We’re a small company and as such, you’ll have the opportunity to influence 
 
 We want to work with the best people, no matter their background. So if you’re passionate about all things cloud and continuous, and want to learn new things, you’ll fit right in. 
 
-> *I feel like I’ve found my professional home in Verifa. A place where professionals are treated with respect and have a say in their own work and the company itself.*
-> 
-
-*Lauri Suomalainen, Cloud Architect*
-
+> *"I feel like I’ve found my professional home in Verifa. A place where professionals are treated with respect and have a say in their own work and the company itself."*
+*- Lauri Suomalainen, Cloud Architect*
 [Read more from Lauri here](https://verifa.io/blog/one-year-at-verifa-a-retrospective).
 
 ### Work time and salary
