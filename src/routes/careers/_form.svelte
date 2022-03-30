@@ -52,7 +52,7 @@
 			<label for="newsletter" class="block mb-0">Subscribe to our monthly newsletter</label>
 		</div>
 		<div>
-			<button type="submit">Submit</button>
+			<button class="bg-v-black" type="submit">Submit</button>
 		</div>
 		<p>
 			By submitting this form you agree to our <a href="/privacy" class="underline"
