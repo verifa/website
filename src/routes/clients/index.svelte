@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Column from '$lib/column.svelte';
 	import Columns from '$lib/columns.svelte';
-	import HeaderLine from '../_headerLine.svelte';
+	import HeaderLine from '$lib/headerLine.svelte';
 	import Testimonial from './_testimonial.svelte';
 
 	import ClientLogos from '$lib/clients/clientLogos.svelte';

@@ -24,7 +24,7 @@
 
 	import type { Jobs, Post } from '$lib/posts/posts';
 	import PostGrid from '$lib/posts/postGrid.svelte';
-	import HeaderLine from '../_headerLine.svelte';
+	import HeaderLine from '$lib/headerLine.svelte';
 	import { seo } from '$lib/seo/store';
 	import CareersForm from '$lib/careers/careersForm.svelte';
 

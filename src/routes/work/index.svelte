@@ -4,7 +4,7 @@
 	import CtaButton from '$lib/ctaButton.svelte';
 	import Grid from '$lib/grid.svelte';
 	import { seo } from '$lib/seo/store';
-	import HeaderLine from './_headerLine.svelte';
+	import HeaderLine from '$lib/headerLine.svelte';
 
 	seo.reset();
 	$seo.title = 'What we do: Continuous Delivery and Cloud Architecture';

@@ -5,7 +5,7 @@
 	import CompanyValues from '$lib/company/companyValues.svelte';
 	import Grid from '$lib/grid.svelte';
 	import { config, seo } from '$lib/seo/store';
-	import HeaderLine from '../_headerLine.svelte';
+	import HeaderLine from '$lib/headerLine.svelte';
 
 	seo.reset();
 	$seo.title = 'About us: Consulting is our game';
