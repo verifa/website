@@ -12,7 +12,7 @@ featured: false
 jobActive: false
 
 ---
-**In the beginning of the year, we at Verifa decided to adopt an open salary policy. This means that every person’s salary, including the founder’s, are transparently documented in the company’s internal knowledge base.  This is a part of our initiative of increasing openness, fairness and employee involvement within the company.  After the initial proposal, only a brief discussion was needed before the whole company unanimously agreed to the policy.**
+**In the beginning of the year, we at Verifa decided to adopt an open salary policy. This means that every person’s salary, including the founders', are transparently documented in the company’s internal knowledge base.  This is a part of our initiative of increasing openness, fairness and employee involvement within the company.  After the initial proposal, only a brief discussion was needed before the whole company unanimously agreed to the policy.**
 
 ---
 
