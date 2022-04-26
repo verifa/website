@@ -55,47 +55,29 @@ const ignoredKeywords: string[] = [
     "Data Science"
 ]
 
-export const getBlogsBySlug = (slug: string): any => {
-    return getPostBySlug(slug, blogTypes)
-}
-
-export const getJobsBySlug = (slug: string): any => {
-    return getPostBySlug(slug, jobTypes)
-}
-
-const getPostBySlug = (slug: string, postTypes: string[]): any => {
-    const rawPosts = import.meta.globEager("../../posts/*.md")
-    for (const key in rawPosts) {
-        const rawPost = rawPosts[key]
-        // Filter types that don't match
-        if (!postTypes.includes(rawPost.metadata.type)) {
-            continue
-        }
-        if (slug === getSlug(key)) {
-            return rawPosts[key].default
-        }
-    }
-    return null
-}
-
-export const getSimilarBlogs = (title: string, keywords: string[]): Blogs => {
-    const blogs = getBlogs()
-    return {
-        blogs: blogs.blogs.filter((blog) => {
-            // Make sure we don't return the current blog post as a similar one
-            if (blog.title === title) {
-                return false
-            }
-            for (let index = 0; index < keywords.length; index++) {
-                const keyword = keywords[index];
-                if (!blog.tags.includes(keyword)) {
+export async function getRelatedBlogs(fetch: any, title: string, keywords: string[]): Promise<Blogs> {
+    const res = await fetch("/posts/blogs.json");
+    if (res.ok) {
+        return {
+            blogs: (await res.json()).blogs.filter((blog) => {
+                // Make sure we don't return the current blog post as a similar one
+                if (blog.title === title) {
                     return false
                 }
-            }
-            return true
-        }).slice(0, 3),
-        // Not needed for similar posts
-        keywords: []
+                for (let index = 0; index < keywords.length; index++) {
+                    const keyword = keywords[index];
+                    // If there is even one match, then return it
+                    if (blog.tags.includes(keyword)) {
+                        return true
+                    }
+                }
+                return false
+            }).slice(0, 3),
+            // Not needed for similar posts
+            keywords: []
+        }
+    } else {
+        return Promise.reject(res.text())
     }
 }
 

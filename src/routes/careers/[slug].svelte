@@ -1,23 +1,21 @@
-<script context="module" lang="ts">
-	import { getJobsBySlug } from '$lib/posts/posts';
-
+<script context="module">
 	import NotFound from './notFound.svelte';
-
-	export function load({ params }) {
-		const post = getJobsBySlug(params.slug);
-		if (post !== null) {
+	export const load = async ({ params }) => {
+		try {
+			const post = await import(`../../posts/${params.slug}.md`);
 			return {
 				props: {
-					post: post
+					post: post.default
+				}
+			};
+		} catch (error) {
+			return {
+				props: {
+					post: NotFound
 				}
 			};
 		}
-		return {
-			props: {
-				post: NotFound
-			}
-		};
-	}
+	};
 </script>
 
 <script lang="ts">
