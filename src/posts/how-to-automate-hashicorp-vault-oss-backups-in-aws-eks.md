@@ -15,9 +15,9 @@ featured: true
 
 ---
 
-**[HashiCorp Vault](https://www.vaultproject.io/) is an API-driven tool for storing and retrieving static and dynamic secrets. Vault can be deployed in a Kubernetes cluster using the [official Helm chart](‣). The recommended storage for Vault in Kubernetes is the [integrated raft storage]([https://www.vaultproject.io/docs/configuration/storage/raft](https://www.vaultproject.io/docs/configuration/storage/raft)) and frequent snapshots of Vault should be taken and stored, making it possible to restore Vault in case of data loss.**
+**[HashiCorp Vault](https://www.vaultproject.io/) is an API-driven tool for storing and retrieving static and dynamic secrets. Vault can be deployed in a Kubernetes cluster using the [official Helm chart](‣). The recommended storage for Vault in Kubernetes is the [integrated raft storage](https://www.vaultproject.io/docs/configuration/storage/raft) and frequent snapshots of Vault should be taken and stored, making it possible to restore Vault in case of data loss.**
 
-In this post we will walk through an implementation using a [Kubernetes CronJob]([https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)) to take daily snapshots and store them in an AWS S3 bucket for safe keeping. Note that Vault Enterprise makes backups a [native feature]([https://www.vaultproject.io/docs/enterprise/automated-integrated-storage-snapshots](https://www.vaultproject.io/docs/enterprise/automated-integrated-storage-snapshots)) that should be used if you have that version.
+In this post we will walk through an implementation using a [Kubernetes CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) to take daily snapshots and store them in an AWS S3 bucket for safe keeping. Note that Vault Enterprise makes backups a [native feature](https://www.vaultproject.io/docs/enterprise/automated-integrated-storage-snapshots) that should be used if you have that version.
 
 ## Write a Kubernetes CronJob
 
@@ -190,7 +190,7 @@ data "aws_iam_policy_document" "snapshot" {
 
 So far we have a Kubernetes ServiceAccount which can assume an AWS IAM role which has access to S3. What’s missing is the authentication with Vault.
 
-You could use the [Vault AWS Auth Engine]([https://www.vaultproject.io/docs/auth/aws](https://www.vaultproject.io/docs/auth/aws)) and use the same AWS role for that. However, in our case we use Vault to provide secrets to Kubernetes workloads and therefore already have multiple EKS clusters authenticated with Vault so it made sense to reuse that logic, and that’s what we will show below.
+You could use the [Vault AWS Auth Engine](https://www.vaultproject.io/docs/auth/aws) and use the same AWS role for that. However, in our case we use Vault to provide secrets to Kubernetes workloads and therefore already have multiple EKS clusters authenticated with Vault so it made sense to reuse that logic, and that’s what we will show below.
 
 This is quite an involved process, and could make it’s own blog post, but a summary of what we will do is:
 
