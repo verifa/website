@@ -15,7 +15,7 @@ featured: true
 
 ---
 
-**[HashiCorp Vault]([https://www.vaultproject.io/](https://www.vaultproject.io/)) is an API-driven tool for storing and retrieving static and dynamic secrets. Vault can be deployed in a Kubernetes cluster using the [official Helm chart](‣). The recommended storage for Vault in Kubernetes is the [integrated raft storage]([https://www.vaultproject.io/docs/configuration/storage/raft](https://www.vaultproject.io/docs/configuration/storage/raft)) and frequent snapshots of Vault should be taken and stored, making it possible to restore Vault in case of data loss.**
+**[HashiCorp Vault](https://www.vaultproject.io/) is an API-driven tool for storing and retrieving static and dynamic secrets. Vault can be deployed in a Kubernetes cluster using the [official Helm chart](‣). The recommended storage for Vault in Kubernetes is the [integrated raft storage]([https://www.vaultproject.io/docs/configuration/storage/raft](https://www.vaultproject.io/docs/configuration/storage/raft)) and frequent snapshots of Vault should be taken and stored, making it possible to restore Vault in case of data loss.**
 
 In this post we will walk through an implementation using a [Kubernetes CronJob]([https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)) to take daily snapshots and store them in an AWS S3 bucket for safe keeping. Note that Vault Enterprise makes backups a [native feature]([https://www.vaultproject.io/docs/enterprise/automated-integrated-storage-snapshots](https://www.vaultproject.io/docs/enterprise/automated-integrated-storage-snapshots)) that should be used if you have that version.
 
