@@ -5,7 +5,8 @@
 
 	import PostBadges from './postBadges.svelte';
 	import PostGrid from './postGrid.svelte';
-	import { getSimilarBlogs } from './posts';
+
+	export let relatedBlogs = [];
 
 	export let type;
 	export let title;
@@ -25,8 +26,6 @@
 		published_time: new Date(date),
 		modified_time: new Date(date)
 	};
-
-	const similarBlogs = getSimilarBlogs(title, tags);
 </script>
 
 <svelte:head>
@@ -65,7 +64,7 @@
 	{#if type != 'Job'}
 		<section>
 			<h2>Read similar posts</h2>
-			<PostGrid posts={similarBlogs.blogs} showBadges={false} />
+			<PostGrid posts={relatedBlogs} showBadges={false} />
 		</section>
 	{/if}
 </div>

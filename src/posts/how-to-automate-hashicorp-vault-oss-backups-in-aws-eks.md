@@ -15,7 +15,7 @@ featured: true
 
 ---
 
-**[HashiCorp Vault](https://www.vaultproject.io/) is an API-driven tool for storing and retrieving static and dynamic secrets. Vault can be deployed in a Kubernetes cluster using the [official Helm chart](‣). The recommended storage for Vault in Kubernetes is the [integrated raft storage](https://www.vaultproject.io/docs/configuration/storage/raft) and frequent snapshots of Vault should be taken and stored, making it possible to restore Vault in case of data loss.**
+**[HashiCorp Vault](https://www.vaultproject.io/) is an API-driven tool for storing and retrieving static and dynamic secrets. Vault can be deployed in a Kubernetes cluster using the [official Helm chart](https://github.com/hashicorp/vault-helm). The recommended storage for Vault in Kubernetes is the [integrated raft storage](https://www.vaultproject.io/docs/configuration/storage/raft) and frequent snapshots of Vault should be taken and stored, making it possible to restore Vault in case of data loss.**
 
 In this post we will walk through an implementation using a [Kubernetes CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) to take daily snapshots and store them in an AWS S3 bucket for safe keeping. Note that Vault Enterprise makes backups a [native feature](https://www.vaultproject.io/docs/enterprise/automated-integrated-storage-snapshots) that should be used if you have that version.
 
@@ -27,10 +27,10 @@ Let’s start with the CronJob and go backwards from there, because in order for
 ---
 apiVersion: batch/v1
 kind: CronJob
-	metadata:
+ metadata:
   name: vault-snapshot-cronjob
 spec:
-	# Set your desired cron schedule
+ # Set your desired cron schedule
   schedule: "0 2 * * 1-5"
   successfulJobsHistoryLimit: 10
   failedJobsHistoryLimit: 3
@@ -38,43 +38,43 @@ spec:
     spec:
       template:
         spec:
-					# Use a ServiceAccount that we will create next (keep reading!)
+           # Use a ServiceAccount that we will create next (keep reading!)
           serviceAccountName: vault-snapshot
           volumes:
-						# Create an empty drive to share the snapshot across containers
+          # Create an empty drive to share the snapshot across containers
             - name: share
               emptyDir: {}
           initContainers:
-						# Run an init container that creates the the snapshot of Vault
+            # Run an init container that creates the the snapshot of Vault
             - name: vault-snapshot
-							# Choose an appropriate Vault version (e.g. same as your Vault setup)
+              # Choose an appropriate Vault version (e.g. same as your Vault setup)
               image: vault:1.9.4
               command: ["/bin/sh", "-c"]
               args:
-								# 1. Get the ServiceAccount token which we will use to authenticate against Vault
-								# 2. Login to Vault using the SA token at the endpoint where the Kubernetes auth engine
-								#    has been enabled
-								# 3. Use the Vault CLI to store a snapshot in our empty volume
+                # 1. Get the ServiceAccount token which we will use to authenticate against Vault
+                # 2. Login to Vault using the SA token at the endpoint where the Kubernetes auth engine
+                #    has been enabled
+                # 3. Use the Vault CLI to store a snapshot in our empty volume
                 - |
                   SA_TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token);
                   export VAULT_TOKEN=$(vault write -field=token auth/kubernetes/login jwt=$SA_TOKEN role=vault-snapshot);
                   vault operator raft snapshot save /share/vault.snap;
               env:
-								# Set the Vault address using the Kubernetes service name
+                # Set the Vault address using the Kubernetes service name
                 - name: VAULT_ADDR
                   value: http://vault.vault.svc.cluster.local:8200
               volumeMounts:
                 - mountPath: /share
                   name: share
           containers:
-						# Run a container with the AWS CLI and copy the snapshot to our S3 bucket
+            # Run a container with the AWS CLI and copy the snapshot to our S3 bucket
             - name: aws-s3-backup
               image: amazon/aws-cli:2.2.14
               command:
                 - /bin/sh
               args:
                 - -ec
-								# Copy the snapshot file to an S3 bucket called hashicorp-vault-snapshots
+                # Copy the snapshot file to an S3 bucket called hashicorp-vault-snapshots
                 - aws s3 cp /share/vault.snap s3://hashicorp-vault-snapshots/vault_$(date +"%Y%m%d_%H%M%S").snap;
               volumeMounts:
                 - mountPath: /share
@@ -97,19 +97,19 @@ kind: ServiceAccount
 metadata:
   name: vault-snapshot
   annotations:
-		# Assume the AWS role hashicorp-vault-snapshotter
+    # Assume the AWS role hashicorp-vault-snapshotter
     eks.amazonaws.com/role-arn: arn:aws:iam::<ACCOUNT_ID>:role/hashicorp-vault-snapshotter
 ```
 
-Notice how we add the annotation to assume the AWS role `hashicorp-vault-snapshotter`. For details on assuming AWS IAM roles from EKS, please read our [blog post on that topic](./how-to-assume-an-aws-iam-role-from-a-service-account-in-eks-with-terraform).
+Notice how we add the annotation to assume the AWS role `hashicorp-vault-snapshotter`. For details on assuming AWS IAM roles from EKS, please read our [blog post on that topic](../how-to-assume-an-aws-iam-role-from-a-service-account-in-eks-with-terraform/).
 
 ### Define an AWS IAM Role
 
 Let’s define the AWS IAM role `hashicorp-vault-snapshotter` and make the `vault-snapshot`ServiceAccount a trusted entity that can assume that role.
 
-```yaml
+```hcl
 locals {
-  vault_cluster = "<eks-cluster-name>"
+  vault_cluster                 = "<eks-cluster-name>"
   k8s_service_account_name      = "vault-snapshot"
   k8s_service_account_namespace = "vault"
   vault_cluster_oidc_issuer_url = trimprefix(data.aws_eks_cluster.vault_cluster.identity[0].oidc[0].issuer, "https://")
@@ -152,7 +152,7 @@ resource "aws_iam_role" "snapshot" {
             "s3:PutObject",
             "s3:GetObject",
           ],
-					# Refer to the S3 bucket we created along the way
+          # Refer to the S3 bucket we created along the way
           Resource = ["${aws_s3_bucket.snapshots.arn}/*"]
         }
       ]
@@ -202,7 +202,7 @@ This is quite an involved process, and could make it’s own blog post, but a su
     1. `kubernetes` is the default mount path, so you probably want to use something like `kube-<eks-cluster-name>` so that you can authenticate with multiple clusters
 3. Configure the Kubernetes auth engine using the Kubernetes ServiceAccount we created in step 1
 
-```yaml
+```hcl
 locals {
   namespace = "vault-client"
 }
@@ -253,7 +253,7 @@ data "kubernetes_secret" "this" {
 # 
 resource "vault_auth_backend" "this" {
   type = "kubernetes"
-	# Make this something else for multiple clusters
+  # Make this something else for multiple clusters
   path = "kubernetes"
 }
 
@@ -263,7 +263,7 @@ resource "vault_auth_backend" "this" {
 # 
 resource "vault_kubernetes_auth_backend_config" "this" {
   backend                = vault_auth_backend.this.path
-	# Get the EKS endpoint from somewhere, like a `aws_eks_cluster` data block
+  # Get the EKS endpoint from somewhere, like a `aws_eks_cluster` data block
   kubernetes_host        = var.cluster.endpoint
   kubernetes_ca_cert     = data.kubernetes_secret.auth.data["ca.crt"]
   token_reviewer_jwt     = data.kubernetes_secret.auth.data["token"]
@@ -278,7 +278,7 @@ Now that we have a Kubernetes auth engine mounted and configured, we need to cre
 
 We need this Vault policy. Let’s store it in a file such as `policies/sys-snapshot-read.hcl`
 
-```yaml
+```hcl
 path "sys/storage/raft/snapshot" {
   capabilities = ["read"]
 }
@@ -286,7 +286,7 @@ path "sys/storage/raft/snapshot" {
 
 And now the Terraform code to create the Vault role.
 
-```yaml
+```hcl
 #
 # Create a Vault policy based of a template
 #
@@ -319,7 +319,7 @@ resource "vault_kubernetes_auth_backend_role" "this" {
 
 The CronJob is currently set to run daily, and we probably want to test this without waiting for the CronJob each time... I would be amazed if you get this working first time - if so, **you owe me at least one beer!**
 
-```yaml
+```bash
 # Let's do our work in a separate namespace
 kubectl create namespace vault-snapshot
 
@@ -348,7 +348,7 @@ Once you get this working you should have a snapshot stored in your AWS S3 bucke
 
 We found the quickest and easiest way to test a restore was to spin up a dev instance of Vault in EKS without persistent storage, initialise the fresh vault instance and restore the snapshot.
 
-```yaml
+```bash
 # First download the snapshot from S3, e.g. via the AWS Console (UI)
 ls vault_20220325_082239.snap
 

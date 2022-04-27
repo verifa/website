@@ -1,27 +1,31 @@
 <script context="module" lang="ts">
-	import { getBlogsBySlug } from '$lib/posts/posts';
-
-	import NotFound from './notFound.svelte';
-
-	export function load({ params }) {
-		const post = getBlogsBySlug(params.slug);
-		if (post !== null) {
+	export const load = async ({ params, fetch }) => {
+		try {
+			const post = await import(`../../posts/${params.slug}.md`);
+			const { title, tags } = post.metadata;
+			const relatedBlogs = await getRelatedBlogs(fetch, title, tags);
 			return {
 				props: {
-					post: post
+					post: post.default,
+					relatedBlogs: relatedBlogs.blogs
+				}
+			};
+		} catch (error) {
+			return {
+				props: {
+					post: NotFound
 				}
 			};
 		}
-		return {
-			props: {
-				post: NotFound
-			}
-		};
-	}
+	};
 </script>
 
 <script lang="ts">
-	export let post;
+	import { getRelatedBlogs, type Post } from '$lib/posts/posts';
+	import NotFound from '../careers/notFound.svelte';
+
+	export let post = null;
+	export let relatedBlogs: Post[];
 </script>
 
-<svelte:component this={post} />
+<svelte:component this={post} {relatedBlogs} />
