@@ -13,15 +13,9 @@
 		/>
 	</div>
 
-	<!-- <div class="space-y-2"> -->
 	<div>
-		<h3>{member.name}</h3>
-		<p>
-			{member.bio}
-		</p>
-	</div>
-	<ul class="flex space-x-5 list-none">
-		<li>
+		<h3 class="mb-4">{member.name}</h3>
+		<div class="flex items-center gap-x-4">
 			<a href={member.linkedin} class="text-v-beige hover:text-gray-500">
 				<span class="sr-only">LinkedIn</span>
 				<svg
@@ -37,7 +31,10 @@
 					/>
 				</svg>
 			</a>
-		</li>
+			<h4 class="my-0">{member.position}</h4>
+		</div>
+	</div>
+	<ul class="flex space-x-5 list-none">
+		<li />
 	</ul>
-	<!-- </div> -->
 </div>
