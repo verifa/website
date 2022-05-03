@@ -11,7 +11,7 @@
 
 <section>
 	<h4>Experts in all things Continuous and Cloud</h4>
-	<h1>Our Team.</h1>
+	<h1>Our Crew.</h1>
 </section>
 <section>
 	<ul
