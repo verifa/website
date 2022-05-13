@@ -1,3 +1,22 @@
+<script context="module" lang="ts">
+	export async function load({ fetch }) {
+		const postsUrl = `/posts/cases.json`;
+		const res = await fetch(postsUrl);
+		if (res.ok) {
+			return {
+				props: {
+					data: await res.json()
+				}
+			};
+		}
+
+		return {
+			status: res.status,
+			error: new Error(`Could not load ${postsUrl}`)
+		};
+	}
+</script>
+
 <script lang="ts">
 	import Column from '$lib/column.svelte';
 	import Columns from '$lib/columns.svelte';
@@ -8,6 +27,10 @@
 	import CtaButton from '$lib/ctaButton.svelte';
 	import Grid from '$lib/grid.svelte';
 	import { seo } from '$lib/seo/store';
+	import type { Cases } from '$lib/posts/posts';
+	import PostGrid from '$lib/posts/postGrid.svelte';
+
+	export let data: Cases;
 
 	seo.reset();
 	$seo.title = 'Our clients: we care and we deliver';
@@ -20,6 +43,11 @@
 		person: string;
 		logo: string;
 	}[] = [
+		{
+			text: 'Verifa helped lead discussions around many topics which was useful in gaining a common understanding of what we can do to improve. We are very happy with the report Verifa prepared for us.',
+			person: 'Olli Suihkonen, Visma',
+			logo: '/clients/visma.svg'
+		},
 		{
 			text: "A key and crucial part of our Continuous Integration journey was having Verifa's involvement in holding-our-hands and giving us confidence while we moved our active projects to a CI methodology.",
 			person: 'David Hoslett, Siemens Mobility',
@@ -64,6 +92,16 @@
 	</Columns>
 </section>
 <section>
+	<HeaderLine />
+	<h4>Cases</h4>
+	<h1>How we have helped our clients.</h1>
+</section>
+<section>
+	<PostGrid showBadges={false} posts={data.cases} />
+</section>
+<section>
+	<HeaderLine />
+	<h4>Quotes</h4>
 	<h1>What our clients say about us.</h1>
 </section>
 <section>

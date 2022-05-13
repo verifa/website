@@ -1,5 +1,5 @@
 <script context="module">
-	import NotFound from './notFound.svelte';
+	import NotFound from './_notFound.svelte';
 	export const load = async ({ params }) => {
 		try {
 			const post = await import(`../../posts/${params.slug}.md`);

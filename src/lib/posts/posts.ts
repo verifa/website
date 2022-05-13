@@ -4,6 +4,11 @@ export interface Blogs {
     keywords: string[]
 }
 
+export interface Cases {
+    cases: Post[]
+    keywords: string[]
+}
+
 export interface Jobs {
     jobs: Post[]
     keywords: string[]
@@ -17,6 +22,7 @@ export interface Post {
     authors: string[];
     tags: string[];
     date: Date;
+    previewImage?: string;
     image: string;
     featured: boolean;
 
@@ -25,6 +31,7 @@ export interface Post {
 
 export enum PostType {
     Blog = "Blog",
+    Case = "Case",
     Event = "Event",
     Job = "Job"
 }
@@ -32,8 +39,8 @@ export enum PostType {
 export const blogTypes = [PostType.Blog, PostType.Event]
 export const jobTypes = [PostType.Job]
 
-const getSlug = (key: string): string =>
-    key.substring('../../posts/'.length, key.lastIndexOf('.'));
+const getSlug = (path: string): string =>
+    path.split("/").at(-1).replace(".md", "");
 
 // orderKeywords takes a list of keywords (with possible duplicates)
 // and returns an ordered list by the number of occurences of each keyword
@@ -161,13 +168,45 @@ export const getJobs = (limit: number = -1): Jobs => {
     }
 }
 
+export const getCases = (limit: number = -1): Cases => {
+    let posts: Post[] = [];
+    let keywords: string[] = []
+
+    const rawPosts = import.meta.globEager("../../posts/cases/*.md")
+    for (const key in rawPosts) {
+        const rawPost = rawPosts[key]
+        const post: Post = {
+            slug: getSlug(key),
+            ...rawPost.metadata,
+        }
+
+        posts.push(post)
+        post.tags.forEach((tag) => {
+            keywords.push(tag)
+        })
+    }
+
+    // Sort the posts by date and apply any limit on them
+    posts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
+    if (limit > 0) {
+        posts = posts.slice(0, limit)
+    }
+
+    return {
+        cases: posts,
+        keywords: orderKeywords(keywords),
+    }
+}
+
 export const getPostUrl = (post: Post): string => {
-    switch (post.type.toLowerCase()) {
-        case "blog":
-        case "event":
+    switch (post.type) {
+        case PostType.Blog:
+        case PostType.Event:
             return `/blog/${post.slug}`
-        case "job":
+        case PostType.Job:
             return `/careers/${post.slug}`
+        case PostType.Case:
+            return `/clients/${post.slug}`
         default:
             return "/404"
     }

@@ -1,6 +1,5 @@
 <script context="module" lang="ts">
 	export async function load({ fetch }) {
-		// Append the search query to the blogs url
 		const postsUrl = `/posts/blogs.json`;
 		const res = await fetch(postsUrl);
 		if (res.ok) {
