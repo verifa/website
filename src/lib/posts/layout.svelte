@@ -5,6 +5,7 @@
 
 	import PostBadges from './postBadges.svelte';
 	import PostGrid from './postGrid.svelte';
+import { PostType } from './posts';
 
 	export let relatedBlogs = [];
 
@@ -61,7 +62,7 @@
 			async>
 		</script>
 	</section>
-	{#if type != 'Job'}
+	{#if type != PostType.Case}
 		<section>
 			<h2>Read similar posts</h2>
 			<PostGrid posts={relatedBlogs} showBadges={false} />
