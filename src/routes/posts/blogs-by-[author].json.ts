@@ -1,10 +1,9 @@
 import { getBlogs } from "$lib/posts/posts";
 
-export async function get({ }) {
-
+export async function get({ params }) {
     return {
         body: {
-            ...getBlogs({ limit: 3 })
+            ...getBlogs({ author: params.author })
         }
     };
 }

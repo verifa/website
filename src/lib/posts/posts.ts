@@ -88,7 +88,13 @@ export async function getRelatedBlogs(fetch: any, title: string, keywords: strin
     }
 }
 
-export const getBlogs = (limit: number = -1, featured: boolean = false): Blogs => {
+export interface BlogQuery {
+    limit?: number;
+    featured?: boolean;
+    author?: string;
+}
+
+export const getBlogs = (query: BlogQuery = {}): Blogs => {
     let posts: Post[] = [];
     let keywords: string[] = [];
 
@@ -114,12 +120,16 @@ export const getBlogs = (limit: number = -1, featured: boolean = false): Blogs =
     // Sort the posts by date
     posts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
     // If searching for featured posts, first remove those that are not featured
-    if (featured) {
+    if (query.featured) {
         posts = posts.filter((post) => post.featured)
     }
     // Apply any limit on them
-    if (limit > 0) {
-        posts = posts.slice(0, limit)
+    if (query.limit > 0) {
+        posts = posts.slice(0, query.limit)
+    }
+    // Check if filter by author
+    if (query.author) {
+        posts = posts.filter((post) => post.authors.includes(query.author))
     }
 
     return {
