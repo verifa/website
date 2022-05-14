@@ -2,7 +2,7 @@
     "alarfors": {
         "active": true,
         "name": "Andreas Lärfors",
-        "position": "Partner and Consultant",
+        "position": "Partner & Consultant",
         "country": "Sweden",
         "linkedin": "https://www.linkedin.com/in/andreas-l%C3%A4rfors-51253270/"
     },
@@ -78,26 +78,32 @@
     },
     "verifa": {
         "active": false,
-        "name": "Verifa"
+        "name": "Verifa",
+        "position": "Company"
     },
     "jelderfield": {
         "active": false,
-        "name": "James Elderfield"
+        "name": "James Elderfield",
+        "image": "/crew/avatar.svg"
     },
     "amackay": {
         "active": false,
-        "name": "Adam Mackay"
+        "name": "Adam Mackay",
+        "image": "/crew/avatar.svg"
     },
     "ksoranko": {
         "active": false,
-        "name": "Kalle Soranko"
+        "name": "Kalle Soranko",
+        "image": "/crew/avatar.svg"
     },
     "slaitinen": {
         "active": false,
-        "name": "Sakari Laitinen"
+        "name": "Sakari Laitinen",
+        "image": "/crew/avatar.svg"
     },
     "mrosenlund": {
         "active": false,
-        "name": "Mika Rosenlund"
+        "name": "Mika Rosenlund",
+        "image": "/crew/avatar.svg"
     }
 }

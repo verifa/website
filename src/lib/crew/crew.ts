@@ -14,9 +14,11 @@ export interface Member {
 export const allCrew = (): Member[] => {
     let crew: Member[] = [];
     Object.keys(crewJSON).forEach(function (key) {
+        const member = crewJSON[key]
         crew.push({
             id: key,
-            ...crewJSON[key],
+            image: `/crew/${member.image ? member.image : `${key}.svg`}`,
+            ...member,
         })
     });
     return crew

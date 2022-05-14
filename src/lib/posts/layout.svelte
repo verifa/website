@@ -1,11 +1,11 @@
 <script>
-	import { crewNameById } from '$lib/crew/crew';
+	import { crewByID } from '$lib/crew/crew';
 
 	import { seo } from '$lib/seo/store';
 
 	import PostBadges from './postBadges.svelte';
 	import PostGrid from './postGrid.svelte';
-import { PostType } from './posts';
+	import { PostType } from './posts';
 
 	export let relatedBlogs = [];
 
@@ -16,6 +16,8 @@ import { PostType } from './posts';
 	export let tags;
 	export let date;
 	export let image;
+
+	const crewAuthors = authors.map((id) => crewByID(id));
 
 	seo.reset();
 	$seo.title = title;
@@ -34,7 +36,7 @@ import { PostType } from './posts';
 </svelte:head>
 
 <div class="max-w-5xl mx-auto">
-	<article id="blog-container">
+	<article>
 		<div class="mb-8">
 			<div class="mb-8">
 				<img src={image} alt={title} />
@@ -45,9 +47,23 @@ import { PostType } from './posts';
 				<PostBadges {type} {tags} />
 			</div>
 			<p class="mb-4">Published on {new Date(date).toDateString()}</p>
-			<p class="mb-4">Authors: {authors.map((a) => crewNameById(a)).join(', ')}</p>
+			<h4>Authors</h4>
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 sm:gap-y-8">
+				{#each crewAuthors as author}
+					<a href="/crew/{author.id}" class="group">
+						<div class="flex gap-x-4 items-center">
+							<img src={author.image} alt={author.id} class="h-16 w-16" />
+							<div>
+								<h5 class="mb-0 group-hover:text-v-lilac">{author.name}</h5>
+							</div>
+						</div>
+					</a>
+				{/each}
+			</div>
 		</div>
-		<slot />
+		<div id="blog-container">
+			<slot />
+		</div>
 	</article>
 	<hr />
 	<section>
