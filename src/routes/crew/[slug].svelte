@@ -30,9 +30,12 @@
 	import { crewByID, type Member } from '$lib/crew/crew';
 	import PostGrid from '$lib/posts/postGrid.svelte';
 	import type { Blogs } from '$lib/posts/posts';
+	import { seo } from '$lib/seo/store';
 
 	export let member: Member;
 	export let blogs: Blogs;
+
+	seo.reset();
 </script>
 
 {#if member.active}
