@@ -55,3 +55,6 @@ After the workshop, Verifa compiled a report highlighting the findings and inclu
   <br/>
   <cite>- Olli Suihkonen, Senior Manager, Visma Software Oy.</cite>
 </blockquote>
+
+
+Can we help you with your Continuous Delivery journey? [Get in touch](https://verifa.io/contact/) and let’s chat!
