@@ -9,7 +9,7 @@ tags:
 - Rancher
 date: 2022-05-19
 image: "/blogs/remove-rancher-from-kubernetes-cluster.png"
-featured: true
+featured: false
 
 ---
 
