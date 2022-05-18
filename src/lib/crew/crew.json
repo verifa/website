@@ -4,77 +4,88 @@
         "name": "Andreas Lärfors",
         "position": "Partner & Consultant",
         "country": "Sweden",
-        "linkedin": "https://www.linkedin.com/in/andreas-l%C3%A4rfors-51253270/"
+        "linkedin": "https://www.linkedin.com/in/andreas-l%C3%A4rfors-51253270/",
+        "bio": "Andreas specialises in static code analysis, test automation, release management and build optimisation. He explores spirituality through yoga and meditation, but that doesn't stop him from chasing the adrenaline rush of driving fast cars and aggressive rollerblading."
     },
     "arigo": {
         "active": true,
         "name": "Albert Rigo",
         "position": "Consultant",
         "country": "Sweden",
-        "linkedin": "https://www.linkedin.com/in/albertrigo"
+        "linkedin": "https://www.linkedin.com/in/albertrigo",
+        "bio": "Albert’s specialities are CI/CD, coaching, improving development flow and implementing change. A self-described “geek who enjoys ball sports and the great outdoors”, Albert likes to spend time with his family, home automation, fantasy books and playing board games. Albert has even created a CI/CD board game!"
     },
     "avijayan": {
         "active": true,
         "name": "Anoop Vijayan",
         "position": "Consultant",
         "country": "Finland",
-        "linkedin": "https://www.linkedin.com/in/anoopvijayan"
+        "linkedin": "https://www.linkedin.com/in/anoopvijayan",
+        "bio": "Anoop is a DevOps expert with over 15 years experience in implementing CI/CD systems and test automation. In his spare time Anoop enjoys writing technical blogs, playing ball games, and spending time with his family."
     },
     "bnystrom": {
         "active": true,
         "name": "Bosse Nyström",
         "position": "Consultant",
         "country": "Sweden",
-        "linkedin": "https://www.linkedin.com/in/bossenystrom/"
+        "linkedin": "https://www.linkedin.com/in/bossenystrom/",
+        "bio": "Bosse holds not only a PhD in physics, but also has over twenty years' experience in embedded SW development. As well as a hugely impressive CV, Bosse's passions outside of the development world lie in food, beer and a strong love of all things Japanese."
     },
     "ckurowski": {
         "active": true,
         "name": "Carole Kurowski",
         "position": "Growth Lead",
         "country": "Finland",
-        "linkedin": "https://www.linkedin.com/in/carolekurowski/"
+        "linkedin": "https://www.linkedin.com/in/carolekurowski/",
+        "bio": "Originally from the UK, Carole spent several years living in Shanghai before arriving here in Finland. She has a background in events, project management, entrepreneurship and marketing. A self-described tea nerd, Carole’s also into board games, yoga, and running."
     },
     "hhirvonen": {
         "active": true,
         "name": "Hanna Hirvonen",
         "position": "Consultant",
         "country": "Finland",
-        "linkedin": "https://www.linkedin.com/in/hannahirvonen/"
+        "linkedin": "https://www.linkedin.com/in/hannahirvonen/",
+        "bio": "Hanna’s main interests lie in the area of test automation with a particular focus on usability and user experience. Hanna is also studying HR and developing Verifa's HR practices. She practices yoga and enjoys arts and crafts in her spare time."
     },
     "jlarfors": {
         "active": true,
         "name": "Jacob Lärfors",
         "position": "CEO & Consultant",
         "country": "Finland",
-        "linkedin": "https://www.linkedin.com/in/jlarfors/"
+        "linkedin": "https://www.linkedin.com/in/jlarfors/",
+        "bio": "Jacob was born in Sweden, grew up in England, and settled in Finland. He’s the co-founder of Verifa and has years of experience with cloud technologies and continuous practices. When he's not working with technology Jacob might be seen juggling, practising jazz piano, rollerblading, or solving complex Rubik's cubes."
     },
     "lsuomalainen": {
         "active": true,
         "name": "Lauri Suomalainen",
         "position": "Consultant",
         "country": "Finland",
-        "linkedin": "https://www.linkedin.com/in/lauri-suomalainen/"
+        "linkedin": "https://www.linkedin.com/in/lauri-suomalainen/",
+        "bio": "Lauri enjoys working with public clouds and automation. He has previously tinkered with OpenStack and AWS but is currently most excited about Google Cloud Platform and Kubernetes. Besides geeky stuff Lauri is an avid climber, plays guitar in a band and is a board game fanatic."
     },
     "mvainio": {
         "active": true,
         "name": "Mike Vainio",
         "position": "Consultant",
         "country": "Finland",
-        "linkedin": "https://www.linkedin.com/in/mike-vainio-428628153/"
+        "linkedin": "https://www.linkedin.com/in/mike-vainio-428628153/",
+        "bio": "Mike has several years of industry experience with a focus on DevOps and Cloud. He’s a big fan of automation which stems from a deep aversion to doing the same thing twice! Besides techie stuff, Mike likes to spend time with his family, has a passion for building cars, and tries to get to the gym."
     },
     "slarfors": {
         "active": true,
         "name": "Susie Lärfors",
         "position": "Finances",
         "country": "Sweden",
-        "linkedin": "https://www.linkedin.com/in/susie-l-964a5664/"
+        "linkedin": "https://www.linkedin.com/in/susie-l-964a5664/",
+        "bio": "Susie is Jacob and Andreas’ mum, and the custodian of Verifa's finances with a background in economics and accounting. Susie loves the great outdoors and can usually be found gardening, walking or playing golf. She also likes to travel to new places as often as she can."
     },
     "tlacour": {
         "active": true,
         "name": "Thierry Lacour",
         "position": "Consultant",
         "country": "Sweden",
-        "linkedin": "https://www.linkedin.com/in/thlac"
+        "linkedin": "https://www.linkedin.com/in/thlac",
+        "bio": "Thierry has a decade of software development and consultancy experience under his belt. Off duty, he plays board games and video games, and expresses his creative side through music, painting and game development. Thierry’s also a die-hard fan of the hit classic film Dragonheart, and very knowledgeable about Pokémon! "
     },
     "verifa": {
         "active": false,
