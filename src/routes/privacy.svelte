@@ -189,6 +189,8 @@
 	<li>Ubersuggest</li>
 	<li>MailChimp</li>
 	<li>Usebasin</li>
+	<li>Plausible</li>
+	<li>ahrefs</li>
 </ul>
 <h3>Your Rights and Controlling Your Personal Information</h3>
 <p>
