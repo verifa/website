@@ -96,6 +96,18 @@
     }
 }
 
+code {
+    font-family: monospace;
+    font-size: inherit;
+}
+
+p > code,
+li > code,
+dd > code,
+td > code {
+    @apply bg-violet-100 font-medium break-words border-r-2 px-2;
+}
+
 /* 
 Blog styles
 */
