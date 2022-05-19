@@ -7,6 +7,7 @@ export interface Member {
     position: string;
     country: string;
     linkedin: string;
+    github: string;
     bio: string;
     image?: string;
 }

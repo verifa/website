@@ -5,6 +5,7 @@
         "position": "Partner & Consultant",
         "country": "Sweden",
         "linkedin": "https://www.linkedin.com/in/andreas-l%C3%A4rfors-51253270/",
+        "github": "andreaslarfors",
         "bio": "Andreas specialises in static code analysis, test automation, release management and build optimisation. He explores spirituality through yoga and meditation, but that doesn't stop him from chasing the adrenaline rush of driving fast cars and aggressive rollerblading."
     },
     "arigo": {
@@ -13,6 +14,7 @@
         "position": "Consultant",
         "country": "Sweden",
         "linkedin": "https://www.linkedin.com/in/albertrigo",
+        "github": "kvarak",
         "bio": "Albert’s specialities are CI/CD, coaching, improving development flow and implementing change. A self-described “geek who enjoys ball sports and the great outdoors”, Albert likes to spend time with his family, home automation, fantasy books and playing board games. Albert has even created a CI/CD board game!"
     },
     "avijayan": {
@@ -21,6 +23,7 @@
         "position": "Consultant",
         "country": "Finland",
         "linkedin": "https://www.linkedin.com/in/anoopvijayan",
+        "github": "maniankara",
         "bio": "Anoop is a DevOps expert with over 15 years experience in implementing CI/CD systems and test automation. In his spare time Anoop enjoys writing technical blogs, playing ball games, and spending time with his family."
     },
     "bnystrom": {
@@ -29,6 +32,7 @@
         "position": "Consultant",
         "country": "Sweden",
         "linkedin": "https://www.linkedin.com/in/bossenystrom/",
+        "github": "drBosse",
         "bio": "Bosse holds not only a PhD in physics, but also has over twenty years' experience in embedded SW development. As well as a hugely impressive CV, Bosse's passions outside of the development world lie in food, beer and a strong love of all things Japanese."
     },
     "ckurowski": {
@@ -37,6 +41,7 @@
         "position": "Growth Lead",
         "country": "Finland",
         "linkedin": "https://www.linkedin.com/in/carolekurowski/",
+        "github": "rubyrat",
         "bio": "Originally from the UK, Carole spent several years living in Shanghai before arriving here in Finland. She has a background in events, project management, entrepreneurship and marketing. A self-described tea nerd, Carole’s also into board games, yoga, and running."
     },
     "hhirvonen": {
@@ -45,6 +50,7 @@
         "position": "Consultant",
         "country": "Finland",
         "linkedin": "https://www.linkedin.com/in/hannahirvonen/",
+        "github": "hannahi",
         "bio": "Hanna’s main interests lie in the area of test automation with a particular focus on usability and user experience. Hanna is also studying HR and developing Verifa's HR practices. She practices yoga and enjoys arts and crafts in her spare time."
     },
     "jlarfors": {
@@ -53,6 +59,7 @@
         "position": "CEO & Consultant",
         "country": "Finland",
         "linkedin": "https://www.linkedin.com/in/jlarfors/",
+        "github": "jlarfors",
         "bio": "Jacob was born in Sweden, grew up in England, and settled in Finland. He’s the co-founder of Verifa and has years of experience with cloud technologies and continuous practices. When he's not working with technology Jacob might be seen juggling, practising jazz piano, rollerblading, or solving complex Rubik's cubes."
     },
     "lsuomalainen": {
@@ -61,6 +68,7 @@
         "position": "Consultant",
         "country": "Finland",
         "linkedin": "https://www.linkedin.com/in/lauri-suomalainen/",
+        "github": "Fleuri",
         "bio": "Lauri enjoys working with public clouds and automation. He has previously tinkered with OpenStack and AWS but is currently most excited about Google Cloud Platform and Kubernetes. Besides geeky stuff Lauri is an avid climber, plays guitar in a band and is a board game fanatic."
     },
     "mvainio": {
@@ -69,6 +77,7 @@
         "position": "Consultant",
         "country": "Finland",
         "linkedin": "https://www.linkedin.com/in/mike-vainio-428628153/",
+        "github": "mvainio-verifa",
         "bio": "Mike has several years of industry experience with a focus on DevOps and Cloud. He’s a big fan of automation which stems from a deep aversion to doing the same thing twice! Besides techie stuff, Mike likes to spend time with his family, has a passion for building cars, and tries to get to the gym."
     },
     "slarfors": {
@@ -85,6 +94,7 @@
         "position": "Consultant",
         "country": "Sweden",
         "linkedin": "https://www.linkedin.com/in/thlac",
+        "github": "praqma-thi",
         "bio": "Thierry has a decade of software development and consultancy experience under his belt. Off duty, he plays board games and video games, and expresses his creative side through music, painting and game development. Thierry’s also a die-hard fan of the hit classic film Dragonheart, and very knowledgeable about Pokémon! "
     },
     "verifa": {
