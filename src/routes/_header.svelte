@@ -6,30 +6,34 @@
 		text: string;
 		url: string;
 	}
-	const links: Link[] = [
+	const navLinks: Link[] = [
 		{
 			text: 'What we do',
-			url: '/work'
+			url: '/work/'
 		},
 		{
 			text: 'About us',
-			url: '/company'
+			url: '/company/'
+		},
+		{
+			text: 'Crew',
+			url: '/crew/'
 		},
 		{
 			text: 'Clients',
-			url: '/clients'
+			url: '/clients/'
 		},
 		{
 			text: 'Careers',
-			url: '/careers'
+			url: '/careers/'
 		},
 		{
 			text: 'Blog',
-			url: '/blog'
+			url: '/blog/'
 		},
 		{
 			text: 'Contact',
-			url: '/contact'
+			url: '/contact/'
 		}
 	];
 
@@ -68,59 +72,55 @@
 
 	<div class="relative pt-6 px-8 sm:px-16 pb-12">
 		<div bind:this={mobileMenu}>
-			<div class="mx-auto">
-				<nav
-					class="relative flex items-center justify-between sm:h-10 md:justify-end"
-					aria-label="Global"
-				>
-					<div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
-						<div class="flex items-center justify-between w-full md:w-auto">
-							<a href="/">
-								<span class="sr-only">verifa</span>
-								<img class="mt-2 h-8 w-auto sm:h-12" src="/verifa-logo.svg" alt="" />
-							</a>
-							<div class="-mr-2 flex items-center md:hidden">
-								<button
-									type="button"
-									class="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-v-black hover:text-gray-700 hover:bg-gray-100 focus:outline-none "
-									aria-expanded="false"
-									on:click={() => (showMenu = !showMenu)}
-								>
-									<span class="sr-only">Open main menu</span>
-									<!-- Heroicon name: outline/menu -->
-									<svg
-										class="h-6 w-6"
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-										aria-hidden="true"
-									>
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M4 6h16M4 12h16M4 18h16"
-										/>
-									</svg>
-								</button>
-							</div>
-						</div>
+			<nav class="mx-auto flex items-center justify-between gap-x-8" aria-label="Global">
+				<div class="flex items-center">
+					<div class="flex items-center justify-between">
+						<a href="/">
+							<span class="sr-only">verifa</span>
+							<img class="h-8 w-auto md:h-12 " src="/verifa-logo.svg" alt="" />
+						</a>
 					</div>
+				</div>
 
-					<div class="hidden md:flex md:space-x-10">
-						{#each links as link}
-							<a
-								href={link.url}
-								class="text-xl text-v-black hover:text-gray-900 font-normal {link.url ===
-								$page.url.pathname
-									? 'border-b-2 border-v-black'
-									: ''}">{link.text}</a
-							>
-						{/each}
-					</div>
-				</nav>
-			</div>
+				<div class="hidden md:flex md:items-center md:space-x-10 md:flex-wrap">
+					{#each navLinks as link, index}
+						<a
+							href={link.url}
+							class="text-xl py-2 text-v-black hover:text-v-lilac font-normal border-b-2 border-v-black transition-all ease-in-out duration-150  {link.url ===
+							$page.url.pathname
+								? 'border-solid'
+								: 'border-transparent'}">{link.text}</a
+						>
+					{/each}
+				</div>
+				<!-- Mobile menu button -->
+				<div class="flex items-center md:hidden">
+					<button
+						type="button"
+						class="p-2 text-v-black"
+						aria-expanded="false"
+						on:click={() => (showMenu = !showMenu)}
+					>
+						<span class="sr-only">Open main menu</span>
+						<!-- Heroicon name: outline/menu -->
+						<svg
+							class="h-6 w-6"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+							aria-hidden="true"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M4 6h16M4 12h16M4 18h16"
+							/>
+						</svg>
+					</button>
+				</div>
+			</nav>
 
 			{#if showMenu}
 				<div class="absolute -z-1 top-0 inset-x-0 p-2 md:hidden">
@@ -131,37 +131,35 @@
 									<img class="h-8 w-auto" src="/verifa-logo.svg" alt="" />
 								</a>
 							</div>
-							<div class="-mr-2">
-								<button
-									type="button"
-									class="bg-v-white rounded-md p-2 inline-flex items-center justify-center text-v-black hover:text-gray-700 hover:bg-gray-100 focus:outline-none"
-									on:click={() => (showMenu = false)}
+							<button
+								type="button"
+								class="bg-v-white rounded-md p-2 inline-flex items-center justify-center text-v-black hover:text-gray-700 hover:bg-gray-100 focus:outline-none"
+								on:click={() => (showMenu = false)}
+							>
+								<span class="sr-only">Close menu</span>
+								<!-- Heroicon name: outline/x -->
+								<svg
+									class="h-6 w-6"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+									aria-hidden="true"
 								>
-									<span class="sr-only">Close menu</span>
-									<!-- Heroicon name: outline/x -->
-									<svg
-										class="h-6 w-6"
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-										aria-hidden="true"
-									>
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M6 18L18 6M6 6l12 12"
-										/>
-									</svg>
-								</button>
-							</div>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M6 18L18 6M6 6l12 12"
+									/>
+								</svg>
+							</button>
 						</div>
-						<div class="px-2 pt-2 pb-3 z-1">
-							{#each links as link}
+						<div class="px-5 pt-2 pb-3 z-1">
+							{#each navLinks as link}
 								<a
 									href={link.url}
-									class="z-1 block px-3 py-2 rounded-md text-xl text-v-black hover:text-gray-700 hover:bg-gray-50"
+									class="z-1 block py-2 rounded-md text-xl text-v-black hover:text-v-lilac"
 									on:click={() => (showMenu = false)}>{link.text}</a
 								>
 							{/each}
