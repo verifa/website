@@ -43,7 +43,7 @@ Unfortunately, we managed to sign just one [Cloud Architect](https://verifa.io/i
 
 Another major activity during 2020 – which arguably took up even more time than recruitment and marketing activities – was the launch of our internal development project for an open source tool, Bubbly.
 
-The Business Finland Crisis Funding enabled us to finally dedicate time and resources to an idea that had been brewing inside the heads of our specialists for some time. We recruited two Golang developers to join our ranks, while one of our specialists joined the team as the third developer. Later in the fall, we also hired Carole, our [Growth Lead](https://verifa.io/insights/author/carole-kurowski/), and brought in an external advisor to help our business development team.
+The Business Finland Crisis Funding enabled us to finally dedicate time and resources to an idea that had been brewing inside the heads of our specialists for some time. We recruited two Golang developers to join our ranks, while one of our specialists joined the team as the third developer. Later in the fall, we also hired Carole, our [Growth Lead](https://verifa.io/crew/ckurowski/), and brought in an external advisor to help our business development team.
 
 As of January 2021, I am proud to say we have a working version of Bubbly. And we are now piloting it with a handful of our closest customers to validate the core use cases, before its Beta launch.
 

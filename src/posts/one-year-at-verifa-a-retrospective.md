@@ -36,7 +36,7 @@ After taking that first step into Verifa, the subsequent steps have been easier 
 * Founded a Hashicorp User Group in Helsinki.
 * Developed our partnership programmes.
 * Taken up responsibilities both in recruitment and project sales.
-* Spoken in a [podcast](https://verifa.io/insights/a-first-look-at-gke-autopilot/).
+* Spoken in a [podcast](https://verifa.io/blog/a-first-look-at-gke-autopilot/).
 * Even started to practice yoga because there was an opportunity to do so!
 
 ## Flexible working
