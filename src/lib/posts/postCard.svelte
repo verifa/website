@@ -12,7 +12,8 @@
 		day: 'numeric'
 	};
 
-	const url = getPostUrl(post);
+	// Make url reactive so that it updates when the post changes
+	$: url = getPostUrl(post);
 </script>
 
 <div>
