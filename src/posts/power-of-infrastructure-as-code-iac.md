@@ -17,11 +17,11 @@ Infrastructure as Code (IaC) can seem intimidating at first glance. Especially w
 
 Creating cloud resources in this manner is *imperative* as opposed to Infrastructure as Code which is (ideally) *declarative*. With Infrastructure as Code, you define what you want on a high level and it get’s created. Dependencies between different resources, such as load balancer and a virtual machine, are automatically handled by the tool instead of typing out commands or clicking through UI in a correct sequence. 
 
-Our favourite Infrastructure as Code tool at Verifa is Terraform since it is cloud agnostic and is so widely used that it’s easy to find modules and examples. And the best part is, it’s open source! To show the true power of IaC we’re going to provision some resources in [UpCloud]([https://upcloud.com/](https://upcloud.com/)).
+Our favourite Infrastructure as Code tool at Verifa is Terraform since it is cloud agnostic and is so widely used that it’s easy to find modules and examples. And the best part is, it’s open source! To show the true power of IaC we’re going to provision some resources in [UpCloud](https://upcloud.com/).
 
 ## Creating UpCloud resources through the web console
 
-Creating cloud resources using the cloud provider’s web console is a common starting point when testing a new cloud provider, or just starting out in the cloud in general. This method which consists of mostly clicking mouse buttons is sometimes called ClickOps. Let’s create a virtual machine in UpCloud through the [web console]([https://hub.upcloud.com/](https://hub.upcloud.com/)) by clicking on the “Deploy server” button:
+Creating cloud resources using the cloud provider’s web console is a common starting point when testing a new cloud provider, or just starting out in the cloud in general. This method which consists of mostly clicking mouse buttons is sometimes called ClickOps. Let’s create a virtual machine in UpCloud through the [web console](https://hub.upcloud.com/) by clicking on the “Deploy server” button:
 
 ![](/blogs/power-of-infrastructure-as-code-iac/1-upcloud-deploy-servers.png)
 
@@ -55,7 +55,7 @@ After a summary step we get the Terraform configuration and also handy commands 
 
 Let’s follow this process to import the resources into Terraform and see if there’s any benefit of doing so. Here’s the complete configuration for the virtual machine:
 
-```jsx
+```hcl
 terraform {
   required_providers {
     upcloud = {
