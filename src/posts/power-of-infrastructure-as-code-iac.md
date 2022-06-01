@@ -1,7 +1,7 @@
 ---
 type: Blog
 title: The power of Infrastructure as Code (IaC)
-subheading: In this post we’ll give an example of how Infrastructure as Code (IaC) is so powerful, by using Terraform to provision some resources in UpCloud.
+subheading: In this post we’ll give an example of what makes Infrastructure as Code (IaC) so powerful, by using Terraform to provision resources in UpCloud.
 authors:
 - mvainio
 tags:
@@ -624,8 +624,16 @@ Now we could commit this piece of infrastructure code into a Git repository and 
 
 ## Summary
 
-We went from creating resources using a mouse to creating the same resource using a single command. Then we replicated those resources to multiple cloud regions with a few lines of code. Since the infrastructure is fully captured in code, we can save costs by removing them whenever we’re not utilising the resources.  We can also create it again from scratch without worrying about how to do that. Additionally the code actually serves as the documentation of the infrastructure, and storing it in version control gives the ability to audit changes overtime. 
+Hopefully this post has given you some ideas of how infrastructure as code tools like Terraform can help to manage your cloud infrastructure effectively. Let’s quickly recap the key takeaways:
 
-Hopefully this post has given you some ideas of how infrastructure as code tools like Terraform can help to manage your cloud infrastructure effectively.
+### Benefits of Infrastructure as Code
+
+- Create the same resource using a single command.
+- Replicate those resources to multiple cloud regions with a few lines of code.
+- Save costs by removing resources when not in use.
+- Easily recreate resources from scratch.
+- The code serves as the documentation of the infrastructure.
+- Storing the code in version control gives the ability to audit changes overtime.
+
 
 If you have any questions, feedback or want help with Infrastructure as Code please leave us a comment or [get in touch here!](https://verifa.io/contact/)
