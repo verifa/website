@@ -49,7 +49,7 @@ Firstly we select the type of resource to export and then the resource itself:
 
 ![](/blogs/power-of-infrastructure-as-code-iac/6-upcloud-select-resources.png)
 
-After a summary step we get the Terraform configuration and also handy commands on how to import this resource into Terraform [state]([https://www.terraform.io/language/state](https://www.terraform.io/language/state)) which means we can start managing the resource using Terraform now:
+After a summary step we get the Terraform configuration and also handy commands on how to import this resource into Terraform [state](https://www.terraform.io/language/state) which means we can start managing the resource using Terraform now:
 
 ![](/blogs/power-of-infrastructure-as-code-iac/7-upcloud-export-to-terraform.png)
 
@@ -106,7 +106,7 @@ resource "upcloud_server" "my-vm_2" {
 
 Firstly, the above configuration is copied into a `main.tf` file and then we can initialise Terraform which downloads the official UpCloud Terraform provider to our local machine:
 
-```bash
+```
 $ tree
 .
 └── main.tf
@@ -148,9 +148,9 @@ export UPCLOUD_USERNAME=<username>
 export UPCLOUD_PASSWORD=<password>
 ```
 
-For more details refer to UpCloud’s [getting started with Terraform tutorial]([https://upcloud.com/community/tutorials/get-started-terraform/](https://upcloud.com/community/tutorials/get-started-terraform/)). Now with credentials in place, let’s import the virtual machine and its storage into the Terraform state:
+For more details refer to UpCloud’s [getting started with Terraform tutorial](https://upcloud.com/community/tutorials/get-started-terraform/). Now with credentials in place, let’s import the virtual machine and its storage into the Terraform state:
 
-```bash
+```
 $ terraform import upcloud_storage.my-vm_Device_1_2 017db31a-acf1-49f8-8806-8359d7159f79
 upcloud_storage.my-vm_Device_1_2: Importing from ID "017db31a-acf1-49f8-8806-8359d7159f79"...
 upcloud_storage.my-vm_Device_1_2: Import prepared!
@@ -176,7 +176,7 @@ your Terraform state and will henceforth be managed by Terraform.
 
 Now finally let’s make sure our state and configuration copied from the UpCloud console matches the deployed virtual machine:
 
-```bash
+```
 $ terraform plan
 upcloud_storage.my-vm_Device_1_2: Refreshing state... [id=017db31a-acf1-49f8-8806-8359d7159f79]
 upcloud_server.my-vm_2: Refreshing state... [id=00d510e0-b940-4c57-a836-4692311b60b4]
@@ -192,7 +192,7 @@ Now we can manage the virtual machine using Terraform.
 
 Let’s say we want to destroy the machine because we don’t want to pay for it when we’re not actively using the machine. Now that we have defined the infrastructure as code, it’s not likely that we would forget how to recreate it! Destroying the resources with Terraform is done with `terraform destroy`:
 
-```bash
+```
 $ terraform destroy                                                                 wir-demo eu-west-1 aws | VG-A-33858-Dev-SW Build Servers az
 upcloud_storage.my-vm_Device_1_2: Refreshing state... [id=017db31a-acf1-49f8-8806-8359d7159f79]
 upcloud_server.my-vm_2: Refreshing state... [id=00d510e0-b940-4c57-a836-4692311b60b4]
@@ -276,7 +276,7 @@ After one simple command and waiting 15 seconds the machine is destroyed success
 
 Let’s recreate the machine based on the configuration. If we try to do that without any changes to `main.tf`  we run into a small quirk:
 
-```diff
+```
 ╷
 │ Error: Specifying specific network is not allowed for a public interface. (NETWORK_ILLEGAL)
 │
@@ -307,7 +307,7 @@ network_interface {
 
 Now we can successfully create the infrastructure again with Terraform:
 
-```bash
+```
 $ terraform apply
 upcloud_storage.my-vm_Device_1_2: Refreshing state... [id=01b92f2c-e482-454f-be73-74a60d6c1364]
 
@@ -440,7 +440,7 @@ terraform {
 
 Now when we run the Terraform the plan will be to add several machines into different data centres: 
 
-```diff
+```
 $ terraform plan
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
@@ -620,7 +620,7 @@ locals {
 
 ## Share the code with others
 
-Now we could commit this piece of infrastructure code into a Git repository and share it with other teams who can then provision exactly the same infrastructure using `terraform apply`. Actually there’s also a built-in way of sharing code called [modules]([https://www.terraform.io/language/modules](https://www.terraform.io/language/modules)) in Terraform. This also allows versioning the code to prevent other teams from pulling possible breaking changes if they choose to pin the version.
+Now we could commit this piece of infrastructure code into a Git repository and share it with other teams who can then provision exactly the same infrastructure using `terraform apply`. Actually there’s also a built-in way of sharing code called [modules](https://www.terraform.io/language/modules) in Terraform. This also allows versioning the code to prevent other teams from pulling possible breaking changes if they choose to pin the version.
 
 ## Summary
 
