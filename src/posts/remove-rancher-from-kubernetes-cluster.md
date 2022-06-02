@@ -109,7 +109,7 @@ NAMESPACES="local c-xxx p-yyy"
 echo "Removing finalizers from namespaces"
 for ns in $NAMESPACES; do
     echo "Removing finalizers from namespace $ns"
-    kubectl patch namespace/\$0 --type=merge -p \$(kubectl get namespace/\$0 -o json | jq -Mcr '.metadata.finalizers // [] | {metadata:{finalizers:map(select(. | (contains(\"controller.cattle.io/\") or contains(\"wrangler.cattle.io/\")) | not ))}}')
+    kubectl patch namespace/\$ns --type=merge -p \$(kubectl get namespace/\$ns -o json | jq -Mcr '.metadata.finalizers // [] | {metadata:{finalizers:map(select(. | (contains(\"controller.cattle.io/\") or contains(\"wrangler.cattle.io/\")) | not ))}}')
 done
 ```
 
