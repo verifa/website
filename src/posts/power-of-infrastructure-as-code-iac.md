@@ -84,15 +84,11 @@ resource "upcloud_server" "my-vm_2" {
 
   network_interface {
     type              = "public"
-    network           = "035c9d71-ac3b-40dd-916f-cf993c408368"
-    ip_address        = "94.237.113.252"
     ip_address_family = "IPv4"
   }
 
   network_interface {
     type              = "utility"
-    network           = "03a75f5f-3ed2-4598-aee0-8ba4825de8cb"
-    ip_address        = "10.1.1.195"
     ip_address_family = "IPv4"
   }
 
@@ -193,7 +189,7 @@ Now we can manage the virtual machine using Terraform.
 Let’s say we want to destroy the machine because we don’t want to pay for it when we’re not actively using the machine. Now that we have defined the infrastructure as code, it’s not likely that we would forget how to recreate it! Destroying the resources with Terraform is done with `terraform destroy`:
 
 ```
-$ terraform destroy                                                                 wir-demo eu-west-1 aws | VG-A-33858-Dev-SW Build Servers az
+$ terraform destroy
 upcloud_storage.my-vm_Device_1_2: Refreshing state... [id=017db31a-acf1-49f8-8806-8359d7159f79]
 upcloud_server.my-vm_2: Refreshing state... [id=00d510e0-b940-4c57-a836-4692311b60b4]
 
@@ -274,38 +270,7 @@ After one simple command and waiting 15 seconds the machine is destroyed success
 
 ## Recreating the infrastructure with Terraform
 
-Let’s recreate the machine based on the configuration. If we try to do that without any changes to `main.tf`  we run into a small quirk:
-
-```
-╷
-│ Error: Specifying specific network is not allowed for a public interface. (NETWORK_ILLEGAL)
-│
-│   with upcloud_server.my-vm_2,
-│   on main.tf line 20, in resource "upcloud_server" "my-vm_2":
-│   20: resource "upcloud_server" "my-vm_2" {
-│
-
-```
-
-We have to modify the file a bit to make the configuration reusable. Since it includes some network details we can let UpCloud figure it out for us. We remove these few lines from the `main.tf`:
-
-```diff
-network_interface {
-     type              = "public"
--    network           = "035c9d71-ac3b-40dd-916f-cf993c408368"
--    ip_address        = "94.237.113.252"
-     ip_address_family = "IPv4"
-   }
-
-   network_interface {
-     type              = "utility"
--    network           = "03a75f5f-3ed2-4598-aee0-8ba4825de8cb"
--    ip_address        = "10.1.1.195"
-     ip_address_family = "IPv4"
-   
-```
-
-Now we can successfully create the infrastructure again with Terraform:
+Let’s recreate the machine based on the configuration with Terraform:
 
 ```
 $ terraform apply
@@ -371,7 +336,7 @@ upcloud_server.my-vm_2: Creation complete after 17s [id=0026b0b9-5b01-43ac-800b-
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ```
 
-All it took was 17 seconds and the virtual machine is again provisioned. We can also see in the plan that Terraform has marked the fields we removed with value `(known after apply)`  . This means that Terraform is going to figure out these values and we don’t have to.
+All it took was 17 seconds and the virtual machine is again provisioned.
 
 ## Replicating the infrastructure with Terraform
 
