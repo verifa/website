@@ -183,7 +183,6 @@
 </ul>
 <p>Third parties we currently use include:</p>
 <ul>
-	<li>Google Analytics</li>
 	<li>Hotjar</li>
 	<li>Leadfeeder</li>
 	<li>Ubersuggest</li>
