@@ -25,7 +25,7 @@
 	our site.
 </p>
 <p>This policy is effective as of 7 February 2022.</p>
-<p>Last updated: 7 February 2022</p>
+<p>Last updated: 8 June 2022</p>
 <h3>Information We Collect</h3>
 <p>
 	Information we collect falls into one of two categories: 'voluntarily provided' information and
@@ -183,13 +183,13 @@
 </ul>
 <p>Third parties we currently use include:</p>
 <ul>
-	<li>Hotjar</li>
-	<li>Leadfeeder</li>
 	<li>Ubersuggest</li>
 	<li>MailChimp</li>
 	<li>Usebasin</li>
 	<li>Plausible</li>
 	<li>ahrefs</li>
+	<li>Notion</li>
+	<li>Zapier</li>
 </ul>
 <h3>Your Rights and Controlling Your Personal Information</h3>
 <p>
@@ -246,12 +246,8 @@
 </p>
 <h3>Use of Cookies</h3>
 <p>
-	We use 'cookies' to collect information about you and your activity across our site. A cookie is a
-	small piece of data that our website stores on your computer, and accesses each time you visit, so
-	we can understand how you use our site. This helps us serve you content based on preferences you
-	have specified.
+	We do not use 'cookies' to collect information about you and your activity across our site. We use Plausible, a privacy friendly analytics tool to track usage of our website. Plausible Analytics is carried out absolutely anonymously, cookies are not set,and no personal data is collected. 
 </p>
-<p>Please refer to our Cookie Policy for more information.</p>
 <h3>Business Transfers</h3>
 <p>
 	If we or our assets are acquired, or in the unlikely event that we go out of business or enter
@@ -370,111 +366,6 @@
 	may still retain copies of your personal information that has been made public at least once, like
 	certain profile information and public comments, even after you have deleted the information from our
 	services or deactivated your account.
-</p>
-<h3>Additional Disclosures for California Compliance (US)</h3>
-<p>
-	Under California Civil Code Section 1798.83, if you live in California and your business
-	relationship with us is mainly for personal, family, or household purposes, you may ask us about
-	the information we release to other organizations for their marketing purposes.
-</p>
-<p>
-	To make such a request, please contact us using the details provided in this privacy policy with
-	“Request for California privacy information” in the subject line. You may make this type of
-	request once every calendar year. We will email you a list of categories of personal information
-	we revealed to other organisations for their marketing purposes in the last calendar year along
-	with their names and addresses. Not all personal information shared in this way is covered by
-	Section 1798.83 of the California Civil Code.
-</p>
-<h4>Do Not Track</h4>
-<p>
-	Some browsers have a “Do Not Track” feature that lets you tell websites that you do not want to
-	have your online activities tracked. At this time we do not respond to browser “Do Not Track”
-	signals.
-</p>
-<p>
-	We adhere to the standards outlined in this privacy policy ensuring we collect and process
-	personal information lawfully, fairly, transparently and with legitimate, legal reasons for doing
-	so.
-</p>
-<h4>Cookies and Pixels</h4>
-<p>
-	At all times you may decline cookies from our site if your browser permits. Most browsers allow
-	you to activate settings on your browser to refuse the setting of all or some cookies.
-	Accordingly, your ability to limit cookies is based only on your browser’s capabilities. Please
-	refer to the Cookies section of this privacy policy for more information.
-</p>
-<h4>CCPA-permitted financial incentives</h4>
-<p>
-	In accordance with your right to non-discrimination, we may offer you certain financial incentives
-	permitted by the CCPA that can result in different prices, rates, or quality levels for the goods
-	or services we provide.
-</p>
-<p>
-	Any CCPA-permitted financial incentive we offer will reasonably relate to the value of your
-	personal information and we will provide written terms that describe clearly the nature of such an
-	offer. Participation in a financial incentive program requires your prior opt-in consent, which
-	you may revoke at any time.
-</p>
-<h4>California Notice of Collection</h4>
-<p>
-	In the past 12 months, we have collected the following categories of personal information
-	enumerated in the California Consumer Privacy Act:
-</p>
-<ul>
-	<li>
-		Identifiers, such as name, email address, phone number account name, IP address, and an ID or
-		number assigned to your account.
-	</li>
-	<li>
-		Demographics, such as your age or gender. This category includes data that may qualify as
-		protected classifications under other California or federal laws.
-	</li>
-	<li>Internet activity, such as your interactions with our service.</li>
-	<li>Geolocation data.</li>
-	<li>Employment and education data such as data you provide when you apply for a job with us.</li>
-</ul>
-<p>
-	For more information on information we collect, including the sources we receive information from,
-	review the “Information We Collect” section. We collect and use these categories of personal
-	information for the business purposes described in the “Collection and Use of Information”
-	section, including to provide and manage our Service.
-</p>
-<h4>Right to Know and Delete</h4>
-<p>
-	If you are a California resident, you have rights to delete your personal information we collected
-	and know certain information about our data practices in the preceding 12 months. In particular,
-	you have the right to request the following from us:
-</p>
-<ul>
-	<li>The categories of personal information we have collected about you;</li>
-	<li>The categories of sources from which the personal information was collected;</li>
-	<li>
-		The categories of personal information about you we disclosed for a business purpose or sold;
-	</li>
-	<li>
-		The categories of third parties to whom the personal information was disclosed for a business
-		purpose or sold;
-	</li>
-	<li>
-		The business or commercial purpose for collecting or selling the personal information; and
-	</li>
-	<li>The specific pieces of personal information we have collected about you.</li>
-</ul>
-<p>
-	To exercise any of these rights, please contact us using the details provided in this privacy
-	policy.
-</p>
-<h4>Shine the Light</h4>
-<p>
-	If you are a California resident, in addition to the rights discussed above, you have the right to
-	request information from us regarding the manner in which we share certain personal information as
-	defined by California’s “Shine the Light” with third parties and affiliates for their own direct
-	marketing purposes.
-</p>
-<p>
-	To receive this information, send us a request using the contact details provided in this privacy
-	policy. Requests must include “California Privacy Rights Request” in the first line of the
-	description and include your name, street address, city, state, and ZIP code.
 </p>
 <h3>Contact Us</h3>
 <p>
