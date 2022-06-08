@@ -106,9 +106,6 @@
 								<a href="/terms" class="hover:text-v-lilac">Terms of Service</a>
 							</li>
 							<li>
-								<a href="/cookies" class="hover:text-v-lilac">Cookie Policy</a>
-							</li>
-							<li>
 								<a href="/acceptableusepolicy" class="hover:text-v-lilac">Acceptable Use Policy</a>
 							</li>
 						</ul>
