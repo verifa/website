@@ -18,12 +18,16 @@ export const clientLogos: ClientLogo[] = [
         name: 'visma'
     },
     {
-        image: '/clients/vyaire.png',
-        name: 'vyaire'
-    },
-    {
         image: '/clients/wirepas.svg',
         name: 'wirepas'
+    },
+    {
+        image: '/clients/digious.png',
+        name: 'digious'
+    },
+    {
+        image: '/clients/vyaire.png',
+        name: 'vyaire'
     },
     {
         image: '/clients/xmldation.svg',
