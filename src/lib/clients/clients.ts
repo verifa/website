@@ -22,7 +22,7 @@ export const clientLogos: ClientLogo[] = [
         name: 'wirepas'
     },
     {
-        image: '/clients/digious.png',
+        image: '/clients/digious.svg',
         name: 'digious'
     },
     {
