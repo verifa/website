@@ -1,17 +1,17 @@
 ---
 type: Job
 layout: job
-title: 'Cloud Architect (Azure specialist)'
-subheading: Seeking a cloud architect, specialised in Azure, to help deliver expert services around all things continuous, cloud and devops to our customers
+title: 'Cloud Architect'
+subheading: We're always on the lookout for talented cloud architects, to help deliver expert services around all things continuous, cloud and devops to our customers
 authors:
   - verifa
 tags:
 - Continuous Delivery
 - DevOps
 - Software Architecture
-date: 2022-03-30T21:00:00Z
-image: "/blogs/jobs/job-cloud-architect-azure.png"
-jobActive: false
+date: 2022-06-16
+image: "/blogs/jobs/job-cloud-architect.png"
+jobActive: true
 
 ---
 
@@ -32,10 +32,10 @@ We expect that you will work independently and interact directly with our custom
 * Solid understanding and experience of Linux fundamentals
 * Solid understanding and experience of Networking fundamentals
 * Ability to develop scripts and understand code with at least one major language (e.g. Python, Golang, C, Java, etc.)
-* Experience with Azure
 
 ### Should Haves
 
+* Experience with at least one cloud provider
 * Experience with infrastructure or configuration automation through tools like Terraform and Ansible
 * Experience with VM and container technologies
 * Understand the need for orchestrators and have experience with at least one (e.g. Kubernetes, Nomad or Docker Swarm)
