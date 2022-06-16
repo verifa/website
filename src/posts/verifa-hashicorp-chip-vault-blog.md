@@ -15,7 +15,7 @@ featured: false
 
 At Verifa, our crew of experienced DevOps and Cloud professionals are dedicated to helping our customers with Continuous practices and Cloud adoption. We’re big fans of the HashiCorp stack, which helps organisations adopt consistent workflows to provision, secure, connect, and run any infrastructure for any application.
 
-HashiCorp is the leader in multi-cloud infrastructure automation software. HashiCorp Vault provides the foundation for modern multi-cloud security. It was purpose-built in the cloud era to authenticate and access different clouds, systems, and endpoints, and centrally store, access, and deploy secrets (API keys, credentials, etc.). It also provides a simple workflow to encrypt data in flight and at rest.
+HashiCorp is the leader in multi-cloud infrastructure automation software. [HashiCorp Vault](https://www.hashicorp.com/products/vault) provides the foundation for modern multi-cloud security. It was purpose-built in the cloud era to authenticate and access different clouds, systems, and endpoints, and centrally store, access, and deploy secrets (API keys, credentials, etc.). It also provides a simple workflow to encrypt data in flight and at rest.
 
 > ‘We’re delighted to be the one of the first Certified HashiCorp Implementation Partners for Vault in the Nordics. We’re big fans of the Hashi-stack and use the tools on a daily basis to solve problems. It’s nice to get a badge to prove our skill and commitment, and we look forward to working more closely with HashiCorp to help our customers with all things Continuous and Cloud.’ Jacob Lärfors, CEO, Verifa
 > 
