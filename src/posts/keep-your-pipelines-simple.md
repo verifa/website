@@ -21,11 +21,11 @@ After having burnt my own fingers plenty, I’ve come to live by three simple ru
 
 Here’s my three rules to keep my pipelines more manageable and my colleagues sane:
 
-- Minimize dependencies on plugins and libraries
-- Keep build logic out of the pipeline
-- Limit layers of abstraction
+1. Minimise dependencies on plugins and libraries
+2. Keep build logic out of the pipeline
+3. Limit layers of abstraction
 
-### Minimize dependencies on plugins and libraries
+### 1. Minimise dependencies on plugins and libraries
 
 Many platforms offer plugins or tool integrations that make it seductively easy to configure and run your tools for you. However, the flip side of that particular coin is often forgotten. For each plugin or custom action you use, you increase platform lock-in, introduce a new dependency, introduce a new attack vector, and add another build step you can’t run locally.
 
@@ -58,7 +58,7 @@ Do the dirty work, rather than delegating it.
     git push origin $VERSION
 ```
 
-### Keep logic out of the pipeline
+### 2. Keep logic out of the pipeline
 
 From invoking tools to actual scripting, it’s easy to jam it all into your pipeline, but this makes it difficult to run locally. Move such logic to build scripts and have your pipelines call those instead. This allows you to run and debug your build steps locally, and keeps your pipelines focused on the build *flow*. 
 
@@ -89,7 +89,7 @@ Keep your pipeline stupid. The less it does, the better.
 		./scripts/test.sh --upload-key "$SECRET"
 ```
 
-### Limit layers of abstraction
+### 3 Limit layers of abstraction
 
 There is value in encapsulating build steps in a script or build tool of sorts. However, adding tools is easier than removing them. Think twice before introducing yet another tool or abstraction layer. Keeping your build low to the ground makes it easier to understand, troubleshoot and modify.
 
