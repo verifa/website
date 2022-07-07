@@ -89,7 +89,7 @@ Keep your pipeline stupid. The less it does, the better.
 		./scripts/test.sh --upload-key "$SECRET"
 ```
 
-### 3 Limit layers of abstraction
+### 3. Limit layers of abstraction
 
 There is value in encapsulating build steps in a script or build tool of sorts. However, adding tools is easier than removing them. Think twice before introducing yet another tool or abstraction layer. Keeping your build low to the ground makes it easier to understand, troubleshoot and modify.
 
