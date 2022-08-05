@@ -31,12 +31,24 @@
 
 	const certLogos: { name: string; image: string }[] = [
 		{
+			image: '/certifications/hashicorp-chip-vault-lilac.png',
+			name: 'hashicorp-vault-chip'
+		},
+		{
 			image: '/certifications/hashicorp-terraform-associate-lilac.png',
 			name: 'hashicorp-terraform-associate'
 		},
 		{
 			image: '/certifications/hashicorp-vault-associate-lilac.png',
 			name: 'hashicorp-vault-associate-lilac'
+		},
+		{
+			image: '/certifications/hashicorp-consul-associate-badge-lilac.png',
+			name: 'hashicorp-consul-associate'
+		},
+		{
+			image: '/certifications/kubernetes-certified-administrator-lilac.png',
+			name: 'kubernetes-certified-administrator'
 		},
 		{
 			image: '/certifications/gcp-professiona-cloud-architect-lilac.png',
@@ -49,6 +61,14 @@
 		{
 			image: '/certifications/aws-cloud-practitioner-lilac.png',
 			name: 'aws-cloud-practitioner-lilac'
+		},
+		{
+			image: '/certifications/aws-certified-developer-associate-badge-lilac.png',
+			name: 'aws-certified-developer-associate'
+		},
+		{
+			image: '/certifications/aws-certified-solutions-architect-associate-badge-lilac.png',
+			name: 'aws-certified-solutions-architect-associate'
 		}
 		// {
 		// 	image: '/certifications/hashicorp-partner-enabled-lilac.png',
