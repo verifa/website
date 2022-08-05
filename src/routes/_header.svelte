@@ -91,7 +91,7 @@
 			<div class="flex items-center justify-between">
 				<a href="/">
 					<span class="sr-only">verifa</span>
-					<img class="h-8 w-auto md:h-12 " src="/verifa-logo.svg" alt="" />
+					<img class="h-8 w-full md:h-12 " src="/verifa-logo.svg" alt="" />
 				</a>
 			</div>
 
@@ -141,7 +141,7 @@
 					<div class="px-5 pt-4 flex items-center justify-between">
 						<div>
 							<a href="/" on:click={() => (showMenu = false)}>
-								<img class="h-8 w-auto" src="/verifa-logo.svg" alt="" />
+								<img class="h-8 w-full" src="/verifa-logo.svg" alt="" />
 							</a>
 						</div>
 						<button

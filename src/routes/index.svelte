@@ -24,7 +24,6 @@
 	import ButtonLink from '$lib/buttonLink.svelte';
 	import Columns from '$lib/columns.svelte';
 	import Column from '$lib/column.svelte';
-	import ClientLogos from '$lib/clients/clientLogos.svelte';
 	import Grid from '$lib/grid.svelte';
 	import { seo } from '$lib/seo/store';
 	import MainReference from '$lib/mainReference.svelte';
@@ -42,7 +41,11 @@
 <section>
 	<Grid>
 		<div>
-			<img class="object-contain" src="/continuous-delivery.svg" alt="continuous delivery" />
+			<img
+				class="object-contain h-full w-full"
+				src="/continuous-delivery.svg"
+				alt="continuous delivery"
+			/>
 		</div>
 		<div>
 			<h3>Continuous Delivery</h3>
@@ -60,7 +63,11 @@
 <section>
 	<Grid>
 		<div class="lg:order-last">
-			<img class="object-contain" src="/cloud-architecture.svg" alt="cloud architecture" />
+			<img
+				class="object-contain h-full w-full"
+				src="/cloud-architecture.svg"
+				alt="cloud architecture"
+			/>
 		</div>
 		<div>
 			<h3>Cloud Architecture</h3>
@@ -83,7 +90,7 @@
 	<Columns reverse={true}>
 		<Column>
 			<img
-				class="object-contains"
+				class="object-contains h-full w-full"
 				src="/everything-is-connected.svg"
 				alt="everything is connected"
 			/>
@@ -105,9 +112,9 @@
 		<Column class="flex self-stretch items-center bg-v-black">
 			<div class="p-20">
 				<img
+					class="object-contain h-full w-full"
 					src="/partners/hashicorp-horizontal-white.svg"
 					alt="hashicorp"
-					class="object-contain"
 				/>
 			</div>
 		</Column>
@@ -127,7 +134,7 @@
 <section>
 	<Columns reverse={true}>
 		<Column>
-			<img class="object-contain" src="/round-table.svg" alt="round table" />
+			<img class="object-contain h-full w-full" src="/round-table.svg" alt="round table" />
 		</Column>
 		<Column>
 			<div class="flex flex-col gap-y-0">

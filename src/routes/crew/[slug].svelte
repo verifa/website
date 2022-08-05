@@ -91,7 +91,7 @@
 	<section>
 		<div class="flex flex-col gap-y-8 sm:flex-row sm:gap-x-4">
 			<div class="">
-				<img src={member.image} alt={member.id} class="h-48" />
+				<img src={member.image} alt={member.id} class="h-48 w-full" />
 			</div>
 			<div>
 				<h2>{member.name}</h2>

@@ -3,7 +3,7 @@
 	<div class="max-w-7xl mx-auto mt-20 pt-6 px-8 sm:px-16 pb-12">
 		<div class="xl:grid xl:grid-cols-3 xl:gap-8">
 			<div class="space-y-8 xl:col-span-1">
-				<img class="w-40" src="/verifa-logo.svg" alt="verifa" />
+				<img class="w-40 h-full" src="/verifa-logo.svg" alt="verifa" />
 				<p>Here to help you with Continuous Delivery and Cloud Architecture.</p>
 				<p>info [at] verifa.io</p>
 				<div class="flex space-x-6">

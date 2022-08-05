@@ -39,7 +39,7 @@
 	<article>
 		<div class="mb-8">
 			<div class="mb-8">
-				<img src={image} alt={title} />
+				<img class="w-full h-full" src={image} alt={title} />
 			</div>
 			<h2>{title}</h2>
 			<h4>{subheading}</h4>
