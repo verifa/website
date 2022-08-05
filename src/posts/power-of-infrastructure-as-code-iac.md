@@ -23,35 +23,35 @@ Our favourite Infrastructure as Code tool at Verifa is Terraform since it is clo
 
 Creating cloud resources using the cloud provider’s web console is a common starting point when testing a new cloud provider, or just starting out in the cloud in general. This method which consists of mostly clicking mouse buttons is sometimes called ClickOps. Let’s create a virtual machine in UpCloud through the [web console](https://hub.upcloud.com/) by clicking on the “Deploy server” button:
 
-![](/blogs/power-of-infrastructure-as-code-iac/1-upcloud-deploy-servers.png)
+![Deploying servers in UpCloud](/blogs/power-of-infrastructure-as-code-iac/1-upcloud-deploy-servers.png)
 
 > in UpCloud virtual machines are called servers
 
 This opens up a page with lots of options for configuring the server in terms of location, size, storage and operating system. The web console makes it easy to discover available options and choose the ones that make sense for you:
 
-![](/blogs/power-of-infrastructure-as-code-iac/2-upcloud-deploy-new-server-location.png)
+![Picking server locations in UpCloud](/blogs/power-of-infrastructure-as-code-iac/2-upcloud-deploy-new-server-location.png)
 
 After choosing the options that fit our use-case we can deploy the virtual machine by clicking the “Deploy” button at the bottom of the page:
 
-![](/blogs/power-of-infrastructure-as-code-iac/3-upcloud-initialization-script.png)
+![Server initialization script and deployment in UpCloud](/blogs/power-of-infrastructure-as-code-iac/3-upcloud-initialization-script.png)
 
 After a short wait the virtual machine is provisioned and ready to be used:
 
-![](/blogs/power-of-infrastructure-as-code-iac/4-upcloud-servers.png)
+![Running server summary in UpCloud](/blogs/power-of-infrastructure-as-code-iac/4-upcloud-servers.png)
 
 ## Managing the resources with Terraform
 
 Now, you might be wondering what is the point of deploying a virtual machine through a web console in a blog post with “Infrastructure as Code” in the title? Well, turns out there’s a handy feature in UpCloud that lets us convert the server configured with ClickOps into Terraform configuration. Let’s click on the “Export my infrastructure” button to get started with this process:
 
-![](/blogs/power-of-infrastructure-as-code-iac/5-upcloud-export-my-infrastructure.png)
+![Export infrastructure in UpCloud](/blogs/power-of-infrastructure-as-code-iac/5-upcloud-export-my-infrastructure.png)
 
 Firstly we select the type of resource to export and then the resource itself:
 
-![](/blogs/power-of-infrastructure-as-code-iac/6-upcloud-select-resources.png)
+![Selecting recourses to export in UpCloud](/blogs/power-of-infrastructure-as-code-iac/6-upcloud-select-resources.png)
 
 After a summary step we get the Terraform configuration and also handy commands on how to import this resource into Terraform [state](https://www.terraform.io/language/state) which means we can start managing the resource using Terraform now:
 
-![](/blogs/power-of-infrastructure-as-code-iac/7-upcloud-export-to-terraform.png)
+![Infrastructure export result in UpCloud](/blogs/power-of-infrastructure-as-code-iac/7-upcloud-export-to-terraform.png)
 
 Let’s follow this process to import the resources into Terraform and see if there’s any benefit of doing so. Here’s the complete configuration for the virtual machine:
 

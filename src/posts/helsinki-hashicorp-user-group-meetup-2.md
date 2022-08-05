@@ -21,8 +21,6 @@ Here's a brief summary of the talks along with links to the presentation decks, 
 
 <iframe width="100%" height="410" src="https://www.youtube.com/embed/ujNujcztmo4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-###
-
 **Managing IaC with Terragrunt by Petri Autero, Cloud Specialist at Kooka Consulting Oy**
 
 After a welcoming introduction by Mikko Karjula, Business Development Manager at Upcloud, HUG #2 kicked off with a talk on Managing IaC with Terragrunt. [Petri](https://www.linkedin.com/in/petriautero/ "Petri on Linkedin") has helped hundreds of companies manage their infrastructure using Terragrunt, and covered the following topics:

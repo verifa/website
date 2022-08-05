@@ -17,7 +17,7 @@ featured: true
 jobActive: true
 
 ---
-<iframe src="https://anchor.fm/verifa/embed/episodes/What-is-GitOps-anyway-e1051nv" height="151px" width="100%" frameborder="0" scrolling="no"></iframe>
+<iframe title="Embedded podcast player" src="https://anchor.fm/verifa/embed/episodes/What-is-GitOps-anyway-e1051nv" height="151px" width="100%" frameborder="0" scrolling="no"></iframe>
 
 <div class="flex gap-x-4">
 
