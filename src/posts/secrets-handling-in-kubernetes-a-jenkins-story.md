@@ -144,7 +144,7 @@ The approach of passing credentials with Jenkins secrets is harder to implement 
 
 The idea is to encrypt the secrets first with Jenkins domain credentials. This way, the secrets are not in plaintext. Jenkins uses AES to encrypt and protect secrets, credentials, and their respective encryption keys. This is unique to every jenkins instance as it is generated on first start. Due to this, any secrets encrypted with this work out-of-box inside the same Jenkins server and the encrypted secrets cannot be decrypted with a different Jenkins server.
 
-![](/blogs/2022-01-26/secrets_jenkins_kubernetes_diagram.png)
+![Jenkins and Kubernetes secret encryption process](/blogs/2022-01-26/secrets_jenkins_kubernetes_diagram.png)
 
 From the above picture, any secret is first encrypted with Jenkins Hudson secret and then imported as Kubernetes secret. This way, they are not in plaintext anywhere.
 

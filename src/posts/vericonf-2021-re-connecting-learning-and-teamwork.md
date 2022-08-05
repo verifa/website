@@ -32,7 +32,7 @@ Arrival and settling in with a delicious lunch of salmon soup served with tradit
 
 After a welcome buffet dinner and toast, Jacob and Andreas gave us a bit of history about Verifa and VeriConf. In the meantime, the wonderful staff at the villa had heated up the sauna and sea water jacuzzi where we spent the rest of the evening chatting into the wee small hours!
 
-![](/blogs/2021-09-27/vericonf2021_team_web2.png)
+![Verifa team line-up](/blogs/2021-09-27/vericonf2021_team_web2.png)
 
 ### Day 2
 
@@ -62,7 +62,7 @@ The moment we'd all been waiting for finally arrived. We got to channel our inne
 
 After enjoying a delicious buffet of typical Archipelago food and treats we once again took advantage of the sauna and sea water jacuzzi. It turns out that we have a bunch of board game nerds at Verifa, so we dived into our curated collection and played into the night.
 
-![](/blogs/2021-09-28/vericonf_archery-web2.png)
+![Verifa team practicing archery](/blogs/2021-09-28/vericonf_archery-web2.png)
 
 ### Day 3
 

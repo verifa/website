@@ -25,7 +25,7 @@ Here's a brief summary of the talks along with links to the presentation decks, 
 
 To kick off proceedings Anoop from Verifa took a brief look back at 2021 which saw Helsinki HUG's inaugural meetup! From a seed of an idea at the start of 2021, the first meetup took place online in June streamed from Verifa's office, followed by the first in-person event in September hosted by Upcloud. And now here we are with the third meetup in December hosted by Eficode. We're pleased to see that the membership has grown from 48 people in June to 94 as of 7 December 2021. Can we reach 100 by the end of the year? Invite your all your HashiCorp-loving friends to join!
 
-![](/blogs/2021-12-20/helsinki-hug-membership-growth-2021.png)
+![HUG membership growth chart](/blogs/2021-12-20/helsinki-hug-membership-growth-2021.png)
 
 ### Using Packer and Terraform to manage multiple compute image versions
 
