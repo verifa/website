@@ -1,5 +1,6 @@
 <script>
 	import '../app.css';
+	import '../fonts.css';
 	import Header from './_header.svelte';
 	import Footer from './_footer.svelte';
 	import Subscribe from '$lib/subscribe.svelte';

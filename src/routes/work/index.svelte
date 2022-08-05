@@ -20,21 +20,19 @@
 		<Column class="self-start">
 			<h3>What is Continuous Delivery?</h3>
 			<p class="mb-0">
-				Continuous Delivery is about working together as a team to build and release software. By
-				definition, Continuous Delivery is about building a process where software is always
-				releasable whilst ensuring short release cycles. Often the pains and struggles to help
-				achieve this are not related to technology but stem from a fragmented release process with
-				multiple handovers causing friction and delays.
+				Continuous Delivery is about building a process where software is always releasable whilst
+				ensuring short release cycles. Often the pains and struggles to help achieve this are not
+				related to technology but stem from a fragmented release process with multiple handovers
+				causing friction and delays.
 			</p>
 		</Column>
 		<Column class="self-start">
 			<h3>What we believe</h3>
 			<p class="mb-0">
-				We believe that every team can achieve wonders, but we cannot tell you how. That is because
-				every team and product has its own life and what might work in one case might not work in
-				another. Our workshops and coaching help you unlock new potential by guiding you through
-				your own unique journey towards continuous delivery. We will save you time by guard-railing
-				you from common pitfalls, whilst learning from each other as we go.
+				Every software team is slightly different and best practices are not a one-size-fits all.
+				Our workshops and coaching help you unlock new potential by guiding you through your own
+				Continuous Delivery journey. We will save you time by guard-railing you from common
+				pitfalls, whilst learning from each other as we go.
 			</p>
 		</Column>
 	</Columns>
