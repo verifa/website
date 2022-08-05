@@ -19,7 +19,7 @@
 <div>
 	{#if post.previewImage}
 		<a href={url}>
-			<img src={post.previewImage} alt={post.title} class="mb-8 w-2/3" />
+			<img src={post.previewImage} alt={post.title} class="mb-8 w-2/3 h-full" />
 		</a>
 	{/if}
 	{#if showBadges}

@@ -24,7 +24,7 @@
 <section>
 	<Grid>
 		<div class="self-start flex flex-col gap-y-12">
-			<img src="/continuous-delivery.svg" alt="continuous-delivery" />
+			<img class="w-full h-full" src="/continuous-delivery.svg" alt="continuous-delivery" />
 			<div>
 				<h3 class="">Benefits of Infrastructure as Code</h3>
 				<div>

@@ -103,7 +103,11 @@
 </section>
 <section>
 	<Grid>
-		<img class="object-contains" src="/everything-is-connected.svg" alt="everything is connected" />
+		<img
+			class="object-contains w-full h-full"
+			src="/everything-is-connected.svg"
+			alt="everything is connected"
+		/>
 		<h4>
 			Open source has and will continue to change the software industry. We want to do our part and
 			support the open source community and help others build trust with open source.
@@ -111,7 +115,7 @@
 		<div class="lg:order-last grid grid-cols-2 gap-0.5 md:grid-cols-2">
 			{#each cloudLogos as logo}
 				<div class="col-span-2 sm:col-span-1 flex justify-center py-8 px-8  bg-v-lilac">
-					<img src={logo.image} alt={logo.name} class="h-16 object-contain" />
+					<img src={logo.image} alt={logo.name} class="h-16 w-full object-contain" />
 				</div>
 			{/each}
 		</div>
@@ -135,7 +139,7 @@
 	<div class="grid grid-cols-2 gap-0.5 md:grid-cols-6 lg:grid-cols-5">
 		{#each certLogos as logo}
 			<div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 py-8 px-8  bg-v-lilac">
-				<img src={logo.image} alt={logo.name} class="h-38 object-contain" />
+				<img src={logo.image} alt={logo.name} class="h-38 w-full object-contain" />
 			</div>
 		{/each}
 	</div>
@@ -144,7 +148,7 @@
 <section>
 	<Columns>
 		<Column>
-			<img class="object-contain" src="/round-table.svg" alt="round table" />
+			<img class="object-contain h-full w-full" src="/round-table.svg" alt="round table" />
 		</Column>
 		<Column>
 			<div class="flex flex-col gap-y-0">

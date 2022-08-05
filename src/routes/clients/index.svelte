@@ -79,7 +79,7 @@
 <section>
 	<Columns>
 		<Column>
-			<img class="object-contain" src="/clients.svg" alt="client" />
+			<img class="object-contain w-full h-full" src="/clients.svg" alt="client" />
 		</Column>
 		<Column>
 			<h3>We care and we deliver.</h3>
