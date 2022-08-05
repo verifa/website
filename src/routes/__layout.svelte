@@ -6,9 +6,9 @@
 	import SEO from '$lib/seo/seo.svelte';
 </script>
 
-<div class="bg-gray-50 overflow-auto">
+<div class="bg-gray-50">
 	<Header />
-	<main>
+	<main class="pt-12 sm:pt-20 md:pt-28">
 		<slot />
 	</main>
 	<section>
