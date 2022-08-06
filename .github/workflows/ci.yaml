@@ -78,5 +78,13 @@ jobs:
           PROJECT_ID: verifa-website
           APPLICATION_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
         with:
-          args: -m rsync -r -c -d ./website gs://website-bucket-${{ steps.vars.outputs.deploy_env }}
           cli: gsutil
+          args: -m rsync -r -c -d ./website gs://website-bucket-${{ steps.vars.outputs.deploy_env }}
+      - name: Set Metadata
+        uses: actions-hub/gcloud@master
+        env:
+          PROJECT_ID: verifa-website
+          APPLICATION_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+        with:
+          cli: gsutil
+          args: "-m setmeta -h 'Cache-Control: no-cache' 'gs://website-bucket-staging/**.html'"
