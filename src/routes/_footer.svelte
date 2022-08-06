@@ -2,7 +2,7 @@
 	<h2 id="footerHeading" class="sr-only">Footer</h2>
 	<div class="max-w-7xl mx-auto mt-20 pt-6 px-8 sm:px-16 pb-12">
 		<div class="xl:grid xl:grid-cols-3 xl:gap-8">
-			<div class="space-y-8 xl:col-span-1">
+			<div class="flex flex-col space-y-8 xl:col-span-1">
 				<img class="w-40 h-full" src="/verifa-logo.svg" alt="verifa" />
 				<p>Here to help you with Continuous Delivery and Cloud Architecture.</p>
 				<p>info [at] verifa.io</p>
