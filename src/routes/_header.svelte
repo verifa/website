@@ -87,13 +87,11 @@
 	bind:clientHeight
 >
 	<div bind:this={mobileMenu}>
-		<nav class="mx-auto flex sticky items-center justify-between gap-x-8" aria-label="Global">
-			<div class="flex items-center justify-between">
-				<a href="/">
-					<span class="sr-only">verifa</span>
-					<img class="h-8 w-full md:h-12 " src="/verifa-logo.svg" alt="" />
-				</a>
-			</div>
+		<nav class="mx-auto flex items-center justify-between gap-x-8" aria-label="Global">
+			<a class="flex-none" href="/">
+				<span class="sr-only">verifa</span>
+				<img class="h-8 w-full md:h-12 " src="/verifa-logo.svg" alt="verifa-logo" />
+			</a>
 
 			<div class="hidden md:flex md:items-center md:space-x-10 md:flex-wrap">
 				{#each navLinks as link, index}
