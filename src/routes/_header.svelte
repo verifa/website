@@ -83,14 +83,14 @@
 
 <header
 	class="sticky top-0 py-6 px-8 sm:px-16 bg-v-white/50 backdrop-blur-sm transition-transform ease-in"
-	class:motion-safe:-translate-y-full={offscreen}
+	class:-translate-y-full={offscreen}
 	bind:clientHeight
 >
 	<div bind:this={mobileMenu}>
 		<nav class="mx-auto flex items-center justify-between gap-x-8" aria-label="Global">
 			<a class="flex-none" href="/">
 				<span class="sr-only">verifa</span>
-				<img class="h-8 w-full md:h-12 " src="/verifa-logo.svg" alt="verifa-logo" />
+				<img class="h-8 w-28 md:h-12 md:w-full" src="/verifa-logo.svg" alt="verifa-logo" />
 			</a>
 
 			<div class="hidden md:flex md:items-center md:space-x-10 md:flex-wrap">
@@ -108,7 +108,7 @@
 			<div class="flex items-center md:hidden">
 				<button
 					type="button"
-					class="p-2 text-v-black"
+					class="p-2 text-v-black hover:bg-v-white active:bg-v-white focus:bg-v-white focus:outline-none"
 					aria-expanded="false"
 					on:click={() => (showMenu = !showMenu)}
 				>
@@ -139,12 +139,12 @@
 					<div class="px-5 pt-4 flex items-center justify-between">
 						<div>
 							<a href="/" on:click={() => (showMenu = false)}>
-								<img class="h-8 w-full" src="/verifa-logo.svg" alt="" />
+								<img class="h-8 w-28" src="/verifa-logo.svg" alt="" />
 							</a>
 						</div>
 						<button
 							type="button"
-							class="bg-v-white rounded-md p-2 inline-flex items-center justify-center text-v-black hover:text-gray-700 hover:bg-gray-100 focus:outline-none"
+							class="bg-v-white rounded-md p-2 inline-flex items-center justify-center text-v-black hover:bg-v-white active:bg-v-white focus:bg-v-white focus:outline-none"
 							on:click={() => (showMenu = false)}
 						>
 							<span class="sr-only">Close menu</span>
