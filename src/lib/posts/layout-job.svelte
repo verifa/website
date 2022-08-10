@@ -1,4 +1,6 @@
 <script>
+	import './posts.css';
+
 	import CareersForm from '$lib/careers/careersForm.svelte';
 
 	import { crewNameById } from '$lib/crew/crew';
@@ -6,7 +8,6 @@
 	import { seo } from '$lib/seo/store';
 
 	import PostBadges from './postBadges.svelte';
-	import PostGrid from './postGrid.svelte';
 
 	export let type;
 	export let title;

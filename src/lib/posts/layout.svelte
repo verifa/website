@@ -1,4 +1,6 @@
 <script>
+	import './posts.css';
+
 	import { crewByID } from '$lib/crew/crew';
 
 	import { seo } from '$lib/seo/store';

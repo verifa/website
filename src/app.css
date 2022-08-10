@@ -4,10 +4,24 @@
 @tailwind utilities;
 
 @layer base {
-    h1, h2, h3, h4, h5, h6, p, li {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li {
         @apply text-v-black break-words;
     }
-    h1, h2, h3, h4, h5, h6 {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         @apply font-bold;
     }
 
@@ -15,149 +29,116 @@
         @apply text-5xl leading-tight sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight;
         @apply mb-8;
     }
+
     h2 {
         @apply text-4xl leading-tight sm:text-5xl sm:leading-tight md:text-6xl md:leading-tight;
         @apply mb-8;
     }
+
     h3 {
         @apply text-3xl md:text-4xl md:leading-snug;
         @apply mb-8;
     }
+
     h4 {
         @apply text-2xl md:leading-relaxed;
         @apply mb-6;
     }
+
     h5 {
         @apply text-xl leading-relaxed;
         @apply mb-8;
     }
+
     h6 {
         @apply text-lg leading-relaxed;
         @apply mb-8;
     }
-    p, li, button, input {
+
+    p,
+    li,
+    button,
+    input {
         @apply text-xl font-light leading-relaxed;
     }
+
     p {
         @apply mb-12;
     }
+
     label {
         @apply text-2xl mb-4 font-semibold leading-relaxed;
     }
-    input[type=text], input[type=email], input[type=url], textarea {
+
+    input[type=text],
+    input[type=email],
+    input[type=url],
+    textarea {
         @apply rounded-none w-full py-3.5 border-[3px] font-normal text-xl border-v-black;
         @apply focus:border-v-lilac focus:outline-none focus:ring-0;
         @apply placeholder-v-beige;
     }
+
     button {
         @apply inline-flex px-5 py-3.5 border border-transparent text-xl font-normal text-v-white bg-v-black hover:bg-v-lilac focus:bg-v-lilac;
     }
+
     a {
         @apply text-xl font-light;
     }
 
-    ol, ul {
+    ol,
+    ul {
         @apply mb-12 list-inside;
     }
+
     ol {
         @apply list-decimal;
     }
+
     ul {
         @apply list-disc;
     }
+
     li {
         @apply mb-4;
     }
-    li > ol, li > ul {
+
+    li>ol,
+    li>ul {
         @apply my-3 ml-4;
     }
+
     hr {
         @apply mb-12 border-2 border-v-black bg-v-black;
     }
+
     strong {
         @apply font-semibold;
     }
-    pre, iframe {
+
+    pre,
+    iframe {
         @apply mb-12;
     }
 
     main {
         @apply bg-v-white mx-auto max-w-7xl px-8 sm:px-16;
     }
-    section, article {
+
+    section,
+    article {
         @apply mb-20 md:mb-24 lg:mb-32;
     }
 
     blockquote {
         @apply text-2xl font-semibold leading-loose mb-12 pl-6 border-l-4 border-v-lilac;
     }
+
     cite {
         @apply text-xl font-light;
     }
 }
-
-code {
-    font-family: monospace;
-    font-size: inherit;
-}
-
-p > code,
-li > code,
-dd > code,
-td > code {
-    @apply bg-violet-100 font-medium break-words border-r-2 px-2;
-}
-
-/* 
-Blog styles
-*/
-#blog-container pre {
-    @apply mb-12;
-}
-/* 
-Podcast blog-flex class
-*/
-#blog-container .blog-flex {
-    @apply flex gap-x-4;
-}
-#blog-container a {
-    @apply underline;
-}
-
-/* 
- * BEGIN blog header anchors
- */
-.header-anchor {
-    @apply flex items-center;
-}
-
-.header-anchor-link {
-    @apply absolute;
-}
-
-.header-anchor-icon {
-    @apply transition-opacity duration-500 text-v-lilac opacity-0 group-hover:opacity-100;
-}
-
-/* Icon size and offset for different header sizes */
-.header-anchor-icon-h2 {
-    @apply h-7 w-7 -ml-8;
-}
-.header-anchor-icon-h3 {
-    @apply h-6 w-6 -ml-8;
-}
-.header-anchor-icon-h4 {
-    @apply h-5 w-5 -ml-8;
-}
-.header-anchor-icon-h5 {
-    @apply h-4 w-4 -ml-8;
-}
-.header-anchor-icon-h6 {
-    @apply h-3 w-3 -ml-8;
-}
-/* 
- * END blog header anchors
- */
 
 /* 
 text-xl	    font-size: 1.25rem;
