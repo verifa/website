@@ -87,4 +87,4 @@ jobs:
           APPLICATION_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
         with:
           cli: gsutil
-          args: "-m setmeta -h 'Cache-Control: no-cache,max-age=31536000' 'gs://website-bucket-staging/**.html'"
+          args: "-m setmeta -h 'Cache-Control: no-cache,max-age=31536000' 'gs://website-bucket-${{ steps.vars.outputs.deploy_env }}/**.html'"
