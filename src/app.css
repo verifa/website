@@ -5,6 +5,12 @@
 
 @layer base {
 
+    /* Custom classes */
+    .v-button {
+        @apply inline-flex px-5 py-3.5 border border-transparent text-xl font-normal text-v-white bg-v-black hover:bg-v-lilac focus:bg-v-lilac;
+    }
+
+    /* Base style elements */
     h1,
     h2,
     h3,
@@ -79,9 +85,6 @@
         @apply placeholder-v-beige;
     }
 
-    button {
-        @apply inline-flex px-5 py-3.5 border border-transparent text-xl font-normal text-v-white bg-v-black hover:bg-v-lilac focus:bg-v-lilac;
-    }
 
     a {
         @apply text-xl font-light;
