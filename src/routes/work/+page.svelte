@@ -5,6 +5,9 @@
 	import Grid from '$lib/grid.svelte';
 	import { seo } from '$lib/seo/store';
 	import HeaderLine from '$lib/headerLine.svelte';
+	import Faq from '../../lib/faq.svelte';
+	import CDWorkshop from './_cdWorkshop.svelte';
+	import FaqItem from '$lib/faqItem.svelte';
 
 	seo.reset();
 	$seo.title = 'What we do: Continuous Delivery and Cloud Architecture';
@@ -34,6 +37,56 @@
 				Continuous Delivery journey. We will save you time by guard-railing you from common
 				pitfalls, whilst learning from each other as we go.
 			</p>
+		</Column>
+	</Columns>
+</section>
+<section>
+	<CDWorkshop />
+</section>
+<section>
+	<Columns>
+		<Column>
+			<div class="flex flex-col gap-y-6">
+				<div class="flex space-x-6 items-center">
+					<div>
+						<img class="h-4 w-4 object-contain" src="/logo-element.png" alt="logo-ement" />
+					</div>
+					<div>
+						<h4 class="mb-0">Visualize your release process</h4>
+					</div>
+				</div>
+				<div class="flex space-x-6 items-center">
+					<div>
+						<img class="h-4 w-4 object-contain" src="/logo-element.png" alt="logo-ement" />
+					</div>
+					<div>
+						<h4 class="mb-0">Pinpoint opportunities and waste</h4>
+					</div>
+				</div>
+				<div class="flex space-x-6 items-center">
+					<div>
+						<img class="h-4 w-4 object-contain" src="/logo-element.png" alt="logo-ement" />
+					</div>
+					<div>
+						<h4 class="mb-0">Get your whole team onboard</h4>
+					</div>
+				</div>
+				<div class="flex space-x-6 items-center">
+					<div>
+						<img class="h-4 w-4 object-contain" src="/logo-element.png" alt="logo-ement" />
+					</div>
+					<div>
+						<h4 class="mb-0">Justify investment</h4>
+					</div>
+				</div>
+			</div>
+		</Column>
+		<Column>
+			<CtaButton
+				fullScreen={false}
+				text={'Ready to unlock your CD potential?'}
+				contact={'Get started.'}
+			/>
 		</Column>
 	</Columns>
 </section>
@@ -127,8 +180,10 @@
 		</Column>
 	</Columns>
 </section>
-
 <section>
+	<CDWorkshop />
+</section>
+<section class="hidden">
 	<h2>‘Do you want change, or do you want to change?’</h2>
 	<h4>— Jacob Lärfors, Consultant, Verifa</h4>
 </section>

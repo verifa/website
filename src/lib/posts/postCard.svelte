@@ -4,6 +4,7 @@
 
 	export let post: Post;
 	export let showBadges: boolean = true;
+	export let showPreview: boolean = true;
 
 	const dateOptions = {
 		weekday: 'long',
@@ -17,7 +18,7 @@
 </script>
 
 <div>
-	{#if post.previewImage}
+	{#if showPreview && post.previewImage}
 		<a href={url}>
 			<img src={post.previewImage} alt={post.title} class="object contains w-2/3 h-40" />
 		</a>
