@@ -97,6 +97,15 @@
         "github": "praqma-thi",
         "bio": "Thierry has a decade of software development and consultancy experience under his belt. Off duty, he plays board games and video games, and expresses his creative side through music, painting and game development. Thierry’s also a die-hard fan of the hit classic film Dragonheart, and very knowledgeable about Pokémon! "
     },
+    "lsjodahl": {
+        "active": true,
+        "name": "Laroy Sjödahl",
+        "position": "Consultant",
+        "country": "Sweden",
+        "linkedin": "https://www.linkedin.com/in/laroy-sj%C3%B6dahl/",
+        "github": "lolpatrol",
+        "bio": "Laroy holds a Master’s in computer science, and is particularly knowledgeable about configuration management in DevOps. When not working on techie stuff, you might find him kicking back at music festivals, playing games, or riffing on his guitar."
+    },
     "verifa": {
         "active": false,
         "name": "Verifa",
