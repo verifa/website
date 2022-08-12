@@ -7,6 +7,8 @@
 	const crew: Member[] = allActiveCrewShuffle();
 
 	seo.reset();
+	$seo.title = 'Verifa Crew';
+	$seo.description = 'Experts in all things Continuous and Cloud.';
 </script>
 
 <section>

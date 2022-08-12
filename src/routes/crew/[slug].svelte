@@ -36,6 +36,9 @@
 	export let blogs: Blogs;
 
 	seo.reset();
+	$seo.title = 'Verifa Crew: ' + member.name;
+	$seo.description = member.bio ? member.bio.substring(0, 100) : '';
+	$seo.image.url = member.image;
 </script>
 
 {#if member.active}
