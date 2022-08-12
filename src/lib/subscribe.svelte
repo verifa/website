@@ -56,7 +56,7 @@
 					<div>
 						<button
 							id="mc-embedded-subscribe"
-							class="bg-v-white text-v-black font-semibold"
+							class="v-button bg-v-white text-v-black font-semibold"
 							value="Subscribe">Submit</button
 						>
 					</div>
