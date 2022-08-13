@@ -118,10 +118,10 @@
 						<a
 							on:click={hide}
 							href={link.url}
-							class="-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
+							class="-m-3 p-3 group block hover:bg-v-gray hover:bg-opacity-10 transition ease-in-out duration-150"
 						>
-							<h4 class="mb-0">{link.title}</h4>
-							<p class="mb-0">
+							<h4 class="mb-0 group-hover:text-v-lilac">{link.title}</h4>
+							<p class="mb-0 group-hover:text-v-lilac">
 								{link.description}
 							</p>
 						</a>

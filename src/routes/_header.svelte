@@ -91,7 +91,7 @@
 				<img class="h-8 w-28 md:h-12 md:w-full" src="/verifa-logo.svg" alt="verifa-logo" />
 			</a>
 			<!-- Desktop menu -->
-			<div class="hidden md:flex md:items-center md:space-x-10 md:flex-wrap">
+			<div class="hidden md:flex md:items-center md:gap-x-10 md:flex-wrap">
 				<WorkMenu />
 				{#each navLinks as link}
 					<a

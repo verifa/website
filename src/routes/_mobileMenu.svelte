@@ -1,16 +1,12 @@
 <script lang="ts">
-	import { children } from 'svelte/internal';
+	let menuVisible = false;
 
 	interface Link {
 		text: string;
 		url: string;
 		children?: Link[];
-		showChildren?: boolean;
 	}
-
-	let menuVisible = false;
-
-	let links: Link[] = [
+	const links: Link[] = [
 		{
 			text: 'What we do',
 			url: '/work/',
@@ -35,8 +31,7 @@
 					text: 'Implementation',
 					url: '/work#implementation'
 				}
-			],
-			showChildren: false
+			]
 		},
 		{
 			text: 'About us',
@@ -64,26 +59,25 @@
 		}
 	];
 
+	// Array storing boolean values for each link (by index) indicating whether
+	// the sub-menu should be shown or not. Defaults to false and becomes true
+	// when the parent menu item is clicked (if it has children)
+	let showChildren = Array(links.length).fill(false);
+
 	function hideMenu() {
 		menuVisible = false;
-		links.forEach((link) => {
-			collapse(link);
+		links.forEach((link, index) => {
+			collapse(index);
 		});
 	}
 
-	function collapse(link) {
-		if (link.children) {
-			link.showChildren = false;
-			link.children.forEach((child) => {
-				collapse(child);
-			});
-		}
+	function collapse(index: number) {
+		showChildren[index] = false;
 	}
 
 	function handleClick(index: number) {
-		let link = links[index];
-		if (link.children) {
-			links[index].showChildren = !link.showChildren;
+		if (links[index].children) {
+			showChildren[index] = !showChildren[index];
 		} else {
 			hideMenu();
 		}
@@ -119,8 +113,8 @@
 
 {#if menuVisible}
 	<div class="absolute -z-1 top-0 inset-x-0 p-2 md:hidden">
-		<div class="bg-v-white ring-2 ring-v-black ring-opacity-5 overflow-hidden">
-			<div class="px-5 pt-4 flex items-center justify-between">
+		<div class="px-6 sm:px-14  bg-v-white ring-2 ring-v-black ring-opacity-5 overflow-hidden">
+			<div class="pt-4 flex items-center justify-between">
 				<div>
 					<a href="/" on:click={() => hideMenu()}>
 						<img class="h-8 w-28" src="/verifa-logo.svg" alt="" />
@@ -150,7 +144,7 @@
 					</svg>
 				</button>
 			</div>
-			<div class="px-5 z-1 flex flex-col gap-y-3 py-3">
+			<div class="z-1 flex flex-col gap-y-4 py-5">
 				{#each links as link, index}
 					<a
 						href={link.url}
@@ -158,7 +152,7 @@
 						on:click={() => handleClick(index)}
 						>{link.text}
 						{#if link.children}
-							{#if link.showChildren}
+							{#if showChildren[index]}
 								<!-- chevron pointing up -->
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -185,7 +179,7 @@
 							{/if}
 						{/if}
 					</a>
-					{#if link.children && link.showChildren}
+					{#if link.children && showChildren[index]}
 						<div class="px-4 z-1 flex flex-col gap-y-3">
 							{#each link.children as child}
 								<a
