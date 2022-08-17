@@ -8,6 +8,7 @@ authors:
 tags:
 - Kubernetes
 - Cloud
+- UpCloud
 date: 2022-08-16
 image: "/blogs/podcast-ep04-a-sneak-peek-into-upcloud-kubernetes-service.png"
 featured: true
@@ -30,7 +31,7 @@ jobActive: true
 
 In this episode of The Continuous & Cloud Podcast, Jacob and Lauri chat with Ville Törhönen, Product Owner at UpCloud, about UpCloud’s upcoming managed Kubernetes Service (UKS).
 
-## **During this episode we discuss**
+## During this episode we discuss
 
 - What is a managed Kubernetes service? \[00:39\]
 - What is UpCloud Kubernetes Service (UKS)? \[03:10\]
@@ -48,22 +49,22 @@ In this episode of The Continuous & Cloud Podcast, Jacob and Lauri chat with Vil
 - When will UKS be available? \[25:40\]
 - Example use case: using UKS with Terraform for IaC \[27:11\]
 
-## **Mentioned in the podcast**
+## Mentioned in the podcast
 
 [UpCloud Kubernetes Engineer vacancy](https://jobs.upcloud.com/o/kubernetes-engineer)
 
 [UpCloud CSI driver on Github](https://github.com/UpCloudLtd/upcloud-csi) 
 
 
-## **About Ville Törhönen**
+## About Ville Törhönen
 
 Ville (MSc, Tech) is working as a Product Owner at UpCloud. He is responsible for the upcoming UpCloud Kubernetes Service (UKS) product offering but also Developer Experience on the platform. Previously he’s been building various businesses and products on top of container technologies in companies like Unity, Noice and Redhill Games.
 
-## **About UpCloud**
+## About UpCloud
 
 [UpCloud](https://upcloud.com/) is a European Cloud Provider offering fast and reliable PaaS from 12 data centers around the globe. They are a strong believer in open source and openness in general. That’s why all of their services are available from [public repositories](https://github.com/UpCloudLtd). UpCloud’s mission is to make Infrastructure as Code easier for small and medium size businesses.
 
-## **Connect with today’s podcast crew on Linkedin**
+## Connect with today’s podcast crew on Linkedin
 
 [Ville Törhönen](https://www.linkedin.com/in/vtorhonen/)
 
@@ -71,9 +72,9 @@ Ville (MSc, Tech) is working as a Product Owner at UpCloud. He is responsible fo
 
 [Lauri Suomalainen](https://www.linkedin.com/in/lauri-suomalainen/)
 
-## **Transcript**
+## Transcript
 
-### **Hello and welcome!**
+### Hello and welcome!
 
 **Jacob** \[00:15\]: Welcome to the Continuous and Cloud Podcast by Verifa. I'm your host, Jacob, and my co-host today is Lauri.
 
@@ -91,7 +92,7 @@ Ville (MSc, Tech) is working as a Product Owner at UpCloud. He is responsible fo
 
 **Lauri** \[00:38\]: Yeah, let's do it.
 
-### **What is a managed Kubernetes service?**
+### What is a managed Kubernetes service?
 
 **Jacob** \[00:39\]: Cool. So UKS, the short term UpCloud Kubernetes Service is a new service coming soon from UpCloud. And let's maybe start by talking about what Kubernetes services are, or managed Kubernetes services. So maybe, Ville, you'd like to tell us what your idea of managed Kubernetes services?
 
@@ -113,7 +114,7 @@ So we've been developing it from early, well, late last year, we did some resear
 
 **Ville** \[03:09\]: Yeah.
 
-### **What is UpCloud Kubernetes Service (UKS)?**
+### What is UpCloud Kubernetes Service (UKS)?
 
 **Jacob** \[03:10\]: Yeah, so managed Kubernetes is you basically get a Kubernetes cluster and then it's managed by UpCloud, and I guess the two main components within Kubernetes cluster is the control plane and the worker nodes. So everything's in UpCloud, right?
 
@@ -137,7 +138,7 @@ We do support UI workflows for creating clusters, of course. Not everyone wants 
 
 **Ville** \[06:00\]: Giving you ideas.
 
-### **What do you get from UpCloud that supports the Kubernetes service?**
+### What do you get from UpCloud that supports the Kubernetes service?
 
 **Jacob** \[06:02\]: Exactly. Yeah. But maybe this is a good time to talk about the other things UpCloud a little bit too, because it's never just Kubernetes. You might have the cluster and now you can run your pods there, create your services, maybe deploy an ingress controller and get access to those. But then there's things like storage, for example, and well, probably running a database within Kubernetes isn't such a great idea unless you know what you're doing, and then there's maybe some fast system storage that you want as well, like persistent volumes and these sorts of things. Yeah, could you tell us what's available in UpCloud?
 
@@ -171,13 +172,13 @@ So for volumes, for example, we went ahead and implemented a container storage i
 
 **Ville** \[11:58\]: Yeah.
 
-### **Customising resources within UKS**
+### Customising resources within UKS
 
 **Jacob** \[12:00\]: Cool. And that nicely leads on to customisability as well because that's... well, we already talked a little bit about the storage classes and, well, at least persistent volumes and a little bit about the networking with load balances, but what about other customisations? One obvious thing that comes to mind is the worker nodes. So what kind of nodes do you want to have in your cluster? Are there like node groups or node sets or are they individual nodes and how... Yeah, what can you do?
 
 **Ville** \[12:28\]: Yeah, we are looking into... we are exposing the node groups as a separate API object, so you will be able to modify your workers accordingly or according to your workloads. So you might want to have separate kind of, or different kinds of nodes for running stateless workloads or some other specific requirements and then have smaller or, whatever, bigger nodes to run your other, let's say, stateful or stateless workloads. So it's configurable as you would expect from a managed Kubernetes service. So the way I see it, it's a basic requirement to make such thing work definitely.
 
-### **How has it been developing UKS?**
+### How has it been developing UKS?
 
 **Lauri** \[13:10\]: So how long had you been building the product and how many of you are in the team now?
 
@@ -227,7 +228,7 @@ But there are other good use cases for such, let's say, service mesh approaches 
 
 **Jacob** \[20:39\]: So there's definitely a benefit there.
 
-### **Observability and monitoring in UKS**
+### Observability and monitoring in UKS
 
 **Lauri** \[20:42\]: Speaking of observability, let's say I haven't had that much experience in UpCloud and monitoring and so on, so if I was to have a UKS cluster and I wanted to set up alerting and monitoring for it, what would be my first go-to then?
 
@@ -255,7 +256,7 @@ Another thing that even though we're offering just the cluster for our users or 
 
 **Ville** \[23:38\]: Sure, sure. And you also have Terraform CDK now, which is also something we support or have bindings for out of the box, so it's another cool automation built on top of the providers.
 
-### **What are the main benefits of using UpCloud and UKS?**
+### What are the main benefits of using UpCloud and UKS?
 
 **Jacob** \[23:51\]: Nice. Nice. And I have to praise UpCloud a little bit too, because having worked with the other cloud providers and the Terraform providers for them, when I work with UpCloud and I run Terraform plan or something, I think it's failed because it's like... I press plan and like, "There's the plan." And I'm like, "Okay, so something went wrong," and it's like, "Oh no, it actually planned in..." It's a matter of seconds and you get the feedback. So if your Kubernetes service is going to be on that speed as well, I think that's going to be nice. And maybe this is a perfect time to ask as well, quite a way into the podcast now, and we've gone quite deep into the discussion about UKS, but if you had to tell somebody why they should consider UKS, what would be the main points that you would-
 
@@ -265,7 +266,7 @@ Another thing that even though we're offering just the cluster for our users or 
 
 **Jacob** \[25:37\]: Great, cool.
 
-### **When will UKS be available, and what’s next?**
+### When will UKS be available, and what’s next?
 
 **Lauri** \[25:40\]: So you guys are going to release at the end of this year, hopefully, and what then? What happens after?
 
@@ -289,7 +290,7 @@ Another thing that even though we're offering just the cluster for our users or 
 
 **Ville** \[27:09\]: Yes.
 
-### **Example use case: using UKS with Terraform for IaC**
+### Example use case: using UKS with Terraform for IaC
 
 **Jacob** \[27:11\]: Is there anything that you want to talk about more, Ville, that you feel we haven't covered already?
 
@@ -379,7 +380,7 @@ I think we need to search our #random channel on Slack because every time we fin
 
 **Ville** \[41:44\]: Sounds good to me.
 
-### **Wrapping up**
+### Wrapping up
 
 **Jacob** \[41:48\]: Should we start to wrap up then?
 
