@@ -1,19 +1,32 @@
 <script context="module" lang="ts">
 	export async function load({ fetch }) {
-		const postsUrl = `/posts/jobs.json`;
-		const res = await fetch(postsUrl);
-		if (res.ok) {
+		try {
+			const res = await fetch(
+				'/posts/posts.json?' +
+					new URLSearchParams({
+						types: PostType.Job
+					})
+			);
+
+			if (res.ok) {
+				return {
+					props: {
+						data: await res.json()
+					}
+				};
+			} else {
+				const error = await res.text();
+				return {
+					status: res.status,
+					error: new Error(error)
+				};
+			}
+		} catch (error) {
 			return {
-				props: {
-					data: await res.json()
-				}
+				status: 500,
+				error: error
 			};
 		}
-
-		return {
-			status: res.status,
-			error: new Error(`Could not load ${postsUrl}`)
-		};
 	}
 </script>
 
@@ -22,19 +35,19 @@
 	import Columns from '$lib/columns.svelte';
 	import CompanyValues from '$lib/company/companyValues.svelte';
 
-	import type { Jobs, Post } from '$lib/posts/posts';
+	import { type PostsData, type Post, PostType } from '$lib/posts/posts';
 	import PostGrid from '$lib/posts/postGrid.svelte';
 	import HeaderLine from '$lib/headerLine.svelte';
 	import { seo } from '$lib/seo/store';
 	import CareersForm from '$lib/careers/careersForm.svelte';
 
-	export let data: Jobs;
+	export let data: PostsData;
 
 	seo.reset();
 	$seo.title = 'Join us: we care about our work and the impact we have';
 	$seo.image.url = '/round-table.svg';
 
-	const jobs: Post[] = data.jobs;
+	const jobs: Post[] = data.posts;
 </script>
 
 <section>

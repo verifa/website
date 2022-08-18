@@ -9,31 +9,46 @@
 				}
 			};
 		}
-		const postsUrl = `/posts/blogs-by-${member.id}.json`;
-		const res = await fetch(postsUrl);
-		if (res.ok) {
+		try {
+			const res = await fetch(
+				'/posts/posts.json?' +
+					new URLSearchParams({
+						types: blogTypes.join(','),
+						author: member.id
+					})
+			);
+
+			if (res.ok) {
+				return {
+					props: {
+						member: member,
+						data: await res.json()
+					}
+				};
+			} else {
+				const error = await res.text();
+				return {
+					status: res.status,
+					error: new Error(error)
+				};
+			}
+		} catch (error) {
 			return {
-				props: {
-					member: member,
-					blogs: await res.json()
-				}
+				status: 500,
+				error: error
 			};
 		}
-		return {
-			status: res.status,
-			error: new Error(`could not load ${postsUrl}`)
-		};
 	};
 </script>
 
 <script lang="ts">
 	import { crewByID, type Member } from '$lib/crew/crew';
 	import PostGrid from '$lib/posts/postGrid.svelte';
-	import type { Blogs } from '$lib/posts/posts';
+	import { blogTypes, PostType, type PostsData } from '$lib/posts/posts';
 	import { seo } from '$lib/seo/store';
 
 	export let member: Member;
-	export let blogs: Blogs;
+	export let data: PostsData;
 
 	seo.reset();
 	$seo.title = 'Verifa Crew: ' + member.name;
@@ -103,10 +118,10 @@
 	</section>
 {/if}
 <section>
-	{#if blogs.blogs.length == 0}
+	{#if data.posts.length == 0}
 		<h2>No posts by author</h2>
 	{:else}
-		<h2>Posts by author</h2>
-		<PostGrid posts={blogs.blogs} />
+		<h2>PostsData by author</h2>
+		<PostGrid posts={data.posts} />
 	{/if}
 </section>

@@ -1,19 +1,32 @@
 <script context="module" lang="ts">
 	export async function load({ fetch }) {
-		const postsUrl = `/posts/cases.json`;
-		const res = await fetch(postsUrl);
-		if (res.ok) {
+		try {
+			const res = await fetch(
+				'/posts/posts.json?' +
+					new URLSearchParams({
+						types: PostType.Case
+					})
+			);
+
+			if (res.ok) {
+				return {
+					props: {
+						data: await res.json()
+					}
+				};
+			} else {
+				const error = await res.text();
+				return {
+					status: res.status,
+					error: new Error(error)
+				};
+			}
+		} catch (error) {
 			return {
-				props: {
-					data: await res.json()
-				}
+				status: 500,
+				error: error
 			};
 		}
-
-		return {
-			status: res.status,
-			error: new Error(`Could not load ${postsUrl}`)
-		};
 	}
 </script>
 
@@ -27,10 +40,10 @@
 	import CtaButton from '$lib/ctaButton.svelte';
 	import Grid from '$lib/grid.svelte';
 	import { seo } from '$lib/seo/store';
-	import type { Cases } from '$lib/posts/posts';
+	import { PostType, type PostsData } from '$lib/posts/posts';
 	import PostGrid from '$lib/posts/postGrid.svelte';
 
-	export let data: Cases;
+	export let data: PostsData;
 
 	seo.reset();
 	$seo.title = 'Our clients: we care and we deliver';
@@ -97,7 +110,7 @@
 	<h1>How we have helped our clients.</h1>
 </section>
 <section>
-	<PostGrid showBadges={false} posts={data.cases} />
+	<PostGrid showBadges={false} posts={data.posts} />
 </section>
 <section>
 	<HeaderLine />
