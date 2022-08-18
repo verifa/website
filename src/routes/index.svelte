@@ -1,25 +1,42 @@
 <script context="module" lang="ts">
 	export async function load({ fetch }) {
-		// Append the search query to the posts url
-		const postsUrl = `/posts/blogs-latest.json`;
-		const res = await fetch(postsUrl);
-		if (res.ok) {
+		try {
+			const res = await fetch(
+				'/posts/posts.json?' +
+					new URLSearchParams({
+						types: blogTypes.join(',')
+					})
+			);
+
+			if (res.ok) {
+				const postsData: PostsData = await res.json();
+				const data: PostsData = {
+					posts: filterPosts(postsData.posts, { limit: 3 }),
+					keywords: postsData.keywords
+				};
+				return {
+					props: {
+						data: data
+					}
+				};
+			} else {
+				const error = await res.text();
+				return {
+					status: res.status,
+					error: new Error(error)
+				};
+			}
+		} catch (error) {
 			return {
-				props: {
-					data: await res.json()
-				}
+				status: 500,
+				error: error
 			};
 		}
-
-		return {
-			status: res.status,
-			error: new Error(`Could not load ${postsUrl}`)
-		};
 	}
 </script>
 
 <script lang="ts">
-	import type { Blogs, Post } from '$lib/posts/posts';
+	import { type PostsData, type Post, blogTypes, filterPosts } from '$lib/posts/posts';
 	import PostGrid from '$lib/posts/postGrid.svelte';
 	import ButtonLink from '$lib/buttonLink.svelte';
 	import Columns from '$lib/columns.svelte';
@@ -28,8 +45,8 @@
 	import { seo } from '$lib/seo/store';
 	import MainReference from '$lib/mainReference.svelte';
 
-	export let data: Blogs;
-	const blogs: Post[] = data.blogs;
+	export let data: PostsData;
+	const posts: Post[] = data.posts;
 
 	seo.reset();
 </script>
@@ -166,7 +183,7 @@
 				</a>
 			{/each}
 		</div>
-		<PostGrid showBadges={false} posts={blogs} />
+		<PostGrid showBadges={false} {posts} />
 	</div>
 	<ButtonLink href="/blog">All posts</ButtonLink>
 </section>

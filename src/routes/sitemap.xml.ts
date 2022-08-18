@@ -1,4 +1,4 @@
-import { getBlogs } from "$lib/posts/posts";
+import { getPostsGlob, PostType } from "$lib/posts/posts";
 
 export async function get({ }) {
     function sitemapDate(date: Date): string {
@@ -38,14 +38,18 @@ export async function get({ }) {
         },
     ]
 
-    const blogs = getBlogs(3, true)
+    const posts = getPostsGlob({
+        featured: true,
+        limit: 3,
+        types: [PostType.Blog, PostType.Case, PostType.Event]
+    })
 
-    blogs.blogs.forEach((blog) => {
+    posts.posts.forEach((post) => {
         pages.push({
-            loc: `https://verifa.io/blog/${blog.slug}`,
+            loc: `https://verifa.io/blog/${post.slug}`,
             // Default priority
             priority: 0.5,
-            lastmod: new Date(blog.date)
+            lastmod: new Date(post.date)
         })
     })
 

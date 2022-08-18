@@ -83,7 +83,9 @@
 	{#if type != PostType.Case}
 		<section>
 			<h2>Read similar posts</h2>
-			<PostGrid posts={relatedBlogs} showBadges={false} />
+		</section>
+		<section>
+			<PostGrid posts={relatedBlogs} showBadges={true} />
 		</section>
 	{/if}
 </div>

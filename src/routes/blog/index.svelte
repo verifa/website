@@ -1,38 +1,53 @@
 <script context="module" lang="ts">
 	export async function load({ fetch }) {
-		const postsUrl = `/posts/blogs.json`;
-		const res = await fetch(postsUrl);
-		if (res.ok) {
+		try {
+			const res = await fetch(
+				'/posts/posts.json?' +
+					new URLSearchParams({
+						types: blogTypes.join(',')
+					})
+			);
+
+			if (res.ok) {
+				const data: PostsData = await res.json();
+				return {
+					props: {
+						data: data
+					}
+				};
+			} else {
+				const error = await res.text();
+				return {
+					status: res.status,
+					error: new Error(error)
+				};
+			}
+		} catch (error) {
 			return {
-				props: {
-					data: await res.json()
-				}
+				status: 500,
+				error: error
 			};
 		}
-
-		return {
-			status: res.status,
-			error: new Error(`Could not load ${postsUrl}`)
-		};
 	}
 </script>
 
 <script lang="ts">
 	import { page } from '$app/stores';
-	import type { Blogs, Post } from '$lib/posts/posts';
+	import { type PostsData, type Post, blogTypes } from '$lib/posts/posts';
 	import PostGrid from '$lib/posts/postGrid.svelte';
 	import { writable } from 'svelte/store';
 	import { onMount } from 'svelte';
 	import { seo } from '$lib/seo/store';
+	import Error from '../__error.svelte';
 
-	export let data: Blogs;
+	export let data: PostsData;
 
 	seo.reset();
 	$seo.title = 'Verifa blog and news';
 	$seo.description =
 		'We write about all the great things happening in Cloud, DevOps, Continuous Delivery and our culture';
 
-	const allBlogs: Post[] = data.blogs;
+	const allBlogs: Post[] = data.posts;
 	const allKeywords: string[] = data.keywords;
 	let showBlogs: Post[] = allBlogs;
 
