@@ -9,7 +9,7 @@
 	import PostGrid from './postGrid.svelte';
 	import { PostType } from './posts';
 
-	export let relatedBlogs = [];
+	export let relatedPosts = [];
 
 	export let type;
 	export let title;
@@ -85,7 +85,7 @@
 			<h2>Read similar posts</h2>
 		</section>
 		<section>
-			<PostGrid posts={relatedBlogs} showBadges={true} />
+			<PostGrid posts={relatedPosts} showBadges={true} />
 		</section>
 	{/if}
 </div>

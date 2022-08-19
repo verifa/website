@@ -4,16 +4,14 @@
 			const res = await fetch(
 				'/posts/posts.json?' +
 					new URLSearchParams({
-						types: blogTypes.join(',')
+						types: blogTypes.join(','),
+						limit: '3',
+						allKeywords: 'true'
 					})
 			);
 
 			if (res.ok) {
-				const postsData: PostsData = await res.json();
-				const data: PostsData = {
-					posts: filterPosts(postsData.posts, { limit: 3 }),
-					keywords: postsData.keywords
-				};
+				const data: PostsData = await res.json();
 				return {
 					props: {
 						data: data

@@ -8,7 +8,7 @@
 					'/posts/posts.json?' +
 						new URLSearchParams({
 							limit: '3',
-							skip_title: title,
+							skipTitle: title,
 							keywords: tags.join(',')
 						})
 				);
@@ -45,7 +45,7 @@
 </script>
 
 <script lang="ts">
-	import type { Post, PostsData } from '$lib/posts/posts';
+	import type { Post, PostsData, PostsQuery } from '$lib/posts/posts';
 	import NotFound from './_notFound.svelte';
 
 	export let post = null;

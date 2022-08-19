@@ -34,38 +34,40 @@ export const blogTypes: PostType[] = [
 // getSlug takes a path to a post and returns the name of the file removing all
 // paths and the extension.
 // E.g.
-// input path: posts/cases/this-is-some-case.md
-// returns: this-is-some-case
+//   input path: posts/cases/this-is-some-case.md
+//   returns: this-is-some-case
 const getSlug = (path: string): string =>
     path.split("/").at(-1).replace(".md", "");
 
-// orderKeywords takes a list of keywords (with possible duplicates)
-// and returns an ordered list by the number of occurences of each keyword
-const orderKeywords = (keywords: string[]): string[] => {
-    var countMap = keywords.reduce(function (p, c) {
-        p[c] = (p[c] || 0) + 1;
-        return p;
-    }, {});
-
-    return Object.keys(countMap).sort(function (a, b) {
-        return countMap[b] - countMap[a];
-    });
-}
 // We have some old blogs using keywords that are not so relevant...
 // Let's ignore those rather than updating old blogs.
 const ignoredKeywords: string[] = [
+    "Conference",
+    "Data Science",
     "JFrog",
     "Machine Learning",
-    "Data Science"
 ]
+
 export interface PostsQuery {
+    // types, if provided, filters by type (e.g. Blog, Case, Job)
     types?: PostType[];
+    // keywords, if provided, filters by keywords (i.e. "tags" in posts)
     keywords?: string[];
+    // limit, if provided, limits the results returned. It is done after all
+    // other filters and ordering has been performed
     limit?: number;
+    // featured, if provided, filters by the featured posts
     featured?: boolean;
+    // author, if provided, filters by the author
     author?: string;
-    relatedPostTitle?: string;
+    // skipTitle, if provided, filters the post with the same title.
+    // This is useful if getting related posts, so that it excludes
+    // the same post from related posts
     skipTitle?: string;
+    // allKeywords, if provided, returns all the keywords before the filter
+    // is applied. If not provided, the keywords returned are those from
+    // the filtered posts that are returned
+    allKeywords?: boolean;
 }
 
 
@@ -79,13 +81,32 @@ export const getPostsGlob = (query: PostsQuery = {}): PostsData => {
             slug: getSlug(key),
             ...rawPost.metadata,
         }
+        // Filter by type here, as some logic depends on only having the requested
+        // types in the list of all posts.
+        // We filter the rest of the query later.
+        if (query.types && !query.types.includes(post.type)) {
+            continue
+        }
         posts.push(post)
     }
 
     // Sort the posts by date
     posts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
 
-    return preparePostsData(posts, query)
+    const filteredPosts = filterPosts(posts, query)
+
+    let keywords: string[] = []
+    if (query.allKeywords) {
+        keywords = keywordsFromPosts(posts)
+    } else {
+        keywords = keywordsFromPosts(filteredPosts)
+    }
+
+    return {
+        posts: filteredPosts,
+        keywords: keywords,
+    }
+
 }
 
 const preparePostsData = (posts: Post[], query: PostsQuery = {}): PostsData => {
@@ -128,14 +149,14 @@ export const filterPosts = (posts: Post[], query: PostsQuery): Post[] => {
 }
 
 const keywordsFromPosts = (posts: Post[]): string[] => {
-    let keywords: string[] = [];
+    let keywords: Set<string> = new Set();
     // Populate keywords from the posts
     posts.forEach((post) => post.tags.forEach((tag) => {
         if (!ignoredKeywords.includes(tag)) {
-            keywords.push(tag)
+            keywords.add(tag)
         }
     }))
-    return orderKeywords(keywords)
+    return Array.from(keywords).sort()
 }
 
 
@@ -155,10 +176,11 @@ export const getPostUrl = (post: Post): string => {
 }
 
 const hasMatchingKeyword = (keywords: string[], tags: string[]): boolean => {
+    const lowerTags = tags.map((tag) => tag.toLowerCase())
     for (let index = 0; index < keywords.length; index++) {
         const keyword = keywords[index];
         // If there is even one match, then return it
-        if (tags.includes(keyword)) {
+        if (lowerTags.includes(keyword.toLowerCase())) {
             return true
         }
     }
