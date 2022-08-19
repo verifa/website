@@ -7,6 +7,7 @@
 				const res = await fetch(
 					'/posts/posts.json?' +
 						new URLSearchParams({
+							types: blogTypes.join(','),
 							limit: '3',
 							skipTitle: title,
 							keywords: tags.join(',')
@@ -45,7 +46,7 @@
 </script>
 
 <script lang="ts">
-	import type { Post, PostsData, PostsQuery } from '$lib/posts/posts';
+	import { blogTypes, type Post, type PostsData, type PostsQuery } from '$lib/posts/posts';
 	import NotFound from './_notFound.svelte';
 
 	export let post = null;
