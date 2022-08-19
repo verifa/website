@@ -2,13 +2,6 @@
 	This load function is not actually used, but something has to reference the
 	/sitemap.xml endpoint so that it is generated, i.e. this is a HACK!
 -->
-<script context="module" lang="ts">
-	export async function load({ fetch }) {
-		const res = await fetch('/sitemap.xml');
-		return {};
-	}
-</script>
-
 <script lang="ts">
 	import { seo } from '$lib/seo/store';
 

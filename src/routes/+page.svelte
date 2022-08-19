@@ -1,40 +1,4 @@
-<script context="module" lang="ts">
-	export async function load({ fetch }) {
-		try {
-			const res = await fetch(
-				'/posts/posts.json?' +
-					new URLSearchParams({
-						types: blogTypes.join(','),
-						limit: '3',
-						allKeywords: 'true'
-					})
-			);
-
-			if (res.ok) {
-				const data: PostsData = await res.json();
-				return {
-					props: {
-						data: data
-					}
-				};
-			} else {
-				const error = await res.text();
-				return {
-					status: res.status,
-					error: new Error(error)
-				};
-			}
-		} catch (error) {
-			return {
-				status: 500,
-				error: error
-			};
-		}
-	}
-</script>
-
 <script lang="ts">
-	import { type PostsData, type Post, blogTypes, filterPosts } from '$lib/posts/posts';
 	import PostGrid from '$lib/posts/postGrid.svelte';
 	import ButtonLink from '$lib/buttonLink.svelte';
 	import Columns from '$lib/columns.svelte';
@@ -42,9 +6,11 @@
 	import Grid from '$lib/grid.svelte';
 	import { seo } from '$lib/seo/store';
 	import MainReference from '$lib/mainReference.svelte';
+	import type { PageData } from '.svelte-kit/types/src/routes/$types';
+	import type { Post } from '$lib/posts/posts';
 
-	export let data: PostsData;
-	const posts: Post[] = data.posts;
+	export let data: PageData;
+	const posts: Post[] = data.posts.posts;
 
 	seo.reset();
 </script>
@@ -173,7 +139,7 @@
 	<h3 class="text-v-lilac">Search by popular keyword</h3>
 	<div class="flex flex-col gap-y-12">
 		<div class="-my-2 flex flex-wrap gap-x-4">
-			{#each data.keywords as tag}
+			{#each data.posts.keywords as tag}
 				<a href="/blog?keywords={tag}" class="inline-block ">
 					<span class="inline-flex items-center my-2 px-3 py-0.5 bg-v-gray">
 						<p class="m-0 capitalize text-v-white">{tag}</p>

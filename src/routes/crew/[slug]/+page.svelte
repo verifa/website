@@ -1,59 +1,15 @@
-<script context="module" lang="ts">
-	export const load = async ({ params, fetch }) => {
-		const member = crewByID(params.slug);
-		if (!member) {
-			return {
-				status: 404,
-				props: {
-					member: null
-				}
-			};
-		}
-		try {
-			const res = await fetch(
-				'/posts/posts.json?' +
-					new URLSearchParams({
-						types: blogTypes.join(','),
-						author: member.id
-					})
-			);
-
-			if (res.ok) {
-				return {
-					props: {
-						member: member,
-						data: await res.json()
-					}
-				};
-			} else {
-				const error = await res.text();
-				return {
-					status: res.status,
-					error: new Error(error)
-				};
-			}
-		} catch (error) {
-			return {
-				status: 500,
-				error: error
-			};
-		}
-	};
-</script>
-
 <script lang="ts">
-	import { crewByID, type Member } from '$lib/crew/crew';
+	import type { PageData } from './$types';
 	import PostGrid from '$lib/posts/postGrid.svelte';
-	import { blogTypes, PostType, type PostsData } from '$lib/posts/posts';
 	import { seo } from '$lib/seo/store';
 
-	export let member: Member;
-	export let data: PostsData;
+	export let data: PageData;
+	$: ({ member, posts } = data);
 
 	seo.reset();
-	$seo.title = 'Verifa Crew: ' + member.name;
-	$seo.description = member.bio ? member.bio.substring(0, 100) : '';
-	$seo.image.url = member.image;
+	$seo.title = 'Verifa Crew: ' + data.member.name;
+	$seo.description = data.member.bio ? data.member.bio.substring(0, 100) : '';
+	$seo.image.url = data.member.image;
 </script>
 
 {#if member.active}
@@ -118,10 +74,10 @@
 	</section>
 {/if}
 <section>
-	{#if data.posts.length == 0}
+	{#if posts.posts.length == 0}
 		<h2>No posts by author</h2>
 	{:else}
-		<h2>PostsData by author</h2>
-		<PostGrid posts={data.posts} />
+		<h2>Posts by author</h2>
+		<PostGrid posts={posts.posts} />
 	{/if}
 </section>

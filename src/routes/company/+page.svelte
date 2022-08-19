@@ -70,10 +70,6 @@
 			image: '/certifications/aws-certified-solutions-architect-associate-badge-lilac.png',
 			name: 'aws-certified-solutions-architect-associate'
 		}
-		// {
-		// 	image: '/certifications/hashicorp-partner-enabled-lilac.png',
-		// 	name: 'hashicorp-partner-enabled-lilac.png'
-		// }
 	];
 </script>
 

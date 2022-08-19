@@ -8,8 +8,8 @@
 <section>
 	<h1>
 		<span class="text-v-lilac">Woops...</span>
-		<span class="text-v-pink">That crew member doesn't exist yet.</span>
+		<span class="text-v-pink">That crew member doesn't exist.</span>
 	</h1>
-	<h3>Want to check people who really do work at Verifa?</h3>
+	<h3>Want to check the crew at Verifa?</h3>
 	<ButtonLink href={'/crew'}>Back to crew</ButtonLink>
 </section>

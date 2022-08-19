@@ -1,6 +1,7 @@
+import { json } from '@sveltejs/kit';
 import { getPostsGlob, PostType } from "$lib/posts/posts";
 
-export async function get({ }) {
+export async function GET({ }) {
     function sitemapDate(date: Date): string {
         return date.toISOString().split('T')[0]
     }
@@ -74,8 +75,7 @@ ${pages.map((page) =>
 </urlset>
     `
 
-    return {
-        headers,
-        body: body,
-    }
+    return json(body, {
+        headers: headers
+    });
 }

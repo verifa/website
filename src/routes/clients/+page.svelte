@@ -1,35 +1,3 @@
-<script context="module" lang="ts">
-	export async function load({ fetch }) {
-		try {
-			const res = await fetch(
-				'/posts/posts.json?' +
-					new URLSearchParams({
-						types: PostType.Case
-					})
-			);
-
-			if (res.ok) {
-				return {
-					props: {
-						data: await res.json()
-					}
-				};
-			} else {
-				const error = await res.text();
-				return {
-					status: res.status,
-					error: new Error(error)
-				};
-			}
-		} catch (error) {
-			return {
-				status: 500,
-				error: error
-			};
-		}
-	}
-</script>
-
 <script lang="ts">
 	import Column from '$lib/column.svelte';
 	import Columns from '$lib/columns.svelte';
@@ -40,10 +8,10 @@
 	import CtaButton from '$lib/ctaButton.svelte';
 	import Grid from '$lib/grid.svelte';
 	import { seo } from '$lib/seo/store';
-	import { PostType, type PostsData } from '$lib/posts/posts';
 	import PostGrid from '$lib/posts/postGrid.svelte';
+	import type { PageData } from './$types';
 
-	export let data: PostsData;
+	export let data: PageData;
 
 	seo.reset();
 	$seo.title = 'Our clients: we care and we deliver';
@@ -110,7 +78,7 @@
 	<h1>How we have helped our clients.</h1>
 </section>
 <section>
-	<PostGrid showBadges={false} posts={data.posts} />
+	<PostGrid showBadges={false} posts={data.posts.posts} />
 </section>
 <section>
 	<HeaderLine />

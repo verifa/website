@@ -1,53 +1,22 @@
-<script context="module" lang="ts">
-	export async function load({ fetch }) {
-		try {
-			const res = await fetch(
-				'/posts/posts.json?' +
-					new URLSearchParams({
-						types: PostType.Job
-					})
-			);
-
-			if (res.ok) {
-				return {
-					props: {
-						data: await res.json()
-					}
-				};
-			} else {
-				const error = await res.text();
-				return {
-					status: res.status,
-					error: new Error(error)
-				};
-			}
-		} catch (error) {
-			return {
-				status: 500,
-				error: error
-			};
-		}
-	}
-</script>
-
 <script lang="ts">
 	import Column from '$lib/column.svelte';
 	import Columns from '$lib/columns.svelte';
 	import CompanyValues from '$lib/company/companyValues.svelte';
 
-	import { type PostsData, type Post, PostType } from '$lib/posts/posts';
 	import PostGrid from '$lib/posts/postGrid.svelte';
 	import HeaderLine from '$lib/headerLine.svelte';
 	import { seo } from '$lib/seo/store';
 	import CareersForm from '$lib/careers/careersForm.svelte';
+	import type { PageData } from './$types';
+	import type { Post } from '$lib/posts/posts';
 
-	export let data: PostsData;
+	export let data: PageData;
 
 	seo.reset();
 	$seo.title = 'Join us: we care about our work and the impact we have';
 	$seo.image.url = '/round-table.svg';
 
-	const jobs: Post[] = data.posts;
+	const jobs: Post[] = data.posts.posts;
 </script>
 
 <section>

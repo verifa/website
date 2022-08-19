@@ -68,18 +68,20 @@ export interface PostsQuery {
     // is applied. If not provided, the keywords returned are those from
     // the filtered posts that are returned
     allKeywords?: boolean;
+    // jobActive filters job types if they should be active or not
+    jobActive?: boolean;
 }
 
 
 export const getPostsGlob = (query: PostsQuery = {}): PostsData => {
     let posts: Post[] = [];
 
-    const rawPosts = import.meta.globEager("../../posts/**/*.md")
+    const rawPosts = import.meta.glob("../../posts/**/*.md", { eager: true })
     for (const key in rawPosts) {
         const rawPost = rawPosts[key]
         const post: Post = {
             slug: getSlug(key),
-            ...rawPost.metadata,
+            ...rawPost["metadata"],
         }
         // Filter by type here, as some logic depends on only having the requested
         // types in the list of all posts.
@@ -109,14 +111,6 @@ export const getPostsGlob = (query: PostsQuery = {}): PostsData => {
 
 }
 
-const preparePostsData = (posts: Post[], query: PostsQuery = {}): PostsData => {
-    posts = filterPosts(posts, query)
-    return {
-        posts: posts,
-        keywords: keywordsFromPosts(posts),
-    }
-}
-
 export const filterPosts = (posts: Post[], query: PostsQuery): Post[] => {
     posts = posts.filter((post) => {
         // Check types
@@ -137,6 +131,10 @@ export const filterPosts = (posts: Post[], query: PostsQuery): Post[] => {
         }
         // Check skip title
         if (query.skipTitle && post.title === query.skipTitle) {
+            return false
+        }
+        // Check job active filter
+        if (query.jobActive && post.type === PostType.Job && !post.jobActive) {
             return false
         }
         return true

@@ -1,54 +1,21 @@
-<script context="module" lang="ts">
-	export async function load({ fetch }) {
-		try {
-			const res = await fetch(
-				'/posts/posts.json?' +
-					new URLSearchParams({
-						types: blogTypes.join(',')
-					})
-			);
-
-			if (res.ok) {
-				const data: PostsData = await res.json();
-				return {
-					props: {
-						data: data
-					}
-				};
-			} else {
-				const error = await res.text();
-				return {
-					status: res.status,
-					error: new Error(error)
-				};
-			}
-		} catch (error) {
-			return {
-				status: 500,
-				error: error
-			};
-		}
-	}
-</script>
-
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { type PostsData, type Post, blogTypes } from '$lib/posts/posts';
 	import PostGrid from '$lib/posts/postGrid.svelte';
 	import { writable } from 'svelte/store';
 	import { onMount } from 'svelte';
 	import { seo } from '$lib/seo/store';
-	import Error from '../__error.svelte';
+	import type { PageData } from '.svelte-kit/types/src/routes/$types';
+	import type { Post } from '$lib/posts/posts';
 
-	export let data: PostsData;
+	export let data: PageData;
 
 	seo.reset();
 	$seo.title = 'Verifa blog and news';
 	$seo.description =
 		'We write about all the great things happening in Cloud, DevOps, Continuous Delivery and our culture';
 
-	const allBlogs: Post[] = data.posts;
-	const allKeywords: string[] = data.keywords;
+	const allBlogs: Post[] = data.posts.posts;
+	const allKeywords: string[] = data.posts.keywords;
 	let showBlogs: Post[] = allBlogs;
 
 	const selectedKeywords = writable<boolean[]>(Array(allKeywords.length).fill(false));
