@@ -1,6 +1,6 @@
-# Verifa Official Website
+# Verifa Website
 
-This repository contains Verifa's official website live at <https://verifa.io>
+This repository contains Verifa's website live at <https://verifa.io>
 
 ## Stack
 
