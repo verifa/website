@@ -1,3 +1,7 @@
+<script>
+	import { env } from '$lib/env';
+</script>
+
 <footer class="" aria-labelledby="footerHeading">
 	<h2 id="footerHeading" class="sr-only">Footer</h2>
 	<div class="max-w-7xl mx-auto mt-20 pt-6 px-8 sm:px-16 pb-12">
@@ -113,7 +117,13 @@
 				</div>
 			</div>
 			<div class="mt-12 border-t border-black pt-8">
-				<p>&copy; 2022 Verifa Group Oy All rights reserved.</p>
+				<p>
+					&copy; 2022 Verifa Group Oy All rights reserved. Version <a
+						target="_blank"
+						href="https://github.com/verifa/website/tree/{env.gitCommit}"
+						>{env.gitCommit.substring(0, 7)}</a
+					>.
+				</p>
 			</div>
 		</div>
 	</div>

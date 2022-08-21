@@ -16,6 +16,9 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: 16.x
+      - name: Write dotenv file
+        run: |
+          echo "VITE_GIT_COMMIT=${GITHUB_SHA}" > .env
       - run: npm ci
       - run: npm run build
 
