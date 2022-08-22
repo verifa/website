@@ -3,9 +3,11 @@ name: build-test
 on:
   push:
     branches:
-      - "**"
+      - "main"
   release:
     types: [published]
+  pull_request:
+    types: [opened, reopened, synchronize, labeled]
 
 jobs:
   build:
@@ -34,29 +36,11 @@ jobs:
           name: website
           path: ./build/
           retention-days: 1
-
-  html-proofer:
-    needs: build
-    runs-on: ubuntu-latest
-    container:
-      image: docker://18fgsa/html-proofer:latest
-      options: -v /volume_mount:/volume_mount
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: website
-          path: /volume_mount/website
-
-      - name: Check HTML with HTMLProofer
-        run: |
-          htmlproofer /volume_mount/website --allow-hash-href  --enforce-https  --check-favicon --check-opengraph --report-missing-names --report-invalid-tags --disable_external --empty_alt_ignore
-
   deploy:
-    needs: [build, html-proofer]
+    needs: [build]
     runs-on: ubuntu-latest
-    # only run on main branch
-
-    if: github.ref == 'refs/heads/main' || github.event_name == 'release'
+    # Run on main branch, release or if PR contains the 'preview' label
+    if: github.ref == 'refs/heads/main' || github.event_name == 'release' || contains( github.event.pull_request.labels.*.name, 'preview')
 
     steps:
       - uses: actions/download-artifact@v2
@@ -66,12 +50,17 @@ jobs:
       - name: Write deploy variables
         id: vars
         run: |
-          # set the deploy_env
           if [ "${{ github.event_name }}" == "release" ]
           then
               echo "::set-output name=deploy_env::prod"
-          else
+          elif [ "${{ github.event_name }}" == "staging" ]
+          then
               echo "::set-output name=deploy_env::staging"
+          elif [ "${{ contains( github.event.pull_request.labels.*.name, 'preview') }}" == "true" ]
+          then
+             echo "::set-output name=deploy_env::preview"
+          else
+             echo "::set-output name=deploy_env::unknown"
           fi
       - name: Dump deployment variables
         run: echo "${{ steps.vars.outputs.deploy_env }}"
