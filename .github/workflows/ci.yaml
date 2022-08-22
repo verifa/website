@@ -53,7 +53,7 @@ jobs:
           if [ "${{ github.event_name }}" == "release" ]
           then
               echo "::set-output name=deploy_env::prod"
-          elif [ "${{ github.event_name }}" == "staging" ]
+          elif [ "${GITHUB_REF#refs/heads/}" == "main" ]
           then
               echo "::set-output name=deploy_env::staging"
           elif [ "${{ contains( github.event.pull_request.labels.*.name, 'preview') }}" == "true" ]
