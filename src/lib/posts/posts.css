@@ -31,12 +31,9 @@ Podcast blog-flex class
 /* 
  * BEGIN blog header anchors
  */
-.header-anchor {
-    @apply flex items-center;
-}
 
 .header-anchor-link {
-    @apply absolute;
+    @apply inline-block align-middle ml-2 ;
 }
 
 .header-anchor-icon {
@@ -45,23 +42,23 @@ Podcast blog-flex class
 
 /* Icon size and offset for different header sizes */
 .header-anchor-icon-h2 {
-    @apply h-7 w-7 -ml-8;
+    @apply h-8 w-8;
 }
 
 .header-anchor-icon-h3 {
-    @apply h-6 w-6 -ml-8;
+    @apply h-6 w-6;
 }
 
 .header-anchor-icon-h4 {
-    @apply h-5 w-5 -ml-8;
+    @apply h-5 w-5;
 }
 
 .header-anchor-icon-h5 {
-    @apply h-4 w-4 -ml-8;
+    @apply h-4 w-4;
 }
 
 .header-anchor-icon-h6 {
-    @apply h-3 w-3 -ml-8;
+    @apply h-3 w-3;
 }
 
 /* 
