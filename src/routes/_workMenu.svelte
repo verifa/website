@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
+	import { headerVisible } from './store';
 
 	const links: {
 		title: string;
@@ -37,6 +38,14 @@
 
 	let workMenuDiv;
 	let shown = false;
+
+	// Subscribe to headerVisible store so that if the header disappears and we
+	// have the menu open, then the menu is also closed
+	headerVisible.subscribe((visible) => {
+		if (!visible && shown) {
+			shown = false;
+		}
+	});
 
 	function hide() {
 		shown = false;

@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import MobileMenu from './_mobileMenu.svelte';
 	import WorkMenu from './_workMenu.svelte';
+	import { headerVisible } from './store';
 
 	interface Link {
 		text: string;
@@ -50,7 +51,7 @@
 	};
 
 	$: scrollUp = isScrollingUp(currentY);
-	$: offscreen = !scrollUp && currentY > clientHeight * 4;
+	$: headerVisible.set(scrollUp || currentY <= clientHeight * 4);
 
 	onMount(() => {
 		const handleOutsideClick = (event) => {
@@ -81,7 +82,7 @@
 
 <header
 	class="sticky top-0 py-6 px-8 sm:px-16 bg-v-white/50 backdrop-blur-sm transition-transform ease-in"
-	class:-translate-y-full={offscreen}
+	class:-translate-y-full={!$headerVisible}
 	bind:clientHeight
 >
 	<div bind:this={mobileMenu}>
