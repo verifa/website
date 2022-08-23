@@ -20,7 +20,10 @@ jobs:
           node-version: 16.x
       - name: Write dotenv file
         run: |
-          echo "VITE_GIT_COMMIT=${GITHUB_SHA}" > .env
+          cat <<-EOF >.env
+          VITE_GIT_COMMIT=${GITHUB_SHA}
+          VITE_ROBOTS_INDEX_ALL=${{ github.event_name == 'release' }}
+          EOF
       - run: npm ci
       - run: npm run build
 

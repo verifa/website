@@ -1,3 +1,4 @@
+import { env } from "$lib/env";
 import { writable } from "svelte/store";
 
 export interface SEOMetadata {
@@ -6,7 +7,7 @@ export interface SEOMetadata {
     canonical?: string
 
     robots: {
-        noindex: boolean
+        indexAll: boolean
     }
 
     article?: {
@@ -58,7 +59,7 @@ function createSEOStore() {
         title: "Verifa: Your trusted crew for all things Continuous and Cloud",
         description: "We are an experienced crew of DevOps and Cloud professionals dedicated to helping our customers with Continuous practices and Cloud adoption.",
         robots: {
-            noindex: false
+            indexAll: env.robotsIndexAll
         },
         image: {
             url: "/verifa-logo.svg",
@@ -72,7 +73,7 @@ function createSEOStore() {
             title: "Verifa: Your trusted crew for all things Continuous and Cloud",
             description: "We are an experienced crew of DevOps and Cloud professionals dedicated to helping our customers with Continuous practices and Cloud adoption.",
             robots: {
-                noindex: false
+                indexAll: env.robotsIndexAll
             },
             image: {
                 url: "/continuous-delivery.svg",

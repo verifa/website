@@ -18,7 +18,7 @@
 <svelte:head>
 	<title>{$seo.title}</title>
 	<meta name="description" content={$seo.description} />
-	<meta name="robots" content={`${$seo.robots.noindex ? 'noindex' : 'all'}`} />
+	<meta name="robots" content={`${$seo.robots.indexAll ? 'all' : 'none'}`} />
 	<link rel="canonical" href={url} />
 </svelte:head>
 
