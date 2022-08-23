@@ -1,5 +1,5 @@
 ---
-type: Blog
+type: Podcast
 title: A sneak peek into UpCloud Kubernetes Service
 subheading: In this episode of The Continuous & Cloud Podcast, Jacob and Lauri chat with Ville Törhönen, Product Owner at UpCloud, about UpCloud’s upcoming managed Kubernetes Service (UKS).
 authors:
@@ -61,7 +61,7 @@ In this episode of The Continuous & Cloud Podcast, Jacob and Lauri chat with Vil
 Ville (MSc, Tech) is working as a Product Owner at UpCloud. He is responsible for the upcoming UpCloud Kubernetes Service (UKS) product offering but also Developer Experience on the platform. Previously he’s been building various businesses and products on top of container technologies in companies like Unity, Noice and Redhill Games.
 
 ## About UpCloud
-[UpCloud](https://upcloud.com/)is a European Cloud Service Provider offering fast, easy-to-use, and reliable cloud products and services. UpCloud has 12 data centers around the globe. The company is a a strong believer in open source. That’s why all their services are available from [public repositories](https://github.com/UpCloudLtd). UpCloud’s mission is to make Infrastructure as Code easier for businesses of all sizes.
+[UpCloud](https://upcloud.com/) is a European Cloud Service Provider offering fast, easy-to-use, and reliable cloud products and services. UpCloud has 12 data centers around the globe. The company is a a strong believer in open source. That’s why all their services are available from [public repositories](https://github.com/UpCloudLtd). UpCloud’s mission is to make Infrastructure as Code easier for businesses of all sizes.
 
 ## Connect with today’s podcast crew on Linkedin
 

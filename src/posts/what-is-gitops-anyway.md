@@ -1,5 +1,5 @@
 ---
-type: Blog
+type: Podcast
 title: 'What is GitOps anyway? '
 subheading: In this episode of The Verifa Podcast, Jacob and Andreas get into a deep
   discussion about GitOps, how it works, and its applications and benefits.

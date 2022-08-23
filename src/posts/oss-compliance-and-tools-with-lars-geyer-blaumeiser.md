@@ -1,5 +1,5 @@
 ---
-type: Blog
+type: Podcast
 title: OSS Compliance and Tools with Lars Geyer-Blaumeiser
 subheading: In this episode of The Verifa Podcast, Andreas chats with Lars Geyer-Blaumeiser,
   Senior Expert Open Source Program Office at Bosch, who shares his insights on open

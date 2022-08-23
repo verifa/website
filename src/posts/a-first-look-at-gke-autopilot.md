@@ -1,5 +1,5 @@
 ---
-type: Blog
+type: Podcast
 title: A first look at GKE Autopilot
 subheading: In Verifa's first podcast we discuss Google's new Autopilot for Kubernetes,
   and what it means to have a managed Kubernetes service.
