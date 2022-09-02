@@ -20,7 +20,6 @@
 	$seo.title = 'Continuous Delivery Workshop';
 	$seo.description =
 		'Our Continuous Delivery Workshops help teams unlock their Continuous Delivery potential. We use Value Stream Mapping as our method for helping teams understand their current release process and create a backlog of improvements.';
-	$seo.image;
 
 	export let data: PageData;
 	const posts: Post[] = data.posts.posts;
