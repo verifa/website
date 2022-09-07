@@ -8,7 +8,7 @@ tags:
 - Continuous Delivery
 - Value Stream Mapping
 date: 2022-09-07
-image: "/blogs/unlock-continuous-delivery-potential-vsm/unlock-your-continuous-delivery-vsm.svg"
+image: "/blogs/unlock-continuous-delivery-potential-vsm/unlock-your-continuous-delivery-vsm.png"
 featured: true
 
 ---
@@ -17,19 +17,19 @@ featured: true
 
 Plenty of material exists for teams to read and learn about improving their Continuous Delivery practices. However, best practices are not a one-size-fits-all. Do you know what should change and where to invest? Value Stream Mapping is one method you should consider to help answer that question.
 
-# What is Continuous Delivery and why is it hard?
+## What is Continuous Delivery and why is it hard?
 
 Continuous Delivery is about building a process where software is always releasable while ensuring short release cycles. The pains and struggles to achieve this are often not related to technology but stem from a fragmented release process with handovers causing friction and delays.
 
 Practicing Continuous Delivery is challenging because every team is different and best practices are not a one-size-fits all. Let’s cover some of the common challenges teams encounter when looking to improve their release process.
 
-## Understanding your current release process
+### Understanding your current release process
 
 Before you can improve your release process you must first understand its current state in order to identify what to improve. Even if you have the fortune of being able to define a completely new process (e.g. for a new project), it could be costly and challenging to implement, and it would be a shame if you did not learn from previous mistakes.
 
 It is difficult to build a realistic and common understanding of a release process; one that truly represents the daily tasks, does not simply focus on the “happy path”, and one that highlights where the pain and struggles are. If only a few individuals sketch their own understanding of the release process it is likely going to miss important details and your analysis will thus be inaccurate.
 
-## Lack of involvement from the team
+### Lack of involvement from the team
 
 Every software team is different because of the people in it and not just the technologies they are working with. It is imperative to not lose sight of the human factor when implementing change and make sure you get people along for the ride.
 
@@ -39,7 +39,7 @@ Team members also have varying comfort zones and it would be foolish to assume e
 
 Ownership is pivotal when making change. If those responsible for an activity simply get told how to do it “better” without the opportunity to provide input on the change, it can lead to repeating previous mistakes and lack of motivation.
 
-## Lack of feedback
+### Lack of feedback
 
 Continuous Delivery is all about (continuous) feedback to the development team, yet ironically, it is common to struggle getting feedback on the improvement process itself. This is not just about metrics, such as lead time or mean time to recovery, but also about feedback from the people involved in the improvements. 
 
@@ -47,13 +47,13 @@ Applying the Build-Measure-Learn process to Continuous Delivery will help in mak
 
 Implementing change to your release process should not be done in big chunks because big chunks are more difficult to adopt, measure and revert. At the same time, it is difficult to decompose problems and create an incremental plan for improving your Continuous Delivery.
 
-## Lack of support from management
+### Lack of support from management
 
 Getting support from management to take time away from product development is a common challenge with Continuous Delivery. This is not because management does not want to invest into improvement, but the challenge is being able to justify the return on investment.
 
 As mentioned earlier, it is important to involve the team. You cannot simply have someone improve your release process on their own. There will be a cost of practicing Continuous Delivery and the benefits need to be quite clear.
 
-## Following best practices
+### Following best practices
 
 It is common to hear success stories with “tool X” that helped a team greatly improve their release process. While research is important, it is easy to mistakenly focus on the workflows and tools of successful teams, rather than ***why*** it works for them.
 
@@ -61,11 +61,11 @@ One of my wise colleagues told me once that “Best practices are a good solutio
 
 Goals should always be tied to the business. For example, aiming for the shortest release cycle possible comes at a price (often a compromise) and if it does not add clear value to the business, you are likely sacrificing something else that might add value (e.g. stability, scalability, monitoring). There’s only so much you can do at a time, so choosing your battles should be done with some insight into your specific team, product and business requirements.
 
-# Value Stream Mapping
+## Value Stream Mapping
 
 If the above challenges with implementing Continuous Delivery have resonated with you then you will want to learn about Value Stream Mapping and how we at Verifa run our workshops.
 
-## What is Value Stream Mapping?
+### What is Value Stream Mapping?
 
 A Value Stream Map is a visual tool showing the series of events that take a product or service from the beginning of a process until it reaches its end (i.e. a Value Stream). It displays all the critical steps and quantifies the time and volume taken at each event. The main purpose is to be able to identify and remove waste.
 
@@ -74,17 +74,17 @@ Value Stream Mapping (VSM) is a method for defining a Value Stream and analysing
 ![Simplified example Value Stream Map for Continuous Delivery of software](/blogs/unlock-continuous-delivery-potential-vsm/mock-vsm.png)
 Simplified example Value Stream Map for Continuous Delivery of software
 
-## Addressing challenges with Continuous Delivery
+### Addressing challenges with Continuous Delivery
 
 Let’s go over the aforementioned challenges again and discuss how Value Stream Mapping can help address them.
 
-### Understanding your current release process
+#### Understanding your current release process
 
 A Value Stream Map can accurately describe the current release process and the waste within. Waste makes it clear where to improve while justifying ***why*** changes should be made. If we know the problem, it makes it easier for us to propose solutions and be able to measure the success of the solutions.
 
 Visualising your release process brings many benefits, but it’s not just about the visual diagram you create. It’s about the process of creating it during which you share and discuss things that might never be discussed otherwise. This is the main reason why Value Stream Mapping should be a team activity; not something only a few individuals are involved in.
 
-### Lack of involvement from the team
+#### Lack of involvement from the team
 
 Value Stream Mapping is an interactive process and one objective should be to engage everyone involved to contribute. This will get people onboard right from the beginning.
 
@@ -94,7 +94,7 @@ While Value Stream Mapping does not directly extend people’s comfort zones, it
 
 The interactive nature of Value Stream Mapping is great for getting those responsible for activities involved in discussing waste and possible solutions right at the beginning. This allows people to take ownership of their work and be involved in shaping the future process.
 
-### Lack of feedback
+#### Lack of feedback
 
 Value Stream Maps do not provide feedback about changes you implement directly but do provide guidance for what to measure. Asking the right question can be very difficult and Value Stream Maps make asking questions such as “did change X help solve waste Y?” a lot easier to write, communicate and measure.
 
@@ -102,13 +102,13 @@ Remember that metrics are only part of the feedback. The Developer Experience is
 
 It is important to decompose problems into small incremental changes. This is much easier to do when the waste we have identified is related to steps in the release process. For example, sometimes waste is not a problem but a symptom of other waste. We can consider this waste to be transitive waste. This is valuable information when making changes because it can help us to order and plan changes incrementally.
 
-### Lack of support from management
+#### Lack of support from management
 
 Waste identified in the Value Stream Map can represent the cost of inefficiencies in your current release process. Quite simply; if you remove this waste then that is your return on investment. This makes it much easier to justify investment into improvements.
 
 It is recommended to include management in the Value Stream Mapping process; it’s a great way for them to learn more about how the teams work together. Once you start to tackle the waste it’s also much easier to plan the work into the ongoing project schedules. This is great because it means you can be quite flexible with how much time you invest into improvements based on how much you think it will benefit you.
 
-### Following best practices
+#### Following best practices
 
 If you use Value Stream Mapping to help guide your Continuous Delivery journey, you will better understand what your team’s individual challenges are and better reason about possible solutions. Once you know ***why*** you are doing something, it’s much easier to start looking for best practices that try to solve the same thing. Love the problem, not the solution. There is no endgame with Continuous Delivery and time is finite.
 
@@ -118,7 +118,7 @@ If you use Value Stream Mapping to help guide your Continuous Delivery journey, 
   <cite>- Jacob Lärfors, Verifa</cite>
 </blockquote>
 
-# Conclusion
+## Conclusion
 
 Continuous Delivery is hard because teams are different, their problems are different, and therefore the same set of solutions might not work for everyone. Learning about your own release process is not an obvious thing to do. Books and the internet can highlight problems others have suffered from (which might well be your problems) and suggest methods that you can try out. But it is important that you can relate problems back to your own release process; not just second-guess your problems and apply solutions.
 
