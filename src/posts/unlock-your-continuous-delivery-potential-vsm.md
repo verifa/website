@@ -112,9 +112,11 @@ It is recommended to include management in the Value Stream Mapping process; it�
 
 If you use Value Stream Mapping to help guide your Continuous Delivery journey, you will better understand what your team’s individual challenges are and better reason about possible solutions. Once you know ***why*** you are doing something, it’s much easier to start looking for best practices that try to solve the same thing. Love the problem, not the solution. There is no endgame with Continuous Delivery and time is finite.
 
-> Love the problem, not the solution. There is no endgame with Continuous Delivery and time is finite.
-- Jacob Lärfors, Verifa
-> 
+<blockquote>
+  ‘Love the problem, not the solution. There is no endgame with Continuous Delivery and time is finite.’
+  <br/>
+  <cite>- Jacob Lärfors, Verifa</cite>
+</blockquote>
 
 # Conclusion
 
