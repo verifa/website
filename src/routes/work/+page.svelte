@@ -8,6 +8,7 @@
 	import Faq from '../../lib/faq.svelte';
 	import CDWorkshop from './_cdWorkshop.svelte';
 	import FaqItem from '$lib/faqItem.svelte';
+	import ButtonLink from '$lib/buttonLink.svelte';
 
 	seo.reset();
 	$seo.title = 'What we do: Continuous Delivery and Cloud Architecture';
@@ -21,7 +22,7 @@
 <section>
 	<Columns>
 		<Column class="self-start">
-			<h3>What is Continuous Delivery?</h3>
+			<h3>Continuous Delivery</h3>
 			<p class="mb-0">
 				Continuous Delivery is about building a process where software is always releasable whilst
 				ensuring short release cycles. Often the pains and struggles to help achieve this are not
@@ -41,8 +42,106 @@
 	</Columns>
 </section>
 <section>
-	<CDWorkshop />
+	<!-- <h2>Measuring performance</h2> -->
+	<Columns fullWidth={true} reverse={true}>
+		<Column>
+			<img
+				class="object-contain h-full w-full"
+				src="/work/cd-metrics/four-key-metrics.png"
+				alt="four-key-metrics"
+			/>
+		</Column>
+		<Column>
+			<h3>Measuring performance</h3>
+			<p>
+				A Value Stream Map is a visual tool showing the series of events that take a product or
+				service from the beginning of a process until it reaches its end (i.e. a Value Stream).
+			</p>
+			<ButtonLink href={'/work/continuous-delivery-workshop'}>Learn more</ButtonLink>
+		</Column>
+	</Columns>
 </section>
+<section>
+	<!-- <h2>Identifying improvements</h2> -->
+	<Columns fullWidth={true}>
+		<Column>
+			<img
+				class="object-contain w-full h-full"
+				src="/work/cd-workshop/mock-vsm-sample.png"
+				alt="mock-vsm-sample"
+			/>
+		</Column>
+		<Column>
+			<h3>Identifying improvements</h3>
+			<p>
+				A Value Stream Map is a visual tool showing the series of events that take a product or
+				service from the beginning of a process until it reaches its end (i.e. a Value Stream).
+			</p>
+			<ButtonLink href={'/work/continuous-delivery-workshop'}>Learn more</ButtonLink>
+		</Column>
+	</Columns>
+	<!-- <Columns>
+		<Column>
+			<img
+				class="object-contain w-full h-full"
+				src="/work/cd-workshop/mock-vsm-sample.png"
+				alt="mock-vsm-sample"
+			/>
+		</Column>
+		<Column class="self-start">
+			<div class="flex flex-col gap-y-16">
+				<div>
+					<h4>Value Stream Map</h4>
+					<p class="mb-0">
+						A Value Stream Map is a visual tool showing the series of events that take a product or
+						service from the beginning of a process until it reaches its end (i.e. a Value Stream).
+					</p>
+				</div>
+				<div>
+					<h4>Value Stream Mapping</h4>
+					<p class="mb-0">
+						Value Stream Mapping (VSM) is a method for defining a Value Stream and analysing the
+						current flow in order to remove waste and to derive a more lean and continuous workflow.
+					</p>
+				</div>
+				<ButtonLink href={'/work/continuous-delivery-workshop'}>Learn more</ButtonLink>
+			</div>
+		</Column>
+	</Columns> -->
+	<!-- <CDWorkshop /> -->
+</section>
+<section>
+	<!-- <Columns fullWidth={true}>
+		<Column>
+			<h3>Our approach</h3>
+			<p>
+				A Value Stream Map is a visual tool showing the series of events that take a product or
+				service from the beginning of a process until it reaches its end (i.e. a Value Stream).
+			</p>
+			<ButtonLink href={'/work/continuous-delivery-workshop'}>Learn more</ButtonLink>
+		</Column>
+		<Column>
+			<img
+				class="object-contain h-full w-full"
+				src="/work/cd-workshop/build-measure-learn.png"
+				alt="build-measure-learn"
+			/>
+		</Column>
+	</Columns> -->
+	<!-- <h3>Build-Measure-Learn</h3> -->
+	<h3>
+		Something about how <span class="text-v-pink">Build-Measure-Learn</span> is used to improve the delivery
+		process. Something about how Build-Measure-Learn is used to improve the delivery process.
+	</h3>
+	<div>
+		<img
+			class="object-contain h-full w-full"
+			src="/work/cd-workshop/build-measure-learn.png"
+			alt="build-measure-learn"
+		/>
+	</div>
+</section>
+
 <section>
 	<Columns>
 		<Column>
