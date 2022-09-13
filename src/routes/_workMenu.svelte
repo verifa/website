@@ -12,12 +12,12 @@
 		{
 			title: 'Continuous Delivery',
 			description: 'Improving development and release processes',
-			url: '/work#continuous-delivery'
+			url: '/continuous-delivery'
 		},
 		{
 			title: 'Cloud Architecture',
 			description: 'Designing cloud solutions and facilitating adoption',
-			url: '/work#cloud-architecture'
+			url: '/cloud-architecture'
 		},
 		{
 			title: 'Workshops',

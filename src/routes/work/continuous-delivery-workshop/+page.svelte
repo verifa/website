@@ -9,7 +9,7 @@
 	import Faq from '$lib/faq.svelte';
 	import FaqItem from '$lib/faqItem.svelte';
 	import PostGrid from '$lib/posts/postGrid.svelte';
-	import type { Post, PostsData } from '$lib/posts/posts';
+	import type { Post } from '$lib/posts/posts';
 
 	import { seo } from '$lib/seo/store';
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
@@ -20,7 +20,8 @@
 	$seo.title = 'Continuous Delivery Workshop';
 	$seo.description =
 		'Our Continuous Delivery Workshops help teams unlock their Continuous Delivery potential. We use Value Stream Mapping as our method for helping teams understand their current release process and create a backlog of improvements.';
-
+	$seo.image.url = '/work/cd-workshop/mock-vsm-sample.png';
+	$seo.image.alt = 'value-stream-map';
 	export let data: PageData;
 	const posts: Post[] = data.posts.posts;
 </script>

@@ -13,11 +13,11 @@
 			children: [
 				{
 					text: 'Continuous Delivery',
-					url: '/work#continuous-delivery'
+					url: '/continuous-delivery'
 				},
 				{
 					text: 'Cloud Architecture',
-					url: '/work#cloud-architecture'
+					url: '/cloud-architecture'
 				},
 				{
 					text: 'Workshops',

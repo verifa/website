@@ -31,12 +31,11 @@
 		<div>
 			<h3>Continuous Delivery</h3>
 			<p>
-				We help teams unlock their continuous release potential through workshops and coaching. We
-				use our knowledge and experience, guiding teams to create processes that deliver value.
-				Through self-discovery we align everyone to a common goal and help transform the way
-				software is delivered.
+				We help teams unlock their software delivery potential by using our knowledge and
+				experience, guiding teams to create processes that deliver value. Through self-discovery we
+				align everyone to a common goal and help transform the way software is delivered.
 			</p>
-			<ButtonLink href="/work#continuous-delivery">Learn More</ButtonLink>
+			<ButtonLink href="/continuous-delivery">Learn More</ButtonLink>
 		</div>
 	</Grid>
 </section>
@@ -58,7 +57,7 @@
 				their projects. The cloud ecosystem is like a jungle, and we can help you navigate through
 				it.
 			</p>
-			<ButtonLink href="/work#cloud-architecture">Learn more</ButtonLink>
+			<ButtonLink href="/cloud-architecture">Learn more</ButtonLink>
 		</div>
 	</Grid>
 </section>

@@ -62,12 +62,10 @@
 						<h5>What we do</h5>
 						<ul class="mt-4 space-y-4 list-none">
 							<li>
-								<a href="/work#continuous-delivery" class="hover:text-v-lilac"
-									>Continuous Delivery</a
-								>
+								<a href="/continuous-delivery" class="hover:text-v-lilac">Continuous Delivery</a>
 							</li>
 							<li>
-								<a href="/work#cloud-architecture" class="hover:text-v-lilac">Cloud Architecture</a>
+								<a href="/cloud-architecture" class="hover:text-v-lilac">Cloud Architecture</a>
 							</li>
 						</ul>
 					</div>
