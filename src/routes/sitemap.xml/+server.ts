@@ -1,6 +1,6 @@
-import { json } from '@sveltejs/kit';
 import { getPostsGlob, PostType } from "$lib/posts/posts";
 
+/** @type {import('./$types').RequestHandler} */
 export async function GET({ }) {
     function sitemapDate(date: Date): string {
         return date.toISOString().split('T')[0]
@@ -9,10 +9,6 @@ export async function GET({ }) {
         loc: string;
         priority: number;
         lastmod?: Date;
-    }
-    const headers = {
-        'Cache-Control': 'max-age=0, s-maxage=3600',
-        'Content-Type': 'application/xml',
     }
     const defaultLastMod = new Date()
 
@@ -75,7 +71,5 @@ ${pages.map((page) =>
 </urlset>
     `
 
-    return json(body, {
-        headers: headers
-    });
+    return new Response(body);
 }
