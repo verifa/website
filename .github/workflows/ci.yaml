@@ -74,12 +74,32 @@ jobs:
           APPLICATION_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
         with:
           cli: gsutil
-          args: "-m -h 'Cache-Control: public,max-age=31536000' rsync -r -c -d ./website gs://website-bucket-${{ steps.vars.outputs.deploy_env }}"
-      - name: Set Metadata
+          args: "-m rsync -r -c -d ./website gs://website-bucket-${{ steps.vars.outputs.deploy_env }}"
+      # Set no-store cache-control for all objects by default
+      - name: Set cache-control no-store
         uses: actions-hub/gcloud@master
         env:
           PROJECT_ID: verifa-website
           APPLICATION_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
         with:
           cli: gsutil
-          args: "-m setmeta -h 'Cache-Control: no-cache,max-age=31536000' 'gs://website-bucket-${{ steps.vars.outputs.deploy_env }}/**.html'"
+          args: |
+            -m setmeta -h 'Cache-Control: no-store' \
+              'gs://website-bucket-${{ steps.vars.outputs.deploy_env }}/**.*'"
+      # Set public cache-control for specific file extensions
+      - name: Set cache-control public
+        uses: actions-hub/gcloud@master
+        env:
+          PROJECT_ID: verifa-website
+          APPLICATION_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+        with:
+          cli: gsutil
+          args: |
+            -m setmeta -h 'Cache-Control: public,max-age=31536000' \
+              'gs://website-bucket-${{ steps.vars.outputs.deploy_env }}/**.css' \
+              'gs://website-bucket-${{ steps.vars.outputs.deploy_env }}/**.ico' \
+              'gs://website-bucket-${{ steps.vars.outputs.deploy_env }}/**.jpg' \
+              'gs://website-bucket-${{ steps.vars.outputs.deploy_env }}/**.js' \
+              'gs://website-bucket-${{ steps.vars.outputs.deploy_env }}/**.png' \
+              'gs://website-bucket-${{ steps.vars.outputs.deploy_env }}/**.svg' \
+              'gs://website-bucket-${{ steps.vars.outputs.deploy_env }}/**.ttf'
