@@ -31,20 +31,20 @@ For the past 12 months or so we’ve been experimenting with [OKRs](https://en.w
 
 Games time! Albert is our in-house workshop facilitator extraordinaire, and rocked up with a suitcase full of team building activities. We played Team3 ([Green](https://boardgamegeek.com/boardgame/275870/team3-green) and [Pink](https://boardgamegeek.com/boardgame/247694/team3-pink)), an ingenious game to build up team communication skills. Next, we moved on to a more industry specific game - [Continuous Delivery: The Game](https://boardgamegeek.com/boardgame/238760/continuous-delivery-game). A cooperative board game about continuous delivery, created by Albert. We divided into two teams for a bit of healthy competition! It was fun to play not only for the techies, but also gave a really good insight for the non-techies on CD whilst being a really cool game. Continuous Delivery: The Game mark 2 is in the works. Watch this space!
 
-![Anoop making pizza](/blogs/vericonf-2022-blog/anoop-making-pizza.png)
-
 ### Retrospective & blue sky thinking
 
 Time to reflect on the past 12 months and what we want to do going forward. We all wrote down things that we want to: start, continue, improve, stop. After sharing our thoughts and some discussion, we grouped them into themes and voted. We ended up with a prioritised list of things that are super important for us as a company. Our top four are:
 
-- Improve financial visibility
+- **Improve financial visibility**
     - we’re working on including financials in our in-house metrics dashboard
-- Hold more VeriMeets
+- **Hold more VeriMeets**
     - we’ll hold three smaller meetups per year in Helsinki, Gothenburg, and Lund, as well as VeriConf
-- Improve upon our [Continuous Delivery workshop](https://verifa.io/work/continuous-delivery-workshop/)
+- **Improve upon our [Continuous Delivery workshop](https://verifa.io/work/continuous-delivery-workshop/)**
     - part of our approach for helping teams improve their software delivery performance
-- Stop working alone
+- **Stop working alone**
     - we believe that working together rather than as a lone consultant benefits our customers and our employee’s wellbeing
+
+![Anoop making pizza](/blogs/vericonf-2022-blog/anoop-making-pizza.png)
 
 ### Team building pizza making
 
@@ -53,6 +53,7 @@ Earlier in the day, we donned our aprons and straw hats, as we were guided in th
 ### Powerpoint karaoke
 
 Have you ever tried Powerpoint karaoke? An improv game where you give a presentation from a slide deck you’ve never seen before. To be fair, it prompted a mix of both dread and excitement from the crew, but was actually very entertaining. Organised by Lauri, everyone was invited to make a slide deck in advance, which were then chosen at random to present. If you want to have a go yourself, [here are our slide decks](https://drive.google.com/drive/folders/143yKZfOpKVp55dHKyQ2yxmsuHXcfm9T4?usp=sharing) that you can use, or create your own. It was a lot of fun!
+
 *please let us know if any of the images are yours and copyrighted, and we will delete them*
 
 ## Day 2
