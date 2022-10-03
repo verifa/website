@@ -34,11 +34,11 @@ We will skip over provider configuration, remote state etc. in this blog to keep
 
 [Github - Jenkins in Kubernetes example](https://github.com/verifa/jenkins-in-kubernetes-example)
 
-```jsx
+```terraform
 resource "azurerm_kubernetes_cluster" "jenkinsk8sexample" {
   name                = "aks-jenkinsk8sexample"
   location            = azurerm_resource_group.jenkinsk8sexample.location
-yt  resource_group_name = azurerm_resource_group.jenkinsk8sexample.name
+  resource_group_name = azurerm_resource_group.jenkinsk8sexample.name
   dns_prefix          = "aks-jenkinsk8sexample"
 
   default_node_pool {
@@ -59,15 +59,15 @@ yt  resource_group_name = azurerm_resource_group.jenkinsk8sexample.name
 
 As seen above, we’re creating a Kubernetes Cluster with a single auto-scaling nodepool.
 
-Once we’ve run 
+Once we’ve run
 
-```jsx
+```bash
 terraform apply
 ```
 
 and the cluster is created, we can create the Jenkins namespace:
 
-```jsx
+```bash
 kubectl create namespace jenkins
 ```
 
@@ -86,11 +86,11 @@ We can then run the install (upgrade) command:
 
 ```bash
 helm upgrade --install jenkins jenkins/jenkins \
-             --namespace jenkins \
-             --version 4.1.8 \
-             --set controller.adminUser="admin" \
-             --set controller.adminPassword=$JENKINS_ADMIN_PASSWORD \
-             -f custom_values.yaml
+  --namespace jenkins \
+  --version 4.1.8 \
+  --set controller.adminUser="admin" \
+  --set controller.adminPassword=$JENKINS_ADMIN_PASSWORD \
+  -f custom_values.yaml
 ```
 
 Note that our admin password is pre-configured in environment variable JENKINS_ADMIN_PASSWORD. Our custom_values.yaml file contains the JCasC values:
@@ -141,7 +141,7 @@ Once you have executed the helm upgrade command, the Jenkins Controller Stateful
 
 The Jenkins deployment above will be deployed with ClusterIP services only, meaning it is not accessible from outside the cluster. This is fine for testing purposes, and the simplest way to access Jenkins locally is to run a Kubernetes port-forward:
 
-```jsx
+```bash
 kubectl port-forward svc/jenkins 8080:8080
 ```
 
@@ -151,7 +151,7 @@ This will forward traffic from `127.0.0.1:8080` (localhost) to `svc/jenkins:8080
 
 Let’s inspect the master branch of the Git repo configured as the source of our Multi-branch Pipeline Job:
 
-```jsx
+```groovy
 pipeline {
   agent {
     kubernetes {
@@ -201,7 +201,7 @@ In the stages block you can see that we run one command in each container. This 
 
 Let’s take a look at `Jenkinsfile` in the large-pod branch of the pipeline Git repo:
 
-```jsx
+```groovy
 pipeline {
   agent {
     kubernetes {
@@ -236,7 +236,7 @@ pipeline {
 
 In the example above, a single `busybox` container is declared with large resource requests (2 GB memory and 1 CPU core). This exceeds the resources available on the single Node in the Kubernetes cluster initially, so we can see in the log that a second Node is created on which the Pod is then created and the Job scheduled:
 
-```jsx
+```console
 Started by user Jenkins Admin
 [Pipeline] Start of Pipeline
 [Pipeline] podTemplate
@@ -271,7 +271,7 @@ Many of these considerations can be implemented using policies, perhaps your tea
 
 ### Automation
 
-Although we have automated many steps in a typical Jenkins deployment, we are still triggering the deploy itself manually. The deployment commands themselves can be automated - such as in Continuous Delivery. 
+Although we have automated many steps in a typical Jenkins deployment, we are still triggering the deploy itself manually. The deployment commands themselves can be automated - such as in Continuous Delivery.
 
 One commonly-used setup is that each commit to the `main` branch in your Git repository triggers a deployment. This is a great way to
 
