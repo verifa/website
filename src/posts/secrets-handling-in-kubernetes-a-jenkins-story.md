@@ -15,7 +15,7 @@ featured: true
 ---
 Passwords and keys are some of the most important tools used for authenticating and/or authorising applications. They provide access to sensitive systems, services, and information. Due to this, secrets management must account for and mitigate the risks to these secrets both in transit and at rest \[[1](https://www.beyondtrust.com/resources/glossary/secrets-management)\].
 
-In this short write up we explore some ways of getting secrets into Jenkins which we deploy in Kubernetes. Jenkins typically is a central part of infrastructure and usually requires access to critical components like source control, testing tools, artifact management, etc. It's not Jenkins directly, but tools or tasks triggered from Jenkins which needs it. Therefore a natural choice is to make use of Jenkins secrets. However, putting all these secrets into Jenkins means a lot of focus should be placed on Jenkins secret management and Jenkins was not designed to be a secrets manager. Therefore, it makes a lot of sense to store this wide variety of secrets into “real” secrets managers like HashiCorp Vault to minimize risk. For the purposes of this post we consider options for using secrets with Jenkins _without_ an external secrets manager (like HashiCorp Vault).
+In this short write up we explore some ways of getting secrets into Jenkins which we deploy in Kubernetes. Jenkins typically is a central part of infrastructure and usually requires access to critical components like source control, testing tools, artifact management, etc. It's not Jenkins directly, but tools or tasks triggered from Jenkins which needs it. Therefore a natural choice is to make use of Jenkins secrets. However, putting all these secrets into Jenkins means a lot of focus should be placed on Jenkins secret management and Jenkins was not designed to be a secrets manager. Therefore, it makes a lot of sense to store this wide variety of secrets into “real” secrets managers like HashiCorp Vault to minimize risk. For the purposes of this post we consider options for using secrets with Jenkins _without_ an external secrets manager [(like HashiCorp Vault)](/blog/secrets-handling-in-kubernetes-using-hashicorp-vault/).
 
 ***
 
@@ -224,7 +224,10 @@ $
 
 We have now reached the end of an interesting round of comparisons of various ways available to share secrets from a Kubernetes cluster to our Jenkins server. As we all understand, one should take good care of secrets and add ways to protect as much as possible to minimise risks even if some parts of a system are compromised - security is a multi-layer practice after all. Not allowing passwords in plaintext at rest is a good rule of thumb. Here we explored, just by taking an extra step, that it was possible to use native encryption of the passwords stored in the disk or environment.
 
-The scope of this blog is to explore more secure ways to present passwords for Jenkins inside a Kubernetes cluster without the use of external tools. There are secret managers dedicated for these purposes such as HashiCorp Vault or cloud specific such as AWS, Google cloud secrets manager, Azure key vault etc. One of the benefits of using external secret managers is that of decoupling sensitive entities outside of the application. With that said, in our next write up we will look at using HashiCorp Vault together with Jenkins... so stay tuned.
+The scope of this blog is to explore more secure ways to present passwords for Jenkins inside a Kubernetes cluster without the use of external tools. There are secret managers dedicated for these purposes such as HashiCorp Vault or cloud specific such as AWS, Google cloud secrets manager, Azure key vault etc. One of the benefits of using external secret managers is that of decoupling sensitive entities outside of the application.
+
+As a follow up to this blog, we went on to explore several approaches for getting secrets from HashiCorp Vault into Jenkins running in Kubernetes - [Secrets handling in Kubernetes using HashiCorp Vault](/blog/secrets-handling-in-kubernetes-using-hashicorp-vault/).
+
 
 ## Versions of tools
 
