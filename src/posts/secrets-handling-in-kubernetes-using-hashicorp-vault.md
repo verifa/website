@@ -14,7 +14,7 @@ featured: true
 
 ---
 
-When running Jenkins jobs using the Kubernetes plugin, there are many ways to fetch secrets from HashiCorp Vault. [In the previous post](https://verifa.io/blog/secrets-handling-in-kubernetes-a-jenkins-story/) we stored the secrets in Kubernetes, but let’s look at options that don’t persist secrets in the cluster. 
+When running Jenkins jobs using the Kubernetes plugin, there are many ways to fetch secrets from HashiCorp Vault. [In the previous post](/blog/secrets-handling-in-kubernetes-a-jenkins-story/) we stored the secrets in Kubernetes, but let’s look at options that don’t persist secrets in the cluster. 
 
 In the earlier post the secrets were not stored as plain-text in the Jenkins controller, but still the secrets were stored together with the encryption key on the persistent volume. Using a secret manager allows us to increase the security posture further, and make our lives easier when there is one central location to store and modify the secrets, which also records an audit trail of all activities. When using Vault as secret manager the secrets are only fetched into the running worker pods in the beginning of a pipeline. When the pipeline finishes, the pod is terminated and the secrets are no longer anywhere in the cluster.
 
@@ -264,4 +264,4 @@ Note the `serviceAccount` field and name of the role in the Vault CLI command, t
 Looking at the pipeline, there’s actually nothing Jenkins specific to the solution presented here. We could run any pod in the `jenkins-dev` namespace with service account `jenkins-dev` to access the secrets that the policy in Vault allows. No hard coded and long-lived credentials laying around! No need for complex groovy syntax, Helm charts or Jenkins plugins. This keeps the pipeline flexible in case you (or the management) decide to ditch Jenkins and go for another tool to run your CI/CD pipelines.
 
 
-This is a follow up blog to [Secrets handling in Kubernetes - A Jenkins story](https://verifa.io/blog/secrets-handling-in-kubernetes-a-jenkins-story/), where we explore some ways of getting secrets into Jenkins which we deploy in Kubernetes, without the use of an external secrets manager.
+This is a follow up blog to [Secrets handling in Kubernetes - A Jenkins story](/blog/secrets-handling-in-kubernetes-a-jenkins-story/), where we explore some ways of getting secrets into Jenkins which we deploy in Kubernetes, without the use of an external secrets manager.
