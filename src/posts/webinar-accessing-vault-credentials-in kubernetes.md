@@ -30,4 +30,4 @@ Jacob Lärfors is CEO and consultant at Verifa and a HashiCorp afficiando, with
 
 Joe Bloggs is Specialist at HashiCorp, and is keeper of secrets in Vault.
 
-<iframe width="100%" height="480" frameborder="0" src="[https://app.livestorm.co/p/7e9e9677-c751-44a0-bd5e-638b5ff22522/form](https://app.livestorm.co/p/7e9e9677-c751-44a0-bd5e-638b5ff22522/form)"></iframe>
+<iframe width="100%" height="480" frameborder="0" src="https://app.livestorm.co/p/7e9e9677-c751-44a0-bd5e-638b5ff22522/form"></iframe>
