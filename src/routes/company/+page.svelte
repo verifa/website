@@ -31,6 +31,10 @@
 
 	const certLogos: { name: string; image: string }[] = [
 		{
+			image: '/certifications/hashicorp-chip-terraform-lilac.png',
+			name: 'hashicorp-terraform-chip'
+		},
+		{
 			image: '/certifications/hashicorp-chip-vault-lilac.png',
 			name: 'hashicorp-vault-chip'
 		},
