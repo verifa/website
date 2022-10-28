@@ -21,7 +21,7 @@ featured: false
 [Register here](https://www.meetup.com/helsinki-hashicorp-user-group/events/288940115/)
 
 
-The next Helsinki HashiCorp User Group is hosted by [UpCloud](https://upcloud.com/) at their offices in downtown Helsinki. This time round there’ll be a packed agenda with four presentations and some very special guests. Join for an evening of talks, networking, and snacks! The talks will also be live streamed and recorded for those who prefer to join online.
+The next Helsinki HashiCorp User Group is hosted by [UpCloud](https://upcloud.com/) at their offices in downtown Helsinki. This time round there’ll be a packed agenda with three presentations and some very special guests. Join for an evening of talks, networking, and snacks! The talks will also be live streamed and recorded for those who prefer to join online.
 
 Speaker reveals are ongoing, and so far we can confirm:
 
