@@ -12,7 +12,7 @@ featured: false
 
 ---
 
-**Helsinki HashiCorp User Group (HUG) is a quarterly meetup full of interesting talks and insights about all things HashiCorp, plus a chance to connect with fellow professionals and hobbyists alike.**
+**Helsinki HashiCorp User Group (HUG) is a meetup full of interesting talks and insights about all things HashiCorp, plus a chance to connect with fellow professionals and hobbyists alike.**
 
 **Time:** Wednesday, 30 November, 17:00-22.00 EET
 
@@ -25,11 +25,11 @@ The next Helsinki HashiCorp User Group is hosted by [UpCloud](https://upcloud.co
 
 Speaker reveals are ongoing, and so far we can confirm:
 
-[Amir Altamimi](https://www.linkedin.com/in/amir-altamimi-33bb262/), Partner Sales Manager, HashiCorp: Welcome and greetings from HashiCorp
-
 [Toni Kangas](https://www.linkedin.com/in/tonikangas/), Senior Engineer at UpCloud: How to codify your cloud infra using UpCloud CDK for Terraform provider
 
 [Jacob Lärfors](https://www.linkedin.com/in/jlarfors/), CEO & [Mike Vainio](https://www.linkedin.com/in/mikevainio/), Technical Consultant at Verifa: Accessing secrets on Vault in Kubernetes
+
+Plus some welcoming words from [Amir Altamimi](https://www.linkedin.com/in/amir-altamimi-33bb262/), Partner Sales Manager, HashiCorp
 
 See you at the fifth Helsinki HUG!
 
