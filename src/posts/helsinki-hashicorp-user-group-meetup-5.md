@@ -9,6 +9,7 @@ tags:
 date: 2022-28-10
 image: "/blogs/helsinki-hug-5/hug-blog-event-5.png"
 featured: false
+jobActive: true
 
 ---
 
