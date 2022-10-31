@@ -6,10 +6,9 @@ authors:
 - ckurowski
 tags:
 - HashiCorp
-date: 2022-28-10
+date: 2022-10-28
 image: "/blogs/helsinki-hug-5/hug-blog-event-5.png"
 featured: false
-jobActive: true
 
 ---
 
