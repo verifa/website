@@ -45,23 +45,25 @@
 			</div>
 			<h1>{title}</h1>
 			<h3>{subheading}</h3>
-			<div class="mb-8">
-				<PostBadges {type} {tags} />
-			</div>
-			<p class="mb-4">Published on {new Date(date).toDateString()}</p>
-			<h4>Authors</h4>
-			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 sm:gap-y-8">
-				{#each crewAuthors as author}
-					<a href="/crew/{author.id}" class="group">
-						<div class="flex gap-x-4 items-center">
-							<img src={author.image} alt={author.id} class="h-16 w-16" />
-							<div>
-								<h5 class="mb-0 group-hover:text-v-lilac">{author.name}</h5>
+			{#if type !== PostType.Event}
+				<div class="mb-8">
+					<PostBadges {type} {tags} />
+				</div>
+				<p class="mb-4">Published on {new Date(date).toDateString()}</p>
+				<h4>Authors</h4>
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-2 sm:gap-y-8">
+					{#each crewAuthors as author}
+						<a href="/crew/{author.id}" class="group">
+							<div class="flex gap-x-4 items-center">
+								<img src={author.image} alt={author.id} class="h-16 w-16 m-0" />
+								<div>
+									<h5 class="mb-0 group-hover:text-v-lilac">{author.name}</h5>
+								</div>
 							</div>
-						</div>
-					</a>
-				{/each}
-			</div>
+						</a>
+					{/each}
+				</div>
+			{/if}
 		</div>
 		<div id="blog-container">
 			<slot />
