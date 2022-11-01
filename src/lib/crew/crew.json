@@ -113,27 +113,22 @@
     },
     "jelderfield": {
         "active": false,
-        "name": "James Elderfield",
-        "image": "/crew/avatar.svg"
+        "name": "James Elderfield"
     },
     "amackay": {
         "active": false,
-        "name": "Adam Mackay",
-        "image": "/crew/avatar.svg"
+        "name": "Adam Mackay"
     },
     "ksoranko": {
         "active": false,
-        "name": "Kalle Soranko",
-        "image": "/crew/avatar.svg"
+        "name": "Kalle Soranko"
     },
     "slaitinen": {
         "active": false,
-        "name": "Sakari Laitinen",
-        "image": "/crew/avatar.svg"
+        "name": "Sakari Laitinen"
     },
     "mrosenlund": {
         "active": false,
-        "name": "Mika Rosenlund",
-        "image": "/crew/avatar.svg"
+        "name": "Mika Rosenlund"
     }
 }

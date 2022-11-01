@@ -9,7 +9,7 @@
 	seo.reset();
 	$seo.title = 'Verifa Crew: ' + data.member.name;
 	$seo.description = data.member.bio ? data.member.bio.substring(0, 100) : '';
-	$seo.image.url = data.member.image;
+	$seo.image.url = data.member.profile;
 </script>
 
 {#if member.active}
@@ -17,7 +17,11 @@
 		<div class="flex flex-col lg:gap-y-8">
 			<div class="w-auto flex flex-col gap-y-8 lg:flex-row sm:gap-x-4">
 				<div class="max-w-sm lg:w-1/4">
-					<img src={member.image} alt={member.id} class="h-full w-full object-top object-contain" />
+					<img
+						src={member.profile}
+						alt={member.id}
+						class="h-full w-full object-top object-contain rounded-md"
+					/>
 				</div>
 				<div class="w-full lg:w-3/4">
 					<h2>{member.name}</h2>

@@ -2,6 +2,16 @@
 	import type { Member } from '$lib/crew/crew';
 
 	export let member: Member;
+
+	let image: string = member.avatar;
+
+	function handleMouseEnter() {
+		image = member.sillyProfile;
+	}
+
+	function handleMouseLeave() {
+		image = member.avatar;
+	}
 </script>
 
 <div class="space-y-4">
@@ -9,9 +19,11 @@
 		<div class="flex flex-col space-y-4">
 			<div>
 				<img
-					class="h-64 w-64 object-contain transition-all duration-200 group-hover:scale-110"
-					src={member.image}
+					class="h-64 w-64 object-contain transition-all duration-200 group-hover:scale-110 rounded-lg"
+					src={image}
 					alt={member.id}
+					on:mouseenter={handleMouseEnter}
+					on:mouseleave={handleMouseLeave}
 				/>
 			</div>
 
