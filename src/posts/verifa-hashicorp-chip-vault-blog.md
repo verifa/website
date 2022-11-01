@@ -19,9 +19,11 @@ HashiCorp is the leader in multi-cloud infrastructure automation software. [Has
 
 > ‘We’re delighted to be the one of the first Certified HashiCorp Implementation Partners for Vault in the Nordics. We’re big fans of the Hashi-stack and use the tools on a daily basis to solve problems. It’s nice to get a badge to prove our skill and commitment, and we look forward to working more closely with HashiCorp to help our customers with all things Continuous and Cloud.’ Jacob Lärfors, CEO, Verifa
 > 
+> <cite>Jacob Lärfors, CEO, Verifa</cite>
 
 > ‘HashiCorp’s ecosystem continues to grow in the Nordics, and Verifa is a critical player in helping our strategic customers to adopt a cloud operating model with our tools. A highly skilled and specialised partner, Verifa excels in helping customers make the shift and reap the benefits of a multi cloud operating model, regardless of the complexity or size.’ Said Mark Mason, Senior Director Partners, EMEA, HashiCorp.
 > 
+> <cite>Mark Mason, Senior Director Partners, EMEA, HashiCorp</cite>
 
 Next on the roadmap is for us to become Certified HashiCorp Implementation Partners for Terraform!
 

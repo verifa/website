@@ -42,7 +42,7 @@ We're looking for people who share our values of being open, honest and providin
 <blockquote>
   ‘I feel like I’ve found my professional home in Verifa. A place where professionals are treated with respect and have a say in their own work and the company itself.’
   <br/>
-  <cite>- Lauri Suomalainen, Cloud Architect. </cite>
+  <cite>Lauri Suomalainen, Cloud Architect</cite>
 </blockquote>
 
 [Read more from Lauri here](https://verifa.io/blog/one-year-at-verifa-a-retrospective)

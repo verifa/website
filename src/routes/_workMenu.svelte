@@ -83,7 +83,7 @@
 <div bind:this={workMenuDiv}>
 	<button
 		on:click={toggleShow}
-		class="text-xl py-2 text-v-black hover:text-v-lilac font-medium border-b-2 border-v-black transition-all ease-in-out duration-150 {'/work/' ===
+		class="text-xl py-2 text-v-black hover:text-v-lilac focus:outline-none font-medium border-b-2 border-v-black transition-all ease-in-out duration-150 {'/work/' ===
 		$page.url.pathname
 			? 'border-solid'
 			: 'border-transparent'}"

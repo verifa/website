@@ -115,7 +115,7 @@ If you use Value Stream Mapping to help guide your Continuous Delivery journey, 
 <blockquote>
   ‘Love the problem, not the solution. There is no endgame with Continuous Delivery and time is finite.’
   <br/>
-  <cite>- Jacob Lärfors, Verifa</cite>
+  <cite>Jacob Lärfors, Verifa</cite>
 </blockquote>
 
 ## Conclusion

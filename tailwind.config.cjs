@@ -1,5 +1,3 @@
-const typography = require('@tailwindcss/typography');
-const forms = require('@tailwindcss/forms');
 
 const config = {
 	mode: 'jit',
@@ -27,7 +25,10 @@ const config = {
 		}
 	},
 
-	plugins: [forms, typography]
+	plugins: [
+		require('@tailwindcss/typography'),
+		require('@tailwindcss/forms'),
+	]
 };
 
 module.exports = config;

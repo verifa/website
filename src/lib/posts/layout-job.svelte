@@ -34,20 +34,22 @@
 </svelte:head>
 
 <div class="max-w-5xl mx-auto">
-	<article id="blog-container">
+	<article class="prose-xl">
 		<div class="mb-8">
 			<div class="mb-8">
 				<img class="w-full h-full" src={image} alt={title} />
 			</div>
-			<h2>{title}</h2>
-			<h4>{subheading}</h4>
+			<h1>{title}</h1>
+			<h3>{subheading}</h3>
 			<div class="mb-8">
 				<PostBadges {type} {tags} />
 			</div>
 			<p class="mb-4">Published on {new Date(date).toDateString()}</p>
 			<p class="mb-4">Authors: {authors.map((a) => crewNameById(a)).join(', ')}</p>
 		</div>
-		<slot />
+		<div id="blog-container">
+			<slot />
+		</div>
 	</article>
 	<section>
 		<h2>Apply now!</h2>

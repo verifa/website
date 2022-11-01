@@ -32,7 +32,7 @@ Part of their research involved a call with Verifa, who proposed a [Continuous D
 <blockquote>
   ‘Verifa proposed a workshop to discuss and assess our Continuous Delivery practices. The team liked the idea, so we decided to proceed.’
   <br/>
-  <cite>- Olli Suihkonen, Senior Manager, Visma Software Oy.</cite>
+  <cite>Olli Suihkonen, Senior Manager, Visma Software Oy</cite>
 </blockquote>
 
 ## Strategy & Solution: Value Stream Mapping workshop
@@ -45,7 +45,7 @@ Verifa held a two day [Continuous Delivery workshop](https://verifa.io/work/cont
 <blockquote>
   ‘The Value Stream clearly visualises our delivery process (and its pains). Verifa helped lead discussions around many topics which was useful in gaining a common understanding of what we can do to improve.’
   <br/>
-  <cite>- Olli Suihkonen, Senior Manager, Visma Software Oy.</cite>
+  <cite>Olli Suihkonen, Senior Manager, Visma Software Oy</cite>
 </blockquote>
 
 ## Results: a clear path forward
@@ -55,7 +55,7 @@ After the workshop, Verifa compiled a report highlighting the findings and inclu
 <blockquote>
   ‘We are very happy with the report Verifa prepared for us. It provides not only findings to address, but an understanding of why to address them and even ideas for how to address them.’
   <br/>
-  <cite>- Olli Suihkonen, Senior Manager, Visma Software Oy.</cite>
+  <cite>Olli Suihkonen, Senior Manager, Visma Software Oy</cite>
 </blockquote>
 
 Can we help you with your Continuous Delivery journey? [Get in touch](https://verifa.io/contact/) and let's chat!
