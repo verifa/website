@@ -55,7 +55,7 @@
 					{#each crewAuthors as author}
 						<a href="/crew/{author.id}" class="group">
 							<div class="flex gap-x-4 items-center">
-								<img src={author.image} alt={author.id} class="h-16 w-16 m-0" />
+								<img src={author.avatar} alt={author.id} class="h-16 w-16 m-0" />
 								<div>
 									<h5 class="mb-0 group-hover:text-v-lilac">{author.name}</h5>
 								</div>
