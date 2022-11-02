@@ -1,7 +1,7 @@
 ---
 type: Event
 title: Accessing HashiCorp Vault credentials in Kubernetes [webinar]
-subheading: Join us on 22 November at 13.00 (CET) / 14.00 (EET) to learn all our secrets!
+subheading: Join us on 22 November at 13.00-14.00 (CET) / 14.00-15.00 (EET) to learn all our secrets!
 authors:
 - verifa
 tags:
@@ -13,11 +13,6 @@ image: "/blogs/webinar-221122-hashicorp-vault-kubernetes.png"
 featured: true
 
 ---
-
-## Accessing HashiCorp Vault credentials in Kubernetes [webinar]
-
-**Tuesday, 22 November 2022, 13.00-14.00 (CET) / 14.00-15.00 (EET)**
-
 
 
 Join Jacob Lärfors, CEO of Verifa and Erkan Djafer, Senior Solutions Engineer at HashiCorp, to learn all about:
