@@ -23,11 +23,13 @@ featured: false
 
 The next Helsinki HashiCorp User Group is hosted by [UpCloud](https://upcloud.com/) at their offices in downtown Helsinki. This time round there’ll be a packed agenda with three presentations and some very special guests. Join for an evening of talks, networking, and snacks! The talks will also be live streamed and recorded for those who prefer to join online.
 
-Speaker reveals are ongoing, and so far we can confirm:
+Speaker lineup:
 
 [Toni Kangas](https://www.linkedin.com/in/tonikangas/), Senior Engineer at UpCloud: How to codify your cloud infra using UpCloud CDK for Terraform provider
 
 [Jacob Lärfors](https://www.linkedin.com/in/jlarfors/), CEO & [Mike Vainio](https://www.linkedin.com/in/mikevainio/), Technical Consultant at Verifa: Accessing secrets on Vault in Kubernetes
+
+[DevOps Rob](https://www.devopsrob.com/): Event driven access control with HashiCorp Rift
 
 Plus some welcoming words from [Amir Altamimi](https://www.linkedin.com/in/amir-altamimi-33bb262/), Partner Sales Manager, HashiCorp
 
