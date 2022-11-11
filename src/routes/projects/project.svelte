@@ -45,7 +45,7 @@
 		<h3 class="mb-0">{project.name}</h3>
 		<p>{repo.description}</p>
 		<div class="mt-auto">
-			<a class="" href={`https://github.com/${project.githubRepo}`}>
+			<a target="_blank" href={`https://github.com/${project.githubRepo}`}>
 				<div class="group flex items-center space-x-4 hover:cursor-pointer ">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
