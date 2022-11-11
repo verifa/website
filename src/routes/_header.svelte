@@ -4,6 +4,7 @@
 	import MobileMenu from './_mobileMenu.svelte';
 	import WorkMenu from './_workMenu.svelte';
 	import { headerVisible } from './store';
+	import AboutMenu from './_aboutMenu.svelte';
 
 	interface Link {
 		text: string;
@@ -11,24 +12,16 @@
 	}
 	const navLinks: Link[] = [
 		{
-			text: 'About us',
-			url: '/company/'
-		},
-		{
-			text: 'Crew',
-			url: '/crew/'
-		},
-		{
-			text: 'Clients',
-			url: '/clients/'
-		},
-		{
 			text: 'Careers',
 			url: '/careers/'
 		},
 		{
 			text: 'Blog',
 			url: '/blog/'
+		},
+		{
+			text: 'Projects',
+			url: '/projects/'
 		},
 		{
 			text: 'Contact',
@@ -94,6 +87,7 @@
 			<!-- Desktop menu -->
 			<div class="hidden md:flex md:items-center md:gap-x-10 md:flex-wrap">
 				<WorkMenu />
+				<AboutMenu />
 				{#each navLinks as link}
 					<a
 						href={link.url}
