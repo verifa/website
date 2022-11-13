@@ -7,7 +7,7 @@
 	export let posts: Post[] = [];
 </script>
 
-<div class="grid gap-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
 	{#each posts as post}
 		<PostCard {showBadges} {showPreview} {post} />
 	{/each}

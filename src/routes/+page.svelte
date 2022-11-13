@@ -137,7 +137,7 @@
 </section>
 <section>
 	<h3 class="text-v-lilac">Search by popular keyword</h3>
-	<div class="flex flex-col gap-y-12">
+	<div class="flex flex-col gap-y-12 mb-8">
 		<div class="-my-2 flex flex-wrap gap-x-4">
 			{#each data.posts.keywords as tag}
 				<a href="/blog?keywords={tag}" class="inline-block ">

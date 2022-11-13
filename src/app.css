@@ -10,6 +10,10 @@
         @apply inline-flex px-5 py-3.5 border border-transparent text-xl font-normal text-v-white bg-v-black hover:bg-v-lilac focus:bg-v-lilac;
     }
 
+    .v-border {
+        @apply border-4 border-v-black border-b-8 border-r-8 p-4;
+    }
+
     /* Base style elements */
     h1,
     h2,

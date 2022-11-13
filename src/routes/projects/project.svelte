@@ -43,7 +43,7 @@
 	});
 </script>
 
-<div class="border-4 border-v-black border-b-8 border-r-8 p-4 h-full flex flex-col">
+<div class="v-border h-full flex flex-col">
 	{#if repo}
 		<a class="group" target="_blank" href={repo.homepage || repo.html_url}>
 			<h3 class="mb-0 group-hover:text-v-gray">{project.name}</h3>
