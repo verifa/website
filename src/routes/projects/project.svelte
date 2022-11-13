@@ -13,6 +13,7 @@
 		html_url: string;
 		homepage: string;
 		stargazers_count: number;
+		topics: string[];
 	}
 
 	export let project: ProjectConfig;
@@ -46,8 +47,15 @@
 	{#if repo}
 		<a class="group" target="_blank" href={repo.homepage || repo.html_url}>
 			<h3 class="mb-0 group-hover:text-v-gray">{project.name}</h3>
-			<p class="group-hover:text-v-gray">{repo.description}</p>
+			<p class="mb-2 group-hover:text-v-gray">{repo.description}</p>
 		</a>
+		<div class="-my-2 flex flex-wrap gap-x-4 mb-6">
+			{#each repo.topics as topic}
+				<span class="inline-flex items-center my-2 px-3 py-0.5 bg-v-gray">
+					<p class="m-0 text-v-white">{topic}</p>
+				</span>
+			{/each}
+		</div>
 		<div class="mt-auto">
 			<a target="_blank" href={`https://github.com/${project.githubRepo}`}>
 				<div class="group flex items-center space-x-4 hover:cursor-pointer ">
