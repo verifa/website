@@ -10,6 +10,8 @@
 
 	interface RepoData {
 		description: string;
+		html_url: string;
+		homepage: string;
 		stargazers_count: number;
 	}
 
@@ -40,10 +42,12 @@
 	});
 </script>
 
-<div class="h-full flex flex-col">
+<div class="border-4 border-v-black border-b-8 border-r-8 p-4 h-full flex flex-col">
 	{#if repo}
-		<h3 class="mb-0">{project.name}</h3>
-		<p>{repo.description}</p>
+		<a class="group" target="_blank" href={repo.homepage || repo.html_url}>
+			<h3 class="mb-0 group-hover:text-v-gray">{project.name}</h3>
+			<p class="group-hover:text-v-gray">{repo.description}</p>
+		</a>
 		<div class="mt-auto">
 			<a target="_blank" href={`https://github.com/${project.githubRepo}`}>
 				<div class="group flex items-center space-x-4 hover:cursor-pointer ">

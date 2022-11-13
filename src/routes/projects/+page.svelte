@@ -24,9 +24,7 @@
 <section>
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 		{#each projects as project}
-			<div class="shadow-md p-4 ">
-				<Project {project} />
-			</div>
+			<Project {project} />
 		{/each}
 	</div>
 </section>
