@@ -13,6 +13,10 @@
 		{
 			name: 'Learning Centre',
 			githubRepo: 'verifa/learn'
+		},
+		{
+			name: 'Website',
+			githubRepo: 'verifa/website'
 		}
 	];
 </script>
