@@ -35,15 +35,21 @@
 		},
 		{
 			text: 'About us',
-			url: '/company/'
-		},
-		{
-			text: 'Crew',
-			url: '/crew/'
-		},
-		{
-			text: 'Clients',
-			url: '/clients/'
+			url: '/company/',
+			children: [
+				{
+					text: 'Company',
+					url: '/company'
+				},
+				{
+					text: 'Crew',
+					url: '/crew'
+				},
+				{
+					text: 'Clients',
+					url: '/clients'
+				}
+			]
 		},
 		{
 			text: 'Careers',
@@ -52,6 +58,10 @@
 		{
 			text: 'Blog',
 			url: '/blog/'
+		},
+		{
+			text: 'Projects',
+			url: '/projects/'
 		},
 		{
 			text: 'Contact',
