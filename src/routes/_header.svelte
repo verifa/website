@@ -82,7 +82,11 @@
 		<nav class="mx-auto flex items-center justify-between gap-x-8" aria-label="Global">
 			<a class="flex-none" href="/">
 				<span class="sr-only">verifa</span>
-				<img class="h-8 w-28 md:h-12 md:w-full" src="/verifa-logo.svg" alt="verifa-logo" />
+				<img
+					class="h-10 w-full md:h-12 object-contain object-left"
+					src="/verifa-logo.svg"
+					alt="verifa-logo"
+				/>
 			</a>
 			<!-- Desktop menu -->
 			<div class="hidden md:flex md:items-center md:gap-x-10 md:flex-wrap">

@@ -103,19 +103,11 @@
 	>
 		<span class="sr-only">Open main menu</span>
 		<!-- Heroicon name: outline/menu -->
-		<svg
-			class="h-6 w-6"
-			xmlns="http://www.w3.org/2000/svg"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke="currentColor"
-			aria-hidden="true"
-		>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
 			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				d="M4 6h16M4 12h16M4 18h16"
+				fill-rule="evenodd"
+				d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+				clip-rule="evenodd"
 			/>
 		</svg>
 	</button>
@@ -127,7 +119,11 @@
 			<div class="pt-4 flex items-center justify-between">
 				<div>
 					<a href="/" on:click={() => hideMenu()}>
-						<img class="h-8 w-28" src="/verifa-logo.svg" alt="" />
+						<img
+							class="h-10 w-full object-contain object-left"
+							src="/verifa-logo.svg"
+							alt="verifa-logo"
+						/>
 					</a>
 				</div>
 				<button
@@ -138,7 +134,7 @@
 					<span class="sr-only">Close menu</span>
 					<!-- Heroicon name: outline/x -->
 					<svg
-						class="h-6 w-6"
+						class="h-8 w-8"
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
 						viewBox="0 0 24 24"
