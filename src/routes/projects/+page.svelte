@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { seo } from '$lib/seo/store';
 	import Project, { type ProjectConfig } from './project.svelte';
 
 	const projects: ProjectConfig[] = [
@@ -19,11 +20,15 @@
 			githubRepo: 'verifa/website'
 		}
 	];
+
+	seo.reset();
+	$seo.title = 'Projects';
+	$seo.description = 'Collection of open source projects by Verifa.';
 </script>
 
 <section>
 	<h1>Projects</h1>
-	<h3>Here's a collection of open source projects Verifa has created or contributed to.</h3>
+	<h3>Here's a collection of open source projects created by Verifa.</h3>
 </section>
 <section>
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
