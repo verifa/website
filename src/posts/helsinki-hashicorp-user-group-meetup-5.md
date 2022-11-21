@@ -35,6 +35,6 @@ Plus some welcoming words from [Amir Altamimi](https://www.linkedin.com/in/amir-
 
 See you at the fifth Helsinki HUG!
 
-[Register here](https://www.meetup.com/helsinki-hashicorp-user-group/events/284399439/)
+[Register here](https://www.meetup.com/helsinki-hashicorp-user-group/events/288940115/)
 
 **IMPORTANT NOTE:** Face masks are not required. However, please practice good hand hygiene and only attend in person if you are well. If you have any COVID-19 symptoms please join us online.
