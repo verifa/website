@@ -20,7 +20,7 @@ featured: true
 
 
 [Download Erkan’s presentation](https://drive.google.com/file/d/1usYOqa7FjvuX1fusxakvLk6cMdnXo2nb/view?usp=share_link)
-[Download Jacob’s presentation](https://drive.google.com/file/d/1PuNf0UInrwK0JJ3a5xhim4nS3TaO4JHk/view?usp=sharing)
+[Download Jacob’s presentation](https://drive.google.com/file/d/1j9z2xiKtNKvr3KVDooY2U5iDe6Kz8mnw/view?usp=share_link)
 
 With the ever rising security threats, organizations should be striving to keep their secrets a secret. HashiCorp Vault provides centralized and auditable secrets management using short-lived access tokens to prevent secrets sprawl and reduce the attack surface for your applications and multi-cloud infrastructure.
 
