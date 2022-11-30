@@ -36,7 +36,7 @@ Many companies claim to have a flat hierarchy. And what we have here at Verifa i
 
 We have seen this past year, many good and important initiatives, such as the open salary policy and the metrics project to measure the well being of employees and the health of the company. I really enjoy that, and feel like it's the true definition of a flat hierarchy. 
 
-### If you really knew me, you would know that…**
+### If you really knew me, you would know that…
 
 People know that I really like climbing. But I'm also very interested in the technical aspects, like the gear and not just free climbing. Like let's say, cliff rescue stuff, abseiling, rope techniques. So yeah, I’m very nerdy with my climbing!
 
