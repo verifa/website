@@ -55,7 +55,7 @@ Do the dirty work, rather than delegating it.
 	run: |
 		VERSION=$(git describe)
 		git tag -a $VERSION -m "Tagged by build pipeline"
-    git push origin $VERSION
+		git push origin $VERSION
 ```
 
 ### 2. Keep logic out of the pipeline
@@ -72,7 +72,7 @@ Keep your pipeline stupid. The less it does, the better.
 		SECRET: ${{ secrets.UPLOAD_KEY }}
 		MODULES_FOR_TEST: ${{ steps.check.outputs.* }}
 	run: |
-    for mod in $MODULES_FOR_TEST; 
+		for mod in $MODULES_FOR_TEST; 
 		do
 			pytest modules/$mod/* -v --junitxml="$mod.xml"
 			./upload.py -name="$mod" -key="$SECRET" -file="$mod.xml"
