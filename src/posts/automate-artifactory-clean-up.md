@@ -31,8 +31,8 @@ FileSpecs are JSON files containing various properties and rules you use to matc
 
 Here’s a simple example that matches all artifacts from a specific repository that haven’t been downloaded in 14 days:
 
+`policies/nuget-dev-local.json`
 ```json
-// policies/nuget-dev-local.json
 {
   "files": [
     {
