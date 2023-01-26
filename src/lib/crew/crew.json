@@ -106,6 +106,24 @@
         "github": "lolpatrol",
         "bio": "Laroy holds a Master’s in computer science, and is particularly knowledgeable about configuration management in DevOps. When not working on techie stuff, you might find him kicking back at music festivals, playing games, or riffing on his guitar."
     },
+    "valtintas": {
+        "active": true,
+        "name": "Viktor Altintas",
+        "position": "Consultant",
+        "country": "Sweden",
+        "linkedin": "https://www.linkedin.com/in/viktor-altintas-0029bb20b/",
+        "github": "spektrum1",
+        "bio": "Viktor holds a degree in Computer Science. Previously a guitar and piano teacher, he swapped out the musical instruments for DevOps, to become a technical consultant. Music and tech are his thing. If he’s not programming, he’s either composing music or just jamming."
+    },
+    "zlaster": {
+        "active": true,
+        "name": "Zach Laster",
+        "position": "Consultant",
+        "country": "Finland",
+        "linkedin": "https://www.linkedin.com/in/xcompwiz/",
+        "github": "",
+        "bio": "Zach holds a Masters in Artificial Intelligence and Algorithms, plus has 25 years experience in Games Development, latterly consulting on software architecture and DevOps. Alongside video games, he’s into procedural content generation, music composition, and creating pixel art. A thespian and singer, he used to be in an a-cappella chamber choir and played trombone in a marching band!"
+    },
     "verifa": {
         "active": false,
         "name": "Verifa",
