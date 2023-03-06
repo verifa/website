@@ -1,7 +1,7 @@
 ---
 type: Blog
 title: 'How to create nodeless AWS EKS clusters with Karpenter for autoscaling'
-subheading: Karpenter is an exciting Kubernetes autoscaler that can be used to provision “nodeless” AWS EKS clusters. Nodeless means the EKS cluster can be provisioned with zero nodes to start with, and the Fargate hosted Karpenter pods scale up the actual worker nodes. Here are my learnings from setting it up.
+subheading: Karpenter is an exciting Kubernetes autoscaler that can be used to provision “nodeless” AWS EKS clusters.
 authors:
 - jlarfors
 tags:
@@ -11,8 +11,11 @@ tags:
 date: 2023-03-07
 image: "/blogs/nodeless-aws-eks-clusters-with-karpenter/nodeless-aws-eks-clusters-with-karpenter.png"
 featured: true
-
 ---
+
+**Karpenter is an exciting Kubernetes autoscaler that can be used to provision “nodeless” AWS EKS clusters. Nodeless means the EKS cluster can be provisioned with zero nodes to start with, and the Fargate hosted Karpenter pods scale up the actual worker nodes. Here are my learnings from setting it up.**
+
+***
 
 There are plenty of “getting started” and “how to” posts available online for getting Karpenter running. However, most use [eksctl](https://eksctl.io/) or the [Terraform module](https://github.com/terraform-aws-modules/terraform-aws-eks/tree/v19.10.0/examples/karpenter) to do all the heavy lifting. In this post we pull back the covers and set it up without `eksctl` and without the community Terraform modules, yet still using Terraform.
 
@@ -20,8 +23,10 @@ There are plenty of “getting started” and “how to” posts available onlin
 
 [Karpenter](https://github.com/aws/karpenter) is a project by AWS which they announced as [ready for production](https://aws.amazon.com/blogs/aws/introducing-karpenter-an-open-source-high-performance-kubernetes-cluster-autoscaler/) in November 2021. It is a Kubernetes operator that manages Kubernetes worker nodes directly, based on [provisioner requirements](https://karpenter.sh/preview/concepts/provisioners/#specrequirements), rather than scaling existing node groups, which is how the popular [Cluster Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler) works.
 
-![Karpenter-how-it-works-diagram](/blogs/nodeless-aws-eks-clusters-with-karpenter/karpenter-how-it-works-diagram.png)
-How it works. [Source](https://aws.amazon.com/blogs/aws/introducing-karpenter-an-open-source-high-performance-kubernetes-cluster-autoscaler/)
+<figure>
+  <img src="/blogs/nodeless-aws-eks-clusters-with-karpenter/karpenter-how-it-works-diagram.png" alt="karpenter-how-it-works">
+  <figcaption>Source: https://aws.amazon.com/blogs/aws/introducing-karpenter-an-open-source-high-performance-kubernetes-cluster-autoscaler/</figcaption>
+</figure>
 
 ## Why Karpenter?
 

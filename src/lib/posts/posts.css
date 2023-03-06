@@ -10,6 +10,14 @@ td>code {
     @apply bg-violet-100 font-medium break-words border-r-2 px-2;
 }
 
+figure, img {
+    @apply w-full h-full;
+}
+
+figcaption {
+    @apply mx-4 text-sm opacity-50 text-v-black break-words font-light leading-relaxed;
+}
+
 /* 
 Blog styles
 */
