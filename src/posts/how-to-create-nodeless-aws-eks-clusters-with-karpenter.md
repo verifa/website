@@ -14,7 +14,7 @@ featured: true
 
 ---
 
-There are plenty of “getting started” and “how to” posts available online for getting Karpenter running. However, most use [eksctl]([https://eksctl.io/](https://eksctl.io/)) or the [Terraform module]([https://github.com/terraform-aws-modules/terraform-aws-eks/tree/v19.10.0/examples/karpenter](https://github.com/terraform-aws-modules/terraform-aws-eks/tree/v19.10.0/examples/karpenter)) to do all the heavy lifting. In this post we pull back the covers and set it up without `eksctl` and without the community Terraform modules, yet still using Terraform.
+There are plenty of “getting started” and “how to” posts available online for getting Karpenter running. However, most use [eksctl](https://eksctl.io/) or the [Terraform module](https://github.com/terraform-aws-modules/terraform-aws-eks/tree/v19.10.0/examples/karpenter) to do all the heavy lifting. In this post we pull back the covers and set it up without `eksctl` and without the community Terraform modules, yet still using Terraform.
 
 # Background
 
