@@ -5,9 +5,9 @@ subheading: Karpenter is an exciting Kubernetes autoscaler that can be used to p
 authors:
 - jlarfors
 tags:
-- Karpenter
-- Kubernetes
 - AWS
+- Kubernetes
+- Terraform
 date: 2023-03-07
 image: "/blogs/nodeless-aws-eks-clusters-with-karpenter/nodeless-aws-eks-clusters-with-karpenter.png"
 featured: true
@@ -204,7 +204,7 @@ resource "aws_iam_role_policy_attachment" "fargate_attach_cni" {
 
 ### 3. Karpenter Instance Profile
 
-An Instance Profile is required for each node that Karpenter provisions. You can configure the `aws.defaultInstanceProfile` setting the [Karpenter ConfigMap](https://karpenter.sh/preview/concepts/settings/#configmap). 
+An Instance Profile is required for each node that Karpenter provisions. You can configure the `aws.defaultInstanceProfile` setting the [Karpenter ConfigMap](https://karpenter.sh/preview/concepts/settings/#configmap).
 
 ```bash
 #
