@@ -42,3 +42,19 @@ Example:
   <cite>Jacob Lärfors, Verifa</cite>
 </blockquote>
 ```
+
+### Admonitions
+
+Supported admonition types are `idea`, `info` and `warning`. If more are needed, they can be easily added.
+
+```html
+<script>
+    import Admonition from '$lib/posts/admonition.svelte'
+</script>
+
+...
+
+<Admonition type="idea">
+    My incredible idea is as follows...
+</Admonition>
+```
