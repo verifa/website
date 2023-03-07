@@ -22,6 +22,10 @@ Blog styles
     @apply mb-12;
 }
 
+#blog-container table {
+    @apply table-fixed;
+}
+
 /* 
 Podcast blog-flex class
 */
