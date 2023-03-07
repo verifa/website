@@ -38,7 +38,7 @@
 </svelte:head>
 
 <div class="max-w-5xl mx-auto">
-	<article class="prose-xl">
+	<article class="prose lg:prose-lg xl:prose-xl 2xl:prose-2xl">
 		<div class="mb-8">
 			<div class="mb-8">
 				<img class="w-full h-full" src={image} alt={title} />
@@ -46,7 +46,7 @@
 			<h1>{title}</h1>
 			<h3>{subheading}</h3>
 			{#if type !== PostType.Event}
-				<div class="mb-8">
+				<div class="not-prose mb-8">
 					<PostBadges {type} {tags} />
 				</div>
 				<p class="mb-4">Published on {new Date(date).toDateString()}</p>

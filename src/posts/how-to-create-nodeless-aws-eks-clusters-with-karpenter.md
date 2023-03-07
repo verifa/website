@@ -25,7 +25,9 @@ There are plenty of “getting started” and “how to” posts available onlin
 
 <figure>
   <img src="/blogs/nodeless-aws-eks-clusters-with-karpenter/karpenter-how-it-works-diagram.png" alt="karpenter-how-it-works">
-  <figcaption>Source: https://aws.amazon.com/blogs/aws/introducing-karpenter-an-open-source-high-performance-kubernetes-cluster-autoscaler/</figcaption>
+  <figcaption>
+    Source: https://aws.amazon.com/blogs/aws/introducing-karpenter-an-open-source-high-performance-kubernetes-cluster-autoscaler/
+  </figcaption>
 </figure>
 
 ### Why Karpenter?
