@@ -187,7 +187,7 @@ Although the Secrets Store CSI Driver makes a volume available for pods to mount
 
 #### Vault CSI Provider: Support
 
-The Vault CSI Provider has a great feature set, except it only supports the Kubernetes auth engine. This might seem fine, after all this is a blog post about Vault and Kubneretes, however we have found that in a multi-cluster environment it is quite simple to use cloud IAM accounts/roles to authenticate with Vault. This is mainly because the [Vault Kubernetes auth method](https://developer.hashicorp.com/vault/docs/auth/kubernetes) requires that each Kubernetes cluster have its own auth engine from which ServiceAccounts can authenticate.
+The Vault CSI Provider has a great feature set, except it only supports the Kubernetes auth engine. This might seem fine, after all this is a blog post about Vault and Kubernetes, however we have found that in a multi-cluster environment it is quite simple to use cloud IAM accounts/roles to authenticate with Vault. This is mainly because the [Vault Kubernetes auth method](https://developer.hashicorp.com/vault/docs/auth/kubernetes) requires that each Kubernetes cluster have its own auth engine from which ServiceAccounts can authenticate.
 
 |  | Secrets Engines | Auth Methods | Sync to K8s Secrets | Secret Rotation |
 | --- | --- | --- | --- | --- |
