@@ -157,7 +157,7 @@ The [Vault Agent Sidecar Injector](https://developer.hashicorp.com/vault/docs/pl
 
 The Agent Sidecar Injector uses the [Vault Agent](https://www.notion.so/Comparing-methods-for-accessing-secrets-in-HashiCorp-Vault-from-Kubernetes-f05ff78d48604a9392c5643fb86bed62) under the hood which seems to support all secrets engines and all auth methods. It’s not very clear exactly what is and is not supported but the Vault Agent is quite general purpose so you would assume the support for multiple secret engines and auth methods is high.
 
-The Sidecar Injector cannot synchronise to Kubernetes secrets. This can make it quite tricky to integrate with 3rd party tools that do not make it easy to read from files, or 3rd party tools where the only choice you have is to provide a command line argument or an environment variable. People come up with all kinds of [happy hacks](https://github.com/hashicorp/vault-k8s/issues/14#issuecomment-1073361921) to work around this, but yeah, probably you should look at another approach if that’s your issue.
+The Sidecar Injector cannot synchronise with Kubernetes secrets. This can make it quite tricky to integrate with 3rd party tools that do not provide an easy method to read from files, or 3rd party tools where the only option you have is to provide either a command line argument or an environment variable. The community has invented several [happy hacks](https://github.com/hashicorp/vault-k8s/issues/14#issuecomment-1073361921) to work around this, but you should probably look for another approach if that’s an issue for you.
 
 |  | Secrets Engines | Auth Methods | Sync to K8s Secrets | Secret Rotation |
 | --- | --- | --- | --- | --- |
