@@ -10,6 +10,10 @@ Kicker: **Often when running CI/CD jobs we need to use custom built tools and ap
 
 ---
 
+<script>
+    import Admonition from '$lib/posts/admonition.svelte'
+</script>
+
 # Introduction
 
 GitLab CI allows us to run jobs on our repos. These can be tests, compilation, deployment, or anything else you’d like to do with your code. GitLab CI uses Docker images to provide the environments in which it runs jobs, and we can specify what image to use for each job. While images often come from Docker Hub, we can use GitLab’s Container Registry to have a private registry of our own.
@@ -97,10 +101,9 @@ build:
 
 If we push these files to a repo then the CI pipeline will make us an image. Simple!
 
-<aside>
-💡 If you are running a self-hosted GitLab instance, you might need to ensure that the container registry is enabled. At the time of this writing, SaaS GitLab seems to have it enabled for every group/project by default, with no way to disable it.
-
-</aside>
+<Admonition type="info">
+If you are running a self-hosted GitLab instance, you might need to ensure that the container registry is enabled. At the time of this writing, SaaS GitLab seems to have it enabled for every group/project by default, with no way to disable it.
+</Admonition>
 
 ## Fleshing out and Testing
 
@@ -159,16 +162,15 @@ This gives a quick verification that butler is correctly set up and that the ima
 
 The CI file also now tags the image as `latest` if it passes the test and this was a push to the main branch.
 
-<aside>
-💡 Note that we’d need to do something smarter to not push images that are untested/fail the test, possibly using temporary tags and cleanup rules.
+<Admonition type="idea">
+Note that we’d need to do something smarter to not push images that are untested/fail the test, possibly using temporary tags and cleanup rules.
+</Admonition>
 
-</aside>
+<Admonition type="warning">
+When using git on Windows, executable files such as the version test script may not be flagged with the executable flag. You should do this explicitly when committing the file.
 
-<aside>
-💡 When using git on Windows, executable files such as the version test script may not be flagged with the executable flag. You should do this explicitly when committing the file.
 `git update-index --chmod=+x tests/check_version.sh`
-
-</aside>
+</Admonition>
 
 # Testing it Out
 
@@ -218,6 +220,10 @@ The description for Token Access is confusing at best, but let’s try disabling
 ![Passed Again](/blogs/automatically-package-tools-gitlab-container-registry/passed_pipeline2.png)
 
 Well that’s surprising. That system is actually a whitelist, and disabling it permits anyone with access to the repo to use the images.
+
+<Admonition type="info">
+Making the repo and container registry public also makes the image accessible, of course.
+</Admonition>
 
 The [documentation for this feature](https://docs.gitlab.com/ee/ci/jobs/ci_job_token.html#allow-access-to-your-project-with-a-job-token) doesn't mention how access works when it is disabled, but the documentation for the original, deprecated, outbound behavior says that when it is disabled then the user's access permissions are used, so it is probably that.
 
