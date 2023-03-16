@@ -10,6 +10,10 @@ Kicker: **Often when running CI/CD jobs we need to use custom built tools and ap
 
 ---
 
+<script>
+    import Admonition from '$lib/posts/admonition.svelte'
+</script>
+
 # Introduction
 
 GitLab CI allows us to run jobs on our repos. These can be tests, compilation, deployment, or anything else you’d like to do with your code. GitLab CI uses Docker images to provide the environments in which it runs jobs, and we can specify what image to use for each job. While images often come from Docker Hub, we can use GitLab’s Container Registry to have a private registry of our own.
