@@ -30,7 +30,7 @@ For this test, I wanted a GitLab project that, on push to repository, would buil
 
 As an extension, I tested using the resulting image.
 
-## [Itch.io](http://Itch.io) Butler
+## Itch.io Butler
 
 For the purposes of this test, I wanted something relatively simple to dockerize that still reflected a typical use case. [Itch.io](http://Itch.io) is a distribution platform commonly used by “indie developers” to share digital games, assets, printables, and other products. It has a CLI tool named Butler which is used to automate the deployment of products to created pages on the platform.
 
