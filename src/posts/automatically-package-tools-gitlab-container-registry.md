@@ -44,7 +44,7 @@ chmod +x butler
 
 Docker images are created by building from a Dockerfile. A Dockerfile specifies a base image to build from and then applies layers to that image in order to produce the desired filesystem/installation state. Often, those layers are a series of annotated bash script lines.
 
-Ubuntu makes a good base in our case, as it is very small (<30MB). From there we only need to ensure we have the tools used in the script and to run the script itself.
+Ubuntu makes a good base in our case, as it is very small (less than 30MB). From there we only need to ensure we have the tools used in the script and to run the script itself.
 
 ```docker
 FROM ubuntu:23.04
@@ -164,6 +164,7 @@ Note that we’d need to do something smarter to not push images that are untest
 
 <Admonition type="warning">
 When using git on Windows, executable files such as the version test script may not be flagged with the executable flag. You should do this explicitly when committing the file.
+
 `git update-index --chmod=+x tests/check_version.sh`
 </Admonition>
 
