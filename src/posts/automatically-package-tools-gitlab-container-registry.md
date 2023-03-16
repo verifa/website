@@ -194,7 +194,7 @@ git push --set-upstream origin main
 
 If we check the pipeline job, we see this:
 
-![Failed](automatically-package-tools-gitlab-container-registry/failed_pipeline.png)
+![Failed](/blogs/automatically-package-tools-gitlab-container-registry/failed_pipeline.png)
 
 Well that’s not good!
 
@@ -204,7 +204,7 @@ There’s several ways to address this. A very simple option is to go to the Git
 
 Testing after that yields this:
 
-![Passed](automatically-package-tools-gitlab-container-registry/passed_pipeline.png)
+![Passed](/blogs/automatically-package-tools-gitlab-container-registry/passed_pipeline.png)
 
 Job done!
 
@@ -212,7 +212,7 @@ That’s great for a few projects, but what if we have 100 projects that all use
 
 The description for Token Access is confusing at best, but let’s try disabling the `CI_JOB_TOKEN` management in the image project completely.
 
-![Passed Again](automatically-package-tools-gitlab-container-registry/passed_pipeline2.png)
+![Passed Again](/blogs/automatically-package-tools-gitlab-container-registry/passed_pipeline2.png)
 
 Well that’s surprising. That system is actually a whitelist, and disabling it permits anyone with access to the repo to use the images.
 
