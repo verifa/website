@@ -227,4 +227,4 @@ Here we’ve seen how to do this with a simple tool we download from a public UR
 
 Accessing the image afterward is somewhat more difficult. I’m still exploring how to make the container registry available to other projects within the same group and beyond. Adding projects to the `CI_JOB_TOKEN` access list works well enough, but is a bit impractical in a larger organization with many projects. Meanwhile turning off Token Access works in the same way blowing a hole in something lets water through; it works, but it’s not very managed and might be unsafe. It’s also likely that disabling the Token Access flag only permits pipelines started by users with access to the project, which might have other issues. This will be looked at more in the future.
 
-My next related test project is to have code compiled using a custom image and then to Dockerize that into its own image.
+I'm working on some related test projects to have code compiled using a custom image and then to Dockerize that into its own image. Stay tuned for more!
