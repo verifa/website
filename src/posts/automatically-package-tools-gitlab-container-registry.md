@@ -1,14 +1,20 @@
-# Automatically package tools into the GitLab Container Registry
-
-Stakeholders: Zach Laster
-Status: In Review
-Type: blog - tech
-
-Subtitle: How to optimize GitLab CI runtime environments using custom Docker images
-
-Kicker: **Often when running CI/CD jobs we need to use custom built tools and applications. While we could download the things we need each time we run a relevant job, it would be more efficient to have them already available on the images we are using. Fortunately, we can build our own Docker images, and we can have GitLab manage them for us.**
+---
+type: Blog
+title: How to optimize GitLab CI runtime environments using custom Docker images
+subheading: Often when running CI/CD jobs we need to use custom built tools and applications. While we could download the things we need each time we run a relevant job, it would be more efficient to have them already available on the images we are using. Fortunately, we can build our own Docker images, and we can have GitLab manage them for us.
+authors:
+- zlaster
+tags:
+- Containers
+- Continuous Delivery
+- Continuous Integration
+- GameDev
+date: 2023-03-16
+image: "/blogs/automatically-package-tools-gitlab-container-registry/automatically-package-tools-gitlab-container-registry.png"
+featured: true
 
 ---
+# Automatically package tools into the GitLab Container Registry
 
 <script>
     import Admonition from '$lib/posts/admonition.svelte'
