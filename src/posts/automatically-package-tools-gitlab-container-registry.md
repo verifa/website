@@ -220,6 +220,8 @@ Well that’s surprising. That system is actually a whitelist, and disabling it 
 Making the repo and container registry public also makes the image accessible, of course.
 </Admonition>
 
+The [documentation for this feature](https://docs.gitlab.com/ee/ci/jobs/ci_job_token.html#allow-access-to-your-project-with-a-job-token) doesn't mention how access works when it is disabled, but the documentation for the original, deprecated, outbound behavior says that when it is disabled then the user's access permissions are used, so it is probably that.
+
 # Conclusion
 
 It’s very easy to set up a pipeline whereby our own custom tools and processes can be containerized for future use, which is a very valuable way of making our pipelines faster!
@@ -229,3 +231,6 @@ Here we’ve seen how to do this with a simple tool we download from a public UR
 Accessing the image afterward is somewhat more difficult. I’m still exploring how to make the container registry available to other projects within the same group and beyond. Adding projects to the `CI_JOB_TOKEN` access list works well enough, but is a bit impractical in a larger organization with many projects. Meanwhile turning off Token Access works in the same way blowing a hole in something lets water through; it works, but it’s not very managed and might be unsafe. It’s also likely that disabling the Token Access flag only permits pipelines started by users with access to the project, which might have other issues. This will be looked at more in the future.
 
 I'm working on some related test projects to have code compiled using a custom image and then to Dockerize that into its own image. Stay tuned for more!
+
+* [Image Repo](https://gitlab.com/verifa/docker-itchio-butler)
+* [Test Repo](https://gitlab.com/verifa/docker-itchio-butler-test)
