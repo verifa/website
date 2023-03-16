@@ -9,7 +9,7 @@ tags:
 - Continuous Integration
 - GameDev
 date: 2023-03-16
-image: "/blogs/automatically-package-tools-gitlab-container-registry/automatically-package-tools-gitlab-container-registry.png"
+image: "/blogs/automatically-package-tools-gitlab-container-registry/how-to-optimise-gitlab-ci-runtime-environments-using-custom-docker-images.png"
 featured: true
 
 ---
