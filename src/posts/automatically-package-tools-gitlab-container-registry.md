@@ -1,12 +1,11 @@
 ---
 type: Blog
 title: How to optimize GitLab CI runtime environments using custom Docker images
-subheading: Often when running CI/CD jobs we need to use custom built tools and applications. While we could download the things we need each time we run a relevant job, it would be more efficient to have them already available on the images we are using. Fortunately, we can build our own Docker images, and we can have GitLab manage them for us.
+subheading: Create purposeful CI environments using Docker to optimize your CI pipelines
 authors:
 - zlaster
 tags:
 - Containers
-- Continuous Delivery
 - Continuous Integration
 - GameDev
 date: 2023-03-16
@@ -14,23 +13,26 @@ image: "/blogs/automatically-package-tools-gitlab-container-registry/automatical
 featured: true
 
 ---
-# Automatically package tools into the GitLab Container Registry
 
 <script>
     import Admonition from '$lib/posts/admonition.svelte'
 </script>
 
-# Introduction
+**Often when running CI/CD jobs we need to use custom built tools and applications. While we could download the things we need each time we run a relevant job, it would be more efficient to have them already available on the images we are using. Fortunately, we can build our own Docker images, and we can have GitLab manage them for us.**
+
+***
+
+## Introduction
 
 GitLab CI allows us to run jobs on our repos. These can be tests, compilation, deployment, or anything else you’d like to do with your code. GitLab CI uses Docker images to provide the environments in which it runs jobs, and we can specify what image to use for each job. While images often come from Docker Hub, we can use GitLab’s Container Registry to have a private registry of our own.
 
-# Process
+## Process
 
 For this test, I wanted a GitLab project that, on push to repository, would build, tag, and push an image to the container registry for that project.
 
 As an extension, I tested using the resulting image.
 
-## Itch.io Butler
+### Itch.io Butler
 
 For the purposes of this test, I wanted something relatively simple to dockerize that still reflected a typical use case. [Itch.io](http://Itch.io) is a distribution platform commonly used by “indie developers” to share digital games, assets, printables, and other products. It has a CLI tool named Butler which is used to automate the deployment of products to created pages on the platform.
 
@@ -50,7 +52,7 @@ unzip butler.zip
 chmod +x butler
 ```
 
-## Dockerfile
+### Dockerfile
 
 Docker images are created by building from a Dockerfile. A Dockerfile specifies a base image to build from and then applies layers to that image in order to produce the desired filesystem/installation state. Often, those layers are a series of annotated bash script lines.
 
@@ -61,11 +63,11 @@ FROM ubuntu:23.04
 Label Author="Zach Laster <zlaster@verifa.io>"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-	ca-certificates \
-	unzip \
-	zip \
-	curl \
-	&& rm -rf /var/lib/apt/lists/*
+  ca-certificates \
+  unzip \
+  zip \
+  curl \
+  && rm -rf /var/lib/apt/lists/*
 
 ADD get_butler.sh /opt/butler/get_butler.sh
 RUN bash /opt/butler/get_butler.sh
@@ -76,7 +78,7 @@ ENV PATH="/opt/butler/bin:${PATH}"
 
 Note that we also add `butler` to the PATH.
 
-## Building
+### Building
 
 With the above files, we are able to create our image (assuming we have docker or some other image building tool installed). There are other options, but to build our image in GitLab CI we’ll use “[Docker-In-Docker](https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#use-docker-in-docker)”.
 
@@ -97,11 +99,11 @@ variables:
 build:
   stage: build
   script:
-		# Our login is provided to us by GitLab.
+    # Our login is provided to us by GitLab.
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-		# Build and tag image
+    # Build and tag image
     - docker build --pull -t $DOCKER_IMAGE_BUILD_TAG .
-		# Push image with tag. This puts it in the repo's registry.
+    # Push image with tag. This puts it in the repo's registry.
     - docker push $DOCKER_IMAGE_BUILD_TAG
 ```
 
@@ -111,7 +113,7 @@ If we push these files to a repo then the CI pipeline will make us an image. Sim
 If you are running a self-hosted GitLab instance, you might need to ensure that the container registry is enabled. At the time of this writing, SaaS GitLab seems to have it enabled for every group/project by default, with no way to disable it.
 </Admonition>
 
-## Fleshing out and Testing
+### Fleshing out and Testing
 
 My full CI file looks like this:
 
@@ -178,7 +180,7 @@ When using git on Windows, executable files such as the version test script may 
 `git update-index --chmod=+x tests/check_version.sh`
 </Admonition>
 
-# Testing it Out
+## Testing it Out
 
 Now we have an image in our project’s container registry and we’ve even made sure it works within the project. Let’s try using it in a different project.
 
@@ -233,7 +235,7 @@ Making the repo and container registry public also makes the image accessible, o
 
 The [documentation for this feature](https://docs.gitlab.com/ee/ci/jobs/ci_job_token.html#allow-access-to-your-project-with-a-job-token) doesn't mention how access works when it is disabled, but the documentation for the original, deprecated, outbound behavior says that when it is disabled then the user's access permissions are used, so it is probably that.
 
-# Conclusion
+## Conclusion
 
 It’s very easy to set up a pipeline whereby our own custom tools and processes can be containerized for future use, which is a very valuable way of making our pipelines faster!
 
