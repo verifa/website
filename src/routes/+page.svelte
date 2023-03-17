@@ -8,6 +8,8 @@
 	import MainReference from '$lib/mainReference.svelte';
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 	import type { Post } from '$lib/posts/posts';
+	import HeaderLine from '$lib/headerLine.svelte';
+	import ClientLogos from '$lib/clients/clientLogos.svelte';
 
 	export let data: PageData;
 	const posts: Post[] = data.posts.posts;
@@ -16,10 +18,118 @@
 </script>
 
 <section>
-	<h1>Your trusted crew for all things Continuous and Cloud.</h1>
+	<div class="flex">
+		<div>
+			<h1>Accelerate your software delivery</h1>
+			<h3>
+				We help design, implement and evolve platforms that accelerate the delivery of software
+			</h3>
+			<ButtonLink href="/work#continuous-delivery">Learn More</ButtonLink>
+		</div>
+		<div>
+			<img
+				class="object-contain h-full w-full"
+				src="/continuous-delivery.svg"
+				alt="continuous delivery"
+			/>
+		</div>
+	</div>
 </section>
 
 <section>
+	<h4>Assess. Coach. Build. Evolve.</h4>
+	<p>
+		We’re an expert crew of experienced software delivery consultants based in the Nordics. We help
+		our clients optimise their software delivery flow and empower teams to deliver xxxx. We believe
+		in working together with our clients to assess, coach and build ‘solutions’ (???), so that they
+		ultimately retain ownership.
+	</p>
+</section>
+
+<section>
+	<Grid>
+		<div>
+			<h3>Value Stream Assessment</h3>
+			<p>
+				Visualize your value streams to identify waste and accelerate the flow and delivery of
+				value.
+			</p>
+			<ButtonLink href="/work#continuous-delivery">Learn More</ButtonLink>
+		</div>
+		<div>
+			<h3>Software Delivery Platform</h3>
+			<p>
+				Visualize your value streams to identify waste and accelerate the flow and delivery of
+				value.
+			</p>
+			<ButtonLink href="/work#continuous-delivery">Learn More</ButtonLink>
+		</div>
+		<div>
+			<h3>Team Topologies</h3>
+			<p>
+				Visualize your value streams to identify waste and accelerate the flow and delivery of
+				value.
+			</p>
+			<ButtonLink href="/work#continuous-delivery">Learn More</ButtonLink>
+		</div>
+		<div>
+			<h3>Cloud stuff</h3>
+			<p>
+				Visualize your value streams to identify waste and accelerate the flow and delivery of
+				value.
+			</p>
+			<ButtonLink href="/work#continuous-delivery">Learn More</ButtonLink>
+		</div>
+	</Grid>
+</section>
+
+<section>
+	<ClientLogos />
+</section>
+
+<section>
+	<Columns reverse={true}>
+		<Column class="self-start">
+			<div class="flex flex-col gap-y-4">
+				<h2>
+					‘A key and crucial part of our Continuous Integration journey was having Verifa's
+					involvement’.
+				</h2>
+				<h4>— David Hoslett, Siemens Mobility.</h4>
+			</div>
+		</Column>
+		<Column class="self-start">
+			<div class="flex flex-col gap-y-0">
+				<div>
+					<h4>Predictable software deliveries.</h4>
+					<p>
+						We are a small and dedicated crew who care about the value we deliver. We look to
+						tomorrow's problems and solve them for you ahead of time.
+					</p>
+				</div>
+				<div>
+					<h4>Less firefighting, more improvements.</h4>
+					<p>
+						We don't just solve problems but teach you how to solve them, and we do it as a team.
+						That's our goal and what sets us apart from other consultancy houses.
+					</p>
+				</div>
+				<div>
+					<h4>Reduce lead times and handovers.</h4>
+					<p>
+						We have helped international teams of all sizes, across many industries like Automotive,
+						Medical, Finance, Mobile and Web.
+					</p>
+				</div>
+				<div>
+					<ButtonLink href="/clients">Our Clients</ButtonLink>
+				</div>
+			</div>
+		</Column>
+	</Columns>
+</section>
+
+<!-- <section>
 	<Grid>
 		<div>
 			<img
@@ -65,9 +175,9 @@
 
 <section>
 	<h1>Workshops, coaching and implementation.</h1>
-</section>
+</section> -->
 
-<section>
+<!-- <section>
 	<Columns reverse={true}>
 		<Column>
 			<img
@@ -130,7 +240,7 @@
 			</div>
 		</Column>
 	</Columns>
-</section>
+</section> -->
 
 <section>
 	<h1>Learn more on our blog.</h1>
