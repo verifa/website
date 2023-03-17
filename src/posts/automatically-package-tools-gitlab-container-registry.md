@@ -1,7 +1,7 @@
 ---
 type: Blog
-title: How to optimize GitLab CI runtime environments using custom Docker images
-subheading: Create purposeful CI environments using Docker to optimize your CI pipelines
+title: How to optimise GitLab CI runtime environments using custom Docker images
+subheading: Create purposeful CI environments using Docker to optimise your CI pipelines
 authors:
 - zlaster
 tags:
@@ -34,7 +34,7 @@ As an extension, I tested using the resulting image.
 
 ### Itch.io Butler
 
-For the purposes of this test, I wanted something relatively simple to dockerize that still reflected a typical use case. [Itch.io](http://Itch.io) is a distribution platform commonly used by “indie developers” to share digital games, assets, printables, and other products. It has a CLI tool named Butler which is used to automate the deployment of products to created pages on the platform.
+For the purposes of this test, I wanted something relatively simple to dockerise that still reflected a typical use case. [Itch.io](http://Itch.io) is a distribution platform commonly used by “indie developers” to share digital games, assets, printables, and other products. It has a CLI tool named Butler which is used to automate the deployment of products to created pages on the platform.
 
 The following bash script downloads and unpacks butler inside our docker image.
 
@@ -195,7 +195,7 @@ test-version:
     - butler -V
 ```
 
-Let’s initialize a repo locally, commit the file, and push it to a new GitLab repo.
+Let’s initialise a repo locally, commit the file, and push it to a new GitLab repo.
 
 ```bash
 git init
@@ -237,13 +237,13 @@ The [documentation for this feature](https://docs.gitlab.com/ee/ci/jobs/ci_job_t
 
 ## Conclusion
 
-It’s very easy to set up a pipeline whereby our own custom tools and processes can be containerized for future use, which is a very valuable way of making our pipelines faster!
+It’s very easy to set up a pipeline whereby our own custom tools and processes can be containerised for future use, which is a very valuable way of making our pipelines faster!
 
 Here we’ve seen how to do this with a simple tool we download from a public URL, but it’s also practical to do this with artifacts from other projects or installations from other sources.
 
 Accessing the image afterward is somewhat more difficult. I’m still exploring how to make the container registry available to other projects within the same group and beyond. Adding projects to the `CI_JOB_TOKEN` access list works well enough, but is a bit impractical in a larger organization with many projects. Meanwhile turning off Token Access works in the same way blowing a hole in something lets water through; it works, but it’s not very managed and might be unsafe. It’s also likely that disabling the Token Access flag only permits pipelines started by users with access to the project, which might have other issues. This will be looked at more in the future.
 
-I'm working on some related test projects to have code compiled using a custom image and then to Dockerize that into its own image. Stay tuned for more!
+I'm working on some related test projects to have code compiled using a custom image and then to Dockerise that into its own image. Stay tuned for more!
 
 * [Image Repo](https://gitlab.com/verifa/docker-itchio-butler)
 * [Test Repo](https://gitlab.com/verifa/docker-itchio-butler-test)
