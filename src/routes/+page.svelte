@@ -37,7 +37,7 @@
 </section>
 
 <section>
-	<h4>Assess. Coach. Build. Evolve.</h4>
+	<h3>Assess. Coach. Build. Evolve.</h3>
 	<p>
 		We’re an expert crew of experienced software delivery consultants based in the Nordics. We help
 		our clients optimise their software delivery flow and empower teams to deliver xxxx. We believe

@@ -15,7 +15,7 @@
     }
 
     /* Base style elements */
-    h1,
+    /* h1,
     h2,
     h3,
     h4,
@@ -74,7 +74,7 @@
 
     p {
         @apply mb-12;
-    }
+    } */
 
     label {
         @apply text-2xl mb-4 font-semibold leading-relaxed;
