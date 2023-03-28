@@ -8,6 +8,7 @@
 	import PostBadges from './postBadges.svelte';
 	import PostGrid from './postGrid.svelte';
 	import { PostType } from './posts';
+	import  * as readtime from './readtime';
 
 	export let relatedPosts = [];
 
@@ -31,6 +32,13 @@
 		published_time: new Date(date),
 		modified_time: new Date(date)
 	};
+
+	let container;
+	let readtimeDisplay;
+	$: if (container && readtimeDisplay) {
+		const result = readtime.processText(container.innerText);
+		readtimeDisplay.innerText = "Read time: " + result.humanizedTime;
+	}
 </script>
 
 <svelte:head>
@@ -50,6 +58,7 @@
 					<PostBadges {type} {tags} />
 				</div>
 				<p class="mb-4">Published on {new Date(date).toDateString()}</p>
+				<p bind:this={readtimeDisplay} class="mb-4">Read time: </p>
 				<h4>Authors</h4>
 				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-2 sm:gap-y-8">
 					{#each crewAuthors as author}
@@ -65,7 +74,7 @@
 				</div>
 			{/if}
 		</div>
-		<div id="blog-container">
+		<div id="blog-container" bind:this={container}>
 			<slot />
 		</div>
 	</article>
