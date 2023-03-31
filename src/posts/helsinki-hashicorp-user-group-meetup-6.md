@@ -1,7 +1,7 @@
 ---
 type: Event
 title: 'Helsinki HashiCorp User Group Meetup #6'
-subheading: Join us on 19 April at 17:00 for the sixth Helsinki HashiCorp User Group meetup!
+subheading: Join us on 19 April at 18:00 for the sixth Helsinki HashiCorp User Group meetup!
 authors:
 - ckurowski
 tags:
@@ -14,7 +14,7 @@ featured: false
 
 **Helsinki HashiCorp User Group (HUG) is a meetup full of interesting talks and insights about all things HashiCorp, plus a chance to connect with fellow professionals and hobbyists alike.**
 
-**Time:** Wednesday, 19 April, 17:30-22.00 EET
+**Time:** Wednesday, 19 April, 18:00-21.00 EET
 
 **Place:** Siili Solutions, Ruoholahdenkatu 21, Helsinki
 
