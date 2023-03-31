@@ -1,7 +1,7 @@
 ---
 type: Event
 title: 'Helsinki HashiCorp User Group Meetup #6'
-subheading: Join us on 19 Apirl at 17:00 for the sixth Helsinki HashiCorp User Group meetup!
+subheading: Join us on 19 April at 17:00 for the sixth Helsinki HashiCorp User Group meetup!
 authors:
 - ckurowski
 tags:
