@@ -15,6 +15,10 @@ featured: true
 jobActive: true
 
 ---
+<script>
+    import Admonition from '$lib/posts/admonition.svelte'
+</script>
+
 <iframe title="Embedded podcast player" src="https://anchor.fm/verifa/embed/episodes/A-sneak-peek-into-UpCloud-Kubernetes-Service-e1miudr" height="151px" width="100%" frameborder="0" scrolling="no"></iframe>
 
 <div class="blog-flex">
@@ -30,6 +34,11 @@ jobActive: true
 **Welcome to The Continuous & Cloud Podcast by Verifa, where we chat about continuous delivery, cloud architecture and most things inbetween.**
 
 In this episode of The Continuous & Cloud Podcast, Jacob and Lauri chat with Ville Törhönen, Product Owner at UpCloud, about UpCloud’s upcoming managed Kubernetes Service (UKS).
+
+<Admonition type="info">
+
+UPDATE (March 2023): UpCloud’s Managed Kubernetes is now in Open Beta. [Give it a spin here.](https://upcloud.com/products/managed-kubernetes)
+</Admonition>
 
 ## During this episode we discuss
 
