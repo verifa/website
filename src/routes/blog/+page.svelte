@@ -17,6 +17,7 @@
 	const allBlogs: Post[] = data.posts.posts;
 	const allKeywords: string[] = data.posts.keywords;
 	let showBlogs: Post[] = allBlogs;
+	let remainingKeywords: string[] = [];
 
 	const selectedKeywords = writable<boolean[]>(Array(allKeywords.length).fill(false));
 	onMount(() => {
@@ -32,20 +33,23 @@
 	});
 
 	// filterBlogs runs the filtering of blogs based on the selected keywords
-	const filterBlogs = (keywords: string[]): Post[] => {
+	const filterBlogs = (keywords: string[]): {showBlogs: Post[], remainingKeywords: string[]} => {
 		if (keywords.length == 0) {
-			return allBlogs;
+			return {showBlogs: allBlogs, remainingKeywords: undefined};
 		}
+		let remainingKeywords: string[] = [];
 		// If there are keywords, filter the blogs
-		return allBlogs.filter((blog) => {
+		const showBlogs = allBlogs.filter((blog) => {
 			for (let index = 0; index < keywords.length; index++) {
 				const keyword = keywords[index];
 				if (!blog.tags.includes(keyword)) {
 					return false;
 				}
 			}
+			remainingKeywords.push(...blog.tags);
 			return true;
 		});
+		return {showBlogs, remainingKeywords};
 	};
 
 	// Subscribe to the filter store to refresh list of blog posts
@@ -58,7 +62,7 @@
 			}
 		});
 		// Update the list of blogs
-		showBlogs = filterBlogs(keywords);
+		({showBlogs, remainingKeywords} = filterBlogs(keywords));
 	});
 </script>
 
@@ -103,6 +107,15 @@
 							/>
 						</svg>
 						<p class="m-0 text-v-white font-semibold border-v-lilac">{keyword}</p>
+					</button>
+				{:else if remainingKeywords && !remainingKeywords.includes(keyword)}
+					<button
+						class="inline-block my-2 border-0 px-3 py-0.5 bg-v-gray hover:bg-v-gray focus:bg-v-gray"
+						on:click={() => {
+							$selectedKeywords[index] = !$selectedKeywords[index];
+						}}
+					>
+						<p class="m-0 text-slate-500">{keyword}</p>
 					</button>
 				{:else}
 					<button
