@@ -103,6 +103,11 @@
         margin-bottom: 0;
     }
 
+    .prose :not(.unprose) img, :root .prose > p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
     ol,
     ul {
         @apply mb-12 list-inside;
