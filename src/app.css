@@ -94,6 +94,10 @@
         @apply text-xl font-light;
     }
 
+    .prose :not(.unprose) a, :root .prose > a {
+        text-decoration: inherit;
+    }
+
     ol,
     ul {
         @apply mb-12 list-inside;
