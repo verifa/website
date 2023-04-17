@@ -10,6 +10,7 @@
 	import type { Post } from '$lib/posts/posts';
 	import HeaderLine from '$lib/headerLine.svelte';
 	import ClientLogos from '$lib/clients/clientLogos.svelte';
+	import TechnologyLogos from '$lib/technologies/technologyLogos.svelte';
 
 	export let data: PageData;
 	const posts: Post[] = data.posts.posts;
@@ -125,6 +126,22 @@
 					<ButtonLink href="/clients">Our Clients</ButtonLink>
 				</div>
 			</div>
+		</Column>
+	</Columns>
+</section>
+
+<section>
+	<h2>Technologies</h2>
+	<Columns reverse={true}>
+		<Column>
+			<div class="flex flex-col gap-y-2">
+				<h2>
+					We work with the world's leading technologies to help us deliver the best possible experience for our clients.
+				</h2>
+			</div>
+		</Column>
+		<Column>
+			<TechnologyLogos />
 		</Column>
 	</Columns>
 </section>
