@@ -18,9 +18,25 @@ export async function GET({ }) {
             priority: 1.0
         },
         {
-            loc: "https://verifa.io/work",
+            loc: "https://verifa.io/work/value-stream-assessment",
             priority: 0.8
-        },
+		},
+		{
+            loc: "https://verifa.io/work/software-delivery-platforms",
+            priority: 0.8
+		},
+		{
+            loc: "https://verifa.io/work/team-topologies",
+            priority: 0.8
+		},
+		{
+            loc: "https://verifa.io/work/cloud-architecture",
+            priority: 0.8
+		},
+		{
+            loc: "https://verifa.io/work/implementation",
+            priority: 0.8
+		},
         {
             loc: "https://verifa.io/company",
             priority: 0.8
