@@ -17,8 +17,8 @@
 		<div>
 			<img
 				class="object-contain h-full w-full"
-				src="/continuous-delivery.svg"
-				alt="continuous delivery"
+				src="/round-table.svg"
+				alt="An illustration of a group of people seated at a round table."
 			/>
 		</div>
 	</div>

@@ -22,8 +22,8 @@
 		<div>
 			<img
 				class="object-contain h-full w-full"
-				src="/continuous-delivery.svg"
-				alt="continuous delivery"
+				src="/visibility.svg"
+				alt="An illustration of woman holding a magnifying glass up to a screen displaying source code."
 			/>
 		</div>
 	</div>
