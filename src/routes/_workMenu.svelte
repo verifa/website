@@ -6,33 +6,28 @@
 
 	const links: {
 		title: string;
-		description: string;
 		url: string;
 	}[] = [
 		{
-			title: 'Continuous Delivery',
-			description: 'Improving development and release processes',
-			url: '/work#continuous-delivery'
+			title: 'Value Stream Assessment',
+			url: '/work/value-stream-assessment'
+		},
+		{
+			title: 'Software Delivery Platforms',
+			url: '/work/software-delivery-platforms'
+		},
+		{
+			title: 'Team Topologies',
+			url: '/work/team-topologies'
 		},
 		{
 			title: 'Cloud Architecture',
-			description: 'Designing cloud solutions and facilitating adoption',
-			url: '/work#cloud-architecture'
+			url: '/work/cloud-architecture'
+			//description: 'Designing cloud solutions and facilitating adoption',
 		},
 		{
-			title: 'Workshops',
-			description: 'Kickstarting improvement processes and framing core issues',
-			url: '/work#workshops'
-		},
-		{
-			title: 'Coaching',
-			description: 'Building competence within teams',
-			url: '/work#coaching'
-		},
-		{
-			title: 'Implementation',
-			description: 'Building pragmatic solutions',
-			url: '/work#implementation'
+			title: 'How We Do It',
+			url: '/work/implementation'
 		}
 	];
 
@@ -129,10 +124,7 @@
 							href={link.url}
 							class="-m-3 p-3 group block hover:bg-v-gray hover:bg-opacity-10 transition ease-in-out duration-150"
 						>
-							<h4 class="mb-0 group-hover:text-v-lilac">{link.title}</h4>
-							<p class="mb-0 group-hover:text-v-lilac">
-								{link.description}
-							</p>
+							<p class="-p-3 mb-0 group-hover:text-v-lilac">{link.title}</p>
 						</a>
 					{/each}
 				</div>

@@ -8,7 +8,6 @@
 	import MainReference from '$lib/mainReference.svelte';
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 	import type { Post } from '$lib/posts/posts';
-	import HeaderLine from '$lib/headerLine.svelte';
 	import ClientLogos from '$lib/clients/clientLogos.svelte';
 	import TechnologyLogos from '$lib/technologies/technologyLogos.svelte';
 
@@ -23,9 +22,9 @@
 		<div>
 			<h1>Accelerate your software delivery</h1>
 			<h3>
-				We help design, implement and evolve platforms that accelerate the delivery of software
+				We help our clients optimise their software delivery and build high performing teams
 			</h3>
-			<ButtonLink href="/work#continuous-delivery">Learn More</ButtonLink>
+			<ButtonLink href="/contact">Get in touch</ButtonLink>
 		</div>
 		<div>
 			<img
@@ -55,7 +54,7 @@
 				Visualize your value streams to identify waste and accelerate the flow and delivery of
 				value.
 			</p>
-			<ButtonLink href="/work#continuous-delivery">Learn More</ButtonLink>
+			<ButtonLink href="/work/value-stream-assessment">Learn More</ButtonLink>
 		</div>
 		<div>
 			<h3>Software Delivery Platform</h3>
@@ -63,7 +62,7 @@
 				Visualize your value streams to identify waste and accelerate the flow and delivery of
 				value.
 			</p>
-			<ButtonLink href="/work#continuous-delivery">Learn More</ButtonLink>
+			<ButtonLink href="/work/software-delivery-platforms">Learn More</ButtonLink>
 		</div>
 		<div>
 			<h3>Team Topologies</h3>
@@ -71,15 +70,15 @@
 				Visualize your value streams to identify waste and accelerate the flow and delivery of
 				value.
 			</p>
-			<ButtonLink href="/work#continuous-delivery">Learn More</ButtonLink>
+			<ButtonLink href="/work/team-topologies">Learn More</ButtonLink>
 		</div>
 		<div>
-			<h3>Cloud stuff</h3>
+			<h3>Cloud Architecture</h3>
 			<p>
 				Visualize your value streams to identify waste and accelerate the flow and delivery of
 				value.
 			</p>
-			<ButtonLink href="/work#continuous-delivery">Learn More</ButtonLink>
+			<ButtonLink href="/work/cloud-architecture">Learn More</ButtonLink>
 		</div>
 	</Grid>
 </section>
@@ -145,119 +144,6 @@
 		</Column>
 	</Columns>
 </section>
-
-<!-- <section>
-	<Grid>
-		<div>
-			<img
-				class="object-contain h-full w-full"
-				src="/continuous-delivery.svg"
-				alt="continuous delivery"
-			/>
-		</div>
-		<div>
-			<h3>Continuous Delivery</h3>
-			<p>
-				We help teams unlock their continuous release potential through workshops and coaching. We
-				use our knowledge and experience, guiding teams to create processes that deliver value.
-				Through self-discovery we align everyone to a common goal and help transform the way
-				software is delivered.
-			</p>
-			<ButtonLink href="/work#continuous-delivery">Learn More</ButtonLink>
-		</div>
-	</Grid>
-</section>
-
-<section>
-	<Grid>
-		<div class="lg:order-last">
-			<img
-				class="object-contain h-full w-full"
-				src="/cloud-architecture.svg"
-				alt="cloud architecture"
-			/>
-		</div>
-		<div>
-			<h3>Cloud Architecture</h3>
-			<p>
-				Designing and building scalable, reliable and cost-effective cloud architectures is our
-				passion. We want to make our knowledge and experience available to help teams accelerate
-				their projects. The cloud ecosystem is like a jungle, and we can help you navigate through
-				it.
-			</p>
-			<ButtonLink href="/work#cloud-architecture">Learn more</ButtonLink>
-		</div>
-	</Grid>
-</section>
-
-<section>
-	<h1>Workshops, coaching and implementation.</h1>
-</section> -->
-
-<!-- <section>
-	<Columns reverse={true}>
-		<Column>
-			<img
-				class="object-contains h-full w-full"
-				src="/everything-is-connected.svg"
-				alt="everything is connected"
-			/>
-		</Column>
-		<Column>
-			<h4>
-				We help teams unlock their continuous release potential through workshops and coaching. We
-				have worked with many teams, who struggle with many of the same challenges.
-			</h4>
-			<ButtonLink href="/work#workshops">Learn More</ButtonLink>
-		</Column>
-	</Columns>
-</section>
-
-<MainReference />
-
-<section>
-	<Columns>
-		<Column class="flex self-stretch items-center bg-v-black">
-			<div class="p-20">
-				<img
-					class="object-contain h-full w-full"
-					src="/partners/hashicorp-horizontal-white.svg"
-					alt="hashicorp"
-				/>
-			</div>
-		</Column>
-		<Column class="flex self-stretch items-center">
-			<h3 class="mb-0">
-				We partner with those that help us deliver the best possible cloud experience to our
-				customers.
-			</h3>
-		</Column>
-	</Columns>
-</section>
-
-<section>
-	<h1>Great teamwork is more than just great tools.</h1>
-</section>
-
-<section>
-	<Columns reverse={true}>
-		<Column>
-			<img class="object-contain h-full w-full" src="/round-table.svg" alt="round table" />
-		</Column>
-		<Column>
-			<div class="flex flex-col gap-y-0">
-				<h4>
-					We all share a passion for teamwork and continuous learning. We allocate 20% of our work
-					time for internal projects and personal development, which helps us stay ahead of the
-					curve with technology.
-				</h4>
-				<div>
-					<ButtonLink href="/company">Learn More</ButtonLink>
-				</div>
-			</div>
-		</Column>
-	</Columns>
-</section> -->
 
 <section>
 	<h1>Learn more on our blog.</h1>

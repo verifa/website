@@ -12,24 +12,24 @@
 			url: '/work/',
 			children: [
 				{
-					text: 'Continuous Delivery',
-					url: '/work#continuous-delivery'
+					text: 'Value Stream Assessment',
+					url: '/work/value-stream-assessment'
+				},
+				{
+					text: 'Software Delivery Platforms',
+					url: '/work/software-delivery-platforms'
+				},
+				{
+					text: 'Team Topologies',
+					url: '/work/team-topologies'
 				},
 				{
 					text: 'Cloud Architecture',
-					url: '/work#cloud-architecture'
+					url: '/work/cloud-architecture'
 				},
 				{
-					text: 'Workshops',
-					url: '/work#workshops'
-				},
-				{
-					text: 'Coaching',
-					url: '/work#coaching'
-				},
-				{
-					text: 'Implementation',
-					url: '/work#implementation'
+					text: 'How We Do It',
+					url: '/work/implementation'
 				}
 			]
 		},
