@@ -22,9 +22,9 @@
 		<div>
 			<h1>Accelerate your software delivery</h1>
 			<h3>
-				We help our clients optimise their software delivery and build high performing teams
+				We help optimise your software delivery flow and build high performing teams.
 			</h3>
-			<ButtonLink href="/contact">Get in touch</ButtonLink>
+			<ButtonLink href="/contact">Chat with an expert</ButtonLink>
 		</div>
 		<div>
 			<img
@@ -39,10 +39,11 @@
 <section>
 	<h3>Assess. Coach. Build. Evolve.</h3>
 	<p>
-		We’re an expert crew of experienced software delivery consultants based in the Nordics. We help
-		our clients optimise their software delivery flow and empower teams to deliver xxxx. We believe
-		in working together with our clients to assess, coach and build ‘solutions’ (???), so that they
-		ultimately retain ownership.
+		We’re an expert crew of experienced software delivery consultants based in the Nordics. We
+		help our clients make informed decisions about their software delivery processes and
+		platforms, team structures, open source technologies, and cloud services. We believe in
+		working together with our clients to assess their current situation, coach their teams, and
+		design, implement and evolve sustainable solutions that they own.
 	</p>
 </section>
 
@@ -51,32 +52,28 @@
 		<div>
 			<h3>Value Stream Assessment</h3>
 			<p>
-				Visualize your value streams to identify waste and accelerate the flow and delivery of
-				value.
+				Visualise your value streams to identify waste and highlight opportunities for faster flow.
 			</p>
 			<ButtonLink href="/work/value-stream-assessment">Learn More</ButtonLink>
 		</div>
 		<div>
 			<h3>Software Delivery Platform</h3>
 			<p>
-				Visualize your value streams to identify waste and accelerate the flow and delivery of
-				value.
+				Find the right platform abstraction to enable delivery teams in accelerating software delivery.
 			</p>
 			<ButtonLink href="/work/software-delivery-platforms">Learn More</ButtonLink>
 		</div>
 		<div>
 			<h3>Team Topologies</h3>
 			<p>
-				Visualize your value streams to identify waste and accelerate the flow and delivery of
-				value.
+				We help organise happy, high performing teams that deliver better value to customers.
 			</p>
 			<ButtonLink href="/work/team-topologies">Learn More</ButtonLink>
 		</div>
 		<div>
 			<h3>Cloud Architecture</h3>
 			<p>
-				Visualize your value streams to identify waste and accelerate the flow and delivery of
-				value.
+				Designing and implementing cloud-native architectures that are robust yet evolvable.
 			</p>
 			<ButtonLink href="/work/cloud-architecture">Learn More</ButtonLink>
 		</div>
@@ -84,7 +81,9 @@
 </section>
 
 <section>
+	<h3>Trusted by</h3>
 	<ClientLogos />
+	<ButtonLink href="/clients">Our clients</ButtonLink>
 </section>
 
 <section>
@@ -122,7 +121,7 @@
 					</p>
 				</div>
 				<div>
-					<ButtonLink href="/clients">Our Clients</ButtonLink>
+					<ButtonLink href="/contact">Get started</ButtonLink>
 				</div>
 			</div>
 		</Column>
