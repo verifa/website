@@ -17,8 +17,8 @@
 		<div>
 			<img
 				class="object-contain h-full w-full"
-				src="/continuous-delivery.svg"
-				alt="continuous delivery"
+				src="/cloud-architecture.svg"
+				alt="An illustration of a group of people designing a complex 3-dimensional object"
 			/>
 		</div>
 	</div>

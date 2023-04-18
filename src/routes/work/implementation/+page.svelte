@@ -12,7 +12,7 @@
 
 <section>
 	<div class="flex">
-		<div>
+		<div style="width:60%">
 			<h1>How we do it</h1>
 			<h3>
 				We believe in working together with our 
@@ -24,8 +24,8 @@
 		<div>
 			<img
 				class="object-contain h-full w-full"
-				src="/continuous-delivery.svg"
-				alt="continuous delivery"
+				src="/cloud-architecture.svg"
+				alt="An illustration of several people constructing a building-sized dashboard. One person is operating a crane."
 			/>
 		</div>
 	</div>
