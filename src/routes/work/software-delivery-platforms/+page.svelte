@@ -14,10 +14,10 @@
 				Find the right platform abstraction to enable delivery teams in accelerating software delivery.
 			</h3>
 		</div>
-		<div>
+		<div style="width:100%">
 			<img
 				class="object-contain h-full w-full"
-				src="/round-table.svg"
+				src="/company-verifa_colors.svg"
 				alt="An illustration of people engaging with a wall-sized dashboard of charts and information"
 			/>
 		</div>
