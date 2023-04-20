@@ -11,30 +11,33 @@
 </script>
 
 <section>
-	<div class="flex">
-		<div>
-			<h1>How we do it</h1>
+	<HeaderLine />
+	<h4>How we do it</h4>
+	<h1>This could be a witty comment.</h1>
+	<Columns reverse={false}>
+		<Column>
 			<h3>
 				We believe in working together with our 
 				clients to assess their current situation, 
 				coach their teams, and design, implement 
 				and evolve sustainable solutions that they own.
 			</h3>
-		</div>
-		<div style="width:140%">
+		</Column>
+		<Column>
 			<img
 				class="object-contain h-full w-full"
 				src="/continuous-delivery-partner.svg"
 				alt="An illustration of several people constructing a building-sized dashboard. One person is operating a crane."
 			/>
-		</div>
-	</div>
+		</Column>
+	</Columns>
 </section>
+
 
 <section id="workshops">
 	<HeaderLine />
-	<h2>Assess.</h2>
-	<p>Kickstarting improvement processes and framing core issues.</p>
+	<h4>Assess.</h4>
+	<h2>Kickstarting improvement processes and framing core issues.</h2>
 	<Columns>
 		<Column class="self-start">
 			<h3>What are they?</h3>
@@ -61,8 +64,8 @@
 
 <section id="coaching">
 	<HeaderLine />
-	<h2>Coach.</h2>
-	<p>Building competence within teams.</p>
+	<h4>Coach.</h4>
+	<h2>Building competence within teams.</h2>
 	<Columns>
 		<Column class="self-start">
 			<h3>You own your work.</h3>
@@ -88,14 +91,14 @@
 
 <section id="implementation">
 	<HeaderLine />
-	<h2>Build and evolve.</h2>
-	<p>Building sustainable solutions.</p>
-	<h3>
+	<h4>Build and evolve.</h4>
+	<h2>Building sustainable solutions.</h2>
+	<p>
 		We have long-lasting relationships with customers who trust us to work alongside their teams and
 		help solve all kinds of problems. We can deliver both short-term and long-term work. Whether you
 		need help with Cloud, the HashiStack, Kubernetes, CI/CD workflows, or any related topic, we are
 		here to be a trusted extension of your team.
-	</h3>
+	</p>
 </section>
 <section>
 	<CtaButton />

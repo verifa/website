@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Column from '$lib/column.svelte';
+	import Columns from '$lib/columns.svelte';
 	import { seo } from '$lib/seo/store';
 	import ButtonLink from '$lib/buttonLink.svelte';
 
@@ -7,26 +9,27 @@
 </script>
 
 <section>
-	<div class="flex">
-		<div>
+	<Columns reverse={false}>
+		<Column>
 			<h1>Software Delivery Platforms</h1>
 			<h3>
 				Find the right platform abstraction to enable delivery teams in accelerating software delivery.
 			</h3>
-		</div>
-		<div style="width:100%">
+		</Column>
+		<Column>
 			<img
 				class="object-contain h-full w-full"
 				src="/company-verifa_colors.svg"
 				alt="An illustration of people engaging with a wall-sized dashboard of charts and information"
 			/>
-		</div>
-	</div>
+		</Column>
+	</Columns>
 </section>
+
 
 <section>
 	<div>
-		<p class="mb-0">
+		<h4 class="mb-0">
 			A Software Delivery Platform serves to reduce the cognitive load for software delivery teams, 
 			enabling them to focus on delivering value instead of firefighting.
 			
@@ -38,7 +41,7 @@
 			Platform Engineering helps to define the ‘Golden Path’ for software teams to deliver value. 
 			It all begins with research on how teams work in order to create a proper "Platform Abstraction". 
 			This drives what the platform will do, who will use it, and what workflows it needs to fulfil.
-		</p>
+		</h4>
 	</div>
 </section>
 <section id="how-we-help">
