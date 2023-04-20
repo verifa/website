@@ -2,7 +2,7 @@
 	import Column from '$lib/column.svelte';
 	import Columns from '$lib/columns.svelte';
 	import CtaButton from '$lib/ctaButton.svelte';
-	import Grid from '$lib/grid.svelte';
+	import HeaderLine from '$lib/headerLine.svelte';
 	import { seo } from '$lib/seo/store';
 	import ButtonLink from '$lib/buttonLink.svelte';
 	import CDWorkshop from '../_cdWorkshop.svelte';
@@ -12,26 +12,30 @@
 </script>
 
 <section>
-	<div class="flex">
-		<div>
-			<h1>Value Stream Assessment</h1>
+	<HeaderLine />
+	<h4>Value Stream Assessment</h4>
+	<h1>This could be a witty comment.</h1>
+	<Columns reverse={false}>
+		<Column>
 			<h3>
-				Visualize yous value streams to identify waste and highlight opportunities for faster flow
+				Visualize your value streams to identify waste and highlight opportunities for faster flow
 			</h3>
-		</div>
-		<div>
+		</Column>
+		<Column>
 			<img
 				class="object-contain h-full w-full"
 				src="/visibility.svg"
 				alt="An illustration of woman holding a magnifying glass up to a screen displaying source code."
 			/>
-		</div>
-	</div>
+		</Column>
+	</Columns>
 </section>
 
 <section>
-	<div>
-		<p class="mb-0">
+	<HeaderLine />
+	<h4>Understanding</h4>
+	<h3>Value Stream?</h3>
+	<p>
 		A Value Stream Map is a visual tool showing the series of events that take a product or
 		service from the beginning of a process until it reaches its end (i.e. a Value Stream).
 		Value Stream Mapping (VSM) is a method for defining a Value Stream and analysing the current
@@ -40,16 +44,11 @@
 		The idea of implementing change in your software delivery is not too dissimilar from
 		implementing change in your software itself, and should be done in a *continuous* way. View
 		it as using Continuous Delivery for improving your Continuous Delivery.
-		</p>
-	</div>
+	</p>
 </section>
 <section id="how-we-help">
-	<h2>How we can help</h2>
-	<p class="mb-0">
-		Our Continuous Delivery workshops (link to CD workshop) help teams unlock their Continuous
-		Delivery potential. We will help you understand your release process and create a backlog of
-		improvements.
-	</p>
+	<HeaderLine />
+	<h4>How we can help</h4>
 	<CDWorkshop />
 	<div class="flex">
 		<ul>
@@ -64,6 +63,9 @@
 			</Column>
 		</Columns>
 	</div>
+</section>
+<section>
+	<HeaderLine />
 	<h2>
 		‘Verifa helped lead discussions around many topics which was useful in gaining a common
 		understanding of what we can do to improve’.
