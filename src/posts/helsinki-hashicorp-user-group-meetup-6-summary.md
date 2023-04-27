@@ -7,7 +7,7 @@ authors:
 tags:
 - HashiCorp
 date: 2023-04-28
-image: "/blogs/helsinki-hug-6/hug-blog-summary-6.png"
+image: "/blogs/helsinki-hug-6/hug-summary-blog-6.png"
 featured: true
 jobActive: true
 
