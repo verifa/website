@@ -15,13 +15,13 @@ featured: true
 
 **I recently discovered ORAS: *"an attempt to define an opinionated way to leverage OCI Registries for arbitrary artifacts without masquerading them as container images."* This piqued my interest, so I took it for a spin.**
 
-**This post is a short overview of my adventures and my first impressions.**
+**This post is a short recording of my humble adventures and first impressions.**
 
 ## Setup
 
 ### Installing ORAS CLI
 
-*Official docs: [CLI/Installation](https://oras.land/cli/)*
+*Official docs: [CLI/Installation](https://oras.land/docs/cli/installation/)*
 
 First up is installing the ORAS CLI.
 
@@ -42,9 +42,9 @@ It's fairly simple and makes cleaning up a lot easier.
 (I used podman, but Docker should work just fine.)
 
 ```
-$ REGISTRY_DIR=~/oras-adventures
-$ mkdir -p $REGISTRY_DIR/registry
-$ podman run -d --name oras_registry -p 5000:5000 -v $REGISTRY_DIR/registry:/var/lib/registry --restart=always registry:2
+$ REGISTRY_DIR=~/oras-adventures/registry
+$ mkdir -p $REGISTRY_DIR
+$ podman run -d --name oras_registry -p 5000:5000 -v $REGISTRY_DIR:/var/lib/registry --restart=always registry:2
 ```
 
 We'll want to add our registry to `/etc/containers/registries.conf` as well:
@@ -58,7 +58,7 @@ insecure = true
 A quick restart of the podman service and we should be good to go:
 
 ```
-$ sudo systemctl restart podman
+$ systemctl restart podman
 ```
 
 To test, let's try pushing an image to our registry.
@@ -88,7 +88,7 @@ Alright, looks like our playground is good to go!
 
 ### Pushing an artifact
 
-*Official documentation: [CLI/Pushing](https://oras.land/cli/1_pushing/)*
+*Official documentation: [CLI/Pushing](https://oras.land/docs/CLI/pushing)*
 
 Let's push our first artifact.
 To do so, we'll need to specify the artifact's type and our file.
@@ -107,11 +107,7 @@ If you're unsure what type to use, you can check [IANA's media type list](https:
 
 ### Finding an artifact
 
-*Official documentation:*
-
-- *[CLI reference/oras_repo_ls](https://oras.land/cli_reference/oras_repo_ls/)*
-
-- *[CLI reference/oras_repo_tags](https://oras.land/cli_reference/oras_repo_tags/)*
+*Official documentation:* *[CLI reference/oras_repo_ls](https://oras.land/docs/cli_reference/oras_repo_ls/)* / *[CLI reference/oras_repo_tags](https://oras.land/docs/cli_reference/oras_repo_tags/)*
 
 A look around the repo reveals both our `verifa-logo` artifact and the `hello-world` image we pushed earlier. Everything is as it should be.
 
@@ -126,7 +122,7 @@ $ oras repo tags localhost:5000/verifa-logo
 
 ### Pulling an artifact
 
-*Official documentation: [CLI/Pulling](https://oras.land/cli/2_pulling/)*
+*Official documentation: [CLI/Pulling](https://oras.land/docs/cli/pulling/)*
 
 Let's try pulling our artifact back down again.
 
@@ -147,17 +143,16 @@ Looks like pulling an artifact dumps its contents in your working directory. Fai
 
 ### Artifacts with multiple files
 
+*Official documentation: [CLI/Pushing](https://oras.land/docs/CLI/pushing#pushing-artifacts-with-multiple-files)*
+
 You can push an artifact with multiple files, where each file ends up as a its own layer.
 Note that each layer should have a media type assigned.
 I'll be pushing the following as an artifact:
 
 - `README.md`
-
-- A simple markdown file. I'll use `text/markdown`
-
+	- A simple markdown file. I'll use `text/markdown`
 - `images/`
-
-- A directory containing two images. ORAS automatically tars up directories, so this layer will contain a single tar file. There's no media type for tar files, I'll just use the common `application/x-tar`
+	- A directory containing two images. ORAS automatically tars up directories, so this layer will contain a single tar file. There's no media type for tar files, I'll just use the common `application/x-tar`
 
 ```
 $ tree
@@ -200,7 +195,7 @@ $ tree
 
 ## Closing thoughts
 
-Admittedly having only barely scratched ORAS' surface, I'm quite fond of it.
+Having only barely scratched ORAS' surface, I'm quite fond of it.
 I'm always on the lookout for generic dependency management tools, and while I wouldn't use ORAS as such (yet), it holds quite a bit of potential. You can build some nice tooling around this, especially with the ability to define/handle custom media types.
 
 I'll be keeping an eye on it for sure.
