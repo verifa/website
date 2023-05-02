@@ -3,6 +3,7 @@
 	import Columns from '$lib/columns.svelte';
 	import { seo } from '$lib/seo/store';
 	import ButtonLink from '$lib/buttonLink.svelte';
+	import HeaderLine from '$lib/headerLine.svelte';
 
 	seo.reset();
 	$seo.title = 'What we do: Software Delivery Platforms';
@@ -28,25 +29,32 @@
 
 
 <section>
+	<HeaderLine/>
 	<div>
-		<h4 class="mb-0">
-			A Software Delivery Platform serves to reduce the cognitive load for software delivery teams, 
+		<h4>What</h4>
+		<Columns reverse={false}>
+			<Column>
+				A Software Delivery Platform serves to reduce the cognitive load for software delivery teams, 
 			enabling them to focus on delivering value instead of firefighting.
-			
-			Developing software is increasingly complex, requiring many moving parts. A well designed Platform 
-			seeks to standardise as much as possible, to create a human friendly interface together with a 
-			stable and reliable environment to develop, test and deploy software. It should also be designed 
-			to scale, and tools to be replaceable in order to avoid repeating pain. 
-			
+			</Column>
+			<Column>
+				Developing software is increasingly complex, requiring many moving parts. A well designed Platform 
+				seeks to standardise as much as possible, to create a human friendly interface together with a 
+				stable and reliable environment to develop, test and deploy software. It should also be designed 
+				to scale, and tools to be replaceable in order to avoid repeating pain. 
+			</Column>
+		</Columns>
+		<h3 class="mb-0">
 			Platform Engineering helps to define the ‘Golden Path’ for software teams to deliver value. 
 			It all begins with research on how teams work in order to create a proper "Platform Abstraction". 
 			This drives what the platform will do, who will use it, and what workflows it needs to fulfil.
-		</h4>
+		</h3>
 	</div>
 </section>
 <section id="how-we-help">
+	<HeaderLine/>
 	<div>
-		<h2>How we can help</h2>
+		<h4>How we can help</h4>
 		<p class="mb-0">
 			Often, a ‘platform’ is a collection of tools maintained by a team, with little thought into how 
 			they can help delivery teams. Verifa helps teams to design and implement Software Delivery 

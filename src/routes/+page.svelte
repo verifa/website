@@ -37,14 +37,14 @@
 </section>
 
 <section>
-	<h3>Assess. Coach. Build. Evolve.</h3>
-	<p>
+	<h2>Assess. Coach. Build. Evolve.</h2>
+	<h4>
 		We’re an expert crew of experienced software delivery consultants based in the Nordics. We
 		help our clients make informed decisions about their software delivery processes and
 		platforms, team structures, open source technologies, and cloud services. We believe in
 		working together with our clients to assess their current situation, coach their teams, and
 		design, implement and evolve sustainable solutions that they own.
-	</p>
+	</h4>
 </section>
 
 <section>
