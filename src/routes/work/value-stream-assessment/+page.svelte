@@ -12,11 +12,9 @@
 </script>
 
 <section>
-	<HeaderLine />
-	<h4>Value Stream Assessment</h4>
-	<h1>This could be a witty comment.</h1>
 	<Columns reverse={false}>
 		<Column>
+			<h1>Value Stream Assessment</h1>
 			<h3>
 				Visualize your value streams to identify waste and highlight opportunities for faster flow
 			</h3>
@@ -32,19 +30,21 @@
 </section>
 
 <section>
-	<HeaderLine />
-	<h4>Understanding</h4>
-	<h3>Value Stream?</h3>
-	<p>
-		A Value Stream Map is a visual tool showing the series of events that take a product or
-		service from the beginning of a process until it reaches its end (i.e. a Value Stream).
-		Value Stream Mapping (VSM) is a method for defining a Value Stream and analysing the current
-		flow in order to remove waste and to derive a more lean and continuous workflow.
-
-		The idea of implementing change in your software delivery is not too dissimilar from
-		implementing change in your software itself, and should be done in a *continuous* way. View
-		it as using Continuous Delivery for improving your Continuous Delivery.
-	</p>
+	<HeaderLine/>
+	<h4>Value Stream?</h4>
+	<Columns reverse={false}>
+		<Column>
+			A Value Stream Map is a visual tool showing the series of events that take a product or
+			service from the beginning of a process until it reaches its end (i.e. a Value Stream).
+			Value Stream Mapping (VSM) is a method for defining a Value Stream and analysing the current
+			flow in order to remove waste and to derive a more lean and continuous workflow.
+		</Column>
+		<Column>
+			The idea of implementing change in your software delivery is not too dissimilar from
+			implementing change in your software itself, and should be done in a *continuous* way. View
+			it as using Continuous Delivery for improving your Continuous Delivery.
+		</Column>
+	</Columns>
 </section>
 <section id="how-we-help">
 	<HeaderLine />
