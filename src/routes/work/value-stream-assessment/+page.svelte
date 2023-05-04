@@ -41,8 +41,8 @@
 		</Column>
 		<Column>
 			The idea of implementing change in your software delivery is not too dissimilar from
-			implementing change in your software itself, and should be done in a *continuous* way. View it
-			as using Continuous Delivery for improving your Continuous Delivery.
+			implementing change in your software itself, and should be done in a <i>continuous</i> way. View
+			it as using Continuous Delivery for improving your Continuous Delivery.
 		</Column>
 	</Columns>
 </section>

@@ -11,17 +11,10 @@
 </script>
 
 <section>
-	<HeaderLine />
-	<h4>How we do it</h4>
-	<h1>This could be a witty comment.</h1>
 	<Columns reverse={false}>
 		<Column>
-			<h3>
-				We believe in working together with our 
-				clients to assess their current situation, 
-				coach their teams, and design, implement 
-				and evolve sustainable solutions that they own.
-			</h3>
+			<h1>How we do it.</h1>
+			<h3>Working together to create sustainable solutions that you own.</h3>
 		</Column>
 		<Column>
 			<img
@@ -33,16 +26,16 @@
 	</Columns>
 </section>
 
-
 <section id="workshops">
 	<HeaderLine />
 	<h4>Assess.</h4>
+
 	<h2>Kickstarting improvement processes and framing core issues.</h2>
 	<Columns>
 		<Column class="self-start">
-			<h3>What are they?</h3>
+			<h3>Workshops.</h3>
 			<p>
-				Our workshops focus on knowledge sharing and self-discovery. By discussing and analyzing
+				Our workshops focus on knowledge sharing and self-discovery. By discussing and analysing
 				value streams, cloud architectures, development workflows, deployment strategies, and many
 				more topics, we help teams understand more about the ecosystem and help them arrive at their
 				own conclusions. This is fundamental transforming the way teams work because everyone knows
@@ -53,9 +46,9 @@
 			<h3>Who are they for?</h3>
 			<p>
 				Our workshops are for any teams looking to change the way they work. They can span from a
-				few hours to multiple days, meaning there is no big upfront investment. Whether you are
+				few hours to multiple days, meaning there is no big upfront investment. Whether you're
 				starting a new project or looking to improve your current one, we are happy to hear from you
-				and try to help. The very least we can offer a trusted opinion of your ways of working.
+				and try to help. The very least we can offer is a trusted opinion of your ways of working.
 			</p>
 		</Column>
 	</Columns>
@@ -87,17 +80,24 @@
 			</p>
 		</Column>
 	</Columns>
+	<h2>
+		‘A key and crucial part of our Continuous Integration journey was having Verifa's involvement in
+		holding-our-hands and giving us confidence while we moved our active projects to a CI
+		methodology.’.
+	</h2>
+	<h4>— David Hoslett, Siemens Mobility.</h4>
 </section>
 
 <section id="implementation">
 	<HeaderLine />
-	<h4>Build and evolve.</h4>
+	<h4>Build and Evolve.</h4>
 	<h2>Building sustainable solutions.</h2>
 	<p>
 		We have long-lasting relationships with customers who trust us to work alongside their teams and
 		help solve all kinds of problems. We can deliver both short-term and long-term work. Whether you
-		need help with Cloud, the HashiStack, Kubernetes, CI/CD workflows, or any related topic, we are
-		here to be a trusted extension of your team.
+		need help with CI/CD workflows, Platform Engineering, Cloud, the HashiStack, Kubernetes, or any
+		related topic, we're here to help you build, implement and evolve sustainable solutions tailored
+		for your unique business needs.
 	</p>
 </section>
 <section>
