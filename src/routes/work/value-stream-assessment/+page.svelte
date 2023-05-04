@@ -14,9 +14,9 @@
 <section>
 	<Columns reverse={false}>
 		<Column>
-			<h1>Value Stream Assessment</h1>
+			<h1>Value Stream Assessment.</h1>
 			<h3>
-				Visualise your value streams to identify waste and highlight opportunities for faster flow
+				Visualise your value streams to identify waste and highlight opportunities for faster flow.
 			</h3>
 		</Column>
 		<Column>

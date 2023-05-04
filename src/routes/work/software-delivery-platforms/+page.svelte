@@ -12,9 +12,10 @@
 <section>
 	<Columns reverse={false}>
 		<Column>
-			<h1>Software Delivery Platforms</h1>
+			<h1>Software Delivery Platforms.</h1>
 			<h3>
-				Find the right platform abstraction to enable delivery teams in accelerating software delivery.
+				Find the right platform abstraction to enable delivery teams in accelerating software
+				delivery.
 			</h3>
 		</Column>
 		<Column>
@@ -27,42 +28,48 @@
 	</Columns>
 </section>
 
-
 <section>
-	<HeaderLine/>
+	<HeaderLine />
 	<div>
-		<h4>What</h4>
+		<h4>Human-friendly platforms</h4>
 		<Columns reverse={false}>
 			<Column>
-				A Software Delivery Platform serves to reduce the cognitive load for software delivery teams, 
-			enabling them to focus on delivering value instead of firefighting.
+				Agile and DevOps have enabled cross-functional and autonomous teams, but has also led to
+				additional responsibilities for the product teams. As well as development of the software,
+				they also need to support the infrastructure and daily operations. This causes additional
+				cognitive load and takes time away from providing actual value.
 			</Column>
 			<Column>
-				Developing software is increasingly complex, requiring many moving parts. A well designed Platform 
-				seeks to standardise as much as possible, to create a human friendly interface together with a 
-				stable and reliable environment to develop, test and deploy software. It should also be designed 
-				to scale, and tools to be replaceable in order to avoid repeating pain. 
+				A Software Delivery Platform seeks to reduce the cognitive load for software delivery teams,
+				allowing them to focus on delivering value instead of firefighting. It’s a set of tools,
+				processes and technologies that enable teams to build, test and deploy software more
+				efficiently and reliably.
 			</Column>
 		</Columns>
 		<h3 class="mb-0">
-			Platform Engineering helps to define the ‘Golden Path’ for software teams to deliver value. 
-			It all begins with research on how teams work in order to create a proper "Platform Abstraction". 
-			This drives what the platform will do, who will use it, and what workflows it needs to fulfil.
+			A well-designed platform removes the complexity of modern infrastructures by providing a
+			human-friendly interface and a stable, self-serve environment, so that teams can focus on
+			delivering value faster.
 		</h3>
 	</div>
 </section>
-<section id="how-we-help">
-	<HeaderLine/>
-	<div>
-		<h4>How we can help</h4>
-		<p class="mb-0">
-			Often, a ‘platform’ is a collection of tools maintained by a team, with little thought into how 
-			they can help delivery teams. Verifa helps teams to design and implement Software Delivery 
-			Platforms that decouples teams, allowing them to work independently and deliver value faster.
 
-			Value Stream Assessments (link to VSA page) are our method for understanding team 
-			interactions and flow of delivery.
-		</p>
-		<ButtonLink href="/contact">Get started</ButtonLink>
-	</div>
+<section id="how-we-help">
+	<HeaderLine />
+	<h4>How we can help</h4>
+	<Columns reverse={false}>
+		<Column>
+			Often, a ‘platform’ is a collection of tools maintained by a team, with little thought into
+			how they can help delivery teams. Platform Engineering helps to define the ‘Golden Path’ for
+			software teams to deliver value. It all begins with research on how teams work in order to
+			create a proper "Platform Abstraction". This drives what the platform will do, who will use
+			it, and what workflows it needs to fulfil.
+		</Column>
+		<Column>
+			Verifa helps teams to design and implement Software Delivery Platforms that decouple teams,
+			allowing them to work independently and deliver value faster. Value Stream Assessments (link
+			to VSA page) are our method for understanding team interactions and flow of delivery.
+			<ButtonLink href="/contact">Chat with an expert</ButtonLink>
+		</Column>
+	</Columns>
 </section>

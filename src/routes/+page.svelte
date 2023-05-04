@@ -20,10 +20,8 @@
 <section>
 	<div class="flex">
 		<div>
-			<h1>Accelerate your software delivery</h1>
-			<h3>
-				We help optimise your software delivery flow and build high performing teams.
-			</h3>
+			<h1>Accelerate your software delivery.</h1>
+			<h3>We help optimise your software delivery flow and build high performing teams.</h3>
 			<ButtonLink href="/contact">Chat with an expert</ButtonLink>
 		</div>
 		<div>
@@ -39,11 +37,11 @@
 <section>
 	<h2>Assess. Coach. Build. Evolve.</h2>
 	<h4>
-		We’re an expert crew of experienced software delivery consultants based in the Nordics. We
-		help our clients make informed decisions about their software delivery processes and
-		platforms, team structures, open source technologies, and cloud services. We believe in
-		working together with our clients to assess their current situation, coach their teams, and
-		design, implement and evolve sustainable solutions that they own.
+		We’re an expert crew of experienced software delivery consultants based in the Nordics. We help
+		our clients make informed decisions about their software delivery processes and platforms, team
+		structures, open source technologies, and cloud services. We believe in working together with
+		our clients to assess their current situation, coach their teams, and design, implement and
+		evolve sustainable solutions that they own.
 	</h4>
 </section>
 
@@ -59,22 +57,19 @@
 		<div>
 			<h3>Software Delivery Platform</h3>
 			<p>
-				Find the right platform abstraction to enable delivery teams in accelerating software delivery.
+				Find the right platform abstraction to enable delivery teams in accelerating software
+				delivery.
 			</p>
 			<ButtonLink href="/work/software-delivery-platforms">Learn More</ButtonLink>
 		</div>
 		<div>
 			<h3>Team Topologies</h3>
-			<p>
-				We help organise happy, high performing teams that deliver better value to customers.
-			</p>
+			<p>We help organise happy, high performing teams that deliver better value to customers.</p>
 			<ButtonLink href="/work/team-topologies">Learn More</ButtonLink>
 		</div>
 		<div>
 			<h3>Cloud Architecture</h3>
-			<p>
-				Designing and implementing cloud-native architectures that are robust yet evolvable.
-			</p>
+			<p>Designing and implementing cloud-native architectures that are robust yet evolvable.</p>
 			<ButtonLink href="/work/cloud-architecture">Learn More</ButtonLink>
 		</div>
 	</Grid>
@@ -134,7 +129,8 @@
 		<Column>
 			<div class="flex flex-col gap-y-2">
 				<h2>
-					We work with the world's leading technologies to help us deliver the best possible experience for our clients.
+					We work with the world's leading technologies to help us deliver the best possible
+					experience for our clients.
 				</h2>
 			</div>
 		</Column>
