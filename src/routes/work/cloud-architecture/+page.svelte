@@ -12,10 +12,8 @@
 <section>
 	<Columns reverse={false}>
 		<Column>
-			<h1>Cloud Architecture</h1>
-			<h3>
-				We help organise happy, high performing teams that deliver better value to customers.
-			</h3>
+			<h1>Cloud Architecture.</h1>
+			<h3>Designing and implementing cloud-native architectures that are robust yet evolvable.</h3>
 		</Column>
 		<Column>
 			<img
@@ -28,39 +26,54 @@
 </section>
 
 <section>
-	<HeaderLine/>
-	<h4>What</h4>
+	<HeaderLine />
+	<h4>Scalable, fast and reliable cloud</h4>
 	<Columns reverse={false}>
 		<Column>
-			A Software Delivery Platform serves to reduce the cognitive load for software delivery teams, 
-		enabling them to focus on delivering value instead of firefighting.
+			Migrating to the cloud is essential for ambitious businesses to achieve better performance and
+			efficiencies - scalability, flexibility, self-service, cost savings, security, innovation,
+			faster time to delivery. Architecting for the cloud requires careful analysis, planning and
+			execution to make sure it serves your own unique business requirements.
 		</Column>
 		<Column>
-			Developing software is increasingly complex, requiring many moving parts. A well designed Platform 
-			seeks to standardise as much as possible, to create a human friendly interface together with a 
-			stable and reliable environment to develop, test and deploy software. It should also be designed 
-			to scale, and tools to be replaceable in order to avoid repeating pain. 
+			<ul>
+				<li>Private or Public Cloud</li>
+				<li>Orchestration</li>
+				<li>Infrastructure as Code</li>
+				<li>Monitoring & Observability</li>
+				<li>Cost Optimisation</li>
+				<li>Zero-Trust Security</li>
+			</ul>
 		</Column>
 	</Columns>
 	<h3 class="mb-0">
-		Platform Engineering helps to define the ‘Golden Path’ for software teams to deliver value. 
-		It all begins with research on how teams work in order to create a proper "Platform Abstraction". 
-		This drives what the platform will do, who will use it, and what workflows it needs to fulfil.
+		Our expert cloud architects can help you navigate the complexities of the cloud, and help you
+		build and adopt an awesome cloud architecture!
 	</h3>
 </section>
+
 <section id="how-we-help">
-	<h2>How we can help</h2>
+	<HeaderLine />
+	<h4>How we can help</h4>
 	<p class="mb-0">
-		Every team is different, and we need to understand your unique situation. The starting 
-		point for this is working together with your team to conduct a Value Stream Assessment 
-		(link to VSA page) to uncover your current way of working, interactions and software delivery 
-		flow. Each VSA is customised but often includes:
+		We help teams adopt cloud (public or private) by helping in the architecting process and
+		coaching teams with best practices. such as Infrastructure as Code. Our goal is to reduce the
+		amount of time it takes for you to start benefiting from the many wonderful things that the
+		cloud delivers. Through design sessions and workshops, we share our knowledge and experience to
+		help you get the right architecture and plan for the cloud.
 	</p>
-	<ul>
-		<li>Item 1</li>
-		<li>Item 2</li>
-		<li>Item 3</li>
-		<li>Item 4</li>
-	</ul>
-<ButtonLink href="/contact">Get started</ButtonLink>
+
+	<Columns reverse={false}>
+		<Column>
+			<ButtonLink href="/contact">Need help migrating to the cloud? Let's chat.</ButtonLink>
+		</Column>
+		<Column>
+			<h2>
+				‘We were looking for help with professionalising our Continuous Integration and software
+				delivery platform whilst moving the setup to the cloud. Verifa was a very reliable partner
+				in implementing a modern setup using their years of experience’.
+			</h2>
+			<h4>— Laurent Muller, Vyaire Medical.</h4>
+		</Column>
+	</Columns>
 </section>
