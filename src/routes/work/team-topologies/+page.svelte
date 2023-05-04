@@ -12,10 +12,8 @@
 <section>
 	<Columns reverse={false}>
 		<Column>
-			<h1>Team Topologies</h1>
-			<h3>
-				We help organise happy, high performing teams that deliver better value to customers.
-			</h3>
+			<h1>Team Topologies.</h1>
+			<h3>We help organise happy, high performing teams that deliver better value to customers.</h3>
 		</Column>
 		<Column>
 			<img
@@ -28,32 +26,32 @@
 </section>
 
 <section>
-	<HeaderLine/>
-	<h4>What</h4>
+	<HeaderLine />
+	<h4>Faster flow, more value</h4>
 	<Columns reverse={false}>
 		<Column>
-			Even with automation, building software is an inherently human undertaking and the ways 
-			of working play a huge part in its success. The composition of teams, relationships and 
+			Even with automation, building software is an inherently human undertaking and the ways of
+			working play a huge part in its success. The composition of teams, relationships and
 			interactions is an often overlooked practice when improving a continuous delivery process.
 		</Column>
 		<Column>
-			Verifa’s holistic approach, based on Team Topologies (link to TT site??), is about organising 
-			technical teams in a such a way that they are able to deliver value continuously and sustainably.
+			Verifa’s holistic approach, based on Team Topologies (link to TT site??), is about organising
+			technical teams in a such a way that they are able to deliver value continuously and
+			sustainably.
 		</Column>
 	</Columns>
 </section>
 <section id="how-we-help">
-	<HeaderLine/>
+	<HeaderLine />
 	<h4>How we can help</h4>
 	<Columns reverse={false}>
 		<Column>
-			Every team is different, and we need to understand your unique situation. The starting 
-			point for this is working together with your team to conduct a Value Stream Assessment 
-			(link to VSA page) to uncover your current way of working, interactions and software delivery 
-			flow.
+			Every team is different, and we need to understand your unique situation. The starting point
+			for this is working together with your team to conduct a Value Stream Assessment (link to VSA
+			page) to uncover your current way of working, interactions and software delivery flow.
 		</Column>
 		<Column>
-			Each VSA is customised but often includes:
+			Each Value Stream Assessment is customised but often includes:
 			<ul>
 				<li>Item 1</li>
 				<li>Item 2</li>
@@ -62,5 +60,30 @@
 			</ul>
 		</Column>
 	</Columns>
-	<ButtonLink href="/contact">Get started</ButtonLink>
+	<ButtonLink href="/contact">Chat with an expert</ButtonLink>
+</section>
+
+<section id="how-we-help">
+	<HeaderLine />
+	<h4>How we can help</h4>
+	<h2 class="mb-0">
+		Every team is different, and we need to understand your unique situation. The starting point for
+		this is working together with your team to conduct a Value Stream Assessment (link to VSA page)
+		to uncover your current way of working, interactions and software delivery flow.
+	</h2>
+
+	<Columns reverse={false}>
+		<Column>
+			Each Value Stream Assessment is customised but often includes:
+			<ul>
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+				<li>Item 4</li>
+			</ul>
+		</Column>
+		<Column>
+			<ButtonLink href="/contact">Want a happier, more productive team? Let’s chat.</ButtonLink>
+		</Column>
+	</Columns>
 </section>
