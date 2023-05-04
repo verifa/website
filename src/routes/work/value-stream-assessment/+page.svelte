@@ -16,7 +16,7 @@
 		<Column>
 			<h1>Value Stream Assessment</h1>
 			<h3>
-				Visualize your value streams to identify waste and highlight opportunities for faster flow
+				Visualise your value streams to identify waste and highlight opportunities for faster flow
 			</h3>
 		</Column>
 		<Column>
@@ -30,19 +30,19 @@
 </section>
 
 <section>
-	<HeaderLine/>
-	<h4>Value Stream?</h4>
+	<HeaderLine />
+	<h4>Lean and continuous workflows</h4>
 	<Columns reverse={false}>
 		<Column>
 			A Value Stream Map is a visual tool showing the series of events that take a product or
-			service from the beginning of a process until it reaches its end (i.e. a Value Stream).
-			Value Stream Mapping (VSM) is a method for defining a Value Stream and analysing the current
-			flow in order to remove waste and to derive a more lean and continuous workflow.
+			service from the beginning of a process until it reaches its end, i.e. a Value Stream. Value
+			Stream Mapping (VSM) is a method for defining a Value Stream and analysing the current flow in
+			order to remove waste and to derive a more lean and continuous workflow.
 		</Column>
 		<Column>
 			The idea of implementing change in your software delivery is not too dissimilar from
-			implementing change in your software itself, and should be done in a *continuous* way. View
-			it as using Continuous Delivery for improving your Continuous Delivery.
+			implementing change in your software itself, and should be done in a *continuous* way. View it
+			as using Continuous Delivery for improving your Continuous Delivery.
 		</Column>
 	</Columns>
 </section>
@@ -59,18 +59,20 @@
 		</ul>
 		<Columns>
 			<Column>
-				<CtaButton text={'Ready to unlock your CD potential?'} contact={'Get Started'} fullScreen={false} />
+				<CtaButton
+					text={'Ready to unlock your CD potential?'}
+					contact={'Get Started'}
+					fullScreen={false}
+				/>
 			</Column>
 		</Columns>
 	</div>
 </section>
 <section>
-	<HeaderLine />
 	<h2>
 		‘Verifa helped lead discussions around many topics which was useful in gaining a common
 		understanding of what we can do to improve’.
 	</h2>
 	<h4>— Olli Suihkonen, Visma Software Oy.</h4>
 	<ButtonLink href="/clients/value-stream-mapping-with-visma/">Read the case study</ButtonLink>
-
 </section>
