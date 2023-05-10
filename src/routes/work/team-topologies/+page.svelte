@@ -35,52 +35,29 @@
 			interactions is an often overlooked practice when improving a continuous delivery process.
 		</Column>
 		<Column>
-			Verifa’s holistic approach, based on Team Topologies (link to TT site??), is about organising
-			technical teams in a such a way that they are able to deliver value continuously and
-			sustainably.
+			Verifa’s holistic approach, based on [Team Topologies](https://teamtopologies.com/), is about
+			organising technical teams in a such a way that they are able to deliver value continuously
+			and sustainably.
 		</Column>
 	</Columns>
 </section>
-<section id="how-we-help">
-	<HeaderLine />
-	<h4>How we can help</h4>
-	<Columns reverse={false}>
-		<Column>
-			Every team is different, and we need to understand your unique situation. The starting point
-			for this is working together with your team to conduct a Value Stream Assessment (link to VSA
-			page) to uncover your current way of working, interactions and software delivery flow.
-		</Column>
-		<Column>
-			Each Value Stream Assessment is customised but often includes:
-			<ul>
-				<li>Item 1</li>
-				<li>Item 2</li>
-				<li>Item 3</li>
-				<li>Item 4</li>
-			</ul>
-		</Column>
-	</Columns>
-	<ButtonLink href="/contact">Chat with an expert</ButtonLink>
-</section>
-
 <section id="how-we-help">
 	<HeaderLine />
 	<h4>How we can help</h4>
 	<h2 class="mb-0">
 		Every team is different, and we need to understand your unique situation. The starting point for
-		this is working together with your team to conduct a Value Stream Assessment (link to VSA page)
-		to uncover your current way of working, interactions and software delivery flow.
+		this is working together with your team to conduct a [Value Stream
+		Assessment](https://verifa.io//work/value-stream-assessment/) to uncover your current way of
+		working, interactions and software delivery flow.
 	</h2>
 
 	<Columns reverse={false}>
 		<Column>
-			Each Value Stream Assessment is customised but often includes:
-			<ul>
-				<li>Item 1</li>
-				<li>Item 2</li>
-				<li>Item 3</li>
-				<li>Item 4</li>
-			</ul>
+			<img
+				class="object-contains w-full h-full"
+				src="/everything-is-connected.svg"
+				alt="everything is connected"
+			/>
 		</Column>
 		<Column>
 			<ButtonLink href="/contact">Want a happier, more productive team? Let’s chat.</ButtonLink>
