@@ -67,6 +67,14 @@
 								>
 							</li>
 							<li>
+								<a href="/work/software-delivery-platforms" class="hover:text-v-lilac"
+									>Software Delivery Platforms</a
+								>
+							</li>
+							<li>
+								<a href="/work/team-topologies" class="hover:text-v-lilac">Team Topologies</a>
+							</li>
+							<li>
 								<a href="/work/cloud-architecture" class="hover:text-v-lilac">Cloud Architecture</a>
 							</li>
 						</ul>
