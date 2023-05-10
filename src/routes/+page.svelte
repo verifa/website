@@ -40,8 +40,8 @@
 		We’re an expert crew of experienced software delivery consultants based in the Nordics. We help
 		our clients make informed decisions about their software delivery processes and platforms, team
 		structures, open source technologies, and cloud services. We believe in working together with
-		our clients to assess their current situation, coach their teams, and design, implement and
-		evolve sustainable solutions that they own.
+		our clients to assess their current situation, coach their teams, and design and implement
+		sustainable solutions that they own.
 	</h4>
 </section>
 
@@ -76,9 +76,8 @@
 </section>
 
 <section>
-	<h3>Trusted by</h3>
+	<h2>Trusted by.</h2>
 	<ClientLogos />
-	<ButtonLink href="/clients">Our clients</ButtonLink>
 </section>
 
 <section>
@@ -91,32 +90,32 @@
 				</h2>
 				<h4>— David Hoslett, Siemens Mobility.</h4>
 			</div>
+			<div>
+				<ButtonLink href="/clients">Our clients</ButtonLink>
+			</div>
 		</Column>
 		<Column class="self-start">
 			<div class="flex flex-col gap-y-0">
 				<div>
-					<h4>Predictable software deliveries.</h4>
+					<h3>Why work with Verifa.</h3>
 					<p>
 						We are a small and dedicated crew who care about the value we deliver. We look to
 						tomorrow's problems and solve them for you ahead of time.
 					</p>
 				</div>
 				<div>
-					<h4>Less firefighting, more improvements.</h4>
+					<h3>What makes us different.</h3>
 					<p>
 						We don't just solve problems but teach you how to solve them, and we do it as a team.
 						That's our goal and what sets us apart from other consultancy houses.
 					</p>
 				</div>
 				<div>
-					<h4>Reduce lead times and handovers.</h4>
+					<h3>Who we have helped.</h3>
 					<p>
-						We have helped international teams of all sizes, across many industries like Automotive,
+						We have worked with regulated and embedded environments in industries like Automotive,
 						Medical, Finance, Mobile and Web.
 					</p>
-				</div>
-				<div>
-					<ButtonLink href="/contact">Get started</ButtonLink>
 				</div>
 			</div>
 		</Column>
@@ -124,7 +123,7 @@
 </section>
 
 <section>
-	<h2>Technologies</h2>
+	<h2>Technologies.</h2>
 	<Columns reverse={true}>
 		<Column>
 			<div class="flex flex-col gap-y-2">
