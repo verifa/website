@@ -149,7 +149,7 @@
 
     section,
     article {
-        @apply mb-20 md:mb-24 lg:mb-32;
+        @apply mb-10 md:mb-12 lg:mb-16;
     }
 
     blockquote {
