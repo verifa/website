@@ -60,32 +60,32 @@
 				<div class="md:grid md:grid-cols-2 md:gap-8">
 					<div class="mt-12 md:mt-0">
 						<h5>What we do</h5>
-						<ul class="mt-4 space-y-4 list-none">
-							<li>
+						<ul class="mt-4 space-y-4 list-none" style="padding-left: unset">
+							<li style="padding-left: unset">
 								<a href="/work/value-stream-assessment" class="hover:text-v-lilac"
 									>Value Stream Assessment</a
 								>
 							</li>
-							<li>
+							<li style="padding-left: unset">
 								<a href="/work/software-delivery-platforms" class="hover:text-v-lilac"
 									>Software Delivery Platforms</a
 								>
 							</li>
-							<li>
+							<li style="padding-left: unset">
 								<a href="/work/team-topologies" class="hover:text-v-lilac">Team Topologies</a>
 							</li>
-							<li>
+							<li style="padding-left: unset">
 								<a href="/work/cloud-architecture" class="hover:text-v-lilac">Cloud Architecture</a>
 							</li>
 						</ul>
 					</div>
 					<div class="mt-12 md:mt-0">
 						<h5>Company</h5>
-						<ul class="mt-4 space-y-4 list-none">
-							<li>
+						<ul class="mt-4 space-y-4 list-none" style="padding-left: unset">
+							<li style="padding-left: unset">
 								<a href="/crew" class="hover:text-v-lilac">Crew</a>
 							</li>
-							<li>
+							<li style="padding-left: unset">
 								<a href="/clients" class="hover:text-v-lilac">Clients</a>
 							</li>
 						</ul>
@@ -94,30 +94,30 @@
 				<div class="md:grid md:grid-cols-2 md:gap-8">
 					<div class="mt-12 md:mt-0">
 						<h5>Social</h5>
-						<ul class="mt-4 space-y-4 list-none">
-							<li>
+						<ul class="mt-4 space-y-4 list-none" style="padding-left: unset">
+							<li style="padding-left: unset">
 								<a href="https://github.com/verifa" class="hover:text-v-lilac">GitHub</a>
 							</li>
-							<li>
+							<li style="padding-left: unset">
 								<a href="https://www.linkedin.com/company/verifa" class="hover:text-v-lilac"
 									>LinkedIn</a
 								>
 							</li>
-							<li>
+							<li style="padding-left: unset">
 								<a href="https://twitter.com/verifaio" class="hover:text-v-lilac">Twitter</a>
 							</li>
 						</ul>
 					</div>
 					<div class="mt-12 md:mt-0">
 						<h5>Privacy</h5>
-						<ul class="mt-4 space-y-4 list-none">
-							<li>
+						<ul class="mt-4 space-y-4 list-none" style="padding-left: unset">
+							<li style="padding-left: unset">
 								<a href="/privacy" class="hover:text-v-lilac">Privacy Policy</a>
 							</li>
-							<li>
+							<li style="padding-left: unset">
 								<a href="/terms" class="hover:text-v-lilac">Terms of Service</a>
 							</li>
-							<li>
+							<li style="padding-left: unset">
 								<a href="/acceptableusepolicy" class="hover:text-v-lilac">Acceptable Use Policy</a>
 							</li>
 						</ul>
