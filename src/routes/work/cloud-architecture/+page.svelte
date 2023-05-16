@@ -37,7 +37,7 @@
 			execution to make sure it serves your own unique business requirements.
 		</Column>
 		<Column>
-			<ul>
+			<ul class="verifa-bullet">
 				<li>Private or Public Cloud</li>
 				<li>Orchestration</li>
 				<li>Infrastructure as Code</li>
