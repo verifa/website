@@ -23,7 +23,7 @@
 	{#each logos as logo, index}
 		{#if showIndex(index)}
 			<div class="col-span-3 flex justify-center md:col-span-3 lg:col-span-3 py-8 px-8 bg-v-lilac">
-				<img src={logo.image} alt={logo.name} class="h-8 w-full object-contain" />
+				<img src={logo.image} alt={logo.name} class="h-12 w-full object-contain" />
 			</div>
 		{/if}
 	{/each}
