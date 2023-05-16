@@ -97,7 +97,7 @@
 		<Column class="self-start">
 			<div class="flex flex-col gap-y-0">
 				<div>
-					<h3>Why work with Verifa.</h3>
+					<h3 style="margin-top: 0">Why work with Verifa.</h3>
 					<p>
 						We are a small and dedicated crew who care about the value we deliver. We look to
 						tomorrow's problems and solve them for you ahead of time.
@@ -127,7 +127,7 @@
 	<Columns reverse={true}>
 		<Column>
 			<div class="flex flex-col gap-y-2">
-				<h2>
+				<h2 style="margin: 0px">
 					We work with the world's leading technologies to help us deliver the best possible
 					experience for our clients.
 				</h2>
