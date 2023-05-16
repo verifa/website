@@ -29,7 +29,7 @@
 <section>
 	<HeaderLine />
 	<h4>Faster flow, more value</h4>
-	<Columns reverse={false}>
+	<Columns reverse={false} class="lg:items-baseline">
 		<Column>
 			Even with automation, building software is an inherently human undertaking and the ways of
 			working play a huge part in its success. The composition of teams, relationships and
