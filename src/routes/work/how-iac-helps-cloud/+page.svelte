@@ -31,7 +31,7 @@
 					<p class="mb-4">
 						Infrastructure as Code provides many benefits to your cloud usage. Most notably are:
 					</p>
-					<ul>
+					<ul class="verifa-bullet">
 						<li>Scalability by Automation</li>
 						<li>Auditability through Version Control</li>
 						<li>Cost optimization</li>

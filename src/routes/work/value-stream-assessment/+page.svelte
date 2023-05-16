@@ -51,7 +51,7 @@
 	<h4>How we can help</h4>
 	<CDWorkshop />
 	<div class="flex">
-		<ul>
+		<ul class="verifa-bullet">
 			<li>Visualise your release process</li>
 			<li>Pinpoint opportunities and waste</li>
 			<li>Get your whole team onboard</li>
