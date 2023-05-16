@@ -9,10 +9,6 @@ export const technologyLogos: TechnologyLogo[] = [
         image: '/partners/hashicorp-horizontal.svg',
         name: 'hashicorp'
     },
-    // {
-    //     image: '/technologies/kubernetes.svg',
-    //     name: 'kubernetes'
-    // },
     {
         image: '/clouds/aws.svg',
         name: 'aws'
@@ -28,6 +24,10 @@ export const technologyLogos: TechnologyLogo[] = [
     {
         image: '/clouds/upcloud.svg',
         name: 'upcloud'
+    },
+    {
+        image: '/clouds/kubernetes-horizontal.svg',
+        name: 'kubernetes'
     },
 ];
 
