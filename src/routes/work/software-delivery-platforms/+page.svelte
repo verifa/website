@@ -32,7 +32,7 @@
 	<HeaderLine />
 	<div>
 		<h4>Human-friendly platforms</h4>
-		<Columns reverse={false}>
+		<Columns reverse={false} class="lg:items-baseline">
 			<Column>
 				Agile and DevOps have enabled cross-functional and autonomous teams, but has also led to
 				additional responsibilities for the product teams. As well as development of the software,
@@ -57,7 +57,7 @@
 <section id="how-we-help">
 	<HeaderLine />
 	<h4>How we can help</h4>
-	<Columns reverse={false}>
+	<Columns reverse={false} class="lg:items-baseline">
 		<Column>
 			Often, a ‘platform’ is a collection of tools maintained by a team, with little thought into
 			how they can help delivery teams. Platform Engineering helps to define the ‘Golden Path’ for

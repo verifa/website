@@ -32,7 +32,7 @@
 <section>
 	<HeaderLine />
 	<h4>Lean and continuous workflows</h4>
-	<Columns reverse={false}>
+	<Columns reverse={false} class="lg:items-baseline">
 		<Column>
 			A Value Stream Map is a visual tool showing the series of events that take a product or
 			service from the beginning of a process until it reaches its end, i.e. a Value Stream. Value
