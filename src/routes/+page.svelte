@@ -84,11 +84,11 @@
 	<Columns reverse={true}>
 		<Column class="self-start">
 			<div class="flex flex-col gap-y-4">
-				<h2>
+				<h1 style="margin-bottom: 0">
 					‘A key and crucial part of our Continuous Integration journey was having Verifa's
 					involvement’.
-				</h2>
-				<h4>— David Hoslett, Siemens Mobility.</h4>
+				</h1>
+				<h4 style="margin-top: 0">— David Hoslett, Siemens Mobility.</h4>
 			</div>
 			<div>
 				<ButtonLink href="/clients">Our clients</ButtonLink>
