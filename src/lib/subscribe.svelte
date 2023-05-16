@@ -65,7 +65,7 @@
 		</div>
 
 		<p class="text-v-white mb-0 mt-4">
-			By submitting this form you agree to our <a class="underline" href="/privacy"
+			By submitting this form you agree to our <a class="text-white" style="text-decoration: underline" href="/privacy"
 				>Privacy Policy</a
 			>
 		</p>
