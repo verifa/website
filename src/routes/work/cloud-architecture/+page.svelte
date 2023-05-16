@@ -4,6 +4,7 @@
 	import { seo } from '$lib/seo/store';
 	import ButtonLink from '$lib/buttonLink.svelte';
 	import HeaderLine from '$lib/headerLine.svelte';
+	import CtaButton from '$lib/ctaButton.svelte';
 
 	seo.reset();
 	$seo.title = 'What we do: Cloud Architecture';
@@ -65,7 +66,11 @@
 
 	<Columns reverse={false}>
 		<Column>
-			<ButtonLink href="/contact">Need help migrating to the cloud? Let's chat.</ButtonLink>
+			<CtaButton
+				text={'Need help migrating to the cloud?'}
+				contact={'Let’s chat'}
+				fullScreen={false}
+			/>
 		</Column>
 		<Column>
 			<h2>

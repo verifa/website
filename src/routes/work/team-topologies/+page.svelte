@@ -4,6 +4,7 @@
 	import { seo } from '$lib/seo/store';
 	import ButtonLink from '$lib/buttonLink.svelte';
 	import HeaderLine from '$lib/headerLine.svelte';
+	import CtaButton from '$lib/ctaButton.svelte';
 
 	seo.reset();
 	$seo.title = 'What we do: Team Topologies';
@@ -60,7 +61,11 @@
 			/>
 		</Column>
 		<Column>
-			<ButtonLink href="/contact">Want a happier, more productive team? Let’s chat.</ButtonLink>
+			<CtaButton
+				text={'Want a happier, more productive team?'}
+				contact={'Let’s chat'}
+				fullScreen={false}
+			/>
 		</Column>
 	</Columns>
 </section>
