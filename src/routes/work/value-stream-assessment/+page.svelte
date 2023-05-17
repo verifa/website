@@ -61,7 +61,7 @@
 			<Column>
 				<CtaButton
 					text={'Ready to unlock your CD potential?'}
-					contact={'Get Started'}
+					contact={'Get started'}
 					fullScreen={false}
 				/>
 			</Column>

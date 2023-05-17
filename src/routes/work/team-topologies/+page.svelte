@@ -36,9 +36,10 @@
 			interactions is an often overlooked practice when improving a continuous delivery process.
 		</Column>
 		<Column>
-			Verifa’s holistic approach, based on [Team Topologies](https://teamtopologies.com/), is about
-			organising technical teams in a such a way that they are able to deliver value continuously
-			and sustainably.
+			Verifa’s holistic approach, based on <a href="https://teamtopologies.com/" target="_blank"
+				>Team Topologies</a
+			>, is about organising technical teams in a such a way that they are able to deliver value
+			continuously and sustainably.
 		</Column>
 	</Columns>
 </section>
@@ -47,10 +48,11 @@
 	<h4>How we can help</h4>
 	<h2 class="mb-0">
 		Every team is different, and we need to understand your unique situation. The starting point for
-		this is working together with your team to conduct a [Value Stream
-		Assessment](https://verifa.io//work/value-stream-assessment/) to uncover your current way of
-		working, interactions and software delivery flow.
+		this is working together with your team to conduct a <span class="text-v-pink"
+			>Value Stream Assessment</span
+		> to uncover your current way of working, interactions and software delivery flow.
 	</h2>
+	<ButtonLink href="/work/value-stream-assessment">Learn More</ButtonLink>
 
 	<Columns reverse={false}>
 		<Column>
