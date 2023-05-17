@@ -28,7 +28,7 @@
 
 <section>
 	<HeaderLine />
-	<h4>Faster flow, more value</h4>
+	<h2>Faster flow, more value</h2>
 	<Columns reverse={false} class="lg:items-baseline">
 		<Column>
 			Even with automation, building software is an inherently human undertaking and the ways of
@@ -45,13 +45,13 @@
 </section>
 <section id="how-we-help">
 	<HeaderLine />
-	<h4>How we can help</h4>
-	<h2 class="mb-0">
+	<h2>How we can help</h2>
+	<h3 class="mb-0">
 		Every team is different, and we need to understand your unique situation. The starting point for
 		this is working together with your team to conduct a <span class="text-v-pink"
 			>Value Stream Assessment</span
 		> to uncover your current way of working, interactions and software delivery flow.
-	</h2>
+	</h3>
 	<ButtonLink href="/work/value-stream-assessment">Learn More</ButtonLink>
 
 	<Columns reverse={false}>

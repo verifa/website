@@ -31,7 +31,7 @@
 <section>
 	<HeaderLine />
 	<div>
-		<h4>Human-friendly platforms</h4>
+		<h2>Human-friendly platforms</h2>
 		<Columns reverse={false} class="lg:items-baseline">
 			<Column>
 				Agile and DevOps have enabled cross-functional and autonomous teams, but has also led to
@@ -56,15 +56,15 @@
 
 <section id="how-we-help">
 	<HeaderLine />
-	<h4>How we can help</h4>
+	<h2>How we can help</h2>
 	<Columns reverse={false} class="lg:items-baseline">
 		<Column>
 			Are your development teams struggling with the complexity of deploying and operating the
 			software they build instead of focusing on delivering value? Don’t worry, there is HOPE!
-			Human-oriented Platform Engineering (HOPE) helps to define the ‘Golden Path’ for software
-			teams to deliver value. It all begins with research on how teams work in order to create a
-			proper "Platform Abstraction". This drives what the platform will do, who will use it, and
-			what workflows it needs to fulfil.
+			Human-oriented Platform Engineering helps to define the ‘Golden Path’ for software teams to
+			deliver value. It all begins with research on how teams work in order to create a proper
+			"Platform Abstraction". This drives what the platform will do, who will use it, and what
+			workflows it needs to fulfil.
 		</Column>
 		<Column>
 			Verifa helps teams to design and implement Software Delivery Platforms that decouple teams,

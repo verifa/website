@@ -31,7 +31,7 @@
 
 <section>
 	<HeaderLine />
-	<h4>Lean and continuous workflows</h4>
+	<h2>Lean and continuous workflows</h2>
 	<Columns reverse={false} class="lg:items-baseline">
 		<Column>
 			A Value Stream Map is a visual tool showing the series of events that take a product or
@@ -48,7 +48,7 @@
 </section>
 <section id="how-we-help">
 	<HeaderLine />
-	<h4>How we can help</h4>
+	<h2>How we can help</h2>
 	<CDWorkshop />
 	<div class="flex">
 		<ul class="verifa-bullet">
@@ -68,11 +68,13 @@
 		</Columns>
 	</div>
 </section>
+<!--
 <section>
-	<h2>
+	<h3>
 		‘Verifa helped lead discussions around many topics which was useful in gaining a common
 		understanding of what we can do to improve’.
-	</h2>
+	</h3>
 	<h4>— Olli Suihkonen, Visma Software Oy.</h4>
 	<ButtonLink href="/clients/value-stream-mapping-with-visma/">Read the case study</ButtonLink>
 </section>
+-->

@@ -28,7 +28,7 @@
 
 <section>
 	<HeaderLine />
-	<h4>Scalable, fast and reliable cloud</h4>
+	<h2>Scalable, fast and reliable cloud</h2>
 	<Columns reverse={false}>
 		<Column>
 			Migrating to the cloud is essential for ambitious businesses to achieve better performance and
@@ -55,7 +55,7 @@
 
 <section id="how-we-help">
 	<HeaderLine />
-	<h4>How we can help</h4>
+	<h2>How we can help</h2>
 	<p class="mb-0">
 		We help teams adopt cloud (public or private) by helping in the architecting process and
 		coaching teams with best practices. such as Infrastructure as Code. Our goal is to reduce the
