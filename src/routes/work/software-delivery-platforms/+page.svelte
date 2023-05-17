@@ -14,8 +14,8 @@
 		<Column>
 			<h1>Software Delivery Platforms.</h1>
 			<h3>
-				Find the right platform abstraction to enable delivery teams in accelerating software
-				delivery.
+				Find the right platform abstraction to enable software delivery teams to deliver value
+				faster.
 			</h3>
 		</Column>
 		<Column>
@@ -59,16 +59,19 @@
 	<h4>How we can help</h4>
 	<Columns reverse={false} class="lg:items-baseline">
 		<Column>
-			Often, a ‘platform’ is a collection of tools maintained by a team, with little thought into
-			how they can help delivery teams. Platform Engineering helps to define the ‘Golden Path’ for
-			software teams to deliver value. It all begins with research on how teams work in order to
-			create a proper "Platform Abstraction". This drives what the platform will do, who will use
-			it, and what workflows it needs to fulfil.
+			Are your development teams struggling with the complexity of deploying and operating the
+			software they build instead of focusing on delivering value? Don’t worry, there is HOPE!
+			Human-oriented Platform Engineering (HOPE) helps to define the ‘Golden Path’ for software
+			teams to deliver value. It all begins with research on how teams work in order to create a
+			proper "Platform Abstraction". This drives what the platform will do, who will use it, and
+			what workflows it needs to fulfil.
 		</Column>
 		<Column>
 			Verifa helps teams to design and implement Software Delivery Platforms that decouple teams,
-			allowing them to work independently and deliver value faster. Value Stream Assessments (link
-			to VSA page) are our method for understanding team interactions and flow of delivery.
+			allowing them to work independently and deliver value faster. <a
+				href="https://verifa.io/work/value-stream-assessment/">Value Stream Assessments</a
+			>
+			are our method for understanding team interactions and flow of delivery.
 			<ButtonLink href="/contact">Chat with an expert</ButtonLink>
 		</Column>
 	</Columns>
