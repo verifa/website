@@ -23,13 +23,12 @@ Take a look around, you might find something useful.
 
 Content:
 
-- Aliases (git config)
-- Patch mode (git add)
-- Interactive mode (git rebase)
-- git reflog]
-- Searching with git log
-- git bisect
-
+- [Aliases (git config)](#aliases-git-config)
+- [Patch mode (git add)](#patch-mode-git-add)
+- [Interactive mode (git rebase)](#interactive-mode-git-rebase)
+- [git reflog](#git-reflog)
+- [Searching with git log](#searching-with-git-log)
+- [git bisect](#git-bisect)
 
 ## Aliases (git config)
 
@@ -63,7 +62,7 @@ Netting me the following with little effort:
 
 [Documentation](https://git-scm.com/docs/git-add#Documentation/git-add.txt--p)
 
-Patch mode allows you to stage changes interactively, allowing for fine-grained control of what goes into your commit.
+Patch mode allows you to stage changes interactively, allowing for fine-grained control over what goes into your commit.
 
 `git add -p <paths>`
 
@@ -132,7 +131,8 @@ After closing my editor, git does what I specified, netting me a clean history:
 * d3c7e07 Fix off-by-one in item paging (main, tag: v0.2.4)
 ```
 
-I find interactive rebase to be an amazing tool for tidying up local changes before pushing them upstream. It’s without a doubt one of my favourite tools in the git arsenal.
+I find interactive rebase to be an amazing tool for tidying up local changes before pushing them upstream.
+It’s without a doubt one of my favourite tools in the git arsenal.
 
 ## git reflog
 
@@ -163,9 +163,9 @@ fe65c7e HEAD@{7}: clone: from github.com:verifa/coastline
 [Documentation](https://git-scm.com/docs/git-log#Documentation/git-log.txt--Sltstringgt)
 
 Git log has some powerful search options, helping you track down changes.
-`git log -S <pattern>`
 
-`git log -G <regex>`
+- `git log -S <pattern>`
+- `git log -G <regex>`
 
 In the example below, I look for any commits with changes including `filterPosts`, netting me three commits:
 
@@ -176,7 +176,7 @@ $ git log --oneline -S filterPosts
 207461e Create single endpoint for all post types
 ```
 
-`git log -G` functions the same way, but matches regular expressions instead of a plain string. Note that these are just options to `log`, you can combine them with others as you wish.
+The `-G` option functions in the same way, but matches regular expressions instead of a plain string. Note that these are just options to `log`, you can combine them with others as you wish.
 
 ## git bisect
 
@@ -186,7 +186,7 @@ Git bisect facilitates searching through your history for the commit that introd
 `git bisect <subcommand> <options>`
 When using bisect, you mark two commits as start- and endpoints. Git will then perform a binary search through your history, checking out commits as it goes. All you do is check if the bug is present or not, then mark the commit as `good` or `bad`, until git pinpoints the commit that introduced the problem.
 
-In the below example, I supply `git bisect run` with a script that tests if the bug is present. This automates the testing process, quickly finding me the culprit commit:
+In the below example, I supply `git bisect run` with a script that tests if the bug is present. This automates the testing process, quickly netting me the culprit:
 
 ```
 $ git bisect start      # start a new bisect run
