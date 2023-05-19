@@ -28,9 +28,9 @@
 
 <section id="workshops">
 	<HeaderLine />
-	<h4>Assess.</h4>
+	<h2>Assess.</h2>
 
-	<h2>Kickstarting improvement processes and framing core issues.</h2>
+	<h4>Kickstarting improvement processes and framing core issues.</h4>
 	<Columns>
 		<Column class="self-start">
 			<h3>Workshops.</h3>
@@ -57,8 +57,8 @@
 
 <section id="coaching">
 	<HeaderLine />
-	<h4>Coach.</h4>
-	<h2>Building competence within teams.</h2>
+	<h2>Coach.</h2>
+	<h4>Building competence within teams.</h4>
 	<Columns>
 		<Column class="self-start">
 			<h3>You own your work.</h3>
@@ -90,8 +90,8 @@
 
 <section id="implementation">
 	<HeaderLine />
-	<h4>Build and Evolve.</h4>
-	<h2>Building sustainable solutions.</h2>
+	<h2>Build and Evolve.</h2>
+	<h4>Building sustainable solutions.</h4>
 	<p>
 		We have long-lasting relationships with customers who trust us to work alongside their teams and
 		help solve all kinds of problems. We can deliver both short-term and long-term work. Whether you
