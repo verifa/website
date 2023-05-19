@@ -9,7 +9,7 @@
 	const links: Link[] = [
 		{
 			text: 'What we do',
-			url: '/work/',
+			url: '#',
 			children: [
 				{
 					text: 'Value Stream Assessment',
