@@ -5,7 +5,9 @@ subheading: In this blog, we will try to explore how a sample application like E
 authors:
 - avijayan
 tags:
-- Kubernetes, Elastic, Cloud
+- Kubernetes
+- Elastic
+- Cloud
 date: 2023-05-23
 image: "/blogs/how-to-scale-kubernetes-with-any-metric-using-keda/how-to-scale-k8s-any-metric-keda.png"
 featured: true
@@ -72,11 +74,7 @@ Lets say that you have a working production and monitoring Elastic cluster and K
 
 | Item | Value |
 | --- | --- |
-| Elasticsearch endpoints
- - production
- - monitoring | 
-prodelastic.com
-monitorelastic.com |
+| Elasticsearch endpoints <ul><li>production</li><li>monitoring</li></ul> | <br><br> prodelastic.com <br><br> monitorelastic.com |
 | Elasticsearch credentials | elastic/elastic123 |
 
 ### Step 1: JVM metric structure in the monitoring cluster
@@ -247,10 +245,10 @@ Moreover, the Kubernetes built-in autoscaler has the capability to scale based o
 
 ## References
 
-- CNCF - KEDA project: [https://www.cncf.io/projects/keda/](https://www.cncf.io/projects/keda/)
-- Cluster node stats api documentation - [https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-nodes-stats.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-nodes-stats.html)
-- Elasticsearch search template - [https://www.elastic.co/guide/en/elasticsearch/reference/current/search-template.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-template.html)
-- KEDA deployment - [https://keda.sh/docs/2.10/deploy/](https://keda.sh/docs/2.10/deploy/)
-- KEDA scaledObject, TriggerAuthentication - [https://keda.sh/docs/2.10/scalers/elasticsearch/](https://keda.sh/docs/2.9/scalers/elasticsearch/)
+- [CNCF - KEDA project](https://www.cncf.io/projects/keda/)
+- [Cluster node stats api documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-nodes-stats.html)
+- [Elasticsearch search template](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-template.html)
+- [KEDA deployment](https://keda.sh/docs/2.10/deploy/)
+- [KEDA scaledObject, TriggerAuthentication](https://keda.sh/docs/2.9/scalers/elasticsearch/)
 
 If you any questions, or you’d like any help with Kubernetes please [get in touch!](https://verifa.io/contact/)
