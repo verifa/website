@@ -8,7 +8,7 @@ tags:
 - Kubernetes
 - Elastic
 - Cloud
-date: 2023-05-23
+date: 2023-05-29
 image: "/blogs/how-to-scale-kubernetes-with-any-metric-using-keda/how-to-scale-k8s-any-metric-keda.png"
 featured: true
 ---
@@ -30,7 +30,7 @@ Kubernetes KEDA comes to the rescue. From their website,
 > KEDA is a single-purpose and lightweight component that can be added into any Kubernetes cluster. KEDA works alongside standard Kubernetes components like the Horizontal Pod Autoscaler and can extend functionality without overwriting or duplication.
 > 
 
-KEDA is an incubating CNCF project which was accepted to CNCF on March 12, 2023**.** Read more about them [here](https://www.cncf.io/projects/keda/).
+KEDA is an incubating CNCF project which was accepted to CNCF on March 12, 2020. Read more about them [here](https://www.cncf.io/projects/keda/).
 
 In this blog post, we will explore how to scale a sample application such as Elastic Stack based on metrics other than CPU, memory, or storage usage while maintaining its functionality and performance.
 
@@ -42,7 +42,7 @@ To begin, it's advisable to start with a diagram. The image below provides an ex
 
 The figure above depicts two Kubernetes clusters: one running production workloads and the other, a dedicated monitoring cluster in accordance with the official recommendation for Elastic Stack. Alternatively, these components can exist within a single Kubernetes cluster separated by namespaces for a simpler architecture. The purpose of a dedicated monitoring cluster is to ensure the ability to perform troubleshooting in case the production cluster is not operational or is inaccessible. All metrics and data about the production cluster are stored in this monitoring cluster.
 
-To set up an elastic cluster using KEDA, you must first install and configure it. Once successfully installed and configured on the cluster that needs to be scaled, follow the workflow below to see it in action::
+To set up an elastic cluster using KEDA, you must first install and configure it. Once successfully installed and configured on the cluster that needs to be scaled, follow the workflow below to see it in action:
 
 1. Logstash component in the monitoring cluster pulls the necessary metrics from the production cluster at regular intervals.
 2. Logstash component stores these retrieved metrics in the correct format into the Elasticsearch database of the monitoring cluster.
@@ -62,7 +62,7 @@ A search template in Elasticsearch is a pre-defined search query that can be exe
 
 #### 3. Install KEDA and define the ScaledObject
 
-KEDA deploys into a Kubernetes cluster using the operator model. If a helm chart is used, the deployment process is straightforward. [Other options](https://keda.sh/docs/2.10/deploy/) are available as well. Once the operator is deployed, a `ScaledObject` must be created to define the criteria, parameters, credentials, and other necessary details. A `[TriggerAuthentication`](https://keda.sh/docs/2.10/scalers/elasticsearch/) is also required to connect the cluster and enable scaling.
+KEDA deploys into a Kubernetes cluster using the operator model. If a helm chart is used, the deployment process is straightforward. [Other options](https://keda.sh/docs/2.10/deploy/) are available as well. Once the operator is deployed, a `ScaledObject` must be created to define the criteria, parameters, credentials, and other necessary details. A [`TriggerAuthentication`](https://keda.sh/docs/2.10/scalers/elasticsearch/) is also required to connect the cluster and enable scaling.
 
 ## Scaling in action: Java Virtual Memory threads count metric
 
@@ -74,12 +74,13 @@ Lets say that you have a working production and monitoring Elastic cluster and K
 
 | Item | Value |
 | --- | --- |
-| Elasticsearch endpoints <ul><li>production</li><li>monitoring</li></ul> | <br><br> prodelastic.com <br><br> monitorelastic.com |
-| Elasticsearch credentials | elastic/elastic123 |
+| Production endpoint | prodelastic.com |
+| Monitoring endpoint | monitorelastic.com |
+| Credentials | elastic/elastic123 |
 
 ### Step 1: JVM metric structure in the monitoring cluster
 
-Taking a look at the JVM metric which is invoked against production cluster but values stored in the monitoring cluster. This is performed by url: *GET _nodes/<nodename>/stats/jvm* against node `es01`
+Lets take a look at the JVM metric. This is the JVM usage level from the production cluster. But those values are stored in the monitoring cluster. This is performed by url: `GET _nodes/<nodename>/stats/jvm` against node `es01`
 
 ```jsx
 curl -u elastic:elatic123 'https://prodelastic.com:9200/_nodes/es01/stats/jvm?pretty'
@@ -162,7 +163,7 @@ Produces output:
 
 ### Step 3: Run a test query to the template with parameter values
 
-Let’s query the template with the thread count above `75` in last 10 minutes. Let’s assume the index name to be `prod_node_stats` where these metrics are stored.
+Let’s query the template with the thread count above `75` in last 1 minute. Let’s assume the index name to be `prod_node_stats` where these metrics are stored.
 
 ```bash
 curl -k -XGET -H 'Content-Type: application/json' -u elastic:test123 'https://monitorelastic:9200/prod_node_stats/_search/template?pretty' -d'
