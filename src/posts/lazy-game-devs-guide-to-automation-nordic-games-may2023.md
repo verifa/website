@@ -21,6 +21,6 @@ The Nordic Game Conference is Europe's leading games conference, held twice a ye
 
 Push a change, see it live on [Itch.io](http://itch.io/) in minutes, using free services. A non-technical guide to automating builds, deploying to users and eliminating other drudgery. Spend less time on tedious tasks, and spend more time actually developing your game by invisibly incorporating modern CI/CD techniques into your workflows.
 
-<iframe width="100%" height="410" src="[https://www.youtube.com/embed/ENUW04uvuUY](https://www.youtube.com/embed/ENUW04uvuUY)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="410" src="https://www.youtube.com/embed/ENUW04uvuUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 If you need any help with automating game builds [get in touch!](https://verifa.io/contact/)
