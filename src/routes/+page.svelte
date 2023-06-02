@@ -18,20 +18,20 @@
 </script>
 
 <section>
-	<div class="flex">
-		<div>
+	<Columns reverse={false}>
+		<Column>
 			<h1>Accelerate your software delivery.</h1>
 			<h3>We help optimise your software delivery flow and build high performing teams.</h3>
 			<ButtonLink href="/contact">Chat with an expert</ButtonLink>
-		</div>
-		<div>
+		</Column>
+		<Column>
 			<img
 				class="object-contain h-full w-full"
 				src="/continuous-delivery.svg"
 				alt="continuous delivery"
 			/>
-		</div>
-	</div>
+		</Column>
+	</Columns>
 </section>
 
 <section>
