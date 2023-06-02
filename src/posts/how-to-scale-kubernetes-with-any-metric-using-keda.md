@@ -236,9 +236,8 @@ The KEDA has now been set up within the production cluster to scale based on the
 
 ## Drawbacks
 
-1. Complexity in setting up - As we can see setting up and debugging a Kubernetes cluster with KEDA deployed is not trivial. However, while autoscaling is available in the cloud, it is still not yet a fully mature concept. We expect this to become simpler in the future.
-
-2. Does not work with ECK - Elastic officially recommends Elastic Cloud Kubernetes (ECK) for kubernetes deployments of elastic stack in the cloud and on-premise environments. This uses operator pattern which controls the stateful sets of the elastic nodes (pods). Due to this, autoscaling by KEDA is limited by the elastic operator running inside the kubernetes cluster.
+1. **Complexity in setting up** - As we can see setting up and debugging a Kubernetes cluster with KEDA deployed is not trivial. However, while autoscaling is available in the cloud, it is still not yet a fully mature concept. We expect this to become simpler in the future.
+2. **Does not work with ECK** - Elastic officially recommends Elastic Cloud Kubernetes (ECK) for kubernetes deployments of elastic stack in the cloud and on-premise environments. This uses operator pattern which controls the stateful sets of the elastic nodes (pods). Due to this, autoscaling by KEDA is limited by the elastic operator running inside the kubernetes cluster.
 
 ## Conclusions
 
