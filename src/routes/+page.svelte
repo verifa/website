@@ -52,7 +52,7 @@
 			<p>
 				Visualise your value streams to identify waste and highlight opportunities for faster flow.
 			</p>
-			<ButtonLink href="/work/value-stream-assessment">Learn More</ButtonLink>
+			<ButtonLink href="/work/value-stream-assessment" class="text-base lg:text-xl">Learn More</ButtonLink>
 		</div>
 		<div>
 			<h3>Software Delivery Platform</h3>
@@ -60,17 +60,17 @@
 				Find the right platform abstraction to enable delivery teams in accelerating software
 				delivery.
 			</p>
-			<ButtonLink href="/work/software-delivery-platforms">Learn More</ButtonLink>
+			<ButtonLink href="/work/software-delivery-platforms" class="text-base lg:text-xl">Learn More</ButtonLink>
 		</div>
 		<div>
 			<h3>Team Topologies</h3>
 			<p>We help organise happy, high performing teams that deliver better value to customers.</p>
-			<ButtonLink href="/work/team-topologies">Learn More</ButtonLink>
+			<ButtonLink href="/work/team-topologies" class="text-base lg:text-xl">Learn More</ButtonLink>
 		</div>
 		<div>
 			<h3>Cloud Architecture</h3>
 			<p>Designing and implementing cloud-native architectures that are robust yet evolvable.</p>
-			<ButtonLink href="/work/cloud-architecture">Learn More</ButtonLink>
+			<ButtonLink href="/work/cloud-architecture" class="text-base lg:text-xl">Learn More</ButtonLink>
 		</div>
 	</Grid>
 </section>
