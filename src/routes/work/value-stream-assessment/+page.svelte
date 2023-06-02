@@ -50,23 +50,24 @@
 	<HeaderLine />
 	<h2>How we can help</h2>
 	<CDWorkshop />
-	<div class="flex">
+	<Columns reverse={false}>
+		<Column>
 		<ul class="verifa-bullet">
 			<li>Visualise your release process</li>
 			<li>Pinpoint opportunities and waste</li>
 			<li>Get your whole team onboard</li>
 			<li>Justify investment</li>
 		</ul>
-		<Columns>
-			<Column>
-				<CtaButton
-					text={'Ready to unlock your CD potential?'}
-					contact={'Get started'}
-					fullScreen={false}
-				/>
-			</Column>
-		</Columns>
-	</div>
+		</Column>
+		<Column>
+			<CtaButton
+				text={'Ready to unlock your CD potential?'}
+				contact={'Get started'}
+				fullScreen={false}
+			/>
+		</Column>
+	</Columns>
+
 </section>
 <!--
 <section>
