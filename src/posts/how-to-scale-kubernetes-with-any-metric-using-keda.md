@@ -19,7 +19,7 @@ featured: true
 
 ---
 
-Scaling an Elastic Cloud Kubernetes (ECK) or any Kubernetes cluster can be a challenge if you don't scale based on default scaling metrics such as CPU, Memory, or Storage. Luckily, Kubernetes has built-in support for Horizontal Pod Autoscaling (HPA) based on CPU and memory metrics. However, what if your cluster needs to scale based on other parameters? For example, how can we scale our cluster based on other key parameters like JVM heap size usage, or the count of pending tasks, or any other important metrics? Let's explore this further.
+Scaling an Elastic stack in Kubernetes or any Kubernetes cluster can be a challenge if you don't scale based on default scaling metrics such as CPU, Memory, or Storage. Luckily, Kubernetes has built-in support for Horizontal Pod Autoscaling (HPA) based on CPU and memory metrics. However, what if your cluster needs to scale based on other parameters? For example, how can we scale our cluster based on other key parameters like JVM heap size usage, or the count of pending tasks, or any other important metrics? Let's explore this further.
 
 ## Kubernetes Event-driven Autoscaling (KEDA)
 
@@ -32,7 +32,7 @@ Kubernetes KEDA comes to the rescue. From their website,
 
 KEDA is an incubating CNCF project which was accepted to CNCF on March 12, 2020. Read more about them [here](https://www.cncf.io/projects/keda/).
 
-In this blog post, we will explore how to scale a sample application such as Elastic Stack based on metrics other than CPU, memory, or storage usage while maintaining its functionality and performance.
+In this blog post, we will explore how to scale a sample application such as Elastic Stack based on metrics other than CPU, memory, or storage usage while maintaining its functionality and performance. The elastic stack recommends using Elastic Cloud Kubernetes (ECK) for kubernetes deployments which uses [operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) which cannot use KEDA for auto scaling.
 
 ### Architecture
 
@@ -234,9 +234,11 @@ spec:
 
 The KEDA has now been set up within the production cluster to scale based on the number of JVM threads. Note that the values in the saved search can be tuned based on the needs.
 
-## Drawback
+## Drawbacks
 
-Complexity in setting up - As we can see setting up and debugging a Kubernetes cluster with KEDA deployed is not trivial. However, while autoscaling is available in the cloud, it is still not yet a fully mature concept. We expect this to become simpler in the future.
+1. Complexity in setting up - As we can see setting up and debugging a Kubernetes cluster with KEDA deployed is not trivial. However, while autoscaling is available in the cloud, it is still not yet a fully mature concept. We expect this to become simpler in the future.
+
+2. Does not work with ECK - Elastic officially recommends Elastic Cloud Kubernetes (ECK) for kubernetes deployments of elastic stack in the cloud and on-premise environments. This uses operator pattern which controls the stateful sets of the elastic nodes (pods). Due to this, autoscaling by KEDA is limited by the elastic operator running inside the kubernetes cluster.
 
 ## Conclusions
 
@@ -247,6 +249,7 @@ Moreover, the Kubernetes built-in autoscaler has the capability to scale based o
 ## References
 
 - [CNCF - KEDA project](https://www.cncf.io/projects/keda/)
+- [Kubernetes operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
 - [Cluster node stats api documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-nodes-stats.html)
 - [Elasticsearch search template](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-template.html)
 - [KEDA deployment](https://keda.sh/docs/2.10/deploy/)
