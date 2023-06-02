@@ -69,7 +69,7 @@
 		<Column>
 			Verifa helps teams to design and implement Software Delivery Platforms that decouple teams,
 			allowing them to work independently and deliver value faster. <a
-				href="https://verifa.io/work/value-stream-assessment/">Value Stream Assessments</a
+				href="/work/value-stream-assessment/">Value Stream Assessments</a
 			>
 			are our method for understanding team interactions and flow of delivery.
 			<ButtonLink href="/contact">Chat with an expert</ButtonLink>
