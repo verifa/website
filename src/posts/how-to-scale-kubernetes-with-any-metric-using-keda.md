@@ -38,7 +38,7 @@ In this blog post, we will explore how to scale a sample application such as Ela
 
 To begin, it's advisable to start with a diagram. The image below provides an example of a Kubernetes cluster setup for Elastic Stack. Please note that the cluster diagram does not include namespace separation. Instead, the node separation represents deployments/statefulsets for the HPA to act on. Additionally, the handling of secrets is not represented in the diagram.
 
-![how-to-scale-k8s-any-metric-keda-diagram](/blogs/how-to-scale-kubernetes-with-any-metric-using-keda/how-to-scale-k8s-any-metric-keda-diagram.png)
+![how-to-scale-k8s-any-metric-keda-diagram](/blogs/how-to-scale-kubernetes-with-any-metric-using-keda/how-to-scale-k8s-any-metric-keda-diagram-2.png)
 
 The figure above depicts two Kubernetes clusters: one running production workloads and the other, a dedicated monitoring cluster in accordance with the official recommendation for Elastic Stack. Alternatively, these components can exist within a single Kubernetes cluster separated by namespaces for a simpler architecture. The purpose of a dedicated monitoring cluster is to ensure the ability to perform troubleshooting in case the production cluster is not operational or is inaccessible. All metrics and data about the production cluster are stored in this monitoring cluster.
 
