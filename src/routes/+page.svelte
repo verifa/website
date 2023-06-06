@@ -84,7 +84,7 @@
 	<Columns reverse={true}>
 		<Column class="self-start">
 			<div class="flex flex-col gap-y-4">
-				<h1 style="margin-bottom: 0">
+				<h1 class="leading-tight" style="margin-bottom: 0">
 					‘A key and crucial part of our Continuous Integration journey was having Verifa's
 					involvement’.
 				</h1>
