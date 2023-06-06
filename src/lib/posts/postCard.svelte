@@ -31,7 +31,7 @@
 				<p>{post.subheading}</p>
 			</a>
 			{#if showBadges}
-				<div class="mb-4">
+				<div class="mt-4 mb-4">
 					<PostBadges type={post.type} tags={post.tags} />
 				</div>
 			{/if}
