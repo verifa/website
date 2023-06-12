@@ -20,8 +20,8 @@
 <section>
 	<Columns reverse={false}>
 		<Column>
-			<h1>Accelerate your software delivery.</h1>
-			<h3>We help optimise your software delivery flow and build high performing teams.</h3>
+			<h1 style="margin-bottom: 0px">Accelerate your software delivery.</h1>
+			<h4 style="margin-top: 1rem; margin-bottom: 2.5rem; ">We help optimise your software delivery flow and build high performing teams.</h4>
 			<ButtonLink href="/contact">Chat with an expert</ButtonLink>
 		</Column>
 		<Column>
@@ -35,14 +35,14 @@
 </section>
 
 <section>
-	<h2>Assess. Coach. Build. Evolve.</h2>
-	<h4>
+	<h3 class="text-v-lilac">Assess. Coach. Build. Evolve.</h3>
+	<h3>
 		We’re an expert crew of experienced software delivery consultants based in the Nordics. We help
 		our clients make informed decisions about their software delivery processes and platforms, team
 		structures, open source technologies, and cloud services. We believe in working together with
 		our clients to assess their current situation, coach their teams, and design and implement
 		sustainable solutions that they own.
-	</h4>
+	</h3>
 </section>
 
 <section>
@@ -76,7 +76,7 @@
 </section>
 
 <section>
-	<h2>Trusted by.</h2>
+	<h3>Trusted by</h3>
 	<ClientLogos />
 </section>
 
@@ -123,12 +123,12 @@
 </section>
 
 <section>
-	<h2>Technologies.</h2>
 	<Columns reverse={true}>
 		<Column>
 			<div class="flex flex-col gap-y-2">
+				<h4 style="margin: 0px">Technologies</h4>
 				<h2 style="margin: 0px">
-					We work with the world's leading technologies to help us deliver the best possible
+					We work with the world's leading providers to help us deliver the best possible
 					experience for our clients.
 				</h2>
 			</div>
@@ -140,12 +140,11 @@
 </section>
 
 <section>
-	<h1>Learn more on our blog.</h1>
-</section>
-<section>
-	<h3 class="text-v-lilac">Search by popular keyword</h3>
+	<h4 style="margin: 0px">Learn more on our blog</h4>
+	<h2>Search by popular keyword</h2>
+	<div class="mb-12"></div>
 	<div class="flex flex-col gap-y-12 mb-8">
-		<div class="-my-2 flex flex-wrap gap-x-4">
+			<div class="-my-2 flex flex-wrap gap-x-4">
 			{#each data.posts.keywords as tag}
 				<a href="/blog?keywords={tag}" class="inline-block ">
 					<span class="inline-flex items-center my-2 px-3 py-0.5 bg-v-gray">
