@@ -4,17 +4,19 @@
 	import CtaButton from '$lib/ctaButton.svelte';
 	import { seo } from '$lib/seo/store';
 	import HeaderLine from '$lib/headerLine.svelte';
-	import CDWorkshop from '../_cdWorkshop.svelte';
+	import ButtonLink from '$lib/buttonLink.svelte';
 
 	seo.reset();
 	$seo.title = 'How we do it';
 </script>
 
-<section>
+<section class="mb-5">
 	<Columns reverse={false}>
 		<Column>
-			<h1>How we do it.</h1>
-			<h3>Working together to create sustainable solutions that you own.</h3>
+			<h1 style="margin-bottom: 0px">How we do it.</h1>
+			<h4 style="margin-top: 1rem; margin-bottom: 2.5rem; ">
+				Working together to create sustainable solutions that you own.
+			</h4>
 		</Column>
 		<Column>
 			<img
@@ -28,9 +30,8 @@
 
 <section id="workshops">
 	<HeaderLine />
-	<h2>Assess.</h2>
-
-	<h4>Kickstarting improvement processes and framing core issues.</h4>
+	<h2 class="text-v-lilac" style="margin-bottom: 0px">Assess.</h2>
+	<h2>Kickstarting improvement processes<br/> and framing core issues.</h2>
 	<Columns>
 		<Column class="self-start">
 			<h3>Workshops.</h3>
@@ -52,13 +53,19 @@
 			</p>
 		</Column>
 	</Columns>
-	<CDWorkshop />
+	<h3>
+		Our <span class="text-v-pink">Continuous Delivery workshops</span> help teams unlock their Continuous
+		Delivery potential. We will help you understand your release process and create a backlog of improvements.
+	</h3>
+	<div class="mb-16"></div>
+	<ButtonLink href={'/work/continuous-delivery-workshop'}>Learn more</ButtonLink>
+	
 </section>
 
 <section id="coaching">
 	<HeaderLine />
-	<h2>Coach.</h2>
-	<h4>Building competence within teams.</h4>
+	<h2 class="text-v-lilac" style="margin-bottom: 0px">Coach.</h2>
+	<h2>Building competence within teams.</h2>
 	<Columns>
 		<Column class="self-start">
 			<h3>You own your work.</h3>
@@ -90,8 +97,8 @@
 
 <section id="implementation">
 	<HeaderLine />
-	<h2>Build and Evolve.</h2>
-	<h4>Building sustainable solutions.</h4>
+	<h2 class="text-v-lilac" style="margin-bottom: 0px">Build and Evolve.</h2>
+	<h2>Creating sustainable solutions.</h2>
 	<p>
 		We have long-lasting relationships with customers who trust us to work alongside their teams and
 		help solve all kinds of problems. We can deliver both short-term and long-term work. Whether you

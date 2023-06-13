@@ -14,10 +14,10 @@
 <section>
 	<Columns reverse={false}>
 		<Column>
-			<h1>Value Stream Assessment.</h1>
-			<h3>
+			<h1 style="margin-bottom: 0px">Value Stream Assessment.</h1>
+			<h4 style="margin-top: 1rem; margin-bottom: 2.5rem; ">
 				Visualise your value streams to identify waste and highlight opportunities for faster flow.
-			</h3>
+			</h4>
 		</Column>
 		<Column>
 			<img
@@ -48,16 +48,20 @@
 </section>
 <section id="how-we-help">
 	<HeaderLine />
-	<h2>How we can help</h2>
-	<CDWorkshop />
+	<h2 class="text-v-lilac">How we can help</h2>
+	<h2>
+		Our <span class="text-v-pink">Continuous Delivery workshops</span> help teams unlock their Continuous
+		Delivery potential. We will help you understand your release process and create a backlog of improvements.
+	</h2>
+	<ButtonLink href={'/work/continuous-delivery-workshop'}>Learn more</ButtonLink>
 	<Columns reverse={false}>
 		<Column>
-		<ul class="verifa-bullet">
-			<li>Visualise your release process</li>
-			<li>Pinpoint opportunities and waste</li>
-			<li>Get your whole team onboard</li>
-			<li>Justify investment</li>
-		</ul>
+			<ul class="verifa-bullet">
+				<li>Visualise your release process</li>
+				<li>Pinpoint opportunities and waste</li>
+				<li>Get your whole team onboard</li>
+				<li>Justify investment</li>
+			</ul>
 		</Column>
 		<Column>
 			<CtaButton

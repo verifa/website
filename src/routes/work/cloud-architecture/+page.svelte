@@ -13,8 +13,10 @@
 <section>
 	<Columns reverse={false}>
 		<Column>
-			<h1>Cloud Architecture.</h1>
-			<h3>Designing and implementing cloud-native architectures that are robust yet evolvable.</h3>
+			<h1 style="margin-bottom: 0px">Cloud Architecture.</h1>
+			<h4 style="margin-top: 1rem; margin-bottom: 2.5rem; ">
+				Designing and implementing cloud-native architectures that are robust yet evolvable.
+			</h4>
 		</Column>
 		<Column>
 			<img
@@ -47,22 +49,28 @@
 			</ul>
 		</Column>
 	</Columns>
-	<h3 class="mb-0">
-		Our expert cloud architects can help you navigate the complexities of the cloud, and help you
-		build and adopt an awesome cloud architecture!
-	</h3>
+
 </section>
 
 <section id="how-we-help">
 	<HeaderLine />
-	<h2>How we can help</h2>
-	<p class="mb-0">
-		We help teams adopt cloud (public or private) by helping in the architecting process and
-		coaching teams with best practices. such as Infrastructure as Code. Our goal is to reduce the
-		amount of time it takes for you to start benefiting from the many wonderful things that the
-		cloud delivers. Through design sessions and workshops, we share our knowledge and experience to
-		help you get the right architecture and plan for the cloud.
-	</p>
+	<h2 class="text-v-lilac">How we can help</h2>
+	<h2 class="mb-0">
+		Our expert cloud architects can help you navigate the complexities of the cloud, and help you
+		build and adopt an awesome cloud architecture!
+	</h2>
+		<Columns reverse={false} class="lg:items-baseline">
+			<Column>
+			We help teams adopt cloud (public or private) by helping in the architecting process and
+			coaching teams with best practices. such as Infrastructure as Code. Our goal is to
+			reduce the amount of time it takes for you to start benefiting from the many wonderful things that the
+			cloud delivers.
+		</Column>
+		<Column>
+			Through design sessions and workshops, we share our knowledge and experience to
+			help you get the right architecture and plan for the cloud.
+		</Column>
+	</Columns>
 
 	<Columns reverse={false}>
 		<Column>
