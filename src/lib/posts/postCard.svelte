@@ -27,8 +27,8 @@
 			{/if}
 			<a href={url}>
 				<p class="mb-0 group-hover:text-v-lilac">{new Date(post.date).toLocaleDateString()}</p>
-				<h4 class="group-hover:text-v-lilac">{post.title}</h4>
-				<p>{post.subheading}</p>
+				<h3 class="group-hover:text-v-lilac">{post.title}</h3>
+				<h4>{post.subheading}</h4>
 			</a>
 			{#if showBadges}
 				<div class="mt-4 mb-4">
