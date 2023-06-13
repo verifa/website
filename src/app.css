@@ -16,7 +16,7 @@
 
     .verifa-bullet {
         list-style-image: url(/favicon-16x16.png);
-        font-weight: 800;
+        @apply font-semibold text-v-black
     }
 
     /* Base style elements */
