@@ -13,8 +13,10 @@
 <section>
 	<Columns reverse={false}>
 		<Column>
-			<h1>Team Topologies.</h1>
-			<h3>We help organise happy, high performing teams that deliver better value to customers.</h3>
+			<h1 style="margin-bottom: 0px">Team Topologies.</h1>
+			<h4 style="margin-top: 1rem; margin-bottom: 2.5rem; ">
+				We help organise happy, high performing teams that deliver better value to customers.
+			</h4>
 		</Column>
 		<Column>
 			<img
@@ -45,13 +47,13 @@
 </section>
 <section id="how-we-help">
 	<HeaderLine />
-	<h2>How we can help</h2>
-	<h3 class="mb-0">
+	<h2 class="text-v-lilac">How we can help</h2>
+	<h2 class="mb-0">
 		Every team is different, and we need to understand your unique situation. The starting point for
 		this is working together with your team to conduct a <span class="text-v-pink"
 			>Value Stream Assessment</span
 		> to uncover your current way of working, interactions and software delivery flow.
-	</h3>
+	</h2>
 	<ButtonLink href="/work/value-stream-assessment">Learn More</ButtonLink>
 
 	<Columns reverse={false}>

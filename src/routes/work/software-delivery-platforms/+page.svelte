@@ -12,11 +12,11 @@
 <section>
 	<Columns reverse={false}>
 		<Column>
-			<h1>Software Delivery Platforms.</h1>
-			<h3>
+			<h1 style="margin-bottom: 0px">Software Delivery Platforms.</h1>
+			<h4 style="margin-top: 1rem; margin-bottom: 2.5rem; ">
 				Find the right platform abstraction to enable software delivery teams to deliver value
 				faster.
-			</h3>
+			</h4>
 		</Column>
 		<Column>
 			<img
@@ -31,7 +31,7 @@
 <section>
 	<HeaderLine />
 	<div>
-		<h2>Human-friendly platforms</h2>
+		<h2>Human-friendly<br/> platforms</h2>
 		<Columns reverse={false} class="lg:items-baseline">
 			<Column>
 				Agile and DevOps have enabled cross-functional and autonomous teams, but has also led to
@@ -56,11 +56,15 @@
 
 <section id="how-we-help">
 	<HeaderLine />
-	<h2>How we can help</h2>
+	<h2 class="text-v-lilac">How we can help</h2>
+	<h2>
+		Are your development teams struggling with the complexity of deploying and operating the
+		software they build instead of focusing on delivering value? Don’t worry, there is <span class="text-v-pink">HOPE!</span>
+	</h2>
+	<div class="mb-16"></div>
 	<Columns reverse={false} class="lg:items-baseline">
 		<Column>
-			Are your development teams struggling with the complexity of deploying and operating the
-			software they build instead of focusing on delivering value? Don’t worry, there is HOPE!
+			
 			Human-oriented Platform Engineering helps to define the ‘Golden Path’ for software teams to
 			deliver value. It all begins with research on how teams work in order to create a proper
 			"Platform Abstraction". This drives what the platform will do, who will use it, and what
@@ -72,6 +76,7 @@
 				href="/work/value-stream-assessment/">Value Stream Assessments</a
 			>
 			are our method for understanding team interactions and flow of delivery.
+			<div class="mb-16"></div>
 			<ButtonLink href="/contact">Chat with an expert</ButtonLink>
 		</Column>
 	</Columns>
