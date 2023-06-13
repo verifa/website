@@ -11,7 +11,7 @@
     }
 
     .v-border {
-        @apply border-4 border-v-black border-b-8 border-r-8 p-4;
+        @apply border-4 border-v-black p-4;
     }
 
     .verifa-bullet {
