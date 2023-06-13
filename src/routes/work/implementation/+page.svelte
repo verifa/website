@@ -57,7 +57,7 @@
 		Our <span class="text-v-pink">Continuous Delivery workshops</span> help teams unlock their Continuous
 		Delivery potential. We will help you understand your release process and create a backlog of improvements.
 	</h3>
-	<div class="mb-16"></div>
+	<div class="mb-5 md:mb-10 lg:mb-16"></div>
 	<ButtonLink href={'/work/continuous-delivery-workshop'}>Learn more</ButtonLink>
 	
 </section>

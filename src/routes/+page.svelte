@@ -142,7 +142,7 @@
 <section>
 	<h4 style="margin: 0px">Learn more on our blog</h4>
 	<h2>Search by popular keyword</h2>
-	<div class="mb-12"></div>
+	<div class="mb-5 md:mb-8 lg:mb-12"></div>
 	<div class="flex flex-col gap-y-12 mb-8">
 			<div class="-my-2 flex flex-wrap gap-x-4">
 			{#each data.posts.keywords as tag}

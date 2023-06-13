@@ -61,7 +61,7 @@
 		Are your development teams struggling with the complexity of deploying and operating the
 		software they build instead of focusing on delivering value? Don’t worry, there is <span class="text-v-pink">HOPE!</span>
 	</h2>
-	<div class="mb-16"></div>
+	<div class="mb-5 md:mb-6 lg:mb-8 xl:mb-12 2xl:mb-16"></div>
 	<Columns reverse={false} class="lg:items-baseline">
 		<Column>
 			
@@ -76,7 +76,7 @@
 				href="/work/value-stream-assessment/">Value Stream Assessments</a
 			>
 			are our method for understanding team interactions and flow of delivery.
-			<div class="mb-16"></div>
+			<div class="mb-5 md:mb-8 lg:mb-10 xl:mb-12 2xl:mb-16"></div>
 			<ButtonLink href="/contact">Chat with an expert</ButtonLink>
 		</Column>
 	</Columns>
