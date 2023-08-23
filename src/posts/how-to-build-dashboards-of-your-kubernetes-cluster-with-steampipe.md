@@ -52,13 +52,13 @@ steampipe query
 
 Try running a query, for example:
 
-```bash
+```sql
 select name, namespace from kubernetes_pod;
 ```
 
 Note that the first query might take a while to run when `steampipe` has to initialise the database. In my `kind` cluster this returns a following result:
 
-```bash
+```text
 +----------------------------------------------------+--------------------+
 | name                                               | namespace          |
 +----------------------------------------------------+--------------------+
@@ -80,7 +80,7 @@ Note that the first query might take a while to run when `steampipe` has to init
 
 Another useful command is `.inspect`  which is one the [steampipe meta-commands](https://steampipe.io/docs/reference/dot-commands/overview), it lists all the columns and their types and description:
 
-```bash
+```text
 > .inspect kubernetes_pod
 +----------------------------------+--------------------------+-------------------------------------------------------------------------------+
 | column                           | type                     | description                                                                   |
@@ -103,7 +103,7 @@ steampipe query "select name, namespace from kubernetes_pod;"
 
 As stated previously, the core purpose of a tool like Steampipe is to answer questions. Let’s come up with an example question and then use Steampipe to provide the answer.
 
-Awhile back the Kubernetes project announced that they are deprecating the `[k8s.gcr.io](http://k8s.gcr.io)` registry in favour of `[registry.k8s.io](http://registry.k8s.io)` , you can read more about this change from these links:
+A while back the Kubernetes project announced that they are deprecating the [k8s.gcr.io](http://k8s.gcr.io) registry in favour of [registry.k8s.io](http://registry.k8s.io), you can read more about this change from these links:
 
 - [https://kubernetes.io/blog/2022/11/28/registry-k8s-io-faster-cheaper-ga/](https://kubernetes.io/blog/2022/11/28/registry-k8s-io-faster-cheaper-ga/)
 - [https://kubernetes.io/blog/2023/03/10/image-registry-redirect/](https://kubernetes.io/blog/2023/03/10/image-registry-redirect/)
@@ -113,7 +113,7 @@ Let’s use this announcement as an example to form a question; is my cluster af
 Let’s deploy one of the example applications provided by the Kubernetes project itself that uses images from the registry we’re interested in:
 
 ```bash
-git clone [https://github.com/kubernetes/examples.git](https://github.com/kubernetes/examples.git)
+git clone https://github.com/kubernetes/examples.git
 cd examples
 ```
 
@@ -157,7 +157,7 @@ steampipe mod init
 
 This will create a `mod.sp` file that looks like this:
 
-```bash
+```hcl
 mod "local" {
   title = "k8s-dashboard"
 }
@@ -165,7 +165,7 @@ mod "local" {
 
 Now we can move on to actually creating the dashboard. First, let’s create a dashboard resource in an empty file:
 
-```bash
+```hcl
 dashboard "k8s_dashboard" {
   title = "Awesome Kubernetes Dashboard"
 
@@ -177,7 +177,7 @@ dashboard "k8s_dashboard" {
 
 Now before even running this, let’s add our first query which will show a [card](https://steampipe.io/docs/reference/mod-resources/card) in the dashboard. Let’s use the query from earlier to list pods in all namespaces, but we will modify the SELECT statement a bit so that Steampipe knows how to interpret the query results:
 
-```bash
+```hcl
 dashboard "k8s_dashboard" {
   title = "Awesome Kubernetes Dashboard"
 
@@ -216,7 +216,7 @@ Let’s add couple more things to play with the dashboard, you can leave the `st
 
 Let’s add a donut chart that show the number of pods grouped by namespace:
 
-```bash
+```hcl
   chart {
     type = "donut"
     title = "Pods per namespace"
@@ -238,7 +238,7 @@ Let’s add a donut chart that show the number of pods grouped by namespace:
 
 We can also add text and by default Steampipe supports markdown:
 
-```bash
+```hcl
   text {
     value = <<-EOM
       # Heading
@@ -250,7 +250,7 @@ We can also add text and by default Steampipe supports markdown:
 
 Note that both the `chart` and the `text` resources should be inside the `dashboard` resource. Here’s how the file should look so far:
 
-```bash
+```hcl
 dashboard "k8s_dashboard" {
   title = "Awesome Kubernetes Dashboard"
 
@@ -303,7 +303,7 @@ And, the dashboard should look like this now:
 
 Let’s also add the query from before to find all the pods using the legacy container registry, for this we will create a `card` and a `table`. Idea is that the `card` will provide us visibility with a quick glance if we’re affected, to make this really pop we will set the `type` column to alert if the count of pods is not 0:
 
-```bash
+```hcl
 query "pods_using_legacy_registry_card" {
   sql = <<-EOQ
     select
@@ -325,7 +325,7 @@ Also note that the `query` resource should not be placed inside the `dashboard` 
 
 Instead of writing the query inline like previously, we can refer to a `query` resource in a `card` inside a `dashboard` like this:
 
-```bash
+```hcl
   card {
     query = query.pods_using_legacy_registry_card
     width = 3
@@ -334,7 +334,7 @@ Instead of writing the query inline like previously, we can refer to a `query` r
 
 You can also refer to queries across different files etc. allowing some level of re-use, but not across different types of visualisations since the queries will be bit different. That is why for a `table` we will define another `query`:
 
-```bash
+```hcl
 query "pods_using_legacy_registry_table" {
   sql = <<-EOQ
     select
@@ -352,7 +352,7 @@ query "pods_using_legacy_registry_table" {
 
 And then a `table` that references the query:
 
-```bash
+```hcl
   table {
     query = query.pods_using_legacy_registry_table
   }
@@ -360,7 +360,7 @@ And then a `table` that references the query:
 
 It’s probably good to add a `text` resource too as a separator, to be placed above the new resources:
 
-```bash
+```hcl
   text {
     value = <<-EOM
       # Containers using k8s.gcr.io
@@ -370,7 +370,7 @@ It’s probably good to add a `text` resource too as a separator, to be placed a
 
 We can append the new `text`, `card` and `table` to the dashboard like this for example:
 
-```bash
+```hcl
 dashboard "k8s_dashboard" {
   title = "Awesome Kubernetes Dashboard"
 
@@ -427,7 +427,7 @@ Having the table and card together allows us to immediately drill-down for more 
 
 Here’s the final dashboard:
 
-```bash
+```hcl
 dashboard "k8s_dashboard" {
   title = "Awesome Kubernetes Dashboard"
 
@@ -522,3 +522,4 @@ query "pods_using_legacy_registry_table" {
 We’ve only scratched the surface of what is possible with Steampipe in this blog, maybe we will explore more features and plugins in future blog posts. We highly recommend [checking out the project](https://steampipe.io/). Even if your SQL is rusty, we find it’s quite easy to get things done and after a bit of practice you’ll find yourself writing queries ad-hoc to answer questions that pop up.
 
 If you found something wrong with the content or something felt vague or awesome, leave us a comment! Additionally, if you’d like any help with Steampipe and/or Kubernetes [please get in touch](https://verifa.io/contact/index.html)!
+
