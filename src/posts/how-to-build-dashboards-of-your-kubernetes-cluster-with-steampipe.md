@@ -8,7 +8,7 @@ tags:
 - Kubernetes
 - Cloud
 date: 2023-08-22
-image: "/blogs/how-to-build-dashboards-of-your-kubernetes-cluster-with-steampipe/how-to-build-dashboards-of-your-kubernetes-cluster-with-steampipe.png"
+image: "/blogs/how-to-build-dashboards-of-your-kubernetes-cluster-with-steampipe/how-to-build-dashboards-of-your-kubernetes-cluster-with-steampipe-blog.png"
 featured: true
 ---
 
