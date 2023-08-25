@@ -49,7 +49,7 @@
 			<h3 class="mb-0 group-hover:text-v-gray">{project.name}</h3>
 			<p class="mb-2 group-hover:text-v-gray">{repo.description}</p>
 		</a>
-		<div class="-my-2 flex flex-wrap gap-x-4 mb-6">
+		<div class="my-2 flex flex-wrap gap-x-4 mb-6">
 			{#each repo.topics as topic}
 				<span class="inline-flex items-center my-2 px-3 py-0.5 bg-v-gray">
 					<p class="m-0 text-v-white">{topic}</p>

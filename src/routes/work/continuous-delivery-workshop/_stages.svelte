@@ -88,10 +88,10 @@
 <div class="my-8">
 	<dl class="flex flex-col">
 		{#each stageDescriptions[selected] as item}
-			<div class="flex flex-col gap-y-2">
+			<div class="my-4 flex flex-col gap-y-2 my-4">
 				<dt class="flex items-center gap-x-4">
 					<img class="h-4 w-4 object-contain" src="/logo-element.png" alt="logo-ement" />
-					<h4 class="mb-0 group-hover:text-v-lilac">{item.title}</h4>
+					<h4 style="margin:0;" class="mb-0 group-hover:text-v-lilac">{item.title}</h4>
 				</dt>
 				<dd>
 					<p class="pl-8">
