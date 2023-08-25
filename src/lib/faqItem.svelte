@@ -11,12 +11,12 @@
 		<!-- Expand/collapse question button -->
 		<button
 			type="button"
-			class="text-left w-full flex justify-between items-start text-v-black"
+			class="my-12 text-left w-full flex justify-between items-start text-v-black"
 			aria-controls="faq-0"
 			aria-expanded="false"
 			on:click={() => (show = !show)}
 		>
-			<h4 class="mb-0">{question}</h4>
+			<h4 style="margin:0;" class="mb-0">{question}</h4>
 			<span class="ml-6 h-7 flex items-center">
 				<ChevronRight class="{show ? 'rotate-90' : 'rotate-0'} h-6 w-6 transform" />
 			</span>

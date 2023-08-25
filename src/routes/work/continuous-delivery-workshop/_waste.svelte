@@ -64,10 +64,10 @@
 	{#each wastes as waste, index}
 		<div class="flex flex-col gap-y-2">
 			<button on:click={() => (showWastes[index] = !showWastes[index])}>
-				<dt class="flex items-center gap-x-4">
+				<dt class="flex items-center gap-x-4 my-4">
 					<img class="object-contain w-12 h-12" src={waste.img} alt="waste-type" />
 					<div class="group flex items-center gap-x-4">
-						<h4 class="mb-0 group-hover:text-v-lilac">{waste.name}</h4>
+						<h4 style="margin:0;" class="mb-0 group-hover:text-v-lilac">{waste.name}</h4>
 						<ChevronRight
 							class="h-6 w-6 group-hover:text-v-lilac {showWastes[index]
 								? 'rotate-90'
