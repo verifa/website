@@ -8,7 +8,7 @@ tags:
 - VeriConf
 - Verifa Culture
 date: 2023-09-26
-image: "/blogs/vericonf-2023-barcelona/vericonf-2023-barcelona.png"
+image: "/blogs/vericonf-2023-blog/vericonf-2023-barcelona.png"
 featured: false
 ---
 
@@ -62,7 +62,7 @@ This way we have a limited number of Initiatives running in parallel, and can be
 
 [Jacob](https://verifa.io/crew/jlarfors/) presented an update on an internal project, Coastline, about building internal platforms, followed by a brainstorming session on use cases. You can check out the original presentation at DevOps Finland meet up [here [video]](https://youtu.be/U1z4feTaS5c?t=6491).
 
-![vericonf-2023-winery-crew](/blogs/vericonf-2023-barcelona/vericonf-2023-winery-crew.jpg)
+![vericonf-2023-winery-crew](/blogs/vericonf-2023-blog/vericonf-2023-winery-crew.jpg)
 *Wine tasting at Pares Balta*
 
 ###Winery Tour & Tasting
@@ -75,7 +75,7 @@ After some chill time by the pool, it was time for Powerpoint Karaoke! Powerpoin
 
 *Please let us know if any of the images are yours and copyrighted, and we will delete them.*
 
-![pptkaraoke-collage](/blogs/vericonf-2023-barcelona/pptkaraoke-collage.jpg)
+![pptkaraoke-collage](/blogs/vericonf-2023-blog/pptkaraoke-collage.jpg)
 *Laroy, Albert and Zach wowing us with their Powerpoint Karaoke skillz*
 
 ## Day2
@@ -98,7 +98,7 @@ We reviewed the key points discussed during VeriConf 2022 and identified areas f
 - **VeriFridays and Opt-ins.** VeriFriday is a designated 20% work time allocation for personal and company development. Opt-ins are open sessions throughout the week for sharing, brainstorming, and discussing burning topics. Due to customer commitments during the week, neither were being effectively utilised. As a solution, we shifted Opt-ins to Fridays, and they have been fully booked so far!
 - **Customer training workshops.** In addition to ongoing consultancy work, we have also conducted customer training workshops that were well-received. We decided to continue offering these workshops as they provide a valuable project for employees on the bench and as an added benefit for our customers.
 
-![pub-quiz-winners](/blogs/vericonf-2023-barcelona/pub-quiz-winners.jpg)
+![pub-quiz-winners](/blogs/vericonf-2023-blog/pub-quiz-winners.jpg)
 *Pub Quiz: the victors, Team Delique (Laroy, Jacob & Lauri)*
 
 ### Pub Quiz
