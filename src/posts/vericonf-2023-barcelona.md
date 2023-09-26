@@ -65,7 +65,7 @@ This way we have a limited number of Initiatives running in parallel, and can be
 ![vericonf-2023-winery-crew](/blogs/vericonf-2023-blog/vericonf-2023-winery-crew.jpg)
 *Wine tasting at Pares Balta*
 
-###Winery Tour & Tasting
+### Winery Tour & Tasting
 
 During our stay in the Penedès region, known for producing 95% of Spain's cava, it would have been rude not to try some! We had an amazing experience with a tour and tasting at [Pares Balta](https://paresbalta.com/en/). We had the opportunity to explore the vineyards, learn about the process of making wine and cava, and visit the cellar where the cavas are aged. To top it off, we got to taste 8 of their wines.
 
@@ -84,7 +84,7 @@ After some chill time by the pool, it was time for Powerpoint Karaoke! Powerpoin
 
 Day 2 kicked off with a demo by [Mike](https://verifa.io/crew/mvainio/) on VeriSec(ure). Mike’s finishing his Master’s Thesis with a focus on security. VeriSec(ure) is a website created by Mike that provides practical information and opinions on security tools and practices, tailor-made for Verifa.
 
-> *“Instead of trying to prevent people from building insecurely, we should enable them to build in a secure way.”*
+> *Instead of trying to prevent people from building insecurely, we should enable them to build in a secure way.*
 
 -Mike Vainio
 > 
