@@ -11,7 +11,7 @@ tags:
 - Continuous Integration
 - Containers
 date: 2021-07-05
-image: "/blogs/2021-07-05/debugging-jenkins-blog-image-02.png"
+image: "/blogs/2021-07-05/how-to-debug-failing-build-agent-pods-kubernetes-jenkins.png"
 featured: true
 jobActive: true
 
