@@ -40,7 +40,7 @@
 			logo: '/clients/vyaire.png'
 		},
 		{
-			text: "Verifa helped us visualize, assess and define metrics for our software architecture using Lattix and integrated this into our CI pipelines using an 'Architecture as Code' approach to monitoring the architecture, which was a big help for our project goals.",
+			text: "Verifa helped us visualise, assess and define metrics for our software architecture using Lattix and integrated this into our CI pipelines using an 'Architecture as Code' approach to monitoring the architecture, which was a big help for our project goals.",
 			person: 'Juha Mailisto, ABB Drives',
 			logo: '/clients/abb.svg'
 		},
