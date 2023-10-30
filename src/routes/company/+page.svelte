@@ -59,6 +59,10 @@
 			name: 'gcp-professiona-cloud-architect-lilac'
 		},
 		{
+			image: '/certifications/google-cloud-devops-engineer-lilac.png',
+			name: 'google-cloud-devops-engineer-lilac'
+		},
+		{
 			image: '/certifications/azure-administrator-associate-lilac.png',
 			name: 'azure-administrator-associate-lilac'
 		},
