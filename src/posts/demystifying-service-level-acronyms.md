@@ -18,7 +18,7 @@ jobActive: true
 ---
 
 **Availability, fault tolerance, reliability, resilience. These are some of the terms that pop up when delivering digital services to users at scale. Acronyms related to Service Levels tend to pop up as well. Most developers have at least seen SLA, SLO and SLI and some even know what they mean. However, based on personal experience, not many people who work in the intersection of writing, delivering and maintaining software necessarily know how to make use of them in their software delivery process.**
-
+<br/>
 In this fundamental level blog post I will explain what different Service Level concepts mean and how to use them effectively in the software delivery process.
 
 ## What is a Service Level and why does it matter?
