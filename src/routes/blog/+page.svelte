@@ -106,7 +106,7 @@
 								d="M5 13l4 4L19 7"
 							/>
 						</svg>
-						<p class="m-0 text-v-white font-semibold border-v-lilac">{keyword}</p>
+						<span class="m-0 text-v-white font-semibold border-v-lilac">{keyword}</span>
 					</button>
 				{:else if remainingKeywords && !remainingKeywords.includes(keyword)}
 					<button
@@ -115,7 +115,7 @@
 							$selectedKeywords[index] = !$selectedKeywords[index];
 						}}
 					>
-						<p class="m-0 text-slate-500">{keyword}</p>
+						<span class="m-0 text-slate-500">{keyword}</span>
 					</button>
 				{:else}
 					<button
@@ -124,7 +124,7 @@
 							$selectedKeywords[index] = !$selectedKeywords[index];
 						}}
 					>
-						<p class="m-0 text-v-white">{keyword}</p>
+						<span class="m-0 text-v-white">{keyword}</span>
 					</button>
 				{/if}
 			{/each}

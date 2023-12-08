@@ -94,7 +94,6 @@
         @apply placeholder-v-beige;
     }
 
-
     a {
         @apply text-xl font-light;
     }
@@ -104,8 +103,8 @@
     }
 
     .prose :not(.unprose) p, :root .prose > p {
-        margin-top: 0;
-        margin-bottom: 0;
+        margin-top: 1.2em;
+        margin-bottom: 1.2em;
     }
 
     .prose :not(.unprose) img, :root .prose > p {

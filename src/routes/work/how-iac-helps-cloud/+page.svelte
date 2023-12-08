@@ -28,18 +28,18 @@
 			<div>
 				<h3 class="">Benefits of Infrastructure as Code</h3>
 				<div>
-					<p class="mb-4">
+					<span class="mb-4">
 						Infrastructure as Code provides many benefits to your cloud usage. Most notably are:
-					</p>
+					</span>
 					<ul class="verifa-bullet">
 						<li>Scalability by Automation</li>
 						<li>Auditability through Version Control</li>
 						<li>Cost optimization</li>
 					</ul>
 				</div>
-				<p class="text-v-black">
+				<span class="text-v-black">
 					Schedule a meeting with our CEO and learn how you can benefit from IaC.
-				</p>
+				</span>
 			</div>
 		</div>
 		<div class="self-start h-full">
@@ -60,15 +60,15 @@
 	<Columns>
 		<Column>
 			<h3>What is IaC?</h3>
-			<p>Some text here</p>
+			<span>Some text here</span>
 		</Column>
 		<Column>
 			<h3>Tooling</h3>
-			<p>Some text here</p>
+			<span>Some text here</span>
 		</Column>
 		<Column>
 			<h3>Use cases</h3>
-			<p>Some text here</p>
+			<span>Some text here</span>
 		</Column>
 	</Columns>
 </section>

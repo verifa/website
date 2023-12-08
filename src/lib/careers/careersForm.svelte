@@ -86,7 +86,7 @@
 			<div class="-my-2 flex flex-wrap gap-x-4">
 				{#each attachments as attachment}
 					<span class="inline-flex items-center my-2 px-3 py-0.5 bg-v-gray">
-						<p class="m-0 text-v-white">{attachment}</p>
+						<span class="m-0 text-v-white">{attachment}</span>
 					</span>
 				{/each}
 			</div>
@@ -103,10 +103,10 @@
 		<div>
 			<button class="v-button bg-v-black" type="submit">Submit</button>
 		</div>
-		<p>
+		<span>
 			By submitting this form you agree to our <a href="/privacy" class="underline"
 				>Privacy Policy</a
 			>
-		</p>
+		</span>
 	</form>
 </div>

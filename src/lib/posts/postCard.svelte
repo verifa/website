@@ -26,7 +26,7 @@
 				</a>
 			{/if}
 			<a href={url}>
-				<p class="mb-0 group-hover:text-v-lilac">{new Date(post.date).toLocaleDateString()}</p>
+				<span class="mb-0 group-hover:text-v-lilac">{new Date(post.date).toLocaleDateString()}</span>
 				<h3 class="group-hover:text-v-lilac">{post.title}</h3>
 				<h4>{post.subheading}</h4>
 			</a>

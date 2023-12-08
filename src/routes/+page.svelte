@@ -49,27 +49,27 @@
 	<Grid>
 		<div>
 			<h3>Value Stream Assessment</h3>
-			<p>
+			<span>
 				Visualise your value streams to identify waste and highlight opportunities for faster flow.
-			</p>
+			</span>
 			<ButtonLink href="/work/value-stream-assessment" class="text-base lg:text-xl">Learn More</ButtonLink>
 		</div>
 		<div>
 			<h3>Software Delivery Platform</h3>
-			<p>
+			<span>
 				Find the right platform abstraction to enable delivery teams in accelerating software
 				delivery.
-			</p>
+			</span>
 			<ButtonLink href="/work/software-delivery-platforms" class="text-base lg:text-xl">Learn More</ButtonLink>
 		</div>
 		<div>
 			<h3>Team Topologies</h3>
-			<p>We help organise happy, high performing teams that deliver better value to customers.</p>
+			<span>We help organise happy, high performing teams that deliver better value to customers.</span>
 			<ButtonLink href="/work/team-topologies" class="text-base lg:text-xl">Learn More</ButtonLink>
 		</div>
 		<div>
 			<h3>Cloud Architecture</h3>
-			<p>Designing and implementing cloud-native architectures that are robust yet evolvable.</p>
+			<span>Designing and implementing cloud-native architectures that are robust yet evolvable.</span>
 			<ButtonLink href="/work/cloud-architecture" class="text-base lg:text-xl">Learn More</ButtonLink>
 		</div>
 	</Grid>
@@ -98,24 +98,24 @@
 			<div class="flex flex-col gap-y-0">
 				<div>
 					<h3 style="margin-top: 0">Why work with Verifa.</h3>
-					<p>
+					<span>
 						We are a small and dedicated crew who care about the value we deliver. We look to
 						tomorrow's problems and solve them for you ahead of time.
-					</p>
+					</span>
 				</div>
 				<div>
 					<h3>What makes us different.</h3>
-					<p>
+					<span>
 						We don't just solve problems but teach you how to solve them, and we do it as a team.
 						That's our goal and what sets us apart from other consultancy houses.
-					</p>
+					</span>
 				</div>
 				<div>
 					<h3>Who we have helped.</h3>
-					<p>
+					<span>
 						We have worked with regulated and embedded environments in industries like Automotive,
 						Medical, Finance, Mobile and Web.
-					</p>
+					</span>
 				</div>
 			</div>
 		</Column>
@@ -148,7 +148,7 @@
 			{#each data.posts.keywords as tag}
 				<a href="/blog?keywords={tag}" class="inline-block ">
 					<span class="inline-flex items-center my-2 px-3 py-0.5 bg-v-gray">
-						<p class="m-0 capitalize text-v-white">{tag}</p>
+						<span class="m-0 capitalize text-v-white">{tag}</span>
 					</span>
 				</a>
 			{/each}

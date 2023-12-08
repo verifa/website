@@ -41,10 +41,10 @@
 		<div>
 			<button class="v-button bg-v-black" type="submit">Submit</button>
 		</div>
-		<p>
+		<span>
 			By submitting this form you agree to our <a href="/privacy" class="underline"
 				>Privacy Policy</a
 			>
-		</p>
+		</span>
 	</form>
 </section>

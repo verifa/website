@@ -30,7 +30,7 @@
 			<div>
 				<h3 class="mb-0 group-hover:text-v-lilac">{member.name}</h3>
 				<div class="flex items-center gap-x-4">
-					<p class="my-0 group-hover:text-v-lilac">{member.position}</p>
+					<span class="my-0 group-hover:text-v-lilac">{member.position}</span>
 				</div>
 			</div>
 		</div>

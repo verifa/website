@@ -35,22 +35,22 @@
 	<Columns>
 		<Column class="self-start">
 			<h3>Workshops.</h3>
-			<p>
+			<span>
 				Our workshops focus on knowledge sharing and self-discovery. By discussing and analysing
 				value streams, cloud architectures, development workflows, deployment strategies, and many
 				more topics, we help teams understand more about the ecosystem and help them arrive at their
 				own conclusions. This is fundamental transforming the way teams work because everyone knows
 				<i>why</i> there is change.
-			</p>
+			</span>
 		</Column>
 		<Column class="self-start">
 			<h3>Who are they for?</h3>
-			<p>
+			<span>
 				Our workshops are for any teams looking to change the way they work. They can span from a
 				few hours to multiple days, meaning there is no big upfront investment. Whether you're
 				starting a new project or looking to improve your current one, we are happy to hear from you
 				and try to help. The very least we can offer is a trusted opinion of your ways of working.
-			</p>
+			</span>
 		</Column>
 	</Columns>
 	<h3>
@@ -69,22 +69,22 @@
 	<Columns>
 		<Column class="self-start">
 			<h3>You own your work.</h3>
-			<p>
+			<span>
 				To make changes long-lasting it is important that the knowledge and practices introduced
 				stay with the teams who own the work. Hiring consultants to come in and implement everything
 				for you can lead to a lack of knowledge and practices to own the work. We believe in
 				coaching teams to empower them learn new practices and technology, therefore ensuring the
 				ownership is clear.
-			</p>
+			</span>
 		</Column>
 		<Column class="self-start">
 			<h3>High performing teams.</h3>
-			<p>
+			<span>
 				Building high performing teams means bringing everyone with you. Working alongside engineers
 				with experience will boost productivity whilst building competence. We help teams adopt
 				technologies like the Cloud, HashiStack and Kubernetes by doing the day-to-day work
 				together, thereby training and solving real problems at the same time.
-			</p>
+			</span>
 		</Column>
 	</Columns>
 	<h2>
@@ -99,13 +99,13 @@
 	<HeaderLine />
 	<h2 class="text-v-lilac" style="margin-bottom: 0px">Build and Evolve.</h2>
 	<h2>Creating sustainable solutions.</h2>
-	<p>
+	<span>
 		We have long-lasting relationships with customers who trust us to work alongside their teams and
 		help solve all kinds of problems. We can deliver both short-term and long-term work. Whether you
 		need help with CI/CD workflows, Platform Engineering, Cloud, the HashiStack, Kubernetes, or any
 		related topic, we're here to help you build, implement and evolve sustainable solutions tailored
 		for your unique business needs.
-	</p>
+	</span>
 </section>
 <section>
 	<CtaButton />

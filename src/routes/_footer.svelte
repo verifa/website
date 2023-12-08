@@ -8,8 +8,8 @@
 		<div class="xl:grid xl:grid-cols-3 xl:gap-8">
 			<div class="flex flex-col space-y-8 xl:col-span-1">
 				<img class="w-40 h-full" src="/verifa-logo.svg" alt="verifa" />
-				<p>Here to help you with Continuous Delivery and Cloud Architecture.</p>
-				<p>info [at] verifa.io</p>
+				<span>Here to help you with Continuous Delivery and Cloud Architecture.</span>
+				<span>info [at] verifa.io</span>
 				<div class="flex space-x-6">
 					<a href="https://github.com/verifa" class="text-v-black hover:text-v-lilac">
 						<span class="sr-only">GitHub</span>
@@ -125,13 +125,13 @@
 				</div>
 			</div>
 			<div class="mt-12 border-t border-black pt-8">
-				<p>
+				<span>
 					&copy; 2022 Verifa Group Oy All rights reserved. Version <a
 						target="_blank"
 						href="https://github.com/verifa/website/tree/{env.gitCommit}"
 						>{env.gitCommit.substring(0, 7)}</a
 					>.
-				</p>
+				</span>
 			</div>
 		</div>
 	</div>
