@@ -47,17 +47,17 @@
 			<div class="flex flex-col gap-y-16">
 				<div>
 					<h4>Value Stream Map</h4>
-					<p class="mb-0">
+					<span class="mb-0">
 						A Value Stream Map is a visual tool showing the series of events that take a product or
 						service from the beginning of a process until it reaches its end (i.e. a Value Stream).
-					</p>
+					</span>
 				</div>
 				<div>
 					<h4>Value Stream Mapping</h4>
-					<p class="mb-0">
+					<span class="mb-0">
 						Value Stream Mapping (VSM) is a method for defining a Value Stream and analysing the
 						current flow in order to remove waste and to derive a more lean and continuous workflow.
-					</p>
+					</span>
 				</div>
 			</div>
 		</Column>
@@ -84,17 +84,17 @@
 			<div class="flex flex-col gap-y-16">
 				<div>
 					<h4>The Goal</h4>
-					<p class="mb-0">
+					<span class="mb-0">
 						The goal of our Value Stream Mapping workshop is to build a common understanding of your
 						release process and highlight waste as effectively as possible.
-					</p>
+					</span>
 				</div>
 				<div>
 					<h4>Finding Waste</h4>
-					<p class="mb-0">
+					<span class="mb-0">
 						Waste is any activity that consumes resources, but does not add value to the product or
 						service a customer receives. Less waste means more flow.
-					</p>
+					</span>
 				</div>
 			</div>
 		</Column>
@@ -129,46 +129,46 @@
 <section>
 	<Faq title="Continuous Delivery principles">
 		<FaqItem question="Infinite Game"
-			><p class="mb-0">
+			><span class="mb-0">
 				When you fix your biggest problem, you still have a biggest problem.
-			</p></FaqItem
+			</span></FaqItem
 		>
 		<FaqItem question="Plan vs Do"
-			><p class="mb-0">
+			><span class="mb-0">
 				Set goals, but don’t spend too much time planning the details. You learn as you go, allowing
 				you to adjust course better than any plan ever would. Don’t plan for more than a couple of
 				weeks.
-			</p></FaqItem
+			</span></FaqItem
 		>
 		<FaqItem question="What vs How"
-			><p class="mb-0">
+			><span class="mb-0">
 				It’s not about how to do it in the tools, it’s about what you want to achieve. Don’t let the
 				tools control your process.
-			</p></FaqItem
+			</span></FaqItem
 		>
 		<FaqItem question="Problem vs Symptom"
-			><p class="mb-0">
+			><span class="mb-0">
 				Symptoms are easy to see and often easy to patch, but workarounds don’t solve the underlying
 				problem, they only serve to obfuscate it. Look for the underlying problem.
-			</p></FaqItem
+			</span></FaqItem
 		>
 		<FaqItem question="Comfort Zone"
-			><p class="mb-0">
+			><span class="mb-0">
 				Technology will always change and old experts will become novices. It is better to learn
 				something new and fail than to stay in the comfort zone risking the business.
-			</p></FaqItem
+			</span></FaqItem
 		>
 		<FaqItem question="KISS"
-			><p class="mb-0">
+			><span class="mb-0">
 				Keep it simple stupid; a good solution removes waste. Use simple tools, reduce complexity
 				and maintenance costs. A simple solution is better than a clever solution.
-			</p></FaqItem
+			</span></FaqItem
 		>
 		<FaqItem question="Build - Measure - Learn"
-			><p class="mb-0">
+			><span class="mb-0">
 				Avoid big bangs as much as possible. Test, experiment, release gradually and be ready to
 				revert. Build this in as part of the process.
-			</p></FaqItem
+			</span></FaqItem
 		>
 	</Faq>
 </section>

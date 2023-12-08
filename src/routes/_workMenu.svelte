@@ -124,7 +124,7 @@
 							href={link.url}
 							class="-m-3 p-3 group block hover:bg-v-gray hover:bg-opacity-10 transition ease-in-out duration-150"
 						>
-							<p class="-p-3 mb-0 group-hover:text-v-lilac">{link.title}</p>
+							<span class="-p-3 mb-0 group-hover:text-v-lilac">{link.title}</span>
 						</a>
 					{/each}
 				</div>

@@ -38,6 +38,6 @@
 		<h4 class="!m-0">{title === '' ? defaultTitle : title}</h4>
 	</div>
 	<div class="{bgColor} bg-opacity-30 py-2 px-4">
-		<p class="!m-0"><slot /></p>
+		<slot />
 	</div>
 </div>

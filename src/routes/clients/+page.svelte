@@ -64,11 +64,11 @@
 		</Column>
 		<Column>
 			<h3>We care and we deliver.</h3>
-			<p>
+			<span>
 				We are proud to work with some of the biggest companies in the world across a range of
 				industries. With every customer our goal is always the same: to solve problems and share
 				knowledge. Our business is based on building trust and long-lasting relationships.
-			</p>
+			</span>
 		</Column>
 	</Columns>
 </section>
