@@ -17,6 +17,7 @@ export interface Post {
     featured: boolean;
 
     jobActive: boolean;
+    hidden: boolean;
 }
 
 export enum PostType {
@@ -135,6 +136,9 @@ export const filterPosts = (posts: Post[], query: PostsQuery): Post[] => {
         }
         // Check job active filter
         if (query.jobActive && post.type === PostType.Job && !post.jobActive) {
+            return false
+        }
+        if (post.hidden) {
             return false
         }
         return true

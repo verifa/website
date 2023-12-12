@@ -11,6 +11,7 @@
     - `date`: date the blog was written/published
     - `image`: display image for the blog
     - `featured`: whether it should be featured in the top/latest blog posts
+
 3. Write the content and create a Pull Request
 
 ## Beyond Markdown
