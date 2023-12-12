@@ -17,7 +17,7 @@
 	$: url = getPostUrl(post);
 </script>
 
-<div>
+<div class={post.hidden ? 'hidden' : ''}>
 	<a href={url} class="group">
 		<div class="v-border group-hover:border-v-lilac">
 			{#if showPreview && post.previewImage}
@@ -26,7 +26,8 @@
 				</a>
 			{/if}
 			<a href={url}>
-				<span class="mb-0 group-hover:text-v-lilac">{new Date(post.date).toLocaleDateString()}</span>
+				<span class="mb-0 group-hover:text-v-lilac">{new Date(post.date).toLocaleDateString()}</span
+				>
 				<h3 class="group-hover:text-v-lilac">{post.title}</h3>
 				<h4>{post.subheading}</h4>
 			</a>

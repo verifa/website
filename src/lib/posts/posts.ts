@@ -138,9 +138,13 @@ export const filterPosts = (posts: Post[], query: PostsQuery): Post[] => {
         if (query.jobActive && post.type === PostType.Job && !post.jobActive) {
             return false
         }
-        if (post.hidden) {
-            return false
-        }
+
+        // Do not filter hidden posts here.
+        // For the static build to render a blog, there needs to be an href
+        // to that blog somewhere on the site.
+        // Therefore, return hidden posts and hide them in the HTML instead.
+        // That way we have an href to the blog, meaning it gets built, but
+        // it is not visible on the site.
         return true
     })
     // Apply any limit on them
