@@ -15,9 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup node
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 20
       - name: Write dotenv file
         run: |
           cat <<-EOF >.env
@@ -55,15 +55,15 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" == "release" ]
           then
-              echo "::set-output name=deploy_env::prod"
+            echo "deploy_env=prod" >> $GITHUB_OUTPUT
           elif [ "${GITHUB_REF#refs/heads/}" == "main" ]
           then
-              echo "::set-output name=deploy_env::staging"
+            echo "deploy_env=staging" >> $GITHUB_OUTPUT
           elif [ "${{ contains( github.event.pull_request.labels.*.name, 'preview') }}" == "true" ]
           then
-             echo "::set-output name=deploy_env::preview"
+            echo "deploy_env=preview" >> $GITHUB_OUTPUT
           else
-             echo "::set-output name=deploy_env::unknown"
+            echo "deploy_env=unknown" >> $GITHUB_OUTPUT
           fi
       - name: Dump deployment variables
         run: echo "${{ steps.vars.outputs.deploy_env }}"
