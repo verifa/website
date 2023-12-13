@@ -11,7 +11,7 @@ tags:
 - Monitoring
 - SRE
 date: 2023-12-07
-image: "/blogs/demystifying-service-level-acronyms/demystifying-service-level-acronyms.png"
+image: "/blogs/demystifying-service-level-acronyms/demystifying-service-level-acronyms2.png"
 featured: true
 jobActive: true
 
