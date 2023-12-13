@@ -21,7 +21,9 @@
 	<Columns reverse={false}>
 		<Column>
 			<h1 style="margin-bottom: 0px">Accelerate your software delivery.</h1>
-			<h4 style="margin-top: 1rem; margin-bottom: 2.5rem; ">We help optimise your software delivery flow and build high performing teams.</h4>
+			<h4 style="margin-top: 1rem; margin-bottom: 2.5rem; ">
+				We help optimise your software delivery flow and build high performing teams.
+			</h4>
 			<ButtonLink href="/contact">Chat with an expert</ButtonLink>
 		</Column>
 		<Column>
@@ -52,7 +54,9 @@
 			<span>
 				Visualise your value streams to identify waste and highlight opportunities for faster flow.
 			</span>
-			<ButtonLink href="/work/value-stream-assessment" class="text-base lg:text-xl">Learn More</ButtonLink>
+			<ButtonLink href="/work/value-stream-assessment" class="text-base lg:text-xl"
+				>Learn More</ButtonLink
+			>
 		</div>
 		<div>
 			<h3>Software Delivery Platform</h3>
@@ -60,17 +64,25 @@
 				Find the right platform abstraction to enable delivery teams in accelerating software
 				delivery.
 			</span>
-			<ButtonLink href="/work/software-delivery-platforms" class="text-base lg:text-xl">Learn More</ButtonLink>
+			<ButtonLink href="/work/software-delivery-platforms" class="text-base lg:text-xl"
+				>Learn More</ButtonLink
+			>
 		</div>
 		<div>
 			<h3>Team Topologies</h3>
-			<span>We help organise happy, high performing teams that deliver better value to customers.</span>
+			<span
+				>We help organise happy, high performing teams that deliver better value to customers.</span
+			>
 			<ButtonLink href="/work/team-topologies" class="text-base lg:text-xl">Learn More</ButtonLink>
 		</div>
 		<div>
 			<h3>Cloud Architecture</h3>
-			<span>Designing and implementing cloud-native architectures that are robust yet evolvable.</span>
-			<ButtonLink href="/work/cloud-architecture" class="text-base lg:text-xl">Learn More</ButtonLink>
+			<span
+				>Designing and implementing cloud-native architectures that are robust yet evolvable.</span
+			>
+			<ButtonLink href="/work/cloud-architecture" class="text-base lg:text-xl"
+				>Learn More</ButtonLink
+			>
 		</div>
 	</Grid>
 </section>
@@ -128,8 +140,8 @@
 			<div class="flex flex-col gap-y-2">
 				<h4 style="margin: 0px">Technologies</h4>
 				<h2 style="margin: 0px">
-					We work with the world's leading providers to help us deliver the best possible
-					experience for our clients.
+					We work with the world's leading providers to help us deliver the best possible experience
+					for our clients.
 				</h2>
 			</div>
 		</Column>
@@ -142,9 +154,9 @@
 <section>
 	<h4 style="margin: 0px">Learn more on our blog</h4>
 	<h2>Search by popular keyword</h2>
-	<div class="mb-5 md:mb-8 lg:mb-12"></div>
-	<div class="flex flex-col gap-y-12 mb-8">
-			<div class="-my-2 flex flex-wrap gap-x-4">
+	<div class="mb-5 md:mb-8 lg:mb-12" />
+	<div class="flex flex-col gap-y-4 mb-8">
+		<div class="-my-2 flex flex-wrap gap-x-4">
 			{#each data.posts.keywords as tag}
 				<a href="/blog?keywords={tag}" class="inline-block ">
 					<span class="inline-flex items-center my-2 px-3 py-0.5 bg-v-gray">
@@ -153,7 +165,7 @@
 				</a>
 			{/each}
 		</div>
+		<ButtonLink href="/blog">All posts</ButtonLink>
 		<PostGrid showBadges={false} {posts} />
 	</div>
-	<ButtonLink href="/blog">All posts</ButtonLink>
 </section>

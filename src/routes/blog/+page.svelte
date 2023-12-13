@@ -33,9 +33,9 @@
 	});
 
 	// filterBlogs runs the filtering of blogs based on the selected keywords
-	const filterBlogs = (keywords: string[]): {showBlogs: Post[], remainingKeywords: string[]} => {
+	const filterBlogs = (keywords: string[]): { showBlogs: Post[]; remainingKeywords: string[] } => {
 		if (keywords.length == 0) {
-			return {showBlogs: allBlogs, remainingKeywords: undefined};
+			return { showBlogs: allBlogs, remainingKeywords: undefined };
 		}
 		let remainingKeywords: string[] = [];
 		// If there are keywords, filter the blogs
@@ -49,7 +49,7 @@
 			remainingKeywords.push(...blog.tags);
 			return true;
 		});
-		return {showBlogs, remainingKeywords};
+		return { showBlogs, remainingKeywords };
 	};
 
 	// Subscribe to the filter store to refresh list of blog posts
@@ -62,7 +62,7 @@
 			}
 		});
 		// Update the list of blogs
-		({showBlogs, remainingKeywords} = filterBlogs(keywords));
+		({ showBlogs, remainingKeywords } = filterBlogs(keywords));
 	});
 </script>
 
@@ -110,12 +110,13 @@
 					</button>
 				{:else if remainingKeywords && !remainingKeywords.includes(keyword)}
 					<button
-						class="inline-block my-2 border-0 px-3 py-0.5 bg-v-gray hover:bg-v-gray focus:bg-v-gray"
+						class="inline-block my-2 border-0 px-3 py-0.5 bg-v-gray hover:bg-v-gray focus:bg-v-gray disabled:bg-opacity-40"
 						on:click={() => {
 							$selectedKeywords[index] = !$selectedKeywords[index];
 						}}
+						disabled
 					>
-						<span class="m-0 text-slate-500">{keyword}</span>
+						<span class="m-0 text-v-white">{keyword}</span>
 					</button>
 				{:else}
 					<button
