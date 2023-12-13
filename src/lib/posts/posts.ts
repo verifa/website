@@ -149,6 +149,8 @@ export const filterPosts = (posts: Post[], query: PostsQuery): Post[] => {
     })
     // Apply any limit on them
     if (query.limit > 0) {
+        // If we are limiting, then we should also remove hidden posts.
+        posts = posts.filter((post) => !post.hidden)
         posts = posts.slice(0, query.limit)
     }
     return posts
