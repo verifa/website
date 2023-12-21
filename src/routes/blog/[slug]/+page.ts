@@ -6,7 +6,8 @@ export async function load({ params, data }) {
 	try {
 		const post = await import(`../../../posts/${params.slug}.md`);
 		return {
-			post: post.default,
+			post: post.metadata,
+			component: post.default,
 			relatedPosts: data.relatedPosts
 		};
 	} catch (e) {

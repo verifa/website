@@ -7,11 +7,6 @@ import { h, s } from 'hastscript'
 const config = {
 	extensions: ['.svelte.md', '.md', '.svx'],
 
-	layout: {
-		_: "./src/lib/posts/layout.svelte",
-		job: "./src/lib/posts/layout-job.svelte"
-	},
-
 	smartypants: {
 		dashes: 'oldschool'
 	},

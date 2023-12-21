@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import './posts.css';
 
 	import CareersForm from '$lib/careers/careersForm.svelte';
@@ -7,25 +7,20 @@
 
 	import { seo } from '$lib/seo/store';
 
+	import type { Post } from './posts';
 	import PostBadges from './postBadges.svelte';
 
-	export let type;
-	export let title;
-	export let subheading;
-	export let authors;
-	export let tags;
-	export let date;
-	export let image;
+	export let post: Post;
 
 	seo.reset();
-	$seo.title = title;
-	$seo.description = subheading;
-	$seo.image.url = image;
+	$seo.title = post.title;
+	$seo.description = post.subheading;
+	$seo.image.url = post.image;
 	$seo.article = {
-		authors: authors,
-		tags: tags,
-		published_time: new Date(date),
-		modified_time: new Date(date)
+		authors: post.authors,
+		tags: post.tags,
+		published_time: new Date(post.date),
+		modified_time: new Date(post.date)
 	};
 </script>
 
@@ -37,15 +32,15 @@
 	<article class="prose lg:prose-lg xl:prose-xl 2xl:prose-2xl">
 		<div class="mb-8">
 			<div class="mb-8">
-				<img class="w-full h-full" src={image} alt={title} />
+				<img class="w-full h-full" src={post.image} alt={post.title} />
 			</div>
-			<h1>{title}</h1>
-			<h3>{subheading}</h3>
+			<h1>{post.title}</h1>
+			<h3>{post.subheading}</h3>
 			<div class="not-prose mb-8">
-				<PostBadges {type} {tags} />
+				<PostBadges type={post.type} tags={post.tags} />
 			</div>
-			<p class="mb-4">Published on {new Date(date).toDateString()}</p>
-			<p class="mb-4">Authors: {authors.map((a) => crewNameById(a)).join(', ')}</p>
+			<p class="mb-4">Published on {new Date(post.date).toDateString()}</p>
+			<p class="mb-4">Authors: {post.authors.map((a) => crewNameById(a)).join(', ')}</p>
 		</div>
 		<div id="blog-container">
 			<slot />

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import './posts.css';
 
 	import { crewByID } from '$lib/crew/crew';
@@ -7,37 +7,31 @@
 
 	import PostBadges from './postBadges.svelte';
 	import PostGrid from './postGrid.svelte';
+	import type { Post } from './posts';
 	import { PostType } from './posts';
-	import  * as readtime from './readtime';
+	import * as readtime from './readtime';
 
-	export let relatedPosts = [];
+	export let relatedPosts: Post[];
+	export let post: Post;
 
-	export let type;
-	export let title;
-	export let subheading;
-	export let authors;
-	export let tags;
-	export let date;
-	export let image;
-
-	const crewAuthors = authors.map((id) => crewByID(id));
+	const crewAuthors = post.authors.map((id) => crewByID(id));
 
 	seo.reset();
-	$seo.title = title;
-	$seo.description = subheading;
-	$seo.image.url = image;
+	$seo.title = post.title;
+	$seo.description = post.subheading;
+	$seo.image.url = post.image;
 	$seo.article = {
-		authors: authors,
-		tags: tags,
-		published_time: new Date(date),
-		modified_time: new Date(date)
+		authors: post.authors,
+		tags: post.tags,
+		published_time: new Date(post.date),
+		modified_time: new Date(post.date)
 	};
 
-	let container;
-	let readtimeDisplay;
+	let container: HTMLElement;
+	let readtimeDisplay: HTMLElement;
 	$: if (container && readtimeDisplay) {
 		const result = readtime.processText(container.innerText);
-		readtimeDisplay.innerText = "Read time: " + result.humanizedTime;
+		readtimeDisplay.innerText = 'Read time: ' + result.humanizedTime;
 	}
 </script>
 
@@ -49,16 +43,16 @@
 	<article class="prose lg:prose-lg xl:prose-xl 2xl:prose-2xl">
 		<div class="mb-8">
 			<div class="mb-8">
-				<img class="w-full h-full" src={image} alt={title} />
+				<img class="w-full h-full" src={post.image} alt={post.title} />
 			</div>
-			<h1>{title}</h1>
-			<h3>{subheading}</h3>
-			{#if type !== PostType.Event}
+			<h1>{post.title}</h1>
+			<h3>{post.subheading}</h3>
+			{#if post.type !== PostType.Event}
 				<div class="not-prose mb-8">
-					<PostBadges {type} {tags} />
+					<PostBadges type={post.type} tags={post.tags} />
 				</div>
-				<p class="mb-4">Published on {new Date(date).toDateString()}</p>
-				<p bind:this={readtimeDisplay} class="mb-4">Read time: </p>
+				<p class="mb-4">Published on {new Date(post.date).toDateString()}</p>
+				<p bind:this={readtimeDisplay} class="mb-4">Read time:</p>
 				<h4>Authors</h4>
 				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-2 sm:gap-y-8">
 					{#each crewAuthors as author}
@@ -83,15 +77,16 @@
 		<h2>Comments</h2>
 		<script
 			src="https://utteranc.es/client.js"
-			repo="verifa/website"
-			issue-term="pathname"
-			label="blog"
-			theme="boxy-light"
+			data-repo="verifa/website"
+			data-issue-term="pathname"
+			data-label="blog"
+			data-theme="boxy-light"
 			crossorigin="anonymous"
-			async>
+			async
+		>
 		</script>
 	</section>
-	{#if type != PostType.Case}
+	{#if post.type != PostType.Case}
 		<section>
 			<h2>Read similar posts</h2>
 		</section>

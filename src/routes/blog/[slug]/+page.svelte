@@ -1,7 +1,10 @@
 <script lang="ts">
+	import Layout from '$lib/posts/layout.svelte';
 	import type { PageData } from './$types';
 	export let data: PageData;
-	$: ({ post, relatedPosts } = data);
+	$: ({ post, component, relatedPosts } = data);
 </script>
 
-<svelte:component this={post} {relatedPosts} />
+<Layout {post} {relatedPosts}>
+	<svelte:component this={component} {relatedPosts} />
+</Layout>
