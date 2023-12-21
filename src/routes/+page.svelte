@@ -1,12 +1,11 @@
 <script lang="ts">
+	import type { PageData } from './$types';
 	import PostGrid from '$lib/posts/postGrid.svelte';
 	import ButtonLink from '$lib/buttonLink.svelte';
 	import Columns from '$lib/columns.svelte';
 	import Column from '$lib/column.svelte';
 	import Grid from '$lib/grid.svelte';
 	import { seo } from '$lib/seo/store';
-	import MainReference from '$lib/mainReference.svelte';
-	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 	import type { Post } from '$lib/posts/posts';
 	import ClientLogos from '$lib/clients/clientLogos.svelte';
 	import TechnologyLogos from '$lib/technologies/technologyLogos.svelte';
@@ -158,7 +157,7 @@
 	<div class="flex flex-col gap-y-4 mb-8">
 		<div class="-my-2 flex flex-wrap gap-x-4">
 			{#each data.posts.keywords as tag}
-				<a href="/blog?keywords={tag}" class="inline-block ">
+				<a href="/blog?keywords={tag}" class="inline-block">
 					<span class="inline-flex items-center my-2 px-3 py-0.5 bg-v-gray">
 						<span class="m-0 capitalize text-v-white">{tag}</span>
 					</span>

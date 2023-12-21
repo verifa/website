@@ -20,23 +20,23 @@ export async function GET({ }) {
         {
             loc: "https://verifa.io/work/value-stream-assessment",
             priority: 0.8
-		},
-		{
+        },
+        {
             loc: "https://verifa.io/work/software-delivery-platforms",
             priority: 0.8
-		},
-		{
+        },
+        {
             loc: "https://verifa.io/work/team-topologies",
             priority: 0.8
-		},
-		{
+        },
+        {
             loc: "https://verifa.io/work/cloud-architecture",
             priority: 0.8
-		},
-		{
+        },
+        {
             loc: "https://verifa.io/work/implementation",
             priority: 0.8
-		},
+        },
         {
             loc: "https://verifa.io/company",
             priority: 0.8
@@ -51,17 +51,12 @@ export async function GET({ }) {
         },
     ]
 
-    const posts = getPostsGlob({
-        featured: true,
-        limit: 3,
-        types: [PostType.Blog, PostType.Case, PostType.Event]
-    })
+    const posts = getPostsGlob({})
 
     posts.posts.forEach((post) => {
         pages.push({
             loc: `https://verifa.io/blog/${post.slug}`,
-            // Default priority
-            priority: 0.5,
+            priority: post.featured ? 0.6 : 0.5,
             lastmod: new Date(post.date)
         })
     })

@@ -30,7 +30,7 @@
 	];
 
 	let showMenu: boolean = false;
-	let mobileMenu: HTMLElement = null;
+	let mobileMenu: HTMLElement;
 
 	let previousY: number;
 	let currentY: number;
@@ -47,13 +47,13 @@
 	$: headerVisible.set(scrollUp || currentY <= clientHeight * 4);
 
 	onMount(() => {
-		const handleOutsideClick = (event) => {
+		const handleOutsideClick = (event: any) => {
 			if (showMenu && !mobileMenu.contains(event.target)) {
 				showMenu = false;
 			}
 		};
 
-		const handleEscape = (event) => {
+		const handleEscape = (event: any) => {
 			if (showMenu && event.key === 'Escape') {
 				showMenu = false;
 			}
@@ -95,10 +95,10 @@
 				{#each navLinks as link}
 					<a
 						href={link.url}
-						class="text-xl py-2 text-v-black hover:text-v-lilac font-medium border-b-2 border-v-black transition-all ease-in-out duration-150  {link.url ===
+						class="text-xl py-2 text-v-black hover:text-v-lilac font-medium border-b-2 transition-all ease-in-out duration-150 {link.url ===
 						$page.url.pathname
-							? 'border-solid'
-							: 'border-transparent'}">{link.text}</a
+							? 'border-v-black'
+							: 'border-v-black/0'}">{link.text}</a
 					>
 				{/each}
 			</div>

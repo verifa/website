@@ -26,7 +26,7 @@
 		}
 	];
 
-	let workMenuDiv;
+	let workMenuDiv: any;
 	let shown = false;
 
 	// Subscribe to headerVisible store so that if the header disappears and we
@@ -50,13 +50,13 @@
 	}
 
 	onMount(() => {
-		const handleOutsideClick = (event) => {
+		const handleOutsideClick = (event: any) => {
 			if (shown && !workMenuDiv.contains(event.target)) {
 				hide();
 			}
 		};
 
-		const handleEscape = (event) => {
+		const handleEscape = (event: any) => {
 			if (shown && event.key === 'Escape') {
 				hide();
 			}
@@ -77,13 +77,13 @@
 <div bind:this={workMenuDiv}>
 	<button
 		on:click={toggleShow}
-		class="text-xl py-2 text-v-black hover:text-v-lilac focus:outline-none font-medium border-b-2 border-v-black transition-all ease-in-out duration-150 {isActive(
+		class="text-xl py-2 text-v-black hover:text-v-lilac focus:outline-none font-medium border-b-2 transition-all ease-in-out duration-150 {isActive(
 			$page.url.pathname
 		)
-			? 'border-solid'
-			: 'border-transparent'}"
+			? 'border-v-black'
+			: 'border-v-black/0'}"
 	>
-		<div class="flex gap-x-2 items-center ">
+		<div class="flex gap-x-2 items-center">
 			About us
 			{#if shown}
 				<svg

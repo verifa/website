@@ -6,6 +6,6 @@ export const load = async ({ params }) => {
 			post: post.default
 		};
 	} catch (e) {
-		throw error(404, "Cannot find job opening: " + params.slug)
+		error(404, "Cannot find job opening: " + params.slug);
 	}
 };

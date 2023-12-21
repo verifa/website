@@ -10,28 +10,27 @@
 	}[] = [
 		{
 			title: 'Value Stream Assessment',
-			url: '/work/value-stream-assessment'
+			url: '/work/value-stream-assessment/'
 		},
 		{
 			title: 'Software Delivery Platforms',
-			url: '/work/software-delivery-platforms'
+			url: '/work/software-delivery-platforms/'
 		},
 		{
 			title: 'Team Topologies',
-			url: '/work/team-topologies'
+			url: '/work/team-topologies/'
 		},
 		{
 			title: 'Cloud Architecture',
-			url: '/work/cloud-architecture'
-			//description: 'Designing cloud solutions and facilitating adoption',
+			url: '/work/cloud-architecture/'
 		},
 		{
 			title: 'How We Do It',
-			url: '/work/implementation'
+			url: '/work/implementation/'
 		}
 	];
 
-	let workMenuDiv;
+	let workMenuDiv: HTMLElement;
 	let shown = false;
 
 	// Subscribe to headerVisible store so that if the header disappears and we
@@ -50,14 +49,18 @@
 		shown = !shown;
 	}
 
+	function isActive(pathname: string): boolean {
+		return links.findIndex((link) => link.url === pathname) >= 0;
+	}
+
 	onMount(() => {
-		const handleOutsideClick = (event) => {
+		const handleOutsideClick = (event: any) => {
 			if (shown && !workMenuDiv.contains(event.target)) {
 				hide();
 			}
 		};
 
-		const handleEscape = (event) => {
+		const handleEscape = (event: any) => {
 			if (shown && event.key === 'Escape') {
 				hide();
 			}
@@ -78,12 +81,13 @@
 <div bind:this={workMenuDiv}>
 	<button
 		on:click={toggleShow}
-		class="text-xl py-2 text-v-black hover:text-v-lilac focus:outline-none font-medium border-b-2 border-v-black transition-all ease-in-out duration-150 {'/work/' ===
-		$page.url.pathname
-			? 'border-solid'
-			: 'border-transparent'}"
+		class="text-xl py-2 text-v-black hover:text-v-lilac focus:outline-none font-medium border-b-2 transition-all ease-in-out duration-150 {isActive(
+			$page.url.pathname
+		)
+			? 'border-v-black'
+			: 'border-v-black/0'}"
 	>
-		<div class="flex gap-x-2 items-center ">
+		<div class="flex gap-x-2 items-center">
 			What we do
 			{#if shown}
 				<svg

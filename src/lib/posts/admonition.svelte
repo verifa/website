@@ -1,15 +1,16 @@
-<script>
+<script lang="ts">
 	import ExclamationTriangle from '$lib/icons/exclamationTriangle.svelte';
 	import InfoCircle from '$lib/icons/infoCircle.svelte';
 	import LightBulb from '$lib/icons/lightBulb.svelte';
 	import { error } from '@sveltejs/kit';
+	import type { ComponentType } from 'svelte';
 
 	export let type = '';
 	export let title = '';
 
 	let defaultTitle = '';
 	let bgColor = '';
-	let icon;
+	let icon: ComponentType;
 
 	switch (type) {
 		case 'idea':
@@ -28,7 +29,7 @@
 			icon = ExclamationTriangle;
 			break;
 		default:
-			throw error(400, 'unknown admonition type ' + type);
+			error(400, 'unknown admonition type ' + type);
 	}
 </script>
 

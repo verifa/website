@@ -10,6 +10,6 @@ export async function load({ params, data }) {
 			relatedPosts: data.relatedPosts
 		};
 	} catch (e) {
-		throw error(404, "post cannot be found: " + params.slug)
+		error(404, "post cannot be found: " + params.slug);
 	}
 }

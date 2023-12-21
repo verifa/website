@@ -1,30 +1,22 @@
-
 import adapter from '@sveltejs/adapter-static';
-import preprocess from 'svelte-preprocess';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
 import mdsvexConfig from './mdsvex.config.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
-
-	// Consult https://github.com/sveltejs/svelte-preprocess
+	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	preprocess: [
-		preprocess({
-			postcss: true,
-		}),
+		vitePreprocess(),
 		mdsvex(mdsvexConfig)
 	],
 
 	kit: {
-		adapter: adapter({}),
-		prerender: {
-			default: true
-		},
-		// As we are hosting on GCP we want to always have the ending /index.html
-		trailingSlash: 'always'
+		adapter: adapter(),
 	}
 };
 
 export default config;
+

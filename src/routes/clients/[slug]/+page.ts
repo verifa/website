@@ -7,6 +7,6 @@ export const load = async ({ params }) => {
 			post: post.default,
 		};
 	} catch (e) {
-		throw error(404, "Cannot find case: " + params.slug)
+		error(404, "Cannot find case: " + params.slug);
 	}
 };

@@ -4,10 +4,9 @@
 	import { writable } from 'svelte/store';
 	import { onMount } from 'svelte';
 	import { seo } from '$lib/seo/store';
-	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 	import type { Post } from '$lib/posts/posts';
 
-	export let data: PageData;
+	export let data: any;
 
 	seo.reset();
 	$seo.title = 'Verifa blog and news';
@@ -35,7 +34,8 @@
 	// filterBlogs runs the filtering of blogs based on the selected keywords
 	const filterBlogs = (keywords: string[]): { showBlogs: Post[]; remainingKeywords: string[] } => {
 		if (keywords.length == 0) {
-			return { showBlogs: allBlogs, remainingKeywords: undefined };
+			// If no keywords selected, remainingKeywords should be all keywords.
+			return { showBlogs: allBlogs, remainingKeywords: allKeywords };
 		}
 		let remainingKeywords: string[] = [];
 		// If there are keywords, filter the blogs
@@ -108,22 +108,19 @@
 						</svg>
 						<span class="m-0 text-v-white font-semibold border-v-lilac">{keyword}</span>
 					</button>
-				{:else if remainingKeywords && !remainingKeywords.includes(keyword)}
-					<button
-						class="inline-block my-2 border-0 px-3 py-0.5 bg-v-gray hover:bg-v-gray focus:bg-v-gray disabled:bg-opacity-40"
-						on:click={() => {
-							$selectedKeywords[index] = !$selectedKeywords[index];
-						}}
-						disabled
-					>
-						<span class="m-0 text-v-white">{keyword}</span>
-					</button>
-				{:else}
+				{:else if remainingKeywords.includes(keyword)}
 					<button
 						class="inline-block my-2 border-0 px-3 py-0.5 bg-v-gray hover:bg-v-gray focus:bg-v-gray"
 						on:click={() => {
 							$selectedKeywords[index] = !$selectedKeywords[index];
 						}}
+					>
+						<span class="m-0 text-v-white">{keyword}</span>
+					</button>
+				{:else}
+					<button
+						class="inline-block my-2 border-0 px-3 py-0.5 bg-v-gray hover:bg-v-gray focus:bg-v-gray disabled:bg-opacity-40"
+						disabled
 					>
 						<span class="m-0 text-v-white">{keyword}</span>
 					</button>
