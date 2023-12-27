@@ -14,6 +14,7 @@ export async function load({ params }) {
 			keywords: tags
 		})
 		return {
+			slug: params.slug,
 			relatedPosts: postsData.posts
 		};
 	} catch (e) {
