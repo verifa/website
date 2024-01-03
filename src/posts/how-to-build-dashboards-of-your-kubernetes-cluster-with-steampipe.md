@@ -8,14 +8,8 @@ tags:
 - Kubernetes
 - Cloud
 date: 2023-08-22
-image: "/blogs/how-to-build-dashboards-of-your-kubernetes-cluster-with-steampipe/how-to-build-dashboards-of-your-kubernetes-cluster-with-steampipe-blog.png"
+image: "/static/blog/how-to-build-dashboards-of-your-kubernetes-cluster-with-steampipe/how-to-build-dashboards-of-your-kubernetes-cluster-with-steampipe-blog.png"
 featured: true
----
-
-<script>
-    import Admonition from '$lib/posts/admonition.svelte'
-</script>
-
 ---
 
 In this blog post we will take a look at [Steampipe](https://steampipe.io/), starting with some basics and then getting into more practical examples. We’ll be querying a Kubernetes cluster with Steampipe and then building a dashboard out of our queries that can be shared amongst colleagues or even publicly in the [Steampipe hub](https://hub.steampipe.io/).
@@ -145,7 +139,7 @@ Dashboards are written in text files using the [HashiCorp Configuration Language
 
 ### First Dashboard
 
-Before creating the dashboard we will have to initialize a new Steampipe [mod](https://steampipe.io/docs/mods/overview), mods are a way to package a collection of Steampipe queries/dashboards etc. to a package that can be shared, for example in [Steampipe hub](https://hub.steampipe.io/). 
+Before creating the dashboard we will have to initialize a new Steampipe [mod](https://steampipe.io/docs/mods/overview), mods are a way to package a collection of Steampipe queries/dashboards etc. to a package that can be shared, for example in [Steampipe hub](https://hub.steampipe.io/).
 
 First we create an empty directory and then initialize the mod inside of the directory:
 
@@ -206,7 +200,7 @@ steampipe dashboard
 
 After running the command, Steampipe will try to open your default browser. Click on the link of the dashboard and you will see the card there:
 
-![steampipe-kubernetes-dashboard-1](/blogs/how-to-build-dashboards-of-your-kubernetes-cluster-with-steampipe/steampipe-kubernetes-dashboard-1.png)
+![steampipe-kubernetes-dashboard-1](/static/blog/how-to-build-dashboards-of-your-kubernetes-cluster-with-steampipe/steampipe-kubernetes-dashboard-1.png)
 
 That was easy, but not very visual yet. I think we can do be better with little additional effort.
 
@@ -299,7 +293,7 @@ dashboard "k8s_dashboard" {
 
 And, the dashboard should look like this now:
 
-![steampipe-kubernetes-dashboard-2](/blogs/how-to-build-dashboards-of-your-kubernetes-cluster-with-steampipe/steampipe-kubernetes-dashboard-2.png)
+![steampipe-kubernetes-dashboard-2](/static/blog/how-to-build-dashboards-of-your-kubernetes-cluster-with-steampipe/steampipe-kubernetes-dashboard-2.png)
 
 Let’s also add the query from before to find all the pods using the legacy container registry, for this we will create a `card` and a `table`. Idea is that the `card` will provide us visibility with a quick glance if we’re affected, to make this really pop we will set the `type` column to alert if the count of pods is not 0:
 
@@ -319,7 +313,7 @@ query "pods_using_legacy_registry_card" {
 }
 ```
 
-Setting the type to alert has the effect of making the `card` red. You should also note that the above resource is a [query](https://steampipe.io/docs/reference/mod-resources/query) resource instead of a `card` or a `table` . Using `query` resources helps to keep the file a bit more organised. 
+Setting the type to alert has the effect of making the `card` red. You should also note that the above resource is a [query](https://steampipe.io/docs/reference/mod-resources/query) resource instead of a `card` or a `table` . Using `query` resources helps to keep the file a bit more organised.
 
 Also note that the `query` resource should not be placed inside the `dashboard` resource.
 
@@ -419,7 +413,7 @@ query "pods_using_legacy_registry_table" {
 
 Putting these new pieces together should look something like the below screenshot (scroll a bit further down to find the finalised dashboard):
 
-![steampipe-kubernetes-dashboard-3](/blogs/how-to-build-dashboards-of-your-kubernetes-cluster-with-steampipe/steampipe-kubernetes-dashboard-3.png)
+![steampipe-kubernetes-dashboard-3](/static/blog/how-to-build-dashboards-of-your-kubernetes-cluster-with-steampipe/steampipe-kubernetes-dashboard-3.png)
 
 Having the table and card together allows us to immediately drill-down for more information without leaving the browser. This is also a nice way of sharing information to stakeholders that might not have access to the cluster directly.
 
@@ -522,4 +516,3 @@ query "pods_using_legacy_registry_table" {
 We’ve only scratched the surface of what is possible with Steampipe in this blog, maybe we will explore more features and plugins in future blog posts. We highly recommend [checking out the project](https://steampipe.io/). Even if your SQL is rusty, we find it’s quite easy to get things done and after a bit of practice you’ll find yourself writing queries ad-hoc to answer questions that pop up.
 
 If you found something wrong with the content or something felt vague or awesome, leave us a comment! Additionally, if you’d like any help with Steampipe and/or Kubernetes [please get in touch](https://verifa.io/contact/index.html)!
-

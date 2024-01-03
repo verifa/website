@@ -9,22 +9,22 @@ tags:
 - Kubernetes
 - Terraform
 date: 2022-09-27
-image: "/blogs/quickstart-jenkins-jcasc-in-kubernetes/quickstart-jenkins-jcasc-in-kubernetes.png"
+image: "/static/blog/quickstart-jenkins-jcasc-in-kubernetes/quickstart-jenkins-jcasc-in-kubernetes.png"
 featured: true
 
 ---
 
 Jenkins is a well-proven CI tool and a key link in the software delivery chain of many organisations, but managing one or more Jenkins instances adds an overhead to your teams. Defining your Jenkins instances as code and automating their scaling is a great way to reduce this management overhead, while improving the maintainability, stability and disaster recovery of your deployments.
 
-In this blog we use Terraform to create a Kubernetes Cluster in Azure Cloud onto which we install our Jenkins Controller using Helm. Both the Jenkins Controller and the Agents are defined as code; our Jenkins Controller using JCasC (Jenkins Configuration as Code), and our Jenkins Agents as part of our Declarative Pipelines.  
+In this blog we use Terraform to create a Kubernetes Cluster in Azure Cloud onto which we install our Jenkins Controller using Helm. Both the Jenkins Controller and the Agents are defined as code; our Jenkins Controller using JCasC (Jenkins Configuration as Code), and our Jenkins Agents as part of our Declarative Pipelines.
 
 ## Introduction
 
 Jenkins Configuration-as-Code (JCasC) has been covered in great detail already; this blog will focus on the running of both Jenkins Controllers (previously Masters) and Jenkins Agents in Kubernetes. The really exciting thing about this approach is that Jenkins Agents can be defined per-job and spun up when needed! Together with an auto-scaling Kubernetes cluster, this means we have an auto-scaling Jenkins deployment which will run at minimal cost while idling and offer performance when necessary.
 
-![Jenkins JCasC in Kubernetes illustration 1](/blogs/quickstart-jenkins-jcasc-in-kubernetes/jenkins-jcasc-in-kubernetes-illustration-1.png)
+![Jenkins JCasC in Kubernetes illustration 1](/static/blog/quickstart-jenkins-jcasc-in-kubernetes/jenkins-jcasc-in-kubernetes-illustration-1.png)
 
-![Jenkins JCasC in Kubernetes illustration 2](/blogs/quickstart-jenkins-jcasc-in-kubernetes/jenkins-jcasc-in-kubernetes-illustration-2.png)
+![Jenkins JCasC in Kubernetes illustration 2](/static/blog/quickstart-jenkins-jcasc-in-kubernetes/jenkins-jcasc-in-kubernetes-illustration-2.png)
 
 ## Terraforming our Kubernetes Cluster
 
@@ -115,7 +115,7 @@ controller:
               multibranchPipelineJob('jenkins-in-kubernetes-example-pipeline') {
                 branchSources {
                   git {
-                    id('jenkins-in-kubernetes-example-pipeline')  
+                    id('jenkins-in-kubernetes-example-pipeline')
                     remote('https://github.com/verifa/jenkins-in-kubernetes-example-pipeline.git')
                   }
                 }

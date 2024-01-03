@@ -3,6 +3,7 @@ type: Job
 layout: job
 title: 'Open Application'
 subheading: We're always on the look out for talented consultants to help deliver expert services around all things Continuous, Cloud and DevOps to our customers.
+active: false
 authors:
   - verifa
 tags:
@@ -10,9 +11,7 @@ tags:
 - DevOps
 - Software Architecture
 date: 2022-06-29
-image: "/blogs/jobs/open-application-image.png"
-jobActive: true
-
+image: "/static/blog/jobs/open-application-image.png"
 ---
 
 We're always on the look out for talented consultants to help deliver expert services around all things Continuous, Cloud and DevOps to our customers.
@@ -35,15 +34,13 @@ We're always on the look out for talented consultants to help deliver expert ser
 
 ### A bit about us
 
-We’re an experienced crew of DevOps and Cloud professionals dedicated to helping our customers with Continuous practices and Cloud adoption. We're not your typical consultancy house! When it comes to our consulting, we always put the customer's interests first and use open source products as much as possible. We’re also a HashiCorp partner and regularly use their products to solve customer challenges. 
+We’re an experienced crew of DevOps and Cloud professionals dedicated to helping our customers with Continuous practices and Cloud adoption. We're not your typical consultancy house! When it comes to our consulting, we always put the customer's interests first and use open source products as much as possible. We’re also a HashiCorp partner and regularly use their products to solve customer challenges.
 
 We're looking for people who share our values of being open, honest and providing no bulls**t consulting to our customers! We want to work with the best people, no matter their background. So if you’re passionate about all things cloud and continuous, and want to learn new things, you’ll fit right in. [Find out more about us here](https://verifa.io/company).
 
-<blockquote>
-  ‘I feel like I’ve found my professional home in Verifa. A place where professionals are treated with respect and have a say in their own work and the company itself.’
-  <br/>
-  <cite>Lauri Suomalainen, Cloud Architect</cite>
-</blockquote>
+> I feel like I’ve found my professional home in Verifa. A place where professionals are treated with respect and have a say in their own work and the company itself.
+>
+> <footer>Lauri Suomalainen, Cloud Architect</footer>
 
 [Read more from Lauri here](https://verifa.io/blog/one-year-at-verifa-a-retrospective)
 

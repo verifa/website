@@ -11,7 +11,7 @@ tags:
   - Containers
   - Continuous Delivery
 date: 2020-09-05
-image: /blogs/2020-09-05/main.svg
+image: /static/blog/2020-09-05/main.svg
 featured: true
 ---
 
@@ -48,7 +48,7 @@ adding these capabilities quite manageable.
 
 A quick walkthrough of the Nomad architecture will help us elaborate.
 
-![Nomad diagram](/blogs/2020-09-05/nomad-diagram.svg)
+![Nomad diagram](/static/blog/2020-09-05/nomad-diagram.svg)
 
 ## Nomad Architecture
 

@@ -1,14 +1,14 @@
 ---
 type: Blog
 title: Unlock your Continuous Delivery potential with Value Stream Mapping
-subheading: In this blog I cover challenges teams face while improving their release process, and how Value Stream Mapping can be used to overcome them. 
+subheading: In this blog I cover challenges teams face while improving their release process, and how Value Stream Mapping can be used to overcome them.
 authors:
 - jlarfors
 tags:
 - Continuous Delivery
-- Value Stream Mapping
+- Value Streams
 date: 2022-09-07
-image: "/blogs/unlock-continuous-delivery-potential-vsm/unlock-your-continuous-delivery-vsm.png"
+image: "/static/blog/unlock-continuous-delivery-potential-vsm/unlock-your-continuous-delivery-vsm.png"
 featured: true
 
 ---
@@ -41,7 +41,7 @@ Ownership is pivotal when making change. If those responsible for an activity si
 
 ### Lack of feedback
 
-Continuous Delivery is all about (continuous) feedback to the development team, yet ironically, it is common to struggle getting feedback on the improvement process itself. This is not just about metrics, such as lead time or mean time to recovery, but also about feedback from the people involved in the improvements. 
+Continuous Delivery is all about (continuous) feedback to the development team, yet ironically, it is common to struggle getting feedback on the improvement process itself. This is not just about metrics, such as lead time or mean time to recovery, but also about feedback from the people involved in the improvements.
 
 Applying the Build-Measure-Learn process to Continuous Delivery will help in making a successful transformation and ensuring the Developer Experience is at the forefront of change and not an afterthought.
 
@@ -71,7 +71,7 @@ A Value Stream Map is a visual tool showing the series of events that take a pro
 
 Value Stream Mapping (VSM) is a method for defining a Value Stream and analysing the current flow in order to remove waste and to derive a more lean and continuous workflow. When applied to Continuous Delivery, it documents the current delivery process and highlights waste as well as opportunities for improvement.
 
-![Simplified example Value Stream Map for Continuous Delivery of software](/blogs/unlock-continuous-delivery-potential-vsm/mock-vsm.png)
+![Simplified example Value Stream Map for Continuous Delivery of software](/static/blog/unlock-continuous-delivery-potential-vsm/mock-vsm.png)
 Simplified example Value Stream Map for Continuous Delivery of software
 
 ### Addressing challenges with Continuous Delivery
@@ -112,11 +112,9 @@ It is recommended to include management in the Value Stream Mapping process; it�
 
 If you use Value Stream Mapping to help guide your Continuous Delivery journey, you will better understand what your team’s individual challenges are and better reason about possible solutions. Once you know ***why*** you are doing something, it’s much easier to start looking for best practices that try to solve the same thing. Love the problem, not the solution. There is no endgame with Continuous Delivery and time is finite.
 
-<blockquote>
-  ‘Love the problem, not the solution. There is no endgame with Continuous Delivery and time is finite.’
-  <br/>
-  <cite>Jacob Lärfors, Verifa</cite>
-</blockquote>
+> Love the problem, not the solution. There is no endgame with Continuous Delivery and time is finite.
+>
+> <footer>Jacob Lärfors, Verifa</footer>
 
 ## Conclusion
 

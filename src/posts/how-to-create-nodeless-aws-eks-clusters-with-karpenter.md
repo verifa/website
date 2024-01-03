@@ -9,7 +9,7 @@ tags:
 - Kubernetes
 - Terraform
 date: 2023-03-07
-image: "/blogs/nodeless-aws-eks-clusters-with-karpenter/nodeless-aws-eks-clusters-with-karpenter.png"
+image: "/static/blog/nodeless-aws-eks-clusters-with-karpenter/nodeless-aws-eks-clusters-with-karpenter.png"
 featured: true
 ---
 
@@ -21,12 +21,12 @@ There are plenty of “getting started” and “how to” posts available onlin
 
 ## Background
 
-[Karpenter](https://github.com/aws/karpenter) is a project by AWS which they announced as [ready for production](https://aws.amazon.com/blogs/aws/introducing-karpenter-an-open-source-high-performance-kubernetes-cluster-autoscaler/) in November 2021. It is a Kubernetes operator that manages Kubernetes worker nodes directly, based on [provisioner requirements](https://karpenter.sh/preview/concepts/provisioners/#specrequirements), rather than scaling existing node groups, which is how the popular [Cluster Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler) works.
+[Karpenter](https://github.com/aws/karpenter) is a project by AWS which they announced as [ready for production](https://aws.amazon.com/static/blog/aws/introducing-karpenter-an-open-source-high-performance-kubernetes-cluster-autoscaler/) in November 2021. It is a Kubernetes operator that manages Kubernetes worker nodes directly, based on [provisioner requirements](https://karpenter.sh/preview/concepts/provisioners/#specrequirements), rather than scaling existing node groups, which is how the popular [Cluster Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler) works.
 
 <figure>
-  <img src="/blogs/nodeless-aws-eks-clusters-with-karpenter/karpenter-how-it-works-diagram.png" alt="karpenter-how-it-works">
+  <img src="/static/blog/nodeless-aws-eks-clusters-with-karpenter/karpenter-how-it-works-diagram.png" alt="karpenter-how-it-works">
   <figcaption>
-    Source: https://aws.amazon.com/blogs/aws/introducing-karpenter-an-open-source-high-performance-kubernetes-cluster-autoscaler/
+    Source: https://aws.amazon.com/static/blog/aws/introducing-karpenter-an-open-source-high-performance-kubernetes-cluster-autoscaler/
   </figcaption>
 </figure>
 

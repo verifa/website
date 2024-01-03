@@ -1,0 +1,50 @@
+package website
+
+type link struct {
+	href string
+	text string
+}
+
+var headerLinks = []link{
+    {href: "/services/", text: "Services"},
+    {href: "/work/", text: "Work"},
+    {href: "/company/", text: "About us"},
+    {href: "/careers/", text: "Careers"},
+    {href: "/blog/", text: "Blog"},
+    {href: "/contact/", text: "Contact"},
+}
+
+templ header(uri string) {
+	<header
+ 		class="py-6 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24"
+	>
+		<div>
+			<nav class="mx-auto flex items-center justify-between gap-x-8" aria-label="Global">
+				<a class="flex-none" href="/">
+					<span class="sr-only">verifa</span>
+					<img
+ 						class="h-10 w-full md:h-12 object-contain object-left"
+ 						src={verifaLogoSVG}
+ 						alt="verifa-logo"
+					/>
+				</a>
+				<!-- Desktop menu -->
+				<div class="hidden md:flex md:items-center md:gap-x-10 md:flex-wrap">
+                    for _, link := range headerLinks {
+                        <a
+                            href={ templ.URL(link.href) }
+                            class={
+                                "py-2 v-element border-b-2 border-v-white hover:text-v-lilac hover:border-v-lilac focus:outline-none",
+                                templ.KV("!border-v-black", uri == link.href),
+                            }
+                        >
+                            { link.text }
+                        </a>
+                    }
+				</div>
+				<!-- Mobile menu button -->
+				// <MobileMenu />
+			</nav>
+		</div>
+	</header>
+}

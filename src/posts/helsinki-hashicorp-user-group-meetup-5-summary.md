@@ -7,10 +7,8 @@ authors:
 tags:
 - HashiCorp
 date: 2022-12-16
-image: "/blogs/helsinki-hug-5/hug-blog-summary-5.png"
+image: "/static/blog/helsinki-hug-5/hug-blog-summary-5.png"
 featured: true
-jobActive: true
-
 ---
 **Helsinki HashiCorp User Group is a meetup full of interesting talks and insights about all things HashiCorp, plus a chance to connect with fellow professionals and hobbyists alike.**
 
@@ -19,7 +17,6 @@ Our friends over at [UpCloud](https://upcloud.com/) very kindly hosted the fift
 Here’s a brief summary of the talks along with links to the presentation decks, and the full meetup recording.
 
 <iframe width="100%" height="410" src="https://www.youtube.com/embed/0VFFKZ32yXQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 
 ### How to codify your cloud infra using UpCloud CDK for Terraform provider
 

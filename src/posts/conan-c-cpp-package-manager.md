@@ -12,7 +12,7 @@ tags:
   - Open Source
   - Continuous Integration
 date: 2020-09-04
-image: /blogs/2020-09-04/main.svg
+image: /static/blog/2020-09-04/main.svg
 featured: true
 ---
 
@@ -47,7 +47,7 @@ If you build a package with a different setting or option, Conan will treat this
 This, on a very high level, is how Conan enables distributing pre-built binaries across multiple
 platforms and environments.
 
-![conan diagram](/blogs/2020-09-04/conan-diagram.svg)
+![conan diagram](/static/blog/2020-09-04/conan-diagram.svg)
 
 Where Conan also packs a punch is when it comes to integrating with multiple build tools. I like
 to think of it as Conan generates the "glue" for your build system to understand which packages

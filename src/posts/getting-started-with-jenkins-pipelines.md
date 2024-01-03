@@ -9,7 +9,7 @@ tags:
   - Jenkins
   - Continuous Integration
 date: 2020-09-21
-image: /blogs/2020-09-21/main.jpg
+image: /static/blog/2020-09-21/main.jpg
 ---
 
 **New to Jenkins pipelines? It can be difficult to figure out what a minimal working setup is, and whether to use normal or multibranch pipelines. Let's take a look at what you need to do to get up and running.**

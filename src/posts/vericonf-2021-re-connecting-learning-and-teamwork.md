@@ -9,9 +9,8 @@ tags:
 - VeriConf
 - Verifa Culture
 date: 2021-09-27
-image: "/blogs/2021-09-27/vericonf-2021-02.svg"
+image: "/static/blog/2021-09-27/vericonf-2021-02.svg"
 featured: true
-jobActive: true
 ---
 
 **Verifa has always been greater than the sum of its parts. As a consultancy house, we strive to offer our customers the collective knowledge and expertise of the whole team. Communication, teamwork and collaboration is therefore vitally important to us. But to be quite honest, and like many other companies, it's been put to the test these last 18 months or so with the switch to work from home / remote work.**
@@ -32,7 +31,7 @@ Arrival and settling in with a delicious lunch of salmon soup served with tradit
 
 After a welcome buffet dinner and toast, Jacob and Andreas gave us a bit of history about Verifa and VeriConf. In the meantime, the wonderful staff at the villa had heated up the sauna and sea water jacuzzi where we spent the rest of the evening chatting into the wee small hours!
 
-![Verifa team line-up](/blogs/2021-09-27/vericonf2021_team_web2.png)
+![Verifa team line-up](/static/blog/2021-09-27/vericonf2021_team_web2.png)
 
 ### Day 2
 
@@ -52,7 +51,7 @@ At Verifa, we're very open to initiatives for improving efficiency and processes
 
 With a fresh new batch of recruits onboard, it's a great time to reevaluate what Verifa is and what kind of company we want it to be. As we basked in the sun by the sea, we discussed what we like about Verifa, what we would want to change or improve, and where we want Verifa to go in the future. It was a great starting point for shaping the company's future, something that we will carry forward into our weekly all-hands management meetings going forward.
 
-![Verifa wordcloud](/blogs/2021-09-27/vericonf-wordcloud.png "Verifa wordcloud")
+![Verifa wordcloud](/static/blog/2021-09-27/vericonf-wordcloud.png "Verifa wordcloud")
 
 #### Shoot & Throw Team Challenge
 
@@ -62,7 +61,7 @@ The moment we'd all been waiting for finally arrived. We got to channel our inne
 
 After enjoying a delicious buffet of typical Archipelago food and treats we once again took advantage of the sauna and sea water jacuzzi. It turns out that we have a bunch of board game nerds at Verifa, so we dived into our curated collection and played into the night.
 
-![Verifa team practicing archery](/blogs/2021-09-28/vericonf_archery-web2.png)
+![Verifa team practicing archery](/static/blog/2021-09-28/vericonf_archery-web2.png)
 
 ### Day 3
 

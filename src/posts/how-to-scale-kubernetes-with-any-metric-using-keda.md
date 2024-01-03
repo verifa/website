@@ -9,15 +9,10 @@ tags:
 - Elastic
 - Cloud
 date: 2023-05-29
-image: "/blogs/how-to-scale-kubernetes-with-any-metric-using-keda/how-to-scale-k8s-any-metric-keda.png"
+image: "/static/blog/how-to-scale-kubernetes-with-any-metric-using-keda/how-to-scale-k8s-any-metric-keda.png"
 featured: true
 ---
 
-<script>
-    import Admonition from '$lib/posts/admonition.svelte'
-</script>
-
----
 
 Scaling an Elastic stack in Kubernetes or any Kubernetes cluster can be a challenge if you don't scale based on default scaling metrics such as CPU, Memory, or Storage. Luckily, Kubernetes has built-in support for Horizontal Pod Autoscaling (HPA) based on CPU and memory metrics. However, what if your cluster needs to scale based on other parameters? For example, how can we scale our cluster based on other key parameters like JVM heap size usage, or the count of pending tasks, or any other important metrics? Let's explore this further.
 
@@ -28,7 +23,7 @@ From the perspective of Kubernetes, a general autoscaling approach can rely on b
 Kubernetes KEDA comes to the rescue. From their website,
 
 > KEDA is a single-purpose and lightweight component that can be added into any Kubernetes cluster. KEDA works alongside standard Kubernetes components like the Horizontal Pod Autoscaler and can extend functionality without overwriting or duplication.
-> 
+>
 
 KEDA is an incubating CNCF project which was accepted to CNCF on March 12, 2020. Read more about them [here](https://www.cncf.io/projects/keda/).
 
@@ -38,7 +33,7 @@ In this blog post, we will explore how to scale a sample application such as Ela
 
 To begin, it's advisable to start with a diagram. The image below provides an example of a Kubernetes cluster setup for Elastic Stack. Please note that the cluster diagram does not include namespace separation. Instead, the node separation represents deployments/statefulsets for the HPA to act on. Additionally, the handling of secrets is not represented in the diagram.
 
-![how-to-scale-k8s-any-metric-keda-diagram](/blogs/how-to-scale-kubernetes-with-any-metric-using-keda/how-to-scale-k8s-any-metric-keda-diagram-2.png)
+![how-to-scale-k8s-any-metric-keda-diagram](/static/blog/how-to-scale-kubernetes-with-any-metric-using-keda/how-to-scale-k8s-any-metric-keda-diagram-2.png)
 
 The figure above depicts two Kubernetes clusters: one running production workloads and the other, a dedicated monitoring cluster in accordance with the official recommendation for Elastic Stack. Alternatively, these components can exist within a single Kubernetes cluster separated by namespaces for a simpler architecture. The purpose of a dedicated monitoring cluster is to ensure the ability to perform troubleshooting in case the production cluster is not operational or is inaccessible. All metrics and data about the production cluster are stored in this monitoring cluster.
 
@@ -86,7 +81,7 @@ Lets take a look at the JVM metric. This is the JVM usage level from the product
 curl -u elastic:elatic123 'https://prodelastic.com:9200/_nodes/es01/stats/jvm?pretty'
 ```
 
- Produces output: 
+ Produces output:
 
 ```bash
 {
@@ -100,7 +95,7 @@ curl -u elastic:elatic123 'https://prodelastic.com:9200/_nodes/es01/stats/jvm?pr
     "aDLDdo3aQXqUmEYMZ3Axyw" : {
       "timestamp" : 1682062177795,
       "name" : "es01",
-			...
+   ...
       "jvm" : {
         "timestamp" : 1682062177795,
         "uptime_in_millis" : 138913,
@@ -135,15 +130,15 @@ curl -XPUT -H 'Content-Type: application/json' -u elastic:test123 'https://monit
                   "lte": "{{date.max}}",
                   "format": "{{#join delimiter=\'||\'}}date.formats{{/join delimiter=\'||\'}}"
                 }
-              }      
+              }
             },
             {
               "range": {
                 "nodes.aDLDdo3aQXqUmEYMZ3Axyw.jvm.thread.count": {
                   "gte": "{{count}}"
                 }
-              }      
-            }           
+              }
+            }
           ]
         }
       }

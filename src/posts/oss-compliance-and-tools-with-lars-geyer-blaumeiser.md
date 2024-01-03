@@ -11,20 +11,19 @@ tags:
 - Open Source
 - OSS Compliance
 date: 2021-06-27
-image: "/blogs/2021-06-28/ep03_-podcast_9201080_small.png"
+image: "/static/blog/2021-06-28/ep03_-podcast_9201080_small.png"
 featured: true
-jobActive: true
-
 ---
+
 <iframe title="Embedded podcast player" src="https://anchor.fm/verifa/embed/episodes/OSS-Compliance-and-Tools-with-Lars-Geyer-Blaumeiser-e13bptn" height="151px" width="100%" frameborder="0" scrolling="no"></iframe>
 
-<div class="blog-flex">
+<div class="flex gap-x-4">
 
-[![Listen on Spotify](/blogs/2021-03-30/listen-on-spotify.png)](https://open.spotify.com/show/12yStrneLdEsXn1Bjp6Myz)
+[![Listen on Spotify](/static/blog/2021-03-30/listen-on-spotify.png)](https://open.spotify.com/show/12yStrneLdEsXn1Bjp6Myz)
 
-[![Listen on Apple Podcasts](/blogs/2021-03-30/listen-on-apple-podcasts.png)](https://podcasts.apple.com/gb/podcast/the-verifa-podcast/id1561051552)
+[![Listen on Apple Podcasts](/static/blog/2021-03-30/listen-on-apple-podcasts.png)](https://podcasts.apple.com/gb/podcast/the-verifa-podcast/id1561051552)
 
-[![Listen on Google Podcasts](/blogs/2021-03-30/listen-on-google-podcasts.png)](https://www.google.com/podcasts?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy81Mzg0NzE1Yy9wb2RjYXN0L3Jzcw==)
+[![Listen on Google Podcasts](/static/blog/2021-03-30/listen-on-google-podcasts.png)](https://www.google.com/podcasts?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy81Mzg0NzE1Yy9wb2RjYXN0L3Jzcw==)
 
 </div>
 

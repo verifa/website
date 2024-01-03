@@ -1,16 +1,14 @@
 ---
 type: Event
 title: 'Helsinki HashiCorp User Group Meetup #4 summary'
-subheading: A summary of the fourth Helsinki HashiCorp User Group (HUG) including presentations on Terraform, Kubernetes, and ArgoCD. 
+subheading: A summary of the fourth Helsinki HashiCorp User Group (HUG) including presentations on Terraform, Kubernetes, and ArgoCD.
 authors:
 - ckurowski
 tags:
 - HashiCorp
 date: 2022-03-25
-image: "/blogs/helsinki-hug-4/hug-blog-summary-4.png"
+image: "/static/blog/helsinki-hug-4/hug-blog-summary-4.png"
 featured: true
-jobActive: true
-
 ---
 **Helsinki HashiCorp User Group is a quarterly meetup full of interesting talks and insights about all things HashiCorp, plus a chance to connect with fellow professionals and hobbyists alike.**
 

@@ -1,0 +1,149 @@
+package website
+
+import "fmt"
+
+// What we want:
+// - A list of (filtered) blog posts to show
+// - A list of tags to filter by.
+// - Which tags are still selectable.
+templ blogs(posts []*Post, tags map[string]TagStatus) {
+	<div id="blog-posts-grid">
+		<section class="container mx-auto">
+			<div class="flex space-x-4">
+				<div>
+					<img class="h-16 w-16 object-contain" src="/static/logo-element.png" alt="logo-ement"/>
+				</div>
+				<div>
+					<p class="v-h3">Our blog and news.</p>
+					<p class="v-h1">Out and about.</p>
+				</div>
+			</div>
+			<div class="mt-12">
+				<p class="v-h3">Filter by tag</p>
+				<form
+					hx-get="/blog/"
+					hx-trigger="change"
+					hx-target="#blog-posts-grid"
+					hx-swap="outerHTML"
+				>
+					<div
+						class="flex flex-wrap gap-x-4"
+					>
+						for _, tag := range sortTags(tags) {
+							<div class="">
+								<input
+									type="checkbox"
+									id={ tag }
+									name={ tag }
+									class="peer hidden"
+									if tags[tag] == TagStatusChecked {
+										checked
+									}
+									if tags[tag] == TagStatusNone {
+										disabled
+									}
+								/>
+								<label
+									for={ tag }
+									value={ tag }
+									class="
+                                my-2 border-0 px-3 py-0.5 bg-v-gray  focus:bg-v-gray
+                                flex items-center gap-x-1 text-v-white
+                                cursor-pointer
+                                hover:peer-enabled:bg-v-pink
+                                peer-checked:bg-v-pink
+                                peer-disabled:bg-opacity-40
+                                peer-disabled:cursor-not-allowed
+                                "
+								>
+									<p>#{ tag }</p>
+								</label>
+							</div>
+						}
+					</div>
+				</form>
+			</div>
+		</section>
+		<section class="container mx-auto">
+			@PostsGrid(posts, PostsGridOptions{})
+		</section>
+	</div>
+}
+
+templ blog(post *Post) {
+	<div class="container mx-auto">
+		<section class="">
+			<h1 class="v-h1 text-center">{ post.Title }</h1>
+			<div class="mt-2 flex flex-wrap gap-x-2 justify-center">
+				for tag := range post.Tags {
+					<a href={ templ.URL("/blog/?tags=" + tag) } class="px-2 v-p group/tag hover:bg-v-pink">
+						<span class="text-v-gray group-hover/tag:text-v-white">#</span><span class="text-v-black/70 group-hover/tag:text-v-white">{ tag }</span>
+					</a>
+				}
+			</div>
+			<p class="mt-8 text-center text-v-black/70">
+				@authorLinks(post.Authors)
+				&nbsp;•&nbsp;{ fmt.Sprintf("%d minutes", int(post.ReadingTime.Minutes())) }&nbsp;•&nbsp;{ post.Date.Format("2006-01-02") }
+			</p>
+		</section>
+		<div class="max-w-3xl mx-auto">
+			<article class="prose md:prose-lg lg:prose-xl xl:prose-2xl">
+				<img class="w-full h-full" src={ post.Image } alt={ post.Title }/>
+				<div id="blog-container">
+					@templ.Raw(string(post.Body))
+				</div>
+				<hr class="border-1 border-v-gray"/>
+				<div class="not-prose flex flex-wrap justify-center gap-8">
+					for _, author := range post.Authors {
+						<a href={ templ.URL("/crew/" + author.ID + "/") }>
+							<img class="w-40 lg:w-52 flex-none rounded-sm object-cover" src={ author.Profile } alt={ author.Name }/>
+							<p>{ author.Name }</p>
+							<p>{ author.Position }</p>
+						</a>
+					}
+				</div>
+				<hr class="border-1 border-v-gray"/>
+				<h2>Comments</h2>
+				<script src="https://giscus.app/client.js" data-repo="verifa/website" data-repo-id="R_kgDOGo3alQ" data-category="Blog" data-category-id="DIC_kwDOGo3alc4CcKOD" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async></script>
+				<hr class="border-1 border-v-gray"/>
+			</article>
+		</div>
+		<section>
+			<div class="v-h2">
+				<h2 class="">Read similar posts</h2>
+			</div>
+			<div class="mt-8">
+				@PostsGrid(post.SimilarPosts, PostsGridOptions{})
+			</div>
+		</section>
+	</div>
+}
+
+templ authorLinks(authors []Member) {
+	for i, author := range authors {
+		<a href={ templ.URL("/crew/" + author.ID + "/") } class="">
+			if i == 0 {
+				{ author.Name }
+			} else {
+				, { author.Name }
+			}
+		</a>
+	}
+}
+
+templ iconTagChecked() {
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		class="h-6 w-6"
+		fill="none"
+		viewBox="0 0 24 24"
+		stroke="currentColor"
+	>
+		<path
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="3"
+			d="M5 13l4 4L19 7"
+		></path>
+	</svg>
+}

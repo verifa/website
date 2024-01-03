@@ -8,7 +8,7 @@ tags:
 - Continuous Integration
 - Continuous Delivery
 date: 2022-07-07
-image: "/blogs/keep-your-pipelines-simple.png"
+image: "/static/blog/keep-your-pipelines-simple.png"
 featured: true
 
 ---
@@ -29,7 +29,7 @@ Here’s my three rules to keep my pipelines more manageable and my colleagues s
 
 Many platforms offer plugins or tool integrations that make it seductively easy to configure and run your tools for you. However, the flip side of that particular coin is often forgotten. For each plugin or custom action you use, you increase platform lock-in, introduce a new dependency, introduce a new attack vector, and add another build step you can’t run locally.
 
-Do the dirty work, rather than delegating it. 
+Do the dirty work, rather than delegating it.
 
 ***Don’t:***
 
@@ -49,18 +49,18 @@ Do the dirty work, rather than delegating it.
 
 ```yaml
 - name: build
-	run: ./gradlew build
+ run: ./gradlew build
 
 - name: tag
-	run: |
-		VERSION=$(git describe)
-		git tag -a $VERSION -m "Tagged by build pipeline"
-		git push origin $VERSION
+ run: |
+  VERSION=$(git describe)
+  git tag -a $VERSION -m "Tagged by build pipeline"
+  git push origin $VERSION
 ```
 
 ### 2. Keep logic out of the pipeline
 
-From invoking tools to actual scripting, it’s easy to jam it all into your pipeline, but this makes it difficult to run locally. Move such logic to build scripts and have your pipelines call those instead. This allows you to run and debug your build steps locally, and keeps your pipelines focused on the build *flow*. 
+From invoking tools to actual scripting, it’s easy to jam it all into your pipeline, but this makes it difficult to run locally. Move such logic to build scripts and have your pipelines call those instead. This allows you to run and debug your build steps locally, and keeps your pipelines focused on the build *flow*.
 
 Keep your pipeline stupid. The less it does, the better.
 
@@ -68,25 +68,25 @@ Keep your pipeline stupid. The less it does, the better.
 
 ```yaml
 - name: test
-	env:
-		SECRET: ${{ secrets.UPLOAD_KEY }}
-		MODULES_FOR_TEST: ${{ steps.check.outputs.* }}
-	run: |
-		for mod in $MODULES_FOR_TEST; 
-		do
-			pytest modules/$mod/* -v --junitxml="$mod.xml"
-			./upload.py -name="$mod" -key="$SECRET" -file="$mod.xml"
-		done
+ env:
+  SECRET: ${{ secrets.UPLOAD_KEY }}
+  MODULES_FOR_TEST: ${{ steps.check.outputs.* }}
+ run: |
+  for mod in $MODULES_FOR_TEST;
+  do
+   pytest modules/$mod/* -v --junitxml="$mod.xml"
+   ./upload.py -name="$mod" -key="$SECRET" -file="$mod.xml"
+  done
 ```
 
 ***Do:***
 
 ```yaml
 - name: test
-	env:
-		SECRET: ${{ secrets.UPLOAD_KEY }}
-	run: |
-		./scripts/test.sh --upload-key "$SECRET"
+ env:
+  SECRET: ${{ secrets.UPLOAD_KEY }}
+ run: |
+  ./scripts/test.sh --upload-key "$SECRET"
 ```
 
 ### 3. Limit layers of abstraction

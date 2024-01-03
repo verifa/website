@@ -12,20 +12,18 @@ tags:
 - DevOps
 - Continuous Delivery
 date: 2021-03-30
-image: "/blogs/2021-03-30/podcast_ep01_920-1080.png"
+image: "/static/blog/2021-03-30/podcast_ep01_920-1080.png"
 featured: true
-jobActive: true
-
 ---
 <iframe title="Embedded podcast player" src="https://anchor.fm/verifa/embed/episodes/A-first-look-at-GKE-Autopilot-ett6kl" height="151px" width="100%" frameborder="0" scrolling="no"></iframe>
 
-<div class="blog-flex">
+<div class="flex gap-x-4">
 
-[![Listen on Spotify](/blogs/2021-03-30/listen-on-spotify.png)](https://open.spotify.com/show/12yStrneLdEsXn1Bjp6Myz)
+[![Listen on Spotify](/static/blog/2021-03-30/listen-on-spotify.png)](https://open.spotify.com/show/12yStrneLdEsXn1Bjp6Myz)
 
-[![Listen on Apple Podcasts](/blogs/2021-03-30/listen-on-apple-podcasts.png)](https://podcasts.apple.com/gb/podcast/the-verifa-podcast/id1561051552)
+[![Listen on Apple Podcasts](/static/blog/2021-03-30/listen-on-apple-podcasts.png)](https://podcasts.apple.com/gb/podcast/the-verifa-podcast/id1561051552)
 
-[![Listen on Google Podcasts](/blogs/2021-03-30/listen-on-google-podcasts.png)](https://www.google.com/podcasts?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy81Mzg0NzE1Yy9wb2RjYXN0L3Jzcw==)
+[![Listen on Google Podcasts](/static/blog/2021-03-30/listen-on-google-podcasts.png)](https://www.google.com/podcasts?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy81Mzg0NzE1Yy9wb2RjYXN0L3Jzcw==)
 
 </div>
 
@@ -77,7 +75,7 @@ Connect with today's podcast team:
 
 **Jacob:** \[00:02:08\] Yeah. Maybe one day, one day. Cool. I don't think I need to tell, which is my favourite public cloud, because I'm already outnumbered here. My opinion is obsolete. Anyway I guess the reason for everybody talking about clouds today is because we are going to talk about a cloud feature or a new cloud capability.
 
-&nbsp;  
+&nbsp;
 
 ##### What do we mean by a managed Kubernetes service?
 
@@ -95,7 +93,7 @@ So you only have to focus on handling the workloads you want to run on the clust
 
 **Lauri:** \[00:04:59\] you don't have to worry about which kind of service they are running on or what kind of network topology, there is, what sort of other considerations like multi-tenancy, is there in a cluster and so on because that's all managed for you.
 
-&nbsp;  
+&nbsp;
 
 ##### What are the differences between GKE, AKS, EKS?
 
@@ -121,7 +119,7 @@ So they should be very same.
 
 **Jacob:** \[00:08:24\] which I guess in a nutshell is the definition of testing
 
-&nbsp;  
+&nbsp;
 
 ##### What is GKE Autopilot?
 
@@ -165,7 +163,7 @@ Right? Somebody please, correct me as I'm speaking out of my depths here. I'd be
 
 **Lauri:** \[00:13:05\] Yeah, you are correct.
 
-&nbsp;  
+&nbsp;
 
 ##### Fully managed Kubernetes vs. Serverless approach
 
@@ -311,7 +309,7 @@ And you shouldn't know, you shouldn't care about them. So I think from the netwo
 
 **Lauri:** \[00:36:14\] And also in a way, Autopilot is a subset of features of GKE standard. Of course you lose some freedom when giving giving up control to Google cloud platform in regards of your cloud service, that's the price you have to pay.
 
-&nbsp;  
+&nbsp;
 
 ##### When to use Autopilot and when not?
 

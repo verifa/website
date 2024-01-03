@@ -10,13 +10,9 @@ tags:
 - Kubernetes
 - Vault
 date: 2023-03-07
-image: "/blogs/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes.png"
+image: "/static/blog/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes.png"
 featured: true
 ---
-
-<script>
-    import Admonition from '$lib/posts/admonition.svelte'
-</script>
 
 **There are multiple ways of accessing secrets in HashiCorp Vault from your Kubernetes workloads. Which approach should you use? Well, "it depends", so let’s cover some common approaches and where the complexity in each approach lies to help you make an informed decision.**
 
@@ -42,9 +38,7 @@ We will rank each approach based on three effort levels:
 
 We decided on these three levels as we feel they closely reflect how HashiCorp Vault is used in the industry: typically a platform team manages Vault itself and defines the recommended approaches for accessing secrets while stream-aligned teams deploy their workloads that retrieve the secrets (according to the [Team Topologies](https://teamtopologies.com/key-concepts) definition of teams). The responsibility of writing the Kubernetes manifests (i.e. the Deployment Effort) is something that varies: sometimes the platform team provide an abstraction over this, other times stream-aligned teams interact directly with the Kubernetes API. That is also something that depends on what platform you are building.
 
-<Admonition type="info" title="Note">
-    Setting up a Kubernetes cluster and HashiCorp Vault instance (as well as auth methods) was not taken into account as part of the effort, as they are prerequisites for all the methods.
-</Admonition>
+@admonition::warning::Setting up a Kubernetes cluster and HashiCorp Vault instance (as well as auth methods) was not taken into account as part of the effort, as they are prerequisites for all the methods.
 
 If you are interested in the end results right away, here they are. Keep reading to learn about each approach and why we gave it that score. Higher values represent more work.
 
@@ -66,11 +60,11 @@ Now let us cover some of the groundwork before we get into the comparison.
 
 When it comes to Kubernetes, a typical use case is that we will have a pod that requires some identity (i.e. a secret) to talk with some other service that could be running anywhere.
 
-![k8s-use-case](/blogs/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-use-case.png)
+![k8s-use-case](/static/blog/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-use-case.png)
 
 The obvious approach is to create a [Kubernetes Secret object](https://kubernetes.io/docs/concepts/configuration/secret/) manually that our pod can use. We heavily recommend against doing this in production, as illustrated by the following diagram:
 
-![k8s-use-case-problems](/blogs/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-use-case-problems.png)
+![k8s-use-case-problems](/static/blog/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-use-case-problems.png)
 
 ### Why do we care so much about secrets?
 
@@ -91,13 +85,12 @@ Stolen or compromised credentials is still the **#1 initial attack vector in 202
 
 Breaches caused by stolen or compromised credentials have **the longest lifecycle**. The longer the lifecycle, the higher the cost of the breach.
 
-<Admonition type="idea">
-    It is a really good idea to use a secrets manager that is <strong>automation-friendly</strong> to avoid secret sprawl and help prevent compromised credentials. And this is where HashiCorp Vault excels.
-</Admonition>
+> [!TIP]
+> It is a really good idea to use a secrets manager that is <strong>automation-friendly</strong> to avoid secret sprawl and help prevent compromised credentials. And this is where HashiCorp Vault excels.
 
 Our goal, therefore, is to use HashiCorp Vault to manage identities and secrets and to access these from our Kubernetes workloads. Of course not all identities should be managed this way, e.g. you could use AWS [IAM Roles for Service Accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) if using EKS.
 
-![k8s-goal](/blogs/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-goal.png)
+![k8s-goal](/static/blog/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-goal.png)
 
 ## Comparison
 
@@ -113,7 +106,7 @@ As a recap, the approaches we will compare are:
 
 Vault is an API-driven tool, which means that any action you perform can be done via the [REST API](https://developer.hashicorp.com/vault/api-docs) (the CLI and Web UI use the REST API). Therefore you can interact with the REST API directly from your application, either using a standard HTTP library or a [client library](https://developer.hashicorp.com/vault/api-docs/libraries) of your choice. Your workload pod will then interact with the Vault REST API directly.
 
-![k8s-vault-rest-api](/blogs/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-vault-rest-api.png)
+![k8s-vault-rest-api](/static/blog/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-vault-rest-api.png)
 
 #### Vault REST API: Effort
 
@@ -139,7 +132,7 @@ When using the REST API, you can do anything that Vault, your programming langua
 
 The [Vault Agent Sidecar Injector](https://developer.hashicorp.com/vault/docs/platform/k8s/injector) relies on [pod annotations](https://developer.hashicorp.com/vault/docs/platform/k8s/injector#secrets-via-annotations) and "injects" secrets into the pod. Under the hood there is a [Kubernetes Mutating Webhook Controller](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/) that modifies the pod if the `vault.hashicorp.com/agent-inject: true` annotation is detected. A shared memory volume is mounted and used by sidecars (`init` and `sidecar`) that fetch and can also renew the secret.
 
-![k8s-vault-sidecar-injector](/blogs/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-vault-sidecar-injector.png)
+![k8s-vault-sidecar-injector](/static/blog/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-vault-sidecar-injector.png)
 
 #### Vault Sidecar Injector: Effort
 
@@ -171,7 +164,7 @@ The [Vault CSI Provider](https://developer.hashicorp.com/vault/docs/platform/k8s
 
 Although the Secrets Store CSI Driver makes a volume available for pods to mount, it is also possible to [sync the volume to a Kubernetes secret](https://secrets-store-csi-driver.sigs.k8s.io/topics/sync-as-kubernetes-secret.html).
 
-![k8s-vault-csi-provider](/blogs/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-vault-csi-provider.png)
+![k8s-vault-csi-provider](/static/blog/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-vault-csi-provider.png)
 
 #### Vault CSI Provider: Effort
 
@@ -199,7 +192,7 @@ The [External Secrets Operator](https://external-secrets.io/v0.7.2/) is a Kubern
 
 In our experience, this seems to be a very popular method of getting secrets out of Vault and into Kubernetes, and the attraction is that it is very easy and is decoupled from the workloads (for better or for worse). Hence in the below diagram our workload pod is nowhere to be seen because it is not needed.
 
-![k8s-external-secrets-operator](/blogs/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-external-secrets-operator.png)
+![k8s-external-secrets-operator](/static/blog/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-external-secrets-operator.png)
 
 #### External Secrets Operator: Effort
 
@@ -227,7 +220,7 @@ The [ArgoCD Vault Plugin](https://argocd-vault-plugin.readthedocs.io/en/stable/)
 
 The plugin works by templating placeholders in Kubernetes manifests with secrets read from secrets managers (like [HashiCorp Vault](https://argocd-vault-plugin.readthedocs.io/en/stable/backends/#hashicorp-vault), though [others are supported](https://argocd-vault-plugin.readthedocs.io/en/stable/backends/) as well). Obviously you do not want to put your sensitive values straight into Kubernetes objects which are not made for storing sensitive values, so, likely, your sensitive values are templated into Kubernetes secrets. However, this does mean if you store non-sensitive values in Vault (e.g. cloud resource IDs, or other configurations), then you **could template those** directly into your Kubernetes manifests. This is a fairly opinionated topic, so let’s say that "it depends" whether that’s a good thing or not, but it’s an interesting side effect that solves many common problems with passing values from infrastructure tools like Terraform to your Kubernetes manifests.
 
-![k8s-argocd-vault-plugin](/blogs/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-argocd-vault-plugin.png)
+![k8s-argocd-vault-plugin](/static/blog/comparing-methods-for-accessing-secrets-in-vault-from-kubernetes/k8s-argocd-vault-plugin.png)
 
 #### ArgoCD Vault Plugin: Effort
 

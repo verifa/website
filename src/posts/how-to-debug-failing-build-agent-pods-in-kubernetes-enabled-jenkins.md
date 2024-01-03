@@ -11,10 +11,8 @@ tags:
 - Continuous Integration
 - Containers
 date: 2021-07-05
-image: "/blogs/2021-07-05/how-to-debug-failing-build-agent-pods-kubernetes-jenkins.png"
+image: "/static/blog/2021-07-05/how-to-debug-failing-build-agent-pods-kubernetes-jenkins.png"
 featured: true
-jobActive: true
-
 ---
 **Running Jenkins in a Kubernetes cluster is a great way to enable auto-scaling of the infrastructure hosting your Jenkins Build Agents. However, when the Build Agent Pods fail to start correctly, it can be difficult to troubleshoot. In this short article we look at some simple things you can do to figure out what's going wrong.**
 
@@ -108,7 +106,7 @@ From the description above we can see that the jnlp container has Failed, so let
 $ kubectl logs example-projects-andreas-test-... jnlp
 
 INFO: Protocol JNLP4-connect encountered an unexpected exception
-java.util.concurrent.ExecutionException: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Unknown client name: 
+java.util.concurrent.ExecutionException: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Unknown client name:
 ...
 Jun 18, 2021 12:04:41 PM hudson.remoting.jnlp.Main$CuiListener error
 SEVERE: The server rejected the connection: None of the protocols were accepted
@@ -158,7 +156,7 @@ spec:
 
 On startup, the jnlp container does not register with the Jenkins Master (as we've overridden the default startup/entrypoint with the **command** value). So the Jenkins Job finds no available Nodes and continues spawning Pods... So let's cancel the Jenkins Job.
 
-But we are now left with at least one Pod which is in state "Running" instead of "Failed". This allows us to debug the connection process.  
+But we are now left with at least one Pod which is in state "Running" instead of "Failed". This allows us to debug the connection process.
 Let's exec into the running container and try running the entrypoint. We can determine the entrypoint by looking at the Dockerfile for this image, for example:
 
 `ENTRYPOINT ["/usr/local/bin/jenkins-agent"]`

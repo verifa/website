@@ -7,7 +7,7 @@ authors:
 tags:
 - HashiCorp
 date: 2022-10-28
-image: "/blogs/helsinki-hug-5/hug-blog-event-5.png"
+image: "/static/blog/helsinki-hug-5/hug-blog-event-5.png"
 featured: false
 
 ---
@@ -19,7 +19,6 @@ featured: false
 **Place:** UpCloud, Aleksanterinkatu 15 B, Helsinki
 
 [Register here](https://www.meetup.com/helsinki-hashicorp-user-group/events/288940115/)
-
 
 The next Helsinki HashiCorp User Group is hosted by [UpCloud](https://upcloud.com/) at their offices in downtown Helsinki. This time round there’ll be a packed agenda with three presentations and some very special guests. Join for an evening of talks, networking, and snacks! The talks will also be live streamed and recorded for those who prefer to join online.
 

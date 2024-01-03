@@ -8,7 +8,7 @@ tags:
 - Kubernetes
 - Rancher
 date: 2022-05-19
-image: "/blogs/remove-rancher-from-kubernetes-cluster.png"
+image: "/static/blog/remove-rancher-from-kubernetes-cluster.png"
 featured: false
 
 ---
@@ -74,7 +74,7 @@ kubectl api-resources --verbs=list -o name --namespaced=true | grep "cattle.io" 
 
 In my case, there were only two unique subdomains of finalizers that were causing issues:
 
-1. `<possible-prefix.controller.cattle.io/<some-resource>` 
+1. `<possible-prefix.controller.cattle.io/<some-resource>`
 2. `<possible-prefix>.wrangler.cattle.io/<some-resource>`
 
 Neither `controller.cattle.io` or `wrangler.cattle.io` existed as resource types (nor any sub-types), and these finalizers were attached to many resources in multiple namespaces, and also some cluster-level resources.

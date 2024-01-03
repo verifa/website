@@ -10,7 +10,7 @@ tags:
 - AWS
 - Kubernetes
 date: 2022-04-26
-image: "/blogs/automate-hashicorp-vault-oss-backups-aws-eks.png"
+image: "/static/blog/automate-hashicorp-vault-oss-backups-aws-eks.png"
 featured: true
 
 ---
@@ -115,9 +115,9 @@ locals {
   vault_cluster_oidc_issuer_url = trimprefix(data.aws_eks_cluster.vault_cluster.identity[0].oidc[0].issuer, "https://")
 }
 
-# 
+#
 # Might as well create the S3 bucket whilst we are at it...
-# 
+#
 resource "aws_s3_bucket" "snapshots" {
   bucket = "hashicorp-vault-snapshots"
 }
@@ -127,9 +127,9 @@ resource "aws_s3_bucket" "snapshots" {
 #
 data "aws_caller_identity" "current" {}
 
-# 
+#
 # Get the cluster that vault is running in
-# 
+#
 data "aws_eks_cluster" "vault_cluster" {
   name = local.vault_cluster
 }
@@ -156,7 +156,7 @@ resource "aws_iam_role" "snapshot" {
           Resource = ["${aws_s3_bucket.snapshots.arn}/*"]
         }
       ]
-    }) 
+    })
   }
 }
 
@@ -207,10 +207,10 @@ locals {
   namespace = "vault-client"
 }
 
-# 
+#
 # Create kubernetes service account that vault can use to authenticate requests
 # from the cluster
-# 
+#
 resource "kubernetes_service_account" "this" {
   metadata {
     name      = "vault-auth"
@@ -219,9 +219,9 @@ resource "kubernetes_service_account" "this" {
   automount_service_account_token = "true"
 }
 
-# 
+#
 # Give the service account permissions to authenticate other service accounts
-# 
+#
 resource "kubernetes_cluster_role_binding" "this" {
   metadata {
     name = "vault-token-auth"
@@ -238,9 +238,9 @@ resource "kubernetes_cluster_role_binding" "this" {
   }
 }
 
-# 
+#
 # Get the secret created for the service account
-# 
+#
 data "kubernetes_secret" "this" {
   metadata {
     name      = kubernetes_service_account.this.default_secret_name
@@ -248,19 +248,19 @@ data "kubernetes_secret" "this" {
   }
 }
 
-# 
+#
 # Create the vault auth backend
-# 
+#
 resource "vault_auth_backend" "this" {
   type = "kubernetes"
   # Make this something else for multiple clusters
   path = "kubernetes"
 }
 
-# 
+#
 # Configure the backend to use the service account we created, so that vault
 # can verify requests made to this backend
-# 
+#
 resource "vault_kubernetes_auth_backend_config" "this" {
   backend                = vault_auth_backend.this.path
   # Get the EKS endpoint from somewhere, like a `aws_eks_cluster` data block

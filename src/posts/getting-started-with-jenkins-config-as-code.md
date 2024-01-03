@@ -9,7 +9,7 @@ tags:
   - Jenkins
   - Continuous Integration
 date: 2020-10-01
-image: /blogs/2020-10-01/main.svg
+image: /static/blog/2020-10-01/main.svg
 ---
 
 **Navigating all the content around Jenkins can look like an impossible challenge, especially for newbies. In this post we'll explore one of its most successful and useful plugins - Jenkins Config as Code.**
@@ -396,7 +396,7 @@ to hear that managing Jenkins using Config as Code is a **VERY GOOD** approach
 to avoiding Jenkins plugin bloat and ending up with a _Jenkinstein_ managing
 your CI process.
 
-<img src="/blogs/2020-10-01/img-01.png" alt="Halloween Jenkins" style="max-width: 300px;"/>
+<img src="/static/blog/2020-10-01/img-01.png" alt="Halloween Jenkins" style="max-width: 300px;"/>
 
 ## Conclusion
 

@@ -9,7 +9,7 @@ tags:
 - HashiCorp
 - Terraform
 date: 2022-10-19
-image: "/blogs/aws-load-balancer-controller-with-existing-alb/aws-load-balancer-controller-with-existing-alb.png"
+image: "/static/blog/aws-load-balancer-controller-with-existing-alb/aws-load-balancer-controller-with-existing-alb.png"
 featured: true
 
 ---
@@ -34,7 +34,7 @@ This really is the core source of the problem we wanted to address; how to use E
 
 The [AWS Load Balancer Controller](https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.4/) is a Kubernetes controller that can manage the lifecycle of AWS Load Balancers, TargetGroups, Listeners (and Rules), and connect them with nodes (and pods) in your Kubernetes cluster. Check out the [how it works](https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.4/how-it-works/) page for details on the design.
 
-![AWS-Load-Balancer-diagram-1](/blogs/aws-load-balancer-controller-with-existing-alb/aws-load-balancer-diagram-1.png)
+![AWS-Load-Balancer-diagram-1](/static/blog/aws-load-balancer-controller-with-existing-alb/aws-load-balancer-diagram-1.png)
 
 Looking back at our use case, we want to use an existing Application Load Balancer that is managed by Terraform. If you search for this online, you will most certainly find another lovely GitHub issue: [https://github.com/kubernetes-sigs/aws-load-balancer-controller/issues/228](https://github.com/kubernetes-sigs/aws-load-balancer-controller/issues/228)
 
@@ -71,7 +71,7 @@ For our case, this means managing the ALBs, Listeners, Rules and TargetGroups wi
 
 Expanding on our particular use case, we manage multiple EKS clusters that share Application Load Balancers. We already use ArgoCD [ApplicationSets](https://argocd-applicationset.readthedocs.io/en/stable/) to manage applications across clusters. We have a “root” cluster that runs core services, like ArgoCD, which connects to multiple other clusters. The below diagram is a high-level simplified illustration of the setup we want to achieve. It will be ArgoCD’s job to deploy the AWS Load Balancer Controller and `TargetGroupBinding` manifests to the different clusters.
 
-![AWS-Load-Balancer-diagram-2](/blogs/aws-load-balancer-controller-with-existing-alb/aws-load-balancer-diagram-2.png)
+![AWS-Load-Balancer-diagram-2](/static/blog/aws-load-balancer-controller-with-existing-alb/aws-load-balancer-diagram-2.png)
 
 Let’s look at how we implemented this with the AWS Load Balancer Controller next.
 
@@ -104,9 +104,9 @@ data "aws_iam_policy_document" "aws_lb_controller" {
   }
 }
 
-# 
+#
 # Create an AWS IAM role that will be assumed by our kubernetes service account
-# 
+#
 resource "aws_iam_role" "aws_lb_controller" {
   name               = "${local.cluster_name}-aws-lb-controller"
   assume_role_policy = data.aws_iam_policy_document.aws_lb_controller.json
@@ -146,7 +146,7 @@ Here is how we create the Kubernetes secret that essentially “register” a cl
 
 ```hcl
 locals {
- # 
+ #
  # Extract the target group name and ID to use in ArgoCD secret
  #
  aws_lb_controller = merge(coalesce(local.apps.aws_lb_controller, { enabled = false }), {
@@ -155,14 +155,14 @@ locals {
   })
 }
 
-# 
+#
 # Get cluster TargetGroup ARNs
 #
 data "aws_lb_target_group" "this" {
   name = "madeupname-${local.cluster_name}"
 }
 
-# 
+#
 # Create Kubernetes secret in root cluster where ArgoCD is running.
 #
 # The secret tells ArgoCD about a cluster and how to connect (e.g. credentials).

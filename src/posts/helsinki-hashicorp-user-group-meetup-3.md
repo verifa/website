@@ -8,10 +8,8 @@ authors:
 tags:
 - HashiCorp
 date: 2021-11-21
-image: "/blogs/2021-11-23/hug-blog-3.png"
+image: "/static/blog/2021-11-23/hug-blog-3.png"
 featured: false
-jobActive: true
-
 ---
 **Helsinki HashiCorp User Group (HUG) is a quarterly meetup full of interesting talks and insights about all things HashiCorp, plus a chance to connect with fellow professionals and hobbyists alike.**
 

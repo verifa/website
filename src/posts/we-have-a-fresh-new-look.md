@@ -7,9 +7,8 @@ authors:
 tags:
 - Verifa Culture
 date: 2022-02-16
-image: "/blogs/2022-02-16/main.png"
+image: "/static/blog/2022-02-16/main.png"
 featured: false
-jobActive: true
 ---
 
 ## We've got a fresh new look
@@ -26,7 +25,7 @@ We've simplified our website to make it easier for you to find the info you need
 
 Our logo has been with us since the beginning, and the company has evolved and grown since those early days. Our new logo needed to reflect and embody what Verifa stands for today. Again going for simplicity, the logo is monochrome and incorporates the infinity symbol, highlighting our focus on continuous everything. We are also evolving a new visual identity using a pastel palette, and emphasising continuous, cloud and people.
 
-![logo-change](/blogs/2022-02-16/logo-change.png)
+![logo-change](/static/blog/2022-02-16/logo-change.png)
 
 ### Our purpose: Not your everyday consultancy
 

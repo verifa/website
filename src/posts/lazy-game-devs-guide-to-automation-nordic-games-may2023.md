@@ -5,19 +5,14 @@ subheading: Recorded session at the Nordic Game conference, Malmö, May 2023
 authors:
 - zlaster
 tags:
-- Game Dev
+- Containers
+- Continuous Integration
 date: 2023-05-30
-image: "/blogs/ngc-talk-may23-game-dev-guide-to-automation.png"
+image: "/static/blog/ngc-talk-may23-game-dev-guide-to-automation.png"
 featured: false
 ---
 
-<script>
-    import Admonition from '$lib/posts/admonition.svelte'
-</script>
-
----
-
-The Nordic Game Conference is Europe's leading games conference, held twice a year in Malmö and Helsinki. It was great to be invited to record a session for the Malmö event on May 23-26, 2023, on one of my favorite subjects - automation in games development.
+**The Nordic Game Conference is Europe's leading games conference, held twice a year in Malmö and Helsinki. It was great to be invited to record a session for the Malmö event on May 23-26, 2023, on one of my favorite subjects - automation in games development.**
 
 Push a change, see it live on [Itch.io](http://itch.io/) in minutes, using free services. A non-technical guide to automating builds, deploying to users and eliminating other drudgery. Spend less time on tedious tasks, and spend more time actually developing your game by invisibly incorporating modern CI/CD techniques into your workflows.
 

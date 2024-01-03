@@ -8,11 +8,10 @@ authors:
 tags:
 - HashiCorp
 date: 2021-05-03
-image: "/blogs/2021-05-06/hashicrop-partner-illo-verifa-02.png"
+image: "/static/blog/2021-05-06/hashicrop-partner-illo-verifa-02.png"
 featured: false
-jobActive: true
-
 ---
+
 **Verifa announces partnership with HashiCorp**
 
 Verifa, your continuous delivery and DevOps partner, is delighted to announce its partnership with HashiCorp, the leader in multi-cloud infrastructure automation software.

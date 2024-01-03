@@ -9,12 +9,12 @@ tags:
 - Vault
 - Jenkins
 date: 2022-10-12
-image: "/blogs/secrets-handling-in-kubernetes-using-hashicorp-vault/secrets-handling-in-kubernetes-using-hashicorp-vault.png"
+image: "/static/blog/secrets-handling-in-kubernetes-using-hashicorp-vault/secrets-handling-in-kubernetes-using-hashicorp-vault.png"
 featured: true
 
 ---
 
-When running Jenkins jobs using the Kubernetes plugin, there are many ways to fetch secrets from HashiCorp Vault. [In the previous post](/blog/secrets-handling-in-kubernetes-a-jenkins-story/) we stored the secrets in Kubernetes, but let’s look at options that don’t persist secrets in the cluster. 
+When running Jenkins jobs using the Kubernetes plugin, there are many ways to fetch secrets from HashiCorp Vault. [In the previous post](/blog/secrets-handling-in-kubernetes-a-jenkins-story/) we stored the secrets in Kubernetes, but let’s look at options that don’t persist secrets in the cluster.
 
 In the earlier post the secrets were not stored as plain-text in the Jenkins controller, but still the secrets were stored together with the encryption key on the persistent volume. Using a secret manager allows us to increase the security posture further, and make our lives easier when there is one central location to store and modify the secrets, which also records an audit trail of all activities. When using Vault as secret manager the secrets are only fetched into the running worker pods in the beginning of a pipeline. When the pipeline finishes, the pod is terminated and the secrets are no longer anywhere in the cluster.
 
@@ -38,7 +38,7 @@ Unlike the first two, this option has no external dependencies or software to in
 
 There’s no one-size-fits-all solution or answer, however here’s a flow chart to help make the decision but it’s not exhaustive:
 
-![Decision tree-integrate jenkins with vault](/blogs/secrets-handling-in-kubernetes-using-hashicorp-vault/decision-tree-integrate-jenkins-with-vault.png)
+![Decision tree-integrate jenkins with vault](/static/blog/secrets-handling-in-kubernetes-using-hashicorp-vault/decision-tree-integrate-jenkins-with-vault.png)
 
 Based on this we decide to not use the Helm chart or Jenkins plugin and just setup the Kubernetes auth method for directly accessing the Vault API. Let’s see how that can be configured next.
 
@@ -50,7 +50,7 @@ Based on this we decide to not use the Helm chart or Jenkins plugin and just set
 - k3d v5.3.0
 - kubectl v1.22.0
 - Terraform v1.2.6
-    - Vault provider 3.4.1
+  - Vault provider 3.4.1
 - jq-1.6
 
 Where possible the version for images etc. is embedded into the code snippets.
@@ -165,7 +165,7 @@ resource "vault_kubernetes_auth_backend_role" "jenkins-dev" {
   bound_service_account_namespaces = ["jenkins-dev"]
   token_ttl                        = 3600
   token_policies                   = ["jenkins-dev"]
-}The heart of the configuration is in the `vault_kubernetes_auth_backend_role` resource: 
+}The heart of the configuration is in the `vault_kubernetes_auth_backend_role` resource:
 ```
 
 ```bash
@@ -226,7 +226,7 @@ spec:
     args:
     - infinity
   - name: vault
-	    image: hashicorp/vault:1.11.0
+     image: hashicorp/vault:1.11.0
     env:
     - name: VAULT_ADDR
       value: "http://dev-vault:8200"
@@ -257,11 +257,10 @@ spec:
 }
 ```
 
-Note the `serviceAccount` field and name of the role in the Vault CLI command, this is the configuration in Jenkins in order to access the Vault secrets. For ease of use and brevity we will use the Vault CLI instead of the API directly in the pipeline, but to drop the dependency on an additional container/binary the Vault API can be used directly with `curl` for example. 
+Note the `serviceAccount` field and name of the role in the Vault CLI command, this is the configuration in Jenkins in order to access the Vault secrets. For ease of use and brevity we will use the Vault CLI instead of the API directly in the pipeline, but to drop the dependency on an additional container/binary the Vault API can be used directly with `curl` for example.
 
 ## Summary/Conclusion
 
 Looking at the pipeline, there’s actually nothing Jenkins specific to the solution presented here. We could run any pod in the `jenkins-dev` namespace with service account `jenkins-dev` to access the secrets that the policy in Vault allows. No hard coded and long-lived credentials laying around! No need for complex groovy syntax, Helm charts or Jenkins plugins. This keeps the pipeline flexible in case you (or the management) decide to ditch Jenkins and go for another tool to run your CI/CD pipelines.
-
 
 This is a follow up blog to [Secrets handling in Kubernetes - A Jenkins story](/blog/secrets-handling-in-kubernetes-a-jenkins-story/), where we explore some ways of getting secrets into Jenkins which we deploy in Kubernetes, without the use of an external secrets manager.

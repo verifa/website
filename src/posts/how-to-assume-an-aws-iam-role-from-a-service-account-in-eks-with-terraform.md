@@ -11,7 +11,7 @@ tags:
 - AWS
 - Kubernetes
 date: 2021-12-07
-image: "/blogs/2021-12-08/blog-eks_aws_iam.png"
+image: "/static/blog/2021-12-08/blog-eks_aws_iam.png"
 featured: true
 
 ---

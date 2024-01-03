@@ -10,10 +10,8 @@ tags:
 - GitOps
 - Continuous Delivery
 date: 2021-06-13
-image: "/blogs/2021-06-14/all-you-need-is-git-image-01.png"
+image: "/static/blog/2021-06-14/all-you-need-is-git-image-01.png"
 featured: true
-jobActive: true
-
 ---
 **Automating deployments (A.K.A. Continuous Deployment) is not just running your _“deploy”_ command in a pipeline, but it requires a lot more. How do we manage our releases? What if something goes wrong? There is much more to automated deployments... enter GitOps!**
 
@@ -62,13 +60,13 @@ There are two ways of deploying in GitOps. They are:
 
 #### a) Push based - Continuous Deployment
 
-![Push based GitOps](/blogs/2021-06-14/gitops-blog-diagram-1-white-04.png)
+![Push based GitOps](/static/blog/2021-06-14/gitops-blog-diagram-1-white-04.png)
 
 In a push based approach, the changes are pushed to the target environment as a part of continuous deployment. In a Kubernetes world, a tool performs _kubectl apply_, or _helm upgrade_ at a Deploy stage in the Continuous Deployment pipeline. One should remember that it is still controlled by changes in version control, but just an extension of Continuous integration. Needless to say, this is the traditional approach to Continuous Deployment. E.g. Pipelines implemented with Jenkins, GitLab, GitHubActions etc.
 
 #### b) Pull based - Continuous deployment
 
-![Pull based GitOps](/blogs/2021-06-14/gitops-blog-diagram-2-white-05.png)
+![Pull based GitOps](/static/blog/2021-06-14/gitops-blog-diagram-2-white-05.png)
 
 In a pull based approach, there is an agent, proxy or operator running inside your target environment which pulls and deploys changes to itself, from a version control system. It's still from version control, but not an extension of your Continuous Integration (CI) pipeline. Also it eliminates the need to have a broker in between.
 

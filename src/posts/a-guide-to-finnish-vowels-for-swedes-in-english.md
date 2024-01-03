@@ -4,10 +4,16 @@ title: A guide to pronouncing Finnish vowels for Swedes in English
 subheading: Improve your Finnish vowel pronunciation using Swedish.
 authors:
 - jlarfors
+- ckurowski
+- lsuomalainen
+- lsuomalainen
+- lsuomalainen
+- lsuomalainen
+- lsuomalainen
 tags:
 - Verifa Culture
 date: 2023-12-12
-image: "/blogs/finnish-vowels-for-swedes/finnish-vowels-for-swedes.png"
+image: "/static/blog/finnish-vowels-for-swedes/finnish-vowels-for-swedes.png"
 featured: false
 hidden: true
 ---

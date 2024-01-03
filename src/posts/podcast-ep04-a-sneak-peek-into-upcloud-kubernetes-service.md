@@ -10,24 +10,19 @@ tags:
 - Cloud
 - UpCloud
 date: 2022-08-16
-image: "/blogs/podcast-ep04-a-sneak-peek-into-upcloud-kubernetes-service.png"
+image: "/static/blog/podcast-ep04-a-sneak-peek-into-upcloud-kubernetes-service.png"
 featured: true
-jobActive: true
-
 ---
-<script>
-    import Admonition from '$lib/posts/admonition.svelte'
-</script>
 
 <iframe title="Embedded podcast player" src="https://anchor.fm/verifa/embed/episodes/A-sneak-peek-into-UpCloud-Kubernetes-Service-e1miudr" height="151px" width="100%" frameborder="0" scrolling="no"></iframe>
 
-<div class="blog-flex">
+<div class="flex gap-x-4">
 
-[![Listen on Spotify](/blogs/2021-03-30/listen-on-spotify.png)](https://open.spotify.com/show/12yStrneLdEsXn1Bjp6Myz)
+[![Listen on Spotify](/static/blog/2021-03-30/listen-on-spotify.png)](https://open.spotify.com/show/12yStrneLdEsXn1Bjp6Myz)
 
-[![Listen on Apple Podcasts](/blogs/2021-03-30/listen-on-apple-podcasts.png)](https://podcasts.apple.com/gb/podcast/the-verifa-podcast/id1561051552)
+[![Listen on Apple Podcasts](/static/blog/2021-03-30/listen-on-apple-podcasts.png)](https://podcasts.apple.com/gb/podcast/the-verifa-podcast/id1561051552)
 
-[![Listen on Google Podcasts](/blogs/2021-03-30/listen-on-google-podcasts.png)](https://www.google.com/podcasts?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy81Mzg0NzE1Yy9wb2RjYXN0L3Jzcw==)
+[![Listen on Google Podcasts](/static/blog/2021-03-30/listen-on-google-podcasts.png)](https://www.google.com/podcasts?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy81Mzg0NzE1Yy9wb2RjYXN0L3Jzcw==)
 
 </div>
 
@@ -35,24 +30,23 @@ jobActive: true
 
 In this episode of The Continuous & Cloud Podcast, Jacob and Lauri chat with Ville Törhönen, Product Owner at UpCloud, about UpCloud’s upcoming managed Kubernetes Service (UKS).
 
-<Admonition type="info">
-
-UPDATE (March 2023): UpCloud’s Managed Kubernetes is now in Open Beta. [Give it a spin here.](https://upcloud.com/products/managed-kubernetes)
-</Admonition>
+> [!NOTE]
+>
+> UPDATE (March 2023): UpCloud’s Managed Kubernetes is now in Open Beta. [Give it a spin here.](https://upcloud.com/products/managed-kubernetes)
 
 ## During this episode we discuss
 
 - What is a managed Kubernetes service? \[00:39\]
 - What is UpCloud Kubernetes Service (UKS)? \[03:10\]
-    - Motivation behind UKS’ development
-    - What’s under the hood?
-    - How to create a Kubernetes cluster in UKS
+  - Motivation behind UKS’ development
+  - What’s under the hood?
+  - How to create a Kubernetes cluster in UKS
 - What do you get from UpCloud that supports the Kubernetes service? \[06:02\]
-    - What do you get ‘out of the box’?
-    - What can you customise?
+  - What do you get ‘out of the box’?
+  - What can you customise?
 - How has it been developing UKS? \[13:10\]
-    - Timescale and team
-    - Kubernetes community and open source projects
+  - Timescale and team
+  - Kubernetes community and open source projects
 - Observability and monitoring in UKS \[20:42\]
 - What are the main benefits of using UpCloud and UKS? \[23:51\]
 - When will UKS be available? \[25:40\]
@@ -62,14 +56,14 @@ UPDATE (March 2023): UpCloud’s Managed Kubernetes is now in Open Beta. [Give i
 
 [UpCloud Kubernetes Engineer vacancy](https://jobs.upcloud.com/o/kubernetes-engineer)
 
-[UpCloud CSI driver on Github](https://github.com/UpCloudLtd/upcloud-csi) 
-
+[UpCloud CSI driver on Github](https://github.com/UpCloudLtd/upcloud-csi)
 
 ## About Ville Törhönen
 
 Ville (MSc, Tech) is working as a Product Owner at UpCloud. He is responsible for the upcoming UpCloud Kubernetes Service (UKS) product offering but also Developer Experience on the platform. Previously he’s been building various businesses and products on top of container technologies in companies like Unity, Noice and Redhill Games.
 
 ## About UpCloud
+
 [UpCloud](https://upcloud.com/) is a European Cloud Service Provider offering fast, easy-to-use, and reliable cloud products and services. UpCloud has 12 data centers around the globe. The company is a a strong believer in open source. That’s why all their services are available from [public repositories](https://github.com/UpCloudLtd). UpCloud’s mission is to make Infrastructure as Code easier for businesses of all sizes.
 
 ## Connect with today’s podcast crew on Linkedin
@@ -82,7 +76,7 @@ Ville (MSc, Tech) is working as a Product Owner at UpCloud. He is responsible fo
 
 ## Transcript
 
-### Hello and welcome!
+### Hello and welcome
 
 **Jacob** \[00:15\]: Welcome to the Continuous and Cloud Podcast by Verifa. I'm your host, Jacob, and my co-host today is Lauri.
 

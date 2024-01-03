@@ -9,7 +9,7 @@ tags:
 - Vault
 - Kubernetes
 date: 2022-11-22
-image: "/blogs/webinar-221122-hashicorp-vault-kubernetes.png"
+image: "/static/blog/webinar-221122-hashicorp-vault-kubernetes.png"
 featured: true
 
 ---
@@ -17,7 +17,6 @@ featured: true
 ### Watch the playback
 
 <iframe width="100%" height="410" src="https://www.youtube.com/embed/BnnClLoihSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 
 [Download Erkan’s presentation](https://drive.google.com/file/d/1j9z2xiKtNKvr3KVDooY2U5iDe6Kz8mnw/view?usp=share_link)
 

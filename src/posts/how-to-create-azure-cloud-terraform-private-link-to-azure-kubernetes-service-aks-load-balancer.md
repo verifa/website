@@ -3,17 +3,15 @@ type: Blog
 title: How to create an Azure Private Link to a Load Balancer in AKS with Terraform
 subheading: In this blog we'll look at how to build an Azure Kubernetes Service (AKS)
   cluster with a private Load Balancer.
-authors: 
+authors:
 - alarfors
 tags:
 - Azure
 - Terraform
 - Kubernetes
 date: 2021-11-02
-image: "/blogs/2021-11-03/azure-cloud-partners-01.svg"
+image: "/static/blog/2021-11-03/azure-cloud-partners-01.svg"
 featured: true
-jobActive: true
-
 ---
 **Infrastructure-as-Code (IaC) is a great way of managing your infrastructure, increasing maintainability and traceability, among other things. Terraform is a very popular IaC tool, in part because it supports so many different platforms and tools with its large community of Providers. If you're working with Azure Cloud, for example, you will probably use the** [**Azure Cloud Terraform Provider**](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs) **(azurerm - for it uses the Azure Resource Manager API).**
 
@@ -76,12 +74,12 @@ Now we need to create a Private Link Service to each Load Balancer. This is wher
 ```hcl
 resource "azurerm_private_link_service" "example" {
   for_each = kubernetes_service.loadbalancer
-  
+
   name                = "pl-${each.value.metadata.0.name}"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
 
-  
+
   load_balancer_frontend_ip_configuration_ids = [
     data.azurerm_lb.example.frontend_ip_configuration[
       index(        data.azurerm_lb.example.frontend_ip_configuration.*.private_ip_address,
@@ -103,7 +101,7 @@ Creating our `azurerm_private_link_service.example` resource requires the `load_
 We achieve this using the index( ... ) function in Terraform:
 
 ```hcl
-index(  
+index(
   data.azurerm_lb.example.frontend_ip_configuration.*.private_ip_address,
   each.value.status.0.load_balancer.0.ingress.0.ip
 )
@@ -146,9 +144,9 @@ resource "azurerm_kubernetes_cluster" "example" {
   ...
 }
 
-# Configure the kubernetes provider 
+# Configure the kubernetes provider
 provider "kubernetes" {
-  host = azurerm_kubernetes_cluster.example.kube_config.0.host 
+  host = azurerm_kubernetes_cluster.example.kube_config.0.host
 
   client_certificate     = base64decode( azurerm_kubernetes_cluster.example.kube_config.0.client_certificate)
   client_key             = base64decode( azurerm_kubernetes_cluster.example.kube_config.0.client_key)
@@ -184,11 +182,11 @@ data "azurerm_lb" "example" {
 # Create a private link service for each environment
 resource "azurerm_private_link_service" "example" {
   for_each = kubernetes_service.loadbalancer
-  
+
   name                = "pl-${each.value.metadata.0.name}"
   ...
 
-  
+
   load_balancer_frontend_ip_configuration_ids = [
     data.azurerm_lb.example.frontend_ip_configuration[
       index(        data.azurerm_lb.example.frontend_ip_configuration.*.private_ip_address,

@@ -9,9 +9,9 @@ tags:
 - Continuous Delivery
 - DevOps
 - Software Architecture
-date: 2022-03-30T21:00:00Z
-image: "/blogs/jobs/job-cloud-architect-azure.png"
-jobActive: false
+date: 2022-03-30
+image: "/static/blog/jobs/job-cloud-architect-azure.png"
+active: false
 
 ---
 
@@ -65,11 +65,9 @@ We’re a small company and as such, you’ll have the opportunity to influence 
 
 We want to work with the best people, no matter their background. So if you’re passionate about all things cloud and continuous, and want to learn new things, you’ll fit right in.
 
-<blockquote>
-  ‘I feel like I’ve found my professional home in Verifa. A place where professionals are treated with respect and have a say in their own work and the company itself.’
-  <br/>
-  <cite>Lauri Suomalainen, Cloud Architect</cite>
-</blockquote>
+> I feel like I’ve found my professional home in Verifa. A place where professionals are treated with respect and have a say in their own work and the company itself.
+>
+> <footer>Lauri Suomalainen, Cloud Architect</footer>
 
 [Read more from Lauri here](https://verifa.io/blog/one-year-at-verifa-a-retrospective)
 

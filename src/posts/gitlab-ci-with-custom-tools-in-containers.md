@@ -7,16 +7,11 @@ authors:
 tags:
 - Containers
 - Continuous Integration
-- GameDev
 date: 2023-04-28
-image: "/blogs/gitlab-ci-with-custom-tools-in-containers/supporting-gitlab-ci-with-custom-tools-in-containers.png"
+image: "/static/blog/gitlab-ci-with-custom-tools-in-containers/supporting-gitlab-ci-with-custom-tools-in-containers.png"
 featured: true
 
 ---
-
-<script>
-    import Admonition from '$lib/posts/admonition.svelte'
-</script>
 
 **[In a previous post](https://verifa.io/blog/automatically-package-tools-gitlab-container-registry/) we showed how to build and store Docker images in GitLab. Building on that, we will demonstrate a workflow to Dockerise a custom tool which first needs to be compiled while minimising time to deployment by storing artifacts in the Package Registry.**
 
@@ -34,12 +29,8 @@ We will compile and deploy the Godot engine in a way which allows us to automati
 
 ## Compiling the Tool
 
-<Admonition type="warning">
-
-Godot compiles to a few different artifacts. The only one we care about for this demonstration is the “headless server” build. However to deploy the game we would also need some export templates, and to work on the project we would need an editor build for every platform we wish to use. We’ll address those in a later post.
-<!--TODO: Add link to next post here-->
-
-</Admonition>
+> [!WARNING]
+> Godot compiles to a few different artifacts. The only one we care about for this demonstration is the “headless server” build. However to deploy the game we would also need some export templates, and to work on the project we would need an editor build for every platform we wish to use. We’ll address those in a later post.
 
 In order to compile the Godot engine we’ll need a slightly more elaborate than usual compilation environment. Therefore, first we will create a Docker image. The headless server artifact is compiled on a Linux environment, which is convenient for our purposes.
 The compilation environment image itself is fairly straightforward; we install `scons`, which is needed to compile Godot, and the libraries needed to compile for the target platform.
@@ -50,32 +41,30 @@ FROM ubuntu:20.04
 LABEL Author="Zach Laster <zlaster@verifa.io"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-	ca-certificates \
-	build-essential \
-	scons \
-	pkg-config \
-	libx11-dev \
-	libxcursor-dev \
-	libxinerama-dev \
-	libgl1-mesa-dev \
-	libglu-dev \
-	libasound2-dev \
-	libpulse-dev \
-	libfreetype6-dev \
-	libudev-dev \
-	libxi-dev \
-	libxrandr-dev \
-	git \
-	&& rm -rf /var/lib/apt/lists/*
+ ca-certificates \
+ build-essential \
+ scons \
+ pkg-config \
+ libx11-dev \
+ libxcursor-dev \
+ libxinerama-dev \
+ libgl1-mesa-dev \
+ libglu-dev \
+ libasound2-dev \
+ libpulse-dev \
+ libfreetype6-dev \
+ libudev-dev \
+ libxi-dev \
+ libxrandr-dev \
+ git \
+ && rm -rf /var/lib/apt/lists/*
 
 # Specify the python version in the scons script file
 RUN sed -i "/\#\! \/usr\/bin\/python/c\\#\! \/usr\/bin\/python3" $(which scons)
 ```
 
-<Admonition type="warning">
-
-Linux binaries of Godot often will not run on distributions that are older than the distribution they were built on, so we use Ubuntu 20.04 LTS. It won’t matter for this demonstration, but it would for exporting the game.
-</Admonition>
+> [!WARNING]
+> Linux binaries of Godot often will not run on distributions that are older than the distribution they were built on, so we use Ubuntu 20.04 LTS. It won’t matter for this demonstration, but it would for exporting the game.
 
 We’ve already gone over [how to build this Docker image and store it in a GitLab registry](https://verifa.io/blog/automatically-package-tools-gitlab-container-registry/), so we’ll skip over that part here.
 
@@ -120,17 +109,13 @@ headless:
     - scons --directory=godot  profile=../editor.py platform=server tools=yes target=release_debug
 ```
 
-<Admonition type="warning">
-
-Compiling Godot can take upward of an hour. Be prepared. We’ll address this further down this post.
-</Admonition>
+> [!WARNING]
+> Compiling Godot can take upward of an hour. Be prepared. We’ll address this further down this post.
 
 Pushing this file triggers the pipeline which will build our headless artifact.
 
-<Admonition type="info">
-
-GitLab CI configuration allows us to import files. To make my CI files easier to read, I usually move the definitions and hidden blocks to another file, such as `ci/.definitions.yml`. Larger pipeline specifications will, of course, require more files and possibly techniques such as templating.
-</Admonition>
+> [!NOTE]
+> GitLab CI configuration allows us to import files. To make my CI files easier to read, I usually move the definitions and hidden blocks to another file, such as `ci/.definitions.yml`. Larger pipeline specifications will, of course, require more files and possibly techniques such as templating.
 
 ## Deploying the Image
 
@@ -172,11 +157,11 @@ FROM ubuntu:20.04
 LABEL Author="Zach Laster <zlaster@verifa.io>"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-	ca-certificates \
-	git \
-	python \
-	python-openssl \
-	&& rm -rf /var/lib/apt/lists/*
+ ca-certificates \
+ git \
+ python \
+ python-openssl \
+ && rm -rf /var/lib/apt/lists/*
 
 COPY bin/godot_server.x11.opt.tools.64 /usr/local/bin/godot
 
@@ -295,7 +280,5 @@ In future blog posts, we will explore how to handle compiling for multiple archi
 
 [GitLab Repo](https://gitlab.com/verifa/godot_images/-/tree/headless)
 
-<Admonition type="info">
-
-A note on the repo: The compilation job is tagged in the repo as needing to run on the “offload” runner. We have a high-powered self-hosted runner in use, which reduces used CI quota and does the job much faster. To use this repo’s CI configuration in your own project you would need to remove that tag or provide a self-hosted runner with the same tag.
-</Admonition>
+> [!NOTE]
+> A note on the repo: The compilation job is tagged in the repo as needing to run on the “offload” runner. We have a high-powered self-hosted runner in use, which reduces used CI quota and does the job much faster. To use this repo’s CI configuration in your own project you would need to remove that tag or provide a self-hosted runner with the same tag.

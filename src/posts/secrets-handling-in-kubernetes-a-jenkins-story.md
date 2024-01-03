@@ -9,7 +9,7 @@ tags:
 - Kubernetes
 - Jenkins
 date: 2022-01-24
-image: "/blogs/2022-01-26/blog_k8s_jenkins_secrets.png"
+image: "/static/blog/2022-01-26/blog_k8s_jenkins_secrets.png"
 featured: true
 
 ---
@@ -144,7 +144,7 @@ The approach of passing credentials with Jenkins secrets is harder to implement 
 
 The idea is to encrypt the secrets first with Jenkins domain credentials. This way, the secrets are not in plaintext. Jenkins uses AES to encrypt and protect secrets, credentials, and their respective encryption keys. This is unique to every jenkins instance as it is generated on first start. Due to this, any secrets encrypted with this work out-of-box inside the same Jenkins server and the encrypted secrets cannot be decrypted with a different Jenkins server.
 
-![Jenkins and Kubernetes secret encryption process](/blogs/2022-01-26/secrets_jenkins_kubernetes_diagram.png)
+![Jenkins and Kubernetes secret encryption process](/static/blog/2022-01-26/secrets_jenkins_kubernetes_diagram.png)
 
 From the above picture, any secret is first encrypted with Jenkins Hudson secret and then imported as Kubernetes secret. This way, they are not in plaintext anywhere.
 
@@ -227,7 +227,6 @@ We have now reached the end of an interesting round of comparisons of various wa
 The scope of this blog is to explore more secure ways to present passwords for Jenkins inside a Kubernetes cluster without the use of external tools. There are secret managers dedicated for these purposes such as HashiCorp Vault or cloud specific such as AWS, Google cloud secrets manager, Azure key vault etc. One of the benefits of using external secret managers is that of decoupling sensitive entities outside of the application.
 
 As a follow up to this blog, we went on to explore several approaches for getting secrets from HashiCorp Vault into Jenkins running in Kubernetes - [Secrets handling in Kubernetes using HashiCorp Vault](/blog/secrets-handling-in-kubernetes-using-hashicorp-vault/).
-
 
 ## Versions of tools
 

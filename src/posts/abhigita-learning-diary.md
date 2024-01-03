@@ -7,10 +7,8 @@ authors:
 tags:
 - Verifa Culture
 date: 2023-12-21
-image: "/blogs/abhi-work-experience.jpg"
+image: "/static/blog/abhi-work-experience.jpg"
 featured: false
-jobActive: true
-
 ---
 
 **My wonderful one-week experience at Verifa was incredibly enriching. I learned a great deal and had the opportunity to meet awesome people.**

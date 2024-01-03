@@ -7,7 +7,7 @@ authors:
 tags:
 - Open Source
 date: 2023-04-27
-image: "/blogs/exploring-oras-oci-registries-as-storage.png"
+image: "/static/blog/exploring-oras-oci-registries-as-storage.png"
 featured: true
 ---
 
@@ -42,9 +42,9 @@ It's fairly simple and makes cleaning up a lot easier.
 (I used podman, but Docker should work just fine.)
 
 ```
-$ REGISTRY_DIR=~/oras-adventures/registry
-$ mkdir -p $REGISTRY_DIR
-$ podman run -d --name oras_registry -p 5000:5000 -v $REGISTRY_DIR:/var/lib/registry --restart=always registry:2
+REGISTRY_DIR=~/oras-adventures/registry
+mkdir -p $REGISTRY_DIR
+podman run -d --name oras_registry -p 5000:5000 -v $REGISTRY_DIR:/var/lib/registry --restart=always registry:2
 ```
 
 We'll want to add our registry to `/etc/containers/registries.conf` as well:
@@ -58,7 +58,7 @@ insecure = true
 A quick restart of the podman service and we should be good to go:
 
 ```
-$ systemctl restart podman
+systemctl restart podman
 ```
 
 To test, let's try pushing an image to our registry.
@@ -150,9 +150,9 @@ Note that each layer should have a media type assigned.
 I'll be pushing the following as an artifact:
 
 - `README.md`
-	- A simple markdown file. I'll use `text/markdown`
+ 	- A simple markdown file. I'll use `text/markdown`
 - `images/`
-	- A directory containing two images. ORAS automatically tars up directories, so this layer will contain a single tar file. There's no media type for tar files, I'll just use the common `application/x-tar`
+ 	- A directory containing two images. ORAS automatically tars up directories, so this layer will contain a single tar file. There's no media type for tar files, I'll just use the common `application/x-tar`
 
 ```
 $ tree
@@ -163,8 +163,8 @@ $ tree
 └── README.md
 
 $ oras push localhost:5000/verifa-assets:0.1.0 \
-		README.md:text/markdown \
-		./images/:application/x-tar
+  README.md:text/markdown \
+  ./images/:application/x-tar
 Uploading 21e7f9fe06dd images
 Uploading b22b00913462 README.md
 Uploaded  21e7f9fe06dd images

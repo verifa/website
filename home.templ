@@ -1,0 +1,303 @@
+package website
+
+templ home(featuredPosts []*Post, tags map[string][]*Post) {
+	<section class="container mx-auto">
+		<h1 class="v-h1 mt-12">
+			Your trusted crew for all things
+			<span class="">Continuous</span> and
+			<span class="">Cloud</span>.
+		</h1>
+		<h3 class="v-h3 mt-8 max-w-3xl">
+			We bridge the gap between development and operations by building developer experiences that enable flow.
+		</h3>
+		<div class="mt-8">
+			@linkButton("Chat with an expert", "/contact")
+		</div>
+		// box-shadow:
+		//     5px 5px 0 #FF9800,
+		//     10px 10px 0 #FFC107,
+		//     15px 15px 0 #607D8B;
+	</section>
+	<section class="bg-v-gray/20">
+		<div class="container mx-auto">
+			@headerLine()
+			<p class="v-h4">Who we are.</p>
+			<p class="pt-6 v-h2 text-v-black">
+				We are an elite crew of&nbsp;
+				@fancyLinkPink("DevOps Consultants", "/company/#crew")
+				&nbsp;
+				specialised in improving the&nbsp;
+				@fancyLinkPink("Developer Experience", "/services/developer-experience/")
+				&nbsp;
+				to accelerate software delivery.
+				We provide actionable&nbsp;
+				@fancyLinkLilac("Assessments", "/services/assessments/")
+				, hands-on&nbsp;
+				@fancyLinkLilac("Consulting", "/services/consulting/")
+				&nbsp;
+				and technical&nbsp;
+				@fancyLinkLilac("Coaching", "/services/coaching/")
+				.
+			</p>
+			// 	</div>
+			// </section>
+			// <section id="services" class="bg-v-gray/20">
+			// 	<div class="container mx-auto">
+			<div class="pt-24"></div>
+			@headerLine()
+			<p class="v-h4">What we do.</p>
+			<dl class="pt-4 space-y-6 divide-y divide-v-black ">
+				@homeService("assessments", "Assessments") {
+					<p class="v-h4">
+						TODO
+					</p>
+					<div class="mt-8">
+						@linkButtonSmall("Learn more", "/services/assessments/")
+					</div>
+				}
+				@homeService("consulting", "Consulting") {
+					<p class="v-h4">
+						TODO
+					</p>
+					<div class="mt-8">
+						@linkButtonSmall("Learn more", "/services/consulting/")
+					</div>
+				}
+				@homeService("coaching", "Coaching") {
+					<p class="v-h4">
+						TODO
+					</p>
+					<div class="mt-8">
+						@linkButtonSmall("Learn more", "/services/coaching/")
+					</div>
+				}
+			</dl>
+			// 	</div>
+			// </section>
+			// <section class="">
+			// 	<div class="container mx-auto">
+			<div class="pt-24"></div>
+			@headerLine()
+			<p class="v-h4">Trusted by.</p>
+			// <p class="v-h3 text-v-black">Trusted by.</p>
+			<div class="mt-4">
+				@clientLogos()
+			</div>
+		</div>
+	</section>
+	<section class="">
+		<div class="container mx-auto">
+			@columns(false) {
+				@column("") {
+					<img
+						class="object-contain mx-auto h-full w-1/2 lg:w-full"
+						src="/static/everything-is-connected.svg"
+						alt="everything-is-connected"
+					/>
+				}
+				@column("") {
+					<p class="v-h2">
+						Build developer experiences that enable flow and reduce cognitive load.
+					</p>
+					<p class="v-h4 mt-4">Our sprint-based approach will help you deliver value faster.</p>
+					<div class="mt-8">
+						@linkButton("Learn more", "/services/developer-experience/")
+					</div>
+				}
+			}
+		</div>
+	</section>
+	<section class="">
+		<div class="container mx-auto">
+			@columns(true) {
+				@column("") {
+					<p class="v-h4 text-v-pink">Technologies.</p>
+					<p class="v-h2 text-v-black">
+						We work with technology that helps us deliver for our clients.
+					</p>
+				}
+				@column("") {
+					@technologyLogos()
+				}
+			}
+		</div>
+	</section>
+	<section>
+		<div class="container mx-auto">
+			<p class="v-h4">Learn more on our blog.</p>
+			<p class="v-h2">Search by popular keyword</p>
+			<div class="mb-5 md:mb-8 lg:mb-12"></div>
+			<div class="flex flex-col gap-y-4 mb-8">
+				<div class="flex flex-wrap gap-x-4">
+					for tag := range tags {
+						<a href={ templ.URL("/blog/?tags=" + tag) } class="inline-block">
+							<div class="inline-flex items-center my-2 px-3 py-0.5 bg-v-gray hover:bg-v-pink">
+								<p class="text-v-white"><span>#</span>{ tag }</p>
+							</div>
+						</a>
+					}
+				</div>
+				<div class="my-5">
+					@linkButton("All posts", "/blog/")
+				</div>
+				@PostsGrid(featuredPosts, PostsGridOptions{})
+			</div>
+		</div>
+	</section>
+}
+
+templ fancyLinkPink(text string, href string) {
+	<a href={ templ.URL(href) } class="text-v-pink hover:bg-gradient-to-t from-v-pink to-v-pink hover:bg-bottom hover:bg-[length:100%_10%] hover:bg-no-repeat">{ text }</a>
+}
+
+templ fancyLinkLilac(text string, href string) {
+	<a href={ templ.URL(href) } class="text-v-lilac hover:bg-gradient-to-t from-v-lilac to-v-lilac hover:bg-bottom hover:bg-[length:100%_10%] hover:bg-no-repeat">{ text }</a>
+}
+
+templ homeService(id string, title string) {
+	<div class="pt-6">
+		<dt>
+			<button
+				type="button"
+				class="flex w-full items-center justify-between text-left"
+				aria-controls={ "service-" + id }
+				aria-expanded="false"
+				_={ "on click toggle .hidden on .service-" + id }
+			>
+				<p class="v-h2">{ title }</p>
+				<div class="ml-6 flex h-7 items-center">
+					@iconPlus("h-10 w-10 service-" + id)
+					@iconMinus("hidden h-10 w-10 service-" + id)
+				</div>
+			</button>
+		</dt>
+		<dd class={ "hidden mt-4 pr-12 service-" + id } id={ "service-" + id }>
+			{ children... }
+		</dd>
+	</div>
+}
+
+templ iconPlus(className string) {
+	<svg class={ className } fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+		<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+	</svg>
+}
+
+templ iconMinus(className string) {
+	<svg class={ className } fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+		<path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6"></path>
+	</svg>
+}
+
+type client struct {
+	name  string
+	image string
+	white string
+}
+
+var clients = []client{
+	{
+		name:  "abb",
+		image: "/static/clients/abb.svg",
+		white: "/static/clients/abb-white.svg",
+	},
+	{
+		name:  "siemens",
+		image: "/static/clients/siemens.svg",
+		white: "/static/clients/siemens-white.svg",
+	},
+	{
+		name:  "visma",
+		image: "/static/clients/visma.svg",
+		white: "/static/clients/visma-white.svg",
+	},
+	{
+		name:  "wirepas",
+		image: "/static/clients/wirepas.svg",
+		white: "/static/clients/wirepas-white.svg",
+	},
+	{
+		name:  "digious",
+		image: "/static/clients/digious.svg",
+		white: "/static/clients/digious-white.svg",
+	},
+	{
+		name:  "vyaire",
+		image: "/static/clients/vyaire.png",
+		white: "/static/clients/vyaire-white.png",
+	},
+	{
+		name:  "xmldation",
+		image: "/static/clients/xmldation.svg",
+		white: "/static/clients/xmldation-white.svg",
+	},
+	{
+		name:  "qa-systems",
+		image: "/static/clients/qa-systems.png",
+		white: "/static/clients/qa-systems-white.png",
+	},
+	{
+		name:  "kommuninvest",
+		image: "/static/clients/kommuninvest.png",
+		white: "/static/clients/kommuninvest-white.png",
+	},
+}
+
+templ clientLogos() {
+	<div class="grid grid-cols-2 gap-0.5 md:grid-cols-6 lg:grid-cols-5">
+		for _, client := range clients {
+			<div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 py-8 px-8  bg-v-lilac">
+				<img src={ client.white } alt={ client.name } class="h-8 w-full object-contain"/>
+			</div>
+		}
+	</div>
+}
+
+type technology struct {
+	name  string
+	image string
+	white string
+}
+
+var technologies = []technology{
+	{
+		name:  "aws",
+		image: "/static/clouds/aws.svg",
+		white: "/static/clouds/aws-white.svg",
+	},
+	{
+		name:  "google-cloud",
+		image: "/static/clouds/google-cloud.svg",
+		white: "/static/clouds/google-cloud-white.svg",
+	},
+	{
+		name:  "azure",
+		image: "/static/clouds/azure.svg",
+		white: "/static/clouds/azure-white.svg",
+	},
+	{
+		name:  "kubernetes",
+		image: "/static/clouds/kubernetes-horizontal.svg",
+		white: "/static/clouds/kubernetes-horizontal-white.svg",
+	},
+	{
+		name:  "hashicorp",
+		image: "/static/partners/hashicorp-horizontal.svg",
+		white: "/static/partners/hashicorp-horizontal-white.svg",
+	},
+	{
+		name:  "upcloud",
+		image: "/static/clouds/upcloud.svg",
+		white: "/static/clouds/upcloud-white.svg",
+	},
+}
+
+templ technologyLogos() {
+	<div class="grid grid-cols-6 gap-0.5 md:grid-cols-6 lg:grid-cols-6">
+		for _, tech := range technologies {
+			<div class="col-span-3 flex justify-center md:col-span-3 lg:col-span-3 py-8 px-8 bg-v-lilac">
+				<img src={ tech.white } alt={ tech.name } class="h-12 w-full object-contain"/>
+			</div>
+		}
+	</div>
+}

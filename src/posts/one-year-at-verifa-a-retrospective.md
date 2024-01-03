@@ -8,11 +8,10 @@ authors:
 tags:
 - Verifa Culture
 date: 2022-01-08
-image: "/blogs/2022-01-11/lauri-and-lempi_b.png"
+image: "/static/blog/2022-01-11/lauri-and-lempi_b.png"
 featured: true
-jobActive: true
-
 ---
+
 **Lauri took a personal leap of faith when he jumped from being an in-house developer to a consultant at Verifa. That was a year ago. Did he make the right decision? Lauri looks back on a year of new challenges and personal growth.**
 
 ***

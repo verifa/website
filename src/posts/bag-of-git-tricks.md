@@ -7,14 +7,8 @@ authors:
 tags:
 - Git
 date: 2023-05-15
-image: "/blogs/bag-of-git-tricks/bag-of-git-tricks.png"
+image: "/static/blog/bag-of-git-tricks/bag-of-git-tricks.png"
 featured: true
----
-
-<script>
-    import Admonition from '$lib/posts/admonition.svelte'
-</script>
-
 ---
 
 Git has a lot of bells and whistles, some of which I find myself recommending to people often.
@@ -56,7 +50,7 @@ My personal favourite is my alias for a pretty log:
 
 Netting me the following with little effort:
 
-![bag-of-git-tricks-example](/blogs/bag-of-git-tricks/bag-of-git-tricks-example.png)
+![bag-of-git-tricks-example](/static/blog/bag-of-git-tricks/bag-of-git-tricks-example.png)
 
 ## Patch mode (git add)
 
@@ -78,14 +72,14 @@ index a5af44b..fbce946 100644
 
 -Tagging a version makes deploys it to the production environment <https://verifa.io>
 +Tagging a version deploys it to the production environment <https://verifa.io>
- 
+
 (1/2) Stage this hunk [y,n,q,a,d,e,?]? y
 
 diff --git a/README.md b/README.md
 index a5af44b..fbce946 100644
 --- a/README.md
 +++ b/README.md
-@@ -104,6 +104,8 @@ 
+@@ -104,6 +104,8 @@
 
 +    TODO: add a section on local testing here
 +
@@ -106,8 +100,8 @@ Interactive rebase is a powerful tool for rewriting local history.
 In the following example, I rebase my `my-feature` branch onto `main`.
 
 ```
-$ git switch my-feature
-$ git rebase -i main
+git switch my-feature
+git rebase -i main
 ```
 
 My text editor pops up, asking me what I wish to do with the commits. Here’s what I asked git to do for me:

@@ -1,6 +1,6 @@
 ---
 type: Podcast
-title: 'What is GitOps anyway? '
+title: What is GitOps anyway?
 subheading: In this episode of The Verifa Podcast, Jacob and Andreas get into a deep
   discussion about GitOps, how it works, and its applications and benefits.
 authors:
@@ -12,20 +12,19 @@ tags:
 - GitOps
 - Continuous Integration
 date: 2021-05-04
-image: "/blogs/2021-05-05/ep02_podcast_9201080.png"
+image: "/static/blog/2021-05-05/ep02_podcast_9201080.png"
 featured: true
-jobActive: true
-
 ---
+
 <iframe title="Embedded podcast player" src="https://anchor.fm/verifa/embed/episodes/What-is-GitOps-anyway-e1051nv" height="151px" width="100%" frameborder="0" scrolling="no"></iframe>
 
 <div class="flex gap-x-4">
 
-[![Listen on Spotify](/blogs/2021-03-30/listen-on-spotify.png)](https://open.spotify.com/show/12yStrneLdEsXn1Bjp6Myz)
+[![Listen on Spotify](/static/blog/2021-03-30/listen-on-spotify.png)](https://open.spotify.com/show/12yStrneLdEsXn1Bjp6Myz)
 
-[![Listen on Apple Podcasts](/blogs/2021-03-30/listen-on-apple-podcasts.png)](https://podcasts.apple.com/gb/podcast/the-verifa-podcast/id1561051552)
+[![Listen on Apple Podcasts](/static/blog/2021-03-30/listen-on-apple-podcasts.png)](https://podcasts.apple.com/gb/podcast/the-verifa-podcast/id1561051552)
 
-[![Listen on Google Podcasts](/blogs/2021-03-30/listen-on-google-podcasts.png)](https://www.google.com/podcasts?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy81Mzg0NzE1Yy9wb2RjYXN0L3Jzcw==)
+[![Listen on Google Podcasts](/static/blog/2021-03-30/listen-on-google-podcasts.png)](https://www.google.com/podcasts?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy81Mzg0NzE1Yy9wb2RjYXN0L3Jzcw==)
 
 </div>
 

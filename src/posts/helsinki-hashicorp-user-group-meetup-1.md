@@ -9,10 +9,8 @@ authors:
 tags:
 - HashiCorp
 date: 2021-07-12
-image: "/blogs/2021-07-13/hug-helsinki-16_9.png"
+image: "/static/blog/2021-07-13/hug-helsinki-16_9.png"
 featured: false
-jobActive: true
-
 ---
 **The newly formed Helsinki HashiCorp User Group is a quarterly** [**meetup**](https://www.meetup.com/helsinki-hashicorp-user-group) **full of interesting talks and insights about all things HashiCorp, plus a chance to connect with fellow professionals and hobbyists alike.**
 

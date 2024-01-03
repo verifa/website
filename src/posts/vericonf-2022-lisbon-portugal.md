@@ -8,7 +8,7 @@ tags:
 - VeriConf
 - Verifa Culture
 date: 2022-09-20
-image: "/blogs/vericonf-2022-blog/vericonf-2022-crew.png"
+image: "/static/blog/vericonf-2022-blog/vericonf-2022-crew.png"
 featured: false
 
 ---
@@ -21,11 +21,11 @@ After being grounded for a couple of years, this year we returned to the awesome
 
 ### State of the Union
 
-Jacob ‘officially’ kicked off VeriConf with our traditional State of the Union address. In the last 12 months we welcomed three new crew mates - [Albert](https://verifa.io/crew/arigo/), [Thierry](https://verifa.io/crew/tlacour/) and [Laroy](https://verifa.io/crew/lsjodahl/). We celebrated achieving a bunch of certifications, including becoming a [Certified HashiCorp Implementation Partner](https://verifa.io/blog/verifa-hashicorp-chip-vault-blog/). And we’ve also been through a rebrand - new logo, new website, and a renewed focus on what matters to our customers and to our crew.  
+Jacob ‘officially’ kicked off VeriConf with our traditional State of the Union address. In the last 12 months we welcomed three new crew mates - [Albert](https://verifa.io/crew/arigo/), [Thierry](https://verifa.io/crew/tlacour/) and [Laroy](https://verifa.io/crew/lsjodahl/). We celebrated achieving a bunch of certifications, including becoming a [Certified HashiCorp Implementation Partner](https://verifa.io/blog/verifa-hashicorp-chip-vault-blog/). And we’ve also been through a rebrand - new logo, new website, and a renewed focus on what matters to our customers and to our crew.
 
 ### OKRs
 
-For the past 12 months or so we’ve been experimenting with [OKRs](https://en.wikipedia.org/wiki/OKR), that is Objectives and Key Results. The aim is to help focus everyone on common goals, and grow Verifa in a healthy and sustainable way. As with most new ways of working it’s been trial and error. During the session we agreed on the company level OKRs, clarifying what we should focus on until the end of the year. Next, everyone will decide on their own OKRs to help achieve the company goals. 
+For the past 12 months or so we’ve been experimenting with [OKRs](https://en.wikipedia.org/wiki/OKR), that is Objectives and Key Results. The aim is to help focus everyone on common goals, and grow Verifa in a healthy and sustainable way. As with most new ways of working it’s been trial and error. During the session we agreed on the company level OKRs, clarifying what we should focus on until the end of the year. Next, everyone will decide on their own OKRs to help achieve the company goals.
 
 ### Team building board games
 
@@ -36,19 +36,19 @@ Games time! Albert is our in-house workshop facilitator extraordinaire, and rock
 Time to reflect on the past 12 months and what we want to do going forward. We all wrote down things that we want to: start, continue, improve, stop. After sharing our thoughts and some discussion, we grouped them into themes and voted. We ended up with a prioritised list of things that are super important for us as a company. Our top four are:
 
 - **Improve financial visibility**
-    - we’re working on including financials in our in-house metrics dashboard
+  - we’re working on including financials in our in-house metrics dashboard
 - **Hold more VeriMeets**
-    - we’ll hold three smaller meetups per year in Helsinki, Gothenburg, and Lund, as well as VeriConf
+  - we’ll hold three smaller meetups per year in Helsinki, Gothenburg, and Lund, as well as VeriConf
 - **Improve upon our [Continuous Delivery workshop](https://verifa.io/work/continuous-delivery-workshop/)**
-    - part of our approach for helping teams improve their software delivery performance
+  - part of our approach for helping teams improve their software delivery performance
 - **Stop working alone**
-    - we believe that working together rather than as a lone consultant benefits our customers and our employee’s wellbeing
+  - we believe that working together rather than as a lone consultant benefits our customers and our employee’s wellbeing
 
-![Anoop making pizza](/blogs/vericonf-2022-blog/anoop-making-pizza.png)
+![Anoop making pizza](/static/blog/vericonf-2022-blog/anoop-making-pizza.png)
 
 ### Team building pizza making
 
-Earlier in the day, we donned our aprons and straw hats, as we were guided in the art of pizza dough making. Great teamwork all round as we measured (by eye!), mixed and kneaded our way to some pretty perfect looking dough. Come the evening it had proofed, and we rolled out a couple of pizza bases each to create our delicious masterpieces, all cooked in the outdoor wood burning pizza oven. 
+Earlier in the day, we donned our aprons and straw hats, as we were guided in the art of pizza dough making. Great teamwork all round as we measured (by eye!), mixed and kneaded our way to some pretty perfect looking dough. Come the evening it had proofed, and we rolled out a couple of pizza bases each to create our delicious masterpieces, all cooked in the outdoor wood burning pizza oven.
 
 ### Powerpoint karaoke
 
@@ -68,11 +68,11 @@ During the session we workshopped questions that will help us get to the heart o
 
 Our newest crew member, Laroy, took to the stage and presented on his thesis, Configuration Management in DevOps. It sparked quite the discussion and concluded that while old school Software Configuration Management (SCM) is dead, its practices are still valid. Laroy’s presentation showed that DevOps and SCM are deeply connected. The question being - can we improve SCM in DevOps?
 
-![VeriConf giant chess](/blogs/vericonf-2022-blog/vericonf-giant-chess.png)
+![VeriConf giant chess](/static/blog/vericonf-2022-blog/vericonf-giant-chess.png)
 
 ### Marketing 101
 
-Most of the Verifa crew are, of course, technical consultants, and I, a non-techie, have gradually assimilated into their world. So now it’s time to turn the tables! I gave an overview of what marketing is and what makes up an effective marketing plan. We went over the three main stages of diagnosis, strategy and tactics, and how we apply this to Verifa to grow the company. 
+Most of the Verifa crew are, of course, technical consultants, and I, a non-techie, have gradually assimilated into their world. So now it’s time to turn the tables! I gave an overview of what marketing is and what makes up an effective marketing plan. We went over the three main stages of diagnosis, strategy and tactics, and how we apply this to Verifa to grow the company.
 
 ### Reviewing values
 
@@ -80,20 +80,20 @@ At last year’s VeriConf, we defined our values. There’s been quite a bit of 
 
 ### Metrics review
 
-Metrics is a project that has been evolving ever since [Bosse](https://verifa.io/crew/bnystrom/) joined us about 18 months ago. The aim is to have an at-a-glance dashboard to measure the well being of employees and the health of the company. In this session we talked about how to improve, and what other metrics will help to achieve this, including financial data, delta hours trend, OKRs and VeriFriday tracking. 
+Metrics is a project that has been evolving ever since [Bosse](https://verifa.io/crew/bnystrom/) joined us about 18 months ago. The aim is to have an at-a-glance dashboard to measure the well being of employees and the health of the company. In this session we talked about how to improve, and what other metrics will help to achieve this, including financial data, delta hours trend, OKRs and VeriFriday tracking.
 
 ### Poolside, dinner on the beach and wine tasting
 
-On our final evening we said our farewells to the frogs down at the freshwater pool before heading off to a beachfront restaurant. We dined on typical Portugese dishes, washed down with caipirinhas whilst watching the sunset. 
+On our final evening we said our farewells to the frogs down at the freshwater pool before heading off to a beachfront restaurant. We dined on typical Portugese dishes, washed down with caipirinhas whilst watching the sunset.
 
 The next day, half the crew had time to kill whilst waiting for flights home, so we headed into the city for a spot of wine tasting! Cheers!
 
-![VeriConf 2022 - wine tasting](/blogs/vericonf-2022-blog/vericonf-2022-wine-tasting.png)
+![VeriConf 2022 - wine tasting](/static/blog/vericonf-2022-blog/vericonf-2022-wine-tasting.png)
 
 ## Wrapping up
 
-VeriConf is a lot of fun. The best part is getting to spend time with colleagues - sharing ideas and experiences over a beer, playing some foosball, and just getting to know each other better. We’re a small crew, split over two countries, with a flexi-working style. Slack donut chats are great but nothing beats hanging out in real life. All the better with some warm sunshine and a pool! 
+VeriConf is a lot of fun. The best part is getting to spend time with colleagues - sharing ideas and experiences over a beer, playing some foosball, and just getting to know each other better. We’re a small crew, split over two countries, with a flexi-working style. Slack donut chats are great but nothing beats hanging out in real life. All the better with some warm sunshine and a pool!
 
-Though it didn’t feel like it, we got a huge amount of work done. We’re building on top of strong foundations to make Verifa even better for both employees and our customers. 
+Though it didn’t feel like it, we got a huge amount of work done. We’re building on top of strong foundations to make Verifa even better for both employees and our customers.
 
 Want to join us? Check out our [open positions](https://verifa.io/careers/).

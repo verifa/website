@@ -11,9 +11,8 @@ tags:
 - Open Source
 - Containers
 date: 2021-09-06
-image: "/blogs/2021-09-07/kubernetes-blog-image-01.svg"
+image: "/static/blog/2021-09-07/kubernetes-blog-image-01.svg"
 featured: true
-jobActive: true
 ---
 
 **You've probably heard of Kubernetes by now. It's the container-orchestration system that everyone is talking about. In this article we'll look at what you should consider when moving your existing application stack to (or developing a new application stack on) Kubernetes.**

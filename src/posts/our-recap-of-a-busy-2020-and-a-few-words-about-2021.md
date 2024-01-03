@@ -8,11 +8,10 @@ authors:
 tags:
 - Verifa Culture
 date: 2021-02-23
-image: "/blogs/2021-02-24/verifa__2020__review-02.png"
+image: "/static/blog/2021-02-24/verifa__2020__review-02.png"
 featured: true
-jobActive: true
-
 ---
+
 Coronavirus, masks, social distancing, remote working… it’s fair to say that 2020 is going to be remembered by everyone for many different reasons.
 
 But despite these challenges, last year proved to be one of growth and big challenges for Verifa. Here, we’ll take a look at how and why things changed, and what to expect over the coming 12 months.

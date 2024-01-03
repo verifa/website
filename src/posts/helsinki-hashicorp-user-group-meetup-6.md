@@ -7,7 +7,7 @@ authors:
 tags:
 - HashiCorp
 date: 2023-03-28
-image: "/blogs/helsinki-hug-6/hug-blog-event-6.png"
+image: "/static/blog/helsinki-hug-6/hug-blog-event-6.png"
 featured: false
 
 ---
@@ -28,7 +28,7 @@ Speaker reveals are ongoing, and so far we can confirm:
 
 Ruslan is a full-stack developer and all-hands CTO in Valosan - a media relationship management platform, with previous experience working in the mobility app Whim and consultancy Futurice.
 
-[Marko Ruotsalainen](https://www.linkedin.com/in/marko-ruotsalainen-31958361/), Cloud Architect at Siili Solutions talking about Azure Landing Zone. 
+[Marko Ruotsalainen](https://www.linkedin.com/in/marko-ruotsalainen-31958361/), Cloud Architect at Siili Solutions talking about Azure Landing Zone.
 
 See you at the sixth Helsinki HUG!
 

@@ -9,10 +9,10 @@ authors:
 tags:
 - Continuous Delivery
 - Workshop
-- Value Stream Mapping
+- Value Streams
 date: 2022-05-13
-previewImage: /clients/visma.svg
-image: /cases/visma-vsm-case-study.png
+previewImage: /static/clients/visma.svg
+image: /static/cases/visma-vsm-case-study.png
 featured: true
 
 ---
@@ -29,11 +29,9 @@ Visma Software Oy were researching new approaches to help them continuously rele
 
 Part of their research involved a call with Verifa, who proposed a [Continuous Delivery workshop](https://verifa.io/work/continuous-delivery-workshop/) to help visualise the current release process. The goal was to identify current inefficiencies and opportunities for improvement, with an emphasis on self-discovery and learning in order for Visma Software Oy to make actionable use of the findings.
 
-<blockquote>
-  ‘Verifa proposed a workshop to discuss and assess our Continuous Delivery practices. The team liked the idea, so we decided to proceed.’
-  <br/>
-  <cite>Olli Suihkonen, Senior Manager, Visma Software Oy</cite>
-</blockquote>
+> Verifa proposed a workshop to discuss and assess our Continuous Delivery practices. The team liked the idea, so we decided to proceed.
+>
+> <footer>Olli Suihkonen, Senior Manager, Visma Software Oy</footer>
 
 ## Strategy & Solution: Value Stream Mapping workshop
 
@@ -42,20 +40,16 @@ Value Stream Mapping (VSM) is a method for analysing the current flow in order t
 
 Verifa held a two day [Continuous Delivery workshop](https://verifa.io/work/continuous-delivery-workshop/) with the relevant stakeholders at Visma Software Oy to create a Value Stream of the current delivery process (from a workable item to deployed in production). The Value Stream was then annotated with “waste” cards, to highlight inefficiencies and these waste cards were weighted by their perceived impact on the actors. These waste cards were discussed during the workshop to help build a common understanding and discover if they are a symptom or a problem.
 
-<blockquote>
-  ‘The Value Stream clearly visualises our delivery process (and its pains). Verifa helped lead discussions around many topics which was useful in gaining a common understanding of what we can do to improve.’
-  <br/>
-  <cite>Olli Suihkonen, Senior Manager, Visma Software Oy</cite>
-</blockquote>
+> The Value Stream clearly visualises our delivery process (and its pains). Verifa helped lead discussions around many topics which was useful in gaining a common understanding of what we can do to improve.
+>
+> <footer>Olli Suihkonen, Senior Manager, Visma Software Oy</footer>
 
 ## Results: a clear path forward
 
 After the workshop, Verifa compiled a report highlighting the findings and including some of Verifa's own assessments. Several of the findings were symptoms of a common problem, and this helps prioritise and focus work on addressing the things that matter. Together with the Value Stream, the report provides a lot of useful material for Visma Software Oy to continue their Continuous Delivery journey and Verifa will continue to assist as needed.
 
-<blockquote>
-  ‘We are very happy with the report Verifa prepared for us. It provides not only findings to address, but an understanding of why to address them and even ideas for how to address them.’
-  <br/>
-  <cite>Olli Suihkonen, Senior Manager, Visma Software Oy</cite>
-</blockquote>
+> We are very happy with the report Verifa prepared for us. It provides not only findings to address, but an understanding of why to address them and even ideas for how to address them.
+>
+> <footer>Olli Suihkonen, Senior Manager, Visma Software Oy</footer>
 
 Can we help you with your Continuous Delivery journey? [Get in touch](https://verifa.io/contact/) and let's chat!

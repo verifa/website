@@ -8,7 +8,7 @@ tags:
 - Artifactory
 - Continuous Delivery
 date: 2023-01-23
-image: "/blogs/automate-artifactory-clean-up.png"
+image: "/static/blog/automate-artifactory-clean-up.png"
 featured: true
 
 ---
@@ -32,6 +32,7 @@ FileSpecs are JSON files containing various properties and rules you use to matc
 Here’s a simple example that matches all artifacts from a specific repository that haven’t been downloaded in 14 days:
 
 `policies/nuget-dev-local.json`
+
 ```json
 {
   "files": [
@@ -85,14 +86,14 @@ For more information on interacting with Artifactory through the JFrog CLI, chec
 
 ## Optional: bulk retention with the rt-retention plugin
 
-If, like me, you’re maintaining a sizeable Artifactory instance with hundreds of repositories, the thought of writing and maintaining hundreds of FileSpecs is not a fun one. 
+If, like me, you’re maintaining a sizeable Artifactory instance with hundreds of repositories, the thought of writing and maintaining hundreds of FileSpecs is not a fun one.
 
 To deal with that, I’ve written [rt-retention](https://rt-retention.verifa.io/), a simple JFrog CLI user plugin to make it all a little easier. It has only two features:
 
 - Basic FileSpec templating — Generate FileSpecs from templates rather than maintaining large amounts of similar ones
 - Delete artifacts using FileSpecs in a given directory structure — Replace hundreds of JFrog CLI calls with a single command
 
-The templating allowed me to cleverly delegate defining retention policies to my users, without them having to get comfortable with the ins and outs of FileSpecs, while the bulk delete command is a small quality of life feature. 
+The templating allowed me to cleverly delegate defining retention policies to my users, without them having to get comfortable with the ins and outs of FileSpecs, while the bulk delete command is a small quality of life feature.
 
 I won’t dig into the technical details of the plugin here. If you’re interested, you’ll find all the info you need at [rt-retention.verifa.io](https://rt-retention.verifa.io/)
 

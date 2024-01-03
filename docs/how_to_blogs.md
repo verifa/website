@@ -27,8 +27,8 @@ Example:
 
 ```html
 <figure>
-  <img src="/blogs/nodeless-aws-eks-clusters-with-karpenter/karpenter-how-it-works-diagram.png" alt="karpenter-how-it-works">
-  <figcaption>Source: https://aws.amazon.com/blogs/aws/introducing-karpenter-an-open-source-high-performance-kubernetes-cluster-autoscaler/</figcaption>
+  <img src="/static/blog/nodeless-aws-eks-clusters-with-karpenter/karpenter-how-it-works-diagram.png" alt="karpenter-how-it-works">
+  <figcaption>Source: https://aws.amazon.com/static/blog/aws/introducing-karpenter-an-open-source-high-performance-kubernetes-cluster-autoscaler/</figcaption>
 </figure>
 ```
 
@@ -36,26 +36,31 @@ Example:
 
 Example:
 
-```html
-<blockquote>
-  ‘Love the problem, not the solution. There is no endgame with Continuous Delivery and time is finite.’
-  <br/>
-  <cite>Jacob Lärfors, Verifa</cite>
-</blockquote>
+```md
+> Love the problem, not the solution. There is no endgame with Continuous Delivery and time is finite.
+>
+> <footer>Jacob Lärfors, Verifa</footer>
 ```
 
 ### Admonitions
 
-Supported admonition types are `idea`, `info` and `warning`. If more are needed, they can be easily added.
+We follow GitHub's markdown format: <https://github.com/orgs/community/discussions/16925>
 
-```html
-<script>
-    import Admonition from '$lib/posts/admonition.svelte'
-</script>
+For example:
 
-...
+```md
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
 
-<Admonition type="idea">
-    My incredible idea is as follows...
-</Admonition>
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
 ```

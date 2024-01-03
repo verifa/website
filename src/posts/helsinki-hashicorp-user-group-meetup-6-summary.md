@@ -1,16 +1,14 @@
 ---
 type: Event
 title: 'Helsinki HashiCorp User Group Meetup #6 summary'
-subheading: A summary of the sixth Helsinki HashiCorp User Group (HUG) including presentations on Infrastructure as Code in early stage startups and Azure Landing Zone. 
+subheading: A summary of the sixth Helsinki HashiCorp User Group (HUG) including presentations on Infrastructure as Code in early stage startups and Azure Landing Zone.
 authors:
 - ckurowski
 tags:
 - HashiCorp
 date: 2023-04-28
-image: "/blogs/helsinki-hug-6/hug-summary-blog-6.png"
+image: "/static/blog/helsinki-hug-6/hug-summary-blog-6.png"
 featured: true
-jobActive: true
-
 ---
 **Helsinki HashiCorp User Group is a meetup full of interesting talks and insights about all things HashiCorp, plus a chance to connect with fellow professionals and hobbyists alike.**
 
@@ -19,7 +17,6 @@ Our friends over at [Siili Solutions](https://www.siili.com/fi/) very kindly ho
 Here’s a brief summary of the talks along with links to the presentation decks, and the full meetup recording.
 
 <iframe width="100%" height="410" src="https://www.youtube.com/embed/NhIyeSYTI1w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 
 ### Azure Landing Zone
 

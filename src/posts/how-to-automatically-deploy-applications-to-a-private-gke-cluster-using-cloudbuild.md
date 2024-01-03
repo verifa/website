@@ -10,7 +10,7 @@ tags:
   - GCP
   - Continuous Delivery
 date: 2020-11-05
-image: /blogs/2020-11-05/main.png
+image: /static/blog/2020-11-05/main.png
 ---
 
 I have been using Google Cloud Platform (GCP) and Google Kubernetes Engine (GKE) for quite some time and I like them a lot. Another GCP product I have become very fond of is CloudBuild which I use to automatically build and deploy code. Compared to previous Jenkins-based CI/CD pipelines I've used, CloudBuild offers similar customizability without the need to manage a build server, and with a significantly smaller configuration code base.
@@ -60,7 +60,7 @@ To make matters worse, CloudBuild doesn't allow for injecting the keys from outs
 
 For this scheme to work, we need to make a new service account which has permissions to modify the Authorized Networks configuration in the private GKE cluster. We also need to give the CloudBuild service account permissions to decrypt the encrypted key for the former account. Cloudbuild service account permissions should look like this:
 
-![a screenshot](/blogs/2020-11-05/img-01.png)
+![a screenshot](/static/blog/2020-11-05/img-01.png)
 
 For the service account used to manage the Authorized Networks configuration, only Kubernetes Engine Admin role is needed. Create that account and download it's key as a json. Rename your key to something less complicated: I named mine kubernetes-admin.json
 

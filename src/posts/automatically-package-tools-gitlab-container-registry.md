@@ -7,16 +7,11 @@ authors:
 tags:
 - Containers
 - Continuous Integration
-- GameDev
 date: 2023-03-16
-image: "/blogs/automatically-package-tools-gitlab-container-registry/how-to-optimise-gitlab-ci-runtime-environments-using-custom-docker-images.png"
+image: "/static/blog/automatically-package-tools-gitlab-container-registry/how-to-optimise-gitlab-ci-runtime-environments-using-custom-docker-images.png"
 featured: true
 
 ---
-
-<script>
-    import Admonition from '$lib/posts/admonition.svelte'
-</script>
 
 **Often when running CI/CD jobs we need to use custom built tools and applications. While we could download the things we need each time we run a relevant job, it would be more efficient to have them already available on the images we are using. Fortunately, we can build our own Docker images, and we can have GitLab manage them for us.**
 
@@ -41,7 +36,7 @@ The following bash script downloads and unpacks butler inside our docker image.
 ```bash
 #!/usr/bin/bash
 
-mkdir -p /opt/butler/bin 
+mkdir -p /opt/butler/bin
 cd /opt/butler/bin
 
 curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
@@ -109,9 +104,8 @@ build:
 
 If we push these files to a repo then the CI pipeline will make us an image. Simple!
 
-<Admonition type="info">
-If you are running a self-hosted GitLab instance, you might need to ensure that the container registry is enabled. At the time of this writing, SaaS GitLab seems to have it enabled for every group/project by default, with no way to disable it.
-</Admonition>
+> [!NOTE]
+> If you are running a self-hosted GitLab instance, you might need to ensure that the container registry is enabled. At the time of this writing, SaaS GitLab seems to have it enabled for every group/project by default, with no way to disable it.
 
 ### Fleshing out and Testing
 
@@ -170,15 +164,13 @@ This gives a quick verification that butler is correctly set up and that the ima
 
 The CI file also now tags the image as `latest` if it passes the test and this was a push to the main branch.
 
-<Admonition type="idea">
-Note that we’d need to do something smarter to not push images that are untested/fail the test, possibly using temporary tags and cleanup rules.
-</Admonition>
+> [!NOTE]
+> Note that we’d need to do something smarter to not push images that are untested/fail the test, possibly using temporary tags and cleanup rules.
 
-<Admonition type="warning">
-When using git on Windows, executable files such as the version test script may not be flagged with the executable flag. You should do this explicitly when committing the file.
-
-`git update-index --chmod=+x tests/check_version.sh`
-</Admonition>
+> [!WARNING]
+> When using git on Windows, executable files such as the version test script may not be flagged with the executable flag. You should do this explicitly when committing the file.
+>
+> `git update-index --chmod=+x tests/check_version.sh`
 
 ## Testing it Out
 
@@ -207,7 +199,7 @@ git push --set-upstream origin main
 
 If we check the pipeline job, we see this:
 
-![Failed](/blogs/automatically-package-tools-gitlab-container-registry/failed_pipeline.png)
+![Failed](/static/blog/automatically-package-tools-gitlab-container-registry/failed_pipeline.png)
 
 Well that’s not good!
 
@@ -217,7 +209,7 @@ There’s several ways to address this. A very simple option is to go to the Git
 
 Testing after that yields this:
 
-![Passed](/blogs/automatically-package-tools-gitlab-container-registry/passed_pipeline.png)
+![Passed](/static/blog/automatically-package-tools-gitlab-container-registry/passed_pipeline.png)
 
 Job done!
 
@@ -225,13 +217,12 @@ That’s great for a few projects, but what if we have 100 projects that all use
 
 The description for Token Access is confusing at best, but let’s try disabling the `CI_JOB_TOKEN` management in the image project completely.
 
-![Passed Again](/blogs/automatically-package-tools-gitlab-container-registry/passed_pipeline2.png)
+![Passed Again](/static/blog/automatically-package-tools-gitlab-container-registry/passed_pipeline2.png)
 
 Well that’s surprising. That system is actually a whitelist, and disabling it permits anyone with access to the repo to use the images.
 
-<Admonition type="info">
-Making the repo and container registry public also makes the image accessible, of course.
-</Admonition>
+> [!TIP]
+> Making the repo and container registry public also makes the image accessible, of course.
 
 The [documentation for this feature](https://docs.gitlab.com/ee/ci/jobs/ci_job_token.html#allow-access-to-your-project-with-a-job-token) doesn't mention how access works when it is disabled, but the documentation for the original, deprecated, outbound behavior says that when it is disabled then the user's access permissions are used, so it is probably that.
 

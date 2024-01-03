@@ -9,7 +9,7 @@ tags:
 - Kubernetes
 - Cloud
 date: 2022-11-21
-image: "/blogs/elastic-cloud-kubernetes-how-to-fix-a-corrupt-index-exception.png"
+image: "/static/blog/elastic-cloud-kubernetes-how-to-fix-a-corrupt-index-exception.png"
 featured: true
 
 ---
@@ -22,7 +22,7 @@ To solve corruption problems, Elasticsearch database ships with a binary `elasti
 
 In order to execute this command in an Elasticsearch node, the Elasticsearch service should not be running. This is to prevent any read/write actions while the shard is being repaired. This is complicated in a container-based environment like Kubernetes because the container exits if the entry point process is stopped, in this case, the Elasticsearch process.
 
-However, Elastic Cloud on Kubernetes comes with a way to suspend containers with the help of Kubernetes annotations. When annotated with [`eck.k8s.elastic.co/suspend`](http://eck.k8s.elastic.co/suspend) the container restarts into one of init containers, namely `elastic-internal-suspend` with all the necessary disks mounted. After connecting to that internal container, one can have access to the disk and can run commands.  
+However, Elastic Cloud on Kubernetes comes with a way to suspend containers with the help of Kubernetes annotations. When annotated with [`eck.k8s.elastic.co/suspend`](http://eck.k8s.elastic.co/suspend) the container restarts into one of init containers, namely `elastic-internal-suspend` with all the necessary disks mounted. After connecting to that internal container, one can have access to the disk and can run commands.
 
 In this article we are going to see how to fix a corrupt index which was not automatically recovered.
 
@@ -66,7 +66,7 @@ Now that the corruption is fixed, it’s time to start the Elasticsearch node an
 kubectl annotate es myeck eck.k8s.elastic.co/suspend-
 ```
 
- When the node gets back into the running state, ensure to mark the cluster level shard allocation settings `cluster.routing.allocation.enable` to `all` instead of `primaries`. 
+ When the node gets back into the running state, ensure to mark the cluster level shard allocation settings `cluster.routing.allocation.enable` to `all` instead of `primaries`.
 
 ## Conclusion
 
