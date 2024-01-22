@@ -75,16 +75,7 @@
 	<hr />
 	<section>
 		<h2>Comments</h2>
-		<script
-			src="https://utteranc.es/client.js"
-			data-repo="verifa/website"
-			data-issue-term="pathname"
-			data-label="blog"
-			data-theme="boxy-light"
-			crossorigin="anonymous"
-			async
-		>
-		</script>
+		<script src="https://giscus.app/client.js" data-repo="verifa/website" data-repo-id="R_kgDOGo3alQ" data-category="Blog" data-category-id="DIC_kwDOGo3alc4CcKOD" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async></script>
 	</section>
 	{#if post.type != PostType.Case}
 		<section>

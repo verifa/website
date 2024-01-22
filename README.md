@@ -25,7 +25,7 @@ This repository contains Verifa's website live at <https://verifa.io>
 ### Other notable mentions
 
 1. [mdsvex](https://mdsvex.pngwn.io/) - for converting Markdown into pages
-2. [utterances](https://utteranc.es/) - adding comments to our blog using GitHub issues
+2. [giscus](https://giscus.app/) - adding comments to our blog using GitHub discussions
 
 ## Design
 
