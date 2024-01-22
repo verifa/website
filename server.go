@@ -240,6 +240,49 @@ func Run() error {
 		page(pageInfo, blog(post)).Render(r.Context(), w)
 	})
 
+	router.Get("/privacy/", func(w http.ResponseWriter, r *http.Request) {
+		pageInfo := PageInfo{
+			RequestURI:  r.RequestURI,
+			Title:       "Privacy Policy",
+			Description: "Your privacy is important to us. It is Verifa's policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you.",
+			Image:       verifaLogoPNG,
+			ImageAlt:    "Verifa Logo",
+		}
+		page(
+			pageInfo,
+			privacyPolicy(),
+		).Render(r.Context(), w)
+	})
+	router.Get("/terms/", func(w http.ResponseWriter, r *http.Request) {
+		pageInfo := PageInfo{
+			RequestURI:  r.RequestURI,
+			Title:       "Terms of Service",
+			Description: "These Terms of Service govern your use of the website located at https://verifa.io and any related services provided by Verifa.",
+			Image:       verifaLogoPNG,
+			ImageAlt:    "Verifa Logo",
+		}
+		page(
+			pageInfo,
+			termsOfService(),
+		).Render(r.Context(), w)
+	})
+	router.Get(
+		"/acceptableusepolicy/",
+		func(w http.ResponseWriter, r *http.Request) {
+			pageInfo := PageInfo{
+				RequestURI:  r.RequestURI,
+				Title:       "Acceptable Use Policy",
+				Description: "This acceptable use policy covers the products, services, and technologies (collectively referred to as the “Products”) provided by Verifa under any ongoing agreement.",
+				Image:       verifaLogoPNG,
+				ImageAlt:    "Verifa Logo",
+			}
+			page(
+				pageInfo,
+				acceptableUsePolicy(),
+			).Render(r.Context(), w)
+		},
+	)
+
 	router.Post(
 		"/careers/attachments/",
 		func(w http.ResponseWriter, r *http.Request) {
