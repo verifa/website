@@ -43,12 +43,24 @@ generate:
 
 .PHONY: preview
 preview: generate
+	$(KO_CMD) build ./cmd/website --local | tee image_name.tmp
+	@echo ""
+	@echo ">>>> Built image: $$(cat image_name.tmp)"
+	@echo ""
 	@echo ">>>> Starting local container http://localhost:3000"
 	@echo ""
-	$(DOCKER) run --rm -ti -p 3000:3000 `$(KO_CMD) build ./cmd/website --local`
+	$(DOCKER) run --rm -ti -p 3000:3000 `cat image_name.tmp`
+	rm image_name.tmp
 
 .PHONY: deploy
 deploy: generate
+	$(KO_CMD) build ./cmd/website | tee image_name.tmp
+	@echo ""
+	@echo ">>>> Built image: $$(cat image_name.tmp)"
+	@echo ""
 	@echo ">>>> Deploying built image to service $(CLOUDRUN_SERVICE) to region $(REGION)"
 	@echo ""
-	gcloud run deploy $(CLOUDRUN_SERVICE) --image `$(KO_CMD) build ./cmd/website` --region $(REGION)
+	gcloud run deploy $(CLOUDRUN_SERVICE) --image `cat image_name.tmp` --region $(REGION)
+	@echo ""
+	@echo ">>>> Deployed"
+	rm image_name.tmp
