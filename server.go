@@ -102,6 +102,19 @@ func Run() error {
 			careers(),
 		).Render(r.Context(), w)
 	})
+	router.Get("/contact/", func(w http.ResponseWriter, r *http.Request) {
+		pageInfo := PageInfo{
+			RequestURI:  r.RequestURI,
+			Title:       "Contact Us",
+			Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
+			Image:       verifaLogoPNG,
+			ImageAlt:    "Verifa Logo",
+		}
+		page(
+			pageInfo,
+			contact(),
+		).Render(r.Context(), w)
+	})
 
 	router.Get("/blog/", func(w http.ResponseWriter, r *http.Request) {
 		// This endpoint is used for both the full-page load, and for rendering
@@ -283,29 +296,19 @@ func Run() error {
 		},
 	)
 
-	router.Post(
-		"/careers/attachments/",
-		func(w http.ResponseWriter, r *http.Request) {
-			// err := r.ParseForm()
-			// if err != nil {
-			// 	w.WriteHeader(http.StatusBadRequest)
-			// 	return
-			// }
-			err := r.ParseMultipartForm(32 << 20) // 32Mb
-			if err != nil {
-				w.WriteHeader(http.StatusBadRequest)
-				return
-			}
-			filenames := []string{}
-			files := r.MultipartForm.File[nameCareersFileAttachments]
-			for _, file := range files {
-				fmt.Println("file: ", file.Filename, file.Size)
-				filenames = append(filenames, file.Filename)
-			}
-
-			careersAttachments(filenames).Render(r.Context(), w)
-		},
-	)
+	router.Get("/thankyou/", func(w http.ResponseWriter, r *http.Request) {
+		pageInfo := PageInfo{
+			RequestURI:  r.RequestURI,
+			Title:       "Thank you",
+			Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
+			Image:       verifaLogoPNG,
+			ImageAlt:    "Verifa Logo",
+		}
+		page(
+			pageInfo,
+			thankyou(),
+		).Render(r.Context(), w)
+	})
 
 	sub, err := fs.Sub(staticFS, "static")
 	if err != nil {

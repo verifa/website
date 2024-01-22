@@ -1,0 +1,47 @@
+package website
+
+templ contact() {
+	<section class="container mx-auto">
+		<h1 class="v-h1">Get in touch.</h1>
+	</section>
+	<section class="container mx-auto">
+		<div class="max-w-4xl">
+			<form
+				id="contact-form"
+				action="https://usebasin.com/f/ebc4ce09edb4"
+				method="POST"
+				class="flex flex-col gap-y-8"
+			>
+				<!-- Honeypot field to avoid spamming  -->
+				<input type="hidden" name="_tunaboat"/>
+				<div>
+					<label for="name" class="block v-label mb-2">Name</label>
+					<input type="text" name="name" id="name" autocomplete="name" required/>
+				</div>
+				<div>
+					<label for="email" class="block v-label mb-2">Work Email</label>
+					<input type="email" name="email" id="email" autocomplete="email" required/>
+				</div>
+				<div>
+					<label for="message" class="block v-label mb-2">Message</label>
+					<textarea id="message" name="message" rows="4" required></textarea>
+				</div>
+				<div class="flex gap-x-4 items-center">
+					<input
+						type="checkbox"
+						id="newsletter"
+						name="newsletter"
+						class="border-[3px] border-v-black focus:ring-0 text-v-lilac"
+					/>
+					<label for="newsletter" class="block v-label">Subscribe to our monthly newsletter</label>
+				</div>
+				<div>
+					<button class="v-button bg-v-black" type="submit">Submit</button>
+				</div>
+				<p>
+					By submitting this form you agree to our <a href="/privacy" class="underline">Privacy Policy</a>
+				</p>
+			</form>
+		</div>
+	</section>
+}

@@ -2,7 +2,7 @@
 
 1. [x] SEO: create SEO component or something... sitemap.xml
 
-2. [] Cache-Control and other optimisation headers. Especially HTML pages and tailwind.css
+2. [] Cache-Control and other optimisation headers. Especially HTML pages and tailwind.css dist
 
 3. [] Git Version and footer (show version)
 
@@ -12,7 +12,7 @@
 
 6. [x] Write custom Anchor transformer/renderer
 
-7. [] Blog: related posts
+7. [x] Blog: related posts
 
 8. [x] Update admonitions on blog posts
 
@@ -20,4 +20,6 @@
 
 10. [x] Work case studies, make them available (e.g. [http://localhost:3000/work/value-stream-mapping-with-visma/])
 
-11. [] Careers page file upload, show attached files.
+11. [x] Careers page file upload, show attached files.
+
+12. [] Hyperscript and HTMX as static files, locally hosted

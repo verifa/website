@@ -117,7 +117,7 @@ templ careersForm() {
 			</div>
 			<div class="flex gap-x-4 items-center">
 				<div
-					class="self-start py-1 px-4 border-2 border-v-lilac bg-v-lilac text-v-white  hover:bg-violet-400"
+					class="flex-none self-start py-1 px-4 border-2 border-v-lilac bg-v-lilac text-v-white  hover:bg-violet-400"
 				>
 					<label for="attachment" class="cursor-pointer font-medium text-lg">
 						<div class="flex items-center gap-x-1">
@@ -150,14 +150,16 @@ templ careersForm() {
 						name="attachments[]"
 						class="hidden"
 						multiple
-						_={ `
+						_="
 						on change
-							get the (value of @attachments[]) as String
-							log it
-						` }
+							put '' into #careers-file-attachments
+							for x in my files
+								put `<p>${x.name}</p>` at the end of #careers-file-attachments
+							end
+						"
 					/>
 				</div>
-				<div id={ idCareersFileAttachments } class="-my-2 flex flex-wrap gap-x-4"></div>
+				<div id={ idCareersFileAttachments } class="flex flex-col gap-y-1"></div>
 			</div>
 			<div class="flex gap-x-4 items-center">
 				<input
@@ -176,12 +178,4 @@ templ careersForm() {
 			</p>
 		</form>
 	</div>
-}
-
-templ careersAttachments(files []string) {
-	for _, file := range files {
-		<div class="inline-flex items-center my-2 px-3 py-0.5 bg-v-gray">
-			<p class=" text-v-white">{ file }</p>
-		</div>
-	}
 }
