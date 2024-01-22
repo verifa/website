@@ -5,7 +5,7 @@ tmp_dir = "build"
 [build]
 args_bin = []
 bin = "./build/website"
-cmd = "templ generate && go build -o ./build/website ./cmd/website/main.go"
+cmd = "make run"
 delay = 1000
 exclude_dir = ["assets", "build", "vendor", "testdata", "node_modules"]
 exclude_file = []
