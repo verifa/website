@@ -12,10 +12,9 @@ This repository contains Verifa's website live at <https://verifa.io>
 
 ### Development
 
-* [![svelte][svelte-shield]][svelte-url]
-* [![sveltekit][sveltekit-shield]][sveltekit-url]
-* [![tailwind][tailwind-shield]][tailwind-url]
-* [![typescript][typescript-shield]][typescript-url]
+* [Go](https://go.dev/)
+* [Templ](https://templ.guide/)
+* [Tailwind](https://tailwindcss.com/)
 
 ### Deployment
 
@@ -24,8 +23,7 @@ This repository contains Verifa's website live at <https://verifa.io>
 
 ### Other notable mentions
 
-1. [mdsvex](https://mdsvex.pngwn.io/) - for converting Markdown into pages
-2. [giscus](https://giscus.app/) - adding comments to our blog using GitHub discussions
+1. [giscus](https://giscus.app/) - adding comments to our blog using GitHub issues
 
 ## Design
 
@@ -33,6 +31,11 @@ The website, logos and brand were designed by [The Pizzolorusso Design Agency](h
 Highly recommended :)
 
 ## Developing
+
+Things you need to install:
+
+1. [Go](https://go.dev/), check the [go.mod](./go.mod) for the required version
+2. [Tailwind](https://tailwindcss.com)
 
 To start a local development server:
 
@@ -76,14 +79,6 @@ Contributions and PRs welcome! More to follow on this topic.
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/company/verifa
 <!-- STACK -->
-[svelte-shield]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[svelte-url]: https://svelte.dev
-[sveltekit-shield]: https://img.shields.io/badge/SvelteKit-FF3E00?style=for-the-badge&logo=Svelte&logoColor=white
-[sveltekit-url]: https://kit.svelte.dev/
-[tailwind-shield]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
-[tailwind-url]: https://tailwindcss.com/
-[typescript-shield]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
-[typescript-url]: https://www.typescriptlang.org/
 [google-cloud-shield]: https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white
 [google-cloud-url]: https://cloud.google.com/
 [github-actions-shield]: https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white
