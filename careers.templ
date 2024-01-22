@@ -1,11 +1,6 @@
 package website
 
-const (
-	idCareersFileAttachments   = "careers-file-attachments"
-	nameCareersFileAttachments = "attachments[]"
-)
-
-templ careers() {
+templ careers(jobs []*Post) {
 	<section class="container mx-auto">
 		@headerLine()
 		<h4 class="mt-12 v-h4">Join us</h4>
@@ -52,14 +47,16 @@ templ careers() {
 			}
 		}
 	</section>
-	<section id="open-positions" class="container mx-auto">
-		@headerLine()
-		<h4 class="mt-12 v-h4">Open positions</h4>
-		<p class="mt-2 v-h1">Check out our open positions.</p>
-	</section>
-	<section class="container mx-auto">
-		// <PostGrid posts={jobs} showBadges={false} />
-	</section>
+	if len(jobs) > 0 {
+		<section id="open-positions" class="container mx-auto">
+			@headerLine()
+			<h4 class="mt-12 v-h4">Open positions</h4>
+			<p class="mt-2 v-h1">Check out our open positions.</p>
+		</section>
+		<section class="container mx-auto">
+			@PostsGrid(jobs, PostsGridOptions{})
+		</section>
+	}
 	<section class="container mx-auto">
 		@headerLine()
 		<h4 class="mt-12 v-h4">Apply now</h4>
@@ -138,12 +135,6 @@ templ careersForm() {
 							<span>Attach files</span>
 						</div>
 					</label>
-					// hx-encoding="multipart/form-data"
-					// hx-trigger="change"
-					// hx-post="/careers/attachments/"
-					// hx-target={ "#" + idCareersFileAttachments }
-					// hx-swap="innerHTML"
-					// name={ nameCareersFileAttachments }
 					<input
 						type="file"
 						id="attachment"
@@ -159,7 +150,7 @@ templ careersForm() {
 						"
 					/>
 				</div>
-				<div id={ idCareersFileAttachments } class="flex flex-col gap-y-1"></div>
+				<div id="careers-file-attachments" class="flex flex-col gap-y-1"></div>
 			</div>
 			<div class="flex gap-x-4 items-center">
 				<input

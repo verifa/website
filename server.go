@@ -99,7 +99,7 @@ func Run() error {
 		}
 		page(
 			pageInfo,
-			careers(),
+			careers(posts.Jobs),
 		).Render(r.Context(), w)
 	})
 	router.Get("/contact/", func(w http.ResponseWriter, r *http.Request) {
