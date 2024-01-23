@@ -4,14 +4,11 @@ CLOUDRUN_SERVICE := website
 
 DOCKER := docker
 
-AIR_VERSION := v1.49.0
-AIR_CMD := go run github.com/cosmtrek/air@$(AIR_VERSION)
+AIR_CMD := go run -mod=mod github.com/cosmtrek/air
 
-TEMPL_VERSION := v0.2.513
-TEMPL_CMD := go run github.com/a-h/templ/cmd/templ@$(TEMPL_VERSION)
+TEMPL_CMD := go run -mod=mod github.com/a-h/templ/cmd/templ
 
-KO_VERSION := v0.15.1
-KO_CMD := go run github.com/google/ko@$(KO_VERSION)
+KO_CMD := go run -mod=mod github.com/google/ko
 
 TAILWIND_CMD := npx tailwindcss
 
@@ -33,6 +30,7 @@ dev:
 
 .PHONY: run
 run:
+	$(TAILWIND_CMD) build -i ./src/app.css -o ./dist/tailwind.css --minify
 	$(TEMPL_CMD) generate
 	go build -o ./build/website ./cmd/website/main.go
 
