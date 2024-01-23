@@ -10,23 +10,98 @@ templ services() {
 		<section class="container mx-auto">
 			@headerLine()
 			<p class="v-h4">Assessments.</p>
-			<h2 class="v-h2 mt-4">Want to find out how to improve?</h2>
-			<a href="/services/assessments/value-streams/">Value Stream Assessments</a>
-			@linkButton("Assessments", "/services/assessments/")
+			<h2 class="v-h2 mt-4">
+				Kickstarting improvement processes and framing core issues.
+			</h2>
+		</section>
+		<section class="container mx-auto">
+			@columns(false) {
+				@column("") {
+					<h3 class="v-h3">Developer Experience</h3>
+					<p class="mt-4 v-p">
+						We assess your current Developer Experience and provide you with
+						a roadmap for improvement.
+					</p>
+					<div class="mt-4">
+						@linkButton("Learn more", "/services/assessments/developer-experience/")
+					</div>
+				}
+				@column("") {
+					<h3 class="v-h3">Value Streams</h3>
+					<p class="mt-4 v-p">
+						We assess your current Value Streams and provide you with a
+						roadmap for improvement.
+					</p>
+					<div class="mt-4">
+						@linkButton("Learn more", "/services/assessments/value-streams/")
+					</div>
+				}
+			}
+		</section>
+		<section class="container mx-auto">
+			@columns(false) {
+				@column("") {
+					<img
+						class="object-contain mx-auto h-full w-1/2 lg:w-full"
+						src="/static/everything-is-connected.svg"
+						alt="everything-is-connected"
+					/>
+				}
+				@column("") {
+					<p class="v-h2">
+						‘Verifa helped lead discussions around many topics which was useful in gaining a common understanding of what we can do to improve’.
+					</p>
+					<p class="v-h4 mt-4">— Olli Suihkonen, Visma Software Oy.</p>
+					<div class="mt-8">
+						@linkButton("Case study", "/work/value-stream-mapping-with-visma/")
+					</div>
+				}
+			}
 		</section>
 	</div>
 	<section class="container mx-auto">
 		@headerLine()
 		<p class="v-h4">Consulting.</p>
-		<h2 class="v-h2 mt-4">Add extra horse power to your DevOps capabilities.</h2>
-		@linkButton("Consulting", "/services/consulting/")
+		<h2 class="v-h2 mt-4">Creating sustainable solutions.</h2>
+	</section>
+	<section class="container mx-auto">
+		<h3 class="v-h3">We have long-lasting relationships with customers who trust us to work alongside their teams and help solve all kinds of problems. We can deliver both short-term and long-term work. Whether you need help with CI/CD workflows, Platform Engineering, Cloud Architecture, Kubernetes, or any related topic, we're here to help you build, implement and evolve sustainable solutions together with you.</h3>
+		<div class="mt-8">
+			@linkButton("Learn more", "/services/consulting/")
+		</div>
 	</section>
 	<div class="bg-v-gray/20">
 		<section class="container mx-auto">
 			@headerLine()
 			<p class="v-h4">Coaching.</p>
-			<h2 class="v-h2 mt-4">You chop the wood and we sharpen the axes.</h2>
-			@linkButton("Coaching", "/services/coaching/")
+			<h2 class="v-h2 mt-4">Building competence within teams.</h2>
+		</section>
+		<section class="container mx-auto">
+			@columns(false) {
+				@column("") {
+					<h3 class="v-h3">You own your work</h3>
+					<p class="mt-4 v-p">
+						To make changes long-lasting it is important that the knowledge and practices introduced stay with the teams who own the work. Hiring consultants to come in and implement everything for you can lead to a lack of knowledge and practices to own the work. We believe in coaching teams to empower them learn new practices and technology, therefore ensuring the ownership is clear.
+					</p>
+				}
+				@column("") {
+					<h3 class="v-h3">High performing teams</h3>
+					<p class="mt-4 v-p">
+						Building high performing teams means bringing everyone with you. Working alongside engineers with experience will boost productivity whilst building competence. We help teams adopt technologies like the Cloud, HashiStack and Kubernetes by doing the day-to-day work together, thereby training and solving real problems at the same time.
+					</p>
+				}
+			}
+		</section>
+		<section class="container mx-auto">
+			<h2 class="v-h2">
+				‘A key and crucial part of our Continuous Integration journey was having Verifa's involvement in holding-our-hands and giving us confidence while we moved our active projects to a CI methodology.’
+			</h2>
+			<h4 class="mt-4 v-h4">
+				— David Hoslett, Siemens Mobility.
+			</h4>
+			<div class="mt-8">
+				@linkButton("Learn more", "/services/coaching/")
+			</div>
 		</section>
 	</div>
 }
