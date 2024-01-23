@@ -4,7 +4,7 @@ templ servicesAssessmentsDeveloperExperience() {
 	<section class="container mx-auto">
 		@columns(false) {
 			@column("") {
-				<h1 class="v-h1">Developer Experience.</h1>
+				<h1 class="v-h1">Developer Experience Assessment.</h1>
 				<h4 class="mt-8 v-h4">
 					We help assess and improve the developer experience of your teams to increase flow and productivity.
 				</h4>
@@ -27,40 +27,110 @@ templ servicesAssessmentsDeveloperExperience() {
 				Better Developer Experience leads to more flow. More flow leads to more productivity.
 			</h2>
 		</section>
+		// <section class="container mx-auto">
+		// 	@headerLine()
+		// 	<h4 class="v-h4">Our approach.</h4>
+		// 	<h2 class="mt-4 v-h2">We uses several methods for researching and assessing DevEx.</h2>
+		// </section>
 		<section class="container mx-auto">
 			@headerLine()
-			<h4 class="v-h4">Our approach.</h4>
-			<h2 class="mt-4 v-h2">We uses several methods for researching and assessing DevEx.</h2>
-		</section>
-		<section class="container mx-auto">
-			@grid() {
-				<div>
-					<h3 class="v-h3">Value Streams</h3>
-					<p class="mt-4 v-p">
+			<p class="v-h4">Our approach.</p>
+			<dl class="pt-4 space-y-6 divide-y divide-v-black ">
+				@homeService("preparation", "Preparation") {
+					<h4 class="mt-8 v-h4">Identify owner</h4>
+					<p class="mt-4">The assessment owner has the mandate to drive the assessment and own the results from your side.</p>
+					<h4 class="mt-8 v-h4">Define scope</h4>
+					<p class="mt-4">Define a rough start and end for the assessment. Commonly we conduct planning interviews to set a structure for the assessment.</p>
+					<h4 class="mt-8 v-h4">Start!</h4>
+					<p class="mt-4">Based on the scope we begin the assessment with the investigation to research and learn about your current developer experience.</p>
+				}
+				@homeService("investigation", "Investigation") {
+					<p class="mt-8">
+						Below are the methods we use to investigate your current developer experience. We use a combination of these methods to get a holistic view of your current state.
+					</p>
+					<h4 class="mt-8 v-h4">Value Streams</h4>
+					<p class="mt-4">
 						We facilitate Value Stream Mapping workshops with your development teams to understand their workflows, pains, waste and opportunities for increased flow.
 					</p>
-				</div>
-				<div>
-					<h3 class="v-h3">Wardley Maps</h3>
-					<p class="mt-4 v-p">
+					<h4 class="mt-8 v-h4">Wardley Maps</h4>
+					<p class="mt-4">
 						We use Wardley Mapping to understand the interface between platforms and developers. It helps us reason about the cognitive load and platform evolution.
 					</p>
-				</div>
-				<div>
-					<h3 class="v-h3">Gemba Walks</h3>
-					<p class="mt-4 v-p">
+					<h4 class="mt-8 v-h4">Gemba Walks</h4>
+					<p class="mt-4">
 						We do Gemba Walks to understand the current state of your development teams. We observe and ask questions to understand their daily routine and how we can improve it.
 					</p>
-				</div>
-				<div>
-					<h3 class="v-h3">Developer Surveys</h3>
-					<p class="mt-4 v-p">
+					<h4 class="mt-8 v-h4">Developer Surveys</h4>
+					<p class="mt-4">
 						Ongoing surveys that provide actionable results help us gauge the effects of change and highlight teams that may need more support.
 					</p>
-				</div>
-			}
+				}
+				@homeService("report", "Report") {
+					<h4 class="mt-8 v-h4">Report</h4>
+					<p class="mt-4">We prepare a report summarizing the investigation, the pain points (i.e. waste) and our own suggestions that we can think of. This is the first version of a backlog.</p>
+					<h4 class="mt-8 v-h4">Feedback</h4>
+					<p class="mt-4">A discussion about the assessment and report. It is important that you understand the report and are comfortable with the implementation.</p>
+					<h4 class="mt-8 v-h4">Build - Measure - Learn</h4>
+					<p class="mt-4">This is where the real work of implementing change begins. It is important to do it iteratively and our crew are here to assist.</p>
+				}
+			</dl>
 		</section>
+		// <section class="container mx-auto">
+		// 	@grid() {
+		// 		<div>
+		// 			<h3 class="v-h3">Value Streams</h3>
+		// 			<p class="mt-4 v-p">
+		// 				We facilitate Value Stream Mapping workshops with your development teams to understand their workflows, pains, waste and opportunities for increased flow.
+		// 			</p>
+		// 		</div>
+		// 		<div>
+		// 			<h3 class="v-h3">Wardley Maps</h3>
+		// 			<p class="mt-4 v-p">
+		// 				We use Wardley Mapping to understand the interface between platforms and developers. It helps us reason about the cognitive load and platform evolution.
+		// 			</p>
+		// 		</div>
+		// 		<div>
+		// 			<h3 class="v-h3">Gemba Walks</h3>
+		// 			<p class="mt-4 v-p">
+		// 				We do Gemba Walks to understand the current state of your development teams. We observe and ask questions to understand their daily routine and how we can improve it.
+		// 			</p>
+		// 		</div>
+		// 		<div>
+		// 			<h3 class="v-h3">Developer Surveys</h3>
+		// 			<p class="mt-4 v-p">
+		// 				Ongoing surveys that provide actionable results help us gauge the effects of change and highlight teams that may need more support.
+		// 			</p>
+		// 		</div>
+		// 	}
+		// </section>
 	</div>
+	<section class="container mx-auto">
+		<p class="v-h2">
+			‘Verifa helped lead discussions around many topics which was useful in gaining a common understanding of what we can do to improve’.
+		</p>
+		<p class="v-h4 mt-4">— Olli Suihkonen, Visma Software Oy.</p>
+		<div class="mt-8">
+			@linkButton("Case study", "/work/value-stream-mapping-with-visma/")
+		</div>
+		// @columns(false) {
+		// 	@column("") {
+		// 		<img
+		// 			class="object-contain mx-auto h-full w-1/2 lg:w-full"
+		// 			src="/static/everything-is-connected.svg"
+		// 			alt="everything-is-connected"
+		// 		/>
+		// 	}
+		// 	@column("") {
+		// 		<p class="v-h2">
+		// 			‘Verifa helped lead discussions around many topics which was useful in gaining a common understanding of what we can do to improve’.
+		// 		</p>
+		// 		<p class="v-h4 mt-4">— Olli Suihkonen, Visma Software Oy.</p>
+		// 		<div class="mt-8">
+		// 			@linkButton("Case study", "/work/value-stream-mapping-with-visma/")
+		// 		</div>
+		// 	}
+		// }
+	</section>
 	<section class="container mx-auto">
 		@columns(false) {
 			@column("") {

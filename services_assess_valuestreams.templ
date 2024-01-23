@@ -4,7 +4,7 @@ templ servicesAssessmentsValueStreams(suggestedReading []*Post) {
 	<section class="container mx-auto">
 		@columns(false) {
 			@column("") {
-				<h1 class="v-h1">Value Stream Assessments.</h1>
+				<h1 class="v-h1">Value Stream Assessment.</h1>
 				<h4 class="mt-8 v-h4">
 					Map your value streams to identify waste and highlight opportunities for faster flow.
 				</h4>
@@ -21,7 +21,15 @@ templ servicesAssessmentsValueStreams(suggestedReading []*Post) {
 	<div class="bg-v-gray/20">
 		<section class="container mx-auto">
 			@headerLine()
-			<p class="v-h4">How we do it.</p>
+			<h4 class="v-h4">Why Value Streams?</h4>
+			<h2 class="mt-4 v-h2">
+				Value Streams help us analyse the current flow in order to remove waste and to derive a more lean and continuous workflow.
+				It documents the current process and highlights waste as well as opportunities for improvement.
+			</h2>
+		</section>
+		<section class="container mx-auto">
+			@headerLine()
+			<p class="v-h4">Our approach.</p>
 			<dl class="pt-4 space-y-6 divide-y divide-v-black ">
 				@homeService("preparation", "Preparation") {
 					<h4 class="mt-8 v-h4">Identify owner</h4>
@@ -48,14 +56,12 @@ templ servicesAssessmentsValueStreams(suggestedReading []*Post) {
 					<p class="mt-4">This is where the real work of implementing change begins. And it is so important to do it iteratively.</p>
 				}
 			</dl>
-			// <p class="v-h2 mt-4">We facilitate Value Stream Mapping workshops and use our knowledge to provide actionable results.</p>
 		</section>
 		<section class="container mx-auto">
 			@headerLine()
 			<p class="v-h4">What you get.</p>
 			<p class="v-h2 mt-4">
 				A thorough understanding of your software delivery value streams together with an actionable report to help you improve.
-				// Diagrams of your Value Streams, a common understanding of your software delivery process and a comprehensive report to help you improve.
 			</p>
 		</section>
 	</div>
@@ -70,7 +76,7 @@ templ servicesAssessmentsValueStreams(suggestedReading []*Post) {
 			}
 			@column("") {
 				<p class="v-h2">
-					‘Verifa helped lead discussions around many topics which was useful in gaining a common understanding of what we can do to improve’.
+					‘We are very happy with the report Verifa prepared for us. It provides findings to address, an understanding of why to address them and ideas for how to address them.’.
 				</p>
 				<p class="v-h4 mt-4">— Olli Suihkonen, Visma Software Oy.</p>
 				<div class="mt-8">
@@ -81,7 +87,6 @@ templ servicesAssessmentsValueStreams(suggestedReading []*Post) {
 	</section>
 	<section class="container mx-auto flex flex-col justify-center">
 		@headerLine()
-		// <p class="v-h4">Waste cards.</p>
 		<p class="v-h3 max-w-3xl">Waste cards that we use during our workshops to highlight waste in your value streams.</p>
 		<div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8">
 			for _, waste := range wastes {
