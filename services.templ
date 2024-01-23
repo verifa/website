@@ -6,7 +6,27 @@ templ services() {
 		<h4 class="v-h4 mt-12">Our Services.</h4>
 		<h1 class="v-h1 mt-4">We help with all things Continuous and Cloud.</h1>
 	</section>
+	<div class="bg-v-gray/20">
+		<section class="container mx-auto">
+			@headerLine()
+			<p class="v-h4">Assessments.</p>
+			<h2 class="v-h2 mt-4">Want to find out how to improve?</h2>
+			<a href="/services/assessments/value-streams/">Value Stream Assessments</a>
+			@linkButton("Assessments", "/services/assessments/")
+		</section>
+	</div>
 	<section class="container mx-auto">
-		hello
+		@headerLine()
+		<p class="v-h4">Consulting.</p>
+		<h2 class="v-h2 mt-4">Add extra horse power to your DevOps capabilities.</h2>
+		@linkButton("Consulting", "/services/consulting/")
 	</section>
+	<div class="bg-v-gray/20">
+		<section class="container mx-auto">
+			@headerLine()
+			<p class="v-h4">Coaching.</p>
+			<h2 class="v-h2 mt-4">You chop the wood and we sharpen the axes.</h2>
+			@linkButton("Coaching", "/services/coaching/")
+		</section>
+	</div>
 }

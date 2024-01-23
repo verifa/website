@@ -1,0 +1,113 @@
+package website
+
+templ servicesAssessmentsValueStreams() {
+	<section class="container mx-auto">
+		@columns(false) {
+			@column("") {
+				<h1 class="v-h1">Value Stream Assessment.</h1>
+				<h4 class="mt-8 v-h4">
+					Map your value streams to identify waste and highlight opportunities for faster flow.
+				</h4>
+			}
+			@column("") {
+				<img
+					class="object-contain h-full w-full"
+					src="/static/visibility.svg"
+					alt="An illustration of woman holding a magnifying glass up to a screen displaying source code."
+				/>
+			}
+		}
+	</section>
+	<div class="bg-v-gray/20">
+		<section class="container mx-auto">
+			@headerLine()
+			<p class="v-h4">What we do.</p>
+			<dl class="pt-4 space-y-6 divide-y divide-v-black ">
+				@homeService("preparation", "Preparation") {
+					<h4 class="mt-8 v-h4">Identify owner</h4>
+					<p class="mt-4">The workshop owner has the mandate to drive the workshop and own the results from your side.</p>
+					<h4 class="mt-8 v-h4">Define scope</h4>
+					<p class="mt-4">Define the start and end of the Value Streams. Commonly we conduct planning interviews to set a structure for the workshop.</p>
+					<h4 class="mt-8 v-h4">Schedule workshop(s)</h4>
+					<p class="mt-4">Schedule the workshop(s), make it clear whether it is remote or in-person and all the equipment and software is available.</p>
+				}
+				@homeService("workshop", "Workshop") {
+					<h4 class="mt-8 v-h4">Motivation</h4>
+					<p class="mt-4">An inspirational presentation that will present the idea of Continuous Delivery so that it's clear why we are doing this.</p>
+					<h4 class="mt-8 v-h4">Value Streams</h4>
+					<p class="mt-4">For the majority of the workshop we will facilitate the Value Stream's organic growth on the whiteboard as we go over various topics.</p>
+					<h4 class="mt-8 v-h4">Waste deep dives</h4>
+					<p class="mt-4">We dive further into specific topics, e.g. particularly painful processes, requirements or initiatives. These may be planned beforehand or come up during the workshop.</p>
+				}
+				@homeService("report", "Report") {
+					<h4 class="mt-8 v-h4">Report</h4>
+					<p class="mt-4">We prepare a report summarizing the workshop, the pain points (i.e. waste) and our own suggestions that we can think of. This is the first version of the backlog.</p>
+					<h4 class="mt-8 v-h4">Feedback</h4>
+					<p class="mt-4">A discussion about the workshop and report. It is important that you understand the report and are comfortable with the implementation.</p>
+					<h4 class="mt-8 v-h4">Build - Measure - Learn</h4>
+					<p class="mt-4">This is where the real work of implementing change begins. And it is so important to do it iteratively.</p>
+				}
+			</dl>
+			// <p class="v-h2 mt-4">We facilitate Value Stream Mapping workshops and use our knowledge to provide actionable results.</p>
+		</section>
+		<section class="container mx-auto">
+			@headerLine()
+			<p class="v-h4">What you get.</p>
+			<p class="v-h2 mt-4">Diagrams of your Value Streams, a common understanding of your software delivery process and a comprehensive report to help you improve.</p>
+		</section>
+	</div>
+	<section class="container mx-auto">
+		@columns(false) {
+			@column("") {
+				<img
+					class="object-contain mx-auto h-full w-1/2 lg:w-full"
+					src="/static/everything-is-connected.svg"
+					alt="everything-is-connected"
+				/>
+			}
+			@column("") {
+				<p class="v-h2">
+					‘Verifa helped lead discussions around many topics which was useful in gaining a common understanding of what we can do to improve’.
+				</p>
+				<p class="v-h4 mt-4">— Olli Suihkonen, Visma Software Oy.</p>
+				<div class="mt-8">
+					@linkButton("Case study", "/work/value-stream-mapping-with-visma/")
+				</div>
+			}
+		}
+	</section>
+	<section class="container mx-auto flex flex-col justify-center">
+		@headerLine()
+		<p class="v-h4">Types of waste.</p>
+		// <p class="v-h4">Types of waste.</p>
+		<div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8">
+			// <div class="col-span-1 row-span-4 v-h3">Types of Waste</div>
+			for _, waste := range wastes {
+				<div class="bg-v-pink w-72 h-72 flex items-center text-center group">
+					<div class="group-hover:hidden">
+						<img src={ waste.image } class="w-full h-full" alt={ waste.name }/>
+					</div>
+					<span class="hidden group-hover:block p-4 text-v-black v-h4 font-semibold">{ waste.description }</span>
+				</div>
+			}
+		</div>
+	</section>
+	<section class="container mx-auto">
+		@columns(false) {
+			@column("") {
+				<ul class="list-inside list-image-[url(/static/favicon-16x16.png)] v-h4 space-y-4">
+					<li><span class="pl-1">Improve flow</span></li>
+					<li><span class="pl-1">Reduce cognitive load</span></li>
+					<li><span class="pl-1">Get faster feedback</span></li>
+					<li><span class="pl-1">And understand why</span></li>
+				</ul>
+			}
+			@column("") {
+				@ctaButton("Want to improve your value streams?", "Book an assessment.")
+			}
+		}
+	</section>
+	<section class="container mx-auto">
+		<h2 class="v-h2">Suggested reading.</h2>
+	</section>
+}

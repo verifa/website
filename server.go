@@ -60,6 +60,74 @@ func Run() error {
 			services(),
 		).Render(r.Context(), w)
 	})
+	router.Get(
+		"/services/assessments/",
+		func(w http.ResponseWriter, r *http.Request) {
+			pageInfo := PageInfo{
+				// TODO
+				RequestURI:  r.RequestURI,
+				Title:       "Verifa",
+				Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
+				Image:       verifaLogoPNG,
+				ImageAlt:    "Verifa Logo",
+			}
+			page(
+				pageInfo,
+				servicesAssessments(),
+			).Render(r.Context(), w)
+		},
+	)
+	router.Get(
+		"/services/consulting/",
+		func(w http.ResponseWriter, r *http.Request) {
+			pageInfo := PageInfo{
+				// TODO
+				RequestURI:  r.RequestURI,
+				Title:       "Verifa",
+				Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
+				Image:       verifaLogoPNG,
+				ImageAlt:    "Verifa Logo",
+			}
+			page(
+				pageInfo,
+				servicesConsulting(),
+			).Render(r.Context(), w)
+		},
+	)
+	router.Get(
+		"/services/coaching/",
+		func(w http.ResponseWriter, r *http.Request) {
+			pageInfo := PageInfo{
+				// TODO
+				RequestURI:  r.RequestURI,
+				Title:       "Verifa",
+				Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
+				Image:       verifaLogoPNG,
+				ImageAlt:    "Verifa Logo",
+			}
+			page(
+				pageInfo,
+				servicesCoaching(),
+			).Render(r.Context(), w)
+		},
+	)
+	router.Get(
+		"/services/assessments/value-streams/",
+		func(w http.ResponseWriter, r *http.Request) {
+			pageInfo := PageInfo{
+				// TODO
+				RequestURI:  r.RequestURI,
+				Title:       "Value Stream Assessments",
+				Description: "Map your value streams to identify waste and highlight opportunities for faster flow.",
+				Image:       verifaLogoPNG,
+				ImageAlt:    "Verifa Logo",
+			}
+			page(
+				pageInfo,
+				servicesAssessmentsValueStreams(),
+			).Render(r.Context(), w)
+		},
+	)
 	router.Get("/work/", func(w http.ResponseWriter, r *http.Request) {
 		pageInfo := PageInfo{
 			// TODO
@@ -331,6 +399,30 @@ func Run() error {
 		w.Header().Add("Content-Type", "text/plain")
 		w.Write([]byte("User-agent: *\nAllow: /"))
 	})
+
+	// Add redirects from old website.
+	router.Get(
+		"/work/continuous-delivery-workshop/",
+		func(w http.ResponseWriter, r *http.Request) {
+			http.Redirect(
+				w,
+				r,
+				"/services/assessments/value-streams/",
+				http.StatusMovedPermanently,
+			)
+		},
+	)
+	router.Get(
+		"/work/value-stream-assessment/",
+		func(w http.ResponseWriter, r *http.Request) {
+			http.Redirect(
+				w,
+				r,
+				"/services/assessments/value-streams/",
+				http.StatusMovedPermanently,
+			)
+		},
+	)
 	router.NotFound(func(w http.ResponseWriter, r *http.Request) {
 		// Handle re-directs for old pages that had /index.html suffix.
 		if strings.HasSuffix(r.RequestURI, "/index.html") {

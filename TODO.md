@@ -16,10 +16,14 @@
 
 8. [x] Update admonitions on blog posts
 
-9. [] Migrate utterances issues to discus discussions
+9. [x] Migrate utterances issues to discus discussions
 
 10. [x] Work case studies, make them available (e.g. [http://localhost:3000/work/value-stream-mapping-with-visma/])
 
 11. [x] Careers page file upload, show attached files.
 
 12. [] Hyperscript and HTMX as static files, locally hosted
+
+13. [] Check any redirects from old site
+    [x] Value Stream Assessment page
+    [x] CD Workshop page

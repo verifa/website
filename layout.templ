@@ -282,3 +282,19 @@ templ linkButtonSmall(text string, href string) {
 		{ text }
 	</a>
 }
+
+templ ctaButton(text string, contact string) {
+	<a href="/contact/" class="group">
+		<div
+			class="
+			bg-v-black p-8
+			transition-all duration-300 ease-in-out
+			shadow-[14px_14px_0_theme('colors.v-pink')]
+			hover:shadow-none
+		"
+		>
+			<p class="text-v-white v-h3">{ text }</p>
+			<p class="mt-12 text-v-white v-h3 text-right group-hover:text-v-pink">{ contact }</p>
+		</div>
+	</a>
+}
