@@ -112,6 +112,23 @@ func Run() error {
 		},
 	)
 	router.Get(
+		"/services/assessments/developer-experience/",
+		func(w http.ResponseWriter, r *http.Request) {
+			pageInfo := PageInfo{
+				// TODO
+				RequestURI:  r.RequestURI,
+				Title:       "Developer Experience",
+				Description: "TODO",
+				Image:       verifaLogoPNG,
+				ImageAlt:    "Verifa Logo",
+			}
+			page(
+				pageInfo,
+				servicesAssessmentsDeveloperExperience(),
+			).Render(r.Context(), w)
+		},
+	)
+	router.Get(
 		"/services/assessments/value-streams/",
 		func(w http.ResponseWriter, r *http.Request) {
 			pageInfo := PageInfo{

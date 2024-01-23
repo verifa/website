@@ -27,3 +27,5 @@
 13. [] Check any redirects from old site
     [x] Value Stream Assessment page
     [x] CD Workshop page
+
+14. [] Check SEO of each route.
