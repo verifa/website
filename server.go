@@ -141,7 +141,9 @@ func Run() error {
 			}
 			page(
 				pageInfo,
-				servicesAssessmentsValueStreams(),
+				servicesAssessmentsValueStreams(
+					posts.Tags["value-streams"],
+				),
 			).Render(r.Context(), w)
 		},
 	)

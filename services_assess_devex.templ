@@ -6,15 +6,73 @@ templ servicesAssessmentsDeveloperExperience() {
 			@column("") {
 				<h1 class="v-h1">Developer Experience.</h1>
 				<h4 class="mt-8 v-h4">
-					TODO: Write this header.
+					We help assess and improve the developer experience of your teams to increase flow and productivity.
 				</h4>
 			}
 			@column("") {
 				<img
 					class="object-contain h-full w-full"
-					src="/static/visibility.svg"
+					src="/static/developer-experience.svg"
 					alt="An illustration of woman holding a magnifying glass up to a screen displaying source code."
 				/>
+			}
+		}
+	</section>
+	<div class="bg-v-gray/20">
+		<section class="container mx-auto">
+			@headerLine()
+			<h4 class="v-h4">Why DevEx?</h4>
+			<h2 class="mt-4 v-h2">
+				Developer experience is a measure of how smooth it is for someone to perform essential tasks needed to deliver software.
+				Better Developer Experience leads to more flow. More flow leads to more productivity.
+			</h2>
+		</section>
+		<section class="container mx-auto">
+			@headerLine()
+			<h4 class="v-h4">Our approach.</h4>
+			<h2 class="mt-4 v-h2">We uses several methods for researching and assessing DevEx.</h2>
+		</section>
+		<section class="container mx-auto">
+			@grid() {
+				<div>
+					<h3 class="v-h3">Value Streams</h3>
+					<p class="mt-4 v-p">
+						We facilitate Value Stream Mapping workshops with your development teams to understand their workflows, pains, waste and opportunities for increased flow.
+					</p>
+				</div>
+				<div>
+					<h3 class="v-h3">Wardley Maps</h3>
+					<p class="mt-4 v-p">
+						We use Wardley Mapping to understand the interface between platforms and developers. It helps us reason about the cognitive load and platform evolution.
+					</p>
+				</div>
+				<div>
+					<h3 class="v-h3">Gemba Walks</h3>
+					<p class="mt-4 v-p">
+						We do Gemba Walks to understand the current state of your development teams. We observe and ask questions to understand their daily routine and how we can improve it.
+					</p>
+				</div>
+				<div>
+					<h3 class="v-h3">Developer Surveys</h3>
+					<p class="mt-4 v-p">
+						Ongoing surveys that provide actionable results help us gauge the effects of change and highlight teams that may need more support.
+					</p>
+				</div>
+			}
+		</section>
+	</div>
+	<section class="container mx-auto">
+		@columns(false) {
+			@column("") {
+				<ul class="list-inside list-image-[url(/static/favicon-16x16.png)] v-h4 space-y-4">
+					<li><span class="pl-1">Reduce cognitive load</span></li>
+					<li><span class="pl-1">Get faster feedback</span></li>
+					<li><span class="pl-1">Improve flow</span></li>
+					<li><span class="pl-1">Make devs happier</span></li>
+				</ul>
+			}
+			@column("") {
+				@ctaButton("Want to improve your developer experience?", "Book an assessment.")
 			}
 		}
 	</section>

@@ -1,10 +1,10 @@
 package website
 
-templ servicesAssessmentsValueStreams() {
+templ servicesAssessmentsValueStreams(suggestedReading []*Post) {
 	<section class="container mx-auto">
 		@columns(false) {
 			@column("") {
-				<h1 class="v-h1">Value Stream Assessment.</h1>
+				<h1 class="v-h1">Value Stream Assessments.</h1>
 				<h4 class="mt-8 v-h4">
 					Map your value streams to identify waste and highlight opportunities for faster flow.
 				</h4>
@@ -21,7 +21,7 @@ templ servicesAssessmentsValueStreams() {
 	<div class="bg-v-gray/20">
 		<section class="container mx-auto">
 			@headerLine()
-			<p class="v-h4">What we do.</p>
+			<p class="v-h4">How we do it.</p>
 			<dl class="pt-4 space-y-6 divide-y divide-v-black ">
 				@homeService("preparation", "Preparation") {
 					<h4 class="mt-8 v-h4">Identify owner</h4>
@@ -53,7 +53,10 @@ templ servicesAssessmentsValueStreams() {
 		<section class="container mx-auto">
 			@headerLine()
 			<p class="v-h4">What you get.</p>
-			<p class="v-h2 mt-4">Diagrams of your Value Streams, a common understanding of your software delivery process and a comprehensive report to help you improve.</p>
+			<p class="v-h2 mt-4">
+				A thorough understanding of your software delivery value streams together with an actionable report to help you improve.
+				// Diagrams of your Value Streams, a common understanding of your software delivery process and a comprehensive report to help you improve.
+			</p>
 		</section>
 	</div>
 	<section class="container mx-auto">
@@ -78,8 +81,9 @@ templ servicesAssessmentsValueStreams() {
 	</section>
 	<section class="container mx-auto flex flex-col justify-center">
 		@headerLine()
-		<p class="v-h4">Types of waste.</p>
-		<div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8">
+		// <p class="v-h4">Waste cards.</p>
+		<p class="v-h3 max-w-3xl">Waste cards that we use during our workshops to highlight waste in your value streams.</p>
+		<div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8">
 			for _, waste := range wastes {
 				<div class="bg-v-pink w-72 h-72 flex items-center text-center group">
 					<div class="group-hover:hidden">
@@ -107,5 +111,8 @@ templ servicesAssessmentsValueStreams() {
 	</section>
 	<section class="container mx-auto">
 		<h2 class="v-h2">Suggested reading.</h2>
+		<div class="mt-12">
+			@PostsGrid(suggestedReading, PostsGridOptions{})
+		</div>
 	</section>
 }
