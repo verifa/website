@@ -33,10 +33,9 @@ At the time of writing there are around 16,000 modules available from [HashiCorp
 
 One of the big upsides of maintaining your infrastructure using an IaC approach is the fact that your infrastructure can be analysed by static analysis tools since your infrastructure is in plain text files. We can analyse the infrastructure before creating any resources to get quick feedback on the security posture and fix any issues before deployment. The only problem is that there are so many tools! After trying few alternatives, however, I have settled on a favourite that is both easy to use and effective at finding issues with built-in checks. In the past this favourite tool was `tfsec` , but quite recently the development efforts of the Tfsec project have been migrated into the Trivy project. Thus, it’s time to move over to Trivy although it’s not specialised to Terraform like Tfsec was.
 
-<aside>
-ℹ️ I noticed a few differences between Tfsec and Trivy when comparing their results and I will make note of these later in the hands-on section. Based on the GitHub issues and PRs, both open and closed, I am confident Trivy will eventually match and surpass Tfsec in features and accuracy as the development team looks very keen on closing gaps between the two tools.
-
-</aside>
+<Admonition type="info" title="Note">
+    I noticed a few differences between Tfsec and Trivy when comparing their results and I will make note of these later in the hands-on section. Based on the GitHub issues and PRs, both open and closed, I am confident Trivy will eventually match and surpass Tfsec in features and accuracy as the development team looks very keen on closing gaps between the two tools.
+</Admonition>
 
 Worth noting that there are some great open-source alternatives to Trivy, but overall we have found Trivy to be both easy to use locally and to integrate into build pipelines.
 
@@ -56,19 +55,19 @@ Now it’s time to get our hands dirty and look at an example of how Trivy can s
 
 For installation I suggest checking out the [installation guide in the documentation](https://aquasecurity.github.io/trivy/latest/getting-started/installation/) that covers all supported platforms. But for a quick start, here are a couple of commands that work for most folks:
 
-```bash
+```text
 brew install trivy
 ```
 
 For Debian/Ubuntu:
 
-```diff
+```text
 apt install trivy
 ```
 
 For Windows:
 
-```bash
+```text
 choco install trivy
 ```
 
@@ -80,7 +79,7 @@ I highly suggest [verifying the signature](https://aquasecurity.github.io/trivy/
 
 Let’s create an example Terraform root module in order to get something to point Trivy at. Like I mentioned earlier, there are many open-source modules for Terraform that we can utilise in order to quickly build infrastructure. The [AWS modules](https://registry.terraform.io/namespaces/terraform-aws-modules) are especially popular, so I thought let’s write an example by utilising a couple of these modules with mostly their default configuration. Here’s what I came up with:
 
-```jsx
+```hcl
 #main.tf
 terraform {
   required_providers {
@@ -186,10 +185,10 @@ This configuration is ~100 LoC and it will create a VPC, an EC2 instance and an 
 terraform init
 ```
 
-<aside>
-ℹ️ If you are working with local modules then there is no need to run `terraform init` before the scan as all files are already present, but remote modules must be fetched in to the `.terraform` folder before a scan.
+<Admonition type="info" title="Note">
+    If you are working with local modules then there is no need to run `terraform init` before the scan as all files are already present, but remote modules must be fetched in to the `.terraform` folder before a scan.
+</Admonition>
 
-</aside>
 
 Simplest way to run a Trivy misconfiguration scan is to point it at your current folder:
 
@@ -356,7 +355,7 @@ For brevity I shortened some of the long lines.
 
 Unfortunately Trivy does not print a summary in the end like `tfsec` does which makes it nice to read the output from bottom to top. Trivy does offer different ways to modify the resulting report, but for the needs of this blog I quickly used `grep` to find a short summary of each finding:
 
-```
+```text
 HIGH: Application load balancer is not set to drop invalid headers.
 HIGH: Load balancer is exposed publicly.
 MEDIUM: VPC Flow Logs is not enabled for VPC
@@ -374,7 +373,7 @@ Since we use the public AWS modules, we cannot easily make changes besides the i
 
 There is a finding related to the AWS Instance Metadata Service (IMDS). The finding is related to making sure the instance uses the IMDSv2 instead of the legacy IMDSv1. Looking at the full report above, you can see that Trivy explicitly tells us what the problem is and how to resolve it:
 
-```
+```text
 IMDS v2 (Instance Metadata Service) introduced session authentication tokens which improve 
 security when talking to IMDS.
 By default <code>aws_instance</code> resource sets IMDS session auth tokens to be optional. 
@@ -400,7 +399,7 @@ resource "aws_instance" "this" {
 
 If you run the scan again you will notice the finding is gone:
 
-```diff
+```bash
 trivy config . --skip-dirs '**/examples'
 ```
 
@@ -423,7 +422,7 @@ Using the inline method for ignoring findings is the most intuitive way in my op
 
 Now the only remaining issues are related to the AWS modules which we did not author. Unfortunately, right now Trivy can’t figure out that the remote modules are downloaded under different path (`.terraform/modules`) than what is declared when specifying the source for the modules:
 
-```diff
+```hlc
 module "alb" {
   source  = "terraform-aws-modules/alb/aws"
   version = "8.7.0"
@@ -434,7 +433,7 @@ Again, not an issue when using local modules since the paths nicely match betwee
 
 Luckily Trivy has a cure for this even without us waiting for a fix. I quickly brewed a solution using an [advanced filtering mechanism](https://aquasecurity.github.io/trivy/v0.48/docs/configuration/filtering/#by-open-policy-agent) in Trivy that uses the [Rego](https://www.openpolicyagent.org/docs/latest/policy-language/) language:
 
-```diff
+```rego
 package trivy
 
 import data.lib.trivy
@@ -458,7 +457,7 @@ This will resolve the issue with the VPC module because all `MEDIUM` findings ar
 
 Now we can run a scan and include this policy from a local file:
 
-```diff
+```bash
 trivy config . --skip-dirs '**/examples' --ignore-policy custom-policy.rego
 ```
 
@@ -478,7 +477,7 @@ trivy config tfplan.json
 
 I noticed that there’s one additional finding when running Trivy against the plan:
 
-```bash
+```text
 CRITICAL: Listener for application load balancer does not use HTTPS.
 ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 Plain HTTP is unencrypted and human-readable. This means that if a malicious actor was to eavesdrop on your connection, 
@@ -520,7 +519,7 @@ Including Trivy scans in your IaC repositories’ CI pipelines is a must. If you
 
 When using Trivy in CI it’s wise to use a [configuration file](https://aquasecurity.github.io/trivy/latest/docs/references/configuration/config-file/) instead of the command line flags, this makes it easy to reproduce the scan using same configuration locally if you need to investigate some new findings. If you are using GitHub Actions, there’s an [official Action](https://github.com/aquasecurity/trivy-action/tree/master) that you can use to integrate Trivy into your CI pipeline, here’s a simple example which uses a configuration file:
 
-```
+```yaml
 name: build
 on:
   push:
