@@ -13,3 +13,7 @@ output "compute_backend_service_id" {
 output "service_id" {
   value = google_cloud_run_service.service.id
 }
+
+output "service_name" {
+  value = google_cloud_run_service.service.name
+}

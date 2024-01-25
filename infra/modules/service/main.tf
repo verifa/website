@@ -16,6 +16,12 @@ resource "google_cloud_run_service" "service" {
         }
       }
     }
+    metadata {
+      annotations = {
+        "autoscaling.knative.dev/minScale" = tostring(var.min_scale)
+        "autoscaling.knative.dev/maxScale" = tostring(var.max_scale)
+      }
+    }
   }
 
   lifecycle {

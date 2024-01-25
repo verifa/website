@@ -28,6 +28,10 @@ module "prod-service" {
 
   service_name_prefix = "prod-website"
   region              = var.region
+
+  max_scale = 10
+  min_scale = 0
+
   env = [{
     name  = "COLOR"
     value = "green"
@@ -39,6 +43,10 @@ module "staging-service" {
 
   service_name_prefix = "staging-website"
   region              = var.region
+
+  max_scale = 3
+  min_scale = 0
+
   env = [{
     name  = "COLOR"
     value = "blue"

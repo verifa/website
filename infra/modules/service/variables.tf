@@ -15,3 +15,16 @@ variable "env" {
   type        = list(map(string))
   default     = [{}]
 }
+
+variable "min_scale" {
+  description = "Minimum number of instances to run"
+  type        = number
+  default     = 0
+
+}
+
+variable "max_scale" {
+  description = "Maximum number of instances to run"
+  type        = number
+  default     = 10
+}
