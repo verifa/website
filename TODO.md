@@ -31,3 +31,11 @@
 14. [] Check SEO of each route.
 
 15. [] Plausible proxy
+
+16. [] Mobile menu
+
+17. [] Home page ass/cons/coach section
+
+18. [] Dev vs Prod
+        [] robots.txt
+        [] plausible (only for prod)
