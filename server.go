@@ -20,9 +20,10 @@ var tailwindCSS []byte
 var staticFS embed.FS
 
 var (
-	verifaLogoPNG = "/static/verifa-logo.png"
-	verifaLogoSVG = "/static/verifa-logo.svg"
-	siteURL       = "https://verifa.io"
+	verifaLogoPNG      = "/static/verifa-logo.png"
+	verifaLogoSVG      = "/static/verifa-logo.svg"
+	verifaLogoShortSVG = "/static/verifa-logo-short.svg"
+	siteURL            = "https://verifa.io"
 )
 
 func Run() error {
