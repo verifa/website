@@ -34,7 +34,7 @@
 
 16. [] Mobile menu
 
-17. [] Home page ass/cons/coach section
+17. [x] Home page ass/cons/coach section
 
 18. [] Dev vs Prod
         [] robots.txt

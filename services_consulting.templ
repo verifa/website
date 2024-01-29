@@ -4,6 +4,17 @@ templ servicesConsulting() {
 	<section class="container mx-auto">
 		@headerLine()
 		<h4 class="v-h4 mt-12">Consulting.</h4>
-		<h1 class="v-h1 mt-4">Bla bla bla bla blaaaa.</h1>
+		<h1 class="v-h1 mt-4">Creating sustainable solutions.</h1>
+	</section>
+	<section class="container mx-auto">
+		<h3 class="v-h3">We have long-lasting relationships with customers who trust us to work alongside their teams and help solve all kinds of problems. We can deliver both short-term and long-term work. Whether you need help with CI/CD workflows, Platform Engineering, Cloud Architecture, Kubernetes, or any related topic, we're here to help you build, implement and evolve sustainable solutions together with you.</h3>
+	</section>
+	<section class="container mx-auto">
+		@columns(false) {
+			@column("")
+			@column("") {
+				@ctaButton("Want help from an elite consultant from our crew?", "Hire us.")
+			}
+		}
 	</section>
 }

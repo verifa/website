@@ -4,6 +4,38 @@ templ servicesCoaching() {
 	<section class="container mx-auto">
 		@headerLine()
 		<h4 class="v-h4 mt-12">Coaching.</h4>
-		<h1 class="v-h1 mt-4">Bla bla bla bla blaaaa.</h1>
+		<h1 class="v-h1 mt-4">Building competence within teams.</h1>
+	</section>
+	<section class="container mx-auto">
+		@columns(false) {
+			@column("") {
+				<h3 class="v-h3">You own your work</h3>
+				<p class="mt-4 v-p">
+					To make changes long-lasting it is important that the knowledge and practices introduced stay with the teams who own the work. Hiring consultants to come in and implement everything for you can lead to a lack of knowledge and practices to own the work. We believe in coaching teams to empower them learn new practices and technology, therefore ensuring the ownership is clear.
+				</p>
+			}
+			@column("") {
+				<h3 class="v-h3">High performing teams</h3>
+				<p class="mt-4 v-p">
+					Building high performing teams means bringing everyone with you. Working alongside engineers with experience will boost productivity whilst building competence. We help teams adopt technologies like the Cloud, HashiStack and Kubernetes by doing the day-to-day work together, thereby training and solving real problems at the same time.
+				</p>
+			}
+		}
+	</section>
+	<section class="container mx-auto">
+		<h2 class="v-h2">
+			‘A key and crucial part of our Continuous Integration journey was having Verifa's involvement in holding-our-hands and giving us confidence while we moved our active projects to a CI methodology.’
+		</h2>
+		<h4 class="mt-4 v-h4">
+			— David Hoslett, Siemens Mobility.
+		</h4>
+	</section>
+	<section class="container mx-auto">
+		@columns(false) {
+			@column("")
+			@column("") {
+				@ctaButton("Want to upskill your team?", "Get in touch.")
+			}
+		}
 	</section>
 }

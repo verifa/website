@@ -35,47 +35,41 @@ templ home(featuredPosts []*Post, tags map[string][]*Post) {
 				@fancyLinkLilac("Coaching", "/services/coaching/")
 				.
 			</p>
-			// 	</div>
-			// </section>
-			// <section id="services" class="bg-v-gray/20">
-			// 	<div class="container mx-auto">
 			<div class="pt-24"></div>
 			@headerLine()
 			<p class="v-h4">What we do.</p>
 			<dl class="pt-4 space-y-6 divide-y divide-v-black ">
 				@homeService("assessments", "Assessments") {
-					<p class="v-h4">
-						TODO
-					</p>
-					<div class="mt-8">
+					<h4 class="v-h4">
+						Our assessments are made for teams wanting to improve their software delivery efficiency.
+						We combine several research methods to gain an understanding of your current developer experience and provide a roadmap to help you improve.
+					</h4>
+					<div class="my-8">
 						@linkButtonSmall("Learn more", "/services/assessments/")
 					</div>
 				}
 				@homeService("consulting", "Consulting") {
-					<p class="v-h4">
-						TODO
-					</p>
-					<div class="mt-8">
+					<h4 class="v-h4">
+						Our elite crew of DevOps consultants are here to help you with your software delivery challenges.
+						We help companies of all sizes with things like CI/CD, Cloud, Kubernetes, Infrastructure as Code, Security and more.
+					</h4>
+					<div class="my-8">
 						@linkButtonSmall("Learn more", "/services/consulting/")
 					</div>
 				}
 				@homeService("coaching", "Coaching") {
-					<p class="v-h4">
-						TODO
-					</p>
-					<div class="mt-8">
+					<h4 class="v-h4">
+						Our coaching and training services are designed to help upskill your team and make long-lasting improvements to your software delivery.
+						We believe that working together with experienced engineers is the best way to learn and develop.
+					</h4>
+					<div class="my-8">
 						@linkButtonSmall("Learn more", "/services/coaching/")
 					</div>
 				}
 			</dl>
-			// 	</div>
-			// </section>
-			// <section class="">
-			// 	<div class="container mx-auto">
 			<div class="pt-24"></div>
 			@headerLine()
 			<p class="v-h4">Trusted by.</p>
-			// <p class="v-h3 text-v-black">Trusted by.</p>
 			<div class="mt-4">
 				@clientLogos()
 			</div>
