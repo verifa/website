@@ -22,7 +22,7 @@
 
 11. [x] Careers page file upload, show attached files.
 
-12. [] Hyperscript and HTMX as static files, locally hosted
+12. [x] Hyperscript and HTMX as static files, locally hosted
 
 13. [] Check any redirects from old site
     [x] Value Stream Assessment page
@@ -30,7 +30,7 @@
 
 14. [] Check SEO of each route.
 
-15. [] Plausible proxy
+15. [x] Plausible proxy
 
 16. [x] Mobile menu
 

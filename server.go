@@ -17,6 +17,12 @@ import (
 //go:embed dist/tailwind.css
 var tailwindCSS []byte
 
+//go:embed static/js/htmx-1.9.10.min.js
+var htmxJS []byte
+
+//go:embed static/js/_hyperscript-0.9.12.min.js
+var hyperscriptJS []byte
+
 //go:embed static
 var staticFS embed.FS
 
@@ -413,6 +419,17 @@ func Run() error {
 		func(w http.ResponseWriter, r *http.Request) {
 			w.Header().Add("Content-Type", "text/css")
 			w.Write(tailwindCSS)
+		},
+	)
+	router.Get("/js/htmx.js", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Add("Content-Type", "text/javascript")
+		w.Write(htmxJS)
+	})
+	router.Get(
+		"/js/_hyperscript.js",
+		func(w http.ResponseWriter, r *http.Request) {
+			w.Header().Add("Content-Type", "text/javascript")
+			w.Write(hyperscriptJS)
 		},
 	)
 
