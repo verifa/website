@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/fs"
 	"net/http"
+	"net/http/httputil"
 	"net/url"
 	"strings"
 	"time"
@@ -443,6 +444,27 @@ func Run() error {
 			)
 		},
 	)
+
+	// Plausible reverse proxy.
+	plURL, err := url.Parse("https://plausible.io")
+	if err != nil {
+		return fmt.Errorf("parsing plausible url: %w", err)
+	}
+	rp := httputil.ReverseProxy{
+		Rewrite: func(r *httputil.ProxyRequest) {
+			r.SetXForwarded()
+			r.SetURL(plURL)
+		},
+	}
+	router.Handle(
+		"/js/script.js",
+		&rp,
+	)
+	router.Handle(
+		"/api/event",
+		&rp,
+	)
+
 	router.NotFound(func(w http.ResponseWriter, r *http.Request) {
 		// Handle re-directs for old pages that had /index.html suffix.
 		if strings.HasSuffix(r.RequestURI, "/index.html") {
