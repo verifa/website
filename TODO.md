@@ -32,7 +32,7 @@
 
 15. [] Plausible proxy
 
-16. [] Mobile menu
+16. [x] Mobile menu
 
 17. [x] Home page ass/cons/coach section
 
