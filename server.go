@@ -1,12 +1,15 @@
 package website
 
 import (
+	"crypto/md5"
 	"embed"
+	"encoding/hex"
 	"fmt"
 	"io/fs"
 	"net/http"
 	"net/http/httputil"
 	"net/url"
+	"path/filepath"
 	"strings"
 	"time"
 
@@ -27,10 +30,15 @@ var hyperscriptJS []byte
 var staticFS embed.FS
 
 var (
-	verifaLogoPNG      = "/static/verifa-logo.png"
-	verifaLogoSVG      = "/static/verifa-logo.svg"
-	verifaLogoShortSVG = "/static/verifa-logo-short.svg"
-	siteURL            = "https://verifa.io"
+	verifaLogoPNG       = "/static/verifa-logo.png"
+	verifaLogoSVG       = "/static/verifa-logo.svg"
+	verifaLogoShortSVG  = "/static/verifa-logo-short.svg"
+	siteURL             = "https://verifa.io"
+	tailwindCSSFilename = "/dist/tailwind.css"
+)
+
+const (
+	hashLength = 12
 )
 
 func Run() error {
@@ -39,6 +47,7 @@ func Run() error {
 	if err != nil {
 		return fmt.Errorf("parsing posts: %w", err)
 	}
+
 	router := chi.NewRouter()
 	router.Use(middleware.Logger)
 	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
@@ -415,7 +424,7 @@ func Run() error {
 	})
 
 	router.Get(
-		"/dist/tailwind.css",
+		tailwindCSSFilename,
 		func(w http.ResponseWriter, r *http.Request) {
 			w.Header().Add("Content-Type", "text/css")
 			w.Write(tailwindCSS)
@@ -507,4 +516,26 @@ func Run() error {
 		return fmt.Errorf("starting server: %w", err)
 	}
 	return nil
+}
+
+func init() {
+	// Hash tailwindcss dist.
+	twHash, err := hashFilename(tailwindCSS, tailwindCSSFilename)
+	if err != nil {
+		panic(fmt.Sprintf("hashing tailwindcss: %s", err.Error()))
+	}
+	tailwindCSSFilename = twHash
+}
+
+func hashFilename(contents []byte, path string) (string, error) {
+	hash := md5.New()
+	if _, err := hash.Write(contents); err != nil {
+		return "", err
+	}
+
+	ext := filepath.Ext(path)
+	prefix := strings.TrimSuffix(path, ext)
+	sum := hex.EncodeToString(hash.Sum(nil))[:hashLength]
+
+	return prefix + "." + sum + ext, nil
 }
