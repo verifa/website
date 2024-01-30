@@ -7,6 +7,10 @@ resource "google_cloud_run_service" "service" {
       containers {
         image = "gcr.io/cloudrun/hello"
 
+        ports {
+          container_port = var.port
+        }
+
         dynamic "env" {
           for_each = var.env
           content {
@@ -28,6 +32,9 @@ resource "google_cloud_run_service" "service" {
     ignore_changes = [
       # ignore changes to image, because we don't deploy with Tofu
       template[0].spec[0].containers["image"],
+      template[0].metadata[0].annotations["client.knative.dev/user-image"],
+      template[0].metadata[0].annotations["run.googleapis.com/client-name"],
+      template[0].metadata[0].annotations["run.googleapis.com/client-version"],
     ]
   }
 }

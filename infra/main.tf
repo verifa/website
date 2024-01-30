@@ -29,13 +29,17 @@ module "prod-service" {
   service_name_prefix = "prod-website"
   region              = var.region
 
+  port = 3000
+
   max_scale = 10
   min_scale = 0
 
-  env = [{
-    name  = "COLOR"
-    value = "green"
-  }]
+  env = [
+    {
+      name  = "COLOR"
+      value = "green"
+    }
+  ]
 }
 
 module "staging-service" {
@@ -44,13 +48,17 @@ module "staging-service" {
   service_name_prefix = "staging-website"
   region              = var.region
 
+  port = 3000
+
   max_scale = 3
   min_scale = 0
 
-  env = [{
-    name  = "COLOR"
-    value = "blue"
-  }]
+  env = [
+    {
+      name  = "COLOR"
+      value = "blue"
+    }
+  ]
 }
 
 module "loadbalancer" {

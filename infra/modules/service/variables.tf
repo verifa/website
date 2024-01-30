@@ -28,3 +28,9 @@ variable "max_scale" {
   type        = number
   default     = 10
 }
+
+variable "port" {
+  description = "Port to expose the service on"
+  type        = number
+  default     = 3000
+}
