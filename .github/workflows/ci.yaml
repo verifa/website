@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 20
       - name: Install TailwindCSS
-        run: npm install -D tailwindcss
+        run: npm ci
       - name: Run tests and lint
         run: make ci
 
@@ -30,8 +30,9 @@ jobs:
     runs-on: ubuntu-latest
     # Run on main branch, release or if PR contains the 'preview' label
     if: github.ref == 'refs/heads/main' || github.event_name == 'release' || contains( github.event.pull_request.labels.*.name, 'preview')
-
+    needs: build
     steps:
+      - uses: actions/checkout@v4
       - uses: actions/setup-go@v4
         with:
           go-version: ">=1.21.4"
@@ -41,8 +42,6 @@ jobs:
           node-version: 20
       - name: Install TailwindCSS
         run: npm ci
-      - name: Run tests and lint
-        run: make ci
       - name: Write deploy variables
         id: vars
         run: |
