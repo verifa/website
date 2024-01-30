@@ -47,18 +47,18 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" == "release" ]
           then
-            echo "deploy_env=prod" >> $GITHUB_OUTPUT
+            echo "DEPLOY_ENV=prod" >> $GITHUB_ENV
           elif [ "${GITHUB_REF#refs/heads/}" == "main" ]
           then
-            echo "deploy_env=staging" >> $GITHUB_OUTPUT
+            echo "DEPLOY_ENV=staging" >> $GITHUB_ENV
           elif [ "${{ contains( github.event.pull_request.labels.*.name, 'preview') }}" == "true" ]
           then
-            echo "deploy_env=preview" >> $GITHUB_OUTPUT
+            echo "DEPLOY_ENV=preview" >> $GITHUB_ENV
           else
-            echo "deploy_env=unknown" >> $GITHUB_OUTPUT
+            echo "DEPLOY_ENV=unknown" >> $GITHUB_ENV
           fi
       - name: Dump deployment variables
-        run: echo "${{ steps.vars.outputs.deploy_env }}"
+        run: echo "DELPLOY_ENV=${DEPLOY_ENV}"
       - name: "Set up Cloud SDK"
         uses: "google-github-actions/setup-gcloud@v2"
         with:
@@ -72,4 +72,4 @@ jobs:
           gcloud auth configure-docker ${REGION}-docker.pkg.dev/verifa-website/website
       - name: Build image and deploy
         run: |
-          make deploy-${deploy_env}
+          make deploy-${DEPLOY_ENV}
