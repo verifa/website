@@ -220,6 +220,21 @@ func Run(site Site) error {
 			company(),
 		).Render(r.Context(), w)
 	})
+	router.Get("/crew/", func(w http.ResponseWriter, r *http.Request) {
+		pageInfo := PageInfo{
+			// TODO
+			RequestURI:  r.RequestURI,
+			Title:       "Verifa",
+			Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
+			Image:       verifaLogoPNG,
+			ImageAlt:    "Verifa Logo",
+		}
+		_ = page(
+			site,
+			pageInfo,
+			crew(),
+		).Render(r.Context(), w)
+	})
 	router.Get("/careers/", func(w http.ResponseWriter, r *http.Request) {
 		pageInfo := PageInfo{
 			// TODO
