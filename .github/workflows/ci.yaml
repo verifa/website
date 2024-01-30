@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - "main"
-      #TODO REMOVE THIS
-      - "go-migration"
   release:
     types: [published]
   pull_request:
