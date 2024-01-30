@@ -1,6 +1,6 @@
 package website
 
-templ layout(info PageInfo) {
+templ layout(site Site, info PageInfo) {
 	<!DOCTYPE html>
 	<html lang="en">
 		<head>
@@ -13,15 +13,16 @@ templ layout(info PageInfo) {
 			<link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#5bbad5"/>
 			<meta name="theme-color" content="#f9fafb"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1"/>
-			<!-- Add Plausible analytics -->
-			<script defer data-api="/api/event" data-domain="verifa.io" src="/js/script.js"></script>
-			<!-- Add verification for Google Search Console -->
+			//  Add Plausible analytics
+			if site.IsProduction {
+				<script defer data-api="/api/event" data-domain="verifa.io" src="/js/script.js"></script>
+			}
+			//  Add verification for Google Search Console
 			<meta name="google-site-verification" content="wRgliC-I-394x6LseW11b5iEMHlG46YI_p4Zv36rdT4"/>
-			<!-- TODO -->
 			<link href={ tailwindCSSFilename } rel="stylesheet"/>
 			<script src="/js/htmx.js"></script>
 			<script src="/js/_hyperscript.js"></script>
-			@seo(info)
+			@seo(site, info)
 		</head>
 		<body>
 			{ children... }
@@ -29,15 +30,15 @@ templ layout(info PageInfo) {
 	</html>
 }
 
-templ page(info PageInfo, contents templ.Component) {
-	@layout(info) {
+templ page(site Site, info PageInfo, contents templ.Component) {
+	@layout(site, info) {
 		<div>
 			@header(info.RequestURI)
 			<main>
 				@contents
 			</main>
 			@subscribe()
-			@footer()
+			@footer(site)
 		</div>
 	}
 }
@@ -101,7 +102,7 @@ templ subscribe() {
 	</section>
 }
 
-templ footer() {
+templ footer(site Site) {
 	<section>
 		<footer aria-labelledby="footerHeading">
 			<h2 id="footerHeading" class="sr-only">Footer</h2>
@@ -199,15 +200,13 @@ templ footer() {
 					</div>
 					<div class="mt-12 border-t border-black pt-8">
 						<p>
-							&copy; 2024 Verifa Group Oy All rights reserved.
-						</p>
-						<p>
-							Version
-							// <a
-							// 	target="_blank"
-							// 	href="https://github.com/verifa/website/tree/{env.gitCommit}">
-							// 	{env.gitCommit.substring(0, 7)}
-							// </a>.
+							&copy; 2024 Verifa Group Oy All rights reserved. Version:&nbsp;
+							<a
+								target="_blank"
+								href={ templ.URL("https://github.com/verifa/website/tree/" + site.Commit) }
+							>
+								{ shortHash(site.Commit) }
+							</a>
 						</p>
 					</div>
 				</div>

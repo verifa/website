@@ -6,6 +6,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"io/fs"
+	"net"
 	"net/http"
 	"net/http/httputil"
 	"net/url"
@@ -37,11 +38,21 @@ var (
 	tailwindCSSFilename = "/dist/tailwind.css"
 )
 
+// var (
+// 	buildGitCommit    = "dev"
+// 	buildIsProduction = "false"
+// )
+
 const (
 	hashLength = 12
 )
 
-func Run() error {
+type Site struct {
+	Commit       string
+	IsProduction bool
+}
+
+func Run(site Site) error {
 	// Parse posts.
 	posts, err := ParsePosts(postsFS)
 	if err != nil {
@@ -58,7 +69,8 @@ func Run() error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
-		page(
+		_ = page(
+			site,
 			pageInfo,
 			home(posts.Featured(), posts.Tags),
 		).Render(r.Context(), w)
@@ -72,7 +84,8 @@ func Run() error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
-		page(
+		_ = page(
+			site,
 			pageInfo,
 			services(),
 		).Render(r.Context(), w)
@@ -88,7 +101,8 @@ func Run() error {
 				Image:       verifaLogoPNG,
 				ImageAlt:    "Verifa Logo",
 			}
-			page(
+			_ = page(
+				site,
 				pageInfo,
 				servicesAssessments(),
 			).Render(r.Context(), w)
@@ -105,7 +119,8 @@ func Run() error {
 				Image:       verifaLogoPNG,
 				ImageAlt:    "Verifa Logo",
 			}
-			page(
+			_ = page(
+				site,
 				pageInfo,
 				servicesConsulting(),
 			).Render(r.Context(), w)
@@ -122,7 +137,8 @@ func Run() error {
 				Image:       verifaLogoPNG,
 				ImageAlt:    "Verifa Logo",
 			}
-			page(
+			_ = page(
+				site,
 				pageInfo,
 				servicesCoaching(),
 			).Render(r.Context(), w)
@@ -139,7 +155,8 @@ func Run() error {
 				Image:       verifaLogoPNG,
 				ImageAlt:    "Verifa Logo",
 			}
-			page(
+			_ = page(
+				site,
 				pageInfo,
 				servicesAssessmentsDeveloperExperience(),
 			).Render(r.Context(), w)
@@ -156,7 +173,8 @@ func Run() error {
 				Image:       verifaLogoPNG,
 				ImageAlt:    "Verifa Logo",
 			}
-			page(
+			_ = page(
+				site,
 				pageInfo,
 				servicesAssessmentsValueStreams(
 					posts.Tags["value-streams"],
@@ -173,7 +191,8 @@ func Run() error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
-		page(
+		_ = page(
+			site,
 			pageInfo,
 			work(posts.Cases),
 		).Render(r.Context(), w)
@@ -187,7 +206,8 @@ func Run() error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
-		page(
+		_ = page(
+			site,
 			pageInfo,
 			company(),
 		).Render(r.Context(), w)
@@ -201,7 +221,8 @@ func Run() error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
-		page(
+		_ = page(
+			site,
 			pageInfo,
 			careers(posts.Jobs),
 		).Render(r.Context(), w)
@@ -214,7 +235,8 @@ func Run() error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
-		page(
+		_ = page(
+			site,
 			pageInfo,
 			contact(),
 		).Render(r.Context(), w)
@@ -249,7 +271,7 @@ func Run() error {
 				)
 			}
 			w.Header().Set("HX-Push-Url", "/blog/"+tagsQuery)
-			blogs(filteredBlog, tags).Render(r.Context(), w)
+			_ = blogs(filteredBlog, tags).Render(r.Context(), w)
 			return
 		}
 
@@ -268,7 +290,11 @@ func Run() error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
-		page(pageInfo, blogs(filteredBlog, tags)).Render(r.Context(), w)
+		_ = page(
+			site,
+			pageInfo,
+			blogs(filteredBlog, tags),
+		).Render(r.Context(), w)
 	})
 
 	//
@@ -303,7 +329,7 @@ func Run() error {
 	}
 	router.Get("/sitemap.xml", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Add("Content-Type", "application/xml")
-		sitemap(siteMapPages).Render(r.Context(), w)
+		_ = sitemap(siteMapPages).Render(r.Context(), w)
 	})
 	// Handle blog posts.
 	router.Get("/blog/{slug}/", func(w http.ResponseWriter, r *http.Request) {
@@ -318,7 +344,7 @@ func Run() error {
 				ImageAlt:    "Verifa Logo",
 			}
 			w.WriteHeader(http.StatusNotFound)
-			page(pageInfo, notFound()).Render(r.Context(), w)
+			_ = page(site, pageInfo, notFound()).Render(r.Context(), w)
 			return
 		}
 		pageInfo := PageInfo{
@@ -329,7 +355,7 @@ func Run() error {
 			ImageAlt:    post.Slug,
 			Post:        post,
 		}
-		page(pageInfo, blog(post)).Render(r.Context(), w)
+		_ = page(site, pageInfo, blog(post)).Render(r.Context(), w)
 	})
 	router.Get("/work/{slug}/", func(w http.ResponseWriter, r *http.Request) {
 		slug := chi.URLParam(r, "slug")
@@ -343,7 +369,7 @@ func Run() error {
 				ImageAlt:    "Verifa Logo",
 			}
 			w.WriteHeader(http.StatusNotFound)
-			page(pageInfo, notFound()).Render(r.Context(), w)
+			_ = page(site, pageInfo, notFound()).Render(r.Context(), w)
 			return
 		}
 		pageInfo := PageInfo{
@@ -354,7 +380,7 @@ func Run() error {
 			ImageAlt:    post.Slug,
 			Post:        post,
 		}
-		page(pageInfo, blog(post)).Render(r.Context(), w)
+		_ = page(site, pageInfo, blog(post)).Render(r.Context(), w)
 	})
 
 	router.Get("/privacy/", func(w http.ResponseWriter, r *http.Request) {
@@ -365,7 +391,8 @@ func Run() error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
-		page(
+		_ = page(
+			site,
 			pageInfo,
 			privacyPolicy(),
 		).Render(r.Context(), w)
@@ -378,7 +405,8 @@ func Run() error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
-		page(
+		_ = page(
+			site,
 			pageInfo,
 			termsOfService(),
 		).Render(r.Context(), w)
@@ -393,7 +421,8 @@ func Run() error {
 				Image:       verifaLogoPNG,
 				ImageAlt:    "Verifa Logo",
 			}
-			page(
+			_ = page(
+				site,
 				pageInfo,
 				acceptableUsePolicy(),
 			).Render(r.Context(), w)
@@ -408,7 +437,8 @@ func Run() error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
-		page(
+		_ = page(
+			site,
 			pageInfo,
 			thankyou(),
 		).Render(r.Context(), w)
@@ -442,10 +472,12 @@ func Run() error {
 		},
 	)
 
-	router.Get("/robots.txt", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Add("Content-Type", "text/plain")
-		w.Write([]byte("User-agent: *\nAllow: /"))
-	})
+	if site.IsProduction {
+		router.Get("/robots.txt", func(w http.ResponseWriter, r *http.Request) {
+			w.Header().Add("Content-Type", "text/plain")
+			w.Write([]byte("User-agent: *\nAllow: /"))
+		})
+	}
 
 	// Add redirects from old website.
 	router.Get(
@@ -510,9 +542,17 @@ func Run() error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
-		page(pageInfo, notFound()).Render(r.Context(), w)
+		_ = page(site, pageInfo, notFound()).Render(r.Context(), w)
 	})
-	if err := http.ListenAndServe(":3000", router); err != nil {
+	server := &http.Server{
+		ReadHeaderTimeout: 3 * time.Second,
+		Handler:           router,
+	}
+	l, err := net.Listen("tcp", ":3000")
+	if err != nil {
+		return fmt.Errorf("listening: %w", err)
+	}
+	if err := server.Serve(l); err != nil {
 		return fmt.Errorf("starting server: %w", err)
 	}
 	return nil
@@ -538,4 +578,11 @@ func hashFilename(contents []byte, path string) (string, error) {
 	sum := hex.EncodeToString(hash.Sum(nil))[:hashLength]
 
 	return prefix + "." + sum + ext, nil
+}
+
+func shortHash(hash string) string {
+	if len(hash) > 8 {
+		return hash[:8]
+	}
+	return hash
 }

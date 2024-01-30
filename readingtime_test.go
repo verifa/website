@@ -14,6 +14,7 @@ import (
 )
 
 func TestReadingTime(t *testing.T) {
+	t.Parallel()
 	baseRenderOpts := []renderer.Option{
 		html.WithHardWraps(),
 		html.WithXHTML(),

@@ -2,7 +2,6 @@ package website
 
 import (
 	"bytes"
-	"fmt"
 	"testing"
 
 	"github.com/yuin/goldmark"
@@ -13,6 +12,7 @@ import (
 )
 
 func TestAdmonition(t *testing.T) {
+	t.Parallel()
 	baseRenderOpts := []renderer.Option{
 		html.WithHardWraps(),
 		html.WithXHTML(),
@@ -64,5 +64,5 @@ func TestAdmonition(t *testing.T) {
 	if err := md.Convert(source, &buf); err != nil {
 		t.Fatalf("converting: %s", err)
 	}
-	fmt.Println(buf.String())
+	t.Log(buf.String())
 }

@@ -2,7 +2,6 @@ package website
 
 import (
 	"bytes"
-	"fmt"
 	"testing"
 
 	"github.com/yuin/goldmark"
@@ -13,6 +12,7 @@ import (
 )
 
 func TestAnchor(t *testing.T) {
+	t.Parallel()
 	baseRenderOpts := []renderer.Option{
 		html.WithHardWraps(),
 		html.WithXHTML(),
@@ -25,9 +25,7 @@ func TestAnchor(t *testing.T) {
 	admonitionRenderer.AddOptions(
 		renderer.WithNodeRenderers(),
 	)
-	fullRenderOpts := append(
-		baseRenderOpts,
-	)
+	fullRenderOpts := baseRenderOpts
 	md := goldmark.New(
 		goldmark.WithParserOptions(
 			parser.WithAutoHeadingID(),
@@ -59,5 +57,5 @@ func TestAnchor(t *testing.T) {
 	if err := md.Convert(source, &buf, parser.WithContext(context)); err != nil {
 		t.Fatalf("converting: %s", err)
 	}
-	fmt.Println(buf.String())
+	t.Log(buf.String())
 }
