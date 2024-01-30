@@ -237,7 +237,7 @@ func targetRepoNamer(s1, s2 string) string {
 func Preview(ctx context.Context) {
 	fmt.Println("🧪 starting preview")
 	ref := KoBuild(ctx, WithKoLocal())
-	DockerRun(
+	iferr(DockerRun(
 		ctx,
 		"run",
 		"--rm",
@@ -245,7 +245,7 @@ func Preview(ctx context.Context) {
 		"-p",
 		"3000:3000",
 		ref,
-	)
+	))
 }
 
 func Lint(ctx context.Context) {
@@ -275,7 +275,7 @@ func Deploy(ctx context.Context, deploy string) {
 	}
 	fmt.Println("🚢 deploying to", deploy)
 	ref := KoBuild(ctx)
-	GCloudRun(
+	iferr(GCloudRun(
 		ctx,
 		"run",
 		"deploy",
@@ -284,7 +284,7 @@ func Deploy(ctx context.Context, deploy string) {
 		ref,
 		"--region",
 		region,
-	)
+	))
 	fmt.Println("✅ deployed to", deploy)
 }
 

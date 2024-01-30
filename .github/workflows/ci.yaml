@@ -42,8 +42,9 @@ jobs:
         with:
           node-version: 20
       - name: Install TailwindCSS
-        run: npm install -D tailwindcss
-
+        run: npm ci
+      - name: Run tests and lint
+        run: make ci
       - name: Write deploy variables
         id: vars
         run: |
