@@ -78,21 +78,27 @@ func (*AdmonitionTransformer) Transform(
 		admonitionType := []byte{}
 		remainder := []ast.Node{}
 		for child := p1.FirstChild(); child != nil; child = child.NextSibling() {
-			if child.Kind() != ast.KindText {
-				return ast.WalkContinue, nil
-			}
 			text := child.Text(reader.Source())
 			switch index {
 			case 0:
+				if child.Kind() != ast.KindText {
+					return ast.WalkContinue, nil
+				}
 				if !bytes.Equal(text, []byte("[")) {
 					return ast.WalkContinue, nil
 				}
 			case 1:
+				if child.Kind() != ast.KindText {
+					return ast.WalkContinue, nil
+				}
 				if text[0] != '!' {
 					return ast.WalkContinue, nil
 				}
 				admonitionType = text[1:]
 			case 2:
+				if child.Kind() != ast.KindText {
+					return ast.WalkContinue, nil
+				}
 				if !bytes.Equal(text, []byte("]")) {
 					return ast.WalkContinue, nil
 				}

@@ -59,6 +59,22 @@ func TestAdmonition(t *testing.T) {
 > [!WARNING]
 > A warning this time.
 
+> [!NOTE]
+> A totally heinoius note.
+
+` + "```" + `bash
+terraform init
+` + "```" + `
+
+> [!NOTE]
+> If you are working with local modules then there is no need to run ` + "`terraform init`" + ` before the scan as all files are already present, but remote modules must be fetched in to the ` + "`.terraform`" + ` folder before a scan.
+
+Simplest way to run a Trivy misconfiguration scan is to point it at your current folder:
+
+` + "```" + `bash
+trivy config .
+` + "```" + `
+
 `)
 	buf := bytes.Buffer{}
 	if err := md.Convert(source, &buf); err != nil {

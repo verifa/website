@@ -11,15 +11,9 @@ tags:
 - Open Source
 - DevSecOps
 date: 2024-01-24
-image: "/blogs/how-to-secure-terraform-code-trivy.png"
+image: "/static/blog/how-to-secure-terraform-code-trivy.png"
 featured: true
 jobActive: true
-
----
-
-<script>
-    import Admonition from '$lib/posts/admonition.svelte'
-</script>
 
 ---
 
@@ -33,9 +27,8 @@ At the time of writing there are around 16,000 modules available from [HashiCorp
 
 One of the big upsides of maintaining your infrastructure using an IaC approach is the fact that your infrastructure can be analysed by static analysis tools since your infrastructure is in plain text files. We can analyse the infrastructure before creating any resources to get quick feedback on the security posture and fix any issues before deployment. The only problem is that there are so many tools! After trying few alternatives, however, I have settled on a favourite that is both easy to use and effective at finding issues with built-in checks. In the past this favourite tool was `tfsec` , but quite recently the development efforts of the Tfsec project have been migrated into the Trivy project. Thus, it’s time to move over to Trivy although it’s not specialised to Terraform like Tfsec was.
 
-<Admonition type="info" title="Note">
-    I noticed a few differences between Tfsec and Trivy when comparing their results and I will make note of these later in the hands-on section. Based on the GitHub issues and PRs, both open and closed, I am confident Trivy will eventually match and surpass Tfsec in features and accuracy as the development team looks very keen on closing gaps between the two tools.
-</Admonition>
+> [!NOTE]
+> I noticed a few differences between Tfsec and Trivy when comparing their results and I will make note of these later in the hands-on section. Based on the GitHub issues and PRs, both open and closed, I am confident Trivy will eventually match and surpass Tfsec in features and accuracy as the development team looks very keen on closing gaps between the two tools.
 
 Worth noting that there are some great open-source alternatives to Trivy, but overall we have found Trivy to be both easy to use locally and to integrate into build pipelines.
 
@@ -43,7 +36,7 @@ There’s of course nobody stopping you from using multiple tools, and when you 
 
 ## Introduction to Trivy
 
-Trivy is a Swiss army knife type of tool for security scanning of various types of artifacts and code. It can scan different targets such as your local filesystem or a container image from a container registry. It can also check for many kinds of security issues such as known vulnerabilities, exposed secrets and most relevant to this blog post; misconfigurations. 
+Trivy is a Swiss army knife type of tool for security scanning of various types of artifacts and code. It can scan different targets such as your local filesystem or a container image from a container registry. It can also check for many kinds of security issues such as known vulnerabilities, exposed secrets and most relevant to this blog post; misconfigurations.
 
 At the time of writing Trivy supports scanning of various IaC configurations such as Terraform, [CloudFormation](https://aws.amazon.com/cloudformation/) and [Azure Resource Manager](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview). So even if your organisation uses different tools across teams, Trivy might just be the right tool. Trivy comes with built-in checks for various cloud platforms and in this blog post we will only use the built-in checks, but you can also define your own [custom checks/policies](https://aquasecurity.github.io/trivy/latest/docs/scanner/misconfiguration/custom/).
 
@@ -185,10 +178,8 @@ This configuration is ~100 LoC and it will create a VPC, an EC2 instance and an 
 terraform init
 ```
 
-<Admonition type="info" title="Note">
-    If you are working with local modules then there is no need to run `terraform init` before the scan as all files are already present, but remote modules must be fetched in to the `.terraform` folder before a scan.
-</Admonition>
-
+> [!NOTE]
+> If you are working with local modules then there is no need to run `terraform init` before the scan as all files are already present, but remote modules must be fetched in to the `.terraform` folder before a scan.
 
 Simplest way to run a Trivy misconfiguration scan is to point it at your current folder:
 
@@ -209,8 +200,8 @@ Before showing the full results, I noticed there are some example configurations
 ```bash
 HIGH: IAM policy document uses sensitive action 'logs:CreateLogStream' on wildcarded resource '*'
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════
-You should use the principle of least privilege when defining your IAM policies. 
-This means you should specify each exact permission required without using wildcards, 
+You should use the principle of least privilege when defining your IAM policies.
+This means you should specify each exact permission required without using wildcards,
 as this could cause the granting of access to certain undesired actions, resources and principals.
 
 See https://avd.aquasec.com/misconfig/avd-aws-0057
@@ -229,7 +220,7 @@ See https://avd.aquasec.com/misconfig/avd-aws-0057
 
 If you look closely you notice that the source of the finding is a `main.tf` file in the examples folder of the VPC module: `via modules/vpc/examples/complete/main.tf:25-82 (module.vpc)`
 
-This is not really our configuration and we should not include these files in the scan. This is also a difference between Tfsec and Trivy, when running Tfsec it does not pickup the examples folder. 
+This is not really our configuration and we should not include these files in the scan. This is also a difference between Tfsec and Trivy, when running Tfsec it does not pickup the examples folder.
 
 However, we can easily resolve this by skipping all files under `examples` folders and then we should get proper report of findings:
 
@@ -247,7 +238,7 @@ Failures: 2 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 2, CRITICAL: 0)
 
 HIGH: Application load balancer is not set to drop invalid headers.
 ════════════════════════════════════════════════════════════════════════════════════════════════
-Passing unknown or invalid headers through to the target poses a potential risk of compromise. 
+Passing unknown or invalid headers through to the target poses a potential risk of compromise.
 
 By setting drop_invalid_header_fields to true, anything that doe not conform to well known,
 defined headers will be removed by the load balancer.
@@ -258,15 +249,15 @@ See https://avd.aquasec.com/misconfig/avd-aws-0052
    via .terraform/modules/alb/main.tf:5-63 (aws_lb.this[0])
 ────────────────────────────────────────────────────────────────────────────────────────────────
    5   resource "aws_lb" "this" {
-   .   
+   .
   23 [   drop_invalid_header_fields                  = var.drop_invalid_header_fields
-  ..   
+  ..
   63   }
 ────────────────────────────────────────────────────────────────────────────────────────────────
 
 HIGH: Load balancer is exposed publicly.
 ════════════════════════════════════════════════════════════════════════════════════════════════
-There are many scenarios in which you would want to expose a load balancer to the wider internet, 
+There are many scenarios in which you would want to expose a load balancer to the wider internet,
 but this check exists as a warning to prevent accidental exposure of internal assets.
 You should ensure that this resource should be exposed publicly.
 
@@ -276,9 +267,9 @@ See https://avd.aquasec.com/misconfig/avd-aws-0053
    via .terraform/modules/alb/main.tf:5-63 (aws_lb.this[0])
 ────────────────────────────────────────────────────────────────────────────────────────────────
    5   resource "aws_lb" "this" {
-   .   
+   .
   12 [   internal           = var.internal
-  ..   
+  ..
   63   }
 ────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -289,7 +280,7 @@ Failures: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 1, HIGH: 0, CRITICAL: 0)
 
 MEDIUM: VPC Flow Logs is not enabled for VPC
 ════════════════════════════════════════════════════════════════════════════════════════════════
-VPC Flow Logs provide visibility into network traffic that traverses the VPC and can be used to 
+VPC Flow Logs provide visibility into network traffic that traverses the VPC and can be used to
 detect anomalous traffic or insight during security workflows.
 
 See https://avd.aquasec.com/misconfig/avd-aws-0178
@@ -298,14 +289,14 @@ See https://avd.aquasec.com/misconfig/avd-aws-0178
 ────────────────────────────────────────────────────────────────────────────────────────────────
   29 ┌ resource "aws_vpc" "this" {
   30 │   count = local.create_vpc ? 1 : 0
-  31 │ 
+  31 │
   32 │   cidr_block          = var.use_ipam_pool ? null : var.cidr
   33 │   ipv4_ipam_pool_id   = var.ipv4_ipam_pool_id
   34 │   ipv4_netmask_length = var.ipv4_netmask_length
-  35 │ 
+  35 │
   36 │   assign_generated_ipv6_cidr_block     = var.enable_ipv6 && !var.use_ipam_pool ? true : null
   37 └   ipv6_cidr_block                      = var.ipv6_cidr
-  ..   
+  ..
 ────────────────────────────────────────────────────────────────────────────────────────────────
 
 main.tf (terraform)
@@ -316,10 +307,10 @@ Failures: 2 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 2, CRITICAL: 0)
 HIGH: Instance does not require IMDS access to require a token
 ════════════════════════════════════════════════════════════════════════════════════════════════
 
-IMDS v2 (Instance Metadata Service) introduced session authentication tokens which improve 
+IMDS v2 (Instance Metadata Service) introduced session authentication tokens which improve
 security when talking to IMDS.
-By default <code>aws_instance</code> resource sets IMDS session auth tokens to be optional. 
-To fully protect IMDS you need to enable session tokens by using <code>metadata_options</code> 
+By default <code>aws_instance</code> resource sets IMDS session auth tokens to be optional.
+To fully protect IMDS you need to enable session tokens by using <code>metadata_options</code>
 block and its <code>http_tokens</code> variable set to <code>required</code>.
 
 See https://avd.aquasec.com/misconfig/avd-aws-0028
@@ -374,10 +365,10 @@ Since we use the public AWS modules, we cannot easily make changes besides the i
 There is a finding related to the AWS Instance Metadata Service (IMDS). The finding is related to making sure the instance uses the IMDSv2 instead of the legacy IMDSv1. Looking at the full report above, you can see that Trivy explicitly tells us what the problem is and how to resolve it:
 
 ```text
-IMDS v2 (Instance Metadata Service) introduced session authentication tokens which improve 
+IMDS v2 (Instance Metadata Service) introduced session authentication tokens which improve
 security when talking to IMDS.
-By default <code>aws_instance</code> resource sets IMDS session auth tokens to be optional. 
-To fully protect IMDS you need to enable session tokens by using <code>metadata_options</code> 
+By default <code>aws_instance</code> resource sets IMDS session auth tokens to be optional.
+To fully protect IMDS you need to enable session tokens by using <code>metadata_options</code>
 block and its <code>http_tokens</code> variable set to <code>required</code>.
 ```
 
@@ -422,7 +413,7 @@ Using the inline method for ignoring findings is the most intuitive way in my op
 
 Now the only remaining issues are related to the AWS modules which we did not author. Unfortunately, right now Trivy can’t figure out that the remote modules are downloaded under different path (`.terraform/modules`) than what is declared when specifying the source for the modules:
 
-```hlc
+```hcl
 module "alb" {
   source  = "terraform-aws-modules/alb/aws"
   version = "8.7.0"
@@ -445,11 +436,11 @@ ignore_avdid := {"AVD-AWS-0052", "AVD-AWS-0053"}
 ignore_severities := {"LOW", "MEDIUM"}
 
 ignore {
-	input.AVDID == ignore_avdid[_]
+ input.AVDID == ignore_avdid[_]
 }
 
 ignore {
-	input.Severity == ignore_severities[_]
+ input.Severity == ignore_severities[_]
 }
 ```
 
@@ -480,7 +471,7 @@ I noticed that there’s one additional finding when running Trivy against the p
 ```text
 CRITICAL: Listener for application load balancer does not use HTTPS.
 ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
-Plain HTTP is unencrypted and human-readable. This means that if a malicious actor was to eavesdrop on your connection, 
+Plain HTTP is unencrypted and human-readable. This means that if a malicious actor was to eavesdrop on your connection,
 they would be able to see all of your data flowing back and forth.
 
 You should use HTTPS, which is HTTP over an encrypted (TLS) connection, meaning eavesdroppers cannot read your traffic.
@@ -491,7 +482,7 @@ See https://avd.aquasec.com/misconfig/avd-aws-0054
    via main.tf:34-48 (aws_lb_listener.frontend_http_tcp_ffdb4db32d85be4b5cd7539e4d3c6d16)
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
   ..
-  36 [ 	protocol = "HTTP"
+  36 [  protocol = "HTTP"
   ..
   48   }
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -499,7 +490,7 @@ See https://avd.aquasec.com/misconfig/avd-aws-0054
 
 I found it odd that this was not found in the previous scan and after some testing this seems to be caused by using remote modules (again!). I also noticed that running `tfsec` instead of Trivy will catch this issue. When using local modules Trivy can right away pick up this finding. Right now it seems necessary to scan both your plan and your configuration for the best accuracy, but I might revisit this in the future and see if the issue is resolved given the active discussion around remote modules support in Trivy.
 
-Luckily, we can work around this also by scanning everything at once, so generate the plan and then scan the entire folder (then Trivy processes the configuration AND the plan): 
+Luckily, we can work around this also by scanning everything at once, so generate the plan and then scan the entire folder (then Trivy processes the configuration AND the plan):
 
 ```bash
 terraform plan --out tf.plan
