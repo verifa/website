@@ -31,6 +31,9 @@ jobs:
     # Run on main branch, release or if PR contains the 'preview' label
     if: github.ref == 'refs/heads/main' || github.event_name == 'release' || contains( github.event.pull_request.labels.*.name, 'preview')
     needs: build
+    permissions:
+      contents: "read"
+      id-token: "write"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v4
