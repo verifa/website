@@ -46,10 +46,12 @@ const (
 var gitCommit = "dev"
 
 func main() {
-	var dev, build, run, preview, pr bool
+	var dev, build, lint, test, run, preview, pr bool
 	var deploy string
 	flag.BoolVar(&dev, "dev", false, "run the website locally")
 	flag.BoolVar(&build, "build", false, "build the website locally")
+	flag.BoolVar(&lint, "lint", false, "lint the code")
+	flag.BoolVar(&test, "test", false, "run the tests")
 	flag.StringVar(
 		&deploy,
 		"deploy",
@@ -77,13 +79,18 @@ func main() {
 		}
 	}()
 
+	if lint {
+		Lint(ctx)
+	}
+	if test {
+		Test(ctx)
+	}
 	if dev {
 		Dev(ctx)
 	}
 	if run {
 		Run(ctx)
 	}
-
 	if build {
 		_ = KoBuild(ctx, WithKoLocal())
 	}
@@ -257,9 +264,15 @@ func Lint(ctx context.Context) {
 	fmt.Println("✅ code linted")
 }
 
+func Test(ctx context.Context) {
+	fmt.Println("🧪 running tests")
+	iferr(Go(ctx, "test", "-v", recDir))
+	fmt.Println("✅ tests passed")
+}
+
 func PullRequest(ctx context.Context) {
 	Lint(ctx)
-	iferr(Go(ctx, "test", "-v", recDir))
+	Test(ctx)
 	fmt.Println("✅ pull request checks passed")
 }
 

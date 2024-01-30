@@ -19,14 +19,14 @@ pr:
 
 .PHONY: lint
 lint:
-	$(GOLANGCI_LINT_CMD) run -v --timeout 3m ./...
+	$(CI_CMD) -lint
 
 .PHONY: test
 test:
-	go test -v -coverpkg=./... ./...
+	$(CI_CMD) -test
 
 .PHONY: ci
-ci: generate lint test
+ci: pr
 
 .PHONY: preview
 preview:
