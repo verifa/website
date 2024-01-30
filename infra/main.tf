@@ -32,7 +32,7 @@ module "prod-service" {
   port = 3000
 
   max_scale = 10
-  min_scale = 0
+  min_scale = 1
 
   env = [
     {
@@ -72,11 +72,11 @@ module "loadbalancer" {
   backend_services = [
     {
       id      = module.prod-service.compute_backend_service_id
-      domains = ["green.verifa.io"]
+      domains = ["test.verifa.io", "verifa.io"]
     },
     {
       id      = module.staging-service.compute_backend_service_id
-      domains = ["blue.verifa.io"]
+      domains = ["staging.verifa.io"]
     },
   ]
   certificate_name  = var.certmanager_certificate_name

@@ -14,13 +14,9 @@ type PageInfo struct {
 	Post *Post
 }
 
-templ seo(site Site, info PageInfo) {
+templ seo(info PageInfo) {
 	<title>{ info.Title }</title>
 	<meta name="description" content={ info.Description }/>
-	// Do not let search engines index the site if it is not production.
-	if site.IsProduction {
-		<meta name="robots" content="none"/>
-	}
 	<link rel="canonical" href={ siteURL + info.RequestURI }/>
 	// Open Graph.
 	<meta property="og:title" content={ info.Title }/>

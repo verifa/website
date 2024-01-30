@@ -6,6 +6,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"io/fs"
+	"log/slog"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -53,6 +54,13 @@ type Site struct {
 }
 
 func Run(site Site) error {
+	slog.Info(
+		"starting website",
+		"commit",
+		site.Commit,
+		"production",
+		site.IsProduction,
+	)
 	// Parse posts.
 	posts, err := ParsePosts(postsFS)
 	if err != nil {
@@ -327,10 +335,16 @@ func Run(site Site) error {
 			ChangeFrequency: "daily",
 		})
 	}
-	router.Get("/sitemap.xml", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Add("Content-Type", "application/xml")
-		_ = sitemap(siteMapPages).Render(r.Context(), w)
-	})
+	// Only include sitemap on production.
+	if site.IsProduction {
+		router.Get(
+			"/sitemap.xml",
+			func(w http.ResponseWriter, r *http.Request) {
+				w.Header().Add("Content-Type", "application/xml")
+				_ = sitemap(siteMapPages).Render(r.Context(), w)
+			},
+		)
+	}
 	// Handle blog posts.
 	router.Get("/blog/{slug}/", func(w http.ResponseWriter, r *http.Request) {
 		slug := chi.URLParam(r, "slug")

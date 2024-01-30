@@ -243,6 +243,7 @@ func targetRepoNamer(s1, s2 string) string {
 
 func Preview(ctx context.Context) {
 	fmt.Println("🧪 starting preview")
+	Generate(ctx)
 	ref := KoBuild(ctx, WithKoLocal())
 	iferr(DockerRun(
 		ctx,
@@ -257,6 +258,7 @@ func Preview(ctx context.Context) {
 
 func Lint(ctx context.Context) {
 	fmt.Println("🧹 code linting")
+	Generate(ctx)
 	iferr(Go(ctx, "mod", "tidy"))
 	iferr(Go(ctx, "mod", "verify"))
 	iferr(GoRun(ctx, goFumpt, "-w", "-extra", curDir))
@@ -266,11 +268,13 @@ func Lint(ctx context.Context) {
 
 func Test(ctx context.Context) {
 	fmt.Println("🧪 running tests")
+	Generate(ctx)
 	iferr(Go(ctx, "test", "-v", recDir))
 	fmt.Println("✅ tests passed")
 }
 
 func PullRequest(ctx context.Context) {
+	Generate(ctx)
 	Lint(ctx)
 	Test(ctx)
 	fmt.Println("✅ pull request checks passed")
@@ -287,6 +291,7 @@ func Deploy(ctx context.Context, deploy string) {
 		panic("invalid deploy env")
 	}
 	fmt.Println("🚢 deploying to", deploy)
+	Generate(ctx)
 	ref := KoBuild(ctx)
 	iferr(GCloudRun(
 		ctx,

@@ -5,6 +5,10 @@ templ layout(site Site, info PageInfo) {
 	<html lang="en">
 		<head>
 			<meta charset="utf-8"/>
+			// Do not let search engines index the site if it is not production.
+			if !site.IsProduction {
+				<meta name="robots" content="none"/>
+			}
 			<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png"/>
 			<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png"/>
 			<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png"/>
@@ -22,7 +26,7 @@ templ layout(site Site, info PageInfo) {
 			<link href={ tailwindCSSFilename } rel="stylesheet"/>
 			<script src="/js/htmx.js"></script>
 			<script src="/js/_hyperscript.js"></script>
-			@seo(site, info)
+			@seo(info)
 		</head>
 		<body>
 			{ children... }
