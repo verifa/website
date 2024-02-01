@@ -1,6 +1,6 @@
 # How to write blogs
 
-1. Create a new file, or copy an existing post, under [src/posts](../src/posts/)
+1. Create a new file, or copy an existing post, under [posts](../posts/)
 2. Be sure add the required [frontmatter](https://jekyllrb.com/docs/front-matter/):
 
     - `type`: one of `Blog`, `Podcast`, `Case`[study], `Job`, `Event`

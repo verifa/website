@@ -39,11 +39,6 @@ var (
 	tailwindCSSFilename = "/dist/tailwind.css"
 )
 
-// var (
-// 	buildGitCommit    = "dev"
-// 	buildIsProduction = "false"
-// )
-
 const (
 	hashLength = 12
 )
@@ -410,6 +405,39 @@ func Run(site Site) error {
 			Post:        post,
 		}
 		_ = page(site, pageInfo, blog(post)).Render(r.Context(), w)
+	})
+	// Crew members.
+	router.Get("/crew/{id}/", func(w http.ResponseWriter, r *http.Request) {
+		memberID := chi.URLParam(r, "id")
+		member, ok := Crew[memberID]
+		if !ok {
+			pageInfo := PageInfo{
+				RequestURI:  r.RequestURI,
+				Title:       "Not Found",
+				Description: "Page not found.",
+				Image:       verifaLogoPNG,
+				ImageAlt:    "Verifa Logo",
+			}
+			w.WriteHeader(http.StatusNotFound)
+			_ = page(site, pageInfo, notFound()).Render(r.Context(), w)
+			return
+		}
+		posts, ok := posts.ByAuthor[memberID]
+		if !ok {
+			posts = []*Post{}
+		}
+		pageInfo := PageInfo{
+			RequestURI:  r.RequestURI,
+			Title:       member.Name,
+			Description: member.Bio,
+			Image:       siteURL + member.ProfileOrAvatar(),
+			ImageAlt:    member.Name,
+		}
+		_ = page(
+			site,
+			pageInfo,
+			crewMember(member, posts),
+		).Render(r.Context(), w)
 	})
 
 	router.Get("/privacy/", func(w http.ResponseWriter, r *http.Request) {

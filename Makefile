@@ -1,5 +1,5 @@
 
-CI_CMD := go run ./cmd/ci/ci.go
+CI_CMD := go run ./cmd/ci/*.go
 
 .PHONY: init
 init:

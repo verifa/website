@@ -23,7 +23,7 @@ import (
 	highlighting "github.com/yuin/goldmark-highlighting/v2"
 )
 
-//go:embed src/posts/*.md
+//go:embed posts/*.md
 var postsFS embed.FS
 
 type PostType string
@@ -42,7 +42,11 @@ type Posts struct {
 	Jobs  []*Post
 	Cases []*Post
 
+	// Index is a map of slugs to posts.
 	Index map[string]*Post
+
+	// ByAuthor is a map of author IDs to posts.
+	ByAuthor map[string][]*Post
 
 	// Tags is a map of Tags and posts that have that tag.
 	Tags map[string][]*Post
@@ -155,8 +159,9 @@ func ParsePosts(postsFS embed.FS) (*Posts, error) {
 	)
 
 	posts := Posts{
-		Index: make(map[string]*Post),
-		Tags:  make(map[string][]*Post),
+		Index:    make(map[string]*Post),
+		ByAuthor: make(map[string][]*Post),
+		Tags:     make(map[string][]*Post),
 	}
 	if err := fs.WalkDir(
 		postsFS,
@@ -223,6 +228,10 @@ func ParsePosts(postsFS embed.FS) (*Posts, error) {
 		}
 		for tag := range post.Tags {
 			posts.Tags[tag] = append(posts.Tags[tag], post)
+		}
+		// Add posts by author.
+		for _, author := range post.Authors {
+			posts.ByAuthor[author.ID] = append(posts.ByAuthor[author.ID], post)
 		}
 		// Add first three related posts.
 		// This is not very efficient so if it affects startup time we could

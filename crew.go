@@ -2,6 +2,7 @@ package website
 
 import (
 	_ "embed"
+	"strings"
 )
 
 // init is used to set some default values for the crew.
@@ -132,7 +133,7 @@ var Crew = map[string]Member{
 	},
 	"lsjodahl": {
 		ID:       "lsjodahl",
-		Active:   true,
+		Active:   false,
 		Name:     "Laroy Sjödahl",
 		Position: "Consultant",
 		Country:  "Sweden",
@@ -142,7 +143,7 @@ var Crew = map[string]Member{
 	},
 	"valtintas": {
 		ID:       "valtintas",
-		Active:   true,
+		Active:   false,
 		Name:     "Viktor Altintas",
 		Position: "Consultant",
 		Country:  "Sweden",
@@ -212,6 +213,28 @@ type Member struct {
 	SillyProfile string `json:"sillyProfile"`
 }
 
+func (m Member) ProfileOrAvatar() string {
+	file, err := staticFS.Open(strings.TrimPrefix(m.Profile, "/"))
+	if err != nil {
+		return m.Avatar
+	}
+	defer file.Close()
+	return m.Profile
+}
+
+func (m Member) SillyProfileOrAvatar() string {
+	file, err := staticFS.Open(strings.TrimPrefix(m.SillyProfile, "/"))
+	if err != nil {
+		return m.Avatar
+	}
+	defer file.Close()
+	return m.SillyProfile
+}
+
+// URL returns the URL for the member's profile page.
+// This includes the site URL and is made fro SEO purposes.
+// Do not use to create a link to the member's profile page from within the
+// website.
 func (m Member) URL() string {
 	return siteURL + "/crew/" + m.ID + "/"
 }
