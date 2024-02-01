@@ -64,6 +64,15 @@ func Run(site Site) error {
 
 	router := chi.NewRouter()
 	router.Use(middleware.Logger)
+	router.Use(
+		middleware.Compress(
+			5,
+			"text/html",
+			"text/css",
+			"text/javascript",
+			"application/xml",
+		),
+	)
 	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		pageInfo := PageInfo{
 			RequestURI:  r.RequestURI,
@@ -87,6 +96,7 @@ func Run(site Site) error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(
 			site,
 			pageInfo,
@@ -104,6 +114,7 @@ func Run(site Site) error {
 				Image:       verifaLogoPNG,
 				ImageAlt:    "Verifa Logo",
 			}
+			w.Header().Set("Content-Type", "text/html")
 			_ = page(
 				site,
 				pageInfo,
@@ -122,6 +133,7 @@ func Run(site Site) error {
 				Image:       verifaLogoPNG,
 				ImageAlt:    "Verifa Logo",
 			}
+			w.Header().Set("Content-Type", "text/html")
 			_ = page(
 				site,
 				pageInfo,
@@ -140,6 +152,7 @@ func Run(site Site) error {
 				Image:       verifaLogoPNG,
 				ImageAlt:    "Verifa Logo",
 			}
+			w.Header().Set("Content-Type", "text/html")
 			_ = page(
 				site,
 				pageInfo,
@@ -158,6 +171,7 @@ func Run(site Site) error {
 				Image:       verifaLogoPNG,
 				ImageAlt:    "Verifa Logo",
 			}
+			w.Header().Set("Content-Type", "text/html")
 			_ = page(
 				site,
 				pageInfo,
@@ -176,6 +190,7 @@ func Run(site Site) error {
 				Image:       verifaLogoPNG,
 				ImageAlt:    "Verifa Logo",
 			}
+			w.Header().Set("Content-Type", "text/html")
 			_ = page(
 				site,
 				pageInfo,
@@ -194,6 +209,7 @@ func Run(site Site) error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(
 			site,
 			pageInfo,
@@ -209,6 +225,7 @@ func Run(site Site) error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(
 			site,
 			pageInfo,
@@ -224,6 +241,7 @@ func Run(site Site) error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(
 			site,
 			pageInfo,
@@ -239,6 +257,7 @@ func Run(site Site) error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(
 			site,
 			pageInfo,
@@ -253,6 +272,7 @@ func Run(site Site) error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(
 			site,
 			pageInfo,
@@ -289,6 +309,7 @@ func Run(site Site) error {
 				)
 			}
 			w.Header().Set("HX-Push-Url", "/blog/"+tagsQuery)
+			w.Header().Set("Content-Type", "text/html")
 			_ = blogs(filteredBlog, tags).Render(r.Context(), w)
 			return
 		}
@@ -308,6 +329,7 @@ func Run(site Site) error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(
 			site,
 			pageInfo,
@@ -368,6 +390,7 @@ func Run(site Site) error {
 				ImageAlt:    "Verifa Logo",
 			}
 			w.WriteHeader(http.StatusNotFound)
+			w.Header().Set("Content-Type", "text/html")
 			_ = page(site, pageInfo, notFound()).Render(r.Context(), w)
 			return
 		}
@@ -379,6 +402,7 @@ func Run(site Site) error {
 			ImageAlt:    post.Slug,
 			Post:        post,
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(site, pageInfo, blog(post)).Render(r.Context(), w)
 	})
 	router.Get("/work/{slug}/", func(w http.ResponseWriter, r *http.Request) {
@@ -392,6 +416,7 @@ func Run(site Site) error {
 				Image:       verifaLogoPNG,
 				ImageAlt:    "Verifa Logo",
 			}
+			w.Header().Set("Content-Type", "text/html")
 			w.WriteHeader(http.StatusNotFound)
 			_ = page(site, pageInfo, notFound()).Render(r.Context(), w)
 			return
@@ -404,6 +429,7 @@ func Run(site Site) error {
 			ImageAlt:    post.Slug,
 			Post:        post,
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(site, pageInfo, blog(post)).Render(r.Context(), w)
 	})
 	// Crew members.
@@ -419,6 +445,7 @@ func Run(site Site) error {
 				ImageAlt:    "Verifa Logo",
 			}
 			w.WriteHeader(http.StatusNotFound)
+			w.Header().Set("Content-Type", "text/html")
 			_ = page(site, pageInfo, notFound()).Render(r.Context(), w)
 			return
 		}
@@ -433,6 +460,7 @@ func Run(site Site) error {
 			Image:       siteURL + member.ProfileOrAvatar(),
 			ImageAlt:    member.Name,
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(
 			site,
 			pageInfo,
@@ -448,6 +476,7 @@ func Run(site Site) error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(
 			site,
 			pageInfo,
@@ -462,6 +491,7 @@ func Run(site Site) error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(
 			site,
 			pageInfo,
@@ -478,6 +508,7 @@ func Run(site Site) error {
 				Image:       verifaLogoPNG,
 				ImageAlt:    "Verifa Logo",
 			}
+			w.Header().Set("Content-Type", "text/html")
 			_ = page(
 				site,
 				pageInfo,
@@ -494,6 +525,7 @@ func Run(site Site) error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(
 			site,
 			pageInfo,
@@ -599,6 +631,7 @@ func Run(site Site) error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(site, pageInfo, notFound()).Render(r.Context(), w)
 	})
 	server := &http.Server{
