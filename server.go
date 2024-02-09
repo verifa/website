@@ -618,7 +618,7 @@ func Run(site Site) error {
 			http.Redirect(
 				w,
 				r,
-				strings.TrimSuffix(r.RequestURI, "/index.html"),
+				strings.TrimSuffix(r.RequestURI, "index.html"),
 				http.StatusMovedPermanently,
 			)
 			return
