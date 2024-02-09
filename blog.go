@@ -17,7 +17,7 @@ const (
 	TagStatusRemaining
 )
 
-func sortTags(tags map[string]TagStatus) []string {
+func sortTags[T any](tags map[string]T) []string {
 	sorted := make([]string, 0, len(tags))
 	for tag := range tags {
 		sorted = append(sorted, tag)

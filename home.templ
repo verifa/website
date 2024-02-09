@@ -121,7 +121,7 @@ templ home(featuredPosts []*Post, tags map[string][]*Post) {
 			<div class="mb-5 md:mb-8 lg:mb-12"></div>
 			<div class="flex flex-col gap-y-4 mb-8">
 				<div class="flex flex-wrap gap-x-4">
-					for tag := range tags {
+					for _, tag := range sortTags(tags) {
 						<a href={ templ.URL("/blog/?tags=" + tag) } class="inline-block">
 							<div class="inline-flex items-center my-2 px-3 py-0.5 bg-v-gray hover:bg-v-pink">
 								<p class="text-v-white"><span>#</span>{ tag }</p>
