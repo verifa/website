@@ -6,6 +6,7 @@ require (
 	github.com/a-h/templ v0.2.513
 	github.com/alecthomas/chroma/v2 v2.12.0
 	github.com/cosmtrek/air v1.49.0
+	github.com/fsnotify/fsnotify v1.7.0
 	github.com/go-chi/chi/v5 v5.0.11
 	github.com/golangci/golangci-lint v1.55.2
 	github.com/google/go-containerregistry v0.16.1
@@ -109,7 +110,6 @@ require (
 	github.com/fatih/color v1.16.0 // indirect
 	github.com/fatih/structtag v1.2.0 // indirect
 	github.com/firefart/nonamedreturns v1.0.4 // indirect
-	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/fzipp/gocyclo v0.6.0 // indirect
 	github.com/ghostiam/protogetter v0.2.3 // indirect
 	github.com/go-critic/go-critic v0.9.0 // indirect
