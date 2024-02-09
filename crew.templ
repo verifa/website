@@ -28,7 +28,7 @@ templ crewMember(member Member, posts []*Post) {
 				<div class="w-auto flex flex-col gap-y-8 lg:flex-row sm:gap-x-4">
 					<div class="max-w-sm lg:w-1/4">
 						<img
-							src={ member.Profile }
+							src={ member.ProfileOrAvatar() }
 							alt={ member.Name }
 							class="h-full w-full object-top object-contain rounded-md"
 						/>
@@ -78,11 +78,18 @@ templ crewMember(member Member, posts []*Post) {
 	} else {
 		<section class="container mx-auto">
 			<div class="flex flex-col gap-y-8 sm:flex-row sm:gap-x-4">
-				<div class="">
-					<img src={ member.Avatar } alt={ member.Name } class="h-48 w-full"/>
-				</div>
-				<div>
-					<h2>{ member.Name }</h2>
+				<div class="w-auto flex flex-col gap-y-8 lg:flex-row sm:gap-x-4">
+					<div class="max-w-sm lg:w-1/4">
+						<img
+							src={ member.ProfileOrAvatar() }
+							alt={ member.Name }
+							class="h-full w-full object-top object-contain rounded-md"
+						/>
+					</div>
+					<div class="w-full lg:w-3/4">
+						<h2 class="v-h2">{ member.Name }</h2>
+						<h4 class="v-h4 mt-2">Verifa Alumni</h4>
+					</div>
 				</div>
 			</div>
 		</section>

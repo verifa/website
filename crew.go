@@ -5,6 +5,10 @@ import (
 	"strings"
 )
 
+const (
+	genericAvatar = "/static/crew/avatar.svg"
+)
+
 // init is used to set some default values for the crew.
 func init() {
 	for id, member := range Crew {
@@ -216,7 +220,7 @@ type Member struct {
 func (m Member) ProfileOrAvatar() string {
 	file, err := staticFS.Open(strings.TrimPrefix(m.Profile, "/"))
 	if err != nil {
-		return m.Avatar
+		return m.AvatarOrGenericAvatar()
 	}
 	defer file.Close()
 	return m.Profile
@@ -225,10 +229,19 @@ func (m Member) ProfileOrAvatar() string {
 func (m Member) SillyProfileOrAvatar() string {
 	file, err := staticFS.Open(strings.TrimPrefix(m.SillyProfile, "/"))
 	if err != nil {
-		return m.Avatar
+		return m.AvatarOrGenericAvatar()
 	}
 	defer file.Close()
 	return m.SillyProfile
+}
+
+func (m Member) AvatarOrGenericAvatar() string {
+	file, err := staticFS.Open(strings.TrimPrefix(m.Avatar, "/"))
+	if err != nil {
+		return genericAvatar
+	}
+	defer file.Close()
+	return m.Avatar
 }
 
 // URL returns the URL for the member's profile page.
