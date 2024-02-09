@@ -1,126 +1,128 @@
 package website
 
 type certLogo struct {
-    Name string
-    Image string
+	Name  string
+	Image string
 }
 
 var certLogos = []certLogo{
-    {
-        Name: "hashicorp-terraform-chip",
-        Image: "/static/certifications/hashicorp-chip-terraform-lilac.png",
-    },
-    {
-        Name: "hashicorp-vault-chip",
-        Image: "/static/certifications/hashicorp-chip-vault-lilac.png",
-    },
-    {
-        Name: "hashicorp-terraform-associate",
-        Image: "/static/certifications/hashicorp-terraform-associate-lilac.png",
-    },
-    {
-        Name: "hashicorp-vault-associate-lilac",
-        Image: "/static/certifications/hashicorp-vault-associate-lilac.png",
-    },
-    {
-        Name: "hashicorp-consul-associate",
-        Image: "/static/certifications/hashicorp-consul-associate-badge-lilac.png",
-    },
-    {
-        Name: "kubernetes-certified-administrator",
-        Image: "/static/certifications/kubernetes-certified-administrator-lilac.png",
-    },
-    {
-        Name: "gcp-professiona-cloud-architect-lilac",
-        Image: "/static/certifications/gcp-professiona-cloud-architect-lilac.png",
-    },
-    {
-        Name: "google-cloud-devops-engineer-lilac",
-        Image: "/static/certifications/google-cloud-devops-engineer-lilac.png",
-    },
-    {
-        Name: "azure-administrator-associate-lilac",
-        Image: "/static/certifications/azure-administrator-associate-lilac.png",
-    },
-    {
-        Name: "aws-cloud-practitioner-lilac",
-        Image: "/static/certifications/aws-cloud-practitioner-lilac.png",
-    },
-    {
-        Name: "aws-certified-developer-associate",
-        Image: "/static/certifications/aws-certified-developer-associate-badge-lilac.png",
-    },
-    {
-        Name: "aws-certified-solutions-architect-associate",
-        Image: "/static/certifications/aws-certified-solutions-architect-associate-badge-lilac.png",
-    },
+	{
+		Name:  "hashicorp-terraform-chip",
+		Image: "/static/certifications/hashicorp-chip-terraform-lilac.png",
+	},
+	{
+		Name:  "hashicorp-vault-chip",
+		Image: "/static/certifications/hashicorp-chip-vault-lilac.png",
+	},
+	{
+		Name:  "hashicorp-terraform-associate",
+		Image: "/static/certifications/hashicorp-terraform-associate-lilac.png",
+	},
+	{
+		Name:  "hashicorp-vault-associate-lilac",
+		Image: "/static/certifications/hashicorp-vault-associate-lilac.png",
+	},
+	{
+		Name:  "hashicorp-consul-associate",
+		Image: "/static/certifications/hashicorp-consul-associate-badge-lilac.png",
+	},
+	{
+		Name:  "kubernetes-certified-administrator",
+		Image: "/static/certifications/kubernetes-certified-administrator-lilac.png",
+	},
+	{
+		Name:  "gcp-professiona-cloud-architect-lilac",
+		Image: "/static/certifications/gcp-professiona-cloud-architect-lilac.png",
+	},
+	{
+		Name:  "google-cloud-devops-engineer-lilac",
+		Image: "/static/certifications/google-cloud-devops-engineer-lilac.png",
+	},
+	{
+		Name:  "azure-administrator-associate-lilac",
+		Image: "/static/certifications/azure-administrator-associate-lilac.png",
+	},
+	{
+		Name:  "aws-cloud-practitioner-lilac",
+		Image: "/static/certifications/aws-cloud-practitioner-lilac.png",
+	},
+	{
+		Name:  "aws-certified-developer-associate",
+		Image: "/static/certifications/aws-certified-developer-associate-badge-lilac.png",
+	},
+	{
+		Name:  "aws-certified-solutions-architect-associate",
+		Image: "/static/certifications/aws-certified-solutions-architect-associate-badge-lilac.png",
+	},
 }
 
 templ company() {
-    <section class="container mx-auto">
-        @headerLine()
-        <h4 class="v-h4 mt-12">About us.</h4>
-        <h1 class="v-h1 mt-2">Consulting is our game.</h1>
-    </section>
-    <section class="">
-        <div class="container mx-auto">
-            <h3 class="v-h3">
-                We are an elite crew of DevOps Consultants specialised in improving the Developer Experience.
-                We each bring our own specialities, experiences and know-how when collaborating on customer projects, tailoring services to our customers' individual needs.
-            </h3>
-        </div>
-    </section>
-    <section class="">
-        <div class="container mx-auto">
-            @headerLine()
-            <h4 class="v-h4 mt-12">Our Values.</h4>
-            <h2 class="v-h2 mt-4">
-                <span class="text-v-pink">We are people not numbers.</span>
-                <span class="text-v-lilac">We share and collaborate.</span>
-                <span class="text-v-pink">We work to provide value.</span>
-                <span class="text-v-lilac">We are on a journey together.</span>
-            </h2>
-        </div>
-    </section>
-    <section class="container mx-auto">
-        @headerLine()
-        <h4 class="v-h4 mt-12">Our Crew.</h4>
-        <h2 class="v-h2 mt-4">Do you want to get to know us better? Find out who we are as people and connect with us.</h2>
-        <div class="mt-8">
-            @linkButton("Meet the Crew", "/crew/")
-        </div>
-    </section>
-
-    <section class="">
-        <div class="container mx-auto">
-        <h4 class="v-h4 ">Our Certifications.</h4>
-        <div class="mt-4 flex flex-wrap gap-0.5">
-            for _, logo := range certLogos {
-                <div class="flex justify-center p-4 bg-v-lilac">
-                    <img src={logo.Image} alt={logo.Name} class="h-32 w-32 object-contain" />
-                </div>
-            }
-        </div>
-        </div>
-    </section>
-
-    <section class="container mx-auto">
-        @columns(false) {
-            @column("") {
-                <img class="object-contain w-2/3 h-2/3 lg:h-full lg:w-full" src="/static/round-table.svg" alt="round table" />
-            }
-            @column("") {
-                <div class="flex flex-col gap-y-0">
-                    <h2 class="v-h2">Join us.</h2>
-                    <h4 class="v-h4 mt-4">
-                        We are always on the lookout for our next colleague to join us on our Veri-nice journey.
-                        Like what you see and want to know more?
-                    </h4>
-                    <div class="mt-8">
-                        @linkButton("Careers", "/careers/")
-                    </div>
-                </div>
-            }
-        }
-    </section>
+	<section class="container mx-auto">
+		@headerLine()
+		<h4 class="v-h4 mt-12">About us.</h4>
+		<h1 class="v-h1 mt-2">Consulting is our game.</h1>
+	</section>
+	<section class="">
+		<div class="container mx-auto">
+			<h3 class="v-h3">
+				We are an elite crew of DevOps Consultants specialised in improving the Developer Experience.
+				We each bring our own specialities, experiences and know-how when collaborating on customer projects, tailoring services to our customers' individual needs.
+			</h3>
+		</div>
+	</section>
+	<section class="">
+		<div class="container mx-auto">
+			@headerLine()
+			<h4 class="v-h4 mt-12">Our Values.</h4>
+			<h2 class="v-h2 mt-4">
+				<span class="text-v-pink">We are people not numbers.</span>
+				<br/>
+				<spam class="text-v-lilac">We share and collaborate. </spam>
+				<br/>
+				<spam class="text-v-pink">We work to provide value.</spam>
+				<br/>
+				<spam class="text-v-lilac">We are on a journey together.</spam>
+			</h2>
+		</div>
+	</section>
+	<section class="container mx-auto">
+		@headerLine()
+		<h4 class="v-h4 mt-12">Our Crew.</h4>
+		<h2 class="v-h2 mt-4">Do you want to get to know us better? Find out who we are as people and connect with us.</h2>
+		<div class="mt-8">
+			@linkButton("Meet the Crew", "/crew/")
+		</div>
+	</section>
+	<section class="">
+		<div class="container mx-auto">
+			@headerLine()
+			<h4 class="v-h4 mt-12">Our Certifications.</h4>
+			<div class="mt-4 flex flex-wrap gap-0.5">
+				for _, logo := range certLogos {
+					<div class="flex justify-center p-4 bg-v-lilac">
+						<img src={ logo.Image } alt={ logo.Name } class="h-32 w-32 object-contain"/>
+					</div>
+				}
+			</div>
+		</div>
+	</section>
+	<section class="container mx-auto">
+		@columns(false) {
+			@column("") {
+				<img class="object-contain w-2/3 h-2/3 lg:h-full lg:w-full" src="/static/round-table.svg" alt="round table"/>
+			}
+			@column("") {
+				<div class="flex flex-col gap-y-0">
+					<h2 class="v-h2">Join us.</h2>
+					<h4 class="v-h4 mt-4">
+						We are always on the lookout for our next colleague to join us on our Veri-nice journey.
+						Like what you see and want to know more?
+					</h4>
+					<div class="mt-8">
+						@linkButton("Careers", "/careers/")
+					</div>
+				</div>
+			}
+		}
+	</section>
 }
