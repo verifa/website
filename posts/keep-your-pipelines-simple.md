@@ -5,6 +5,7 @@ subheading: Build pipelines like GitHub Actions, GitLab CI/CD and ol’ Jenkins 
 authors:
 - tlacour
 tags:
+- Developer Experience
 - Continuous Integration
 - Continuous Delivery
 date: 2022-07-07

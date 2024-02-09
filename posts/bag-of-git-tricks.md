@@ -5,6 +5,7 @@ subheading: Neat git tricks in bite-sized chunks.
 authors:
 - tlacour
 tags:
+- Developer Experience
 - Git
 date: 2023-05-15
 image: "/static/blog/bag-of-git-tricks/bag-of-git-tricks.png"

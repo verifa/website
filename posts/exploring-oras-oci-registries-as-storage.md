@@ -5,6 +5,7 @@ subheading: This post is a short overview of my adventures and my first impressi
 authors:
 - tlacour
 tags:
+- Developer Experience
 - Open Source
 date: 2023-04-27
 image: "/static/blog/exploring-oras-oci-registries-as-storage.png"
@@ -150,9 +151,9 @@ Note that each layer should have a media type assigned.
 I'll be pushing the following as an artifact:
 
 - `README.md`
- 	- A simple markdown file. I'll use `text/markdown`
+  - A simple markdown file. I'll use `text/markdown`
 - `images/`
- 	- A directory containing two images. ORAS automatically tars up directories, so this layer will contain a single tar file. There's no media type for tar files, I'll just use the common `application/x-tar`
+  - A directory containing two images. ORAS automatically tars up directories, so this layer will contain a single tar file. There's no media type for tar files, I'll just use the common `application/x-tar`
 
 ```
 $ tree

@@ -7,6 +7,7 @@ authors:
 tags:
 - Containers
 - Continuous Integration
+- Developer Experience
 date: 2023-03-16
 image: "/static/blog/automatically-package-tools-gitlab-container-registry/how-to-optimise-gitlab-ci-runtime-environments-using-custom-docker-images.png"
 featured: true

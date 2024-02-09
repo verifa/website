@@ -7,6 +7,7 @@ authors:
 - jlarfors
 - mvainio
 tags:
+- Developer Experience
 - Continuous Delivery
 - Workshop
 - Value Streams
