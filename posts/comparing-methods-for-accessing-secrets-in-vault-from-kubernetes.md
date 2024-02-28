@@ -18,6 +18,12 @@ featured: true
 
 ---
 
+> [!NOTE]
+>
+> This blog was published just before HashiCorp released their [Vault Secrets Operator](https://github.com/hashicorp/vault-secrets-operator).
+>
+> We have not found the time to update this comparison to include it, sorry about that.
+
 A question that was being frequently asked internally at Verifa was "which approach would you recommend for accessing [HashiCorp] Vault secrets from Kubernetes?" Interestingly, a number of us had different opinions about which approach they would use. None of us disagreed with each other’s reasoning, and so we came to the conclusion that it really depends on your context (*should have seen that one coming!*).
 
 To help the decision process for future HashiCorp Vault and Kubernetes users we decided to make a comparison of several approaches and provide an overview that you can use to help you decide.
