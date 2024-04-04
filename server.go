@@ -599,6 +599,7 @@ func Run(site Site) error {
 	}
 	rp := httputil.ReverseProxy{
 		Rewrite: func(r *httputil.ProxyRequest) {
+			r.Out.Header["X-Forwarded-For"] = r.In.Header["X-Forwarded-For"]
 			r.SetXForwarded()
 			r.SetURL(plURL)
 		},
