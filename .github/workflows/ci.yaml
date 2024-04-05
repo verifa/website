@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "main"
+      - "test-gha"
   release:
     types: [published]
   pull_request:
@@ -62,10 +63,12 @@ jobs:
           fi
       - name: Dump deployment variables
         run: echo "DELPLOY_ENV=${DEPLOY_ENV}"
-      - name: Authenticate with GCP
-        uses: "google-github-actions/auth@v2"
+      - uses: "google-github-actions/auth@v2"
         with:
-          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+          create_credentials_file: true
+          project_id: "verifa-website"
+          workload_identity_provider: "projects/720978371172/locations/global/workloadIdentityPools/verifa-website-pool/providers/verifa-website-gh-provider"
+          service_account: "verifa-website-gha@verifa-website.iam.gserviceaccount.com"
       - name: "Set up Cloud SDK"
         uses: "google-github-actions/setup-gcloud@v2"
         with:
@@ -75,7 +78,7 @@ jobs:
           PROJECT_ID: verifa-website
           REGION: europe-north1
         run: |
-          gcloud auth configure-docker ${REGION}-docker.pkg.dev/verifa-website/website
+          gcloud auth configure-docker ${REGION}-docker.pkg.dev
       - name: Build image and deploy
         run: |
           make deploy-${DEPLOY_ENV}
