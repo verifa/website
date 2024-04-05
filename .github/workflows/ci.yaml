@@ -30,7 +30,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     # Run on main branch, release or if PR contains the 'preview' label
-    if: github.ref == 'refs/heads/main' || github.event_name == 'release' || contains( github.event.pull_request.labels.*.name, 'preview')
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/test-gha' || github.event_name == 'release' || contains( github.event.pull_request.labels.*.name, 'preview')
     needs: build
     permissions:
       contents: "read"
@@ -52,6 +52,9 @@ jobs:
           if [ "${{ github.event_name }}" == "release" ]
           then
             echo "DEPLOY_ENV=prod" >> $GITHUB_ENV
+          elif [ "${GITHUB_REF#refs/heads/}" == "test-gha" ]
+          then
+            echo "DEPLOY_ENV=staging" >> $GITHUB_ENV
           elif [ "${GITHUB_REF#refs/heads/}" == "main" ]
           then
             echo "DEPLOY_ENV=staging" >> $GITHUB_ENV
@@ -65,6 +68,7 @@ jobs:
         run: echo "DELPLOY_ENV=${DEPLOY_ENV}"
       - uses: "google-github-actions/auth@v2"
         with:
+          create_credentials_file: true
           project_id: "verifa-website"
           workload_identity_provider: "projects/720978371172/locations/global/workloadIdentityPools/verifa-website-pool/providers/verifa-website-gh-provider"
           service_account: "verifa-website-gha@verifa-website.iam.gserviceaccount.com"
@@ -77,7 +81,7 @@ jobs:
           PROJECT_ID: verifa-website
           REGION: europe-north1
         run: |
-          gcloud auth configure-docker ${REGION}-docker.pkg.dev/verifa-website/website
+          gcloud auth configure-docker ${REGION}-docker.pkg.dev
       - name: Build image and deploy
         run: |
           make deploy-${DEPLOY_ENV}
