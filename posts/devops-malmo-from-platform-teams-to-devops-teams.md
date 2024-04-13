@@ -29,6 +29,8 @@ DevOps was never intended to be a role, and certainly not the function of a team
     <p>Oops! Your browser does not support PDFs. <a href="/static/blog/devops-malmo-from-platform-teams-to-devops-teams/devops-malmo-from-platform-teams-to-devops-teams.pdf" download="devops-malmo-from-platform-teams-to-devops-teams.pdf">Download the slides</a> instead.
 </object>
 
+<a href="/static/blog/devops-malmo-from-platform-teams-to-devops-teams/devops-malmo-from-platform-teams-to-devops-teams.pdf" download="devops-malmo-from-platform-teams-to-devops-teams.pdf">Download presentation.</a>
+
 ## Links
 
 1. [DevOps Malmö](https://www.meetup.com/devopsmalmo/)
