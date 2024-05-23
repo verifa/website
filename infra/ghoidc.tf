@@ -11,6 +11,18 @@ resource "google_project_iam_member" "gha" {
   member  = "serviceAccount:${google_service_account.gha.email}"
 }
 
+resource "google_project_iam_member" "gha_iam_workload_identity_user" {
+  project = var.project
+  role    = "roles/iam.workloadIdentityUser"
+  member  = "serviceAccount:${google_service_account.gha.email}"
+}
+
+resource "google_project_iam_member" "gha_iam_service_account_user" {
+  project = var.project
+  role    = "roles/iam.serviceAccountUser"
+  member  = "serviceAccount:${google_service_account.gha.email}"
+}
+
 resource "google_project_iam_member" "gha_artifactregistry" {
   project = var.project
   role    = "roles/artifactregistry.writer"
