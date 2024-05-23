@@ -70,7 +70,7 @@ func main() {
 	defer func() {
 		if err := recover(); err != nil {
 			cancel()
-			log.Println("panic occurred:", err)
+			log.Fatal("panic occurred:", err)
 		}
 	}()
 
