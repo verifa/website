@@ -19,6 +19,8 @@ featured: true
 
 In this fundamental level blog post I will explain what different Service Level concepts mean and how to use them effectively in the software delivery process.
 
+I also did a talk at DevOps Finland on this topic, [Service Levels, Error budgets, and why your dev teams should care.](https://verifa.io/blog/service-levels-error-budgets-devops-finland-talk/)
+
 ## What is a Service Level and why does it matter?
 
 Depending on the source, I have seen claims that anywhere from 40% to a [whopping 90% of a software systems lifetime costs](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3610582/) consist of operational and maintenance costs, making the development costs of the software pale in comparison. [Additionally, costs of even short service breaks and unplanned downtime are significant](https://assets.new.siemens.com/siemens/assets/api/uuid:3d606495-dbe0-43e4-80b1-d04e27ada920/dics-b10153-00-7600truecostofdowntime2022-144.pdf) and getting more expensive still. This goes to show that being able to maintain your service availability and preferably being able to preemptively react to service degradation is not just a matter of convenience, but carries a very real price tag with business consequences.
@@ -80,5 +82,8 @@ Now you are sitting there with your error (and in a sense, development) budget c
 When building and serving software you care both about evolving it, but also about its availability and reliability. Focusing too much on the former can result in software robust on features, but brittle in architecture and maintainability, eventually slowing down the development as the majority of time is spent firefighting yet another failure. Focusing too much on the latter grinds the development to a halt as the best way to ensure reliability is to avoid making changes.
 
 Using Service Level Agreements, Objectives and Indicators and Error Budgets effectively in your software development process enables you to strike the right balance between change versus stability. They define common goals to your developers and operations, promoting co-operation and data-driven decision making. They give your teams more ownership and agenda over the products they build and make it easier to react to problems before they can take effect.
+
+I also did a talk at DevOps Finland on this topic, [Service Levels, Error budgets, and why your dev teams should care.](https://verifa.io/blog/service-levels-error-budgets-devops-finland-talk/)
+
 
 If you need help optimising your software development and continuous delivery processes, don’t hesitate to [get in contact with us!](https://verifa.io/contact/)
