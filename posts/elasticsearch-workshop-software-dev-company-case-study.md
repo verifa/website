@@ -12,7 +12,7 @@ tags:
 - Workshop
 date: 2024-06-13
 previewImage: /static/cases/elastic-horizontal-dark-ink.svg
-image: /static/cases/elasticsearch-workshop-case-study-2 copy.png
+image: /static/cases/elasticsearch-workshop-case-study-2.png
 featured: true
 
 ---
