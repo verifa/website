@@ -1,7 +1,7 @@
 ---
 type: Case
-title: ElasticSearch workshop for a Nordic software company
-subheading: During a one day workshop, Verifa helped a Nordic software development company design a reliable High Available elastic cluster for improved debugging and regulatory compliance.
+title: Elasticsearch workshop for a Nordic software company
+subheading: During a one day workshop, Verifa helped a Nordic software development company design a reliable High Available Elasticsearch cluster for improved debugging and regulatory compliance.
 authors:
 - ckurowski
 - avijayan
@@ -10,14 +10,14 @@ tags:
 - Elastic
 - Continuous Delivery
 - Workshop
-date: 2024-06-12
+date: 2024-06-13
 previewImage: /static/cases/elastic-horizontal-dark-ink.svg
-image: /static/cases/elasticsearch-workshop-software-dev-co-case-study.png
+image: /static/cases/elasticsearch-workshop-case-study-2 copy.png
 featured: true
 
 ---
 
-**During a one day workshop, Verifa helped a Nordic software development company design a reliable High Available elastic cluster for improved debugging and regulatory compliance.**
+**During a one day workshop, Verifa helped a Nordic software development company design a reliable High Available Elasticsearch cluster for improved debugging and regulatory compliance.**
 
 ***
 
@@ -27,7 +27,7 @@ The company is a leading provider of business software solutions. They needed a 
 
 ## The solution
 
-After an initial consultation to identify the scope and focus areas, Verifa delivered a short training session followed by a 1 day workshop. In the workshop we explored, planned and designed a reliable High Available elastic cluster together. The aim of the sessions was knowledge transfer so that future maintenance of the elastic cluster can be carried out by the company’s own engineers.
+After an initial consultation to identify the scope and focus areas, Verifa delivered a short training session followed by a 1 day workshop. In the workshop we explored, planned and designed a reliable and highly available Elasticsearch cluster together. The aim of the sessions was knowledge transfer so that future maintenance of the cluster can be carried out by the company’s own engineers.
 
 ## Results
 
