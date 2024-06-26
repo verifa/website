@@ -21,7 +21,7 @@ A practical take on the SLSA framework, SBOM (Software Bill of Materials) and th
 
 - Current state of software supply chain security
 - SBOM (Software Bill of Materials)
-- SLSA framework (Supply-chain Levels for Software Architects)
+- SLSA framework (Supply-chain Levels for Software Artifacts)
 - Example of Provenance and Signing with GitHub Actions
 
 <object
