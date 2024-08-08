@@ -17,7 +17,6 @@
 
     .v-h1 {
         @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-snug sm:leading-snug md:leading-tight lg:leading-pizzo;
-
     }
 
     .v-h2 {

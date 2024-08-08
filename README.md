@@ -35,15 +35,14 @@ Highly recommended :)
 Things you need to install:
 
 1. [Go](https://go.dev/), check the [go.mod](./go.mod) for the required version
-2. [Tailwind](https://tailwindcss.com)
+2. [NodeJS](https://nodejs.org/en/download/package-manager)
 
 To start a local development server:
 
 ```bash
-npm run dev
+go run ./cmd/ci/*.go -dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+# Open your browser at http://localhost:3000
 ```
 
 ## Building
@@ -51,7 +50,7 @@ npm run dev -- --open
 Before pushing any code changes, make sure that it builds
 
 ```bash
-npm run build
+go run ./cmd/ci/*.go -pr
 ```
 
 > You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.

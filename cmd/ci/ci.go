@@ -19,6 +19,7 @@ import (
 	"github.com/google/go-containerregistry/pkg/v1/remote"
 	"github.com/google/ko/pkg/build"
 	"github.com/google/ko/pkg/publish"
+	"github.com/verifa/website/pkg/watcher"
 )
 
 const (
@@ -115,33 +116,28 @@ func Dev(ctx context.Context) {
 }
 
 func Run(ctx context.Context) {
-	Generate(ctx)
+	iferr(Generate(ctx))
 	iferr(Go(ctx, "run", "./cmd/website/main.go"))
 }
 
 func Watch(ctx context.Context) {
 	fmt.Println("👀 watching for changes")
-	if err := WatchFilesystem(ctx, WatchOptions{
-		Dir:     ".",
-		Include: []string{".templ"},
-		Fn: func(paths []string) {
-			fmt.Println("📝 templ file changed: ", paths)
-			_ = TailwindGenerate(ctx)
-			for _, path := range paths {
-				_ = TemplGenerate(ctx, WithIgnoreErrors(), WithFile(path))
-			}
-		},
-	}); err != nil {
-		panic(fmt.Sprintf("watching filesystem: %s", err))
-	}
 
 	runner := Runner{}
-	if err := WatchFilesystem(ctx, WatchOptions{
-		Dir:     ".",
-		Include: []string{".css", ".go", ".md"},
-		Batch:   200 * time.Millisecond,
+	if err := watcher.WatchFilesystem(ctx, watcher.WatchOptions{
+		RunOnStart:    true,
+		Name:          "go",
+		Dir:           ".",
+		IncludeFiles:  []string{"app.css"},
+		IncludeSuffix: []string{".go", ".md", ".templ"},
+		ExcludeSuffix: []string{"_templ.go", "_test.go"},
+		Batch:         200 * time.Millisecond,
 		Fn: func(paths []string) {
 			fmt.Println("📝 source file changed: ", paths)
+			if err := Generate(ctx); err != nil {
+				fmt.Printf("⚠️ generate: %s\n", err.Error())
+			}
+			fmt.Println("🚀 restarting website")
 			if err := runner.Stop(); err != nil {
 				fmt.Printf("❌ stopping website: %s\n", err)
 				return
@@ -154,64 +150,33 @@ func Watch(ctx context.Context) {
 	}); err != nil {
 		panic(fmt.Sprintf("watching filesystem: %s", err))
 	}
-
-	// Run initial generate phase to start the server.
-	_ = TailwindGenerate(ctx)
-	_ = TemplGenerate(ctx, WithIgnoreErrors())
 }
 
-type genOptions struct {
-	file         string
-	ignoreErrors bool
-}
-
-type GenOption func(*genOptions)
-
-func WithFile(f string) GenOption {
-	return func(o *genOptions) {
-		o.file = f
-	}
-}
-
-func WithIgnoreErrors() GenOption {
-	return func(o *genOptions) {
-		o.ignoreErrors = true
-	}
-}
-
-func Generate(ctx context.Context, opts ...GenOption) {
+func Generate(ctx context.Context) error {
 	fmt.Println("📝 generating content")
 	wg := sync.WaitGroup{}
 	wg.Add(2)
+	var templErr error
+	var tailwindErr error
 	go func() {
-		if err := TemplGenerate(ctx, opts...); err != nil {
-			panic(fmt.Sprintf("templ: %s", err))
-		}
+		templErr = errorf("templ: %w", TemplGenerate(ctx))
 		wg.Done()
 	}()
 	go func() {
-		iferr(TailwindGenerate(ctx))
+		tailwindErr = errorf("tailwind: %w", TailwindGenerate(ctx))
 		wg.Done()
 	}()
 	wg.Wait()
+	if errs := errors.Join(templErr, tailwindErr); errs != nil {
+		return errs
+	}
 	fmt.Println("✅ content generated")
+	return nil
 }
 
-func TemplGenerate(ctx context.Context, opts ...GenOption) error {
-	opt := &genOptions{}
-	for _, o := range opts {
-		o(opt)
-	}
+func TemplGenerate(ctx context.Context) error {
 	args := []string{goTempl, "generate"}
-	if opt.file != "" {
-		args = append(args, "-f", opt.file)
-	}
-	if err := GoRun(ctx, args...); err != nil {
-		if !opt.ignoreErrors {
-			return err
-		}
-	}
-	return nil
+	return GoRun(ctx, args...)
 }
 
 func TailwindGenerate(ctx context.Context) error {
@@ -306,7 +271,7 @@ func targetRepoNamer(s1, s2 string) string {
 
 func Preview(ctx context.Context) {
 	fmt.Println("🧪 starting preview")
-	Generate(ctx)
+	iferr(Generate(ctx))
 	ref := KoBuild(ctx, WithKoLocal())
 	iferr(DockerRun(
 		ctx,
@@ -321,7 +286,7 @@ func Preview(ctx context.Context) {
 
 func Lint(ctx context.Context) {
 	fmt.Println("🧹 code linting")
-	Generate(ctx)
+	iferr(Generate(ctx))
 	iferr(Go(ctx, "mod", "tidy"))
 	iferr(Go(ctx, "mod", "verify"))
 	iferr(GoRun(ctx, goFumpt, "-w", "-extra", curDir))
@@ -331,13 +296,13 @@ func Lint(ctx context.Context) {
 
 func Test(ctx context.Context) {
 	fmt.Println("🧪 running tests")
-	Generate(ctx)
+	iferr(Generate(ctx))
 	iferr(Go(ctx, "test", "-v", recDir))
 	fmt.Println("✅ tests passed")
 }
 
 func PullRequest(ctx context.Context) {
-	Generate(ctx)
+	iferr(Generate(ctx))
 	Lint(ctx)
 	Test(ctx)
 	fmt.Println("✅ pull request checks passed")
@@ -354,7 +319,7 @@ func Deploy(ctx context.Context, deploy string) {
 		panic("invalid deploy env")
 	}
 	fmt.Println("🚢 deploying to", deploy)
-	Generate(ctx)
+	iferr(Generate(ctx))
 	ref := KoBuild(ctx)
 	iferr(GCloudRun(
 		ctx,
@@ -434,6 +399,13 @@ func iferr(err error) {
 	if err != nil {
 		panic(err)
 	}
+}
+
+func errorf(format string, err error) error {
+	if err == nil {
+		return nil
+	}
+	return fmt.Errorf(format, err)
 }
 
 func commitSHA() (string, error) {
