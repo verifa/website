@@ -40,7 +40,7 @@ Things you need to install:
 To start a local development server:
 
 ```bash
-go run ./cmd/ci/*.go -dev
+make dev
 
 # Open your browser at http://localhost:3000
 ```
@@ -50,10 +50,8 @@ go run ./cmd/ci/*.go -dev
 Before pushing any code changes, make sure that it builds
 
 ```bash
-go run ./cmd/ci/*.go -pr
+make pr
 ```
-
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
 
 ## Releasing
 

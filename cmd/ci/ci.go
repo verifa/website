@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"errors"
 	"flag"
@@ -48,7 +49,7 @@ const (
 var gitCommit = "dev"
 
 func main() {
-	var dev, build, lint, test, run, preview, pr bool
+	var dev, build, lint, test, preview, pr bool
 	var deploy string
 	flag.BoolVar(&dev, "dev", false, "run the website locally")
 	flag.BoolVar(&build, "build", false, "build the website locally")
@@ -60,7 +61,6 @@ func main() {
 		"",
 		"deploy the website to this env (staging or prod)",
 	)
-	flag.BoolVar(&run, "run", false, "run the website locally")
 	flag.BoolVar(&preview, "preview", false, "run a local preview environment")
 	flag.BoolVar(&pr, "pr", false, "run the pull request checks")
 	flag.Parse()
@@ -83,17 +83,8 @@ func main() {
 	)
 	defer stop()
 
-	if lint {
-		Lint(ctx)
-	}
-	if test {
-		Test(ctx)
-	}
 	if dev {
 		Dev(ctx)
-	}
-	if run {
-		Run(ctx)
 	}
 	if build {
 		_ = KoBuild(ctx, WithKoLocal())
@@ -101,8 +92,15 @@ func main() {
 	if preview {
 		Preview(ctx)
 	}
+	if lint {
+		Lint(ctx)
+	}
+	if test {
+		Test(ctx)
+	}
 	if pr {
 		PullRequest(ctx)
+		HasGitDiff(ctx)
 	}
 	if deploy != "" {
 		Deploy(ctx, deploy)
@@ -113,11 +111,6 @@ func Dev(ctx context.Context) {
 	fmt.Println("🚀 starting dev server")
 	Watch(ctx)
 	<-ctx.Done()
-}
-
-func Run(ctx context.Context) {
-	iferr(Generate(ctx))
-	iferr(Go(ctx, "run", "./cmd/website/main.go"))
 }
 
 func Watch(ctx context.Context) {
@@ -306,6 +299,21 @@ func PullRequest(ctx context.Context) {
 	Lint(ctx)
 	Test(ctx)
 	fmt.Println("✅ pull request checks passed")
+}
+
+// HasGitDiff displays the git diff and errors if there is a diff
+func HasGitDiff(ctx context.Context) {
+	cmd := exec.CommandContext(ctx, "git", "--no-pager", "diff")
+	slog.Info("exec", slog.String("cmd", cmd.String()))
+	b, err := cmd.CombinedOutput()
+	iferr(err)
+	if len(b) == 0 {
+		return
+	}
+	buf := bytes.NewBuffer(b)
+	fmt.Println("❌ git diff is not empty:")
+	fmt.Println(buf.String())
+	os.Exit(1)
 }
 
 func Deploy(ctx context.Context, deploy string) {

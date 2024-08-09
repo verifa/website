@@ -1,9 +1,11 @@
 package website
 
 import (
+	"context"
 	"crypto/md5"
 	"embed"
 	"encoding/hex"
+	"errors"
 	"fmt"
 	"io/fs"
 	"log/slog"
@@ -13,6 +15,7 @@ import (
 	"net/url"
 	"path/filepath"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/go-chi/chi/v5"
@@ -48,14 +51,7 @@ type Site struct {
 	IsProduction bool
 }
 
-func Run(site Site) error {
-	slog.Info(
-		"starting website",
-		"commit",
-		site.Commit,
-		"production",
-		site.IsProduction,
-	)
+func Run(ctx context.Context, site Site) error {
 	// Parse posts.
 	posts, err := ParsePosts(postsFS)
 	if err != nil {
@@ -635,7 +631,7 @@ func Run(site Site) error {
 		w.Header().Set("Content-Type", "text/html")
 		_ = page(site, pageInfo, notFound()).Render(r.Context(), w)
 	})
-	server := &http.Server{
+	httpServer := &http.Server{
 		ReadHeaderTimeout: 3 * time.Second,
 		Handler:           router,
 	}
@@ -643,9 +639,39 @@ func Run(site Site) error {
 	if err != nil {
 		return fmt.Errorf("listening: %w", err)
 	}
-	if err := server.Serve(l); err != nil {
-		return fmt.Errorf("starting server: %w", err)
-	}
+	defer l.Close()
+
+	slog.Info(
+		"website started",
+		"commit",
+		site.Commit,
+		"production",
+		site.IsProduction,
+		"address",
+		l.Addr().String(),
+	)
+
+	go func() {
+		if err := httpServer.Serve(l); err != nil {
+			if errors.Is(err, http.ErrServerClosed) {
+				return
+			}
+			slog.Error("serving website", "error", err)
+		}
+	}()
+	var wg sync.WaitGroup
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		<-ctx.Done()
+		slog.Info("shutting down http server")
+		shutdownCtx, cancel := context.WithTimeout(ctx, 5*time.Second)
+		defer cancel()
+		if err := httpServer.Shutdown(shutdownCtx); err != nil {
+			slog.Error("shutting down http server", "error", err)
+		}
+	}()
+	wg.Wait()
 	return nil
 }
 

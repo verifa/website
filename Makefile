@@ -1,5 +1,6 @@
 
-CI_CMD := go run ./cmd/ci/*.go
+CI_CMD := go run ./cmd/ci/ci.go
+WEBSITE_CMD := go run ./cmd/website/website.go
 
 .PHONY: init
 init:
@@ -11,7 +12,7 @@ dev:
 
 .PHONY: run
 run:
-	$(CI_CMD) -run
+	$(WEBSITE_CMD)
 
 .PHONY: pr
 pr:
