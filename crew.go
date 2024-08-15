@@ -157,7 +157,7 @@ var Crew = map[string]Member{
 	},
 	"zlaster": {
 		ID:       "zlaster",
-		Active:   true,
+		Active:   false,
 		Name:     "Zach Laster",
 		Position: "Consultant",
 		Country:  "Finland",
