@@ -8,7 +8,7 @@ authors:
 tags:
 - Verifa Culture
 date: 2024-08-19
-image: "/blogs/crew-q-and-a-jacob.jpg"
+image: "/static/blog/crew-q-and-a-jacob.jpg"
 featured: false
 
 ---
