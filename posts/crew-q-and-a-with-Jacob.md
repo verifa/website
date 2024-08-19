@@ -27,7 +27,7 @@ The goal of Verifa was never to be a big business but to be a great place to wor
 
 ## What’s one of the most interesting changes you’ve observed in the industry recently?
 
-Besides AI? :slightly_smiling_face: Let’s not talk about AI, there’s enough people doing that. Probably the most interesting change for me personally, is the rising push back against YAML (and other declarative configs) and using programming languages for application deployments and infrastructure provisioning. The reason I think this is so relevant and important to me is to help develop proper “platforms” for developers to use. This is not a short discussion though, so maybe I will write a blog or give a talk about this in the near future.
+Besides AI? :) Let’s not talk about AI, there’s enough people doing that. Probably the most interesting change for me personally, is the rising push back against YAML (and other declarative configs) and using programming languages for application deployments and infrastructure provisioning. The reason I think this is so relevant and important to me is to help develop proper “platforms” for developers to use. This is not a short discussion though, so maybe I will write a blog or give a talk about this in the near future.
 
 ## What do you expect the industry to look like in the next 5 years?
 
