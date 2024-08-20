@@ -3,6 +3,7 @@ type: Blog
 title: Veri-nice to meet you, Lauri
 subheading: Introducing Lauri Suomalainen, one of our Cloud Architects.
 authors:
+- lsuomalainen
 - ckurowski
 tags:
 - Verifa Culture

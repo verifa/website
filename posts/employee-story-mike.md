@@ -3,6 +3,7 @@ type: Blog
 title: Veri-nice to meet you, Mike
 subheading: Introducing Mike Vainio, one of our Cloud Architects based in Helsinki.
 authors:
+- mvainio
 - ckurowski
 tags:
 - Verifa Culture
