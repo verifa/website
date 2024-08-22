@@ -14,7 +14,7 @@ featured: true
 
 ---
 
-### Watch the playback
+## Watch the playback
 
 <iframe width="100%" height="410" src="https://www.youtube.com/embed/BnnClLoihSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -30,7 +30,7 @@ Join Jacob Lärfors, CEO of Verifa and Erkan Djafer, Senior Solutions Engineer a
 - How HashiCorp Vault can keep your secrets in Kubernetes secure
 - An overview of different methods for getting secrets into Kubernetes workloads
 
-### Speakers
+## Speakers
 
 Jacob Lärfors is CEO and co-founder of Verifa. He’s a HashiCorp aficionado, with years of experience with cloud technologies and continuous practices.
 

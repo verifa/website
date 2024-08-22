@@ -17,7 +17,7 @@ active: false
 
 We’re an experienced crew of DevOps and Cloud professionals dedicated to helping our customers with Continuous practices and Cloud adoption. We're not your typical consultancy house! When it comes to our consulting, we always put the customer's interests first and use open source products as much as possible. We’re also a HashiCorp partner and regularly use their products to solve customer challenges. We're looking for the next person to join us, who shares our values of being open, honest and providing no bulls**t consulting to our customers! [Find out more about us here](https://verifa.io/company).
 
-### What you’ll do
+## What you’ll do
 
 The role of a Cloud Architect at Verifa is mainly a technical one, providing services and advice to our customers.
 
@@ -27,28 +27,28 @@ You’re expected to have a strong foundation in Linux, VMs, Containers, Orchest
 
 We expect that you will work independently and interact directly with our customers, and be able to effectively present your work, and any research or planning that you have done.
 
-### Must Haves
+## Must Haves
 
 * Solid understanding and experience of Linux fundamentals
 * Solid understanding and experience of Networking fundamentals
 * Ability to develop scripts and understand code with at least one major language (e.g. Python, Golang, C, Java, etc.)
 * Experience with Azure
 
-### Should Haves
+## Should Haves
 
 * Experience with infrastructure or configuration automation through tools like Terraform and Ansible
 * Experience with VM and container technologies
 * Understand the need for orchestrators and have experience with at least one (e.g. Kubernetes, Nomad or Docker Swarm)
 * Understanding of CI processes and its value
 
-### Nice to haves
+## Nice to haves
 
 * Practical experience with high-availability environments
 * Practical experience with monitoring applications and developing dashboards (e.g. Prometheus and Grafana)
 * Practical experience with regulated environments, such as Finance, Automotive or Medical
 * Team Lead, Project Management or other similar experience
 
-### Technologies
+## Technologies
 
 The list of technologies depends on the customer project. Hence, what we have tried to do is summarise the common technologies that we come across. It is not expected that you will know all of these, and it should not be expected that you get to work with all of these at any one time.
 
@@ -57,7 +57,7 @@ The list of technologies depends on the customer project. Hence, what we have tr
 * **CI/CD:** Jenkins, GitLab CI, FluxCD
 * **Cloud Providers:** AWS, Azure, GCP, VMWare
 
-### A bit about us
+## A bit about us
 
 We aim to provide our customers not only with individual consultants but with the combined knowledge of Verifa. Teamwork is a crucial part of our customer's success, where we share problems and ideas internally as much as possible. This fosters a great opportunity to learn and discover technologies that you might not be directly working with. As such, we expect you to work well with our other consultants and be happy to help support colleagues on other projects with the expectation that someone will return the favour to you.
 
@@ -71,7 +71,7 @@ We want to work with the best people, no matter their background. So if you’re
 
 [Read more from Lauri here](https://verifa.io/blog/one-year-at-verifa-a-retrospective)
 
-### Work time and salary
+## Work time and salary
 
 * Salary range is €5,000 - €6,500 per month
 * Full-time, 37.5 hours per week (flexible)
@@ -79,7 +79,7 @@ We want to work with the best people, no matter their background. So if you’re
 * English proficiency is required for this role, Finnish is not expected
 * We operate an open salary policy
 
-### Benefits
+## Benefits
 
 * VeriFriday: 20% of working time dedicated to upskilling
 * [VeriConf](https://verifa.io/blog/vericonf-2021-re-connecting-learning-and-teamwork): our annual company get together
@@ -90,6 +90,6 @@ We want to work with the best people, no matter their background. So if you’re
 * Lunch vouchers
 * Tools you need (laptop, phone, etc.)
 
-### What’s next
+## What’s next
 
 Please send us your application and CV. If we think there’s a good potential match we’ll schedule a 15-30 minute discovery call to get to know each other a bit better.

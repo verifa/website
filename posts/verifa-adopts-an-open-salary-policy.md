@@ -15,7 +15,7 @@ featured: false
 
 ---
 
-### Benefits of an open salary policy
+## Benefits of an open salary policy
 
 The main motivation of the policy is to ensure fair compensation to each and every employee in the company; a salary which is in line with one’s peers. Seeing how one’s salary lines up with those of their colleagues’ ensures that nobody gets underpaid. On the flipside it better holds those in the upper echelons of the payscale accountable, as open discussion on compensation is encouraged.
 
@@ -23,13 +23,13 @@ Open salary policy is also a policy for gender equality. It eliminates the need 
 
 Open salary policy also allows us to post a realistic salary range in our [job advertisements](https://verifa.io/careers/), so we feel it’s fair to potential future colleagues as well. Finally we feel the open salary policy encourages mutual, communal trust.
 
-### Putting context to work and work in context
+## Putting context to work and work in context
 
 Verifa prides itself on being a cooperative, collaborative project of likeminded professionals. Therefore Verifa’s compensation model does not rely on commissions based on the hours and rates invoiced from our customers. We feel such a model would discourage our consultants from providing support to their colleagues, taking part in the company and maintaining a healthy work-life balance. Additionally it could force people to compete for the projects with the best rates, and even lock people into projects they don’t enjoy. All of this could be potentially detrimental to both productivity and personal well-being. This is also one of the reasons we dedicate our Fridays to upskilling and projects, both personal and internal.
 
 For the same reasons Verifa does not track consultants’ invoiced hours in a competitive manner but only in the context of the company’s financial health and hygiene. While invoiceable work keeps Verifa operating, it does not devalue all the other important work our magnificent people do. In the future we are determined to demystify the company’s cashflow to employees in an effort to put their important work even more into the context of the company as a whole.
 
-### Future of work
+## Future of work
 
 Being a small company has its perks and challenges. Undoubtedly adopting an open salary policy is easier in a small private company than in an enterprise. That is why we felt it had to be done sooner than later.
 

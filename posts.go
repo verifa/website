@@ -17,13 +17,12 @@ import (
 	"github.com/yuin/goldmark/parser"
 	"github.com/yuin/goldmark/renderer"
 	"github.com/yuin/goldmark/renderer/html"
-	"github.com/yuin/goldmark/util"
 
 	chromahtml "github.com/alecthomas/chroma/v2/formatters/html"
 	highlighting "github.com/yuin/goldmark-highlighting/v2"
 )
 
-//go:embed posts/*.md
+//go:embed posts/*
 var postsFS embed.FS
 
 type PostType string
@@ -87,6 +86,13 @@ type Post struct {
 	Hidden       bool
 	Body         []byte
 
+	// TableOfContents stores the headings in the post.
+	TableOfContents     tableOfContents
+	ShowTableOfContents bool
+
+	// References stores the references defined in the post.
+	References []reference
+
 	SimilarPosts []*Post
 }
 
@@ -103,31 +109,18 @@ func (p Post) URL() string {
 	}
 }
 
-func ParsePosts(postsFS embed.FS) (*Posts, error) {
+func defaultGoldmark(references references) goldmark.Markdown {
 	baseRenderOpts := []renderer.Option{
 		html.WithHardWraps(),
-		html.WithXHTML(),
-		// Render raw HTML coming from the post markdown.
+		// Allow raw HTML coming from the post markdown.
 		html.WithUnsafe(),
 	}
 
-	admonitionRenderer := goldmark.DefaultRenderer()
-	admonitionRenderer.AddOptions(baseRenderOpts...)
-	admonitionRenderer.AddOptions(
-		renderer.WithNodeRenderers(
-			util.Prioritized(&AdmonitionBodyRenderer{}, 0),
-		),
-	)
-
-	fullRenderOpts := append(
-		baseRenderOpts,
-		renderer.WithNodeRenderers(
-			util.Prioritized(&AdmonitionRenderer{
-				Renderer: admonitionRenderer,
-			}, 0),
-		),
-	)
 	md := goldmark.New(
+		goldmark.WithParserOptions(
+			// Anchor and Table Of Contents requres headings to have IDs.
+			parser.WithAutoHeadingID(),
+		),
 		goldmark.WithExtensions(
 			extension.GFM,
 			meta.Meta,
@@ -137,27 +130,22 @@ func ParsePosts(postsFS embed.FS) (*Posts, error) {
 					chromahtml.WithLineNumbers(true),
 				),
 			),
+			// Table of Contents should come before anchor to avoid anchor's "#"
+			// being included in the header.
+			&tableOfContentsExt{},
+			&admonitionExt{},
+			&anchorExt{},
+			&citationExt{
+				References: references,
+			},
+			&readingTimeExt{},
 		),
-		goldmark.WithParserOptions(
-			parser.WithAutoHeadingID(),
-			parser.WithASTTransformers(
-				util.Prioritized(&AdmonitionTransformer{}, 0),
-				util.Prioritized(&ReadingTimeTransformer{}, 0),
-				util.Prioritized(&AnchorTransformer{}, 0),
-			),
-		),
-		goldmark.WithRendererOptions(fullRenderOpts...),
+		goldmark.WithRendererOptions(baseRenderOpts...),
 	)
+	return md
+}
 
-	rd := md.Renderer()
-	rd.AddOptions(
-		renderer.WithNodeRenderers(
-			util.Prioritized(&AdmonitionRenderer{
-				Renderer: admonitionRenderer,
-			}, 0),
-		),
-	)
-
+func ParsePosts(postsFS embed.FS) (*Posts, error) {
 	posts := Posts{
 		Index:    make(map[string]*Post),
 		ByAuthor: make(map[string][]*Post),
@@ -173,11 +161,23 @@ func ParsePosts(postsFS embed.FS) (*Posts, error) {
 			if d.IsDir() {
 				return nil
 			}
+			if filepath.Ext(path) != ".md" {
+				return nil
+			}
+			slug := strings.TrimSuffix(filepath.Base(path), ".md")
+
+			// Add references to context to make it available to the
+			references, err := referencesFromBibtex(postsFS, path)
+			if err != nil {
+				return fmt.Errorf("getting references from bibtex: %w", err)
+			}
+
+			md := defaultGoldmark(references)
+			context := parser.NewContext()
 			contents, err := postsFS.ReadFile(path)
 			if err != nil {
 				return fmt.Errorf("reading file %s: %w", path, err)
 			}
-			context := parser.NewContext()
 			var buf bytes.Buffer
 			if err := md.Convert(contents, &buf, parser.WithContext(context)); err != nil {
 				return fmt.Errorf("converting %s: %w", path, err)
@@ -190,7 +190,7 @@ func ParsePosts(postsFS embed.FS) (*Posts, error) {
 			if !ok {
 				return fmt.Errorf("no reading time found in %s", path)
 			}
-			slug := strings.TrimSuffix(filepath.Base(path), ".md")
+
 			post, err := newPost(slug, metadata, readingTime, buf.Bytes())
 			if err != nil {
 				return fmt.Errorf("creating post from %s: %w", path, err)
@@ -198,6 +198,10 @@ func ParsePosts(postsFS embed.FS) (*Posts, error) {
 			if !post.Active {
 				return nil
 			}
+			// Add references to post.
+			post.References = references
+			post.TableOfContents = tableOfContentsFromContext(context)
+
 			posts.All = append(posts.All, post)
 			posts.Index[post.Slug] = post
 			return nil
@@ -353,6 +357,11 @@ func newPost(
 		// Assume false.
 		featured = false
 	}
+	showTOC, ok := metadata["toc"].(bool)
+	if !ok {
+		// Assume false.
+		showTOC = false
+	}
 	hidden, ok := metadata["hidden"].(bool)
 	if !ok {
 		// Assume false.
@@ -360,19 +369,20 @@ func newPost(
 	}
 
 	return &Post{
-		Slug:         slug,
-		Type:         PostType(postType),
-		Active:       active,
-		Title:        title,
-		Subheading:   subheading,
-		Authors:      authors,
-		Tags:         tags,
-		Date:         date,
-		ReadingTime:  readingTime,
-		PreviewImage: previewImage,
-		Image:        image,
-		Featured:     featured,
-		Hidden:       hidden,
-		Body:         body,
+		Slug:                slug,
+		Type:                PostType(postType),
+		Active:              active,
+		Title:               title,
+		Subheading:          subheading,
+		Authors:             authors,
+		Tags:                tags,
+		Date:                date,
+		ReadingTime:         readingTime,
+		PreviewImage:        previewImage,
+		Image:               image,
+		Featured:            featured,
+		ShowTableOfContents: showTOC,
+		Hidden:              hidden,
+		Body:                body,
 	}, nil
 }

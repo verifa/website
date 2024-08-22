@@ -1,6 +1,10 @@
 package website
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+	"strings"
+)
 
 // What we want:
 // - A list of (filtered) blog posts to show
@@ -90,7 +94,11 @@ templ blog(post *Post) {
 			<article class="prose md:prose-lg lg:prose-xl xl:prose-2xl">
 				<img class="w-full h-full" src={ post.Image } alt={ post.Title }/>
 				<div id="blog-container">
+					if post.ShowTableOfContents {
+						@templTableOfContents(post.TableOfContents)
+					}
 					@templ.Raw(string(post.Body))
+					@templReferences(post.References)
 				</div>
 				<hr class="border-1 border-v-gray"/>
 				<div class="not-prose flex flex-wrap justify-center gap-8">
@@ -117,6 +125,81 @@ templ blog(post *Post) {
 			</div>
 		</section>
 	</div>
+}
+
+templ templTableOfContents(toc tableOfContents) {
+	<h2>Table of contents</h2>
+	<ol class="list-decimal">
+		for _, section := range toc {
+			<li class="">
+				<a class="no-underline font-normal hover:text-v-lilac" href={ templ.URL(section.url) }>{ section.text }</a>
+				if len(section.children) > 0 {
+					<ol class="list-decimal">
+						for _, sub := range section.children {
+							<li class="">
+								<a class="no-underline font-normal hover:text-v-lilac" href={ templ.URL(sub.url) }>{ sub.text }</a>
+							</li>
+						}
+					</ol>
+				}
+			</li>
+		}
+	</ol>
+	<hr/>
+}
+
+css referencesClass() {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+templ templReferences(references references) {
+	if len(references) > 0 {
+		<hr/>
+		<h2>References</h2>
+		<ol class={ referencesClass(), "prose-li:text-base md:prose-li:text-lg xl:prose-li:text-xl" }>
+			for _, reference := range references {
+				<li class="prose-li:text-base">
+					@templReferenceIEEE(reference)
+				</li>
+			}
+		</ol>
+	}
+}
+
+templ templReferenceIEEE(ref reference) {
+	// Use IEEE style of referencing, but not that strict.
+	[{ strconv.Itoa(ref.Index) }] { templReferenceAuthors(ref.Authors) }. <span class="italic">"{ ref.Title }"</span>, ({ ref.Year }) 
+	<a class="no-underline font-normal hover:text-v-lilac" href={ templ.URL(ref.URL.String()) }>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 inline-block align-baseline">
+			<path fill-rule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clip-rule="evenodd"></path>
+		</svg>
+	</a>
+}
+
+func templReferenceAuthors(authors []author) string {
+	authInitials := func(first string) string {
+		names := strings.Split(first, " ")
+		inits := strings.Builder{}
+		for _, name := range names {
+			inits.WriteByte(name[0])
+			inits.WriteString(". ")
+		}
+		return inits.String()
+	}
+	authToStr := func(author author) string {
+		return authInitials(author.First) + author.Last
+	}
+	if len(authors) > 3 {
+		return fmt.Sprintf("%s et al", authToStr(authors[0]))
+	}
+
+	authorStrs := make([]string, len(authors))
+	for i, author := range authors {
+		authorStrs[i] = authToStr(author)
+	}
+	return strings.Join(authorStrs, ", ")
 }
 
 templ authorLinks(authors []Member) {

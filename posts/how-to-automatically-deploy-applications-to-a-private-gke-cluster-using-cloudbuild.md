@@ -19,7 +19,7 @@ However, the more I use these tools the more I encounter shortcomings and corner
 
 This article describes the problem of automatically deploying code to a private GKE cluster and my workaround solution to it. Understanding this article will require some knowledge on GKE or Kubernetes in general.
 
-### The Problem
+## The Problem
 
 CloudBuild is a fantastic tool. A single CloudBuild run takes a configuration file, spins up a VM, and runs commands in order in a series of Docker containers which all have a common volume to write on. Typically, you pull up your source code from a source code repository, and build one or more Docker images (and perhaps other artifacts) which are then stored in the confusingly named Container Registry. My typical cloudbuild.yaml configuration file looks like this:
 
@@ -50,13 +50,13 @@ This is because CloudBuild is a managed service, running on an arbitrary managed
 
 Now, obviously, you could just add the whole IP range CloudBuild uses and it would work out fine. But, the bad news here is that the range in question is the whole public GCE IP address range, so allowing it will mean your Authorized Networks configuration is practically useless.
 
-### The Solution
+## The Solution
 
 GCP doesn't offer any smart or neat solutions to this problem, so I decided to hack my way around it. The main idea is to surround the 'kubectl set' statement with steps containing scripts that will add the CloudBuild VM's IP address to the cluster's Authorized Networks, and then remove the address once the deployment is updated. To perform such operations in my scripts, I need to include Service Account credentials which have permissions to modify the authorized networks list.
 
 To make matters worse, CloudBuild doesn't allow for injecting the keys from outside of the repo from which the source code is pulled (although nowadays this probably could be circumvented by using GCP's Secret Manager), so we have to include the key to the Service Account within the repo. Of course, storing keys in the source code repo is something we should not do by default, at least not in the plaintext, so I alleviate the issue somewhat by using GCP's Key Management Service (KMS) to encrypt the key in the repo.
 
-### Step 1
+## Step 1
 
 For this scheme to work, we need to make a new service account which has permissions to modify the Authorized Networks configuration in the private GKE cluster. We also need to give the CloudBuild service account permissions to decrypt the encrypted key for the former account. Cloudbuild service account permissions should look like this:
 
@@ -74,7 +74,7 @@ gcloud kms encrypt --key=cloudbuild-encrypt
 
 Now you have an encrypted key `kubernetes-admin.json.enc` which you can push back to your repo. Remember to not push the plaintext. Better yet, straight up delete it after you're done encrypting.
 
-### Step 2. Add the decryption step to your pipeline
+## Step 2. Add the decryption step to your pipeline
 
 Next, before getting to authorized network modifications, let's decrypt the key! In our cloudbuild.yaml add the following step:
 
@@ -93,7 +93,7 @@ Next, before getting to authorized network modifications, let's decrypt the key!
 
 `_KMS_KEYNAME` is my substitution for 'kubernetes-admin.json' and `_PROJECT` is, you guessed it, the project in which the encryption key is located. This decrypts the key and makes it available in /workspace/ in your current Cloudbuild VM.
 
-### Step 3. Add the script that finds the Cloudbuild VM's IP address and adds it to the Authorized Networks configuration
+## Step 3. Add the script that finds the Cloudbuild VM's IP address and adds it to the Authorized Networks configuration
 
 My next CloudBuild step looks like this:
 
@@ -131,7 +131,7 @@ master_authorized_networks_config['cidrBlocks'] += cloud_build_address
 
 Now, using the updated `master_authorized_networks_config`, we construct a [ClusterUpdate](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/ClusterUpdate) and use it to update the cluster configuration using [this API call](https://googleapis.dev/python/container/latest/gapic/v1/api.html#google.cloud.container_v1.ClusterManagerClient.update_cluster).
 
-### Step 4. The clean up
+## Step 4. The clean up
 
 Now we can run the `kubectl set image` step in the pipeline. The whole configuration looks like this:
 
@@ -187,6 +187,6 @@ images: ['eu.gcr.io/${_PROJECT}/$REPO_NAME:$COMMIT_SHA', "eu.gcr.io/${_PROJECT}/
 
 The last step `cloud_build_remove` is mostly similar to `cloud_build_add`, but the script does not need to find out the VM´s IP address because it's not adding it. Instead, it goes through `master_authorized_networks_config['cidrBlocks']` and removes every entry with the displayName `CloudBuild` (There could be multiple if your 'set image' step fails for some reason).
 
-### Summary
+## Summary
 
 This was my pretty hacky way of deploying image versions to a private GKE cluster. Apparently, there aren't very many texts concerning the topic on the internet apart from this StackOverflow question. Other possible solutions to [this](https://stackoverflow.com/questions/51944817/google-cloud-build-deploy-to-gke-private-cluster) problem could be configuring a [proxy](https://cloud.google.com/solutions/creating-kubernetes-engine-private-clusters-with-net-proxies) to the private cluster, or there could be a solution that would pull new images from an outside repository instead of trying to push them to the cluster. If you have a better idea of how to solve it let us know!

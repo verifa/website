@@ -1,0 +1,11 @@
+package website
+
+import "strconv"
+
+templ citationTemplate(ref reference) {
+	<sup class="prose-a:no-underline prose-a:font-normal">
+		<a href={ templ.URL(ref.URL.String()) } target="_blank">
+			[{ strconv.Itoa(ref.Index) }]
+		</a>
+	</sup>
+}

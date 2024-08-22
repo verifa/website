@@ -31,7 +31,7 @@ After a welcoming introduction by Mikko Karjula, Business Development Manager at
 
 Check out [Petri's presentation here](https://drive.google.com/file/d/1tIgMLKygTqpQ3aDcZL1Nhk8hA9F4m7K4/view?usp=sharing "Petri's presentation").
 
-### **The current state of the Cloud Development Kit for Terraform by Roberth Strand, Cloud Architect at Crayon and HashiCorp Ambassador**
+## **The current state of the Cloud Development Kit for Terraform by Roberth Strand, Cloud Architect at Crayon and HashiCorp Ambassador**
 
 Next up we heard from [Roberth Strand](https://www.linkedin.com/in/roberthstrand/ "Roberth on Linkedin") from [Crayon](https://www.crayon.com/ "Crayon website"), who shared his overview on the current state of the CDK for Terraform, including:
 
@@ -41,7 +41,7 @@ Next up we heard from [Roberth Strand](https://www.linkedin.com/in/roberthstrand
 
 Check out [Roberth's presentation here](https://drive.google.com/file/d/1RsEbxE0q-pKcF97KOaVxmOryiEDkVAxJ/view?usp=sharing "Roberth's presentation").
 
-### **Helsinki HashiCorp User Group Meetup #3**
+## **Helsinki HashiCorp User Group Meetup #3**
 
 We rounded off the 'formal' part of the meetup with some closing words from [Anoop](https://www.linkedin.com/in/anoopvijayan/ "Anoop on Linkedin") from Verifa. Then it was time for beer, pizza and sauna!
 

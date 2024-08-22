@@ -18,7 +18,7 @@ Here’s a brief summary of the talks along with links to the presentation decks
 
 <iframe width="100%" height="410" src="https://www.youtube.com/embed/0VFFKZ32yXQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### How to codify your cloud infra using UpCloud CDK for Terraform provider
+## How to codify your cloud infra using UpCloud CDK for Terraform provider
 
 After a warm welcome and introductions from Ilkka Sarpila, Product Owner at UpCloud and Amir Altamimi, Partner Sales Manager, HashiCorp, [Toni Kangas](https://www.linkedin.com/in/tonikangas/), Senior Engineer at UpCloud kicked of the presentations. Toni covered:
 
@@ -28,7 +28,7 @@ After a warm welcome and introductions from Ilkka Sarpila, Product Owner at UpCl
 
 [Download Toni’s presentation here.](https://drive.google.com/file/d/1ZM8eza5LMuUDGNN62c58pxrYxpytayzI/view?usp=share_link)
 
-### Accessing secrets on Vault on Kubernetes
+## Accessing secrets on Vault on Kubernetes
 
 Next up came [Jacob Lärfors](https://www.linkedin.com/in/jlarfors/), CEO of Verifa & [Mike Vainio](https://www.linkedin.com/in/mikevainio/), Technical Consultant at Verifa. Their talk covered:
 
@@ -38,7 +38,7 @@ Next up came [Jacob Lärfors](https://www.linkedin.com/in/jlarfors/), CEO of Ver
 
 [Download Jacob & Mike’s presentation here.](https://drive.google.com/file/d/1IxW9qIA22qJHJs-LstZTiw1dB3OFqdwy/view?usp=share_link)
 
-### Event driven access control with HashiCorp Rift
+## Event driven access control with HashiCorp Rift
 
 Our final presentation of the evening came from [DevOps Rob](https://www.devopsrob.com/), who flew in from the UK, especially for Helsinki HUG. Rob’s talk covered:
 
@@ -48,7 +48,7 @@ Our final presentation of the evening came from [DevOps Rob](https://www.devopsr
 
 [Download Rob’s presentation here.](https://drive.google.com/file/d/1BeB7LVRyI24o6_zWDYzAQDqlIAD_A0OW/view?usp=share_link)
 
-### **Helsinki HUG Meetup #6 coming in Spring 2023**
+## **Helsinki HUG Meetup #6 coming in Spring 2023**
 
 We rounded off the ‘formal’ part of the meetup with some closing words. Then it was time for some zero-trust socialising!
 

@@ -122,7 +122,7 @@ func Watch(ctx context.Context) {
 		Name:          "go",
 		Dir:           ".",
 		IncludeFiles:  []string{"app.css"},
-		IncludeSuffix: []string{".go", ".md", ".templ"},
+		IncludeSuffix: []string{".go", ".md", ".templ", ".bib"},
 		ExcludeSuffix: []string{"_templ.go", "_test.go"},
 		Batch:         200 * time.Millisecond,
 		Fn: func(paths []string) {

@@ -18,7 +18,7 @@ The next Helsinki HashiCorp User Group will be hosted by Supermetrics at their o
 
 [Register here](https://www.meetup.com/helsinki-hashicorp-user-group/events/284399439/)
 
-#### The agenda & speaker line up goes like this
+## The agenda & speaker line up goes like this
 
 **Time:** Tuesday, 22 March, 17:30-22.00 EET
 

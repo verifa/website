@@ -18,7 +18,7 @@ Here’s a brief summary of the talks along with links to the presentation decks
 
 <iframe width="100%" height="410" src="https://www.youtube.com/embed/NhIyeSYTI1w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### Azure Landing Zone
+## Azure Landing Zone
 
 After a warm welcome from [Frans Ojala](https://www.linkedin.com/in/frans-ojala-1093b0109/), Lead Cloud Engineer at Siili Solutions, his colleague [Marko Ruotsalainen](https://www.linkedin.com/in/marko-ruotsalainen-31958361/), Cloud Architect, took to the stage. Marko covered:
 
@@ -29,7 +29,7 @@ After a warm welcome from [Frans Ojala](https://www.linkedin.com/in/frans-ojala-
 
 [Download Marko’s presentation here.](https://drive.google.com/file/d/1GT3fjQF3_giFofemuz4gdPZzTU9423Dw/view?usp=share_link)
 
-### Infrastructure as Code in the early stage startup
+## Infrastructure as Code in the early stage startup
 
 Next up came [Ruslan Gainutdinov](https://www.linkedin.com/in/ruslanfg/), Co-founder and CTO at [Valosan](https://valosan.com/). His talk covered:
 
@@ -43,7 +43,7 @@ Next up came [Ruslan Gainutdinov](https://www.linkedin.com/in/ruslanfg/), Co-fou
 
 [Download Ruslan’s presentation here.](https://drive.google.com/file/d/1IPes5RBGruYN2ZqWVelUK2f-C7pQkYUZ/view?usp=share_link)
 
-### **Helsinki HUG Meetup #7 coming in Autumn 2023**
+## **Helsinki HUG Meetup #7 coming in Autumn 2023**
 
 A big thanks to everyone who attended, to the speakers for sharing their knowledge and insights and Siili Solutions for hosting. The next Helsinki HashiCorp User Group Meetup is planned for Autumn 2023. If you haven’t already, [join the meetup group here](https://www.meetup.com/helsinki-hashicorp-user-group/) so you don’t miss the next one. Look forward to seeing you there!
 

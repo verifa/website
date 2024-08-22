@@ -13,6 +13,7 @@ tags:
 date: 2023-12-07
 image: "/static/blog/demystifying-service-level-acronyms/demystifying-service-level-acronyms2.png"
 featured: true
+toc: true
 ---
 
 **Availability, fault tolerance, reliability, resilience. These are some of the terms that pop up when delivering digital services to users at scale. Acronyms related to Service Levels tend to pop up as well. Most developers have at least seen SLA, SLO and SLI and some even know what they mean. However, based on personal experience, not many people who work in the intersection of writing, delivering and maintaining software necessarily know how to make use of them in their software delivery process.**
@@ -84,6 +85,5 @@ When building and serving software you care both about evolving it, but also abo
 Using Service Level Agreements, Objectives and Indicators and Error Budgets effectively in your software development process enables you to strike the right balance between change versus stability. They define common goals to your developers and operations, promoting co-operation and data-driven decision making. They give your teams more ownership and agenda over the products they build and make it easier to react to problems before they can take effect.
 
 I also did a talk at DevOps Finland on this topic, [Service Levels, Error budgets, and why your dev teams should care.](https://verifa.io/blog/service-levels-error-budgets-devops-finland-talk/)
-
 
 If you need help optimising your software development and continuous delivery processes, don’t hesitate to [get in contact with us!](https://verifa.io/contact/)

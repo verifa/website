@@ -28,7 +28,7 @@ of such approaches would cover the main strategies, such as:
   None of these approaches were designed for managing C and C++ packages, thus all have
   drawbacks. This is where Conan comes in.
 
-### What is Conan and how does it work?
+## What is Conan and how does it work?
 
 Conan is a package manager designed for C and C++, meaning it supports multiple platforms
 and build tools, stores source code, as well as pre-built libraries/binaries in a remote repository.
@@ -63,7 +63,7 @@ code for creating the package. You can then build Conan packages as part of "res
 And this does not just include direct dependencies, but also indirect ("transitive") dependencies.
 That's right: Conan of course supports transitive dependencies too!
 
-### The Conan community
+## The Conan community
 
 For any framework to become successfully adopted and embraced in today's market there
 needs to be a thriving community, so let's talk a bit about the one surrounding Conan.
@@ -80,12 +80,12 @@ package out of it.
 The Conan Center is populated by the conan-center-index repository on GitHub which contains
 all the Conan recipes for [creating the packages](https://github.com/conan-io/conan-center-index).
 
-### How Conan can cure your project woes
+## How Conan can cure your project woes
 
 Still not convinced Conan is worth taking a closer look at? Then let's talk about some of the
 pains that I have experienced in the past without it, and how Conan solves those problems.
 
-#### Dependency tree (or Bill of Materials)
+### Dependency tree (or Bill of Materials)
 
 Understanding what has gone into a final product in C and C++ can be really, really difficult, and
 often requires a lot of undesired process and documentation.
@@ -98,7 +98,7 @@ Hmmm, it sounds like a package manager would solve this problem! Bonus points fo
 [oss-review-toolkit](https://github.com/oss-review-toolkit/ort) that support Conan (thanks to a
 contribution from [Verifa](/) to help build the clearing process into Continuous Integration.
 
-#### Slow build times
+### Slow build times
 
 It is quite common for teams to be building a set of libraries or an entire platform, which
 application teams then develop their logic on top of. Often the application teams need to rebuild
@@ -109,7 +109,7 @@ What if the application team could simply specify the libraries or platform they
 semantic version range, and then only had to compile their code and not the whole product?
 A versatile package manager could solve this by providing pre-built binaries.
 
-#### Development environment dependencies
+### Development environment dependencies
 
 This is perhaps a slightly more obscure use case for Conan, but I wanted to mention it. Lots of
 teams create a README or some instructions for setting up their development environment
@@ -121,7 +121,7 @@ As Conan is built on Python it can make use of Python's virtualenv to configure 
 (e.g. setting PATH) to point to binaries that could be included in Conan packages - your linter,
 for example.
 
-### What are the challenges with using Conan?
+## What are the challenges with using Conan?
 
 It would not be fair to talk so highly about Conan without also considering some of the
 challenges I have observed, so let's cover that.
@@ -139,7 +139,7 @@ So the granularity of Conan packages should be considered, which is more of a de
 architectural decision to make than necessarily being a drawback of Conan. Excitingly, this is a
 known topic and work is underway to help, such as [Conan's workspace feature](https://docs.conan.io/en/latest/developing_packages/workspaces.html).
 
-### What are the alternatives to Conan?
+## What are the alternatives to Conan?
 
 There are other package managers in the C and C++ space but as we do not have as much
 experience with them (added to the fact they are constantly changing), it is not easy to make
@@ -152,7 +152,7 @@ support we have received from both the community and from industry tools like Ar
 store pre-built binaries. This provides a great option for internal Conan repositories for large
 software projects.
 
-### Conan summary
+## Conan summary
 
 In conclusion, if you are looking to solve some of the common challenges mentioned above I
 would strongly consider looking at Conan and running a proof-of-concept.

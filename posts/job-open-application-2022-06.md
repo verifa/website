@@ -16,7 +16,7 @@ image: "/static/blog/jobs/open-application-image.png"
 
 We're always on the look out for talented consultants to help deliver expert services around all things Continuous, Cloud and DevOps to our customers.
 
-### Does this sound like you?
+## Does this sound like you?
 
 - at least 5 years experience under your belt
 - Experienced with Cloud and/or CI/CD
@@ -32,7 +32,7 @@ We're always on the look out for talented consultants to help deliver expert ser
 - Programming experience
 - Project management and team lead experience
 
-### A bit about us
+## A bit about us
 
 We’re an experienced crew of DevOps and Cloud professionals dedicated to helping our customers with Continuous practices and Cloud adoption. We're not your typical consultancy house! When it comes to our consulting, we always put the customer's interests first and use open source products as much as possible. We’re also a HashiCorp partner and regularly use their products to solve customer challenges.
 
@@ -44,7 +44,7 @@ We're looking for people who share our values of being open, honest and providin
 
 [Read more from Lauri here](https://verifa.io/blog/one-year-at-verifa-a-retrospective)
 
-### Work time and salary
+## Work time and salary
 
 - Salary range is €5,000 - €6,500 per month, depending on the role.
 - Full-time, 37.5/40 hours per week (Fin/Swe).
@@ -52,7 +52,7 @@ We're looking for people who share our values of being open, honest and providin
 - Our working language is English. Finnish or Swedish is not expected.
 - We operate an open salary policy.
 
-### Benefits
+## Benefits
 
 - VeriFriday: 20% of working time dedicated to upskilling
 - [VeriConf](https://verifa.io/blog/vericonf-2021-re-connecting-learning-and-teamwork): our annual company get together
@@ -62,6 +62,6 @@ We're looking for people who share our values of being open, honest and providin
 - Lunch vouchers (Finland only)
 - Tools you need (laptop, phone, etc.)
 
-### What’s next
+## What’s next
 
 Send us your CV and a cover letter. If we think there’s a good potential match we’ll schedule a 15-30 minute discovery call to get to know each other a bit better.

@@ -17,7 +17,7 @@ featured: true
 
 Kelsey Hightower, the father of Kubernetes put it nicely: “GitOps is versioned CI/CD on top of declarative infrastructure” \[1\]. Using version control for software development is nothing new, and neither is version controlled CI/CD pipelines nowadays. So what's all the fuss about GitOps? Essentially, it's about bringing all of these things together into a streamlined process that's going to enable teams to perform better, whether the goal is higher release velocity or more controlled and confident releases and upgrades. Let's briefly explore GitOps to guide our understanding of what it entails in order to help us improve our GitOps practices.
 
-### **What does GitOps really mean?**
+## **What does GitOps really mean?**
 
 There is some confusion about GitOps and what it means. When we talk about utilising GitOps, what we are really saying is:
 
@@ -31,21 +31,21 @@ GitOps is a way of taking infrastructure / configuration / everything-as-code, s
 
 In reality, GitOps empowers developers to take on operations in a way that says “You own it, you ship it!" and graduates from being a slogan to a reality that can be executed day in and day out. \[2\]
 
-### **GitOps - a modern approach to manage automated deployments**
+## **GitOps - a modern approach to manage automated deployments**
 
 GitOps is a modern approach to manage automated deployments which has many benefits. Before practices like Infra as Code and Continuous Deployment became mainstream, there was little interest to save or version our infrastructure (as code). But with Infrastructure as Code, just like we version Software, we also save our Infrastructure (as code) in version control. Added to that, we also manage the release of our Infrastructure versions in the same way we manage the release of our Software versions. Typically this means employing Git workflows like branching, pull-requests and tagging code commits.
 
 Sometimes there is confusion between Continuous Deployment (CD) and GitOps. GitOps is a subset of Continuous Deployment (CD) and defines **what** we deploy and **how** we deploy a particular release.
 
-### **Achieving GitOps**
+## **Achieving GitOps**
 
 The two main ingredients to achieve GitOps are using a Git workflow to manage the release of our versions and a continuous deployment process to automatically deploy those releases.
 
-#### Git Workflow
+### Git Workflow
 
 A Git Workflow is a recipe or recommendation for how to use Git to accomplish work in a consistent and productive manner. Git becomes the interface for operations, which means any change to a system is introduced only by a git commit. Some of the Git workflow types include Centralized, Trunkbased \[3\], Feature branching, GitFlow, Forking etc. \[4\]. The user is free to choose the type of workflow but software teams should agree on which type to follow. Git workflows also define the process to mark releases. For example, one could publish a release based on a chosen git commit or git tag from a git repository.
 
-#### Continuous deployment
+### Continuous deployment
 
 As soon as a version is released, the Continuous Deployment (or CD) system ensures that deployment occurs in the correct environment. Tests and other quality control measures are typically part of the CD process. Apart from this, a GitOps CD system should be convergent in nature. This means the system is always in synchronous state with Git with convergent loops, for achieving continuous software delivery and deployment. This can be achieved automatically using strategies like:
 
@@ -54,17 +54,17 @@ As soon as a version is released, the Continuous Deployment (or CD) system ensur
 
 A simple GitOps system is based on having these two key concepts.
 
-### **How to deploy GitOps**
+## **How to deploy GitOps**
 
 There are two ways of deploying in GitOps. They are:
 
-#### a) Push based - Continuous Deployment
+### a) Push based - Continuous Deployment
 
 ![Push based GitOps](/static/blog/2021-06-14/gitops-blog-diagram-1-white-04.png)
 
 In a push based approach, the changes are pushed to the target environment as a part of continuous deployment. In a Kubernetes world, a tool performs _kubectl apply_, or _helm upgrade_ at a Deploy stage in the Continuous Deployment pipeline. One should remember that it is still controlled by changes in version control, but just an extension of Continuous integration. Needless to say, this is the traditional approach to Continuous Deployment. E.g. Pipelines implemented with Jenkins, GitLab, GitHubActions etc.
 
-#### b) Pull based - Continuous deployment
+### b) Pull based - Continuous deployment
 
 ![Pull based GitOps](/static/blog/2021-06-14/gitops-blog-diagram-2-white-05.png)
 
@@ -74,7 +74,7 @@ One of the clear benefits of pull approach is, one does not have to manage secre
 
 GitOps itself does not favour one approach over the other, but in the end, how changes are deployed are a matter of choice and feasibility.
 
-### **10 key benefits of GitOps**
+## **10 key benefits of GitOps**
 
  1. **Automated deployments**
 
@@ -107,23 +107,23 @@ GitOps itself does not favour one approach over the other, but in the end, how c
 
     In a GitOps environment, due to reconciling happening all the time, there is less possibility of configuration drift. If it happens due to some manual intervention, remediation kicks-in and gets the system back to the desired state from git.
 
-### **Drawbacks to GitOps**
+## **Drawbacks to GitOps**
 
 With all the benefits that GitOps brings, there could also be some drawbacks to GitOps.
 
-#### Cost of setup
+### Cost of setup
 
 GitOps is not recommended for cases when the Return On Investment (ROI) is low and cases whenever overhead outweighs the benefits. This can be in scenarios like simple applications, very small teams, perhaps in the early days of a project etc.
 
-#### On-Boarding
+### On-Boarding
 
 As simple as it sounds, implementing GitOps for the first time in an organisation can be a cumbersome process. Challenges can be both from a technical and non-technical front.
 
-### **Is GitOps the right approach for me?**
+## **Is GitOps the right approach for me?**
 
 Every approach has pros and cons. For GitOps, we can clearly see there are more benefits than drawbacks. This does not mean that just by using GitOps you will be successful. Moving into GitOps also needs proper planning and most importantly the right mind-set. But one thing that we know for sure is that GitOps can be a path to success and a key ingredient in successful products and companies around the world.
 
-### **References**
+## **References**
 
 1. GitOps definition: [https://www.gitops.tech/](https://www.gitops.tech/ "https://www.gitops.tech/")
 2. What is GitOps: [https://www.cloudbees.com/gitops/what-is-gitops](https://www.cloudbees.com/gitops/what-is-gitops "https://www.cloudbees.com/gitops/what-is-gitops")

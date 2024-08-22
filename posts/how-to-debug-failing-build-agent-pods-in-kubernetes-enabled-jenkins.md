@@ -20,7 +20,7 @@ Our Jenkins system is deployed on Kubernetes, with both Jenkins Master and the J
 
 It was clear that we had to identify the cause of this issue. The cause itself is not that interesting in itself, but the method of debugging is, and might help you if you are facing similar issues.
 
-### Step 0: Inspect your Jenkins Build Logs
+## Step 0: Inspect your Jenkins Build Logs
 
 You've probably already done this, but you should of course start by looking at the build logs in Jenkins. Here's what ours were saying:
 
@@ -52,7 +52,7 @@ You've probably already done this, but you should of course start by looking at 
 
 Oh dear, a new Pod created every 10 seconds. It's easy to see why our cluster was filling up with failed Pods.
 
-### Step 1: Inspect your Pods
+## Step 1: Inspect your Pods
 
 So why are the Pods failing to start? Let's (kubectl) describe them:
 
@@ -117,7 +117,7 @@ From these logs we can see that the connection from the jnlp Agent Container to 
 
 The next step in this process is in hindsight unnecessary, but it documents our troubleshooting process and might be useful for you.
 
-### Step 2: Manually Override Pods (Optional)
+## Step 2: Manually Override Pods (Optional)
 
 We've established that the jnlp Container fails to connect to the Jenkins Master. One of the issues with containerized systems is that we often cannot debug what is going wrong on startup without modifying the container. That's what we're going to do now.
 
@@ -178,7 +178,7 @@ We manually added a Node in the Jenkins GUI with the name of our Pod. Once this 
 
 So we have now deduced that the Agent is failing to connect to the Master because the Master is not expecting the Agent. This suggests that the Kubernetes plugin is failing to "register" the Pod with the Master.
 
-### Step 3: Inspect Kubernetes Plugin Logs
+## Step 3: Inspect Kubernetes Plugin Logs
 
 We probably should have jumped straight from Step 1 to Step 3. However, Step 2 helped confirm that there are no external causes for why the Agent is failing to connect to the Master. It is just conditions in Jenkins which are causing the issue.
 
@@ -205,7 +205,7 @@ java.lang.NoSuchMethodError: 'java.lang.Object io.fabric8.kubernetes.client.dsl.
 
 Aha! "**NoSuchMethodError**" is typical of version incompatibilities between plugin dependencies!
 
-### Conclusion
+## Conclusion
 
 Skipping over some details, we concluded that the error is caused by a version conflict; the ["kubernetes" plugin](https://plugins.jenkins.io/kubernetes)has a dependency on the ["kubernetes-client-api" plugin](https://plugins.jenkins.io/kubernetes-client-api/). We are using fixed version numbers for our plugins, and our kubernetes plugin version was fixed at 1.29.2. Looking at the pom.xml for the source of this version, we could see that the dependency of the kubernetes-client-api plugin was for **version 4.13.2-1**.
 

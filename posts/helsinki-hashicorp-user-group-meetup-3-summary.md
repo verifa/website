@@ -19,13 +19,13 @@ Here's a brief summary of the talks along with links to the presentation decks, 
 
 <iframe width="100%" height="410" src="https://www.youtube.com/embed/xyuXM6HARfM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Helsinki HashiCorp User Group 2021 retrospective
+## Helsinki HashiCorp User Group 2021 retrospective
 
 To kick off proceedings Anoop from Verifa took a brief look back at 2021 which saw Helsinki HUG's inaugural meetup! From a seed of an idea at the start of 2021, the first meetup took place online in June streamed from Verifa's office, followed by the first in-person event in September hosted by Upcloud. And now here we are with the third meetup in December hosted by Eficode. We're pleased to see that the membership has grown from 48 people in June to 94 as of 7 December 2021. Can we reach 100 by the end of the year? Invite your all your HashiCorp-loving friends to join!
 
 ![HUG membership growth chart](/static/blog/2021-12-20/helsinki-hug-membership-growth-2021.png)
 
-### Using Packer and Terraform to manage multiple compute image versions
+## Using Packer and Terraform to manage multiple compute image versions
 
 After a welcome introduction by Tuomas Leppilampi, DevOps Team Lead at Eficode, we heard from [Duy Nguyen](https://www.linkedin.com/in/duy-nguyen-527ba756/) and [Dawit Nida](https://www.linkedin.com/in/dawitnida/) from [Supermetrics](https://supermetrics.com/). Duy is an SRE Engineer at Supermetrics hailing originally from software development sphere and has taken part in a wide range of projects big and small on all levels of software development lifecycle. Dawit is a Senior DevOps Engineer and one of the first members of Supermetrics' DevOps team. He's responsible for managing and monitoring the entirety of Supermetrics' infrastructure. Their talk covered:
 
@@ -38,7 +38,7 @@ After a welcome introduction by Tuomas Leppilampi, DevOps Team Lead at Eficode, 
 
 Check out [Duy and Dawit's presentation here](https://drive.google.com/file/d/1xXXsSejwHJW2nSRWllsgugt4jq_OH3h8/view?usp=sharing).
 
-### Secure infrastructure with HashiCorp - First steps into security with Vault and Boundary
+## Secure infrastructure with HashiCorp - First steps into security with Vault and Boundary
 
 Next up, [Lauri Huhta](https://www.linkedin.com/in/lauri-huhta-254502137/) from [Eficode](https://www.eficode.com/) gave a talk about taking the first steps into utilising HashiCorp tools to build secure infrastructures. Lauri is a DevOps-consultant at Eficode specialising in building data-infrastructures. His entry-level friendly presentation went over the basic functionalities of Vault and Boundary, demonstrating the process with a live demo.
 
@@ -48,7 +48,7 @@ Next up, [Lauri Huhta](https://www.linkedin.com/in/lauri-huhta-254502137/) from 
 
 Check out [Lauri's presentation here](https://github.com/Itzblend/HUG_Boundary_Vault).
 
-### **Helsinki HUG Meetup #4 coming in 2022**
+## **Helsinki HUG Meetup #4 coming in 2022**
 
 We rounded off the 'formal' part of the meetup with some closing words from Anoop. Then it was time socialising and sauna!
 

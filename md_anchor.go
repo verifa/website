@@ -4,17 +4,34 @@ import (
 	"fmt"
 	"log/slog"
 
+	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/parser"
 	"github.com/yuin/goldmark/text"
+	"github.com/yuin/goldmark/util"
 )
 
-var _ parser.ASTTransformer = (*ReadingTimeTransformer)(nil)
+var _ goldmark.Extender = (*anchorExt)(nil)
 
-type AnchorTransformer struct{}
+// anchorExt is a Goldmark extension for adding anchor links to headings.
+type anchorExt struct{}
+
+func (e *anchorExt) Extend(m goldmark.Markdown) {
+	m.Parser().AddOptions(
+		parser.WithASTTransformers(
+			util.Prioritized(&anchorTransformer{}, 0),
+		),
+	)
+}
+
+var _ parser.ASTTransformer = (*readingTimeTransformer)(nil)
+
+// anchorTransformer is a Goldmark AST transformer that adds anchor links to
+// headings.
+type anchorTransformer struct{}
 
 // Transform implements parser.ASTTransformer.
-func (*AnchorTransformer) Transform(
+func (*anchorTransformer) Transform(
 	node *ast.Document,
 	reader text.Reader,
 	pc parser.Context,

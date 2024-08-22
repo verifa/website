@@ -20,7 +20,7 @@ Here's a brief summary of the talks along with links to the presentation decks, 
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/OseKCdy6M3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### **Application identity and authentication with Vault by Antti Myyrä, Upcloud**
+## **Application identity and authentication with Vault by Antti Myyrä, Upcloud**
 
 After a brief introduction by host, [lsuomalainen](https://www.linkedin.com/in/lauri-suomalainen/), Cloud Architect at Verifa, we kicked off with a talk by [Antti Myyrä](https://www.linkedin.com/in/antti-myyr%C3%A4-9527a866/), Systems/Software Architect at [Upcloud](https://upcloud.com/), on Application identity and authentication with Vault. In his talk Antti covered:
 
@@ -32,7 +32,7 @@ After a brief introduction by host, [lsuomalainen](https://www.linkedin.com/in/l
 
 Check out Antti's presentation [here](https://drive.google.com/file/d/1aVjaagHAlbDJvRX7LrjxKMMMELZaO4ec/view?usp=sharing).
 
-### **Experiences and lessons learnt developing with HCL (HashiCorp Configuration Language) by Jacob Larfors, Verifa and Valocode.**
+## **Experiences and lessons learnt developing with HCL (HashiCorp Configuration Language) by Jacob Larfors, Verifa and Valocode.**
 
 Next we heard from [Jacob Larfors](https://www.linkedin.com/in/jlarfors/), CTO at [Verifa](https://verifa.io/) and CEO at [Valocode](https://bubbly.dev/), about his experiences developing a new product called Bubbly using HCL.
 
@@ -43,7 +43,7 @@ Next we heard from [Jacob Larfors](https://www.linkedin.com/in/jlarfors/), CTO a
 
 Check out Jacob's presentation [here](https://drive.google.com/file/d/1_p9XbQInbBFNgkH1m7ZpSuDpd7yZTFrE/view?usp=sharing).
 
-### **HashiConf Europe 2021: Recap by avijayan, Verifa**
+## **HashiConf Europe 2021: Recap by avijayan, Verifa**
 
 If you missed HashiConf Europe or just need a handy summary, then this is for you. [Anoop Vijayan](https://www.linkedin.com/in/anoopvijayan/), Cloud Architect at [Verifa](https://verifa.io/), gave a presentation on his highlights from this year's HashiConf Europe focussing in new announcements on the following:
 
@@ -55,7 +55,7 @@ If you missed HashiConf Europe or just need a handy summary, then this is for yo
 
 Check out Anoop's presentation [here](https://drive.google.com/file/d/19dK3eajbn2OeGGbpJjVx21pZrGM6i7Ud/view?usp=sharing).
 
-### **Helsinki HashiCorp User Group Meetup #2**
+## **Helsinki HashiCorp User Group Meetup #2**
 
 We rounded off the meetup with some closing words from Lauri and chitchat with the attendees. A huge thank you to everyone who attended and the speakers for sharing their knowledge and insights. The next Helsinki HashiCorp User Group Meetup is on **23rd September at 1800** (Helsinki time). We're hoping for an actual in real life event! You can sign up for the 2nd meetup [here](https://www.meetup.com/helsinki-hashicorp-user-group/events/279041155/). Look forward to seeing you there!
 

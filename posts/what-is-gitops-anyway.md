@@ -32,7 +32,7 @@ featured: true
 
 In this episode of The Verifa Podcast, Jacob and Andreas get into a deep discussion about GitOps, its applications and benefits, and best practices.
 
-#### **During this episode we discuss**
+## **During this episode we discuss**
 
 * What exactly is GitOps \[00:00:52\]
 * What are the tools and processes involved \[00:03:29\]
@@ -40,7 +40,7 @@ In this episode of The Verifa Podcast, Jacob and Andreas get into a deep discuss
 * What are the benefits and problems solved by GitOps \[00:12:44\]
 * Where and when to start your GitOps journey \[00:19:00\]
 
-#### **Mentioned in the podcast**
+## **Mentioned in the podcast**
 
 * [FluxCD](https://fluxcd.io/)
 * [WeaveWorks](https://www.weave.works/)
@@ -53,7 +53,7 @@ Connect with today's podcast team on Linkedin:
 * [Jacob on Linkedin](https://www.linkedin.com/in/jlarfors/)
 * [Andreas on Linkedin](https://www.linkedin.com/in/andreas-l%C3%A4rfors-51253270/)
 
-#### Transcript
+## Transcript
 
 **Jacob:** \[00:00:00\] So hello everyone, to episode two of Verifa's podcast. And today we're going to talk about GitOps, which is a topic I personally like very much because it combines two of my favourite things, which is Git workflows, which obviously tie in very closely with CI, and then continuous deployment, which is automating releases and deployments. And we decided to talk about GitOps because we feel like there's a lot of confusion out there. And we want to try and clarify things a little bit, talk about what GitOps is and what GitOps isn't. And to help me with that, I've got Andreas with me today.
 

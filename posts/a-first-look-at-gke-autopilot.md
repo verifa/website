@@ -31,7 +31,7 @@ featured: true
 
 In the very first episode of The Verifa Podcast, we take a first look at Google's new Autopilot for Kubernetes - GKE Autopilot. GKE Autopilot is a new mode of operations for managing Kubernetes, enabling the user to focus on software, while GKE Autopilot manages the infrastructure.
 
-#### **During this episode we discuss**
+## **During this episode we discuss**
 
 * What do we mean by a 'managed' Kubernetes service? \[03:15\]
 * What are the differences between GKE, AKS, EKS and Fargate? \[05:16\]
@@ -42,7 +42,7 @@ In the very first episode of The Verifa Podcast, we take a first look at Google'
 * When to use Autopilot and when not? \[36:34\]
 * Are we going to use GKE Autopilot? \[41:12\]
 
-#### **Mentioned in the podcast**
+## **Mentioned in the podcast**
 
 * [GKE Autopilot](https://cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview)
 
@@ -53,9 +53,9 @@ Connect with today's podcast team:
 * [Sakari on Linkedin](https://www.linkedin.com/in/sakarilaitinen/)
 * [Lauri on Linkedin](https://www.linkedin.com/in/lauri-suomalainen/)
 
-#### **Transcript**
+## **Transcript**
 
-##### Hello and welcome
+### Hello and welcome
 
 **Jacob:** \[00:00:00\] Hello and welcome to The Verifa Podcast. This is the podcast where we take questions our customers have asked us or questions that we really wish our customers would ask us. And we share our view and try to break down the complex world of cloud and DevOps. I am Jacob, your host, and I have my co-host me today And we're joined by two very special guests. The first of which is Lauri.
 
@@ -77,7 +77,7 @@ Connect with today's podcast team:
 
 &nbsp;
 
-##### What do we mean by a managed Kubernetes service?
+### What do we mean by a managed Kubernetes service?
 
 **Jacob:** We're going to talk about GKE's recently announced Autopilot feature, which is their new flavour, their new type of managed Kubernetes service. So that's going to be the topic for today, but of course we'll cover other things to do with that, and similar technologies and stuff too. And yeah, let's get to it.
 
@@ -95,7 +95,7 @@ So you only have to focus on handling the workloads you want to run on the clust
 
 &nbsp;
 
-##### What are the differences between GKE, AKS, EKS?
+### What are the differences between GKE, AKS, EKS?
 
 **Jacob:** \[00:05:16\] Yeah. Okay, nice. And in the world today with the three biggest cloud providers or the most common ones, they all offer their own managed Kubernetes service. So we've got Azure's AKS and AWS, there's EKS and Google's GKE. Are there any significant differences between those or are they on a high level,
 
@@ -121,7 +121,7 @@ So they should be very same.
 
 &nbsp;
 
-##### What is GKE Autopilot?
+### What is GKE Autopilot?
 
 **Jacob:** so we talked now a little bit about the different cloud providers and the different Kubernetes managed services that they have. And the topic for today was specifically to talk a little bit about Autopilot, which is GKE. So Google new flavour of it's the new flavour of GKE. So maybe we should introduce that topic briefly and I'll give that responsibility to Lauri.
 
@@ -165,7 +165,7 @@ Right? Somebody please, correct me as I'm speaking out of my depths here. I'd be
 
 &nbsp;
 
-##### Fully managed Kubernetes vs. Serverless approach
+### Fully managed Kubernetes vs. Serverless approach
 
 **Jacob:** \[00:13:07\] Okay, thanks. I guess this idea of managing infrastructure, managing nodes versus having a service available to you Is almost like going from a managed service almost to to server less compute resources. So I think that would be an interesting thing to talk about now. And compare like how does this new world of managed Kubernetes with Fargate, and when I say new, if it's been around since 2017, but yeah, at least the Autopilot side of things... how does that compare with serverless compute resources? I think to do that comparison effectively and nicely, we first need maybe an understanding, one that we agree on of what serverless really means because there are quite a few services that exist today that say they are serverless.
 
@@ -311,7 +311,7 @@ And you shouldn't know, you shouldn't care about them. So I think from the netwo
 
 &nbsp;
 
-##### When to use Autopilot and when not?
+### When to use Autopilot and when not?
 
 **Jacob:** \[00:36:34\] We're now really touching on some of the next topics we were going to talk about which is very nice. And those were going to be when to use Autopilot and when not to use Autopilot. And leading on from that discussion where you're not in charge of your nodes, I guess that plays somewhat of a part in choosing when to use Autopilot and when not to use Autopilot. At least my understanding would be that if I'm going to run very vanilla containers and workloads in Kubernetes and I just want a Kubernetes cluster, then Autopilot would make perfect sense because I don't have to care. There's less stuff for me to care about.
 

@@ -16,7 +16,7 @@ Coronavirus, masks, social distancing, remote working… it’s fair to say that
 
 But despite these challenges, last year proved to be one of growth and big challenges for Verifa. Here, we’ll take a look at how and why things changed, and what to expect over the coming 12 months.
 
-### **Recruiting in a pandemic**
+## **Recruiting in a pandemic**
 
 Having been able to take stock and look back at 2020, it’s remarkable to think how quickly time flew while so many things unfolded here at Verifa.
 
@@ -28,7 +28,7 @@ Then, of course, the pandemic arrived – and Finland shut down along with the r
 
 Following a month of discussions with both existing and new customers, it became clear that our field of expertise would still be required, even in times such as these. And since we were already helping most of our customers remotely, no significant operational changes were required on our side.
 
-### **A change of focus**
+## **A change of focus**
 
 As we were now confident that sales wouldn’t be our main challenge, one key question presented itself: where should we instead focus our limited resources?
 
@@ -38,7 +38,7 @@ During the summer and autumn months, Jacob and I interviewed dozens upon dozens 
 
 Unfortunately, we managed to sign just one [Cloud Architect](https://verifa.io/insights/open-position-cloud-architect/) during 2020 – but the work keeps paying off, and we recently signed up another in January 2021. We’re still hiring too, so be sure to check out the [advertisement](https://verifa.io/insights/open-position-cloud-architect/)!
 
-### **The birth of** [**Bubbly**](https://bubbly.dev/)
+## **The birth of** [**Bubbly**](https://bubbly.dev/)
 
 Another major activity during 2020 – which arguably took up even more time than recruitment and marketing activities – was the launch of our internal development project for an open source tool, Bubbly.
 
@@ -46,7 +46,7 @@ The Business Finland Crisis Funding enabled us to finally dedicate time and reso
 
 As of January 2021, I am proud to say we have a working version of Bubbly. And we are now piloting it with a handful of our closest customers to validate the core use cases, before its Beta launch.
 
-### **Consultancy and product development – two different approaches**
+## **Consultancy and product development – two different approaches**
 
 The latter part of 2020 saw Verifa Oy operating two different business models within the company, while also exploring opportunities to bring all Verifa franchisees (Finland, Sweden and Switzerland) more closely together.
 
@@ -56,13 +56,13 @@ Valocode is an independent company, holding all [Bubbly](https://bubbly.dev/) IP
 
 If you would like to learn more about the tool we are developing, please [visit the Bubbly website](https://bubbly.dev/) and sign up for the newsletter.
 
-### **All change at the top**
+## **All change at the top**
 
 Last year also witnessed the change of CEO at Verifa Oy. In June I took over the role from Jacob, which allows him to concentrate on technical leadership, consulting, and leading the architecture of Bubbly.
 
 I must applaud Jacob for having the courage to let go of leading the company he founded, placing it in the hands of someone who, at that time, was a stranger. I know it is not easy for founders and entrepreneurs to hand over the reins of their beloved company – and so I hope I will be worthy of the trust placed in me.
 
-### **In summary**
+## **In summary**
 
 Despite the difficulties 2020 presented, the consultancy business was not really affected by the COVID-19 pandemic. However, the birth of [Bubbly](https://bubbly.dev/) did mean we had less people carrying out the consultancy work for which we had increasing demand for.
 

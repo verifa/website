@@ -15,13 +15,13 @@ featured: false
 
 The next Helsinki HashiCorp User Group will be hosted by Eficode, taking place in real life at their offices in Helsinki. There will be talks and demos, networking, snacks and sauna! This HUG is also an official Slush side event! The event will also be live streamed and recorded for those who prefer to join online.
 
-#### Here come the details and [registration](https://www.meetup.com/helsinki-hashicorp-user-group/events/282039156/)
+## Here come the details and [registration](https://www.meetup.com/helsinki-hashicorp-user-group/events/282039156/)
 
 **Time:** Tuesday, 7 December, 18.00-22.00
 
 **Place:** Eficode, [Pohjoinen Rautatiekatu 25, Helsinki](https://www.google.com/maps/place/Eficode+Oy/@60.1694643,24.9261747,15z/data=!4m5!3m4!1s0x0:0xc222a1c5ddfd84fe!8m2!3d60.1694643!4d24.9261747)
 
-#### The speaker line up goes like this
+## The speaker line up goes like this
 
 [**Lauri Huhta**](https://www.linkedin.com/in/ACoAACFbOuABmvaKHfNtA9Ary3EY0mjakVEqKeE) **from Eficode: "Secure infrastructure with HashiCorp - First steps into security with Vault and Boundary"**
 

@@ -1,6 +1,8 @@
 module github.com/verifa/website
 
-go 1.21.4
+go 1.22.4
+
+toolchain go1.22.5
 
 require (
 	github.com/a-h/templ v0.2.747
@@ -11,6 +13,7 @@ require (
 	github.com/golangci/golangci-lint v1.55.2
 	github.com/google/go-containerregistry v0.16.1
 	github.com/google/ko v0.15.1
+	github.com/jschaf/bibtex v0.0.0-20240701232004-21596c6b8e06
 	github.com/yuin/goldmark v1.6.0
 	github.com/yuin/goldmark-highlighting/v2 v2.0.0-20230729083705-37449abec8cc
 	github.com/yuin/goldmark-meta v1.1.0
