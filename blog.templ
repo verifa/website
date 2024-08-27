@@ -78,14 +78,14 @@ templ blog(post *Post) {
 	<div class="container mx-auto">
 		<section class="">
 			<h1 class="v-h1 text-center">{ post.Title }</h1>
-			<div class="mt-2 flex flex-wrap gap-x-2 justify-center">
+			<div class="mt-4 flex flex-wrap gap-x-2 justify-center">
 				for tag := range post.Tags {
 					<a href={ templ.URL("/blog/?tags=" + tag) } class="px-2 v-p group/tag hover:bg-v-pink">
 						<span class="text-v-gray group-hover/tag:text-v-white">#</span><span class="text-v-black/70 group-hover/tag:text-v-white">{ tag }</span>
 					</a>
 				}
 			</div>
-			<p class="mt-8 text-center text-v-black/70">
+			<p class="mt-6 text-center text-v-black/70">
 				@authorLinks(post.Authors)
 				&nbsp;•&nbsp;{ fmt.Sprintf("%d minutes", int(post.ReadingTime.Minutes())) }&nbsp;•&nbsp;{ post.Date.Format("2006-01-02") }
 			</p>
