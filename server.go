@@ -162,8 +162,8 @@ func Run(ctx context.Context, site Site) error {
 			pageInfo := PageInfo{
 				// TODO
 				RequestURI:  r.RequestURI,
-				Title:       "Developer Experience",
-				Description: "TODO",
+				Title:       "Developer Experience Assessment",
+				Description: "Learn to measure and improve your Developer Experience to reach new heights of productivity and happiness.",
 				Image:       verifaLogoPNG,
 				ImageAlt:    "Verifa Logo",
 			}
