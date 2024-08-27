@@ -101,13 +101,21 @@ templ blog(post *Post) {
 					@templReferences(post.References)
 				</div>
 				<hr class="border-1 border-v-gray"/>
-				<div class="not-prose flex flex-wrap justify-center gap-8">
+				<h2>Authors</h2>
+				<div class="not-prose flex flex-col gap-8">
 					for _, author := range post.Authors {
-						<a href={ templ.URL("/crew/" + author.ID + "/") }>
-							<img class="w-40 lg:w-52 flex-none rounded-sm object-cover" src={ author.Profile } alt={ author.Name }/>
-							<p>{ author.Name }</p>
-							<p>{ author.Position }</p>
-						</a>
+						<div class="flex items-center gap-x-8">
+							<img class="w-24 lg:w-28 flex-none rounded-sm object-cover" src={ author.Profile } alt={ author.Name }/>
+							<div>
+								<a href={ templ.URL("/crew/" + author.ID + "/") } class="hover:text-v-lilac">
+									<p>{ author.Name }, <span class="italic">{ author.Position }</span></p>
+								</a>
+								<div class="mt-2 flex items-center gap-x-2">
+									@memberSocialLinkedInIcon(author, "w-6 h-6")
+									@memberSocialGitHubIcon(author, "w-6 h-6")
+								</div>
+							</div>
+						</div>
 					}
 				</div>
 				<hr class="border-1 border-v-gray"/>
