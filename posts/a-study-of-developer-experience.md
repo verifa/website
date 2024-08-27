@@ -63,7 +63,7 @@ Other metrics, like those defined by DORA \cite{forsgren2018accelerate}, focus o
 
 User Experience metrics can also be used to uncover usability issues in a development environment, such as an “Internal Development Platform” or self-service tools. These metrics are not related to the software development process directly, but related to the environment in which the developers work. For example, knowing that users spend an extra long time on a specific page, or that a self-service capability often fails, can help to improve the Developer Experience, the result of which should be reflected in productivity metrics.
 
-The first practical step you can take when measuring Developer Experience is to study the SPACE framework \cite{forsgren2021space}. It does not tell you explicitly which metrics you need, but provides a framework for helping you select and fine tune your metrics. It is not holistic, but it is a very good start. At Verifa, we like to start our investigations with [Value Stream Mapping](https://verifa.io/services/assessments/value-streams/). It is an excellent way to understand the development flow, dependencies across teams and get a general feel for the Developer Experience within an organisation.
+The first practical step you can take when measuring Developer Experience is to study the SPACE framework \cite{forsgren2021space}. It does not tell you explicitly which metrics you need, but provides a framework for helping you select and fine tune your metrics. It is not holistic, but it is a very good start. At Verifa, we like to start our investigations with [Value Stream Mapping](/services/assessments/value-streams/). It is an excellent way to understand the development flow, dependencies across teams and get a general feel for the Developer Experience within an organisation.
 
 ## How do you improve Developer Experience?
 
@@ -77,4 +77,4 @@ The parallel between User Experience (UX) and Developer Experience is interestin
 
 While few practical frameworks or methods exist today for measuring or improving Developer Experience we hope more practical work and shared experiences will  improve the Developer Experience to everyone’s benefit.
 
-If you are looking for an experienced team to help guide you with Developer Experience, do get in touch!
+If you are looking for an experienced crew to help you with Developer Experience check out our [Developer Experience assessment](/services/assessments/developer-experience/).

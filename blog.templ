@@ -146,7 +146,7 @@ templ templTableOfContents(toc tableOfContents) {
 	<ol class={ tableOfContentsClass() }>
 		for _, section := range toc {
 			<li class="">
-				<a class="no-underline font-normal hover:text-v-lilac" href={ templ.URL(section.url) }>{ section.text }</a>
+				<a class="no-underline font-normal hover:text-v-lilac hover:underline" href={ templ.URL(section.url) }>{ section.text }</a>
 				if len(section.children) > 0 {
 					<ol class="list-none prose-li:text-base md:prose-li:text-lg xl:prose-li:text-xl">
 						for _, sub := range section.children {
