@@ -127,14 +127,20 @@ templ blog(post *Post) {
 	</div>
 }
 
+css tableOfContentsClass() {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
 templ templTableOfContents(toc tableOfContents) {
 	<h2>Table of contents</h2>
-	<ol class="list-decimal">
+	<ol class={ tableOfContentsClass() }>
 		for _, section := range toc {
 			<li class="">
 				<a class="no-underline font-normal hover:text-v-lilac" href={ templ.URL(section.url) }>{ section.text }</a>
 				if len(section.children) > 0 {
-					<ol class="list-decimal">
+					<ol class="list-none prose-li:text-base md:prose-li:text-lg xl:prose-li:text-xl">
 						for _, sub := range section.children {
 							<li class="">
 								<a class="no-underline font-normal hover:text-v-lilac" href={ templ.URL(sub.url) }>{ sub.text }</a>

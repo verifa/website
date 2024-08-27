@@ -29,7 +29,7 @@ The **cognitive** dimension consists of factors that affect how the developers p
 
 This definition has been a base for more recent work that summarises it succinctly as “How developers think about, feel about, and value their work” \cite{greiler2022actionable}. A practical model for understanding Developer Experience was later proposed, also with three dimensions: feedback loops, cognitive load and flow state \cite{noda2023devex}. The dimensions in this model closely relate to the dimensions in the earlier definition \cite{fagerholm2012developer}: cognitive load is a measure of cognition, flow state helps individuals focus and feel productive (affect), and feedback loops help individuals value their work (conation).
 
-The definition of “developer” is something that still lacks clarity. We would argue that it is not just anyone involved in *developing* software, but anyone involved in *developing and delivering* software. We could therefore call it *Software Engineering Experience*, but we cannot go around talking about *SEX* so Developer Experience it is.
+The definition of “developer” is something that still lacks clarity. We would argue that it is not just anyone involved in *developing* software, but anyone involved in *developing and delivering* software.
 
 ## What’s the background/evolution of Developer Experience?
 
@@ -45,7 +45,7 @@ So what is significant about Developer Experience if we have had methodologies a
 
 ## Why is Developer Experience important?
 
-A better Developer Experience is proven to improve individuals satisfaction, engagement and retention \cite{noda2023devex} as well increasing performance outcomes for individuals, teams and organisations \cite{devexinaction}. A happy and well-performing team will naturally lead to better recruitment because people will talk positively about your workplace and even recommend it to their connections. Thus, any company that delivers software should optimise their work environment from the perspective of those expected to participate in it. The emphasis here should be on the experience of the users of software delivery process; an overemphasis on productivity is the best way to lose it \cite{endres2003handbook}.
+A better Developer Experience is proven to improve individuals satisfaction, engagement and retention \cite{noda2023devex} as well increasing performance outcomes for individuals, teams and organisations \cite{devexinaction}. A happy and well-performing team will naturally lead to better recruitment because people will talk positively about your workplace and even recommend it to their connections. Thus, any company that delivers software should optimise their work environment from the perspective of those expected to participate in it. The emphasis here should be on the experience of the users of the software delivery process; an overemphasis on productivity is the best way to lose it \cite{endres2003handbook}.
 
 ## What makes a good Developer Experience?
 
