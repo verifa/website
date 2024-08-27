@@ -34,7 +34,7 @@ Check out Antti's presentation [here](https://drive.google.com/file/d/1aVjaagHAl
 
 ## **Experiences and lessons learnt developing with HCL (HashiCorp Configuration Language) by Jacob Larfors, Verifa and Valocode.**
 
-Next we heard from [Jacob Larfors](https://www.linkedin.com/in/jlarfors/), CTO at [Verifa](https://verifa.io/) and CEO at [Valocode](https://bubbly.dev/), about his experiences developing a new product called Bubbly using HCL.
+Next we heard from [Jacob Larfors](https://www.linkedin.com/in/jlarfors/), CTO at [Verifa](/) and CEO at [Valocode](https://bubbly.dev/), about his experiences developing a new product called Bubbly using HCL.
 
 * What is HCL?
 * Why we used HCL for Bubbly
@@ -45,7 +45,7 @@ Check out Jacob's presentation [here](https://drive.google.com/file/d/1_p9XbQInb
 
 ## **HashiConf Europe 2021: Recap by avijayan, Verifa**
 
-If you missed HashiConf Europe or just need a handy summary, then this is for you. [Anoop Vijayan](https://www.linkedin.com/in/anoopvijayan/), Cloud Architect at [Verifa](https://verifa.io/), gave a presentation on his highlights from this year's HashiConf Europe focussing in new announcements on the following:
+If you missed HashiConf Europe or just need a handy summary, then this is for you. [Anoop Vijayan](https://www.linkedin.com/in/anoopvijayan/), Cloud Architect at [Verifa](/), gave a presentation on his highlights from this year's HashiConf Europe focussing in new announcements on the following:
 
 * Terraform 1.0
 * HashiCorp Cloud Platform (HCP)

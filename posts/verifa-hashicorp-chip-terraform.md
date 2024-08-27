@@ -13,7 +13,7 @@ featured: false
 
 ---
 
-Back in June this year we got [our badge for Vault](https://verifa.io/blog/verifa-hashicorp-chip-vault-blog/). And now you’ll be pleased to hear that we’re also a Certified HashiCorp Implementation Partner for Terraform!
+Back in June this year we got [our badge for Vault](/blog/verifa-hashicorp-chip-vault-blog/). And now you’ll be pleased to hear that we’re also a Certified HashiCorp Implementation Partner for Terraform!
 
 The HashiCorp software suite including Vault, Terraform, Consul, Vagrant, Packer, and Nomad, helps organisations deliver consistent workflows to provision, secure, connect, and run any infrastructure for any application.
 
@@ -23,4 +23,4 @@ The HashiCorp software suite including Vault, Terraform, Consul, Vagrant, Packer
 >
 > <cite>Jacob Lärfors, CEO, Verifa</cite>
 
-[Get in touch](https://verifa.io/contact/) to get expert help with the HashiCorp stack from the Verifa crew.
+[Get in touch](/contact/) to get expert help with the HashiCorp stack from the Verifa crew.

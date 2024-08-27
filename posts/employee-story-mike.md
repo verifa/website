@@ -35,4 +35,4 @@ People like working here! At some other consultancies where you work 100% with y
 
 I really don’t like Jenkins!
 
-Want to join the crew? Check out our [careers page](https://verifa.io/careers/) for openings.
+Want to join the crew? Check out our [careers page](/careers/) for openings.

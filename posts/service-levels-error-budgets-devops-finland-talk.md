@@ -38,9 +38,10 @@ Developer's make changes. Operations want to keep systems stable. Service Levels
 
 <a href="/static/blog/service-levels-error-budgets-devops-finland-meetup/service-levels-error-budgets-and-why-your-dev-teams-should-care.pdf" download="service-levels-error-budgets-and-why-your-dev-teams-should-care.pdf">Download presentation.</a>
 
-This talk was based on my blog post **[Demystifying Service Level acronyms and Error Budgets.](https://verifa.io/blog/demystifying-service-level-acronyms/)** 
+This talk was based on my blog post **[Demystifying Service Level acronyms and Error Budgets.](/blog/demystifying-service-level-acronyms/)**
 
 ## Links
+
 1. [DevOps Finland meetup](https://www.meetup.com/devops-finland/)
 2. [Availability cheatsheet](https://availability.sre.xyz/)
 3. [Lifecycle cost piechart](https://www.researchgate.net/publication/340280214_Code_Readability_Management_of_High-level_Programming_Languages_A_Comparative_Study)
@@ -50,4 +51,4 @@ This talk was based on my blog post **[Demystifying Service Level acronyms and E
 
 ---
 
-If you need help optimising your software development and continuous delivery processes, don’t hesitate to **[get in contact with us!](https://verifa.io/contact/)**
+If you need help optimising your software development and continuous delivery processes, don’t hesitate to **[get in contact with us!](/contact/)**

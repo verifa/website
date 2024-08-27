@@ -36,13 +36,13 @@ We're always on the look out for talented consultants to help deliver expert ser
 
 We’re an experienced crew of DevOps and Cloud professionals dedicated to helping our customers with Continuous practices and Cloud adoption. We're not your typical consultancy house! When it comes to our consulting, we always put the customer's interests first and use open source products as much as possible. We’re also a HashiCorp partner and regularly use their products to solve customer challenges.
 
-We're looking for people who share our values of being open, honest and providing no bulls**t consulting to our customers! We want to work with the best people, no matter their background. So if you’re passionate about all things cloud and continuous, and want to learn new things, you’ll fit right in. [Find out more about us here](https://verifa.io/company).
+We're looking for people who share our values of being open, honest and providing no bulls**t consulting to our customers! We want to work with the best people, no matter their background. So if you’re passionate about all things cloud and continuous, and want to learn new things, you’ll fit right in. [Find out more about us here](/company).
 
 > I feel like I’ve found my professional home in Verifa. A place where professionals are treated with respect and have a say in their own work and the company itself.
 >
 > <footer>Lauri Suomalainen, Cloud Architect</footer>
 
-[Read more from Lauri here](https://verifa.io/blog/one-year-at-verifa-a-retrospective)
+[Read more from Lauri here](/blog/one-year-at-verifa-a-retrospective)
 
 ## Work time and salary
 
@@ -55,7 +55,7 @@ We're looking for people who share our values of being open, honest and providin
 ## Benefits
 
 - VeriFriday: 20% of working time dedicated to upskilling
-- [VeriConf](https://verifa.io/blog/vericonf-2021-re-connecting-learning-and-teamwork): our annual company get together
+- [VeriConf](/blog/vericonf-2021-re-connecting-learning-and-teamwork): our annual company get together
 - Join or establish your own side/hobby project
 - Comprehensive occupational health care
 - Sports and Culture benefit

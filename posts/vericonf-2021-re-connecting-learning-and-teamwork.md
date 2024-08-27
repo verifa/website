@@ -81,4 +81,4 @@ VeriConf is a lot of fun, and an important part of the Verifa culture. It's a ch
 
 Our shared experiences and learnings from VeriConf will no doubt help Verifa grow, both for our people and the value we deliver to our customers. Looking forward to VeriConf 2022!
 
-Want to join us? Check out our [open positions](https://verifa.io/careers/).
+Want to join us? Check out our [open positions](/careers/).

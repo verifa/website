@@ -15,7 +15,7 @@ featured: false
 
 ## Abstract
 
-A practical take on the SLSA framework, SBOM (Software Bill of Materials) and the current state of software supply chain security in general. Instead of a deep dive, this talk focused on why should you care about supply chain security and what concrete steps can be taken to improve your security posture. 
+A practical take on the SLSA framework, SBOM (Software Bill of Materials) and the current state of software supply chain security in general. Instead of a deep dive, this talk focused on why should you care about supply chain security and what concrete steps can be taken to improve your security posture.
 
 ## What’s covered?
 
@@ -50,8 +50,8 @@ A practical take on the SLSA framework, SBOM (Software Bill of Materials) and th
 
 [Google Cloud Build Build Provenance](https://cloud.google.com/build/docs/securing-builds/view-build-provenance)
 
-[GUAC](https://github.com/guacsec/guac) 
+[GUAC](https://github.com/guacsec/guac)
 
 ---
 
-If you need help optimising your software development and continuous delivery processes, don’t hesitate to [**get in contact with us!**](https://verifa.io/contact/)
+If you need help optimising your software development and continuous delivery processes, don’t hesitate to [**get in contact with us!**](/contact/)

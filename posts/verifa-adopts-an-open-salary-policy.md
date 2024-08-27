@@ -21,7 +21,7 @@ The main motivation of the policy is to ensure fair compensation to each and eve
 
 Open salary policy is also a policy for gender equality. It eliminates the need for the employee and the employer to have an obscured salary discussion, a process which has traditionally favoured men over women. Frankly, such a bidding game has grown stale, tiresome and often leaves a bad taste in someone’s mouth.
 
-Open salary policy also allows us to post a realistic salary range in our [job advertisements](https://verifa.io/careers/), so we feel it’s fair to potential future colleagues as well. Finally we feel the open salary policy encourages mutual, communal trust.
+Open salary policy also allows us to post a realistic salary range in our [job advertisements](/careers/), so we feel it’s fair to potential future colleagues as well. Finally we feel the open salary policy encourages mutual, communal trust.
 
 ## Putting context to work and work in context
 
@@ -37,6 +37,6 @@ However, lacking a traditional corporate hierarchy leaves us without a framework
 
 We also try to leverage on [OKRs](https://en.wikipedia.org/wiki/OKR), both personal and company wide for individuals to measure and steer their work and goals.
 
-When it comes to salary adjustments, Verifa does two in a year: one based on inflation and one based on performance. In the future we’d like to codify the criteria for the latter to be even more transparent and unambiguous. If you’d like to be part of that, head over to [our career page](https://verifa.io/careers/) and hit us up!
+When it comes to salary adjustments, Verifa does two in a year: one based on inflation and one based on performance. In the future we’d like to codify the criteria for the latter to be even more transparent and unambiguous. If you’d like to be part of that, head over to [our career page](/careers/) and hit us up!
 
 For better work!

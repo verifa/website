@@ -39,4 +39,4 @@ DevOps was never intended to be a role, and certainly not the function of a team
 
 ---
 
-If you need any help with DevOps, Platform Engineering, Developer Experience or related topics, be sure to [get in touch!](https://verifa.io/contact/)
+If you need any help with DevOps, Platform Engineering, Developer Experience or related topics, be sure to [get in touch!](/contact/)

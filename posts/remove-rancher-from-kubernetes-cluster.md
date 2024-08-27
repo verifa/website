@@ -131,4 +131,4 @@ Check that this only removes the finalizers you want to remove.
 
 Rancher can be a pain to remove because it creates so many CRDs, resources and namespaces in your cluster *at runtime*. This means your deployment tool has no record of those resources being created and cannot clean them up for you. Hopefully for you, the `system-tools remove` subcommand will work and purge your cluster of Rancher, but if not, I hope this post has given you some tips for removing Rancher. Personally, I spent too much time doing this and that’s why I decided to write this post :)
 
-If you have any questions, feedback or want help with managing Kubernetes please leave us a comment or [get in touch here!](https://verifa.io/contact/)
+If you have any questions, feedback or want help with managing Kubernetes please leave us a comment or [get in touch here!](/contact/)

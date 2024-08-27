@@ -18,4 +18,4 @@ Push a change, see it live on [Itch.io](http://itch.io/) in minutes, using free 
 
 <iframe width="100%" height="410" src="https://www.youtube.com/embed/ENUW04uvuUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-If you need any help with automating game builds [get in touch!](https://verifa.io/contact/)
+If you need any help with automating game builds [get in touch!](/contact/)

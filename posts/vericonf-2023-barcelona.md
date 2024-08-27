@@ -18,7 +18,7 @@ As well as enjoying the awesome views, chilling by the pool, and the occasional 
 
 ## Day1
 
-This year, we were excited to welcome two new crew members, [Viktor](https://verifa.io/crew/valtintas/) and [Zach](https://verifa.io/crew/zlaster/) to VeriConf! However, we were sorry that Bosse, Anoop, and Hanna weren't able to join us this year. You were missed.
+This year, we were excited to welcome two new crew members, [Viktor](/crew/valtintas/) and [Zach](/crew/zlaster/) to VeriConf! However, we were sorry that Bosse, Anoop, and Hanna weren't able to join us this year. You were missed.
 
 After enjoying a delicious breakfast on the veranda and untangling ourselves from a [human knot](https://en.wikipedia.org/wiki/Human_knot) (!), we created the agenda for the day by voting for the proposed sessions.
 
@@ -30,7 +30,7 @@ Looking back at the four most important things for us to improve/start/stop:
 
 - **Improve financial visibility**: financials are now included in our in-house metrics dashboard.
 - **More company get togethers**: we held two VeriMeets in Lund (JulLund) and Gothenburg (VeriGoth) since last VeriConf.
-- **Improve upon our [Continuous Delivery workshop](https://verifa.io/work/continuous-delivery-workshop/)**: we’ve had quite a bit of interest in how we help teams improve their software delivery performance, continuous improvement for continuous delivery.
+- **Improve upon our [Continuous Delivery workshop](/work/continuous-delivery-workshop/)**: we’ve had quite a bit of interest in how we help teams improve their software delivery performance, continuous improvement for continuous delivery.
 - **Stop working alone**: we now have consultants working together on some customer projects, which benefits both our customers and our employee’s wellbeing.
 
 ### OKRs
@@ -54,7 +54,7 @@ This way we have a limited number of Initiatives running in parallel, and can be
 
 ### Coastline demo
 
-[Jacob](https://verifa.io/crew/jlarfors/) presented an update on an internal project, Coastline, about building internal platforms, followed by a brainstorming session on use cases. You can check out the original presentation at DevOps Finland meet up [here [video]](https://youtu.be/U1z4feTaS5c?t=6491).
+[Jacob](/crew/jlarfors/) presented an update on an internal project, Coastline, about building internal platforms, followed by a brainstorming session on use cases. You can check out the original presentation at DevOps Finland meet up [here [video]](https://youtu.be/U1z4feTaS5c?t=6491).
 
 ![vericonf-2023-winery-crew](/static/blog/vericonf-2023-blog/vericonf-2023-winery-crew.jpg)
 *Wine tasting at Pares Balta*
@@ -76,7 +76,7 @@ After some chill time by the pool, it was time for Powerpoint Karaoke! Powerpoin
 
 ### VeriSec(ure) demo
 
-Day 2 kicked off with a demo by [Mike](https://verifa.io/crew/mvainio/) on VeriSec(ure). Mike’s finishing his Master’s Thesis with a focus on security. VeriSec(ure) is a website created by Mike that provides practical information and opinions on security tools and practices, tailor-made for Verifa.
+Day 2 kicked off with a demo by [Mike](/crew/mvainio/) on VeriSec(ure). Mike’s finishing his Master’s Thesis with a focus on security. VeriSec(ure) is a website created by Mike that provides practical information and opinions on security tools and practices, tailor-made for Verifa.
 
 > Instead of trying to prevent people from building insecurely, we should enable them to build in a secure way.
 >
@@ -96,7 +96,7 @@ We reviewed the key points discussed during VeriConf 2022 and identified areas f
 
 ### Pub Quiz
 
-This year's VeriConf concluded with a somewhat challenging pub quiz, organised and hosted by Quiz Master [Andreas](https://verifa.io/crew/alarfors/). After 14 rounds covering various topics such as music, history, food, geography, and a sprinkling of DevOps and sysadmin, the victors emerged triumphant. Congratulations to Team Delique, the nerdiest of them all!
+This year's VeriConf concluded with a somewhat challenging pub quiz, organised and hosted by Quiz Master [Andreas](/crew/alarfors/). After 14 rounds covering various topics such as music, history, food, geography, and a sprinkling of DevOps and sysadmin, the victors emerged triumphant. Congratulations to Team Delique, the nerdiest of them all!
 
 ## Wrapping Up
 

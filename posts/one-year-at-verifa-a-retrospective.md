@@ -35,7 +35,7 @@ After taking that first step into Verifa, the subsequent steps have been easier 
 * Founded a Hashicorp User Group in Helsinki.
 * Developed our partnership programmes.
 * Taken up responsibilities both in recruitment and project sales.
-* Spoken in a [podcast](https://verifa.io/blog/a-first-look-at-gke-autopilot/).
+* Spoken in a [podcast](/blog/a-first-look-at-gke-autopilot/).
 * Even started to practice yoga because there was an opportunity to do so!
 
 ## Flexible working
@@ -54,4 +54,4 @@ This work will undoubtedly continue but despite some internal turmoil and growin
 
 Here's to 2022 and all the good that will come with it. Stay tuned for exciting news just beyond the horizon!
 
-If you'd like to discuss career opportunities or our services, contact us here [https://verifa.io/company/contact/](https://verifa.io/company/contact/ "https://verifa.io/company/contact/") or hit me up on [LinkedIn.](https://www.linkedin.com/in/lauri-suomalainen/)
+If you'd like to discuss career opportunities or our services, contact us here [https://verifa.io/company/contact/](/company/contact/ "https://verifa.io/company/contact/") or hit me up on [LinkedIn.](https://www.linkedin.com/in/lauri-suomalainen/)

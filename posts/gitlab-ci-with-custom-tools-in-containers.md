@@ -13,7 +13,7 @@ featured: true
 
 ---
 
-**[In a previous post](https://verifa.io/blog/automatically-package-tools-gitlab-container-registry/) we showed how to build and store Docker images in GitLab. Building on that, we will demonstrate a workflow to Dockerise a custom tool which first needs to be compiled while minimising time to deployment by storing artifacts in the Package Registry.**
+**[In a previous post](/blog/automatically-package-tools-gitlab-container-registry/) we showed how to build and store Docker images in GitLab. Building on that, we will demonstrate a workflow to Dockerise a custom tool which first needs to be compiled while minimising time to deployment by storing artifacts in the Package Registry.**
 
 ***
 
@@ -66,7 +66,7 @@ RUN sed -i "/\#\! \/usr\/bin\/python/c\\#\! \/usr\/bin\/python3" $(which scons)
 > [!WARNING]
 > Linux binaries of Godot often will not run on distributions that are older than the distribution they were built on, so we use Ubuntu 20.04 LTS. It won’t matter for this demonstration, but it would for exporting the game.
 
-We’ve already gone over [how to build this Docker image and store it in a GitLab registry](https://verifa.io/blog/automatically-package-tools-gitlab-container-registry/), so we’ll skip over that part here.
+We’ve already gone over [how to build this Docker image and store it in a GitLab registry](/blog/automatically-package-tools-gitlab-container-registry/), so we’ll skip over that part here.
 
 Now that we have our environment image, we can compile Godot! For our CI file we’ll utilise a few techniques which will make the CI jobs easier to work with.
 

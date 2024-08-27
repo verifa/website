@@ -535,7 +535,7 @@ jobs:
 
 As seen in the above example, in CI you likely want to run the `fs` scan which includes by default all the scanners, meaning Trivy will also scan for secrets and vulnerabilities, not only for misconfigurations.
 
-However, keep in mind [this excellent blog post by my colleague Thierry](https://verifa.io/blog/keep-your-pipelines-simple). The Trivy action only really wraps the GitHub workflow YAML inputs to CLI flags. If you are using another CI/CD system, you can simply install and invoke the CLI as well, making transition between CI/CD tools extremely simple.
+However, keep in mind [this excellent blog post by my colleague Thierry](/blog/keep-your-pipelines-simple). The Trivy action only really wraps the GitHub workflow YAML inputs to CLI flags. If you are using another CI/CD system, you can simply install and invoke the CLI as well, making transition between CI/CD tools extremely simple.
 
 ## Bonus for GitHub Users
 
@@ -545,4 +545,4 @@ If you have an open-source project in GitHub or you pay GitHub for the advanced 
 
 In this blog post we rolled up our sleeves and looked into how to secure Terraform configuration by using static analysis. As an example and recommended tool we explored Trivy, but honestly the tool choice isn’t as important as the principle of integrating such checks into your workflow. I hope you can see the value of running a simple scan over your configuration. Thanks to extensive builtin checks in Trivy you can get actionable findings without spending time reviewing the configuration manually and magically knowing all the security intricacies of AWS infrastructure.
 
-If you found something wrong with the content or something felt vague or awesome, leave us a comment! Additionally, if you’d like any help with Terraform and/or Trivy [please get in touch](https://verifa.io/contact/index.html)!
+If you found something wrong with the content or something felt vague or awesome, leave us a comment! Additionally, if you’d like any help with Terraform and/or Trivy [please get in touch](/contact/index.html)!

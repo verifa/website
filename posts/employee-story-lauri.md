@@ -41,4 +41,4 @@ We have seen this past year, many good and important initiatives, such as the op
 
 People know that I really like climbing. But I'm also very interested in the technical aspects, like the gear and not just free climbing. Like let's say, cliff rescue stuff, abseiling, rope techniques. So yeah, I’m very nerdy with my climbing!
 
-Want to join the crew? Check out our [careers page](https://verifa.io/careers/) for openings.
+Want to join the crew? Check out our [careers page](/careers/) for openings.

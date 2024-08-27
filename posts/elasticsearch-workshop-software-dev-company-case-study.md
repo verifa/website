@@ -33,5 +33,4 @@ After an initial consultation to identify the scope and focus areas, Verifa deli
 
 Following the workshop, the team was able to provision new clusters and expand the cluster size based on their needs. In the longer term, they feel confident in monitoring the cluster, and performing upgrades when necessary.
 
-
-Can we help you with your Continuous Delivery journey? Whether it's a long term or short term project, [get in touch](https://verifa.io/contact/) and let's chat!
+Can we help you with your Continuous Delivery journey? Whether it's a long term or short term project, [get in touch](/contact/) and let's chat!

@@ -283,4 +283,4 @@ This is an area where platform teams have a significant role in helping to secur
 
 These are our findings and our conclusions.
 If you disagree with them, why not reach out to us and let us know why. Or if you found something particularly insightful, leave us a comment!
-Additionally, if you’d like any help with HashiCorp Vault and Kubernetes please [get in touch](https://verifa.io/contact/index.html)!
+Additionally, if you’d like any help with HashiCorp Vault and Kubernetes please [get in touch](/contact/index.html)!

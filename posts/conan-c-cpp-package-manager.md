@@ -70,7 +70,7 @@ needs to be a thriving community, so let's talk a bit about the one surrounding 
 For starters, all the source code is available on GitHub for you to explore.
 
 [The documentation is very nice](https://docs.conan.io/en/latest/introduction.html) and there is an active Slack channel
-in the Cpplang Slack workspace. [JFrog](https://jfrog.com/) are actively supporting the project with conferences [Conan Days -](https://conandays.conan.io/) and free online training is available [in partnership with Verifa](https://verifa.io).
+in the Cpplang Slack workspace. [JFrog](https://jfrog.com/) are actively supporting the project with conferences [Conan Days -](https://conandays.conan.io/) and free online training is available [in partnership with Verifa]().
 
 Last but not least, [Conan Center](https://conan.io/center/) is a publicly available Conan
 repository with a vast number of open source projects that have already been "Conanized". In

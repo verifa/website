@@ -254,7 +254,7 @@ With Kubernetes, our system is structured into individual pieces (Pods) and we m
 
 ### GitOps
 
-GitOps is a development workflow coupled with a system defined as code. We have covered the topic of GitOps at length in our blog [“GitOps: All you need is Git (and Continuous Deployment)"](https://verifa.io/blog/gitops-all-you-need-is-git-and-continuous-deployment/) and [“What is GitOps anyway?"](https://verifa.io/blog/what-is-gitops-anyway/) podcast, but to summarize:
+GitOps is a development workflow coupled with a system defined as code. We have covered the topic of GitOps at length in our blog [“GitOps: All you need is Git (and Continuous Deployment)"](/blog/gitops-all-you-need-is-git-and-continuous-deployment/) and [“What is GitOps anyway?"](/blog/what-is-gitops-anyway/) podcast, but to summarize:
 
 * The complete system is defined as code
 * Changes to the code (system) are made on development branches

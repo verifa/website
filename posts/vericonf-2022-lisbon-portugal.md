@@ -21,7 +21,7 @@ After being grounded for a couple of years, this year we returned to the awesome
 
 ### State of the Union
 
-Jacob ‘officially’ kicked off VeriConf with our traditional State of the Union address. In the last 12 months we welcomed three new crew mates - [Albert](https://verifa.io/crew/arigo/), [Thierry](https://verifa.io/crew/tlacour/) and [Laroy](https://verifa.io/crew/lsjodahl/). We celebrated achieving a bunch of certifications, including becoming a [Certified HashiCorp Implementation Partner](https://verifa.io/blog/verifa-hashicorp-chip-vault-blog/). And we’ve also been through a rebrand - new logo, new website, and a renewed focus on what matters to our customers and to our crew.
+Jacob ‘officially’ kicked off VeriConf with our traditional State of the Union address. In the last 12 months we welcomed three new crew mates - [Albert](/crew/arigo/), [Thierry](/crew/tlacour/) and [Laroy](/crew/lsjodahl/). We celebrated achieving a bunch of certifications, including becoming a [Certified HashiCorp Implementation Partner](/blog/verifa-hashicorp-chip-vault-blog/). And we’ve also been through a rebrand - new logo, new website, and a renewed focus on what matters to our customers and to our crew.
 
 ### OKRs
 
@@ -39,7 +39,7 @@ Time to reflect on the past 12 months and what we want to do going forward. We a
   - we’re working on including financials in our in-house metrics dashboard
 - **Hold more VeriMeets**
   - we’ll hold three smaller meetups per year in Helsinki, Gothenburg, and Lund, as well as VeriConf
-- **Improve upon our [Continuous Delivery workshop](https://verifa.io/work/continuous-delivery-workshop/)**
+- **Improve upon our [Continuous Delivery workshop](/work/continuous-delivery-workshop/)**
   - part of our approach for helping teams improve their software delivery performance
 - **Stop working alone**
   - we believe that working together rather than as a lone consultant benefits our customers and our employee’s wellbeing
@@ -76,11 +76,11 @@ Most of the Verifa crew are, of course, technical consultants, and I, a non-tech
 
 ### Reviewing values
 
-At last year’s VeriConf, we defined our values. There’s been quite a bit of change at Verifa over the last 12 months so we wanted to review these, to make sure they are still relevant. Jacob live coded the website changes whilst we discussed, and with some automation the changes were deployed within a few minutes. You can check out our revised values [here](https://verifa.io/company/).
+At last year’s VeriConf, we defined our values. There’s been quite a bit of change at Verifa over the last 12 months so we wanted to review these, to make sure they are still relevant. Jacob live coded the website changes whilst we discussed, and with some automation the changes were deployed within a few minutes. You can check out our revised values [here](/company/).
 
 ### Metrics review
 
-Metrics is a project that has been evolving ever since [Bosse](https://verifa.io/crew/bnystrom/) joined us about 18 months ago. The aim is to have an at-a-glance dashboard to measure the well being of employees and the health of the company. In this session we talked about how to improve, and what other metrics will help to achieve this, including financial data, delta hours trend, OKRs and VeriFriday tracking.
+Metrics is a project that has been evolving ever since [Bosse](/crew/bnystrom/) joined us about 18 months ago. The aim is to have an at-a-glance dashboard to measure the well being of employees and the health of the company. In this session we talked about how to improve, and what other metrics will help to achieve this, including financial data, delta hours trend, OKRs and VeriFriday tracking.
 
 ### Poolside, dinner on the beach and wine tasting
 
@@ -96,4 +96,4 @@ VeriConf is a lot of fun. The best part is getting to spend time with colleagues
 
 Though it didn’t feel like it, we got a huge amount of work done. We’re building on top of strong foundations to make Verifa even better for both employees and our customers.
 
-Want to join us? Check out our [open positions](https://verifa.io/careers/).
+Want to join us? Check out our [open positions](/careers/).

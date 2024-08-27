@@ -600,4 +600,4 @@ Hopefully this post has given you some ideas of how infrastructure as code tools
 - The code serves as the documentation of the infrastructure.
 - Storing the code in version control gives the ability to audit changes overtime.
 
-If you have any questions, feedback or want help with Infrastructure as Code please leave us a comment or [get in touch here!](https://verifa.io/contact/)
+If you have any questions, feedback or want help with Infrastructure as Code please leave us a comment or [get in touch here!](/contact/)

@@ -249,4 +249,4 @@ Moreover, the Kubernetes built-in autoscaler has the capability to scale based o
 - [KEDA deployment](https://keda.sh/docs/2.10/deploy/)
 - [KEDA scaledObject, TriggerAuthentication](https://keda.sh/docs/2.9/scalers/elasticsearch/)
 
-If you any questions, or you’d like any help with Kubernetes please [get in touch!](https://verifa.io/contact/)
+If you any questions, or you’d like any help with Kubernetes please [get in touch!](/contact/)

@@ -15,7 +15,7 @@ active: false
 
 ---
 
-We’re an experienced crew of DevOps and Cloud professionals dedicated to helping our customers with Continuous practices and Cloud adoption. We're not your typical consultancy house! When it comes to our consulting, we always put the customer's interests first and use open source products as much as possible. We’re also a HashiCorp partner and regularly use their products to solve customer challenges. We're looking for the next person to join us, who shares our values of being open, honest and providing no bulls**t consulting to our customers! [Find out more about us here](https://verifa.io/company).
+We’re an experienced crew of DevOps and Cloud professionals dedicated to helping our customers with Continuous practices and Cloud adoption. We're not your typical consultancy house! When it comes to our consulting, we always put the customer's interests first and use open source products as much as possible. We’re also a HashiCorp partner and regularly use their products to solve customer challenges. We're looking for the next person to join us, who shares our values of being open, honest and providing no bulls**t consulting to our customers! [Find out more about us here](/company).
 
 ## What you’ll do
 
@@ -69,7 +69,7 @@ We want to work with the best people, no matter their background. So if you’re
 >
 > <footer>Lauri Suomalainen, Cloud Architect</footer>
 
-[Read more from Lauri here](https://verifa.io/blog/one-year-at-verifa-a-retrospective)
+[Read more from Lauri here](/blog/one-year-at-verifa-a-retrospective)
 
 ## Work time and salary
 
@@ -82,7 +82,7 @@ We want to work with the best people, no matter their background. So if you’re
 ## Benefits
 
 * VeriFriday: 20% of working time dedicated to upskilling
-* [VeriConf](https://verifa.io/blog/vericonf-2021-re-connecting-learning-and-teamwork): our annual company get together
+* [VeriConf](/blog/vericonf-2021-re-connecting-learning-and-teamwork): our annual company get together
 * Join or establish your own side/hobby project
 * Regular knowledge sharing sessions and after work activities
 * Comprehensive occupational health care

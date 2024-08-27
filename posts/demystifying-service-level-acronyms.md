@@ -20,7 +20,7 @@ toc: true
 
 In this fundamental level blog post I will explain what different Service Level concepts mean and how to use them effectively in the software delivery process.
 
-I also did a talk at DevOps Finland on this topic, [Service Levels, Error budgets, and why your dev teams should care.](https://verifa.io/blog/service-levels-error-budgets-devops-finland-talk/)
+I also did a talk at DevOps Finland on this topic, [Service Levels, Error budgets, and why your dev teams should care.](/blog/service-levels-error-budgets-devops-finland-talk/)
 
 ## What is a Service Level and why does it matter?
 
@@ -84,6 +84,6 @@ When building and serving software you care both about evolving it, but also abo
 
 Using Service Level Agreements, Objectives and Indicators and Error Budgets effectively in your software development process enables you to strike the right balance between change versus stability. They define common goals to your developers and operations, promoting co-operation and data-driven decision making. They give your teams more ownership and agenda over the products they build and make it easier to react to problems before they can take effect.
 
-I also did a talk at DevOps Finland on this topic, [Service Levels, Error budgets, and why your dev teams should care.](https://verifa.io/blog/service-levels-error-budgets-devops-finland-talk/)
+I also did a talk at DevOps Finland on this topic, [Service Levels, Error budgets, and why your dev teams should care.](/blog/service-levels-error-budgets-devops-finland-talk/)
 
-If you need help optimising your software development and continuous delivery processes, don’t hesitate to [get in contact with us!](https://verifa.io/contact/)
+If you need help optimising your software development and continuous delivery processes, don’t hesitate to [get in contact with us!](/contact/)

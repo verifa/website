@@ -36,13 +36,13 @@ The strategic decision was quite obvious. Focusing on inbound marketing and impr
 
 During the summer and autumn months, Jacob and I interviewed dozens upon dozens of great candidates to join our team of consultants. Initially these were provided by partners but, following the release of our new website in August (and its subsequent improvements), as well as the activation of social media and marketing campaigns, organic channels began bringing in the right kind of talent.
 
-Unfortunately, we managed to sign just one [Cloud Architect](https://verifa.io/insights/open-position-cloud-architect/) during 2020 – but the work keeps paying off, and we recently signed up another in January 2021. We’re still hiring too, so be sure to check out the [advertisement](https://verifa.io/insights/open-position-cloud-architect/)!
+Unfortunately, we managed to sign just one [Cloud Architect](/insights/open-position-cloud-architect/) during 2020 – but the work keeps paying off, and we recently signed up another in January 2021. We’re still hiring too, so be sure to check out the [advertisement](/insights/open-position-cloud-architect/)!
 
 ## **The birth of** [**Bubbly**](https://bubbly.dev/)
 
 Another major activity during 2020 – which arguably took up even more time than recruitment and marketing activities – was the launch of our internal development project for an open source tool, Bubbly.
 
-The Business Finland Crisis Funding enabled us to finally dedicate time and resources to an idea that had been brewing inside the heads of our specialists for some time. We recruited two Golang developers to join our ranks, while one of our specialists joined the team as the third developer. Later in the fall, we also hired Carole, our [Growth Lead](https://verifa.io/crew/ckurowski/), and brought in an external advisor to help our business development team.
+The Business Finland Crisis Funding enabled us to finally dedicate time and resources to an idea that had been brewing inside the heads of our specialists for some time. We recruited two Golang developers to join our ranks, while one of our specialists joined the team as the third developer. Later in the fall, we also hired Carole, our [Growth Lead](/crew/ckurowski/), and brought in an external advisor to help our business development team.
 
 As of January 2021, I am proud to say we have a working version of Bubbly. And we are now piloting it with a handful of our closest customers to validate the core use cases, before its Beta launch.
 

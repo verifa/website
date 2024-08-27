@@ -27,4 +27,4 @@ HashiCorp is the leader in multi-cloud infrastructure automation software. [Has
 
 Next on the roadmap is for us to become Certified HashiCorp Implementation Partners for Terraform!
 
-[Get in touch](https://verifa.io/contact/) to get expert help with the HashiCorp stack from the Verifa crew.
+[Get in touch](/contact/) to get expert help with the HashiCorp stack from the Verifa crew.

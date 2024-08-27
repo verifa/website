@@ -515,4 +515,4 @@ query "pods_using_legacy_registry_table" {
 
 We’ve only scratched the surface of what is possible with Steampipe in this blog, maybe we will explore more features and plugins in future blog posts. We highly recommend [checking out the project](https://steampipe.io/). Even if your SQL is rusty, we find it’s quite easy to get things done and after a bit of practice you’ll find yourself writing queries ad-hoc to answer questions that pop up.
 
-If you found something wrong with the content or something felt vague or awesome, leave us a comment! Additionally, if you’d like any help with Steampipe and/or Kubernetes [please get in touch](https://verifa.io/contact/index.html)!
+If you found something wrong with the content or something felt vague or awesome, leave us a comment! Additionally, if you’d like any help with Steampipe and/or Kubernetes [please get in touch](/contact/index.html)!

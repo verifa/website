@@ -72,7 +72,7 @@ Karpenter will require three IAM roles, and this is most of the work involved wi
 
 #### 1. Karpenter Controller
 
-For the Karpenter controller we will need an IAM role that the Karpenter pods will assume. We use [IAM Roles for Service Accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) (IRSA) to give Kubernetes service accounts access to AWS. If you need help setting that up, check out my other [blog on the topic](https://verifa.io/blog/how-to-assume-an-aws-iam-role-from-a-service-account-in-eks-with-terraform/index.html). In the below example the document policy grants the service account `karpenter` in the namespace `karpenter` to assume the IAM role that we attach this policy to.
+For the Karpenter controller we will need an IAM role that the Karpenter pods will assume. We use [IAM Roles for Service Accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) (IRSA) to give Kubernetes service accounts access to AWS. If you need help setting that up, check out my other [blog on the topic](/blog/how-to-assume-an-aws-iam-role-from-a-service-account-in-eks-with-terraform/index.html). In the below example the document policy grants the service account `karpenter` in the namespace `karpenter` to assume the IAM role that we attach this policy to.
 
 Regarding the actual permissions we give to the IAM role, I used the official [CloudFormation template](https://karpenter.sh/0.25.0/getting-started/getting-started-with-eksctl/cloudformation.yaml) and [Terraform module](https://github.com/terraform-aws-modules/terraform-aws-eks/blob/v19.10.0/modules/karpenter/main.tf#L66) as references and came up with the below. Please review it yourself before putting this in production.
 

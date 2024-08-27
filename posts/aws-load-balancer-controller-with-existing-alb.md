@@ -138,7 +138,7 @@ resource "aws_iam_role" "aws_lb_controller" {
 }
 ```
 
-This has some dependencies so cannot be run “as is”. But if you need help configuring IAM Roles for Service Accounts (IRSA) then I already wrote a post on the topic which you can find [here](https://verifa.io/blog/how-to-assume-an-aws-iam-role-from-a-service-account-in-eks-with-terraform/).
+This has some dependencies so cannot be run “as is”. But if you need help configuring IAM Roles for Service Accounts (IRSA) then I already wrote a post on the topic which you can find [here](/blog/how-to-assume-an-aws-iam-role-from-a-service-account-in-eks-with-terraform/).
 
 The `TargetGroupBinding` Kubernetes Custom Resource we need to create requires the TargetGroup ARN which is non deterministic. In our setup, we use Terraform to create the [Kubernetes secret](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#clusters) that informs ArgoCD about connected clusters. Within that secret we can attach additional labels that can be accessed by the ArgoCD [ApplicationSets](https://argocd-applicationset.readthedocs.io/en/stable/), which means we have a very primitive way of passing data from Terraform to ArgoCD without ay extra tools. Note that Kubernetes labels have some restrictions on the [syntax and character set](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set) that can be used, so we can’t just pass in arbitrary data.
 
@@ -374,4 +374,4 @@ In this post we looked at a fairly specific problem; binding EKS cluster nodes t
 
 A point worth noting is that using the AWS Load Balancer Controller decouples your node management with your cluster management. Let’s say we wanted to use [Karpenter](https://karpenter.sh/) for autoscaling instead of the defacto cluster-autoscaler. Karpenter will not use AWS AutoScalingGroups but will instead create standalone EC2 instances based on the [Provisioners](https://karpenter.sh/v0.16.2/provisioner/) you define. This means our previous approach of attaching AutoScalingGroups with TargetGroups will not work as the EC2 instances Karpenter manages will not belong to the AutoScalingGroup and therefore not be automatically attached to the TargetGroup. The AWS Load Balancer Controller doesn’t care how the nodes are created; only that they belong to the cluster and match the label selectors defined. Probably we will look into Karpenter again in the near future for our project now that it [supports pod anti-affinity](https://github.com/aws/karpenter/issues/942), as this was previously a blocker for us.
 
-If you have any suggestions or questions about this post, please leave a comment or [get in touch with us](https://verifa.io/contact/)!
+If you have any suggestions or questions about this post, please leave a comment or [get in touch with us](/contact/)!
