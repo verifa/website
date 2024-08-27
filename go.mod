@@ -11,6 +11,7 @@ require (
 	github.com/fsnotify/fsnotify v1.7.0
 	github.com/go-chi/chi/v5 v5.0.11
 	github.com/golangci/golangci-lint v1.55.2
+	github.com/google/go-cmp v0.6.0
 	github.com/google/go-containerregistry v0.16.1
 	github.com/google/ko v0.15.1
 	github.com/jschaf/bibtex v0.0.0-20240701232004-21596c6b8e06
@@ -152,7 +153,6 @@ require (
 	github.com/golangci/misspell v0.4.1 // indirect
 	github.com/golangci/revgrep v0.5.2 // indirect
 	github.com/golangci/unconvert v0.0.0-20180507085042-28b1c447d1f4 // indirect
-	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/google/safetext v0.0.0-20220905092116-b49f7bc46da2 // indirect
 	github.com/gordonklaus/ineffassign v0.0.0-20230610083614-0e73809eb601 // indirect
 	github.com/gostaticanalysis/analysisutil v0.7.1 // indirect
