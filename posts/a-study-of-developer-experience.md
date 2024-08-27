@@ -31,7 +31,7 @@ This definition has been a base for more recent work that summarises it succinct
 
 The definition of “developer” is something that still lacks clarity. We would argue that it is not just anyone involved in *developing* software, but anyone involved in *developing and delivering* software.
 
-## What’s the background/evolution of Developer Experience?
+## How has Developer Experience evolved?
 
 The first formal definition of Developer Experience we can find is from 2012 \cite{fagerholm2012developer}, although there are online publications from 2011 \cite{effectivedx2011}. While we did not have a formal definition of Developer Experience before then, improvements to the software development process have positively impacted the Developer Experience as defined today.
 
