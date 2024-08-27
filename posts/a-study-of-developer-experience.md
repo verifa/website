@@ -10,7 +10,7 @@ tags:
 - DevOps
 - Platform Engineering
 date: 2024-08-21
-image: "/static/blog/crew-q-and-a-jacob.jpg"
+image: "/static/blog/a-study-of-developer-experience/devex-a-study.png"
 featured: true
 toc: true
 ---
