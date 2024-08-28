@@ -11,7 +11,7 @@ tags:
 - Platform Engineering
 - Value Streams
 date: 2024-08-21
-image: "/static/blog/what-is-developer-experience/what-is-developer-experience.png"
+image: "/static/blog/what-is-developer-experience/cover-what-is-developer-experience.png"
 featured: true
 toc: true
 ---
