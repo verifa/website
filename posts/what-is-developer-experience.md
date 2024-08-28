@@ -1,6 +1,6 @@
 ---
 type: Blog
-title: A study of Developer Experience
+title: What is Developer Experience?
 subheading: Developer Experience promises improved productivity, satisfaction, engagement and retention of development teams. We conducted a study of existing material and in this post we share the summary together with our real-world experience.
 authors:
 - jlarfors
@@ -11,7 +11,7 @@ tags:
 - Platform Engineering
 - Value Streams
 date: 2024-08-21
-image: "/static/blog/a-study-of-developer-experience/devex-a-study.png"
+image: "/static/blog/what-is-developer-experience/what-is-developer-experience.png"
 featured: true
 toc: true
 ---
@@ -20,19 +20,19 @@ In recent years Developer Experience has gained significant interest for teams a
 
 The goal of this post is to give the reader an understanding of Developer Experience, why it is important and how you can improve it.
 
-## What is developer experience?
+## What is Developer Experience?
 
 In 2012, Fagerholm and Münch proposed a definition of Developer Experience that is influenced by User Experience (UX) and is comprised of three dimensions: **Cognition**, **Affect** and **Conation** \cite{fagerholm2012developer}.
 
-![devex-concept-and-definition-2012](/static/blog/a-study-of-developer-experience/devex-concenpt-def-2012.png)
+![devex-concept-and-definition-2012](/static/blog/what-is-developer-experience/devex-concenpt-def-2012.png)
 
-The **cognitive** dimension consists of factors that affect how the developers perceive their development infrastructure, such as interactions with tools and processes. The **affective** dimension is about developers’ feelings towards work, and is largely related to social factors (respect, belonging, attachments to individuals and teams). The **conative** dimension is about a developer’s perceived value of their contribution. Visibility into how work transforms into value, and spending time on meaningful tasks positively impacts developer experience. In their definition, “developer” refers to anyone who is engaged in the activity of developing software and therefore does not limit this to only people with “developer” as their title or role.
+The **cognitive** dimension consists of factors that affect how the developers perceive their development infrastructure, such as interactions with tools and processes. The **affective** dimension is about developers’ feelings towards work, and is largely related to social factors (respect, belonging, attachments to individuals and teams). The **conative** dimension is about a developer’s perceived value of their contribution. Visibility into how work transforms into value, and spending time on meaningful tasks positively impacts Developer Experience. In their definition, “developer” refers to anyone who is engaged in the activity of developing software and therefore does not limit this to only people with “developer” as their title or role.
 
 This definition has been a base for more recent work that summarises it succinctly as “How developers think about, feel about, and value their work” \cite{greiler2022actionable}. A practical model for understanding Developer Experience was later proposed, also with three dimensions: feedback loops, cognitive load and flow state \cite{noda2023devex}. The dimensions in this model closely relate to the dimensions in the earlier definition \cite{fagerholm2012developer}: cognitive load is a measure of cognition, flow state helps individuals focus and feel productive (affect), and feedback loops help individuals value their work (conation).
 
 The definition of “developer” is something that still lacks clarity. We would argue that it is not just anyone involved in *developing* software, but anyone involved in *developing and delivering* software.
 
-## How has Developer Experience evolved?
+## What is the background of Developer Experience?
 
 The first formal definition of Developer Experience we can find is from 2012 \cite{fagerholm2012developer}, although there are online publications from 2011 \cite{effectivedx2011}. While we did not have a formal definition of Developer Experience before then, improvements to the software development process have positively impacted the Developer Experience as defined today.
 
@@ -54,7 +54,7 @@ What defines a good Developer Experience is difficult to capture. However, the p
 
 A common misconception is that Developer Experience is primarily affected by tools \cite{noda2023devex}, but it encompasses less tangible factors such as feelings about work (e.g. respect, attachment, belonging) and the value of one’s own contribution (e.g. alignment of one’s own goals with those of the project, plans, intentions, commitment and feedback) \cite{fagerholm2012developer}.
 
-It stands to reason that a good developer experience comes from a process uniquely well-fit for its organisation. It cannot be bought or borrowed but be developed internally. As such, “good” Developer Experience should not be a goal but an undertaking that requires Continuous Improvement.
+It stands to reason that a good Developer Experience comes from a process uniquely well-fit for its organisation. It cannot be bought or borrowed but be developed internally. As such, “good” Developer Experience should not be a goal but an undertaking that requires Continuous Improvement.
 
 ## How do you measure Developer Experience?
 
