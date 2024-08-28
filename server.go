@@ -351,16 +351,25 @@ func Run(ctx context.Context, site Site) error {
 			Location:        siteURL + route.Pattern,
 			Priority:        "1",
 			LastMod:         nowTime,
-			ChangeFrequency: "daily",
+			ChangeFrequency: "weekly",
 		})
 	}
 	// Add blogs to the sitemap.
 	for _, post := range posts.All {
 		siteMapPages = append(siteMapPages, SiteMapPage{
 			Location:        siteURL + post.URL(),
-			Priority:        "0.7",
+			Priority:        "1",
 			LastMod:         post.Date.Format("2006-01-02"),
-			ChangeFrequency: "daily",
+			ChangeFrequency: "weekly",
+		})
+	}
+	// Add crew to the sitemap.
+	for _, member := range Crew {
+		siteMapPages = append(siteMapPages, SiteMapPage{
+			Location:        siteURL + "/crew/" + member.ID + "/",
+			Priority:        "0.7",
+			LastMod:         nowTime,
+			ChangeFrequency: "weekly",
 		})
 	}
 	// Only include sitemap on production.
