@@ -6,8 +6,11 @@ templ servicesAssessmentsValueStreams(suggestedReading []*Post) {
 			@column("") {
 				<h1 class="v-h1">Value Stream Assessment.</h1>
 				<h4 class="mt-8 v-h4">
-					Map your value streams to identify waste and highlight opportunities for faster flow.
+					Learn to map and assess your Value Stream to unlock your software delivery potential.
 				</h4>
+				<div class="mt-8">
+					@linkButton("Book an assessment", "/contact/")
+				</div>
 			}
 			@column("") {
 				<img
@@ -24,77 +27,75 @@ templ servicesAssessmentsValueStreams(suggestedReading []*Post) {
 			<h4 class="v-h4">Why Value Streams?</h4>
 			<h2 class="mt-4 v-h2">
 				Value Streams help us analyse the current flow in order to remove waste and to derive a more lean and continuous workflow.
-				It documents the current process and highlights waste as well as opportunities for improvement.
+				They visualise the current process, providing a common understanding of the current state.
 			</h2>
 		</section>
 		<section class="container mx-auto">
 			@headerLine()
-			<p class="v-h4">Our approach.</p>
-			<dl class="pt-4 space-y-6 divide-y divide-v-black ">
-				@homeService("preparation", "Preparation") {
-					<h4 class="mt-8 v-h4">Identify owner</h4>
-					<p class="mt-4">The workshop owner has the mandate to drive the workshop and own the results from your side.</p>
-					<h4 class="mt-8 v-h4">Define scope</h4>
-					<p class="mt-4">Define the start and end of the Value Streams. Commonly we conduct planning interviews to set a structure for the workshop.</p>
-					<h4 class="mt-8 v-h4">Schedule workshop(s)</h4>
-					<p class="mt-4">Schedule the workshop(s), make it clear whether it is remote or in-person and all the equipment and software is available.</p>
-				}
-				@homeService("workshop", "Workshop") {
-					<h4 class="mt-8 v-h4">Motivation</h4>
-					<p class="mt-4">An inspirational presentation that will present the idea of Continuous Delivery so that it's clear why we are doing this.</p>
-					<h4 class="mt-8 v-h4">Value Streams</h4>
-					<p class="mt-4">For the majority of the workshop we will facilitate the Value Stream's organic growth on the whiteboard as we go over various topics.</p>
-					<h4 class="mt-8 v-h4">Waste deep dives</h4>
-					<p class="mt-4">We dive further into specific topics, e.g. particularly painful processes, requirements or initiatives. These may be planned beforehand or come up during the workshop.</p>
-				}
-				@homeService("report", "Report") {
-					<h4 class="mt-8 v-h4">Report</h4>
-					<p class="mt-4">We prepare a report summarizing the workshop, the pain points (i.e. waste) and our own suggestions that we can think of. This is the first version of the backlog.</p>
-					<h4 class="mt-8 v-h4">Feedback</h4>
-					<p class="mt-4">A discussion about the workshop and report. It is important that you understand the report and are comfortable with the implementation.</p>
-					<h4 class="mt-8 v-h4">Build - Measure - Learn</h4>
-					<p class="mt-4">This is where the real work of implementing change begins. And it is so important to do it iteratively.</p>
-				}
-			</dl>
+			<h4 class="v-h4">Why a Value Stream Assessment?</h4>
+			<h2 class="mt-4 v-h2">
+				Software delivery is not one-size-fits-all.
+				By assessing your Value Stream we can identify and motivate change that will boost your software delivery.
+			</h2>
 		</section>
 		<section class="container mx-auto">
-			@headerLine()
-			<p class="v-h4">What you get.</p>
-			<p class="v-h2 mt-4">
-				A thorough understanding of your software delivery value streams together with an actionable report to help you improve.
-			</p>
+			<div class="prose md:prose-lg lg:prose-xl xl:prose-2xl max-w-none">
+				<h3>Our approach.</h3>
+				<p>
+					// This is more philosophical.
+					Improving your software delivery is not a one-time event.
+					It is a process of Continuous Improvement.
+					We will teach you how to map out your Value Stream, understand your software delivery process, identify waste, and importantly, motivate change.
+				</p>
+				<p class="italic">
+					Give a team a roadmap and you feed them for an iteration. Teach them how to create the roadmap and you feed them forever.
+				</p>
+				<h3>What you can expect.</h3>
+				<p>
+					// This is what we actually do, and what you actually get.
+					Together with your teams we will facilitate Value Stream Mapping workshops.
+					This builds an understanding of your current delivery process, identifying waste and opportunities for improvement along the way.
+					We encourage every team member to attend the workshops to ensure they learn about the holistic process and understand why changes are needed.
+				</p>
+				<p>
+					The assessment can last from a few days to a few weeks depending on the size and number of teams.
+					At the end of the assessment we will provide a report with the Value Stream Map, any discussions we had along the way and prioritised actionable steps you can take to improve your software delivery.
+				</p>
+				<h3>What happens next?</h3>
+				<p>
+					The assessment is your first step towards a better software delivery process.
+					It will provide you with an understanding of your current delivery process and opportunities to improve.
+				</p>
+				<p>
+					Next begins the Build-Measure-Learn process of implementing changes, measuring the effects and learning from the results.
+					Our crew are here to help guide you through the process.
+					We can be hands-on with our <a href="/services/consulting/">consultancy services</a> or take an advisory role via our <a href="/services/coaching/">coaching services</a>.
+				</p>
+			</div>
 		</section>
 	</div>
 	<section class="container mx-auto">
-		@columns(false) {
-			@column("") {
-				<img
-					class="object-contain mx-auto h-full w-1/2 lg:w-full"
-					src="/static/everything-is-connected.svg"
-					alt="everything-is-connected"
-				/>
-			}
-			@column("") {
-				<p class="v-h2">
-					‘We are very happy with the report Verifa prepared for us. It provides findings to address, an understanding of why to address them and ideas for how to address them.’.
-				</p>
-				<p class="v-h4 mt-4">— Olli Suihkonen, Visma Software Oy.</p>
-				<div class="mt-8">
-					@linkButton("Case study", "/work/value-stream-mapping-with-visma/")
-				</div>
-			}
-		}
+		<p class="v-h2">
+			‘We are very happy with the report Verifa prepared for us. It provides findings to address, an understanding of why to address them and ideas for how to address them’.
+		</p>
+		<p class="v-h4 mt-4">— Olli Suihkonen, Visma Software Oy.</p>
+		<div class="mt-8">
+			@linkButton("Case study", "/work/value-stream-mapping-with-visma/")
+		</div>
 	</section>
 	<section class="container mx-auto flex flex-col justify-center">
 		@headerLine()
-		<p class="v-h3 max-w-3xl">Waste cards that we use during our workshops to highlight waste in your value streams.</p>
-		<div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8">
+		<h4 class="v-h4">Waste cards.</h4>
+		<h2 class="mt-4 v-h2">
+			We use these waste cards during our workshop to highlight and categorise waste in your value streams.
+		</h2>
+		<div class="mt-12 flex flex-1 flex-wrap gap-8">
 			for _, waste := range wastes {
-				<div class="bg-v-pink w-72 h-72 flex items-center text-center group">
-					<div class="group-hover:hidden">
+				<div class="bg-v-pink flex items-center text-center group w-44 h-44 md:w-48 md:h-48 lg:w-56 lg:h-56 ">
+					<div class="group-hover:hidden ">
 						<img src={ waste.image } class="w-full h-full" alt={ waste.name }/>
 					</div>
-					<span class="hidden group-hover:block p-4 text-v-black v-h4 font-semibold">{ waste.description }</span>
+					<span class="hidden group-hover:block p-4 text-v-black v-h4 font-semibold">{ waste.short }</span>
 				</div>
 			}
 		</div>

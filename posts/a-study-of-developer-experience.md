@@ -9,6 +9,7 @@ tags:
 - Developer Experience
 - DevOps
 - Platform Engineering
+- Value Streams
 date: 2024-08-21
 image: "/static/blog/a-study-of-developer-experience/devex-a-study.png"
 featured: true
