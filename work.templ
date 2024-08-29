@@ -8,6 +8,11 @@ type WorkQuote struct {
 
 var workQuotes = []WorkQuote{
 	{
+		Text:   "Verifa's team is very knowledgeable, experienced and dedicated. We value and trust their work.",
+		Person: "Claus Christensen, Jabra",
+		Logo:   "/static/clients/jabra.svg",
+	},
+	{
 		Text:   "Verifa helped lead discussions around many topics which was useful in gaining a common understanding of what we can do to improve. We are very happy with the report Verifa prepared for us.",
 		Person: "Olli Suihkonen, Visma",
 		Logo:   "/static/clients/visma.svg",
@@ -53,8 +58,8 @@ templ work(posts []*Post) {
 		</section>
 		<section class="container mx-auto">
 			@PostsGrid(posts, PostsGridOptions{
-            ShowPreview: true,
-        })
+				ShowPreview: true,
+			})
 		</section>
 	</div>
 	<section class="container mx-auto">
