@@ -225,7 +225,7 @@ templ crewCarouselMember(member Member) {
 				{ member.Bio }
 			</p>
 			<div class="mt-2">
-				<a href={ templ.URL("/crew/") } class="v-p font-semibold hover:text-v-lilac">Continue reading »</a>
+				<a href={ templ.URL(member.URL()) } class="v-p font-semibold hover:text-v-lilac">Continue reading »</a>
 			</div>
 		</div>
 	</div>
