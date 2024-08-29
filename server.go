@@ -356,10 +356,16 @@ func Run(ctx context.Context, site Site) error {
 	}
 	// Add blogs to the sitemap.
 	for _, post := range posts.All {
+		// Use post date as last modified by default.
+		// If last modified is set, use that instead.
+		lastMod := post.Date.Format("2006-01-02")
+		if !post.LastMod.IsZero() {
+			lastMod = post.LastMod.Format("2006-01-02")
+		}
 		siteMapPages = append(siteMapPages, SiteMapPage{
 			Location:        siteURL + post.URL(),
 			Priority:        "1",
-			LastMod:         post.Date.Format("2006-01-02"),
+			LastMod:         lastMod,
 			ChangeFrequency: "weekly",
 		})
 	}

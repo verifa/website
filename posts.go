@@ -79,6 +79,7 @@ type Post struct {
 	Authors      []Member
 	Tags         map[string]struct{}
 	Date         time.Time
+	LastMod      time.Time
 	ReadingTime  time.Duration
 	PreviewImage string
 	Image        string
@@ -344,6 +345,16 @@ func newPost(
 	if err != nil {
 		return nil, fmt.Errorf("parsing post date: %w", err)
 	}
+	// LastMod is optional.
+	rawLastMod, ok := metadata["lastMod"].(string)
+	var lastMod time.Time
+	if ok {
+		var err error
+		lastMod, err = time.Parse(time.DateOnly, rawLastMod)
+		if err != nil {
+			return nil, fmt.Errorf("parsing post lastMod: %w", err)
+		}
+	}
 	previewImage, ok := metadata["previewImage"].(string)
 	if !ok {
 		previewImage = ""
@@ -377,6 +388,7 @@ func newPost(
 		Authors:             authors,
 		Tags:                tags,
 		Date:                date,
+		LastMod:             lastMod,
 		ReadingTime:         readingTime,
 		PreviewImage:        previewImage,
 		Image:               image,

@@ -14,7 +14,8 @@ date: 2024-01-24
 image: "/static/blog/how-to-secure-terraform-code-trivy.png"
 featured: true
 jobActive: true
-
+lastMod: 2024-08-29
+toc: true
 ---
 
 **In this blog post we will look at securing an AWS Terraform configuration using Trivy to check for known security issues. We will explore different ways of using Trivy, integrating it into your CI pipelines, practical issues you might face and solutions to those issues to get you started with improving the security of your IaC codebases.**
