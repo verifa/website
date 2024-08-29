@@ -1,7 +1,7 @@
 ---
 type: Case
 title: Providing DevOps expertise at Jabra
-subheading: Verifa continues to help Jabra on their journey towards DevOps for their new Android-based video collaboration products.
+subheading: Verifa continues to help Jabra on their DevOps journey for their new Android-based video collaboration products.
 authors:
 - ckurowski
 - arigo
@@ -17,7 +17,7 @@ featured: true
 
 ---
 
-**Verifa continues to help Jabra on their journey towards DevOps for their new Android-based video collaboration products.**
+**Verifa continues to help Jabra on their DevOps journey for their new Android-based video collaboration products.**
 
 ***
 
