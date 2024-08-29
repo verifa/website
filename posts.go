@@ -110,7 +110,7 @@ func (p Post) URL() string {
 	}
 }
 
-func defaultGoldmark(references references) goldmark.Markdown {
+func defaultPostsMarkdown(references references) goldmark.Markdown {
 	baseRenderOpts := []renderer.Option{
 		html.WithHardWraps(),
 		// Allow raw HTML coming from the post markdown.
@@ -173,7 +173,7 @@ func ParsePosts(postsFS embed.FS) (*Posts, error) {
 				return fmt.Errorf("getting references from bibtex: %w", err)
 			}
 
-			md := defaultGoldmark(references)
+			md := defaultPostsMarkdown(references)
 			context := parser.NewContext()
 			contents, err := postsFS.ReadFile(path)
 			if err != nil {

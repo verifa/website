@@ -229,6 +229,22 @@ func Run(ctx context.Context, site Site) error {
 		).Render(r.Context(), w)
 	})
 	router.Get("/crew/", func(w http.ResponseWriter, r *http.Request) {
+		isHXRequest := r.Header.Get("HX-Request") != ""
+		if isHXRequest {
+			// Get the current member to avoid returning the same member twice.
+			// This handler is used for the crew carousel on the home page.
+			rawMembers := r.URL.Query().Get("members")
+			members := strings.Split(rawMembers, ",")
+			if len(members) != len(randomCrewOrder()) {
+				members = randomCrewOrder()
+			}
+			// Move first member to end.
+			members = append(members[1:], members[0])
+			w.Header().Set("Content-Type", "text/html")
+			_ = crewCarousel(members).Render(r.Context(), w)
+
+			return
+		}
 		pageInfo := PageInfo{
 			// TODO
 			RequestURI:  r.RequestURI,
@@ -371,6 +387,9 @@ func Run(ctx context.Context, site Site) error {
 	}
 	// Add crew to the sitemap.
 	for _, member := range Crew {
+		if !member.Active {
+			continue
+		}
 		siteMapPages = append(siteMapPages, SiteMapPage{
 			Location:        siteURL + "/crew/" + member.ID + "/",
 			Priority:        "0.7",

@@ -24,29 +24,65 @@ templ crew() {
 templ crewMember(member Member, posts []*Post) {
 	if member.Active {
 		<section class="container mx-auto">
-			<div class="flex flex-col lg:gap-y-8">
-				<div class="w-auto flex flex-col gap-y-8 lg:flex-row sm:gap-x-4">
-					<div class="max-w-sm lg:w-1/4">
-						<img
-							src={ member.ProfileOrAvatar() }
-							alt={ member.Name }
-							class="h-full w-full object-top object-contain rounded-md"
-						/>
-					</div>
-					<div class="w-full lg:w-3/4">
-						<h2 class="v-h2">{ member.Name }</h2>
-						<h4 class="v-h4 mt-2">{ member.Position }</h4>
-						<p class="mt-8">{ member.Bio }</p>
-					</div>
+			<div class="grid gap-4 md:gap-8 sm:grid-cols-[25%_75%]">
+				<div>
+					<img
+						src={ member.ProfileOrAvatar() }
+						alt={ member.Name }
+						class="h-full w-full object-top object-contain rounded-md"
+					/>
 				</div>
 				<div>
-					<h3 class="v-h3">Find me online</h3>
+					<h2 class="v-h2">{ member.Name }</h2>
+					<h4 class="v-h4 mt-2">{ member.Position }</h4>
+					<div class="hidden mt-4 lg:flex flex-wrap gap-x-2">
+						for _, tag := range member.Tags {
+							<div class="px-2 v-p group/tag hover:bg-v-pink">
+								<span class="text-v-gray group-hover/tag:text-v-white">#</span><span class="text-v-black/70 group-hover/tag:text-v-white">{ tag }</span>
+							</div>
+						}
+					</div>
 					<div class="mt-4 flex items-center gap-x-4">
-						@memberSocialLinkedInIcon(member, "w-12 h-12")
-						@memberSocialGitHubIcon(member, "w-12 h-12")
+						@memberSocialLinkedInIcon(member, "w-8 h-8")
+						@memberSocialGitHubIcon(member, "w-8 h-8")
+					</div>
+				</div>
+				<div class="sm:col-span-2">
+					<div class="mb-4 flex lg:hidden flex-wrap gap-x-2">
+						for _, tag := range member.Tags {
+							<div class="px-2 v-p group/tag hover:bg-v-pink">
+								<span class="text-v-gray group-hover/tag:text-v-white">#</span><span class="text-v-black/70 group-hover/tag:text-v-white">{ tag }</span>
+							</div>
+						}
+					</div>
+					<div class="prose md:prose-lg lg:prose-xl xl:prose-2xl">
+						@templ.Raw(member.RenderBio())
 					</div>
 				</div>
 			</div>
+			// <div class="flex flex-col lg:gap-y-8">
+			// 	<div class="w-auto flex flex-col gap-y-8 lg:flex-row sm:gap-x-4">
+			// 		<div class="max-w-sm lg:w-1/4">
+			// 			<img
+			// 				src={ member.ProfileOrAvatar() }
+			// 				alt={ member.Name }
+			// 				class="h-full w-full object-top object-contain rounded-md"
+			// 			/>
+			// 		</div>
+			// 		<div class="w-full lg:w-3/4">
+			// 			<h2 class="v-h2">{ member.Name }</h2>
+			// 			<h4 class="v-h4 mt-2">{ member.Position }</h4>
+			// 			// TODO: tags, experience here.
+			// 		</div>
+			// 	</div>
+			// 	<div>
+			// 		<h3 class="v-h3">Find me online</h3>
+			// 		<div class="mt-4 flex items-center gap-x-4">
+			// 			@memberSocialLinkedInIcon(member, "w-12 h-12")
+			// 			@memberSocialGitHubIcon(member, "w-12 h-12")
+			// 		</div>
+			// 	</div>
+			// </div>
 		</section>
 	} else {
 		<section class="container mx-auto">

@@ -2,7 +2,7 @@ package website
 
 templ layout(site Site, info PageInfo) {
 	<!DOCTYPE html>
-	<html lang="en">
+	<html lang="en" class="scroll-smooth">
 		<head>
 			<meta charset="utf-8"/>
 			// Do not let search engines index the site if it is not production.
@@ -277,6 +277,20 @@ templ linkButtonSmall(text string, href string) {
 		href={ templ.URL(href) }
 		class="
 			inline-flex px-3 py-2 border-4 border-v-black bg-v-white text-v-black hover:bg-v-black hover:text-v-white transition-all duration-300 ease-in-out
+			shadow-[6px_6px_0_theme('colors.v-lilac')]
+			hover:shadow-none
+			v-element
+		"
+	>
+		{ text }
+	</a>
+}
+
+templ linkButtonPinkBGSmall(text string, href string) {
+	<a
+		href={ templ.URL(href) }
+		class="
+			inline-flex px-3 py-2 border-4 border-v-black bg-v-white text-v-black hover:bg-v-pink hover:border-v-pink hover:text-v-white transition-all duration-300 ease-in-out
 			shadow-[6px_6px_0_theme('colors.v-lilac')]
 			hover:shadow-none
 			v-element

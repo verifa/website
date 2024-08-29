@@ -1,5 +1,7 @@
 package website
 
+import "strings"
+
 templ home(featuredPosts []*Post, tags map[string][]*Post) {
 	<section class="container mx-auto">
 		<h1 class="v-h1 mt-12">
@@ -14,8 +16,8 @@ templ home(featuredPosts []*Post, tags map[string][]*Post) {
 			@linkButton("Chat with an expert", "/contact/")
 		</div>
 	</section>
-	<section class="bg-v-gray/20">
-		<div class="container mx-auto">
+	<div class="bg-v-gray/20">
+		<section class="container mx-auto">
 			@headerLine()
 			<p class="v-h4">Who we are.</p>
 			<p class="pt-6 v-h2 text-v-black">
@@ -35,7 +37,8 @@ templ home(featuredPosts []*Post, tags map[string][]*Post) {
 				@fancyLinkLilac("Coaching", "/services/coaching/")
 				.
 			</p>
-			<div class="pt-24"></div>
+		</section>
+		<section class="container mx-auto">
 			@headerLine()
 			<p class="v-h4">What we do.</p>
 			<dl class="pt-4 space-y-6 divide-y divide-v-black ">
@@ -67,38 +70,23 @@ templ home(featuredPosts []*Post, tags map[string][]*Post) {
 					</div>
 				}
 			</dl>
-			<div class="pt-24"></div>
+		</section>
+		<section class="container mx-auto">
 			@headerLine()
 			<p class="v-h4">Trusted by.</p>
-			<div class="mt-4">
+			<div class="mt-8">
 				@clientLogos()
 			</div>
-		</div>
-	</section>
-	<section class="">
-		<div class="container mx-auto">
-			@columns(false) {
-				@column("") {
-					<img
-						class="object-contain mx-auto h-full w-1/2 lg:w-full"
-						src="/static/everything-is-connected.svg"
-						alt="everything-is-connected"
-					/>
-				}
-				@column("") {
-					<p class="v-h2">
-						We help build developer experiences that reduce cognitive load and enable flow.
-					</p>
-					<p class="v-h4 mt-4">
-						Our assessment includes several research methods for understanding your current developer experience and kickstarting your improvement.
-					</p>
-					<div class="mt-8">
-						@linkButton("Learn more", "/services/assessments/developer-experience/")
-					</div>
-				}
-			}
-		</div>
-	</section>
+		</section>
+		<section class="container mx-auto">
+			@headerLine()
+			<p class="v-h4">Our Crew.</p>
+			@crewCarousel(randomCrewOrder())
+			<div class="mt-8 lg:mt-12">
+				@linkButtonSmall("Entire crew", "/crew/")
+			</div>
+		</section>
+	</div>
 	<section class="">
 		<div class="container mx-auto">
 			@columns(true) {
@@ -130,12 +118,117 @@ templ home(featuredPosts []*Post, tags map[string][]*Post) {
 					}
 				</div>
 				<div class="my-5">
-					@linkButton("All posts", "/blog/")
+					@linkButton("See all posts", "/blog/")
 				</div>
 				@PostsGrid(featuredPosts, PostsGridOptions{})
 			</div>
 		</div>
 	</section>
+}
+
+templ crewCarousel(members []string) {
+	<style>
+	/*
+		The below CSS is pretty much a copy paste from the htmx documentation.
+		Source: https://htmx.org/essays/view-transitions/
+	*/
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+	}
+
+	@keyframes fade-out {
+		to {
+			opacity: 0;
+		}
+	}
+
+	@keyframes slide-from-right {
+		from {
+			transform: translateX(90px);
+		}
+	}
+
+	@keyframes slide-to-left {
+		to {
+			transform: translateX(-90px);
+		}
+	}
+
+	/* define animations for the old and new content */
+	::view-transition-old(slide-it) {
+		animation: 180ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+			600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+	}
+
+	::view-transition-new(slide-it) {
+		animation: 420ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+			600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+	}
+
+	/* tie the view transition to a given CSS class */
+	.crew-carousel-transition {
+		view-transition-name: slide-it;
+	}
+	</style>
+	@crewCarouselMembers(members)
+}
+
+templ crewCarouselMembers(members []string) {
+	<div
+		class="mt-8 crew-carousel-transition"
+		hx-get={ "/crew/?members=" + strings.Join(members, ",") }
+		hx-trigger="every 8s"
+		hx-swap="outerHTML transition:true"
+	>
+		if len(members) == 0 {
+			@crewCarouselMember(randomMember())
+		} else {
+			@crewCarouselMember(Crew[members[0]])
+		}
+	</div>
+}
+
+templ crewCarouselMember(member Member) {
+	<style>
+		/* Progress bar animation */
+		@keyframes scaleProgress {
+			from {
+				transform: scaleX(0);
+			}
+			to {
+				transform: scaleX(1);
+			}
+		}
+		.progress {
+			transform-origin: 0 0;
+			animation: scaleProgress 8s linear;
+		}
+	</style>
+	<h2 class="v-h2 mb-6 md:hidden">Meet { member.Nickname }!</h2>
+	<div class="grid gap-y-4 gap-x-4 lg:gap-x-12 grid-cols-[40%_60%] sm:grid-cols-[30%_70%] md:grid-cols-[25%_75%] lg:grid-cols-[20%_60%] items-center">
+		<a
+			href={ templ.URL("/crew/" + member.ID + "/") }
+			class=""
+		>
+			<img
+				src={ member.SillyProfileOrProfileOrAvatar() }
+				alt={ member.Name }
+				class="w-full h-full aspect-square object-contain grayscale hover:grayscale-0"
+			/>
+			<div class="progress mt-2 w-full h-1 bg-v-pink"></div>
+		</a>
+		<div>
+			<h2 class="v-h2 hidden mb-4 lg:mb-8 md:block">Meet { member.Nickname }!</h2>
+			<p class="line-clamp-4 md:line-clamp-3">
+				{ member.Bio }
+			</p>
+			<div class="mt-2">
+				<a href={ templ.URL("/crew/") } class="v-p font-semibold hover:text-v-lilac">Continue reading »</a>
+			</div>
+		</div>
+	</div>
 }
 
 templ fancyLinkPink(text string, href string) {

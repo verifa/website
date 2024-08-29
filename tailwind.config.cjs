@@ -1,4 +1,7 @@
 
+const plugin = require('tailwindcss/plugin')
+
+
 const config = {
 	mode: 'jit',
 	content: ["./**/*.templ"],
@@ -8,6 +11,7 @@ const config = {
 		'no-underline',
 		'hover:text-v-lilac',
 	],
+
 
 	theme: {
 		colors: {
@@ -49,6 +53,18 @@ const config = {
 	plugins: [
 		require('@tailwindcss/typography'),
 		require('@tailwindcss/forms'),
+		plugin(function ({ addUtilities }) {
+			addUtilities({
+				'.scrollbar-none': {
+					'scrollbar-width': 'none',
+					'&::-webkit-scrollbar': {
+						'display': 'none'
+					},
+					/* Hide scrollbar in IE and Edge */
+					"-ms-overflow-style": 'none',
+				}
+			})
+		})
 	]
 };
 
