@@ -20,7 +20,7 @@ templ PostCard(post *Post, opts PostsGridOptions) {
 	<div>
 		if opts.ShowPreview && post.PreviewImage != "" {
 			<div class="p-4 h-40">
-				<img src={ post.PreviewImage } alt={ post.Title } class="object-contain object-left-bottom w-2/3 h-full"/>
+				<img src={ post.PreviewImage } alt={ post.Title } class="object-contain object-left w-2/3 h-full"/>
 			</div>
 		}
 		<div class="mt-4 flex items-center gap-x-8">

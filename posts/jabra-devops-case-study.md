@@ -11,7 +11,7 @@ tags:
 - Developer Experience
 - Value Streams
 date: 2024-08-29
-previewImage: /static/clients/jabra-logo-black.svg
+previewImage: /static/clients/jabra.svg
 image: /static/cases/cover-jabra_case_study.png
 featured: true
 
