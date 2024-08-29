@@ -334,3 +334,7 @@ func (m Member) RenderBio() string {
 func (m Member) URL() string {
 	return siteURL + "/crew/" + m.ID + "/"
 }
+
+func (m Member) RelativeURL() string {
+	return "/crew/" + m.ID + "/"
+}

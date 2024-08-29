@@ -60,29 +60,6 @@ templ crewMember(member Member, posts []*Post) {
 					</div>
 				</div>
 			</div>
-			// <div class="flex flex-col lg:gap-y-8">
-			// 	<div class="w-auto flex flex-col gap-y-8 lg:flex-row sm:gap-x-4">
-			// 		<div class="max-w-sm lg:w-1/4">
-			// 			<img
-			// 				src={ member.ProfileOrAvatar() }
-			// 				alt={ member.Name }
-			// 				class="h-full w-full object-top object-contain rounded-md"
-			// 			/>
-			// 		</div>
-			// 		<div class="w-full lg:w-3/4">
-			// 			<h2 class="v-h2">{ member.Name }</h2>
-			// 			<h4 class="v-h4 mt-2">{ member.Position }</h4>
-			// 			// TODO: tags, experience here.
-			// 		</div>
-			// 	</div>
-			// 	<div>
-			// 		<h3 class="v-h3">Find me online</h3>
-			// 		<div class="mt-4 flex items-center gap-x-4">
-			// 			@memberSocialLinkedInIcon(member, "w-12 h-12")
-			// 			@memberSocialGitHubIcon(member, "w-12 h-12")
-			// 		</div>
-			// 	</div>
-			// </div>
 		</section>
 	} else {
 		<section class="container mx-auto">
@@ -151,7 +128,7 @@ templ memberSocialGitHubIcon(member Member, className string) {
 
 templ memberCard(member Member) {
 	<div class="space-y-4">
-		<a href={ templ.URL("/crew/" + member.ID + "/") } class="group">
+		<a href={ templ.URL(member.RelativeURL()) } class="group">
 			<div class="flex flex-col space-y-4">
 				<div>
 					<img
