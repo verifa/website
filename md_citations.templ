@@ -3,9 +3,10 @@ package website
 import "strconv"
 
 templ citationTemplate(ref reference) {
-	<sup class="prose-a:no-underline prose-a:font-normal">
+	<sup class="group prose-a:no-underline prose-a:font-normal">
 		<a href={ templ.URL(ref.URL.String()) } target="_blank">
 			[{ strconv.Itoa(ref.Index) }]
 		</a>
+		<span class="invisible absolute -top-0 left-5 z-10 w-max truncate italic bg-v-pink px-2 py-3 text-center text-v-white group-hover:visible">{ ref.Title }</span>
 	</sup>
 }
