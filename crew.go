@@ -58,7 +58,7 @@ var Crew = map[string]Member{
 		ID:       "arigo",
 		Active:   true,
 		Name:     "Albert Rigo",
-		Nickname: "Alberto",
+		Nickname: "Albert",
 		Position: "Consultant",
 		Country:  "Sweden",
 		Linkedin: "https://www.linkedin.com/in/albertrigo",
