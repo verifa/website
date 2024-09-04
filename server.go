@@ -654,6 +654,17 @@ func Run(ctx context.Context, site Site) error {
 			)
 			return
 		}
+		// Handle re-directs for pages that are missing trailing slash.
+		if !strings.HasSuffix(r.URL.Path, "/") {
+			newURL := r.URL.JoinPath("/")
+			http.Redirect(
+				w,
+				r,
+				newURL.String(),
+				http.StatusMovedPermanently,
+			)
+			return
+		}
 		w.WriteHeader(http.StatusNotFound)
 		pageInfo := PageInfo{
 			RequestURI:  r.RequestURI,
