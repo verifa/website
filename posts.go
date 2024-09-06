@@ -245,6 +245,10 @@ func ParsePosts(postsFS embed.FS) (*Posts, error) {
 			if len(post.SimilarPosts) >= 3 {
 				break
 			}
+			// Skip the same post.
+			if otherPost.Slug == post.Slug {
+				continue
+			}
 			for tag := range post.Tags {
 				if _, ok := otherPost.Tags[tag]; ok {
 					post.SimilarPosts = append(post.SimilarPosts, otherPost)
