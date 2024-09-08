@@ -645,11 +645,12 @@ func Run(ctx context.Context, site Site) error {
 
 	router.NotFound(func(w http.ResponseWriter, r *http.Request) {
 		// Handle re-directs for old pages that had /index.html suffix.
-		if strings.HasSuffix(r.RequestURI, "/index.html") {
+		if strings.HasSuffix(r.URL.Path, "/index.html") {
+			r.URL.Path = strings.TrimSuffix(r.URL.Path, "index.html")
 			http.Redirect(
 				w,
 				r,
-				strings.TrimSuffix(r.RequestURI, "index.html"),
+				r.URL.String(),
 				http.StatusMovedPermanently,
 			)
 			return
