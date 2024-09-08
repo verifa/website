@@ -666,6 +666,16 @@ func Run(ctx context.Context, site Site) error {
 			)
 			return
 		}
+		// Handle /insights/ which was where we hosted the blog before.
+		router.Get("/insights/*", func(w http.ResponseWriter, r *http.Request) {
+			wildcard := chi.URLParam(r, "*")
+			http.Redirect(
+				w,
+				r,
+				"/blog/"+wildcard,
+				http.StatusMovedPermanently,
+			)
+		})
 		w.WriteHeader(http.StatusNotFound)
 		pageInfo := PageInfo{
 			RequestURI:  r.RequestURI,
