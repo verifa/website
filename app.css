@@ -49,6 +49,25 @@
     }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+p,
+li,
+figcaption {
+    max-width: 65ch;
+}
+
 /* Custom classes */
 .v-button {
     @apply inline-flex px-5 py-3.5 border font-normal text-v-white bg-v-black hover:bg-v-lilac focus:bg-v-lilac;
