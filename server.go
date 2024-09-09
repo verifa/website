@@ -13,6 +13,7 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"net/url"
+	"path"
 	"path/filepath"
 	"strings"
 	"sync"
@@ -655,8 +656,22 @@ func Run(ctx context.Context, site Site) error {
 			)
 			return
 		}
+		// Handle re-directs for old pages that have ended up with /index.html/
+		// suffix.
+		// These appeared in logs, so best to handle them.
+		if strings.HasSuffix(r.URL.Path, "index.html/") {
+			r.URL.Path = strings.TrimSuffix(r.URL.Path, "index.html/")
+			http.Redirect(
+				w,
+				r,
+				r.URL.String(),
+				http.StatusMovedPermanently,
+			)
+			return
+		}
 		// Handle re-directs for pages that are missing trailing slash.
-		if !strings.HasSuffix(r.URL.Path, "/") {
+		// Ignore file extensions though.
+		if !strings.HasSuffix(r.URL.Path, "/") && path.Ext(r.URL.Path) == "" {
 			newURL := r.URL.JoinPath("/")
 			http.Redirect(
 				w,
@@ -666,16 +681,28 @@ func Run(ctx context.Context, site Site) error {
 			)
 			return
 		}
-		// Handle /insights/ which was where we hosted the blog before.
-		router.Get("/insights/*", func(w http.ResponseWriter, r *http.Request) {
-			wildcard := chi.URLParam(r, "*")
+		// Handle re-directs for pages that have a double trailing slash.
+		if strings.HasSuffix(r.URL.Path, "//") {
+			r.URL.Path = strings.TrimSuffix(r.URL.Path, "/")
 			http.Redirect(
 				w,
 				r,
-				"/blog/"+wildcard,
+				r.URL.String(),
 				http.StatusMovedPermanently,
 			)
-		})
+			return
+		}
+		// Handle /insights/ which was where we hosted the blog before.
+		if strings.HasPrefix(r.URL.Path, "/insights/") {
+			r.URL.Path = strings.Replace(r.URL.Path, "/insights/", "/blog/", 1)
+			http.Redirect(
+				w,
+				r,
+				r.URL.String(),
+				http.StatusMovedPermanently,
+			)
+			return
+		}
 		w.WriteHeader(http.StatusNotFound)
 		pageInfo := PageInfo{
 			RequestURI:  r.RequestURI,
