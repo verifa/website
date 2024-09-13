@@ -85,10 +85,12 @@ templ blog(post *Post) {
 					</a>
 				}
 			</div>
-			<p class="mt-6 text-center text-v-black/70">
-				@authorLinks(post.Authors)
-				&nbsp;•&nbsp;{ fmt.Sprintf("%d minutes", int(post.ReadingTime.Minutes())) }&nbsp;•&nbsp;{ post.Date.Format("2006-01-02") }
-			</p>
+			<div class="mt-6 w-full text-center">
+				<p class="m-auto text-v-black/70">
+					@authorLinks(post.Authors)
+					&nbsp;•&nbsp;{ fmt.Sprintf("%d minutes", int(post.ReadingTime.Minutes())) }&nbsp;•&nbsp;{ post.Date.Format("2006-01-02") }
+				</p>
+			</div>
 		</section>
 		<div class="max-w-3xl mx-auto">
 			<article class="prose md:prose-lg lg:prose-xl xl:prose-2xl">
