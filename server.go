@@ -61,15 +61,7 @@ func Run(ctx context.Context, site Site) error {
 
 	router := chi.NewRouter()
 	router.Use(middleware.Logger)
-	router.Use(
-		middleware.Compress(
-			5,
-			"text/html",
-			"text/css",
-			"text/javascript",
-			"application/xml",
-		),
-	)
+	router.Use(middleware.Compress(5))
 	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		pageInfo := PageInfo{
 			RequestURI:  r.RequestURI,
