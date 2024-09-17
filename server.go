@@ -61,6 +61,7 @@ func Run(ctx context.Context, site Site) error {
 
 	router := chi.NewRouter()
 	router.Use(middleware.Logger)
+	router.Use(setDefaultContentType) // Needs to come before compress.
 	router.Use(middleware.Compress(5))
 	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		pageInfo := PageInfo{
@@ -70,6 +71,7 @@ func Run(ctx context.Context, site Site) error {
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
+		w.Header().Set("Content-Type", "text/html")
 		_ = page(
 			site,
 			pageInfo,
@@ -777,4 +779,48 @@ func shortHash(hash string) string {
 		return hash[:8]
 	}
 	return hash
+}
+
+// setDefaultContentType sets the Content-Type header for files with an
+// extension.
+// This is in order for the compress middleware to work correctly.
+// For explicit paths in the router, the Content-Type *should* be set manually.
+// Hence this is for files that are embedded, or otherwise not explicitly
+// defined.
+// It does not matter if the Content-Type is not set by this function: it just
+// means things like the compress middleware will not work.
+func setDefaultContentType(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// Ignore if Content-Type is already set.
+		if r.Header.Get("Content-Type") != "" {
+			next.ServeHTTP(w, r)
+			return
+		}
+		// Ignore if the request is not for a file (i.e. it has an extension).
+		ext := path.Ext(r.URL.Path)
+		if ext == "" {
+			next.ServeHTTP(w, r)
+			return
+		}
+		// Automatically set Content-Type for files with an extension.
+		switch ext {
+		case ".css":
+			w.Header().Set("Content-Type", "text/css")
+		case ".js":
+			w.Header().Set("Content-Type", "text/javascript")
+		case ".json":
+			w.Header().Set("Content-Type", "application/json")
+		case ".xml":
+			w.Header().Set("Content-Type", "application/xml")
+		case ".png":
+			w.Header().Set("Content-Type", "image/png")
+		case ".svg":
+			w.Header().Set("Content-Type", "image/svg+xml")
+		case ".jpg", ".jpeg":
+			w.Header().Set("Content-Type", "image/jpeg")
+		default:
+			// Ignore if the extension is not recognised.
+		}
+		next.ServeHTTP(w, r)
+	})
 }
