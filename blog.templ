@@ -75,8 +75,8 @@ templ blogs(posts []*Post, tags map[string]TagStatus) {
 }
 
 templ blog(post *Post) {
-	<div class="relative overflow-x-hidden">
-		<section class="container mx-auto">
+	<div class="relative overflow-x-hidden container mx-auto">
+		<section>
 			<h1 class="v-h1 text-center">{ post.Title }</h1>
 			<div class="mt-4 flex flex-wrap gap-x-2 justify-center">
 				for tag := range post.Tags {
@@ -126,7 +126,7 @@ templ blog(post *Post) {
 				<hr class="border-1 border-v-gray"/>
 			</article>
 		</div>
-		<section class="container mx-auto">
+		<section>
 			<div class="v-h2">
 				<h2 class="">Read similar posts</h2>
 			</div>
