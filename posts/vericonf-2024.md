@@ -8,7 +8,7 @@ tags:
 - VeriConf
 - Verifa Culture
 date: 2024-09-24
-image: "/static/blog/vericonf-2024/vericonf-2024-blog-cover.png"
+image: "/static/blog/vericonf-2024-blog/vericonf-2024-blog-cover.png"
 featured: false
 ---
 
@@ -36,8 +36,14 @@ _*VeriFridays - 20% of working time dedicated to professional development and wo
 
 _*[Metrics](https://github.com/verifa/metrics) - our continuously improving in-house metrics dashboard measuring Verifa’s financial health and crew wellbeing._
 
-![vericonf-2024-finland](/static/blog/vericonf-2024-blog/vericonf-2024-finland.jpg)
-_VeriConf fun in Finland_
+<figure>
+  <img
+    src="/static/blog/vericonf-2024-blog/vericonf-2024-finland.jpg" alt="VeriConf fun in Finland"
+  />
+  <figcaption>
+    VeriConf fun in Finland
+  </figcaption>
+</figure>
 
 ## Aligning on company culture
 
@@ -47,8 +53,14 @@ Jacob kicked off the session with an analogy: Verifa is like a small child, and 
 
 What followed was an open and frank conversation about Verifa's future. We discussed what we want the company to be, our goals, and—crucially—how to achieve them. It became crystal clear how vital VeriFridays are. That 20% of time invested in the company and crew is priceless. It sparks creativity and out-of-the-box thinking, while also strengthening our bonds as a team. So we decided to restore the balance by working towards reinstating VeriFridays.
 
-![vericonf-2024-sweden](/static/blog/vericonf-2024-blog/vericonf-2024-sweden.jpg)
-_VeriConf fun in Sweden_
+<figure>
+  <img
+    src="/static/blog/vericonf-2024-blog/vericonf-2024-sweden.jpg" alt="VeriConf fun in Sweden"
+  />
+  <figcaption>
+    VeriConf fun in Sweden
+  </figcaption>
+</figure>
 
 ## Redefining our offering
 
@@ -56,8 +68,14 @@ This session was all about pinpointing the key value we can offer our customers 
 
 We talked about what Developer Experience and Platform Engineering means to us, our passions and core competencies. In the end, we agreed that our greatest value lies in creating user-centric internal developer platforms, something that we’ve got pretty good at over the years. To help other teams do the same, we started brainstorming a framework to guide them in creating platforms that make developers’ lives easier.
 
-![vericonf-2024-notes](/static/blog/vericonf-2024-blog/vericonf-2024-notes.png)
-_VeriConf note-taking by Thierry_
+<figure>
+  <img
+    src="/static/blog/vericonf-2024-blog/vericonf-2024-notes.png" alt="VeriConf note-taking by Thierry"
+  />
+  <figcaption>
+    VeriConf note-taking by Thierry
+  </figcaption>
+</figure>
 
 ## In summary
 
