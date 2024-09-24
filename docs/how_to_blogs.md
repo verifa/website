@@ -18,8 +18,9 @@
 
 Our blogs are written in Markdown, but sometimes you want a little more than Markdown.
 
-We use [MDSvex](https://mdsvex.pngwn.io/) to compile our Markdown files to Svelte.
-We can also just embed Svelte into them. Which we have done.
+The Markdown is converted to HTML using [Goldmark](https://github.com/yuin/goldmark), a Go library.
+
+You can put raw HTML in there, but ideally you should not. There are some exceptions though:
 
 ### Figure captions
 
@@ -27,8 +28,12 @@ Example:
 
 ```html
 <figure>
-  <img src="/static/blog/nodeless-aws-eks-clusters-with-karpenter/karpenter-how-it-works-diagram.png" alt="karpenter-how-it-works">
-  <figcaption>Source: https://aws.amazon.com/static/blog/aws/introducing-karpenter-an-open-source-high-performance-kubernetes-cluster-autoscaler/</figcaption>
+  <img
+    src="/static/blog/nodeless-aws-eks-clusters-with-karpenter/karpenter-how-it-works-diagram.png" alt="karpenter-how-it-works"
+  />
+  <figcaption>
+    Source: https://aws.amazon.com/static/blog/aws/introducing-karpenter-an-open-source-high-performance-kubernetes-cluster-autoscaler/
+  </figcaption>
 </figure>
 ```
 
@@ -43,6 +48,8 @@ Example:
 ```
 
 ### Admonitions
+
+This actually is raw Markdown, no HTML needed.
 
 We follow GitHub's markdown format: <https://github.com/orgs/community/discussions/16925>
 
