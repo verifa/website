@@ -96,58 +96,34 @@ func Run(ctx context.Context, site Site) error {
 	router.Get(
 		"/services/assessments/",
 		func(w http.ResponseWriter, r *http.Request) {
-			pageInfo := PageInfo{
-				// TODO
-				RequestURI:  r.RequestURI,
-				Title:       "Verifa",
-				Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
-				Image:       verifaLogoPNG,
-				ImageAlt:    "Verifa Logo",
-			}
-			w.Header().Set("Content-Type", "text/html")
-			_ = page(
-				site,
-				pageInfo,
-				servicesAssessments(),
-			).Render(r.Context(), w)
+			http.Redirect(
+				w,
+				r,
+				"/services/",
+				http.StatusMovedPermanently,
+			)
 		},
 	)
 	router.Get(
 		"/services/consulting/",
 		func(w http.ResponseWriter, r *http.Request) {
-			pageInfo := PageInfo{
-				// TODO
-				RequestURI:  r.RequestURI,
-				Title:       "Verifa",
-				Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
-				Image:       verifaLogoPNG,
-				ImageAlt:    "Verifa Logo",
-			}
-			w.Header().Set("Content-Type", "text/html")
-			_ = page(
-				site,
-				pageInfo,
-				servicesConsulting(),
-			).Render(r.Context(), w)
+			http.Redirect(
+				w,
+				r,
+				"/services/",
+				http.StatusMovedPermanently,
+			)
 		},
 	)
 	router.Get(
 		"/services/coaching/",
 		func(w http.ResponseWriter, r *http.Request) {
-			pageInfo := PageInfo{
-				// TODO
-				RequestURI:  r.RequestURI,
-				Title:       "Verifa",
-				Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
-				Image:       verifaLogoPNG,
-				ImageAlt:    "Verifa Logo",
-			}
-			w.Header().Set("Content-Type", "text/html")
-			_ = page(
-				site,
-				pageInfo,
-				servicesCoaching(),
-			).Render(r.Context(), w)
+			http.Redirect(
+				w,
+				r,
+				"/services/",
+				http.StatusMovedPermanently,
+			)
 		},
 	)
 	router.Get(
