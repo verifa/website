@@ -5,12 +5,10 @@ import "strings"
 templ home(featuredPosts []*Post, tags map[string][]*Post) {
 	<section class="container mx-auto">
 		<h1 class="v-h1 mt-12">
-			Your trusted crew for all things
-			<span class="">Continuous</span> and
-			<span class="">Cloud</span>.
+			Your trusted crew for all things Platform Engineering.
 		</h1>
 		<h3 class="v-h3 mt-8 max-w-3xl">
-			We bridge the gap between development and operations by building developer experiences that enable flow.
+			Helping you improve value stream efficiency through user-centric internal developer platforms.
 		</h3>
 		<div class="mt-8">
 			@linkButton("Chat with an expert", "/contact/")
@@ -19,57 +17,11 @@ templ home(featuredPosts []*Post, tags map[string][]*Post) {
 	<div class="bg-v-gray/20">
 		<section class="container mx-auto">
 			@headerLine()
-			<p class="v-h4">Who we are.</p>
-			<p class="pt-6 v-h2 text-v-black">
-				We are an elite crew of&nbsp;
-				@fancyLinkPink("DevOps Consultants", "/company/#crew")
-				&nbsp;
-				specialised in improving the&nbsp;
-				@fancyLinkPink("Developer Experience", "/services/assessments/developer-experience/")
-				&nbsp;
-				to accelerate software delivery.
-				We provide actionable&nbsp;
-				@fancyLinkLilac("Assessments", "/services/assessments/")
-				, hands-on&nbsp;
-				@fancyLinkLilac("Consulting", "/services/consulting/")
-				&nbsp;
-				and technical&nbsp;
-				@fancyLinkLilac("Coaching", "/services/coaching/")
-				.
-			</p>
-		</section>
-		<section class="container mx-auto">
-			@headerLine()
 			<p class="v-h4">What we do.</p>
-			<dl class="pt-4 space-y-6 divide-y divide-v-black ">
-				@homeService("assessments", "Assessments") {
-					<h4 class="v-h4">
-						Our assessments are made for teams wanting to improve their software delivery efficiency.
-						We combine several research methods to gain an understanding of your current developer experience and provide a roadmap to help you improve.
-					</h4>
-					<div class="my-8">
-						@linkButtonSmall("Learn more", "/services/assessments/")
-					</div>
-				}
-				@homeService("consulting", "Consulting") {
-					<h4 class="v-h4">
-						Our elite crew of DevOps consultants are here to help you with your software delivery challenges.
-						We help companies of all sizes with things like CI/CD, Cloud, Kubernetes, Infrastructure as Code, Security and more.
-					</h4>
-					<div class="my-8">
-						@linkButtonSmall("Learn more", "/services/consulting/")
-					</div>
-				}
-				@homeService("coaching", "Coaching") {
-					<h4 class="v-h4">
-						Our coaching and training services are designed to help upskill your team and make long-lasting improvements to your software delivery.
-						We believe that working together with experienced engineers is the best way to learn and develop.
-					</h4>
-					<div class="my-8">
-						@linkButtonSmall("Learn more", "/services/coaching/")
-					</div>
-				}
-			</dl>
+			<p class="pt-6 v-h2 text-v-black">
+				We help research, design, build and evolve internal developer platforms to improve value stream efficiency.
+				User-centricity is at the core of our work, ensuring we build based on research and not assumptions.
+			</p>
 		</section>
 		<section class="container mx-auto">
 			@headerLine()
@@ -77,6 +29,14 @@ templ home(featuredPosts []*Post, tags map[string][]*Post) {
 			<div class="mt-8">
 				@clientLogos()
 			</div>
+		</section>
+		<section class="container mx-auto">
+			@headerLine()
+			<p class="v-h4">Who we are.</p>
+			<p class="pt-6 v-h2 text-v-black">
+				We are an experienced crew of technical consultants who dare to challenge the status quo.
+				When you work with one of us you get the support, knowledge and insights of the entire crew.
+			</p>
 		</section>
 		<section class="container mx-auto">
 			@headerLine()
