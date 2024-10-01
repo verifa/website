@@ -38,16 +38,20 @@ Developer's make changes. Operations want to keep systems stable. Service Levels
 
 <a href="/static/blog/service-levels-error-budgets-devops-finland-meetup/service-levels-error-budgets-and-why-your-dev-teams-should-care.pdf" download="service-levels-error-budgets-and-why-your-dev-teams-should-care.pdf">Download presentation.</a>
 
+<iframe width="100%" height="410" src="https://www.youtube.com/live/Eyrp9SrLG1E?si=86j7hfPN6UhqY2Z_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Recording from DevOps Skåne/Malmö meetup
+
 This talk was based on my blog post **[Demystifying Service Level acronyms and Error Budgets.](/blog/demystifying-service-level-acronyms/)**
 
 ## Links
 
 1. [DevOps Finland meetup](https://www.meetup.com/devops-finland/)
-2. [Availability cheatsheet](https://availability.sre.xyz/)
-3. [Lifecycle cost piechart](https://www.researchgate.net/publication/340280214_Code_Readability_Management_of_High-level_Programming_Languages_A_Comparative_Study)
-4. [Siemens: True cost of Downtime](https://assets.new.siemens.com/siemens/assets/api/uuid:3d606495-dbe0-43e4-80b1-d04e27ada920/dics-b10153-00-7600truecostofdowntime2022-144.pdf)
-5. [Google's SRE book](https://sre.google/sre-book/service-level-objectives/)
-6. [This google course goes deeply into the topic](https://www.cloudskillsboost.google/course_templates/95)
+2. [DevOps Skåne/Malmö meetup](https://www.meetup.com/devopsmalmo/)
+3. [Availability cheatsheet](https://availability.sre.xyz/)
+4. [Lifecycle cost piechart](https://www.researchgate.net/publication/340280214_Code_Readability_Management_of_High-level_Programming_Languages_A_Comparative_Study)
+5. [Siemens: True cost of Downtime](https://assets.new.siemens.com/siemens/assets/api/uuid:3d606495-dbe0-43e4-80b1-d04e27ada920/dics-b10153-00-7600truecostofdowntime2022-144.pdf)
+6. [Google's SRE book](https://sre.google/sre-book/service-level-objectives/)
+7. [This google course goes deeply into the topic](https://www.cloudskillsboost.google/course_templates/95)
 
 ---
 
