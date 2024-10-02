@@ -11,13 +11,13 @@ image: "/static/blog/it-takes-a-village.png"
 featured: false
 ---
 
-During the [last internal conference](https://verifa.io/blog/vericonf-2024/), our CEO - Jacob Lärfors - said that he thinks of Verifa as a baby and all of us it’s parents - that we all are responsible for shaping this baby into something bigger. It’s a nice analogy, but I see it a little different. Yes, we do have an impact of the future of Verifa, but Jacob is the parent with the final say and we support him as much as we can in this. We are more like a village - or a community - where each one of us plays a vital role in raising this child.
+During the [last internal conference](https://verifa.io/blog/vericonf-2024/), our CEO - Jacob Lärfors - said that he thinks of Verifa as a baby and all of us its parents - that we all are responsible for shaping this baby into something bigger. It’s a nice analogy, but I see it a little different. Yes, we do have an impact on the future of Verifa, but Jacob is the parent with the final say and we support him as much as we can in this. We are more like a village - or a community - where each one of us plays a vital role in raising this child.
+
+Let’s break down what this actually means for us and why Verifa is not just another consulting company, but rather a community.
 
 > It takes a village to raise a child.
 >
--old proverb
-
-Let’s break down what this actually means for us and why Verifa is not just another consulting company, but rather a community.
+*-old proverb*
 
 ## Some background
 
@@ -29,7 +29,7 @@ At Verifa, we don’t just focus on the tasks at hand; we focus on lifting each 
 
 ## Our child
 
-At Verifa, we have some awesome enablers that strengthens us:
+At Verifa, we have some awesome enablers that strengthen us:
 
 - **VeriFriday:** Dedicated time away from customers to improve, reflect, share and discuss ideas - either together or individually.
 - **VeriConf:** An annual retreat where we meet, bond and dig into the future (and past) of Verifa and the industry.
@@ -55,7 +55,7 @@ The reality is, if you become too deeply embedded in the customers environment, 
 > When you work with one of us, you’re not just getting a consultant - you’re getting the support, knowledge and insights of the entire Verifa crew.
 >
 
-By staying connected to Verifa, I can sometimes take a step back, gain fresh perspectives and avoid tunnel vision. The diversity of ideas and experiences gives me insights which help my customers. It’s not about time spent; it’s about using that time wisely, to ensure that our impact at the customers are targeting the actual problems and not just quick fixes for the symptoms.
+By staying connected to Verifa, I can sometimes take a step back, gain fresh perspectives and avoid tunnel vision. The diversity of ideas and experiences gives me insights which help my customers. It’s not about time spent; it’s about using that time wisely, to ensure that our impact at the customers is targeting the actual problems and not just quick fixes for the symptoms.
 
 When you work with one of us, you’re not just getting a consultant - you’re getting the support, knowledge and insights of the entire Verifa crew.
 
