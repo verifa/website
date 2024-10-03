@@ -66,7 +66,7 @@ func Run(ctx context.Context, site Site) error {
 		pageInfo := PageInfo{
 			RequestURI:  r.RequestURI,
 			Title:       "Verifa",
-			Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
+			Description: "We are an expert crew of Platform Engineering consultants helping you improve value stream efficiency through user-centric internal developer platforms.",
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
@@ -82,7 +82,7 @@ func Run(ctx context.Context, site Site) error {
 			// TODO
 			RequestURI:  r.RequestURI,
 			Title:       "Verifa",
-			Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
+			Description: "We are an expert crew of Platform Engineering consultants helping you improve value stream efficiency through user-centric internal developer platforms.",
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
@@ -195,7 +195,7 @@ func Run(ctx context.Context, site Site) error {
 			// TODO
 			RequestURI:  r.RequestURI,
 			Title:       "Verifa",
-			Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
+			Description: "We are an expert crew of Platform Engineering consultants helping you improve value stream efficiency through user-centric internal developer platforms.",
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
@@ -211,7 +211,7 @@ func Run(ctx context.Context, site Site) error {
 			// TODO
 			RequestURI:  r.RequestURI,
 			Title:       "Verifa",
-			Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
+			Description: "We are an expert crew of Platform Engineering consultants helping you improve value stream efficiency through user-centric internal developer platforms.",
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
@@ -243,7 +243,7 @@ func Run(ctx context.Context, site Site) error {
 			// TODO
 			RequestURI:  r.RequestURI,
 			Title:       "Verifa",
-			Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
+			Description: "We are an expert crew of Platform Engineering consultants helping you improve value stream efficiency through user-centric internal developer platforms.",
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
@@ -259,7 +259,7 @@ func Run(ctx context.Context, site Site) error {
 			// TODO
 			RequestURI:  r.RequestURI,
 			Title:       "Verifa",
-			Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
+			Description: "We are an expert crew of Platform Engineering consultants helping you improve value stream efficiency through user-centric internal developer platforms.",
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
@@ -274,7 +274,7 @@ func Run(ctx context.Context, site Site) error {
 		pageInfo := PageInfo{
 			RequestURI:  r.RequestURI,
 			Title:       "Contact Us",
-			Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
+			Description: "We are an expert crew of Platform Engineering consultants helping you improve value stream efficiency through user-centric internal developer platforms.",
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
@@ -545,7 +545,7 @@ func Run(ctx context.Context, site Site) error {
 		pageInfo := PageInfo{
 			RequestURI:  r.RequestURI,
 			Title:       "Thank you",
-			Description: "We are an elite crew of experienced DevOps consultants bridging the gap between software development and operations by building Developer Experiences that enable flow.",
+			Description: "We are an expert crew of Platform Engineering consultants helping you improve value stream efficiency through user-centric internal developer platforms.",
 			Image:       verifaLogoPNG,
 			ImageAlt:    "Verifa Logo",
 		}
