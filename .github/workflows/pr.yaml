@@ -71,7 +71,7 @@ jobs:
       env:
         GITHUB_PR: ${{ github.event.number }}
       run: |
-        go run ./infra/cmd/preview/main.go
+        go run ./infra/cmd/preview/main.go -dry-run=false
     - name: Login to GCP Artifact Registry
       env:
         PROJECT_ID: verifa-website
