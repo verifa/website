@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"flag"
 	"fmt"
 	"log/slog"
 	"os"
@@ -28,7 +29,19 @@ func main() {
 }
 
 func run(ctx context.Context) error {
-	wf := sylt.NewWorkflow()
+	var (
+		apply   bool
+		destroy bool
+	)
+
+	flag.BoolVar(&apply, "apply", false, "apply (not dry-run)")
+	flag.BoolVar(&destroy, "destroy", false, "destroy")
+	flag.Parse()
+
+	wf := sylt.NewWorkflow(
+		sylt.WithWorkflowDryRun(!apply),
+		sylt.WithWorkflowDestroy(destroy),
+	)
 	defer func() {
 		if err := wf.Cleanup(ctx); err != nil {
 			slog.Error("running workflow cleanup", "error", err)

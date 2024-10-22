@@ -6,8 +6,6 @@ on:
     - "main"
   release:
     types: [published]
-  pull_request:
-    types: [opened, reopened, synchronize, labeled]
 
 jobs:
   build:
@@ -29,7 +27,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     # Run on main branch, release or if PR contains the 'preview' label
-    if: github.ref == 'refs/heads/main' || github.event_name == 'release' || contains( github.event.pull_request.labels.*.name, 'preview')
+    if: github.ref == 'refs/heads/main' || github.event_name == 'release'
     needs: build
     permissions:
       contents: "read"
@@ -54,9 +52,6 @@ jobs:
         elif [ "${GITHUB_REF#refs/heads/}" == "main" ]
         then
           echo "DEPLOY_ENV=staging" >> $GITHUB_ENV
-        elif [ "${{ contains( github.event.pull_request.labels.*.name, 'preview') }}" == "true" ]
-        then
-          echo "DEPLOY_ENV=preview" >> $GITHUB_ENV
         else
           echo "DEPLOY_ENV=unknown" >> $GITHUB_ENV
         fi

@@ -327,7 +327,7 @@ func Deploy(ctx context.Context, deploy string) {
 		if !strings.HasPrefix(deploy, "pr-") {
 			panic("invalid deploy env")
 		}
-		cloudRunService = deploy + "-website-service"
+		cloudRunService = deploy + "-service"
 	}
 	fmt.Println("🚢 deploying to", deploy)
 	iferr(Generate(ctx))
@@ -339,6 +339,8 @@ func Deploy(ctx context.Context, deploy string) {
 		cloudRunService,
 		"--image",
 		ref,
+		"--port",
+		"3000",
 		"--region",
 		region,
 	))

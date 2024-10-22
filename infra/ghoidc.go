@@ -111,6 +111,22 @@ func NewProjectIAMMember(
 				Member:  member,
 			},
 		},
+		LBAdmin: &google_project_iam_member.Resource{
+			Name: "gha_lb_admin",
+			Args: google_project_iam_member.Args{
+				Project: terra.String(project),
+				Role:    terra.String("roles/compute.loadBalancerAdmin"),
+				Member:  member,
+			},
+		},
+		StorageObjectUser: &google_project_iam_member.Resource{
+			Name: "gha_storage_object_user",
+			Args: google_project_iam_member.Args{
+				Project: terra.String(project),
+				Role:    terra.String("roles/storage.objectUser"),
+				Member:  member,
+			},
+		},
 		IAMWorkloadIdentityUser: &google_project_iam_member.Resource{
 			Name: "gha_iam_workload_identity_user",
 			Args: google_project_iam_member.Args{
@@ -140,6 +156,8 @@ func NewProjectIAMMember(
 
 type ProjectIAMMember struct {
 	CloudRunAdmin           *google_project_iam_member.Resource
+	LBAdmin                 *google_project_iam_member.Resource
+	StorageObjectUser       *google_project_iam_member.Resource
 	IAMWorkloadIdentityUser *google_project_iam_member.Resource
 	IAMServiceAccountUser   *google_project_iam_member.Resource
 	ArtifactRegistryWriter  *google_project_iam_member.Resource
