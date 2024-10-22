@@ -1,9 +1,9 @@
-name: build-test
+name: pr-preview
 
 on:
   push:
   pull_request:
-    types: [opened, reopened, synchronize, labeled]
+    types: [synchronize, labeled]
 
 jobs:
   build:
