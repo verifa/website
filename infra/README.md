@@ -1,8 +1,10 @@
 # Website Deployment
 
-Website infra is built on Cloud Run with a global load balancer in-front and Cloud CDN enabled. This directory contains all the OpenTofu code to configure the production and pre-production infrastructure.
+Website infra is built on Cloud Run with a global load balancer in-front and Cloud CDN enabled.
+This directory contains all the OpenTofu code to configure the production and pre-production infrastructure.
 
-The actual deployment of the site is decoupled from the infra for convenience, it does not matter for the infrastructure what is exactly running inside the Cloud Run service(s). Changes to the image of the deployed Cloud Run services are ignored, could add more fields in future if needed.
+The actual deployment of the site is decoupled from the infra for convenience, it does not matter for the infrastructure what is exactly running inside the Cloud Run service(s).
+Changes to the image of the deployed Cloud Run services are ignored, could add more fields in future if needed.
 
 ## Usage
 
@@ -18,4 +20,3 @@ Then your usual OpenTofu usage:
 tofu plan
 tofu apply
 ```
-

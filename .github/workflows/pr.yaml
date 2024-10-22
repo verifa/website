@@ -2,10 +2,6 @@ name: build-test
 
 on:
   push:
-    branches:
-      - "main"
-  release:
-    types: [published]
   pull_request:
     types: [opened, reopened, synchronize, labeled]
 
@@ -28,8 +24,8 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    # Run on main branch, release or if PR contains the 'preview' label
-    if: github.ref == 'refs/heads/main' || github.event_name == 'release' || contains( github.event.pull_request.labels.*.name, 'preview')
+    # Run if PR contains the 'preview' label
+    if: contains( github.event.pull_request.labels.*.name, 'preview')
     needs: build
     permissions:
       contents: "read"
@@ -48,15 +44,9 @@ jobs:
       - name: Write deploy variables
         id: vars
         run: |
-          if [ "${{ github.event_name }}" == "release" ]
+          if [ "${{ contains( github.event.pull_request.labels.*.name, 'preview') }}" == "true" ]
           then
-            echo "DEPLOY_ENV=prod" >> $GITHUB_ENV
-          elif [ "${GITHUB_REF#refs/heads/}" == "main" ]
-          then
-            echo "DEPLOY_ENV=staging" >> $GITHUB_ENV
-          elif [ "${{ contains( github.event.pull_request.labels.*.name, 'preview') }}" == "true" ]
-          then
-            echo "DEPLOY_ENV=preview" >> $GITHUB_ENV
+            echo "DEPLOY_ENV=pr-${{ github.event.number }}" >> $GITHUB_ENV
           else
             echo "DEPLOY_ENV=unknown" >> $GITHUB_ENV
           fi
@@ -78,6 +68,11 @@ jobs:
           REGION: europe-north1
         run: |
           gcloud auth configure-docker ${REGION}-docker.pkg.dev
+      - name: Create preview service
+        env:
+            GITHUB_PR: ${{ github.event.number }}
+        run: |
+          go run ./infra/cmd/preview/preview.go
       - name: Build image and deploy
         run: |
-          make deploy-${DEPLOY_ENV}
+          go run ./cmd/ci/ci.go -deploy=${DEPLOY_ENV}

@@ -324,7 +324,10 @@ func Deploy(ctx context.Context, deploy string) {
 	case "prod":
 		cloudRunService = cloudRunServiceProd
 	default:
-		panic("invalid deploy env")
+		if !strings.HasPrefix(deploy, "pr-") {
+			panic("invalid deploy env")
+		}
+		cloudRunService = deploy + "-website-service"
 	}
 	fmt.Println("🚢 deploying to", deploy)
 	iferr(Generate(ctx))
