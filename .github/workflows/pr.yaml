@@ -38,6 +38,12 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 20
+    - uses: opentofu/setup-opentofu@v1
+      with:
+        tofu_version: 1.6.2
+        # This is necessary. Otherwise the exitcode when calling tofu will be
+        # "wrapped" and not returned to lingon. *facepalm*
+        tofu_wrapper: false
     - name: Install TailwindCSS
       run: npm ci
     - name: Write deploy variables

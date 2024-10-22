@@ -3,7 +3,7 @@ name: build-test
 on:
   push:
     branches:
-      - "main"
+    - "main"
   release:
     types: [published]
   pull_request:
@@ -13,18 +13,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v4
-        with:
-          go-version: ">=1.21.4"
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install TailwindCSS
-        run: npm ci
-      - name: Run tests and lint
-        run: make ci
+    - uses: actions/checkout@v4
+    - uses: actions/setup-go@v4
+      with:
+        go-version: ">=1.21.4"
+    - name: Setup node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+    - name: Install TailwindCSS
+      run: npm ci
+    - name: Run tests and lint
+      run: make ci
 
   deploy:
     runs-on: ubuntu-latest
@@ -35,49 +35,49 @@ jobs:
       contents: "read"
       id-token: "write"
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v4
-        with:
-          go-version: ">=1.21.4"
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install TailwindCSS
-        run: npm ci
-      - name: Write deploy variables
-        id: vars
-        run: |
-          if [ "${{ github.event_name }}" == "release" ]
-          then
-            echo "DEPLOY_ENV=prod" >> $GITHUB_ENV
-          elif [ "${GITHUB_REF#refs/heads/}" == "main" ]
-          then
-            echo "DEPLOY_ENV=staging" >> $GITHUB_ENV
-          elif [ "${{ contains( github.event.pull_request.labels.*.name, 'preview') }}" == "true" ]
-          then
-            echo "DEPLOY_ENV=preview" >> $GITHUB_ENV
-          else
-            echo "DEPLOY_ENV=unknown" >> $GITHUB_ENV
-          fi
-      - name: Dump deployment variables
-        run: echo "DELPLOY_ENV=${DEPLOY_ENV}"
-      - uses: "google-github-actions/auth@v2"
-        with:
-          create_credentials_file: true
-          project_id: "verifa-website"
-          workload_identity_provider: "projects/720978371172/locations/global/workloadIdentityPools/verifa-website-pool/providers/verifa-website-gh-provider"
-          service_account: "verifa-website-gha@verifa-website.iam.gserviceaccount.com"
-      - name: "Set up Cloud SDK"
-        uses: "google-github-actions/setup-gcloud@v2"
-        with:
-          version: ">= 363.0.0"
-      - name: Login to GCP Artifact Registry
-        env:
-          PROJECT_ID: verifa-website
-          REGION: europe-north1
-        run: |
-          gcloud auth configure-docker ${REGION}-docker.pkg.dev
-      - name: Build image and deploy
-        run: |
-          make deploy-${DEPLOY_ENV}
+    - uses: actions/checkout@v4
+    - uses: actions/setup-go@v4
+      with:
+        go-version: ">=1.21.4"
+    - name: Setup node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+    - name: Install TailwindCSS
+      run: npm ci
+    - name: Write deploy variables
+      id: vars
+      run: |
+        if [ "${{ github.event_name }}" == "release" ]
+        then
+          echo "DEPLOY_ENV=prod" >> $GITHUB_ENV
+        elif [ "${GITHUB_REF#refs/heads/}" == "main" ]
+        then
+          echo "DEPLOY_ENV=staging" >> $GITHUB_ENV
+        elif [ "${{ contains( github.event.pull_request.labels.*.name, 'preview') }}" == "true" ]
+        then
+          echo "DEPLOY_ENV=preview" >> $GITHUB_ENV
+        else
+          echo "DEPLOY_ENV=unknown" >> $GITHUB_ENV
+        fi
+    - name: Dump deployment variables
+      run: echo "DELPLOY_ENV=${DEPLOY_ENV}"
+    - uses: "google-github-actions/auth@v2"
+      with:
+        create_credentials_file: true
+        project_id: "verifa-website"
+        workload_identity_provider: "projects/720978371172/locations/global/workloadIdentityPools/verifa-website-pool/providers/verifa-website-gh-provider"
+        service_account: "verifa-website-gha@verifa-website.iam.gserviceaccount.com"
+    - name: "Set up Cloud SDK"
+      uses: "google-github-actions/setup-gcloud@v2"
+      with:
+        version: ">= 363.0.0"
+    - name: Login to GCP Artifact Registry
+      env:
+        PROJECT_ID: verifa-website
+        REGION: europe-north1
+      run: |
+        gcloud auth configure-docker ${REGION}-docker.pkg.dev
+    - name: Build image and deploy
+      run: |
+        make deploy-${DEPLOY_ENV}
