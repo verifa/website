@@ -11,6 +11,7 @@ image_name.tmp
 
 # Local .terraform directories
 **/.terraform/*
+**/.lingon/*
 
 # .tfstate files
 *.tfstate

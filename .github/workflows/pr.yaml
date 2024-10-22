@@ -1,0 +1,113 @@
+name: pr-preview
+
+on:
+  pull_request:
+    types: ["opened", "synchronize", "reopened", "closed"]
+    branches: ["main"]
+
+jobs:
+  build:
+    if: github.event.pull_request.closed_at == null
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-go@v4
+      with:
+        go-version: ">=1.21.4"
+    - name: Setup node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+    - name: Install TailwindCSS
+      run: npm ci
+    - name: Run tests and lint
+      run: make ci
+  deploy:
+    runs-on: ubuntu-latest
+    # Run if PR contains the 'preview' label
+    if: contains( github.event.pull_request.labels.*.name, 'preview') && github.event.pull_request.closed_at == null
+    needs: build
+    permissions:
+      contents: "read"
+      id-token: "write"
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-go@v4
+      with:
+        go-version: ">=1.21.4"
+    - uses: opentofu/setup-opentofu@v1
+      with:
+        tofu_version: 1.6.2
+        # This is necessary. Otherwise the exitcode when calling tofu will be
+        # "wrapped" and not returned to lingon. *facepalm*
+        tofu_wrapper: false
+    - uses: "google-github-actions/auth@v2"
+      with:
+        create_credentials_file: true
+        project_id: "verifa-website"
+        workload_identity_provider: "projects/720978371172/locations/global/workloadIdentityPools/verifa-website-pool/providers/verifa-website-gh-provider"
+        service_account: "verifa-website-gha@verifa-website.iam.gserviceaccount.com"
+    - name: Provision preview service
+      env:
+        GITHUB_PR: ${{ github.event.number }}
+      run: |
+        go run ./infra/cmd/preview/main.go -dry-run=false
+    - name: Write deploy variables
+      id: vars
+      run: |
+        if [ "${{ contains( github.event.pull_request.labels.*.name, 'preview') }}" == "true" ]
+        then
+          echo "DEPLOY_ENV=pr-${{ github.event.number }}" >> $GITHUB_ENV
+        else
+          echo "DEPLOY_ENV=unknown" >> $GITHUB_ENV
+        fi
+    - name: Dump deployment variables
+      run: echo "DELPLOY_ENV=${DEPLOY_ENV}"
+    - name: Setup node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+    - name: Install TailwindCSS
+      run: npm ci
+    - name: "Set up Cloud SDK"
+      uses: "google-github-actions/setup-gcloud@v2"
+      with:
+        version: ">= 363.0.0"
+    - name: Login to GCP Artifact Registry
+      env:
+        PROJECT_ID: verifa-website
+        REGION: europe-north1
+      run: |
+        gcloud auth configure-docker ${REGION}-docker.pkg.dev
+    - name: Build image and deploy
+      run: |
+        go run ./cmd/ci/ci.go -deploy=${DEPLOY_ENV}
+  destroy:
+    runs-on: ubuntu-latest
+    # Run if PR is closed.
+    if: github.event.pull_request.closed_at != null
+    permissions:
+      contents: "read"
+      id-token: "write"
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-go@v4
+      with:
+        go-version: ">=1.21.4"
+    - uses: opentofu/setup-opentofu@v1
+      with:
+        tofu_version: 1.6.2
+        # This is necessary. Otherwise the exitcode when calling tofu will be
+        # "wrapped" and not returned to lingon. *facepalm*
+        tofu_wrapper: false
+    - uses: "google-github-actions/auth@v2"
+      with:
+        create_credentials_file: true
+        project_id: "verifa-website"
+        workload_identity_provider: "projects/720978371172/locations/global/workloadIdentityPools/verifa-website-pool/providers/verifa-website-gh-provider"
+        service_account: "verifa-website-gha@verifa-website.iam.gserviceaccount.com"
+    - name: Destroy preview service
+      env:
+        GITHUB_PR: ${{ github.event.number }}
+      run: |
+        go run ./infra/cmd/preview/main.go -dry-run=false -destroy
