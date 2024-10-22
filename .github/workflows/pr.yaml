@@ -24,7 +24,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     # Run if PR contains the 'preview' label
-    if: contains( github.event.pull_request.labels.*.name, 'preview')
+    if: contains( github.event.pull_request.labels.*.name, 'preview') && github.event.pull_request.closed_at == null
     needs: build
     permissions:
       contents: "read"
