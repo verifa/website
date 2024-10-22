@@ -2,8 +2,6 @@ module github.com/verifa/website
 
 go 1.23.2
 
-replace github.com/golingon/lingon => ../../golingon/lingon/
-
 require (
 	cloud.google.com/go/compute v1.28.1
 	github.com/a-h/templ v0.2.747
@@ -12,7 +10,7 @@ require (
 	github.com/fsnotify/fsnotify v1.7.0
 	github.com/go-chi/chi/v5 v5.0.11
 	github.com/golangci/golangci-lint v1.61.0
-	github.com/golingon/lingon v0.0.0-20240921092738-31feb976d242
+	github.com/golingon/lingon v0.0.0-20241019191110-86d076482351
 	github.com/golingon/terraproviders/google/5.25.0 v0.0.0-20240416110925-4deecce434a2
 	github.com/google/go-cmp v0.6.0
 	github.com/google/go-containerregistry v0.16.1

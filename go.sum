@@ -432,6 +432,8 @@ github.com/golangci/revgrep v0.5.3 h1:3tL7c1XBMtWHHqVpS5ChmiAAoe4PF/d5+ULzV9sLAz
 github.com/golangci/revgrep v0.5.3/go.mod h1:U4R/s9dlXZsg8uJmaR1GrloUr14D7qDl8gi2iPXJH8k=
 github.com/golangci/unconvert v0.0.0-20240309020433-c5143eacb3ed h1:IURFTjxeTfNFP0hTEi1YKjB/ub8zkpaOqFFMApi2EAs=
 github.com/golangci/unconvert v0.0.0-20240309020433-c5143eacb3ed/go.mod h1:XLXN8bNw4CGRPaqgl3bv/lhz7bsGPh4/xSaMTbo2vkQ=
+github.com/golingon/lingon v0.0.0-20241019191110-86d076482351 h1:R8DfuHFBOuteuM69mMaaVEIPnQZeFo1a2u53UJZtwL0=
+github.com/golingon/lingon v0.0.0-20241019191110-86d076482351/go.mod h1:tV+mpHvFHXyqln1zw1MSTDb9srHskuUrrOUlQ3je3Xo=
 github.com/golingon/terraproviders/google/5.25.0 v0.0.0-20240416110925-4deecce434a2 h1:X9a42DGp+ma86rRUM05YspjosJKb6w9Q4uNma+c4fH4=
 github.com/golingon/terraproviders/google/5.25.0 v0.0.0-20240416110925-4deecce434a2/go.mod h1:g4RD1rdA3DyaudkMNSz2e19Y4mTBSrr1yZq0xgPBPxs=
 github.com/golingon/terraproviders/random/3.6.1 v0.0.0-20240416110925-4deecce434a2 h1:qHu30Fcql/ETpIOKXxSYSuTgXT428/WQuC40hIBu5Kk=
