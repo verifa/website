@@ -52,7 +52,12 @@ var Crew = map[string]Member{
 		Country:  "Sweden",
 		Linkedin: "https://www.linkedin.com/in/andreas-l%C3%A4rfors-51253270/",
 		Github:   "andreaslarfors",
-		Bio:      "Andreas specialises in static code analysis, test automation, release management and build optimisation. He explores spirituality through yoga and meditation, but that doesn't stop him from chasing the adrenaline rush of driving fast cars and aggressive rollerblading.",
+		Bio: ` 
+Andreas is approaching two decades of experience in the IT industry. He has a strong passion for solving the technical and organisational problems that arise in software development teams. This led him to co-founding Verifa to provide services of the highest level to those who need them.
+
+At Verifa, he has helped several customers design and implement solutions and processes for improving software quality, using techniques such as CICD, static code analysis and OSS risk management.
+
+To wind down from work, Andreas enjoys forest walks and yoga. So that things don’t get too slow, he also enjoys building and driving fast cars, and hitting the skatepark with his rollerblades.`,
 	},
 	"arigo": {
 		ID:       "arigo",
@@ -63,7 +68,10 @@ var Crew = map[string]Member{
 		Country:  "Sweden",
 		Linkedin: "https://www.linkedin.com/in/albertrigo",
 		Github:   "kvarak",
-		Bio:      "Albert's specialities are CI/CD, coaching, improving development flow and implementing change. A self-described “geek who enjoys ball sports and the great outdoors”, Albert likes to spend time with his family, home automation, fantasy books and playing board games. Albert has even created a CI/CD board game!",
+		Bio: `      
+Albert's specialities are CI/CD, coaching, improving development flow and implementing change. He holds a Masters in Computer Science and has clocked up over two decades of experience in the software industry across a range of sectors including electronics, automation, and telecommunications.
+		
+A self-described “geek who enjoys ball sports and the great outdoors”, Albert likes to spend time with his family, on home automation, hydroponics and playing board games. Albert has even created a CI/CD board game!`,
 	},
 	"avijayan": {
 		ID:       "avijayan",
@@ -100,7 +108,12 @@ In his spare time Anoop enjoys writing technical blogs, playing ball games, and 
 		Country:  "Sweden",
 		Linkedin: "https://www.linkedin.com/in/bossenystrom/",
 		Github:   "drBosse",
-		Bio:      "Bosse holds not only a PhD in physics, but also has over twenty years' experience in embedded SW development. As well as a hugely impressive CV, Bosse's passions outside of the development world lie in food, beer and a strong love of all things Japanese.",
+		Bio: `
+Bosse holds not only a PhD in physics, but also has over twenty five years' experience in embedded software development. His raison d’etre is to reduce waste and stop doing stuff that’s not needed!
+	
+Before life as a consultant, Bosse spent a decade at Sony Mobile Communications driving improvements in processes and strategies for configuration management. At Verifa he has worked on various customer projects putting his extensive background in Lean software development to good use. 
+	
+As well as a hugely impressive CV, Bosse's passions outside of the development world lie in food, beer and a strong love of all things Japanese.`,
 	},
 	"ckurowski": {
 		ID:       "ckurowski",
@@ -150,13 +163,13 @@ When he's not working with technology Jacob might be seen juggling, practising j
 		Linkedin: "https://www.linkedin.com/in/lauri-suomalainen/",
 		Github:   "Fleuri",
 		Bio: `
-Lauri enjoys working with public clouds and automation. He has previously tinkered with OpenStack and AWS but is currently most excited about Google Cloud Platform and Kubernetes. 
+Lauri enjoys working with public clouds and automation. He is especially fond of Google Cloud, but feels also at home with AWS and Azure. 
 
-With a Master's in Computer Science, Lauri has accumulated over a decade of industry expertise spanning telecommunications, marine, and medical sectors. Before joining Verifa in 2020, Lauri was Senior Software Developer at Klinik Healthcare Solutions and Linux Specialist at Nebula. 
+With a Master's in Computer Science, Lauri has accumulated over a decade of industry expertise spanning telecommunications, marine, and medical sectors. Currently Lauri finds purpose in charting the territories between the human and the machine, or in layman’s terms, helping teams and decision-makers understand how technology organisations work in relation to their tools, people and processes. 
 
-At Verifa, he's helped several customers navigate complex cloud migrations, as well as advising on a range of technical solutions and process improvements. 
+At Verifa, he’s helped several customers navigate complex cloud migrations, as well as advising on a range of technical solutions and process improvements. A champion for the end-users, Lauri drives teams to align their goals and methodology with those that bring in both value and customer satisfaction. 
 
-Outside of work he volunteers at Guides and Scouts of Finland's ICT-projects. Besides geeky stuff Lauri is an avid climber, plays guitar in a band, and is a board game fanatic.`,
+Besides work Lauri still keeps it fundamentally nerdy with activities ranging from extreme sports to obscure music and hobbyist boardgames to ballroom dances.`,
 	},
 	"mvainio": {
 		ID:       "mvainio",
@@ -193,7 +206,10 @@ Besides techie stuff, Mike likes to spend time with his family, has a passion fo
 		Country:  "Sweden",
 		Linkedin: "https://www.linkedin.com/in/thlac",
 		Github:   "praqma-thi",
-		Bio:      "Thierry has a decade of software development and consultancy experience under his belt. Off duty, he plays board games and video games, and expresses his creative side through music, painting and game development. Thierry's also a die-hard fan of the hit classic film Dragonheart, and very knowledgeable about Pokémon! ",
+		Bio: `
+Thierry has over a decade of software development and consultancy experience under his belt. He enjoys helping teams to adopt more lean and agile ways of working with a focus on CI/CD and automation. 
+
+Off duty, Thierry enjoys board games and video games, and expresses his creative side through music and game development. He's a die-hard fan of the hit classic film Dragonheart, and very knowledgeable about Pokémon!`,
 	},
 	"lsjodahl": {
 		ID:       "lsjodahl",
