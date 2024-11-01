@@ -26,7 +26,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    # Run on main branch, release or if PR contains the 'preview' label
+    # Run on main branch or release
     if: github.ref == 'refs/heads/main' || github.event_name == 'release'
     needs: build
     permissions:
@@ -46,12 +46,9 @@ jobs:
     - name: Write deploy variables
       id: vars
       run: |
-        if [ "${{ github.event_name }}" == "release" ]
+        if [ "${{ github.event_name }}" == "release" -o "${GITHUB_REF#refs/heads/}" == "main" ]
         then
           echo "DEPLOY_ENV=prod" >> $GITHUB_ENV
-        elif [ "${GITHUB_REF#refs/heads/}" == "main" ]
-        then
-          echo "DEPLOY_ENV=staging" >> $GITHUB_ENV
         else
           echo "DEPLOY_ENV=unknown" >> $GITHUB_ENV
         fi

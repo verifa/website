@@ -120,26 +120,6 @@ func run(ctx context.Context) error {
 		return err
 	}
 
-	svcStaging := sylt.Terra("service-staging", &serviceStack{
-		Service: infra.NewService(infra.ServiceOpts{
-			Name:     "staging-website",
-			MinScale: 0,
-			MaxScale: 3,
-		}),
-		Backend: &infra.GCSBackend{
-			Bucket: "verifa-website-tfstate",
-			Prefix: "staging-service",
-		},
-		Provider: &google.Provider{
-			Project: terra.String("verifa-website"),
-			Region:  terra.String("europe-north1"),
-			Zone:    terra.String("europe-north1-a"),
-		},
-	})
-	if err := wf.Run(ctx, svcStaging); err != nil {
-		return err
-	}
-
 	var stateErr error
 	urlMap := sylt.RequireResourceState(
 		st.Stack.URLMap,
@@ -147,10 +127,6 @@ func run(ctx context.Context) error {
 	)
 	prodService := sylt.RequireResourceState(
 		svcProd.Stack.BackendService,
-		&stateErr,
-	)
-	stagingService := sylt.RequireResourceState(
-		svcStaging.Stack.BackendService,
 		&stateErr,
 	)
 	if stateErr != nil {
@@ -163,15 +139,6 @@ func run(ctx context.Context) error {
 		URLMap:  urlMap.Name,
 		Service: prodService.Id,
 		Host:    "verifa.io",
-	}); err != nil {
-		return fmt.Errorf("urlmap action: %w", err)
-	}
-	if err := wf.Run(ctx, &infra.URLMapAction{
-		ID:      "pathmatcher-1",
-		Project: "verifa-website",
-		URLMap:  urlMap.Name,
-		Service: stagingService.Id,
-		Host:    "staging.verifa.io",
 	}); err != nil {
 		return fmt.Errorf("urlmap action: %w", err)
 	}

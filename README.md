@@ -37,6 +37,12 @@ Things you need to install:
 1. [Go](https://go.dev/), check the [go.mod](./go.mod) for the required version
 2. [NodeJS](https://nodejs.org/en/download/package-manager)
 
+To set up a local development server:
+
+```bash
+npm install
+```
+
 To start a local development server:
 
 ```bash
