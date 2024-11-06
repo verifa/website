@@ -33,10 +33,6 @@ ci: pr
 preview:
 	$(CI_CMD) -preview
 
-.PHONY: deploy-staging
-deploy-staging:
-	$(CI_CMD) -deploy=staging
-
 .PHONY: deploy-prod
 deploy-prod:
 	$(CI_CMD) -deploy=prod
