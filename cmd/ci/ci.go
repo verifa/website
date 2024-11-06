@@ -59,7 +59,7 @@ func main() {
 		&deploy,
 		"deploy",
 		"",
-		"deploy the website to this env (staging or prod)",
+		"deploy the website to this env (pr env or prod)",
 	)
 	flag.BoolVar(&preview, "preview", false, "run a local preview environment")
 	flag.BoolVar(&pr, "pr", false, "run the pull request checks")
@@ -319,8 +319,6 @@ func HasGitDiff(ctx context.Context) {
 func Deploy(ctx context.Context, deploy string) {
 	var cloudRunService string
 	switch deploy {
-	case "staging":
-		cloudRunService = cloudRunServiceStaging
 	case "prod":
 		cloudRunService = cloudRunServiceProd
 	default:

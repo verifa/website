@@ -52,17 +52,6 @@ jobs:
         GITHUB_PR: ${{ github.event.number }}
       run: |
         go run ./infra/cmd/preview/main.go -dry-run=false
-    - name: Write deploy variables
-      id: vars
-      run: |
-        if [ "${{ contains( github.event.pull_request.labels.*.name, 'preview') }}" == "true" ]
-        then
-          echo "DEPLOY_ENV=pr-${{ github.event.number }}" >> $GITHUB_ENV
-        else
-          echo "DEPLOY_ENV=unknown" >> $GITHUB_ENV
-        fi
-    - name: Dump deployment variables
-      run: echo "DELPLOY_ENV=${DEPLOY_ENV}"
     - name: Setup node
       uses: actions/setup-node@v4
       with:
@@ -81,6 +70,8 @@ jobs:
         gcloud auth configure-docker ${REGION}-docker.pkg.dev
     - name: Build image and deploy
       run: |
+        echo "DEPLOY_ENV=pr-${{ github.event.number }}" >> $GITHUB_ENV
+        echo "DEPLOY_ENV: ${{ github.event.number }}"
         go run ./cmd/ci/ci.go -deploy=${DEPLOY_ENV}
   destroy:
     runs-on: ubuntu-latest

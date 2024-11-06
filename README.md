@@ -61,9 +61,9 @@ make pr
 
 ## Releasing
 
-Pushing to the `main` branch deploys the changes to the staging environment <https://staging.verifa.io>
+Tagging a `preview` to the pull request makes deploys it to the staging/PR environment <https://pr-xyx.verifa.io>
 
-Tagging a version makes deploys it to the production environment <https://verifa.io>
+Merging to the `main` branch deploys the changes to the production environment <https://verifa.io>
 
 ## Contributing
 
