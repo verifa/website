@@ -200,8 +200,8 @@ kubectl exec -ti iam-role-test -- /bin/bash
 bash-4.2# aws sts get-caller-identity
 {
     "UserId": "AROA46FON4H773JH4MPJD:botocore-session-1637837863",
-    "Account": "889424044543",
-    "Arn": "arn:aws:sts::889424044543:assumed-role/iam-role-test/botocore-session-1637837863"
+    "Account": "123456789101",
+    "Arn": "arn:aws:sts::123456789101:assumed-role/iam-role-test/botocore-session-1637837863"
 }
 
 # Check the AWS environment variables
@@ -226,9 +226,10 @@ kubectl exec -ti iam-role-test -- /bin/bash
 bash-4.2# aws sts get-caller-identity
 {
     "UserId": "AROA46FON4H72Q3SPL6SC:i-0d0aff479cf2e2405",
-    "Account": "889424044543",
+    "Account": "123456789101",
     "Arn": "arn:aws:sts::<ACCOUNT_ID>:assumed-role/<cluster-name>XXXXXXXXX/i-<node-instance-id>"
 }
+
 
 # Check the AWS environment variables
 bash-4.2# env | grep "AWS_"
