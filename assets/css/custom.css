@@ -1,0 +1,105 @@
+/* Custom styles for author information */
+.authors {
+  font-style: italic;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.author {
+  font-weight: 500;
+}
+
+/* Style for blog listing authors */
+.posts .post .meta .authors {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.85em;
+}
+
+/* Style for individual post authors */
+.post-content .meta .authors {
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* Remove TOC constraints and make post content full width */
+.post-container {
+  display: block !important;
+}
+
+.post-content {
+  flex: none !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Header text colors - keep navigation links black */
+header .nav a {
+  color: #0d0e12; /* v-black */
+}
+
+header .nav a:hover {
+  color: #ad9ce3; /* v-lilac for hover */
+}
+
+/* Featured image styling */
+.featured-image {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.featured-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 404 Page styling */
+.not-found {
+  text-align: center;
+  padding: 2rem 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.not-found h1 {
+  font-size: 3rem;
+  color: #0d0e12;
+  margin-bottom: 1rem;
+}
+
+.not-found p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.not-found-content {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.not-found-content h2 {
+  color: #0d0e12;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.not-found-content ul {
+  margin-bottom: 1.5rem;
+}
+
+.not-found-content li {
+  margin-bottom: 0.5rem;
+}
+
+.not-found-content a {
+  color: #ad9ce3;
+  text-decoration: none;
+}
+
+.not-found-content a:hover {
+  color: #fc9cac;
+  text-decoration: underline;
+}

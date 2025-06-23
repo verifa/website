@@ -1,0 +1,21 @@
+# Custom 404 error page
+ErrorDocument 404 /404.html
+
+# Redirect common old paths
+RedirectMatch 301 ^/about/?$ /
+RedirectMatch 301 ^/contact/?$ /
+RedirectMatch 301 ^/services/?$ /
+RedirectMatch 301 ^/team/?$ /
+RedirectMatch 301 ^/careers/?$ /
+RedirectMatch 301 ^/jobs/?$ /blog/
+
+# Redirect old blog paths
+RedirectMatch 301 ^/posts/(.*)$ /blog/$1
+RedirectMatch 301 ^/articles/(.*)$ /blog/$1
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>

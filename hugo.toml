@@ -1,0 +1,104 @@
+baseURL = 'https://verifa.io'
+languageCode = 'en-us'
+title = 'Verifa'
+theme = 'archie'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
+[params]
+  mode = "auto"
+  useCDN = false
+  subtitle = "Platform Engineering Consultancy"
+  mathjax = false
+  katex = false
+  customCSS = ["css/custom.css"]
+
+[[params.social]]
+  name = "GitHub"
+  icon = "github"
+  url = "https://github.com/verifa"
+
+[[params.social]]
+  name = "LinkedIn"
+  icon = "linkedin"
+  url = "https://www.linkedin.com/company/verifa"
+
+# Author information from crew.go
+[params.authors]
+  [params.authors.jlarfors]
+    name = "Jacob Lärfors"
+    position = "CEO & Consultant"
+  [params.authors.alarfors]
+    name = "Andreas Lärfors"
+    position = "Partner & Consultant"
+  [params.authors.ckurowski]
+    name = "Carole Kurowski"
+    position = "Growth Lead"
+  [params.authors.tlacour]
+    name = "Thierry Lacour"
+    position = "Consultant"
+  [params.authors.mvainio]
+    name = "Mike Vainio"
+    position = "Consultant"
+  [params.authors.lsuomalainen]
+    name = "Lauri Suomalainen"
+    position = "Consultant"
+  [params.authors.avijayan]
+    name = "Anoop Vijayan"
+    position = "Consultant"
+  [params.authors.arigo]
+    name = "Albert Rigo"
+    position = "Consultant"
+  [params.authors.bnystrom]
+    name = "Bosse Nyström"
+    position = "Consultant"
+  [params.authors.hhirvonen]
+    name = "Hanna Hirvonen"
+    position = "Consultant"
+  [params.authors.slarfors]
+    name = "Susie Lärfors"
+    position = "Finances"
+  [params.authors.lsjodahl]
+    name = "Laroy Sjödahl"
+    position = "Consultant"
+  [params.authors.valtintas]
+    name = "Viktor Altintas"
+    position = "Consultant"
+  [params.authors.zlaster]
+    name = "Zach Laster"
+    position = "Consultant"
+  [params.authors.jelderfield]
+    name = "James Elderfield"
+    position = "Consultant"
+  [params.authors.amackay]
+    name = "Adam Mackay"
+    position = "Consultant"
+  [params.authors.ksoranko]
+    name = "Kalle Soranko"
+    position = "Consultant"
+  [params.authors.slaitinen]
+    name = "Sakari Laitinen"
+    position = "Consultant"
+  [params.authors.mrosenlund]
+    name = "Mika Rosenlund"
+    position = "Consultant"
+  [params.authors.akalaiyarasan]
+    name = "Abhigita Kalaiyarasan"
+    position = "Consultant"
+  [params.authors.verifa]
+    name = "Verifa"
+    position = "Company"
+  
+[menu]
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 10
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

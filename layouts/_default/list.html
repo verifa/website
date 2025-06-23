@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{ if isset .Data "Term" }}
+<h1>Entries tagged - "{{ .Data.Term }}"</h1>
+{{ else }}
+<h1 class="page-title">All articles</h1>
+{{ end }}
+
+<ul class="posts">
+	{{- range .Data.Pages -}}
+		{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
+		<li class="post">
+			<a href="{{ .RelPermalink }}">{{.Title}}</a> 
+			<span class="meta">
+				{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}
+				{{ if .Params.authors }}
+				 • By {{ range $index, $authorId := .Params.authors }}{{ if gt $index 0 }}, {{ end }}{{ $author := index $.Site.Params.authors $authorId }}{{ if $author }}<span class="author">{{ $author.name }}</span>{{ else }}<span class="author">{{ $authorId }}</span>{{ end }}{{ end }}
+				{{ end }}
+			</span>
+		</li>
+		{{- end -}}
+	{{- end -}}
+</ul>
+{{ end }}

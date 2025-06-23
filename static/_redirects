@@ -1,0 +1,14 @@
+# Redirect all non-existent pages to 404
+/* /404.html 404
+
+# Common redirects for old URLs that might exist
+/about /
+/contact /
+/services /
+/team /
+/careers /
+/jobs /blog/
+
+# Redirect old blog paths if they don't exist
+/posts/* /blog/:splat
+/articles/* /blog/:splat
