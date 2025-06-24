@@ -6,7 +6,7 @@ date: 2025-06-23
 After years of helping organisations, **Verifa has officially closed its operations**.
 
 From 2017-2025 Verifa provided consultancy services in the area of Continuous Delivery, DevOps, Platform Engineering and Developer Experience.
-We want to thank all our clients, partners, and the broader community for their trust and collaboration throughout our journey. It has been an honorr to work alongside so many international teams and talented engineers.
+We want to thank all our clients, partners, and the broader community for their trust and collaboration throughout our journey. It has been an honour to work alongside so many international teams and talented engineers.
 
 ## What This Means
 
